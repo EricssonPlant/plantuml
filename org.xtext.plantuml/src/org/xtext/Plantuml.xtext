@@ -4,12 +4,12 @@ generate plantuml "http://www.xtext.org/Plantuml"
 
 // Model is a number of @startuml's and @enduml's
 Model:
-	Diagrams+=Diagram*;
+	diagrams+=Diagram*;
 	
 // A diagram starts with @Startuml and ends with @enduml, 
 // with some number of instructions in between
 Diagram:
-	'@startuml' (Instructions += Instruction)* '@enduml'
+	'@startuml' (instructions+=Instruction)* '@enduml'
 ;
 
 
@@ -17,6 +17,8 @@ Diagram:
 Instruction:
 	(name=ID Sequence name=ID (':' STRING)? (Comment)?) 
 	| Comment
+	| Definition
+
 ;
 
 // A sequence can be a number of arrows
@@ -45,7 +47,18 @@ Sequence:
 	
 ;
 
-// A comment can be single or multi
+// A comment can be single- or multiline
 Comment:
+	"'" STRING "'"
+	| "/'" STRING (WS strings+=STRING)* (WS)* "'/"
+;
 	
+// Rule for defining objects in PlantUML, such as
+// actors, boundaries, controls, entities and databases
+Definition:
+	'actor' name=ID 
+	| 'boundary' name=ID
+	| 'control' name=ID
+	| 'entity' name=ID
+	| 'database' name=ID
 ;

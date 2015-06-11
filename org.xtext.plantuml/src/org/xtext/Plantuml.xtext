@@ -1,0 +1,34 @@
+grammar org.xtext.Plantuml with org.eclipse.xtext.common.Terminals
+
+generate plantuml "http://www.xtext.org/Plantuml"
+
+// Model is a number of @startuml's and @enduml's
+Model:
+	Diagrams+=Diagram*;
+	
+// A diagram starts with @Startuml and ends with @enduml, 
+// with some number of instructions in between
+Diagram:
+	'@startuml' (Instructions += Instruction)* '@enduml'
+;
+
+
+// An instruction is either a sequence or a comment
+Instruction:
+	(name=ID Sequence name=ID (':' String)?) 
+	| Comments
+;
+
+// A sequence can be a number of arrows
+Sequence:
+	
+;
+
+// A comment can be single or multi
+Comment:
+	
+;
+
+String:
+	
+;

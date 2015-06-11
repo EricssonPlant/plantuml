@@ -21,8 +21,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_WS", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'@startuml'", "'@enduml'", "':'", "'-'", "'->'", "'<-'", "'->x'", "'x<-'", "'->>'", "'<<-'", "'-\\\\'", "'/-'", "'-\\\\\\\\'", "'//-'", "'->o'", "'o<-'", "'--'", "'//o'", "'o\\\\\\\\--'", "'<->'", "'<->o'", "'o<->'", "'<|--'", "'--|>'", "'..'", "'.'", "'\\''", "'/\\''", "'\\'/'", "'actor'", "'boundary'", "'control'", "'entity'", "'database'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_WS", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'@startuml'", "'@enduml'", "':'", "'-'", "'>'", "'<'", "'x'", "'\\\\'", "'/'", "'\\\\\\\\'", "'o'", "'|'", "'.'", "'\\''", "'/\\''", "'\\'/'", "'actor'", "'boundary'", "'control'", "'entity'", "'database'"
     };
+    public static final int RULE_STRING=5;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
@@ -32,7 +34,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_ID=4;
+    public static final int RULE_WS=6;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -45,26 +52,6 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
-    public static final int RULE_STRING=5;
-    public static final int RULE_SL_COMMENT=9;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_WS=6;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__44=44;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -285,7 +272,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_ID||(LA2_0>=37 && LA2_0<=38)||(LA2_0>=40 && LA2_0<=44)) ) {
+                if ( (LA2_0==RULE_ID||(LA2_0>=24 && LA2_0<=25)||(LA2_0>=27 && LA2_0<=31)) ) {
                     alt2=1;
                 }
 
@@ -418,17 +405,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                 alt5=1;
                 }
                 break;
-            case 37:
-            case 38:
+            case 24:
+            case 25:
                 {
                 alt5=2;
                 }
                 break;
-            case 40:
-            case 41:
-            case 42:
-            case 43:
-            case 44:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
+            case 31:
                 {
                 alt5=3;
                 }
@@ -659,7 +646,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSequence"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:264:1: ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (kw= '-' )* kw= '->' ) | (kw= '<-' (kw= '-' )* ) | kw= '->x' | kw= 'x<-' | ( (kw= '-' )* kw= '->>' ) | (kw= '<<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\' ) | (kw= '/-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\\\\\' ) | (kw= '//-' (kw= '-' )* ) | ( (kw= '-' )* kw= '->o' ) | (kw= 'o<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '--' kw= '//o' ) | (kw= 'o\\\\\\\\--' (kw= '-' )* ) | kw= '<->' | kw= '<->o' | kw= 'o<->' | kw= '<|--' | kw= '--|>' | kw= '..' | kw= '.' ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:264:1: ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (kw= '-' )* kw= '-' kw= '>' ) | (kw= '<' kw= '-' (kw= '-' )* ) | (kw= '-' kw= '>' kw= 'x' ) | (kw= 'x' kw= '<' kw= '-' ) | ( (kw= '-' )* kw= '-' kw= '>' kw= '>' ) | (kw= '<' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' ) | (kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' ) | (kw= '/' kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' ) | (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* ) | (kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '|' kw= '-' kw= '-' ) | (kw= '-' kw= '-' kw= '|' kw= '>' ) | (kw= '.' kw= '.' ) | kw= '.' ) ;
     public final AntlrDatatypeRuleToken ruleSequence() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -668,18 +655,18 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:267:28: ( ( ( (kw= '-' )* kw= '->' ) | (kw= '<-' (kw= '-' )* ) | kw= '->x' | kw= 'x<-' | ( (kw= '-' )* kw= '->>' ) | (kw= '<<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\' ) | (kw= '/-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\\\\\' ) | (kw= '//-' (kw= '-' )* ) | ( (kw= '-' )* kw= '->o' ) | (kw= 'o<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '--' kw= '//o' ) | (kw= 'o\\\\\\\\--' (kw= '-' )* ) | kw= '<->' | kw= '<->o' | kw= 'o<->' | kw= '<|--' | kw= '--|>' | kw= '..' | kw= '.' ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:1: ( ( (kw= '-' )* kw= '->' ) | (kw= '<-' (kw= '-' )* ) | kw= '->x' | kw= 'x<-' | ( (kw= '-' )* kw= '->>' ) | (kw= '<<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\' ) | (kw= '/-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\\\\\' ) | (kw= '//-' (kw= '-' )* ) | ( (kw= '-' )* kw= '->o' ) | (kw= 'o<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '--' kw= '//o' ) | (kw= 'o\\\\\\\\--' (kw= '-' )* ) | kw= '<->' | kw= '<->o' | kw= 'o<->' | kw= '<|--' | kw= '--|>' | kw= '..' | kw= '.' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:267:28: ( ( ( (kw= '-' )* kw= '-' kw= '>' ) | (kw= '<' kw= '-' (kw= '-' )* ) | (kw= '-' kw= '>' kw= 'x' ) | (kw= 'x' kw= '<' kw= '-' ) | ( (kw= '-' )* kw= '-' kw= '>' kw= '>' ) | (kw= '<' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' ) | (kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' ) | (kw= '/' kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' ) | (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* ) | (kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '|' kw= '-' kw= '-' ) | (kw= '-' kw= '-' kw= '|' kw= '>' ) | (kw= '.' kw= '.' ) | kw= '.' ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:1: ( ( (kw= '-' )* kw= '-' kw= '>' ) | (kw= '<' kw= '-' (kw= '-' )* ) | (kw= '-' kw= '>' kw= 'x' ) | (kw= 'x' kw= '<' kw= '-' ) | ( (kw= '-' )* kw= '-' kw= '>' kw= '>' ) | (kw= '<' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' ) | (kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' ) | (kw= '/' kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' ) | (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* ) | (kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '|' kw= '-' kw= '-' ) | (kw= '-' kw= '-' kw= '|' kw= '>' ) | (kw= '.' kw= '.' ) | kw= '.' )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:1: ( ( (kw= '-' )* kw= '->' ) | (kw= '<-' (kw= '-' )* ) | kw= '->x' | kw= 'x<-' | ( (kw= '-' )* kw= '->>' ) | (kw= '<<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\' ) | (kw= '/-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\\\\\' ) | (kw= '//-' (kw= '-' )* ) | ( (kw= '-' )* kw= '->o' ) | (kw= 'o<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '--' kw= '//o' ) | (kw= 'o\\\\\\\\--' (kw= '-' )* ) | kw= '<->' | kw= '<->o' | kw= 'o<->' | kw= '<|--' | kw= '--|>' | kw= '..' | kw= '.' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:1: ( ( (kw= '-' )* kw= '-' kw= '>' ) | (kw= '<' kw= '-' (kw= '-' )* ) | (kw= '-' kw= '>' kw= 'x' ) | (kw= 'x' kw= '<' kw= '-' ) | ( (kw= '-' )* kw= '-' kw= '>' kw= '>' ) | (kw= '<' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' ) | (kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' ) | (kw= '/' kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' ) | (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* ) | (kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '|' kw= '-' kw= '-' ) | (kw= '-' kw= '-' kw= '|' kw= '>' ) | (kw= '.' kw= '.' ) | kw= '.' )
             int alt18=21;
             alt18 = dfa18.predict(input);
             switch (alt18) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:2: ( (kw= '-' )* kw= '->' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:2: ( (kw= '-' )* kw= '-' kw= '>' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:2: ( (kw= '-' )* kw= '->' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:3: (kw= '-' )* kw= '->'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:2: ( (kw= '-' )* kw= '-' kw= '>' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:3: (kw= '-' )* kw= '-' kw= '>'
                     {
                     // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:268:3: (kw= '-' )*
                     loop6:
@@ -688,7 +675,13 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         int LA6_0 = input.LA(1);
 
                         if ( (LA6_0==14) ) {
-                            alt6=1;
+                            int LA6_1 = input.LA(2);
+
+                            if ( (LA6_1==14) ) {
+                                alt6=1;
+                            }
+
+
                         }
 
 
@@ -710,10 +703,15 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence585); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence585); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusGreaterThanSignKeyword_0_1()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_0_1()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence598); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_0_2()); 
                         
 
                     }
@@ -722,17 +720,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:281:6: (kw= '<-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:287:6: (kw= '<' kw= '-' (kw= '-' )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:281:6: (kw= '<-' (kw= '-' )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:282:2: kw= '<-' (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:287:6: (kw= '<' kw= '-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:288:2: kw= '<' kw= '-' (kw= '-' )*
                     {
-                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence606); 
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence619); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignHyphenMinusKeyword_1_0()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_1_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:287:1: (kw= '-' )*
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence632); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_1()); 
+                        
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:299:1: (kw= '-' )*
                     loop7:
                     do {
                         int alt7=2;
@@ -745,12 +748,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:288:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:300:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence620); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence646); 
 
                     	            current.merge(kw);
-                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_1()); 
+                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_2()); 
                     	        
 
                     	    }
@@ -768,49 +771,87 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:295:2: kw= '->x'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:306:6: (kw= '-' kw= '>' kw= 'x' )
                     {
-                    kw=(Token)match(input,17,FOLLOW_17_in_ruleSequence642); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:306:6: (kw= '-' kw= '>' kw= 'x' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:307:2: kw= '-' kw= '>' kw= 'x'
+                    {
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence669); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_2()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_2_0()); 
                         
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence682); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_2_1()); 
+                        
+                    kw=(Token)match(input,17,FOLLOW_17_in_ruleSequence695); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_2_2()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:302:2: kw= 'x<-'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:325:6: (kw= 'x' kw= '<' kw= '-' )
                     {
-                    kw=(Token)match(input,18,FOLLOW_18_in_ruleSequence661); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:325:6: (kw= 'x' kw= '<' kw= '-' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:326:2: kw= 'x' kw= '<' kw= '-'
+                    {
+                    kw=(Token)match(input,17,FOLLOW_17_in_ruleSequence716); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_3()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_3_0()); 
                         
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence729); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_3_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence742); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_3_2()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:308:6: ( (kw= '-' )* kw= '->>' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:344:6: ( (kw= '-' )* kw= '-' kw= '>' kw= '>' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:308:6: ( (kw= '-' )* kw= '->>' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:308:7: (kw= '-' )* kw= '->>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:344:6: ( (kw= '-' )* kw= '-' kw= '>' kw= '>' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:344:7: (kw= '-' )* kw= '-' kw= '>' kw= '>'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:308:7: (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:344:7: (kw= '-' )*
                     loop8:
                     do {
                         int alt8=2;
                         int LA8_0 = input.LA(1);
 
                         if ( (LA8_0==14) ) {
-                            alt8=1;
+                            int LA8_1 = input.LA(2);
+
+                            if ( (LA8_1==14) ) {
+                                alt8=1;
+                            }
+
+
                         }
 
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:309:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:345:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence682); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence764); 
 
                     	            current.merge(kw);
                     	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_0()); 
@@ -824,10 +865,20 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSequence697); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence779); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusGreaterThanSignGreaterThanSignKeyword_4_1()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_1()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence792); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_2()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence805); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_3()); 
                         
 
                     }
@@ -836,17 +887,27 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:321:6: (kw= '<<-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:369:6: (kw= '<' kw= '<' kw= '-' (kw= '-' )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:321:6: (kw= '<<-' (kw= '-' )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:322:2: kw= '<<-' (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:369:6: (kw= '<' kw= '<' kw= '-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:370:2: kw= '<' kw= '<' kw= '-' (kw= '-' )*
                     {
-                    kw=(Token)match(input,20,FOLLOW_20_in_ruleSequence718); 
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence826); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignLessThanSignHyphenMinusKeyword_5_0()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:327:1: (kw= '-' )*
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence839); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence852); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_2()); 
+                        
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:387:1: (kw= '-' )*
                     loop9:
                     do {
                         int alt9=2;
@@ -859,12 +920,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:328:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:388:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence732); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence866); 
 
                     	            current.merge(kw);
-                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_1()); 
+                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_3()); 
                     	        
 
                     	    }
@@ -882,27 +943,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:334:6: ( (kw= '-' )* kw= '-\\\\' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:394:6: ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:334:6: ( (kw= '-' )* kw= '-\\\\' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:334:7: (kw= '-' )* kw= '-\\\\'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:394:6: ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:394:7: (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:334:7: (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:394:7: (kw= '-' )*
                     loop10:
                     do {
                         int alt10=2;
                         int LA10_0 = input.LA(1);
 
                         if ( (LA10_0==14) ) {
-                            alt10=1;
+                            int LA10_1 = input.LA(2);
+
+                            if ( (LA10_1==14) ) {
+                                alt10=1;
+                            }
+
+
                         }
 
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:335:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:395:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence756); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence890); 
 
                     	            current.merge(kw);
                     	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_0()); 
@@ -916,10 +983,20 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence771); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence905); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusReverseSolidusKeyword_6_1()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_1()); 
+                        
+                    kw=(Token)match(input,18,FOLLOW_18_in_ruleSequence918); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_2()); 
+                        
+                    kw=(Token)match(input,18,FOLLOW_18_in_ruleSequence931); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_3()); 
                         
 
                     }
@@ -928,17 +1005,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:347:6: (kw= '/-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:419:6: (kw= '/' kw= '-' (kw= '-' )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:347:6: (kw= '/-' (kw= '-' )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:348:2: kw= '/-' (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:419:6: (kw= '/' kw= '-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:420:2: kw= '/' kw= '-' (kw= '-' )*
                     {
-                    kw=(Token)match(input,22,FOLLOW_22_in_ruleSequence792); 
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSequence952); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusHyphenMinusKeyword_7_0()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_7_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:353:1: (kw= '-' )*
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence965); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_1()); 
+                        
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:431:1: (kw= '-' )*
                     loop11:
                     do {
                         int alt11=2;
@@ -951,12 +1033,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:354:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:432:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence806); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence979); 
 
                     	            current.merge(kw);
-                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_1()); 
+                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_2()); 
                     	        
 
                     	    }
@@ -974,27 +1056,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:360:6: ( (kw= '-' )* kw= '-\\\\\\\\' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:438:6: ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:360:6: ( (kw= '-' )* kw= '-\\\\\\\\' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:360:7: (kw= '-' )* kw= '-\\\\\\\\'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:438:6: ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:438:7: (kw= '-' )* kw= '-' kw= '\\\\\\\\'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:360:7: (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:438:7: (kw= '-' )*
                     loop12:
                     do {
                         int alt12=2;
                         int LA12_0 = input.LA(1);
 
                         if ( (LA12_0==14) ) {
-                            alt12=1;
+                            int LA12_1 = input.LA(2);
+
+                            if ( (LA12_1==14) ) {
+                                alt12=1;
+                            }
+
+
                         }
 
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:361:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:439:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence830); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1003); 
 
                     	            current.merge(kw);
                     	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_0()); 
@@ -1008,10 +1096,15 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,23,FOLLOW_23_in_ruleSequence845); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1018); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusReverseSolidusReverseSolidusKeyword_8_1()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_1()); 
+                        
+                    kw=(Token)match(input,20,FOLLOW_20_in_ruleSequence1031); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_8_2()); 
                         
 
                     }
@@ -1020,17 +1113,27 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:373:6: (kw= '//-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:457:6: (kw= '/' kw= '/' kw= '-' (kw= '-' )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:373:6: (kw= '//-' (kw= '-' )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:374:2: kw= '//-' (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:457:6: (kw= '/' kw= '/' kw= '-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:458:2: kw= '/' kw= '/' kw= '-' (kw= '-' )*
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleSequence866); 
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSequence1052); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusSolidusHyphenMinusKeyword_9_0()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_9_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:379:1: (kw= '-' )*
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSequence1065); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_9_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1078); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_2()); 
+                        
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:475:1: (kw= '-' )*
                     loop13:
                     do {
                         int alt13=2;
@@ -1043,12 +1146,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:380:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:476:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence880); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1092); 
 
                     	            current.merge(kw);
-                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_1()); 
+                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_3()); 
                     	        
 
                     	    }
@@ -1066,27 +1169,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:386:6: ( (kw= '-' )* kw= '->o' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:482:6: ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:386:6: ( (kw= '-' )* kw= '->o' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:386:7: (kw= '-' )* kw= '->o'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:482:6: ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:482:7: (kw= '-' )* kw= '-' kw= '>' kw= 'o'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:386:7: (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:482:7: (kw= '-' )*
                     loop14:
                     do {
                         int alt14=2;
                         int LA14_0 = input.LA(1);
 
                         if ( (LA14_0==14) ) {
-                            alt14=1;
+                            int LA14_1 = input.LA(2);
+
+                            if ( (LA14_1==14) ) {
+                                alt14=1;
+                            }
+
+
                         }
 
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:387:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:483:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence904); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1116); 
 
                     	            current.merge(kw);
                     	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_0()); 
@@ -1100,10 +1209,20 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleSequence919); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1131); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_10_1()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_1()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence1144); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_10_2()); 
+                        
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence1157); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_10_3()); 
                         
 
                     }
@@ -1112,17 +1231,27 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:399:6: (kw= 'o<-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:507:6: (kw= 'o' kw= '<' kw= '-' (kw= '-' )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:399:6: (kw= 'o<-' (kw= '-' )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:400:2: kw= 'o<-' (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:507:6: (kw= 'o' kw= '<' kw= '-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:508:2: kw= 'o' kw= '<' kw= '-' (kw= '-' )*
                     {
-                    kw=(Token)match(input,26,FOLLOW_26_in_ruleSequence940); 
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence1178); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_11_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:405:1: (kw= '-' )*
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence1191); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_11_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1204); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_2()); 
+                        
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:525:1: (kw= '-' )*
                     loop15:
                     do {
                         int alt15=2;
@@ -1135,12 +1264,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:406:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:526:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence954); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1218); 
 
                     	            current.merge(kw);
-                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_1()); 
+                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_3()); 
                     	        
 
                     	    }
@@ -1158,27 +1287,39 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:412:6: ( (kw= '-' )* kw= '--' kw= '//o' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:532:6: ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:412:6: ( (kw= '-' )* kw= '--' kw= '//o' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:412:7: (kw= '-' )* kw= '--' kw= '//o'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:532:6: ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:532:7: (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:412:7: (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:532:7: (kw= '-' )*
                     loop16:
                     do {
                         int alt16=2;
                         int LA16_0 = input.LA(1);
 
                         if ( (LA16_0==14) ) {
-                            alt16=1;
+                            int LA16_1 = input.LA(2);
+
+                            if ( (LA16_1==14) ) {
+                                int LA16_2 = input.LA(3);
+
+                                if ( (LA16_2==14) ) {
+                                    alt16=1;
+                                }
+
+
+                            }
+
+
                         }
 
 
                         switch (alt16) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:413:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:533:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence978); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1242); 
 
                     	            current.merge(kw);
                     	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_0()); 
@@ -1192,15 +1333,30 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleSequence993); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1257); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusHyphenMinusKeyword_12_1()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_1()); 
                         
-                    kw=(Token)match(input,28,FOLLOW_28_in_ruleSequence1006); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1270); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_12_2()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_2()); 
+                        
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSequence1283); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_12_3()); 
+                        
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSequence1296); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_12_4()); 
+                        
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence1309); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_12_5()); 
                         
 
                     }
@@ -1209,17 +1365,32 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:431:6: (kw= 'o\\\\\\\\--' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:569:6: (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:431:6: (kw= 'o\\\\\\\\--' (kw= '-' )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:432:2: kw= 'o\\\\\\\\--' (kw= '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:569:6: (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:570:2: kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )*
                     {
-                    kw=(Token)match(input,29,FOLLOW_29_in_ruleSequence1027); 
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence1330); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_13_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:437:1: (kw= '-' )*
+                    kw=(Token)match(input,20,FOLLOW_20_in_ruleSequence1343); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_13_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1356); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_2()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1369); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_3()); 
+                        
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:593:1: (kw= '-' )*
                     loop17:
                     do {
                         int alt17=2;
@@ -1232,12 +1403,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:438:2: kw= '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:594:2: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1041); 
+                    	    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1383); 
 
                     	            current.merge(kw);
-                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_1()); 
+                    	            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_4()); 
                     	        
 
                     	    }
@@ -1255,75 +1426,186 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:445:2: kw= '<->'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:600:6: (kw= '<' kw= '-' kw= '>' )
                     {
-                    kw=(Token)match(input,30,FOLLOW_30_in_ruleSequence1063); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:600:6: (kw= '<' kw= '-' kw= '>' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:601:2: kw= '<' kw= '-' kw= '>'
+                    {
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence1406); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_14()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_14_0()); 
                         
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1419); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_14_1()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence1432); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_14_2()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 16 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:452:2: kw= '<->o'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:619:6: (kw= '<' kw= '-' kw= '>' kw= 'o' )
                     {
-                    kw=(Token)match(input,31,FOLLOW_31_in_ruleSequence1082); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:619:6: (kw= '<' kw= '-' kw= '>' kw= 'o' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:620:2: kw= '<' kw= '-' kw= '>' kw= 'o'
+                    {
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence1453); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_15()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_15_0()); 
                         
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1466); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_15_1()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence1479); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_15_2()); 
+                        
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence1492); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_15_3()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 17 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:459:2: kw= 'o<->'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:644:6: (kw= 'o' kw= '<' kw= '-' kw= '>' )
                     {
-                    kw=(Token)match(input,32,FOLLOW_32_in_ruleSequence1101); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:644:6: (kw= 'o' kw= '<' kw= '-' kw= '>' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:645:2: kw= 'o' kw= '<' kw= '-' kw= '>'
+                    {
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleSequence1513); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_16()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_16_0()); 
                         
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence1526); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_16_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1539); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_16_2()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence1552); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_16_3()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 18 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:466:2: kw= '<|--'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:669:6: (kw= '<' kw= '|' kw= '-' kw= '-' )
                     {
-                    kw=(Token)match(input,33,FOLLOW_33_in_ruleSequence1120); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:669:6: (kw= '<' kw= '|' kw= '-' kw= '-' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:670:2: kw= '<' kw= '|' kw= '-' kw= '-'
+                    {
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSequence1573); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignVerticalLineHyphenMinusHyphenMinusKeyword_17()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_17_0()); 
                         
+                    kw=(Token)match(input,22,FOLLOW_22_in_ruleSequence1586); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getVerticalLineKeyword_17_1()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1599); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_2()); 
+                        
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1612); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_3()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 19 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:473:2: kw= '--|>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:694:6: (kw= '-' kw= '-' kw= '|' kw= '>' )
                     {
-                    kw=(Token)match(input,34,FOLLOW_34_in_ruleSequence1139); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:694:6: (kw= '-' kw= '-' kw= '|' kw= '>' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:695:2: kw= '-' kw= '-' kw= '|' kw= '>'
+                    {
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1633); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusHyphenMinusVerticalLineGreaterThanSignKeyword_18()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_0()); 
                         
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleSequence1646); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_1()); 
+                        
+                    kw=(Token)match(input,22,FOLLOW_22_in_ruleSequence1659); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getVerticalLineKeyword_18_2()); 
+                        
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleSequence1672); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_18_3()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 20 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:480:2: kw= '..'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:719:6: (kw= '.' kw= '.' )
                     {
-                    kw=(Token)match(input,35,FOLLOW_35_in_ruleSequence1158); 
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:719:6: (kw= '.' kw= '.' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:720:2: kw= '.' kw= '.'
+                    {
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleSequence1693); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopFullStopKeyword_19()); 
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopKeyword_19_0()); 
                         
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleSequence1706); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopKeyword_19_1()); 
+                        
+
+                    }
+
 
                     }
                     break;
                 case 21 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:487:2: kw= '.'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:733:2: kw= '.'
                     {
-                    kw=(Token)match(input,36,FOLLOW_36_in_ruleSequence1177); 
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleSequence1726); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopKeyword_20()); 
@@ -1352,7 +1634,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComment"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:500:1: entryRuleComment returns [EObject current=null] : iv_ruleComment= ruleComment EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:746:1: entryRuleComment returns [EObject current=null] : iv_ruleComment= ruleComment EOF ;
     public final EObject entryRuleComment() throws RecognitionException {
         EObject current = null;
 
@@ -1360,17 +1642,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:501:2: (iv_ruleComment= ruleComment EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:502:2: iv_ruleComment= ruleComment EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:747:2: (iv_ruleComment= ruleComment EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:748:2: iv_ruleComment= ruleComment EOF
             {
              newCompositeNode(grammarAccess.getCommentRule()); 
-            pushFollow(FOLLOW_ruleComment_in_entryRuleComment1217);
+            pushFollow(FOLLOW_ruleComment_in_entryRuleComment1766);
             iv_ruleComment=ruleComment();
 
             state._fsp--;
 
              current =iv_ruleComment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComment1227); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComment1776); 
 
             }
 
@@ -1388,7 +1670,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComment"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:509:1: ruleComment returns [EObject current=null] : ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:755:1: ruleComment returns [EObject current=null] : ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) ) ;
     public final EObject ruleComment() throws RecognitionException {
         EObject current = null;
 
@@ -1405,17 +1687,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:512:28: ( ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:513:1: ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:758:28: ( ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:759:1: ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:513:1: ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:759:1: ( (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' ) | (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' ) )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==37) ) {
+            if ( (LA21_0==24) ) {
                 alt21=1;
             }
-            else if ( (LA21_0==38) ) {
+            else if ( (LA21_0==25) ) {
                 alt21=2;
             }
             else {
@@ -1426,20 +1708,20 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:513:2: (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:759:2: (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:513:2: (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:513:4: otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\''
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:759:2: (otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\'' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:759:4: otherlv_0= '\\'' this_STRING_1= RULE_STRING otherlv_2= '\\''
                     {
-                    otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleComment1265); 
+                    otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleComment1814); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getCommentAccess().getApostropheKeyword_0_0());
                         
-                    this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComment1276); 
+                    this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComment1825); 
                      
                         newLeafNode(this_STRING_1, grammarAccess.getCommentAccess().getSTRINGTerminalRuleCall_0_1()); 
                         
-                    otherlv_2=(Token)match(input,37,FOLLOW_37_in_ruleComment1287); 
+                    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleComment1836); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getCommentAccess().getApostropheKeyword_0_2());
                         
@@ -1450,20 +1732,20 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:526:6: (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:772:6: (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:526:6: (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:526:8: otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:772:6: (otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/' )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:772:8: otherlv_3= '/\\'' this_STRING_4= RULE_STRING (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )* (this_WS_7= RULE_WS )* otherlv_8= '\\'/'
                     {
-                    otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleComment1307); 
+                    otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleComment1856); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getCommentAccess().getSolidusApostropheKeyword_1_0());
                         
-                    this_STRING_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComment1318); 
+                    this_STRING_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComment1867); 
                      
                         newLeafNode(this_STRING_4, grammarAccess.getCommentAccess().getSTRINGTerminalRuleCall_1_1()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:534:1: (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:780:1: (this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) ) )*
                     loop19:
                     do {
                         int alt19=2;
@@ -1482,19 +1764,19 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt19) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:534:2: this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:780:2: this_WS_5= RULE_WS ( (lv_strings_6_0= RULE_STRING ) )
                     	    {
-                    	    this_WS_5=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleComment1329); 
+                    	    this_WS_5=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleComment1878); 
                     	     
                     	        newLeafNode(this_WS_5, grammarAccess.getCommentAccess().getWSTerminalRuleCall_1_2_0()); 
                     	        
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:538:1: ( (lv_strings_6_0= RULE_STRING ) )
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:539:1: (lv_strings_6_0= RULE_STRING )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:784:1: ( (lv_strings_6_0= RULE_STRING ) )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:785:1: (lv_strings_6_0= RULE_STRING )
                     	    {
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:539:1: (lv_strings_6_0= RULE_STRING )
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:540:3: lv_strings_6_0= RULE_STRING
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:785:1: (lv_strings_6_0= RULE_STRING )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:786:3: lv_strings_6_0= RULE_STRING
                     	    {
-                    	    lv_strings_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComment1345); 
+                    	    lv_strings_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComment1894); 
 
                     	    			newLeafNode(lv_strings_6_0, grammarAccess.getCommentAccess().getStringsSTRINGTerminalRuleCall_1_2_1_0()); 
                     	    		
@@ -1523,7 +1805,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:556:4: (this_WS_7= RULE_WS )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:802:4: (this_WS_7= RULE_WS )*
                     loop20:
                     do {
                         int alt20=2;
@@ -1536,9 +1818,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt20) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:556:5: this_WS_7= RULE_WS
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:802:5: this_WS_7= RULE_WS
                     	    {
-                    	    this_WS_7=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleComment1364); 
+                    	    this_WS_7=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleComment1913); 
                     	     
                     	        newLeafNode(this_WS_7, grammarAccess.getCommentAccess().getWSTerminalRuleCall_1_3()); 
                     	        
@@ -1551,7 +1833,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,39,FOLLOW_39_in_ruleComment1377); 
+                    otherlv_8=(Token)match(input,26,FOLLOW_26_in_ruleComment1926); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getCommentAccess().getApostropheSolidusKeyword_1_4());
                         
@@ -1582,7 +1864,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefinition"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:572:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:818:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
     public final EObject entryRuleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1590,17 +1872,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:573:2: (iv_ruleDefinition= ruleDefinition EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:574:2: iv_ruleDefinition= ruleDefinition EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:819:2: (iv_ruleDefinition= ruleDefinition EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:820:2: iv_ruleDefinition= ruleDefinition EOF
             {
              newCompositeNode(grammarAccess.getDefinitionRule()); 
-            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition1414);
+            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition1963);
             iv_ruleDefinition=ruleDefinition();
 
             state._fsp--;
 
              current =iv_ruleDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition1424); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition1973); 
 
             }
 
@@ -1618,7 +1900,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefinition"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:581:1: ruleDefinition returns [EObject current=null] : ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:827:1: ruleDefinition returns [EObject current=null] : ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) ) ;
     public final EObject ruleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1636,33 +1918,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:584:28: ( ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:585:1: ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:830:28: ( ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:831:1: ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:585:1: ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:831:1: ( (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) ) )
             int alt22=5;
             switch ( input.LA(1) ) {
-            case 40:
+            case 27:
                 {
                 alt22=1;
                 }
                 break;
-            case 41:
+            case 28:
                 {
                 alt22=2;
                 }
                 break;
-            case 42:
+            case 29:
                 {
                 alt22=3;
                 }
                 break;
-            case 43:
+            case 30:
                 {
                 alt22=4;
                 }
                 break;
-            case 44:
+            case 31:
                 {
                 alt22=5;
                 }
@@ -1676,22 +1958,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             switch (alt22) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:585:2: (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:831:2: (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:585:2: (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:585:4: otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:831:2: (otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:831:4: otherlv_0= 'actor' ( (lv_name_1_0= RULE_ID ) )
                     {
-                    otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleDefinition1462); 
+                    otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleDefinition2011); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getDefinitionAccess().getActorKeyword_0_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:589:1: ( (lv_name_1_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:590:1: (lv_name_1_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:835:1: ( (lv_name_1_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:836:1: (lv_name_1_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:590:1: (lv_name_1_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:591:3: lv_name_1_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:836:1: (lv_name_1_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:837:3: lv_name_1_0= RULE_ID
                     {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1479); 
+                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition2028); 
 
                     			newLeafNode(lv_name_1_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_0_1_0()); 
                     		
@@ -1718,22 +2000,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:608:6: (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:854:6: (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:608:6: (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:608:8: otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:854:6: (otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:854:8: otherlv_2= 'boundary' ( (lv_name_3_0= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,41,FOLLOW_41_in_ruleDefinition1504); 
+                    otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleDefinition2053); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getDefinitionAccess().getBoundaryKeyword_1_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:612:1: ( (lv_name_3_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:613:1: (lv_name_3_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:858:1: ( (lv_name_3_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:859:1: (lv_name_3_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:613:1: (lv_name_3_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:614:3: lv_name_3_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:859:1: (lv_name_3_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:860:3: lv_name_3_0= RULE_ID
                     {
-                    lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1521); 
+                    lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition2070); 
 
                     			newLeafNode(lv_name_3_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_1_1_0()); 
                     		
@@ -1760,22 +2042,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:631:6: (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:877:6: (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:631:6: (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:631:8: otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:877:6: (otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:877:8: otherlv_4= 'control' ( (lv_name_5_0= RULE_ID ) )
                     {
-                    otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleDefinition1546); 
+                    otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleDefinition2095); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getDefinitionAccess().getControlKeyword_2_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:635:1: ( (lv_name_5_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:636:1: (lv_name_5_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:881:1: ( (lv_name_5_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:882:1: (lv_name_5_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:636:1: (lv_name_5_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:637:3: lv_name_5_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:882:1: (lv_name_5_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:883:3: lv_name_5_0= RULE_ID
                     {
-                    lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1563); 
+                    lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition2112); 
 
                     			newLeafNode(lv_name_5_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_1_0()); 
                     		
@@ -1802,22 +2084,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:654:6: (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:900:6: (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:654:6: (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:654:8: otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:900:6: (otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:900:8: otherlv_6= 'entity' ( (lv_name_7_0= RULE_ID ) )
                     {
-                    otherlv_6=(Token)match(input,43,FOLLOW_43_in_ruleDefinition1588); 
+                    otherlv_6=(Token)match(input,30,FOLLOW_30_in_ruleDefinition2137); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getDefinitionAccess().getEntityKeyword_3_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:658:1: ( (lv_name_7_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:659:1: (lv_name_7_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:904:1: ( (lv_name_7_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:905:1: (lv_name_7_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:659:1: (lv_name_7_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:660:3: lv_name_7_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:905:1: (lv_name_7_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:906:3: lv_name_7_0= RULE_ID
                     {
-                    lv_name_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1605); 
+                    lv_name_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition2154); 
 
                     			newLeafNode(lv_name_7_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_3_1_0()); 
                     		
@@ -1844,22 +2126,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:677:6: (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:923:6: (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:677:6: (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:677:8: otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:923:6: (otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:923:8: otherlv_8= 'database' ( (lv_name_9_0= RULE_ID ) )
                     {
-                    otherlv_8=(Token)match(input,44,FOLLOW_44_in_ruleDefinition1630); 
+                    otherlv_8=(Token)match(input,31,FOLLOW_31_in_ruleDefinition2179); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getDefinitionAccess().getDatabaseKeyword_4_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:681:1: ( (lv_name_9_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:682:1: (lv_name_9_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:927:1: ( (lv_name_9_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:928:1: (lv_name_9_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:682:1: (lv_name_9_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:683:3: lv_name_9_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:928:1: (lv_name_9_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantuml.g:929:3: lv_name_9_0= RULE_ID
                     {
-                    lv_name_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1647); 
+                    lv_name_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition2196); 
 
                     			newLeafNode(lv_name_9_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_4_1_0()); 
                     		
@@ -1914,25 +2196,25 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     static final String DFA4_eofS =
         "\1\3\12\uffff";
     static final String DFA4_minS =
-        "\1\4\2\5\1\uffff\1\45\1\6\1\uffff\1\5\1\uffff\2\6";
+        "\1\4\2\5\1\uffff\1\30\1\6\1\uffff\1\5\1\uffff\2\6";
     static final String DFA4_maxS =
-        "\1\54\2\5\1\uffff\1\45\1\47\1\uffff\1\47\1\uffff\2\47";
+        "\1\37\2\5\1\uffff\1\30\1\32\1\uffff\1\32\1\uffff\2\32";
     static final String DFA4_acceptS =
         "\3\uffff\1\2\2\uffff\1\1\1\uffff\1\1\2\uffff";
     static final String DFA4_specialS =
         "\13\uffff}>";
     static final String[] DFA4_transitionS = {
-            "\1\3\7\uffff\1\3\30\uffff\1\1\1\2\1\uffff\5\3",
+            "\1\3\7\uffff\1\3\13\uffff\1\1\1\2\1\uffff\5\3",
             "\1\4",
             "\1\5",
             "",
             "\1\6",
-            "\1\7\40\uffff\1\10",
+            "\1\7\23\uffff\1\10",
             "",
-            "\1\11\1\12\40\uffff\1\10",
+            "\1\11\1\12\23\uffff\1\10",
             "",
-            "\1\7\40\uffff\1\10",
-            "\1\12\40\uffff\1\10"
+            "\1\7\23\uffff\1\10",
+            "\1\12\23\uffff\1\10"
     };
 
     static final short[] DFA4_eot = DFA.unpackEncodedString(DFA4_eotS);
@@ -1969,23 +2251,41 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA18_eotS =
-        "\27\uffff";
+        "\43\uffff";
     static final String DFA18_eofS =
-        "\27\uffff";
+        "\6\uffff\1\23\1\26\3\uffff\1\35\14\uffff\1\26\3\uffff\1\40\1\uffff"+
+        "\1\42\4\uffff";
     static final String DFA18_minS =
-        "\2\16\25\uffff";
+        "\3\16\1\uffff\1\16\1\20\2\4\1\16\2\uffff\1\4\4\uffff\1\16\7\uffff"+
+        "\1\4\1\uffff\1\16\1\uffff\1\4\1\uffff\1\4\4\uffff";
     static final String DFA18_maxS =
-        "\1\44\1\33\25\uffff";
+        "\1\27\1\24\1\26\1\uffff\1\23\1\24\1\27\1\25\1\26\2\uffff\1\17\4"+
+        "\uffff\1\16\7\uffff\1\25\1\uffff\1\24\1\uffff\1\25\1\uffff\1\17"+
+        "\4\uffff";
     static final String DFA18_acceptS =
-        "\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
-        "\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25";
+        "\3\uffff\1\4\5\uffff\1\7\1\11\1\uffff\1\22\1\6\1\10\1\12\1\uffff"+
+        "\1\16\1\24\1\25\1\3\1\13\1\1\1\5\1\uffff\1\23\1\uffff\1\15\1\uffff"+
+        "\1\2\1\uffff\1\20\1\17\1\21\1\14";
     static final String DFA18_specialS =
-        "\27\uffff}>";
+        "\43\uffff}>";
     static final String[] DFA18_transitionS = {
-            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15"+
-            "\1\16\1\uffff\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26",
-            "\1\1\1\2\3\uffff\1\6\1\uffff\1\10\1\uffff\1\12\1\uffff\1\14"+
-            "\1\uffff\1\16",
+            "\1\1\1\uffff\1\2\1\3\1\uffff\1\4\1\uffff\1\5\1\uffff\1\6",
+            "\1\10\1\7\2\uffff\1\11\1\uffff\1\12",
+            "\1\13\1\uffff\1\15\5\uffff\1\14",
+            "",
+            "\1\16\4\uffff\1\17",
+            "\1\20\3\uffff\1\21",
+            "\1\23\22\uffff\1\22",
+            "\1\26\12\uffff\1\27\1\uffff\1\24\3\uffff\1\25",
+            "\1\32\1\30\2\uffff\1\11\1\33\1\12\1\uffff\1\31",
+            "",
+            "",
+            "\1\35\11\uffff\1\35\1\34",
+            "",
+            "",
+            "",
+            "",
+            "\1\36",
             "",
             "",
             "",
@@ -1993,16 +2293,13 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
+            "\1\26\12\uffff\1\27\5\uffff\1\25",
             "",
+            "\1\32\1\30\2\uffff\1\11\1\33\1\12",
             "",
+            "\1\40\20\uffff\1\37",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\42\11\uffff\1\42\1\41",
             "",
             "",
             "",
@@ -2039,7 +2336,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             this.transition = DFA18_transition;
         }
         public String getDescription() {
-            return "268:1: ( ( (kw= '-' )* kw= '->' ) | (kw= '<-' (kw= '-' )* ) | kw= '->x' | kw= 'x<-' | ( (kw= '-' )* kw= '->>' ) | (kw= '<<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\' ) | (kw= '/-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-\\\\\\\\' ) | (kw= '//-' (kw= '-' )* ) | ( (kw= '-' )* kw= '->o' ) | (kw= 'o<-' (kw= '-' )* ) | ( (kw= '-' )* kw= '--' kw= '//o' ) | (kw= 'o\\\\\\\\--' (kw= '-' )* ) | kw= '<->' | kw= '<->o' | kw= 'o<->' | kw= '<|--' | kw= '--|>' | kw= '..' | kw= '.' )";
+            return "268:1: ( ( (kw= '-' )* kw= '-' kw= '>' ) | (kw= '<' kw= '-' (kw= '-' )* ) | (kw= '-' kw= '>' kw= 'x' ) | (kw= 'x' kw= '<' kw= '-' ) | ( (kw= '-' )* kw= '-' kw= '>' kw= '>' ) | (kw= '<' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\' kw= '\\\\' ) | (kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '\\\\\\\\' ) | (kw= '/' kw= '/' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' (kw= '-' )* ) | ( (kw= '-' )* kw= '-' kw= '-' kw= '/' kw= '/' kw= 'o' ) | (kw= 'o' kw= '\\\\\\\\' kw= '-' kw= '-' (kw= '-' )* ) | (kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '-' kw= '>' kw= 'o' ) | (kw= 'o' kw= '<' kw= '-' kw= '>' ) | (kw= '<' kw= '|' kw= '-' kw= '-' ) | (kw= '-' kw= '-' kw= '|' kw= '>' ) | (kw= '.' kw= '.' ) | kw= '.' )";
         }
     }
  
@@ -2049,77 +2346,118 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleDiagram_in_ruleModel130 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_ruleDiagram_in_entryRuleDiagram166 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDiagram176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleDiagram213 = new BitSet(new long[]{0x00001F6000001010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiagram234 = new BitSet(new long[]{0x00001F6000001010L});
+    public static final BitSet FOLLOW_11_in_ruleDiagram213 = new BitSet(new long[]{0x00000000FB001010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiagram234 = new BitSet(new long[]{0x00000000FB001010L});
     public static final BitSet FOLLOW_12_in_ruleDiagram247 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction283 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstruction293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInstruction336 = new BitSet(new long[]{0x0000001FEFFFC000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstruction336 = new BitSet(new long[]{0x0000000000AB4000L});
     public static final BitSet FOLLOW_ruleSequence_in_ruleInstruction357 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInstruction373 = new BitSet(new long[]{0x0000006000002002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstruction373 = new BitSet(new long[]{0x0000000003002002L});
     public static final BitSet FOLLOW_13_in_ruleInstruction391 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInstruction402 = new BitSet(new long[]{0x0000006000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInstruction402 = new BitSet(new long[]{0x0000000003000002L});
     public static final BitSet FOLLOW_ruleComment_in_ruleInstruction426 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComment_in_ruleInstruction456 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDefinition_in_ruleInstruction483 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSequence_in_entryRuleSequence519 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSequence530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence570 = new BitSet(new long[]{0x000000000000C000L});
-    public static final BitSet FOLLOW_15_in_ruleSequence585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleSequence606 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence620 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_17_in_ruleSequence642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleSequence661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence682 = new BitSet(new long[]{0x0000000000084000L});
-    public static final BitSet FOLLOW_19_in_ruleSequence697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleSequence718 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence732 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence756 = new BitSet(new long[]{0x0000000000204000L});
-    public static final BitSet FOLLOW_21_in_ruleSequence771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleSequence792 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence806 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence830 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_23_in_ruleSequence845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleSequence866 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence880 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence904 = new BitSet(new long[]{0x0000000002004000L});
-    public static final BitSet FOLLOW_25_in_ruleSequence919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleSequence940 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence954 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence978 = new BitSet(new long[]{0x0000000008004000L});
-    public static final BitSet FOLLOW_27_in_ruleSequence993 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleSequence1006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleSequence1027 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleSequence1041 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_30_in_ruleSequence1063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleSequence1082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleSequence1101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleSequence1120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleSequence1139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleSequence1158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleSequence1177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComment_in_entryRuleComment1217 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComment1227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleComment1265 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComment1276 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleComment1287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleComment1307 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComment1318 = new BitSet(new long[]{0x0000008000000040L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleComment1329 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComment1345 = new BitSet(new long[]{0x0000008000000040L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleComment1364 = new BitSet(new long[]{0x0000008000000040L});
-    public static final BitSet FOLLOW_39_in_ruleComment1377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition1414 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition1424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleDefinition1462 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleDefinition1504 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleDefinition1546 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleDefinition1588 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleDefinition1630 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence570 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence585 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleSequence619 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence632 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence646 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence669 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence682 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleSequence695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleSequence716 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSequence729 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence764 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence779 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence792 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleSequence826 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSequence839 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence852 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence866 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence890 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence905 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleSequence918 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleSequence931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleSequence952 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence965 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence979 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1003 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1018 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleSequence1031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleSequence1052 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleSequence1065 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1078 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1092 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1116 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1131 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence1144 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSequence1157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleSequence1178 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSequence1191 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1204 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1218 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1242 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1257 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1270 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleSequence1283 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleSequence1296 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSequence1309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleSequence1330 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleSequence1343 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1356 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1369 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1383 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_16_in_ruleSequence1406 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1419 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence1432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleSequence1453 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1466 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence1479 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSequence1492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleSequence1513 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSequence1526 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1539 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence1552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleSequence1573 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleSequence1586 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1599 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1633 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSequence1646 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleSequence1659 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSequence1672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleSequence1693 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleSequence1706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleSequence1726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComment_in_entryRuleComment1766 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComment1776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleComment1814 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComment1825 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleComment1836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleComment1856 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComment1867 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleComment1878 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComment1894 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleComment1913 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_26_in_ruleComment1926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition1963 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition1973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleDefinition2011 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition2028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleDefinition2053 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition2070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleDefinition2095 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition2112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleDefinition2137 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition2154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleDefinition2179 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition2196 = new BitSet(new long[]{0x0000000000000002L});
 
 }

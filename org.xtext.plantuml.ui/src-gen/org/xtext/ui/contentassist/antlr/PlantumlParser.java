@@ -46,6 +46,8 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getGroup_0_3(), "rule__Instruction__Group_0_3__0");
 					put(grammarAccess.getSequenceAccess().getGroup_0(), "rule__Sequence__Group_0__0");
 					put(grammarAccess.getSequenceAccess().getGroup_1(), "rule__Sequence__Group_1__0");
+					put(grammarAccess.getSequenceAccess().getGroup_2(), "rule__Sequence__Group_2__0");
+					put(grammarAccess.getSequenceAccess().getGroup_3(), "rule__Sequence__Group_3__0");
 					put(grammarAccess.getSequenceAccess().getGroup_4(), "rule__Sequence__Group_4__0");
 					put(grammarAccess.getSequenceAccess().getGroup_5(), "rule__Sequence__Group_5__0");
 					put(grammarAccess.getSequenceAccess().getGroup_6(), "rule__Sequence__Group_6__0");
@@ -56,6 +58,12 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSequenceAccess().getGroup_11(), "rule__Sequence__Group_11__0");
 					put(grammarAccess.getSequenceAccess().getGroup_12(), "rule__Sequence__Group_12__0");
 					put(grammarAccess.getSequenceAccess().getGroup_13(), "rule__Sequence__Group_13__0");
+					put(grammarAccess.getSequenceAccess().getGroup_14(), "rule__Sequence__Group_14__0");
+					put(grammarAccess.getSequenceAccess().getGroup_15(), "rule__Sequence__Group_15__0");
+					put(grammarAccess.getSequenceAccess().getGroup_16(), "rule__Sequence__Group_16__0");
+					put(grammarAccess.getSequenceAccess().getGroup_17(), "rule__Sequence__Group_17__0");
+					put(grammarAccess.getSequenceAccess().getGroup_18(), "rule__Sequence__Group_18__0");
+					put(grammarAccess.getSequenceAccess().getGroup_19(), "rule__Sequence__Group_19__0");
 					put(grammarAccess.getCommentAccess().getGroup_0(), "rule__Comment__Group_0__0");
 					put(grammarAccess.getCommentAccess().getGroup_1(), "rule__Comment__Group_1__0");
 					put(grammarAccess.getCommentAccess().getGroup_1_2(), "rule__Comment__Group_1_2__0");

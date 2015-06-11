@@ -272,39 +272,75 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_0_0()); 
     }
 )*
-	kw='->' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusGreaterThanSignKeyword_0_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_0_1()); 
+    }
+
+	kw='>' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_0_2()); 
     }
 )
     |(
-	kw='<-' 
+	kw='<' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignHyphenMinusKeyword_1_0()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_1_0()); 
     }
-(
+
 	kw='-' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_1()); 
     }
+(
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_2()); 
+    }
 )*)
-    |
-	kw='->x' 
+    |(
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_2()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_2_0()); 
     }
 
-    |
-	kw='x<-' 
+	kw='>' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_3()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_2_1()); 
     }
 
+	kw='x' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_2_2()); 
+    }
+)
+    |(
+	kw='x' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getXKeyword_3_0()); 
+    }
+
+	kw='<' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_3_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_3_2()); 
+    }
+)
     |((
 	kw='-' 
     {
@@ -312,23 +348,47 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_0()); 
     }
 )*
-	kw='->>' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusGreaterThanSignGreaterThanSignKeyword_4_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_1()); 
+    }
+
+	kw='>' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_2()); 
+    }
+
+	kw='>' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_3()); 
     }
 )
     |(
-	kw='<<-' 
+	kw='<' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignLessThanSignHyphenMinusKeyword_5_0()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_0()); 
+    }
+
+	kw='<' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_2()); 
     }
 (
 	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_3()); 
     }
 )*)
     |((
@@ -338,23 +398,41 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_0()); 
     }
 )*
-	kw='-\\' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusReverseSolidusKeyword_6_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_1()); 
+    }
+
+	kw='\\' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_2()); 
+    }
+
+	kw='\\' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_3()); 
     }
 )
     |(
-	kw='/-' 
+	kw='/' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusHyphenMinusKeyword_7_0()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_7_0()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_1()); 
     }
 (
 	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_2()); 
     }
 )*)
     |((
@@ -364,23 +442,41 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_0()); 
     }
 )*
-	kw='-\\\\' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusReverseSolidusReverseSolidusKeyword_8_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_1()); 
+    }
+
+	kw='\\\\' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_8_2()); 
     }
 )
     |(
-	kw='//-' 
+	kw='/' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusSolidusHyphenMinusKeyword_9_0()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_9_0()); 
+    }
+
+	kw='/' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_9_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_2()); 
     }
 (
 	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_3()); 
     }
 )*)
     |((
@@ -390,23 +486,47 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_0()); 
     }
 )*
-	kw='->o' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_10_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_1()); 
+    }
+
+	kw='>' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_10_2()); 
+    }
+
+	kw='o' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_10_3()); 
     }
 )
     |(
-	kw='o<-' 
+	kw='o' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_11_0()); 
+    }
+
+	kw='<' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_11_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_2()); 
     }
 (
 	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_3()); 
     }
 )*)
     |((
@@ -416,73 +536,199 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_0()); 
     }
 )*
-	kw='--' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusHyphenMinusKeyword_12_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_1()); 
     }
 
-	kw='//o' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_12_2()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_2()); 
+    }
+
+	kw='/' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_12_3()); 
+    }
+
+	kw='/' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getSolidusKeyword_12_4()); 
+    }
+
+	kw='o' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_12_5()); 
     }
 )
     |(
-	kw='o\\\\--' 
+	kw='o' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_13_0()); 
+    }
+
+	kw='\\\\' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_13_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_2()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_3()); 
     }
 (
 	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_1()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_4()); 
     }
 )*)
-    |
-	kw='<->' 
+    |(
+	kw='<' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_14()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_14_0()); 
     }
 
-    |
-	kw='<->o' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_15()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_14_1()); 
     }
 
-    |
-	kw='o<->' 
+	kw='>' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_16()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_14_2()); 
     }
-
-    |
-	kw='<|--' 
+)
+    |(
+	kw='<' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignVerticalLineHyphenMinusHyphenMinusKeyword_17()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_15_0()); 
     }
 
-    |
-	kw='--|>' 
+	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusHyphenMinusVerticalLineGreaterThanSignKeyword_18()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_15_1()); 
     }
 
-    |
-	kw='..' 
+	kw='>' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopFullStopKeyword_19()); 
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_15_2()); 
     }
 
+	kw='o' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_15_3()); 
+    }
+)
+    |(
+	kw='o' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getOKeyword_16_0()); 
+    }
+
+	kw='<' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_16_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_16_2()); 
+    }
+
+	kw='>' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_16_3()); 
+    }
+)
+    |(
+	kw='<' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getLessThanSignKeyword_17_0()); 
+    }
+
+	kw='|' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getVerticalLineKeyword_17_1()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_2()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_3()); 
+    }
+)
+    |(
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_0()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_1()); 
+    }
+
+	kw='|' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getVerticalLineKeyword_18_2()); 
+    }
+
+	kw='>' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_18_3()); 
+    }
+)
+    |(
+	kw='.' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopKeyword_19_0()); 
+    }
+
+	kw='.' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSequenceAccess().getFullStopKeyword_19_1()); 
+    }
+)
     |
 	kw='.' 
     {

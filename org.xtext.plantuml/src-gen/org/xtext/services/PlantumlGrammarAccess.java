@@ -131,197 +131,460 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLessThanSignHyphenMinusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Keyword cXKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cXKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cHyphenMinusKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Keyword cXKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cXKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Keyword cHyphenMinusKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignGreaterThanSignKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Keyword cLessThanSignLessThanSignHyphenMinusKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
 		private final Keyword cHyphenMinusKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusReverseSolidusKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cReverseSolidusKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
+		private final Keyword cReverseSolidusKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Keyword cSolidusHyphenMinusKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cSolidusKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
 		private final Keyword cHyphenMinusKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusReverseSolidusReverseSolidusKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cReverseSolidusReverseSolidusKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
 		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Keyword cSolidusSolidusHyphenMinusKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cSolidusKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cSolidusKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_9_2 = (Keyword)cGroup_9.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
 		private final Keyword cHyphenMinusKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cOKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_10_2 = (Keyword)cGroup_10.eContents().get(2);
+		private final Keyword cOKeyword_10_3 = (Keyword)cGroup_10.eContents().get(3);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
 		private final Keyword cOKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_11_2 = (Keyword)cGroup_11.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_11_3 = (Keyword)cGroup_11.eContents().get(3);
 		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
 		private final Keyword cHyphenMinusKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cHyphenMinusHyphenMinusKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Keyword cOKeyword_12_2 = (Keyword)cGroup_12.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_12_2 = (Keyword)cGroup_12.eContents().get(2);
+		private final Keyword cSolidusKeyword_12_3 = (Keyword)cGroup_12.eContents().get(3);
+		private final Keyword cSolidusKeyword_12_4 = (Keyword)cGroup_12.eContents().get(4);
+		private final Keyword cOKeyword_12_5 = (Keyword)cGroup_12.eContents().get(5);
 		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
 		private final Keyword cOKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cOKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
-		private final Keyword cOKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cLessThanSignVerticalLineHyphenMinusHyphenMinusKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cHyphenMinusHyphenMinusVerticalLineGreaterThanSignKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cFullStopFullStopKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cReverseSolidusReverseSolidusKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_13_2 = (Keyword)cGroup_13.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_13_3 = (Keyword)cGroup_13.eContents().get(3);
+		private final Keyword cHyphenMinusKeyword_13_4 = (Keyword)cGroup_13.eContents().get(4);
+		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
+		private final Keyword cLessThanSignKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_14_2 = (Keyword)cGroup_14.eContents().get(2);
+		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
+		private final Keyword cLessThanSignKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_15_2 = (Keyword)cGroup_15.eContents().get(2);
+		private final Keyword cOKeyword_15_3 = (Keyword)cGroup_15.eContents().get(3);
+		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
+		private final Keyword cOKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_16_2 = (Keyword)cGroup_16.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_16_3 = (Keyword)cGroup_16.eContents().get(3);
+		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
+		private final Keyword cLessThanSignKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
+		private final Keyword cVerticalLineKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_17_2 = (Keyword)cGroup_17.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_17_3 = (Keyword)cGroup_17.eContents().get(3);
+		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
+		private final Keyword cHyphenMinusKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
+		private final Keyword cVerticalLineKeyword_18_2 = (Keyword)cGroup_18.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_18_3 = (Keyword)cGroup_18.eContents().get(3);
+		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
+		private final Keyword cFullStopKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
+		private final Keyword cFullStopKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
 		private final Keyword cFullStopKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
 		
-		//// A sequence can be a number of arrows
 		//Sequence:
-		//	"-"* "->" | "<-" "-"* | "->x" | "x<-" | "-"* "->>" | "<<-" "-"* | "-"* "-\\" | "/-" "-"* | "-"* "-\\\\" | "//-" "-"*
-		//	| "-"* "->o" | "o<-" "-"* | "-"* "--" "//o" | "o\\\\--" "-"* | "<->" | "<->o" | "o<->" | "<|--" | "--|>" | ".." |
+		//	"-"* "-" // - = u002D  | > = u003E
+		//	">" | "<" "-" "-"* // < = u003C  | - = u002D
+		//	| "-" ">" // - = u002D  | > = u003E
+		//	"x" | "x" "<" // < = u003C | - = u002D
+		//	"-" | "-"* "-" ">" // - = u002D | > = u003E
+		//	">" | "<" "<" "-" "-"* // < = u003C | - = u002D
+		//	| "-"* "-" "\\" // - = u002D
+		//	"\\" | "/" "-" "-"* // / = u002F | - = u002D
+		//	| "-"* "-" // - = u002D
+		//	"\\\\" | "/" "/" "-" "-"* // / = u002F | - = u002D
+		//	| "-"* "-" ">" // - = u002D | > = u003E
+		//	"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
+		//	| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
+		//	"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
+		//	| "<" "-" // < = u003C | - = u002D | > = u003E
+		//	">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
+		//	"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
+		//	">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
+		//	"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
+		//	">" | "." // . = u002E
+		//	"." | // . = u002E
 		//	".";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"-"* "->" | "<-" "-"* | "->x" | "x<-" | "-"* "->>" | "<<-" "-"* | "-"* "-\\" | "/-" "-"* | "-"* "-\\\\" | "//-" "-"* |
-		//"-"* "->o" | "o<-" "-"* | "-"* "--" "//o" | "o\\\\--" "-"* | "<->" | "<->o" | "o<->" | "<|--" | "--|>" | ".." | "."
+		//"-"* "-" // - = u002D  | > = u003E
+		//">" | "<" "-" "-"* // < = u003C  | - = u002D
+		//| "-" ">" // - = u002D  | > = u003E
+		//"x" | "x" "<" // < = u003C | - = u002D
+		//"-" | "-"* "-" ">" // - = u002D | > = u003E
+		//">" | "<" "<" "-" "-"* // < = u003C | - = u002D
+		//| "-"* "-" "\\" // - = u002D
+		//"\\" | "/" "-" "-"* // / = u002F | - = u002D
+		//| "-"* "-" // - = u002D
+		//"\\\\" | "/" "/" "-" "-"* // / = u002F | - = u002D
+		//| "-"* "-" ">" // - = u002D | > = u003E
+		//"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
+		//| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
+		//"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
+		//| "<" "-" // < = u003C | - = u002D | > = u003E
+		//">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
+		//"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
+		//">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
+		//"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
+		//">" | "." // . = u002E
+		//"." | // . = u002E
+		//"."
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"-"* "->"
+		//"-"* "-" // - = u002D  | > = u003E
+		//">"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"-"*
 		public Keyword getHyphenMinusKeyword_0_0() { return cHyphenMinusKeyword_0_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_0_1() { return cHyphenMinusGreaterThanSignKeyword_0_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_0_1() { return cHyphenMinusKeyword_0_1; }
 
-		//"<-" "-"*
+		//// - = u002D  | > = u003E
+		//">"
+		public Keyword getGreaterThanSignKeyword_0_2() { return cGreaterThanSignKeyword_0_2; }
+
+		//"<" "-" "-"* // < = u003C  | - = u002D
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"<-"
-		public Keyword getLessThanSignHyphenMinusKeyword_1_0() { return cLessThanSignHyphenMinusKeyword_1_0; }
+		//"<"
+		public Keyword getLessThanSignKeyword_1_0() { return cLessThanSignKeyword_1_0; }
 
-		//"-"*
+		//"-"
 		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
 
-		//"->x"
-		public Keyword getXKeyword_2() { return cXKeyword_2; }
+		//"-"*
+		public Keyword getHyphenMinusKeyword_1_2() { return cHyphenMinusKeyword_1_2; }
 
-		//"x<-"
-		public Keyword getXKeyword_3() { return cXKeyword_3; }
+		//"-" ">" // - = u002D  | > = u003E
+		//"x"
+		public Group getGroup_2() { return cGroup_2; }
 
-		//"-"* "->>"
+		//"-"
+		public Keyword getHyphenMinusKeyword_2_0() { return cHyphenMinusKeyword_2_0; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_2_1() { return cGreaterThanSignKeyword_2_1; }
+
+		//// - = u002D  | > = u003E
+		//"x"
+		public Keyword getXKeyword_2_2() { return cXKeyword_2_2; }
+
+		//"x" "<" // < = u003C | - = u002D
+		//"-"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"x"
+		public Keyword getXKeyword_3_0() { return cXKeyword_3_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_3_1() { return cLessThanSignKeyword_3_1; }
+
+		//// < = u003C | - = u002D
+		//"-"
+		public Keyword getHyphenMinusKeyword_3_2() { return cHyphenMinusKeyword_3_2; }
+
+		//"-"* "-" ">" // - = u002D | > = u003E
+		//">"
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"-"*
 		public Keyword getHyphenMinusKeyword_4_0() { return cHyphenMinusKeyword_4_0; }
 
-		//"->>"
-		public Keyword getHyphenMinusGreaterThanSignGreaterThanSignKeyword_4_1() { return cHyphenMinusGreaterThanSignGreaterThanSignKeyword_4_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_4_1() { return cHyphenMinusKeyword_4_1; }
 
-		//"<<-" "-"*
+		//">"
+		public Keyword getGreaterThanSignKeyword_4_2() { return cGreaterThanSignKeyword_4_2; }
+
+		//// - = u002D | > = u003E
+		//">"
+		public Keyword getGreaterThanSignKeyword_4_3() { return cGreaterThanSignKeyword_4_3; }
+
+		//"<" "<" "-" "-"* // < = u003C | - = u002D
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"<<-"
-		public Keyword getLessThanSignLessThanSignHyphenMinusKeyword_5_0() { return cLessThanSignLessThanSignHyphenMinusKeyword_5_0; }
+		//"<"
+		public Keyword getLessThanSignKeyword_5_0() { return cLessThanSignKeyword_5_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_5_1() { return cLessThanSignKeyword_5_1; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_5_2() { return cHyphenMinusKeyword_5_2; }
 
 		//"-"*
-		public Keyword getHyphenMinusKeyword_5_1() { return cHyphenMinusKeyword_5_1; }
+		public Keyword getHyphenMinusKeyword_5_3() { return cHyphenMinusKeyword_5_3; }
 
-		//"-"* "-\\"
+		//"-"* "-" "\\" // - = u002D
+		//"\\"
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"-"*
 		public Keyword getHyphenMinusKeyword_6_0() { return cHyphenMinusKeyword_6_0; }
 
-		//"-\\"
-		public Keyword getHyphenMinusReverseSolidusKeyword_6_1() { return cHyphenMinusReverseSolidusKeyword_6_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_6_1() { return cHyphenMinusKeyword_6_1; }
 
-		//"/-" "-"*
+		//"\\"
+		public Keyword getReverseSolidusKeyword_6_2() { return cReverseSolidusKeyword_6_2; }
+
+		//// - = u002D
+		//"\\"
+		public Keyword getReverseSolidusKeyword_6_3() { return cReverseSolidusKeyword_6_3; }
+
+		//"/" "-" "-"* // / = u002F | - = u002D
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"/-"
-		public Keyword getSolidusHyphenMinusKeyword_7_0() { return cSolidusHyphenMinusKeyword_7_0; }
+		//"/"
+		public Keyword getSolidusKeyword_7_0() { return cSolidusKeyword_7_0; }
 
-		//"-"*
+		//"-"
 		public Keyword getHyphenMinusKeyword_7_1() { return cHyphenMinusKeyword_7_1; }
 
-		//"-"* "-\\\\"
+		//"-"*
+		public Keyword getHyphenMinusKeyword_7_2() { return cHyphenMinusKeyword_7_2; }
+
+		//"-"* "-" // - = u002D
+		//"\\\\"
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"-"*
 		public Keyword getHyphenMinusKeyword_8_0() { return cHyphenMinusKeyword_8_0; }
 
-		//"-\\\\"
-		public Keyword getHyphenMinusReverseSolidusReverseSolidusKeyword_8_1() { return cHyphenMinusReverseSolidusReverseSolidusKeyword_8_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_8_1() { return cHyphenMinusKeyword_8_1; }
 
-		//"//-" "-"*
+		//// - = u002D
+		//"\\\\"
+		public Keyword getReverseSolidusReverseSolidusKeyword_8_2() { return cReverseSolidusReverseSolidusKeyword_8_2; }
+
+		//"/" "/" "-" "-"* // / = u002F | - = u002D
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"//-"
-		public Keyword getSolidusSolidusHyphenMinusKeyword_9_0() { return cSolidusSolidusHyphenMinusKeyword_9_0; }
+		//"/"
+		public Keyword getSolidusKeyword_9_0() { return cSolidusKeyword_9_0; }
+
+		//"/"
+		public Keyword getSolidusKeyword_9_1() { return cSolidusKeyword_9_1; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_9_2() { return cHyphenMinusKeyword_9_2; }
 
 		//"-"*
-		public Keyword getHyphenMinusKeyword_9_1() { return cHyphenMinusKeyword_9_1; }
+		public Keyword getHyphenMinusKeyword_9_3() { return cHyphenMinusKeyword_9_3; }
 
-		//"-"* "->o"
+		//"-"* "-" ">" // - = u002D | > = u003E
+		//"o"
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"-"*
 		public Keyword getHyphenMinusKeyword_10_0() { return cHyphenMinusKeyword_10_0; }
 
-		//"->o"
-		public Keyword getOKeyword_10_1() { return cOKeyword_10_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_10_1() { return cHyphenMinusKeyword_10_1; }
 
-		//"o<-" "-"*
+		//">"
+		public Keyword getGreaterThanSignKeyword_10_2() { return cGreaterThanSignKeyword_10_2; }
+
+		//// - = u002D | > = u003E
+		//"o"
+		public Keyword getOKeyword_10_3() { return cOKeyword_10_3; }
+
+		//"o" "<" "-" "-"* // < = u003C | - = u002D
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"o<-"
+		//"o"
 		public Keyword getOKeyword_11_0() { return cOKeyword_11_0; }
 
-		//"-"*
-		public Keyword getHyphenMinusKeyword_11_1() { return cHyphenMinusKeyword_11_1; }
+		//"<"
+		public Keyword getLessThanSignKeyword_11_1() { return cLessThanSignKeyword_11_1; }
 
-		//"-"* "--" "//o"
+		//"-"
+		public Keyword getHyphenMinusKeyword_11_2() { return cHyphenMinusKeyword_11_2; }
+
+		//"-"*
+		public Keyword getHyphenMinusKeyword_11_3() { return cHyphenMinusKeyword_11_3; }
+
+		//"-"* "-" "-" "/" "/" // - = u002D | / = u002F
+		//"o"
 		public Group getGroup_12() { return cGroup_12; }
 
 		//"-"*
 		public Keyword getHyphenMinusKeyword_12_0() { return cHyphenMinusKeyword_12_0; }
 
-		//"--"
-		public Keyword getHyphenMinusHyphenMinusKeyword_12_1() { return cHyphenMinusHyphenMinusKeyword_12_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_12_1() { return cHyphenMinusKeyword_12_1; }
 
-		//"//o"
-		public Keyword getOKeyword_12_2() { return cOKeyword_12_2; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_12_2() { return cHyphenMinusKeyword_12_2; }
 
-		//"o\\\\--" "-"*
+		//"/"
+		public Keyword getSolidusKeyword_12_3() { return cSolidusKeyword_12_3; }
+
+		//"/"
+		public Keyword getSolidusKeyword_12_4() { return cSolidusKeyword_12_4; }
+
+		//// - = u002D | / = u002F
+		//"o"
+		public Keyword getOKeyword_12_5() { return cOKeyword_12_5; }
+
+		//"o" "\\\\" "-" "-" "-"* // - = u002D
 		public Group getGroup_13() { return cGroup_13; }
 
-		//"o\\\\--"
+		//"o"
 		public Keyword getOKeyword_13_0() { return cOKeyword_13_0; }
 
+		//"\\\\"
+		public Keyword getReverseSolidusReverseSolidusKeyword_13_1() { return cReverseSolidusReverseSolidusKeyword_13_1; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_13_2() { return cHyphenMinusKeyword_13_2; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_13_3() { return cHyphenMinusKeyword_13_3; }
+
 		//"-"*
-		public Keyword getHyphenMinusKeyword_13_1() { return cHyphenMinusKeyword_13_1; }
+		public Keyword getHyphenMinusKeyword_13_4() { return cHyphenMinusKeyword_13_4; }
 
-		//"<->"
-		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_14() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_14; }
+		//"<" "-" // < = u003C | - = u002D | > = u003E
+		//">"
+		public Group getGroup_14() { return cGroup_14; }
 
-		//"<->o"
-		public Keyword getOKeyword_15() { return cOKeyword_15; }
+		//"<"
+		public Keyword getLessThanSignKeyword_14_0() { return cLessThanSignKeyword_14_0; }
 
-		//"o<->"
-		public Keyword getOKeyword_16() { return cOKeyword_16; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_14_1() { return cHyphenMinusKeyword_14_1; }
 
-		//"<|--"
-		public Keyword getLessThanSignVerticalLineHyphenMinusHyphenMinusKeyword_17() { return cLessThanSignVerticalLineHyphenMinusHyphenMinusKeyword_17; }
+		//// < = u003C | - = u002D | > = u003E
+		//">"
+		public Keyword getGreaterThanSignKeyword_14_2() { return cGreaterThanSignKeyword_14_2; }
 
-		//"--|>"
-		public Keyword getHyphenMinusHyphenMinusVerticalLineGreaterThanSignKeyword_18() { return cHyphenMinusHyphenMinusVerticalLineGreaterThanSignKeyword_18; }
+		//"<" "-" ">" // < = u003C | - = u002D | > = u003E
+		//"o"
+		public Group getGroup_15() { return cGroup_15; }
 
-		//".."
-		public Keyword getFullStopFullStopKeyword_19() { return cFullStopFullStopKeyword_19; }
+		//"<"
+		public Keyword getLessThanSignKeyword_15_0() { return cLessThanSignKeyword_15_0; }
 
+		//"-"
+		public Keyword getHyphenMinusKeyword_15_1() { return cHyphenMinusKeyword_15_1; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_15_2() { return cGreaterThanSignKeyword_15_2; }
+
+		//// < = u003C | - = u002D | > = u003E
+		//"o"
+		public Keyword getOKeyword_15_3() { return cOKeyword_15_3; }
+
+		//"o" "<" "-" // < = u003C | - = u002D | > = u003E
+		//">"
+		public Group getGroup_16() { return cGroup_16; }
+
+		//"o"
+		public Keyword getOKeyword_16_0() { return cOKeyword_16_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_16_1() { return cLessThanSignKeyword_16_1; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_16_2() { return cHyphenMinusKeyword_16_2; }
+
+		//// < = u003C | - = u002D | > = u003E
+		//">"
+		public Keyword getGreaterThanSignKeyword_16_3() { return cGreaterThanSignKeyword_16_3; }
+
+		//"<" "|" "-" // < = u003C | | = u007C | - = u002D
+		//"-"
+		public Group getGroup_17() { return cGroup_17; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_17_0() { return cLessThanSignKeyword_17_0; }
+
+		//"|"
+		public Keyword getVerticalLineKeyword_17_1() { return cVerticalLineKeyword_17_1; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_17_2() { return cHyphenMinusKeyword_17_2; }
+
+		//// < = u003C | | = u007C | - = u002D
+		//"-"
+		public Keyword getHyphenMinusKeyword_17_3() { return cHyphenMinusKeyword_17_3; }
+
+		//"-" "-" "|" // - = u002D | | = u007C | > = u003E
+		//">"
+		public Group getGroup_18() { return cGroup_18; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_18_0() { return cHyphenMinusKeyword_18_0; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_18_1() { return cHyphenMinusKeyword_18_1; }
+
+		//"|"
+		public Keyword getVerticalLineKeyword_18_2() { return cVerticalLineKeyword_18_2; }
+
+		//// - = u002D | | = u007C | > = u003E
+		//">"
+		public Keyword getGreaterThanSignKeyword_18_3() { return cGreaterThanSignKeyword_18_3; }
+
+		//"." // . = u002E
+		//"."
+		public Group getGroup_19() { return cGroup_19; }
+
+		//"."
+		public Keyword getFullStopKeyword_19_0() { return cFullStopKeyword_19_0; }
+
+		//// . = u002E
+		//"."
+		public Keyword getFullStopKeyword_19_1() { return cFullStopKeyword_19_1; }
+
+		//// . = u002E
 		//"."
 		public Keyword getFullStopKeyword_20() { return cFullStopKeyword_20; }
 	}
@@ -571,10 +834,28 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getInstructionAccess().getRule();
 	}
 
-	//// A sequence can be a number of arrows
 	//Sequence:
-	//	"-"* "->" | "<-" "-"* | "->x" | "x<-" | "-"* "->>" | "<<-" "-"* | "-"* "-\\" | "/-" "-"* | "-"* "-\\\\" | "//-" "-"*
-	//	| "-"* "->o" | "o<-" "-"* | "-"* "--" "//o" | "o\\\\--" "-"* | "<->" | "<->o" | "o<->" | "<|--" | "--|>" | ".." |
+	//	"-"* "-" // - = u002D  | > = u003E
+	//	">" | "<" "-" "-"* // < = u003C  | - = u002D
+	//	| "-" ">" // - = u002D  | > = u003E
+	//	"x" | "x" "<" // < = u003C | - = u002D
+	//	"-" | "-"* "-" ">" // - = u002D | > = u003E
+	//	">" | "<" "<" "-" "-"* // < = u003C | - = u002D
+	//	| "-"* "-" "\\" // - = u002D
+	//	"\\" | "/" "-" "-"* // / = u002F | - = u002D
+	//	| "-"* "-" // - = u002D
+	//	"\\\\" | "/" "/" "-" "-"* // / = u002F | - = u002D
+	//	| "-"* "-" ">" // - = u002D | > = u003E
+	//	"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
+	//	| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
+	//	"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
+	//	| "<" "-" // < = u003C | - = u002D | > = u003E
+	//	">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
+	//	"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
+	//	">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
+	//	"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
+	//	">" | "." // . = u002E
+	//	"." | // . = u002E
 	//	".";
 	public SequenceElements getSequenceAccess() {
 		return pSequence;

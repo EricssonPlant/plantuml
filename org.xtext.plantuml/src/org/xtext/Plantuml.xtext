@@ -15,20 +15,37 @@ Diagram:
 
 // An instruction is either a sequence or a comment
 Instruction:
-	(name=ID Sequence name=ID (':' String)?) 
-	| Comments
+	(name=ID Sequence name=ID (':' STRING)? (Comment)?) 
+	| Comment
 ;
 
 // A sequence can be a number of arrows
 Sequence:
+	('-')* '->'
+	| '<-' ('-')* 
+	| '->x'
+	| 'x<-' 
+	| ('-')* '->>'
+	| '<<-' ('-')*
+	| ('-')* '-\\'
+	| '/-' ('-')*
+	| ('-')* '-\\\\' 
+	| '//-' ('-')*
+	| ('-')* '->o'
+	| 'o<-' ('-')*
+	| ('-')* '--' '//o' 
+	| 'o\\\\--' ('-')*
+	| '<->' 
+	| '<->o' 
+	| 'o<->' 
+	| '<|--' 
+	| '--|>' 
+	| '..' 
+	| '.'
 	
 ;
 
 // A comment can be single or multi
 Comment:
-	
-;
-
-String:
 	
 ;

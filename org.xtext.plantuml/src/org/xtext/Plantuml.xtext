@@ -16,7 +16,8 @@ Diagram:
 // An instruction is either a sequence or a comment
 Instruction:
 	(name=ID Sequence name=ID (':' STRING)?) 
-	| Comments
+	| Comment
+	| Definition
 ;
 
 // A sequence can be a number of arrows
@@ -28,4 +29,14 @@ Sequence:
 Comment:
 	"'" STRING "'"
 	| "/'" STRING (WS strings+=STRING)* (WS)* "'/"
+;
+	
+// Rule for defining objects in PlantUML, such as
+// actors, boundaries, controls, entities and databases
+Definition:
+	'actor' name=ID 
+	| 'boundary' name=ID
+	| 'control' name=ID
+	| 'entity' name=ID
+	| 'database' name=ID
 ;

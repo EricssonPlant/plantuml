@@ -4,18 +4,18 @@ generate plantuml "http://www.xtext.org/Plantuml"
 
 // Model is a number of @startuml's and @enduml's
 Model:
-	Diagrams+=Diagram*;
+	diagrams+=Diagram*;
 	
 // A diagram starts with @Startuml and ends with @enduml, 
 // with some number of instructions in between
 Diagram:
-	'@startuml' (Instructions += Instruction)* '@enduml'
+	'@startuml' (instructions+=Instruction)* '@enduml'
 ;
 
 
 // An instruction is either a sequence or a comment
 Instruction:
-	(name=ID Sequence name=ID (':' String)?) 
+	(name=ID Sequence name=ID (':' STRING)?) 
 	| Comments
 ;
 
@@ -24,11 +24,8 @@ Sequence:
 	
 ;
 
-// A comment can be single or multi
+// A comment can be single- or multiline
 Comment:
-	
-;
-
-String:
-	
+	"'" STRING "'"
+	| "/'" STRING (WS strings+=STRING)* (WS)* "'/"
 ;

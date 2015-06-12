@@ -20,7 +20,8 @@ import org.xtext.plantuml.PlantumlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.plantuml.impl.InstructionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.plantuml.impl.InstructionImpl#getName1 <em>Name1</em>}</li>
+ *   <li>{@link org.xtext.plantuml.impl.InstructionImpl#getName2 <em>Name2</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +29,44 @@ import org.xtext.plantuml.PlantumlPackage;
 public class InstructionImpl extends MinimalEObjectImpl.Container implements Instruction
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getName1() <em>Name1</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getName1()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String NAME1_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName1() <em>Name1</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getName1()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String name1 = NAME1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName2() <em>Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName2()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName2() <em>Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName2()
+   * @generated
+   * @ordered
+   */
+  protected String name2 = NAME2_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +94,9 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getName1()
   {
-    return name;
+    return name1;
   }
 
   /**
@@ -83,12 +104,35 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setName1(String newName1)
   {
-    String oldName = name;
-    name = newName;
+    String oldName1 = name1;
+    name1 = newName1;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlantumlPackage.INSTRUCTION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlantumlPackage.INSTRUCTION__NAME1, oldName1, name1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName2()
+  {
+    return name2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName2(String newName2)
+  {
+    String oldName2 = name2;
+    name2 = newName2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlantumlPackage.INSTRUCTION__NAME2, oldName2, name2));
   }
 
   /**
@@ -101,8 +145,10 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
   {
     switch (featureID)
     {
-      case PlantumlPackage.INSTRUCTION__NAME:
-        return getName();
+      case PlantumlPackage.INSTRUCTION__NAME1:
+        return getName1();
+      case PlantumlPackage.INSTRUCTION__NAME2:
+        return getName2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +163,11 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
   {
     switch (featureID)
     {
-      case PlantumlPackage.INSTRUCTION__NAME:
-        setName((String)newValue);
+      case PlantumlPackage.INSTRUCTION__NAME1:
+        setName1((String)newValue);
+        return;
+      case PlantumlPackage.INSTRUCTION__NAME2:
+        setName2((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +183,11 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
   {
     switch (featureID)
     {
-      case PlantumlPackage.INSTRUCTION__NAME:
-        setName(NAME_EDEFAULT);
+      case PlantumlPackage.INSTRUCTION__NAME1:
+        setName1(NAME1_EDEFAULT);
+        return;
+      case PlantumlPackage.INSTRUCTION__NAME2:
+        setName2(NAME2_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +203,10 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
   {
     switch (featureID)
     {
-      case PlantumlPackage.INSTRUCTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PlantumlPackage.INSTRUCTION__NAME1:
+        return NAME1_EDEFAULT == null ? name1 != null : !NAME1_EDEFAULT.equals(name1);
+      case PlantumlPackage.INSTRUCTION__NAME2:
+        return NAME2_EDEFAULT == null ? name2 != null : !NAME2_EDEFAULT.equals(name2);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +222,10 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (name1: ");
+    result.append(name1);
+    result.append(", name2: ");
+    result.append(name2);
     result.append(')');
     return result.toString();
   }

@@ -170,9 +170,19 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInstruction_Name()
+  public EAttribute getInstruction_Name1()
   {
     return (EAttribute)instructionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstruction_Name2()
+  {
+    return (EAttribute)instructionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -183,6 +193,16 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
   public EClass getDefinition()
   {
     return definitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDefinition_Name()
+  {
+    return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -222,9 +242,11 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     createEReference(diagramEClass, DIAGRAM__INSTRUCTIONS);
 
     instructionEClass = createEClass(INSTRUCTION);
-    createEAttribute(instructionEClass, INSTRUCTION__NAME);
+    createEAttribute(instructionEClass, INSTRUCTION__NAME1);
+    createEAttribute(instructionEClass, INSTRUCTION__NAME2);
 
     definitionEClass = createEClass(DEFINITION);
+    createEAttribute(definitionEClass, DEFINITION__NAME);
   }
 
   /**
@@ -266,9 +288,11 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     initEReference(getDiagram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInstruction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstruction_Name1(), ecorePackage.getEString(), "name1", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstruction_Name2(), ecorePackage.getEString(), "name2", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

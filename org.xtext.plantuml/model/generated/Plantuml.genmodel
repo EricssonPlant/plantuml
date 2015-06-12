@@ -14,8 +14,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Diagram/instructions"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Instruction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Instruction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Instruction/name1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Instruction/name2"/>
     </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//Definition"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Definition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

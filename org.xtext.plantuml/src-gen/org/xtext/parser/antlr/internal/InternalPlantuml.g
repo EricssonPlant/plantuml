@@ -165,9 +165,9 @@ ruleInstruction returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_name_0_0=RULE_ID
+		lv_name1_0_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getInstructionAccess().getNameIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_name1_0_0, grammarAccess.getInstructionAccess().getName1IDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -175,8 +175,8 @@ ruleInstruction returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"name",
-        		lv_name_0_0, 
+       			"name1",
+        		lv_name1_0_0, 
         		"ID");
 	    }
 
@@ -191,9 +191,9 @@ ruleSequence
     }
 (
 (
-		lv_name_2_0=RULE_ID
+		lv_name2_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_2_0, grammarAccess.getInstructionAccess().getNameIDTerminalRuleCall_0_2_0()); 
+			newLeafNode(lv_name2_2_0, grammarAccess.getInstructionAccess().getName2IDTerminalRuleCall_0_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -201,8 +201,8 @@ ruleSequence
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"name",
-        		lv_name_2_0, 
+       			"name2",
+        		lv_name2_2_0, 
         		"ID");
 	    }
 
@@ -226,16 +226,24 @@ this_ID_4=RULE_ID
     newLeafNode(this_SL_COMMENT_6, grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()); 
     }
 
-    |
+    |(
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_3_0()); 
     }
     this_Definition_7=ruleDefinition
     { 
         $current = $this_Definition_7.current; 
         afterParserOrEnumRuleCall();
     }
-
+(
+    { 
+        newCompositeNode(grammarAccess.getInstructionAccess().getColorParserRuleCall_3_1()); 
+    }
+ruleColor
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?)
     |
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()); 
@@ -918,11 +926,1052 @@ ruleAutoNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 
 
 
+// Entry rule entryRuleColor
+entryRuleColor returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getColorRule()); } 
+	 iv_ruleColor=ruleColor 
+	 { $current=$iv_ruleColor.current.getText(); }  
+	 EOF 
+;
+
+// Rule Color
+ruleColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+	kw='#' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getNumberSignKeyword_0()); 
+    }
+)+(
+	kw='AliceBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getAliceBlueKeyword_1_0()); 
+    }
+
+    |
+	kw='AntiqueWhite' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1_1()); 
+    }
+
+    |
+	kw='Aqua' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getAquaKeyword_1_2()); 
+    }
+
+    |
+	kw='Aquamarine' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getAquamarineKeyword_1_3()); 
+    }
+
+    |
+	kw='Azure' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getAzureKeyword_1_4()); 
+    }
+
+    |
+	kw='Beige' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBeigeKeyword_1_5()); 
+    }
+
+    |
+	kw='Bisque' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBisqueKeyword_1_6()); 
+    }
+
+    |
+	kw='Black' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBlackKeyword_1_7()); 
+    }
+
+    |
+	kw='BlanchedAlmond' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBlanchedAlmondKeyword_1_8()); 
+    }
+
+    |
+	kw='Blue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBlueKeyword_1_9()); 
+    }
+
+    |
+	kw='BlueViolet' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBlueVioletKeyword_1_10()); 
+    }
+
+    |
+	kw='Brown' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBrownKeyword_1_11()); 
+    }
+
+    |
+	kw='BurlyWood' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getBurlyWoodKeyword_1_12()); 
+    }
+
+    |
+	kw='CadetBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getCadetBlueKeyword_1_13()); 
+    }
+
+    |
+	kw='Chartreuse' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getChartreuseKeyword_1_14()); 
+    }
+
+    |
+	kw='Chocolate' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getChocolateKeyword_1_15()); 
+    }
+
+    |
+	kw='Coral' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getCoralKeyword_1_16()); 
+    }
+
+    |
+	kw='CornflowerBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getCornflowerBlueKeyword_1_17()); 
+    }
+
+    |
+	kw='Cornsilk' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getCornsilkKeyword_1_18()); 
+    }
+
+    |
+	kw='Crimson' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getCrimsonKeyword_1_19()); 
+    }
+
+    |
+	kw='Cyan' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getCyanKeyword_1_20()); 
+    }
+
+    |
+	kw='DarkBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkBlueKeyword_1_21()); 
+    }
+
+    |
+	kw='DarkCyan' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkCyanKeyword_1_22()); 
+    }
+
+    |
+	kw='DarkGoldenRod' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGoldenRodKeyword_1_23()); 
+    }
+
+    |
+	kw='DarkGray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGrayKeyword_1_24()); 
+    }
+
+    |
+	kw='DarkGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGreenKeyword_1_25()); 
+    }
+
+    |
+	kw='DarkGrey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGreyKeyword_1_26()); 
+    }
+
+    |
+	kw='DarkKhaki' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkKhakiKeyword_1_27()); 
+    }
+
+    |
+	kw='DarkMagenta' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkMagentaKeyword_1_28()); 
+    }
+
+    |
+	kw='DarkOliveGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkOliveGreenKeyword_1_29()); 
+    }
+
+    |
+	kw='DarkOrchid' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkOrchidKeyword_1_30()); 
+    }
+
+    |
+	kw='DarkRed' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkRedKeyword_1_31()); 
+    }
+
+    |
+	kw='DarkSalmo' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSalmoKeyword_1_32()); 
+    }
+
+    |
+	kw='DarkSeaGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSeaGreenKeyword_1_33()); 
+    }
+
+    |
+	kw='DarkSlateBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateBlueKeyword_1_34()); 
+    }
+
+    |
+	kw='DarkSlateGray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateGrayKeyword_1_35()); 
+    }
+
+    |
+	kw='DarkSlateGrey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateGreyKeyword_1_36()); 
+    }
+
+    |
+	kw='DarkTurquoise' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkTurquoiseKeyword_1_37()); 
+    }
+
+    |
+	kw='DarkViolet' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkVioletKeyword_1_38()); 
+    }
+
+    |
+	kw='Darkorange' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDarkorangeKeyword_1_39()); 
+    }
+
+    |
+	kw='DeepPink' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDeepPinkKeyword_1_40()); 
+    }
+
+    |
+	kw='DeepSkyBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDeepSkyBlueKeyword_1_41()); 
+    }
+
+    |
+	kw='DimGray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDimGrayKeyword_1_42()); 
+    }
+
+    |
+	kw='DimGrey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDimGreyKeyword_1_43()); 
+    }
+
+    |
+	kw='DodgerBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getDodgerBlueKeyword_1_44()); 
+    }
+
+    |
+	kw='FireBrick' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getFireBrickKeyword_1_45()); 
+    }
+
+    |
+	kw='FloralWhite' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getFloralWhiteKeyword_1_46()); 
+    }
+
+    |
+	kw='ForestGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getForestGreenKeyword_1_47()); 
+    }
+
+    |
+	kw='Fuchsia' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getFuchsiaKeyword_1_48()); 
+    }
+
+    |
+	kw='Gainsboro' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGainsboroKeyword_1_49()); 
+    }
+
+    |
+	kw='GhostWhite' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGhostWhiteKeyword_1_50()); 
+    }
+
+    |
+	kw='Gold' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGoldKeyword_1_51()); 
+    }
+
+    |
+	kw='GoldenRod' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGoldenRodKeyword_1_52()); 
+    }
+
+    |
+	kw='Gray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGrayKeyword_1_53()); 
+    }
+
+    |
+	kw='Green' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGreenKeyword_1_54()); 
+    }
+
+    |
+	kw='GreenYellow' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGreenYellowKeyword_1_55()); 
+    }
+
+    |
+	kw='Grey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getGreyKeyword_1_56()); 
+    }
+
+    |
+	kw='HoneyDew' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getHoneyDewKeyword_1_57()); 
+    }
+
+    |
+	kw='HotPink' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getHotPinkKeyword_1_58()); 
+    }
+
+    |
+	kw='IndianRed' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getIndianRedKeyword_1_59()); 
+    }
+
+    |
+	kw='Indigo' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getIndigoKeyword_1_60()); 
+    }
+
+    |
+	kw='Ivory' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getIvoryKeyword_1_61()); 
+    }
+
+    |
+	kw='Khaki' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getKhakiKeyword_1_62()); 
+    }
+
+    |
+	kw='Lavender' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLavenderKeyword_1_63()); 
+    }
+
+    |
+	kw='LavenderBlush' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLavenderBlushKeyword_1_64()); 
+    }
+
+    |
+	kw='LawnGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLawnGreenKeyword_1_65()); 
+    }
+
+    |
+	kw='LemonChiffon' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLemonChiffonKeyword_1_66()); 
+    }
+
+    |
+	kw='LightBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightBlueKeyword_1_67()); 
+    }
+
+    |
+	kw='LightCoral' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightCoralKeyword_1_68()); 
+    }
+
+    |
+	kw='LightCyan' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightCyanKeyword_1_69()); 
+    }
+
+    |
+	kw='LightGoldenRodYellow' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_1_70()); 
+    }
+
+    |
+	kw='LightGray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightGrayKeyword_1_71()); 
+    }
+
+    |
+	kw='LightGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightGreenKeyword_1_72()); 
+    }
+
+    |
+	kw='LightGrey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightGreyKeyword_1_73()); 
+    }
+
+    |
+	kw='LightPink' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightPinkKeyword_1_74()); 
+    }
+
+    |
+	kw='LightSalmon' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightSalmonKeyword_1_75()); 
+    }
+
+    |
+	kw='LightSeaGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightSeaGreenKeyword_1_76()); 
+    }
+
+    |
+	kw='LightSkyBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightSkyBlueKeyword_1_77()); 
+    }
+
+    |
+	kw='LightSlateGray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightSlateGrayKeyword_1_78()); 
+    }
+
+    |
+	kw='LightSlateGrey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightSlateGreyKeyword_1_79()); 
+    }
+
+    |
+	kw='LightSteelBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightSteelBlueKeyword_1_80()); 
+    }
+
+    |
+	kw='LightYellow' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLightYellowKeyword_1_81()); 
+    }
+
+    |
+	kw='Lime' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLimeKeyword_1_82()); 
+    }
+
+    |
+	kw='LimeGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLimeGreenKeyword_1_83()); 
+    }
+
+    |
+	kw='Linen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getLinenKeyword_1_84()); 
+    }
+
+    |
+	kw='Magenta' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMagentaKeyword_1_85()); 
+    }
+
+    |
+	kw='Maroon' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMaroonKeyword_1_86()); 
+    }
+
+    |
+	kw='MediumAquaMarine' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumAquaMarineKeyword_1_87()); 
+    }
+
+    |
+	kw='MediumBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumBlueKeyword_1_88()); 
+    }
+
+    |
+	kw='MediumOrchid' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumOrchidKeyword_1_89()); 
+    }
+
+    |
+	kw='MediumPurple' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumPurpleKeyword_1_90()); 
+    }
+
+    |
+	kw='MediumSeaGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumSeaGreenKeyword_1_91()); 
+    }
+
+    |
+	kw='MediumSlateBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumSlateBlueKeyword_1_92()); 
+    }
+
+    |
+	kw='MediumSpringGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumSpringGreenKeyword_1_93()); 
+    }
+
+    |
+	kw='MediumTurquoise' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumTurquoiseKeyword_1_94()); 
+    }
+
+    |
+	kw='MediumVioletRed' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMediumVioletRedKeyword_1_95()); 
+    }
+
+    |
+	kw='MidnightBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMidnightBlueKeyword_1_96()); 
+    }
+
+    |
+	kw='MintCream' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMintCreamKeyword_1_97()); 
+    }
+
+    |
+	kw='MistyRose' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMistyRoseKeyword_1_98()); 
+    }
+
+    |
+	kw='Moccasin' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getMoccasinKeyword_1_99()); 
+    }
+
+    |
+	kw='NavajoWhite' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getNavajoWhiteKeyword_1_100()); 
+    }
+
+    |
+	kw='Navy' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getNavyKeyword_1_101()); 
+    }
+
+    |
+	kw='OldLace' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getOldLaceKeyword_1_102()); 
+    }
+
+    |
+	kw='Olive' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getOliveKeyword_1_103()); 
+    }
+
+    |
+	kw='OliveDrab' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getOliveDrabKeyword_1_104()); 
+    }
+
+    |
+	kw='OrangeRed' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getOrangeRedKeyword_1_105()); 
+    }
+
+    |
+	kw='Orchid' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getOrchidKeyword_1_106()); 
+    }
+
+    |
+	kw='PaleGoldenRod' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPaleGoldenRodKeyword_1_107()); 
+    }
+
+    |
+	kw='PaleGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPaleGreenKeyword_1_108()); 
+    }
+
+    |
+	kw='PaleTurquoise' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPaleTurquoiseKeyword_1_109()); 
+    }
+
+    |
+	kw='PaleVioletRed' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPaleVioletRedKeyword_1_110()); 
+    }
+
+    |
+	kw='PapayaWhip' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPapayaWhipKeyword_1_111()); 
+    }
+
+    |
+	kw='PeachPuff' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPeachPuffKeyword_1_112()); 
+    }
+
+    |
+	kw='Peru' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPeruKeyword_1_113()); 
+    }
+
+    |
+	kw='Pink' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPinkKeyword_1_114()); 
+    }
+
+    |
+	kw='Plum' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPlumKeyword_1_115()); 
+    }
+
+    |
+	kw='PowderBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPowderBlueKeyword_1_116()); 
+    }
+
+    |
+	kw='Purple' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getPurpleKeyword_1_117()); 
+    }
+
+    |
+	kw='Red' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getRedKeyword_1_118()); 
+    }
+
+    |
+	kw='RosyBrown' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getRosyBrownKeyword_1_119()); 
+    }
+
+    |
+	kw='RoyalBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getRoyalBlueKeyword_1_120()); 
+    }
+
+    |
+	kw='SaddleBrown' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSaddleBrownKeyword_1_121()); 
+    }
+
+    |
+	kw='Salmon' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSalmonKeyword_1_122()); 
+    }
+
+    |
+	kw='SandyBrown' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSandyBrownKeyword_1_123()); 
+    }
+
+    |
+	kw='SeaGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSeaGreenKeyword_1_124()); 
+    }
+
+    |
+	kw='Sienna' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSiennaKeyword_1_125()); 
+    }
+
+    |
+	kw='Silver' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSilverKeyword_1_126()); 
+    }
+
+    |
+	kw='SkyBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSkyBlueKeyword_1_127()); 
+    }
+
+    |
+	kw='SlateBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSlateBlueKeyword_1_128()); 
+    }
+
+    |
+	kw='SlateGray' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSlateGrayKeyword_1_129()); 
+    }
+
+    |
+	kw='SlateGrey' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSlateGreyKeyword_1_130()); 
+    }
+
+    |
+	kw='Snow' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSnowKeyword_1_131()); 
+    }
+
+    |
+	kw='SpringGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSpringGreenKeyword_1_132()); 
+    }
+
+    |
+	kw='SteelBlue' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getSteelBlueKeyword_1_133()); 
+    }
+
+    |
+	kw='Tan' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getTanKeyword_1_134()); 
+    }
+
+    |
+	kw='Teal' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getTealKeyword_1_135()); 
+    }
+
+    |
+	kw='Thistle' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getThistleKeyword_1_136()); 
+    }
+
+    |
+	kw='Tomato' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getTomatoKeyword_1_137()); 
+    }
+
+    |
+	kw='Turquoise' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getTurquoiseKeyword_1_138()); 
+    }
+
+    |
+	kw='Violet' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getVioletKeyword_1_139()); 
+    }
+
+    |
+	kw='Wheat' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getWheatKeyword_1_140()); 
+    }
+
+    |
+	kw='White' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getWhiteKeyword_1_141()); 
+    }
+
+    |
+	kw='WhiteSmoke' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getWhiteSmokeKeyword_1_142()); 
+    }
+
+    |
+	kw='Yellow' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getYellowKeyword_1_143()); 
+    }
+
+    |
+	kw='YellowGreen' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getColorAccess().getYellowGreenKeyword_1_144()); 
+    }
+))
+    ;
+
+
+
+
+
 RULE_ML_COMMENT : '/\'' ( options {greedy=false;} : . )*'\'/';
 
 RULE_SL_COMMENT : '\'' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_'|'\u00E5'|'\u00E4'|'\u00F6') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'\u00E5'|'\u00E4'|'\u00F6')*;
 
 RULE_INT : ('0'..'9')+;
 

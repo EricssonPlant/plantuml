@@ -10,7 +10,10 @@
         eType="#//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Instruction"/>
 </ecore:EPackage>

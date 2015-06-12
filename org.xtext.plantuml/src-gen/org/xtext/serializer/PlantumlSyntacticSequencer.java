@@ -23,12 +23,14 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PlantumlGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2;
+	protected AbstractElementAlias match_Instruction_ColorParserRuleCall_3_1_q;
 	protected AbstractElementAlias match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PlantumlGrammarAccess) access;
 		match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getML_COMMENTTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()));
+		match_Instruction_ColorParserRuleCall_3_1_q = new TokenAlias(false, true, grammarAccess.getInstructionAccess().getColorParserRuleCall_3_1());
 		match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getColonKeyword_0_3_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_3_1()));
 	}
 	
@@ -36,6 +38,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getAutoNumberRule())
 			return getAutoNumberToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getColorRule())
+			return getColorToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getML_COMMENTRule())
@@ -59,7 +63,38 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	 * Color:
+	 * 	'#'+('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
+	 * 	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
+	 * 	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
+	 * 	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
+	 * 	|'DarkSalmo'|'DarkSeaGreen'|'DarkSlateBlue'|'DarkSlateGray'|'DarkSlateGrey'|'DarkTurquoise'
+	 * 	|'DarkViolet'|'Darkorange'|'DeepPink'|'DeepSkyBlue'|'DimGray'|'DimGrey'|'DodgerBlue'
+	 * 	|'FireBrick'|'FloralWhite'|'ForestGreen'|'Fuchsia'|'Gainsboro'|'GhostWhite'|'Gold'
+	 * 	|'GoldenRod'|'Gray'|'Green'|'GreenYellow'|'Grey'|'HoneyDew'|'HotPink'|'IndianRed'
+	 * 	|'Indigo'|'Ivory'|'Khaki'|'Lavender'|'LavenderBlush'|'LawnGreen'|'LemonChiffon'
+	 * 	|'LightBlue'|'LightCoral'|'LightCyan'|'LightGoldenRodYellow'|'LightGray'|'LightGreen'
+	 * 	|'LightGrey'|'LightPink'|'LightSalmon'|'LightSeaGreen'|'LightSkyBlue'|'LightSlateGray'
+	 * 	|'LightSlateGrey'|'LightSteelBlue'|'LightYellow'|'Lime'|'LimeGreen'|'Linen'|'Magenta'
+	 * 	|'Maroon'|'MediumAquaMarine'|'MediumBlue'|'MediumOrchid'|'MediumPurple'|'MediumSeaGreen'
+	 * 	|'MediumSlateBlue'|'MediumSpringGreen'|'MediumTurquoise'|'MediumVioletRed'
+	 * 	|'MidnightBlue'|'MintCream'|'MistyRose'|'Moccasin'|'NavajoWhite'|'Navy'|'OldLace'
+	 * 	|'Olive'|'OliveDrab'|'OrangeRed'|'Orchid'|'PaleGoldenRod'|'PaleGreen'
+	 * 	|'PaleTurquoise'|'PaleVioletRed'|'PapayaWhip'|'PeachPuff'|'Peru'|'Pink'|'Plum'
+	 * 	|'PowderBlue'|'Purple'|'Red'|'RosyBrown'|'RoyalBlue'|'SaddleBrown'
+	 * 	|'Salmon'|'SandyBrown'|'SeaGreen'|'Sienna'|'Silver'|'SkyBlue'|'SlateBlue'
+	 * 	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
+	 * 	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
+	 * ;
+	 */
+	protected String getColorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "#AliceBlue";
+	}
+	
+	/**
+	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 	 */
 	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -104,6 +139,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2.equals(syntax))
 				emit_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction_ColorParserRuleCall_3_1_q.equals(syntax))
+				emit_Instruction_ColorParserRuleCall_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q.equals(syntax))
 				emit_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -123,10 +160,21 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (':' ID)?
+	 *     Color?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=ID (ambiguity) (rule end)
+	 */
+	protected void emit_Instruction_ColorParserRuleCall_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (':' ID)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name2=ID (ambiguity) (rule end)
 	 */
 	protected void emit_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

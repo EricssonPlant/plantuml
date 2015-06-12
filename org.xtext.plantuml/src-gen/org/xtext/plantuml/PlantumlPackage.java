@@ -123,13 +123,22 @@ public interface PlantumlPackage extends EPackage
   int INSTRUCTION = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name1</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTRUCTION__NAME = 0;
+  int INSTRUCTION__NAME1 = 0;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION__NAME2 = 1;
 
   /**
    * The number of structural features of the '<em>Instruction</em>' class.
@@ -138,7 +147,7 @@ public interface PlantumlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTRUCTION_FEATURE_COUNT = 1;
+  int INSTRUCTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -151,13 +160,31 @@ public interface PlantumlPackage extends EPackage
   int DEFINITION = 3;
 
   /**
+   * The feature id for the '<em><b>Name1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION__NAME1 = INSTRUCTION__NAME1;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION__NAME2 = INSTRUCTION__NAME2;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINITION__NAME = INSTRUCTION__NAME;
+  int DEFINITION__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Definition</em>' class.
@@ -166,7 +193,7 @@ public interface PlantumlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+  int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
 
   /**
@@ -222,15 +249,26 @@ public interface PlantumlPackage extends EPackage
   EClass getInstruction();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.plantuml.Instruction#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.plantuml.Instruction#getName1 <em>Name1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.plantuml.Instruction#getName()
+   * @return the meta object for the attribute '<em>Name1</em>'.
+   * @see org.xtext.plantuml.Instruction#getName1()
    * @see #getInstruction()
    * @generated
    */
-  EAttribute getInstruction_Name();
+  EAttribute getInstruction_Name1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.plantuml.Instruction#getName2 <em>Name2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name2</em>'.
+   * @see org.xtext.plantuml.Instruction#getName2()
+   * @see #getInstruction()
+   * @generated
+   */
+  EAttribute getInstruction_Name2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Definition <em>Definition</em>}'.
@@ -241,6 +279,17 @@ public interface PlantumlPackage extends EPackage
    * @generated
    */
   EClass getDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.plantuml.Definition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.plantuml.Definition#getName()
+   * @see #getDefinition()
+   * @generated
+   */
+  EAttribute getDefinition_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -312,12 +361,20 @@ public interface PlantumlPackage extends EPackage
     EClass INSTRUCTION = eINSTANCE.getInstruction();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name1</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INSTRUCTION__NAME = eINSTANCE.getInstruction_Name();
+    EAttribute INSTRUCTION__NAME1 = eINSTANCE.getInstruction_Name1();
+
+    /**
+     * The meta object literal for the '<em><b>Name2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTRUCTION__NAME2 = eINSTANCE.getInstruction_Name2();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -328,6 +385,14 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EClass DEFINITION = eINSTANCE.getDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFINITION__NAME = eINSTANCE.getDefinition_Name();
 
   }
 

@@ -1,10 +1,18 @@
-grammar org.xtext.Plantuml with org.eclipse.xtext.common.Terminals
+
+
+
+// Class for generating the grammar for the PlantUML language.
+
+
+grammar org.xtext.Plantuml 
+	with org.eclipse.xtext.common.Terminals
+	hidden (WS, SL_COMMENT)
 
 generate plantuml "http://www.xtext.org/Plantuml"
 
 // Model is a number of @startuml's and @enduml's
 Model:
-	diagrams+=Diagram*;
+	(diagrams+=Diagram)*;
 	
 // A diagram starts with @Startuml and ends with @enduml, 
 // with some number of instructions in between
@@ -12,12 +20,13 @@ Diagram:
 	'@startuml' (instructions+=Instruction)* '@enduml'
 ;
 
-
 // An instruction is either a sequence or a comment
 Instruction:
-	(name=ID Sequence name=ID (':' STRING)? (Comment)?) 
-	| Comment
+	(name=ID Sequence name=ID (':' STRING)?) 
+	| ML_COMMENT
+	| SL_COMMENT
 	| Definition
+	| AutoNumber
 
 ;
 
@@ -46,11 +55,6 @@ Sequence:
 	
 ;
 
-// A comment can be single- or multiline
-Comment:
-	"'" STRING "'"
-	| "/'" STRING (WS strings+=STRING)* (WS)* "'/"
-;
 	
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
@@ -60,4 +64,16 @@ Definition:
 	| 'control' name=ID
 	| 'entity' name=ID
 	| 'database' name=ID
+
 ;
+
+// Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
+AutoNumber:
+	'autonumber' (INT (INT)?)?
+;
+
+// Terminals
+terminal ML_COMMENT : '/\'' -> '\'/';
+terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
+
+

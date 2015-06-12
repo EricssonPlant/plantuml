@@ -67,7 +67,6 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
       case PlantumlPackage.MODEL: return createModel();
       case PlantumlPackage.DIAGRAM: return createDiagram();
       case PlantumlPackage.INSTRUCTION: return createInstruction();
-      case PlantumlPackage.COMMENT: return createComment();
       case PlantumlPackage.DEFINITION: return createDefinition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -105,17 +104,6 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     InstructionImpl instruction = new InstructionImpl();
     return instruction;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Comment createComment()
-  {
-    CommentImpl comment = new CommentImpl();
-    return comment;
   }
 
   /**

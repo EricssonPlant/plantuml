@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.plantuml.editor/src" modelPluginID="org.xtext.plantuml"
     forceOverwrite="true" modelName="Plantuml" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.plantuml.edit"
-    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.10">
+    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.11">
   <genPackages prefix="Plantuml" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="plantuml" ecorePackage="Plantuml.ecore#/">
     <genClasses ecoreClass="Plantuml.ecore#//Model">
@@ -15,9 +15,6 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Instruction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Instruction/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//Comment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Comment/strings"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition"/>
   </genPackages>

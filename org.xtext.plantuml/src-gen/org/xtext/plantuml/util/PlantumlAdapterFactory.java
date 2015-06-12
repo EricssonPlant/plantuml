@@ -90,11 +90,6 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
         return createInstructionAdapter();
       }
       @Override
-      public Adapter caseComment(Comment object)
-      {
-        return createCommentAdapter();
-      }
-      @Override
       public Adapter caseDefinition(Definition object)
       {
         return createDefinitionAdapter();
@@ -162,21 +157,6 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInstructionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.plantuml.Comment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.plantuml.Comment
-   * @generated
-   */
-  public Adapter createCommentAdapter()
   {
     return null;
   }

@@ -141,43 +141,6 @@ public interface PlantumlPackage extends EPackage
   int INSTRUCTION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.plantuml.impl.CommentImpl <em>Comment</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.plantuml.impl.CommentImpl
-   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getComment()
-   * @generated
-   */
-  int COMMENT = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMENT__NAME = INSTRUCTION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Strings</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMENT__STRINGS = INSTRUCTION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Comment</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMENT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -185,7 +148,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getDefinition()
    * @generated
    */
-  int DEFINITION = 4;
+  int DEFINITION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -268,27 +231,6 @@ public interface PlantumlPackage extends EPackage
    * @generated
    */
   EAttribute getInstruction_Name();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.plantuml.Comment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comment</em>'.
-   * @see org.xtext.plantuml.Comment
-   * @generated
-   */
-  EClass getComment();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Comment#getStrings <em>Strings</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Strings</em>'.
-   * @see org.xtext.plantuml.Comment#getStrings()
-   * @see #getComment()
-   * @generated
-   */
-  EAttribute getComment_Strings();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Definition <em>Definition</em>}'.
@@ -376,24 +318,6 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EAttribute INSTRUCTION__NAME = eINSTANCE.getInstruction_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.plantuml.impl.CommentImpl <em>Comment</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.plantuml.impl.CommentImpl
-     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getComment()
-     * @generated
-     */
-    EClass COMMENT = eINSTANCE.getComment();
-
-    /**
-     * The meta object literal for the '<em><b>Strings</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMMENT__STRINGS = eINSTANCE.getComment_Strings();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.

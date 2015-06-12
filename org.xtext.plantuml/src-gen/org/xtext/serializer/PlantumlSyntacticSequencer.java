@@ -22,39 +22,67 @@ import org.xtext.services.PlantumlGrammarAccess;
 public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PlantumlGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Comment_WSTerminalRuleCall_1_3_a;
-	protected AbstractElementAlias match_Comment___ApostropheKeyword_0_0_STRINGTerminalRuleCall_0_1_ApostropheKeyword_0_2___or___SolidusApostropheKeyword_1_0_STRINGTerminalRuleCall_1_1_WSTerminalRuleCall_1_3_a_ApostropheSolidusKeyword_1_4__;
-	protected AbstractElementAlias match_Instruction___ColonKeyword_0_3_0_STRINGTerminalRuleCall_0_3_1__q;
+	protected AbstractElementAlias match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2;
+	protected AbstractElementAlias match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PlantumlGrammarAccess) access;
-		match_Comment_WSTerminalRuleCall_1_3_a = new TokenAlias(true, true, grammarAccess.getCommentAccess().getWSTerminalRuleCall_1_3());
-		match_Comment___ApostropheKeyword_0_0_STRINGTerminalRuleCall_0_1_ApostropheKeyword_0_2___or___SolidusApostropheKeyword_1_0_STRINGTerminalRuleCall_1_1_WSTerminalRuleCall_1_3_a_ApostropheSolidusKeyword_1_4__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getCommentAccess().getApostropheKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getCommentAccess().getSTRINGTerminalRuleCall_0_1()), new TokenAlias(false, false, grammarAccess.getCommentAccess().getApostropheKeyword_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getCommentAccess().getSolidusApostropheKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getCommentAccess().getSTRINGTerminalRuleCall_1_1()), new TokenAlias(true, true, grammarAccess.getCommentAccess().getWSTerminalRuleCall_1_3()), new TokenAlias(false, false, grammarAccess.getCommentAccess().getApostropheSolidusKeyword_1_4())));
-		match_Instruction___ColonKeyword_0_3_0_STRINGTerminalRuleCall_0_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getColonKeyword_0_3_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getSTRINGTerminalRuleCall_0_3_1()));
+		match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getML_COMMENTTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()));
+		match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getColonKeyword_0_3_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_3_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
-			return getSTRINGToken(semanticObject, ruleCall, node);
+		if(ruleCall.getRule() == grammarAccess.getAutoNumberRule())
+			return getAutoNumberToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getIDRule())
+			return getIDToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getML_COMMENTRule())
+			return getML_COMMENTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getSL_COMMENTRule())
+			return getSL_COMMENTToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSequenceRule())
 			return getSequenceToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getWSRule())
-			return getWSToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * terminal STRING	: 
-	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"' |
-	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"
-	 * 		;
+	 * AutoNumber:
+	 * 	'autonumber' (INT (INT)?)?
+	 * ;
 	 */
-	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getAutoNumberToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "\"\"";
+		return "autonumber";
+	}
+	
+	/**
+	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	 */
+	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * terminal ML_COMMENT : '/\'' -> '\'/';
+	 */
+	protected String getML_COMMENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "/\'";
+	}
+	
+	/**
+	 * terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
+	 */
+	protected String getSL_COMMENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\'";
 	}
 	
 	/**
@@ -68,61 +96,39 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "->";
 	}
 	
-	/**
-	 * terminal WS			: (' '|'\t'|'\r'|'\n')+;
-	 */
-	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return " ";
-	}
-	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Comment_WSTerminalRuleCall_1_3_a.equals(syntax))
-				emit_Comment_WSTerminalRuleCall_1_3_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Comment___ApostropheKeyword_0_0_STRINGTerminalRuleCall_0_1_ApostropheKeyword_0_2___or___SolidusApostropheKeyword_1_0_STRINGTerminalRuleCall_1_1_WSTerminalRuleCall_1_3_a_ApostropheSolidusKeyword_1_4__.equals(syntax))
-				emit_Comment___ApostropheKeyword_0_0_STRINGTerminalRuleCall_0_1_ApostropheKeyword_0_2___or___SolidusApostropheKeyword_1_0_STRINGTerminalRuleCall_1_1_WSTerminalRuleCall_1_3_a_ApostropheSolidusKeyword_1_4__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Instruction___ColonKeyword_0_3_0_STRINGTerminalRuleCall_0_3_1__q.equals(syntax))
-				emit_Instruction___ColonKeyword_0_3_0_STRINGTerminalRuleCall_0_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2.equals(syntax))
+				emit_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q.equals(syntax))
+				emit_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     WS*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     strings+=STRING (ambiguity) ''/' (rule end)
-	 */
-	protected void emit_Comment_WSTerminalRuleCall_1_3_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (''' STRING ''') | ('/'' STRING WS* ''/')
+	 *     ML_COMMENT | SL_COMMENT | AutoNumber
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Comment___ApostropheKeyword_0_0_STRINGTerminalRuleCall_0_1_ApostropheKeyword_0_2___or___SolidusApostropheKeyword_1_0_STRINGTerminalRuleCall_1_1_WSTerminalRuleCall_1_3_a_ApostropheSolidusKeyword_1_4__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_SL_COMMENTTerminalRuleCall_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (':' STRING)?
+	 *     (':' ID)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) '/'' STRING WS strings+=STRING
+	 *     name=ID (ambiguity) (rule end)
 	 */
-	protected void emit_Instruction___ColonKeyword_0_3_0_STRINGTerminalRuleCall_0_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

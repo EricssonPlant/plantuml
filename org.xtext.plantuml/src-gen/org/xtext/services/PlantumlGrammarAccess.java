@@ -12,7 +12,6 @@ import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
@@ -76,20 +75,21 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0_2_0 = (RuleCall)cNameAssignment_0_2.eContents().get(0);
 		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
 		private final Keyword cColonKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_0_3_1 = (RuleCall)cGroup_0_3.eContents().get(1);
-		private final RuleCall cCommentParserRuleCall_0_4 = (RuleCall)cGroup_0.eContents().get(4);
-		private final RuleCall cCommentParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDefinitionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cIDTerminalRuleCall_0_3_1 = (RuleCall)cGroup_0_3.eContents().get(1);
+		private final RuleCall cML_COMMENTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSL_COMMENTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDefinitionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cAutoNumberParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//// An instruction is either a sequence or a comment
 		//Instruction:
-		//	name=ID Sequence name=ID (":" STRING)? Comment? | Comment | Definition;
+		//	name=ID Sequence name=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition | AutoNumber;
 		@Override public ParserRule getRule() { return rule; }
 
-		//name=ID Sequence name=ID (":" STRING)? Comment? | Comment | Definition
+		//name=ID Sequence name=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition | AutoNumber
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//name=ID Sequence name=ID (":" STRING)? Comment?
+		//name=ID Sequence name=ID (":" ID)?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//name=ID
@@ -107,23 +107,26 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_2_0() { return cNameIDTerminalRuleCall_0_2_0; }
 
-		//(":" STRING)?
+		//(":" ID)?
 		public Group getGroup_0_3() { return cGroup_0_3; }
 
 		//":"
 		public Keyword getColonKeyword_0_3_0() { return cColonKeyword_0_3_0; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0_3_1() { return cSTRINGTerminalRuleCall_0_3_1; }
+		//ID
+		public RuleCall getIDTerminalRuleCall_0_3_1() { return cIDTerminalRuleCall_0_3_1; }
 
-		//Comment?
-		public RuleCall getCommentParserRuleCall_0_4() { return cCommentParserRuleCall_0_4; }
+		//ML_COMMENT
+		public RuleCall getML_COMMENTTerminalRuleCall_1() { return cML_COMMENTTerminalRuleCall_1; }
 
-		//Comment
-		public RuleCall getCommentParserRuleCall_1() { return cCommentParserRuleCall_1; }
+		//SL_COMMENT
+		public RuleCall getSL_COMMENTTerminalRuleCall_2() { return cSL_COMMENTTerminalRuleCall_2; }
 
 		//Definition
-		public RuleCall getDefinitionParserRuleCall_2() { return cDefinitionParserRuleCall_2; }
+		public RuleCall getDefinitionParserRuleCall_3() { return cDefinitionParserRuleCall_3; }
+
+		//AutoNumber
+		public RuleCall getAutoNumberParserRuleCall_4() { return cAutoNumberParserRuleCall_4; }
 	}
 
 	public class SequenceElements extends AbstractParserRuleElementFinder {
@@ -589,71 +592,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getFullStopKeyword_20() { return cFullStopKeyword_20; }
 	}
 
-	public class CommentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Comment");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cApostropheKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Keyword cApostropheKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cSolidusApostropheKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_1_2_0 = (RuleCall)cGroup_1_2.eContents().get(0);
-		private final Assignment cStringsAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
-		private final RuleCall cStringsSTRINGTerminalRuleCall_1_2_1_0 = (RuleCall)cStringsAssignment_1_2_1.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
-		private final Keyword cApostropheSolidusKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
-		
-		//// A comment can be single- or multiline
-		//Comment:
-		//	"\'" STRING "\'" | "/\'" STRING (WS strings+=STRING)* WS* "\'/";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"\'" STRING "\'" | "/\'" STRING (WS strings+=STRING)* WS* "\'/"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"\'" STRING "\'"
-		public Group getGroup_0() { return cGroup_0; }
-
-		//"\'"
-		public Keyword getApostropheKeyword_0_0() { return cApostropheKeyword_0_0; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0_1() { return cSTRINGTerminalRuleCall_0_1; }
-
-		//"\'"
-		public Keyword getApostropheKeyword_0_2() { return cApostropheKeyword_0_2; }
-
-		//"/\'" STRING (WS strings+=STRING)* WS* "\'/"
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"/\'"
-		public Keyword getSolidusApostropheKeyword_1_0() { return cSolidusApostropheKeyword_1_0; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1_1() { return cSTRINGTerminalRuleCall_1_1; }
-
-		//(WS strings+=STRING)*
-		public Group getGroup_1_2() { return cGroup_1_2; }
-
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_2_0() { return cWSTerminalRuleCall_1_2_0; }
-
-		//strings+=STRING
-		public Assignment getStringsAssignment_1_2_1() { return cStringsAssignment_1_2_1; }
-
-		//STRING
-		public RuleCall getStringsSTRINGTerminalRuleCall_1_2_1_0() { return cStringsSTRINGTerminalRuleCall_1_2_1_0; }
-
-		//WS*
-		public RuleCall getWSTerminalRuleCall_1_3() { return cWSTerminalRuleCall_1_3; }
-
-		//"\'/"
-		public Keyword getApostropheSolidusKeyword_1_4() { return cApostropheSolidusKeyword_1_4; }
-	}
-
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Definition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -747,30 +685,67 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
 	}
+
+	public class AutoNumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AutoNumber");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAutonumberKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//// Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
+		//AutoNumber:
+		//	"autonumber" (INT INT?)?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"autonumber" (INT INT?)?
+		public Group getGroup() { return cGroup; }
+
+		//"autonumber"
+		public Keyword getAutonumberKeyword_0() { return cAutonumberKeyword_0; }
+
+		//(INT INT?)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_0() { return cINTTerminalRuleCall_1_0; }
+
+		//INT?
+		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
+	}
 	
 	
 	private final ModelElements pModel;
 	private final DiagramElements pDiagram;
 	private final InstructionElements pInstruction;
 	private final SequenceElements pSequence;
-	private final CommentElements pComment;
 	private final DefinitionElements pDefinition;
+	private final AutoNumberElements pAutoNumber;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tID;
+	private final TerminalRule tINT;
+	private final TerminalRule tWS;
+	private final TerminalRule tANY_OTHER;
 	
 	private final Grammar grammar;
 
-	private final TerminalsGrammarAccess gaTerminals;
-
 	@Inject
-	public PlantumlGrammarAccess(GrammarProvider grammarProvider,
-		TerminalsGrammarAccess gaTerminals) {
+	public PlantumlGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pDiagram = new DiagramElements();
 		this.pInstruction = new InstructionElements();
 		this.pSequence = new SequenceElements();
-		this.pComment = new CommentElements();
 		this.pDefinition = new DefinitionElements();
+		this.pAutoNumber = new AutoNumberElements();
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -794,10 +769,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
 
 	
 	//// Model is a number of @startuml's and @enduml's
@@ -825,7 +796,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// An instruction is either a sequence or a comment
 	//Instruction:
-	//	name=ID Sequence name=ID (":" STRING)? Comment? | Comment | Definition;
+	//	name=ID Sequence name=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition | AutoNumber;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -865,17 +836,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getSequenceAccess().getRule();
 	}
 
-	//// A comment can be single- or multiline
-	//Comment:
-	//	"\'" STRING "\'" | "/\'" STRING (WS strings+=STRING)* WS* "\'/";
-	public CommentElements getCommentAccess() {
-		return pComment;
-	}
-	
-	public ParserRule getCommentRule() {
-		return getCommentAccess().getRule();
-	}
-
 	//// Rule for defining objects in PlantUML, such as
 	//// actors, boundaries, controls, entities and databases
 	//Definition:
@@ -888,46 +848,51 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getDefinitionAccess().getRule();
 	}
 
+	//// Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
+	//AutoNumber:
+	//	"autonumber" (INT INT?)?;
+	public AutoNumberElements getAutoNumberAccess() {
+		return pAutoNumber;
+	}
+	
+	public ParserRule getAutoNumberRule() {
+		return getAutoNumberAccess().getRule();
+	}
+
+	//// Terminals
+	//terminal ML_COMMENT:
+	//	"/\'"->"\'/";
+	public TerminalRule getML_COMMENTRule() {
+		return tML_COMMENT;
+	} 
+
+	//terminal SL_COMMENT:
+	//	"\'" !("\n" | "\r")* ("\r"? "\n")?;
+	public TerminalRule getSL_COMMENTRule() {
+		return tSL_COMMENT;
+	} 
+
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+		return tID;
 	} 
 
 	//terminal INT returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
-	} 
-
-	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
-	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
-	} 
-
-	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	} 
-
-	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
+		return tINT;
 	} 
 
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return tWS;
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return tANY_OTHER;
 	} 
 }

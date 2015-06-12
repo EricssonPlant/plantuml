@@ -211,37 +211,37 @@ ruleSequence
     {
     	newLeafNode(otherlv_3, grammarAccess.getInstructionAccess().getColonKeyword_0_3_0());
     }
-this_STRING_4=RULE_STRING
+this_ID_4=RULE_ID
     { 
-    newLeafNode(this_STRING_4, grammarAccess.getInstructionAccess().getSTRINGTerminalRuleCall_0_3_1()); 
-    }
-)?(
-    { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getCommentParserRuleCall_0_4()); 
-    }
-    this_Comment_5=ruleComment
-    { 
-        $current = $this_Comment_5.current; 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_ID_4, grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_3_1()); 
     }
 )?)
+    |this_ML_COMMENT_5=RULE_ML_COMMENT
+    { 
+    newLeafNode(this_ML_COMMENT_5, grammarAccess.getInstructionAccess().getML_COMMENTTerminalRuleCall_1()); 
+    }
+
+    |this_SL_COMMENT_6=RULE_SL_COMMENT
+    { 
+    newLeafNode(this_SL_COMMENT_6, grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()); 
+    }
+
     |
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getCommentParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_3()); 
     }
-    this_Comment_6=ruleComment
+    this_Definition_7=ruleDefinition
     { 
-        $current = $this_Comment_6.current; 
+        $current = $this_Definition_7.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()); 
     }
-    this_Definition_7=ruleDefinition
+ruleAutoNumber
     { 
-        $current = $this_Definition_7.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -742,78 +742,6 @@ ruleSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 
 
 
-// Entry rule entryRuleComment
-entryRuleComment returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getCommentRule()); }
-	 iv_ruleComment=ruleComment 
-	 { $current=$iv_ruleComment.current; } 
-	 EOF 
-;
-
-// Rule Comment
-ruleComment returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((	otherlv_0='\'' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getCommentAccess().getApostropheKeyword_0_0());
-    }
-this_STRING_1=RULE_STRING
-    { 
-    newLeafNode(this_STRING_1, grammarAccess.getCommentAccess().getSTRINGTerminalRuleCall_0_1()); 
-    }
-	otherlv_2='\'' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getCommentAccess().getApostropheKeyword_0_2());
-    }
-)
-    |(	otherlv_3='/\'' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getCommentAccess().getSolidusApostropheKeyword_1_0());
-    }
-this_STRING_4=RULE_STRING
-    { 
-    newLeafNode(this_STRING_4, grammarAccess.getCommentAccess().getSTRINGTerminalRuleCall_1_1()); 
-    }
-(this_WS_5=RULE_WS
-    { 
-    newLeafNode(this_WS_5, grammarAccess.getCommentAccess().getWSTerminalRuleCall_1_2_0()); 
-    }
-(
-(
-		lv_strings_6_0=RULE_STRING
-		{
-			newLeafNode(lv_strings_6_0, grammarAccess.getCommentAccess().getStringsSTRINGTerminalRuleCall_1_2_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCommentRule());
-	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"strings",
-        		lv_strings_6_0, 
-        		"STRING");
-	    }
-
-)
-))*(this_WS_7=RULE_WS
-    { 
-    newLeafNode(this_WS_7, grammarAccess.getCommentAccess().getWSTerminalRuleCall_1_3()); 
-    }
-)*	otherlv_8='\'/' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getCommentAccess().getApostropheSolidusKeyword_1_4());
-    }
-))
-;
-
-
-
-
-
 // Entry rule entryRuleDefinition
 entryRuleDefinition returns [EObject current=null] 
 	:
@@ -949,15 +877,54 @@ ruleDefinition returns [EObject current=null]
 
 
 
+// Entry rule entryRuleAutoNumber
+entryRuleAutoNumber returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAutoNumberRule()); } 
+	 iv_ruleAutoNumber=ruleAutoNumber 
+	 { $current=$iv_ruleAutoNumber.current.getText(); }  
+	 EOF 
+;
+
+// Rule AutoNumber
+ruleAutoNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='autonumber' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAutoNumberAccess().getAutonumberKeyword_0()); 
+    }
+(    this_INT_1=RULE_INT    {
+		$current.merge(this_INT_1);
+    }
+
+    { 
+    newLeafNode(this_INT_1, grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_0()); 
+    }
+(    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    newLeafNode(this_INT_2, grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_1()); 
+    }
+)?)?)
+    ;
+
+
+
+
+
+RULE_ML_COMMENT : '/\'' ( options {greedy=false;} : . )*'\'/';
+
+RULE_SL_COMMENT : '\'' ~(('\n'|'\r'))* ('\r'? '\n')?;
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
-
-RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
-RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 

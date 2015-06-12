@@ -13,7 +13,6 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.xtext.plantuml.Comment;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Instruction;
@@ -30,16 +29,6 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == PlantumlPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case PlantumlPackage.COMMENT:
-				if(context == grammarAccess.getCommentRule()) {
-					sequence_Comment(context, (Comment) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getInstructionRule()) {
-					sequence_Comment_Instruction(context, (Comment) semanticObject); 
-					return; 
-				}
-				else break;
 			case PlantumlPackage.DEFINITION:
 				sequence_Definition(context, (Definition) semanticObject); 
 				return; 
@@ -55,24 +44,6 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Constraint:
-	 *     strings+=STRING*
-	 */
-	protected void sequence_Comment(EObject context, Comment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID name=ID strings+=STRING+)
-	 */
-	protected void sequence_Comment_Instruction(EObject context, Comment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Constraint:
@@ -94,7 +65,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID name=ID)
+	 *     (name=ID name=ID)?
 	 */
 	protected void sequence_Instruction(EObject context, Instruction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

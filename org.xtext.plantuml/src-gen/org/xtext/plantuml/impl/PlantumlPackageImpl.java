@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.plantuml.Comment;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Instruction;
@@ -45,13 +44,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * @generated
    */
   private EClass instructionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass commentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,26 +180,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComment()
-  {
-    return commentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getComment_Strings()
-  {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getDefinition()
   {
     return definitionEClass;
@@ -252,9 +224,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     instructionEClass = createEClass(INSTRUCTION);
     createEAttribute(instructionEClass, INSTRUCTION__NAME);
 
-    commentEClass = createEClass(COMMENT);
-    createEAttribute(commentEClass, COMMENT__STRINGS);
-
     definitionEClass = createEClass(DEFINITION);
   }
 
@@ -287,7 +256,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    commentEClass.getESuperTypes().add(this.getInstruction());
     definitionEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
@@ -299,9 +267,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInstruction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComment_Strings(), ecorePackage.getEString(), "strings", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

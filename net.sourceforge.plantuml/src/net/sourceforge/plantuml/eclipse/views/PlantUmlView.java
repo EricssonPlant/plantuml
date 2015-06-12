@@ -5,9 +5,9 @@ import net.sourceforge.plantuml.eclipse.actions.ToggleButtonAction;
 import net.sourceforge.plantuml.eclipse.utils.PlantUmlUtils;
 import net.sourceforge.plantuml.eclipse.utils.PlantumlConstants;
 
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.jobs.Job;
+//import org.eclipse.core.runtime.IProgressMonitor;
+//import org.eclipse.core.runtime.IStatus;
+//import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;

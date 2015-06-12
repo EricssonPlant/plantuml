@@ -81,7 +81,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefinitionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cAutoNumberParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		//// An instruction is either a sequence or a comment
+		//// An instruction is either a sequence or a comment, or an autonumber command
 		//Instruction:
 		//	name=ID Sequence name=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition | AutoNumber;
 		@Override public ParserRule getRule() { return rule; }
@@ -794,7 +794,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramAccess().getRule();
 	}
 
-	//// An instruction is either a sequence or a comment
+	//// An instruction is either a sequence or a comment, or an autonumber command
 	//Instruction:
 	//	name=ID Sequence name=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition | AutoNumber;
 	public InstructionElements getInstructionAccess() {

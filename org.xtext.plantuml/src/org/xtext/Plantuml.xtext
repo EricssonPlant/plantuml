@@ -19,9 +19,9 @@ Diagram:
 	'@startuml' (instructions+=Instruction)* '@enduml'
 ;
 
-// An instruction is either a sequence or a comment
+// An instruction is either a sequence or a comment, or an autonumber command
 Instruction:
-	(name=ID Sequence name=ID (':' ID)?) 
+	(name1=ID Sequence name2=ID (':' ID)?) 
 	| ML_COMMENT
 	| SL_COMMENT
 	| Definition

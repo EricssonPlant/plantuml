@@ -82,13 +82,18 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefinitionParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
 		private final RuleCall cColorParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		private final RuleCall cAutoNumberParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cTitleParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cLegendParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cNewpageParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
-		//// An instruction is either a sequence or a comment, or an autonumber command
+		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
-		//	name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber;
+		//	name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber | Title | Legend |
+		//	Newpage;
 		@Override public ParserRule getRule() { return rule; }
 
-		//name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber
+		//name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber | Title | Legend |
+		//Newpage
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//name1=ID Sequence name2=ID (":" ID)?
@@ -135,6 +140,15 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//AutoNumber
 		public RuleCall getAutoNumberParserRuleCall_4() { return cAutoNumberParserRuleCall_4; }
+
+		//Title
+		public RuleCall getTitleParserRuleCall_5() { return cTitleParserRuleCall_5; }
+
+		//Legend
+		public RuleCall getLegendParserRuleCall_6() { return cLegendParserRuleCall_6; }
+
+		//Newpage
+		public RuleCall getNewpageParserRuleCall_7() { return cNewpageParserRuleCall_7; }
 	}
 
 	public class SequenceElements extends AbstractParserRuleElementFinder {
@@ -236,6 +250,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
 		private final Keyword cFullStopKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
 		
+		//// Rule for sequences.
+		//// A sequence is any of the following arrows:
 		//Sequence:
 		//	"-"* "-" // - = u002D  | > = u003E
 		//	">" | "<" "-" "-"* // < = u003C  | - = u002D
@@ -874,7 +890,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cYellowKeyword_1_143 = (Keyword)cAlternatives_1.eContents().get(143);
 		private final Keyword cYellowGreenKeyword_1_144 = (Keyword)cAlternatives_1.eContents().get(144);
 		
-		//// Rule for colors
+		//// Rule for all the color. Color begins with # followed by the name of the color.
+		//// TODO: Fix to ignore lower/uppercase.
 		//Color:
 		//	"#"+ ("AliceBlue" | "AntiqueWhite" | "Aqua" | "Aquamarine" | "Azure" | "Beige" | "Bisque" | "Black" |
 		//	"BlanchedAlmond" | "Blue" | "BlueViolet" | "Brown" | "BurlyWood" | "CadetBlue" | "Chartreuse" | "Chocolate" | "Coral"
@@ -1374,6 +1391,97 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//"YellowGreen"
 		public Keyword getYellowGreenKeyword_1_144() { return cYellowGreenKeyword_1_144; }
 	}
+
+	public class TitleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Title");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTitleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//// Rule for the title of the diagram
+		//// TODO: Fix ID -> STRING. Title can only be one word atm.
+		//Title:
+		//	"title" ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"title" ID
+		public Group getGroup() { return cGroup; }
+
+		//"title"
+		public Keyword getTitleKeyword_0() { return cTitleKeyword_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
+
+	public class LegendElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Legend");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLegendKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cRightKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cLeftKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Keyword cCenterKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
+		private final Assignment cIdsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cIdsIDTerminalRuleCall_2_0 = (RuleCall)cIdsAssignment_2.eContents().get(0);
+		private final Keyword cEndlegendKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//// Rule for legends.
+		//// TODO: Fix ID -> STRING
+		//// TODO: Fix \n after alignment call
+		//Legend:
+		//	"legend" ("right" | "left" | "center")? ids+=ID* "endlegend";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"legend" ("right" | "left" | "center")? ids+=ID* "endlegend"
+		public Group getGroup() { return cGroup; }
+
+		//"legend"
+		public Keyword getLegendKeyword_0() { return cLegendKeyword_0; }
+
+		//("right" | "left" | "center")?
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//"right"
+		public Keyword getRightKeyword_1_0() { return cRightKeyword_1_0; }
+
+		//"left"
+		public Keyword getLeftKeyword_1_1() { return cLeftKeyword_1_1; }
+
+		//"center"
+		public Keyword getCenterKeyword_1_2() { return cCenterKeyword_1_2; }
+
+		//ids+=ID*
+		public Assignment getIdsAssignment_2() { return cIdsAssignment_2; }
+
+		//ID
+		public RuleCall getIdsIDTerminalRuleCall_2_0() { return cIdsIDTerminalRuleCall_2_0; }
+
+		//"endlegend"
+		public Keyword getEndlegendKeyword_3() { return cEndlegendKeyword_3; }
+	}
+
+	public class NewpageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Newpage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNewpageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//// Rule for newpages
+		//// TODO: Fix ID -> STRING
+		//Newpage:
+		//	"newpage" ID?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"newpage" ID?
+		public Group getGroup() { return cGroup; }
+
+		//"newpage"
+		public Keyword getNewpageKeyword_0() { return cNewpageKeyword_0; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -1383,6 +1491,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final DefinitionElements pDefinition;
 	private final AutoNumberElements pAutoNumber;
 	private final ColorElements pColor;
+	private final TitleElements pTitle;
+	private final LegendElements pLegend;
+	private final NewpageElements pNewpage;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tID;
@@ -1402,6 +1513,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDefinition = new DefinitionElements();
 		this.pAutoNumber = new AutoNumberElements();
 		this.pColor = new ColorElements();
+		this.pTitle = new TitleElements();
+		this.pLegend = new LegendElements();
+		this.pNewpage = new NewpageElements();
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
@@ -1456,9 +1570,10 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramAccess().getRule();
 	}
 
-	//// An instruction is either a sequence or a comment, or an autonumber command
+	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
-	//	name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber;
+	//	name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber | Title | Legend |
+	//	Newpage;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1467,6 +1582,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getInstructionAccess().getRule();
 	}
 
+	//// Rule for sequences.
+	//// A sequence is any of the following arrows:
 	//Sequence:
 	//	"-"* "-" // - = u002D  | > = u003E
 	//	">" | "<" "-" "-"* // < = u003C  | - = u002D
@@ -1521,7 +1638,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getAutoNumberAccess().getRule();
 	}
 
-	//// Rule for colors
+	//// Rule for all the color. Color begins with # followed by the name of the color.
+	//// TODO: Fix to ignore lower/uppercase.
 	//Color:
 	//	"#"+ ("AliceBlue" | "AntiqueWhite" | "Aqua" | "Aquamarine" | "Azure" | "Beige" | "Bisque" | "Black" |
 	//	"BlanchedAlmond" | "Blue" | "BlueViolet" | "Brown" | "BurlyWood" | "CadetBlue" | "Chartreuse" | "Chocolate" | "Coral"
@@ -1549,25 +1667,68 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getColorAccess().getRule();
 	}
 
+	//// Rule for the title of the diagram
+	//// TODO: Fix ID -> STRING. Title can only be one word atm.
+	//Title:
+	//	"title" ID;
+	public TitleElements getTitleAccess() {
+		return pTitle;
+	}
+	
+	public ParserRule getTitleRule() {
+		return getTitleAccess().getRule();
+	}
+
+	//// Rule for legends.
+	//// TODO: Fix ID -> STRING
+	//// TODO: Fix \n after alignment call
+	//Legend:
+	//	"legend" ("right" | "left" | "center")? ids+=ID* "endlegend";
+	public LegendElements getLegendAccess() {
+		return pLegend;
+	}
+	
+	public ParserRule getLegendRule() {
+		return getLegendAccess().getRule();
+	}
+
+	//// Rule for newpages
+	//// TODO: Fix ID -> STRING
+	//Newpage:
+	//	"newpage" ID?;
+	public NewpageElements getNewpageAccess() {
+		return pNewpage;
+	}
+	
+	public ParserRule getNewpageRule() {
+		return getNewpageAccess().getRule();
+	}
+
 	//// Terminals
+	////--------------------------------------------------
+	//// Multiline comment begins with /', and ends with '/
 	//terminal ML_COMMENT:
 	//	"/\'"->"\'/";
 	public TerminalRule getML_COMMENTRule() {
 		return tML_COMMENT;
 	} 
 
+	//// Singleline comment begins with ', and continues until end of line.
 	//terminal SL_COMMENT:
 	//	"\'" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return tSL_COMMENT;
 	} 
 
+	//// ID can be any following sequence of letters and numbers, without spaces between them.
+	//// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_" | "å" | "ä" | "ö") ("a".."z" | "A".."Z" | "_" | "0".."9" | "å" | "ä" | "ö")*;
 	public TerminalRule getIDRule() {
 		return tID;
 	} 
 
+	//// INT is a sequence of numbers 0-9.
 	//terminal INT returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {

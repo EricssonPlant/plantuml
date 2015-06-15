@@ -20,5 +20,8 @@
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Legend">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/ids"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

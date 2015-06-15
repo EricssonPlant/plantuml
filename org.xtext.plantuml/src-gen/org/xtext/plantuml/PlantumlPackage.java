@@ -195,6 +195,52 @@ public interface PlantumlPackage extends EPackage
    */
   int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link org.xtext.plantuml.impl.LegendImpl <em>Legend</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.plantuml.impl.LegendImpl
+   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getLegend()
+   * @generated
+   */
+  int LEGEND = 4;
+
+  /**
+   * The feature id for the '<em><b>Name1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LEGEND__NAME1 = INSTRUCTION__NAME1;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LEGEND__NAME2 = INSTRUCTION__NAME2;
+
+  /**
+   * The feature id for the '<em><b>Ids</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LEGEND__IDS = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Legend</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LEGEND_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Model <em>Model</em>}'.
@@ -290,6 +336,27 @@ public interface PlantumlPackage extends EPackage
    * @generated
    */
   EAttribute getDefinition_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.plantuml.Legend <em>Legend</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Legend</em>'.
+   * @see org.xtext.plantuml.Legend
+   * @generated
+   */
+  EClass getLegend();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Legend#getIds <em>Ids</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Ids</em>'.
+   * @see org.xtext.plantuml.Legend#getIds()
+   * @see #getLegend()
+   * @generated
+   */
+  EAttribute getLegend_Ids();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -393,6 +460,24 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EAttribute DEFINITION__NAME = eINSTANCE.getDefinition_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.plantuml.impl.LegendImpl <em>Legend</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.plantuml.impl.LegendImpl
+     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getLegend()
+     * @generated
+     */
+    EClass LEGEND = eINSTANCE.getLegend();
+
+    /**
+     * The meta object literal for the '<em><b>Ids</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LEGEND__IDS = eINSTANCE.getLegend_Ids();
 
   }
 

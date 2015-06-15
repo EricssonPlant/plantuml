@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPlantumlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'AliceBlue'", "'AntiqueWhite'", "'Aqua'", "'Aquamarine'", "'Azure'", "'Beige'", "'Bisque'", "'Black'", "'BlanchedAlmond'", "'Blue'", "'BlueViolet'", "'Brown'", "'BurlyWood'", "'CadetBlue'", "'Chartreuse'", "'Chocolate'", "'Coral'", "'CornflowerBlue'", "'Cornsilk'", "'Crimson'", "'Cyan'", "'DarkBlue'", "'DarkCyan'", "'DarkGoldenRod'", "'DarkGray'", "'DarkGreen'", "'DarkGrey'", "'DarkKhaki'", "'DarkMagenta'", "'DarkOliveGreen'", "'DarkOrchid'", "'DarkRed'", "'DarkSalmo'", "'DarkSeaGreen'", "'DarkSlateBlue'", "'DarkSlateGray'", "'DarkSlateGrey'", "'DarkTurquoise'", "'DarkViolet'", "'Darkorange'", "'DeepPink'", "'DeepSkyBlue'", "'DimGray'", "'DimGrey'", "'DodgerBlue'", "'FireBrick'", "'FloralWhite'", "'ForestGreen'", "'Fuchsia'", "'Gainsboro'", "'GhostWhite'", "'Gold'", "'GoldenRod'", "'Gray'", "'Green'", "'GreenYellow'", "'Grey'", "'HoneyDew'", "'HotPink'", "'IndianRed'", "'Indigo'", "'Ivory'", "'Khaki'", "'Lavender'", "'LavenderBlush'", "'LawnGreen'", "'LemonChiffon'", "'LightBlue'", "'LightCoral'", "'LightCyan'", "'LightGoldenRodYellow'", "'LightGray'", "'LightGreen'", "'LightGrey'", "'LightPink'", "'LightSalmon'", "'LightSeaGreen'", "'LightSkyBlue'", "'LightSlateGray'", "'LightSlateGrey'", "'LightSteelBlue'", "'LightYellow'", "'Lime'", "'LimeGreen'", "'Linen'", "'Magenta'", "'Maroon'", "'MediumAquaMarine'", "'MediumBlue'", "'MediumOrchid'", "'MediumPurple'", "'MediumSeaGreen'", "'MediumSlateBlue'", "'MediumSpringGreen'", "'MediumTurquoise'", "'MediumVioletRed'", "'MidnightBlue'", "'MintCream'", "'MistyRose'", "'Moccasin'", "'NavajoWhite'", "'Navy'", "'OldLace'", "'Olive'", "'OliveDrab'", "'OrangeRed'", "'Orchid'", "'PaleGoldenRod'", "'PaleGreen'", "'PaleTurquoise'", "'PaleVioletRed'", "'PapayaWhip'", "'PeachPuff'", "'Peru'", "'Pink'", "'Plum'", "'PowderBlue'", "'Purple'", "'Red'", "'RosyBrown'", "'RoyalBlue'", "'SaddleBrown'", "'Salmon'", "'SandyBrown'", "'SeaGreen'", "'Sienna'", "'Silver'", "'SkyBlue'", "'SlateBlue'", "'SlateGray'", "'SlateGrey'", "'Snow'", "'SpringGreen'", "'SteelBlue'", "'Tan'", "'Teal'", "'Thistle'", "'Tomato'", "'Turquoise'", "'Violet'", "'Wheat'", "'White'", "'WhiteSmoke'", "'Yellow'", "'YellowGreen'", "'@startuml'", "'@enduml'", "':'", "'-'", "'>'", "'<'", "'x'", "'\\\\'", "'/'", "'\\\\\\\\'", "'o'", "'|'", "'actor'", "'boundary'", "'control'", "'entity'", "'database'", "'autonumber'", "'#'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'AliceBlue'", "'AntiqueWhite'", "'Aqua'", "'Aquamarine'", "'Azure'", "'Beige'", "'Bisque'", "'Black'", "'BlanchedAlmond'", "'Blue'", "'BlueViolet'", "'Brown'", "'BurlyWood'", "'CadetBlue'", "'Chartreuse'", "'Chocolate'", "'Coral'", "'CornflowerBlue'", "'Cornsilk'", "'Crimson'", "'Cyan'", "'DarkBlue'", "'DarkCyan'", "'DarkGoldenRod'", "'DarkGray'", "'DarkGreen'", "'DarkGrey'", "'DarkKhaki'", "'DarkMagenta'", "'DarkOliveGreen'", "'DarkOrchid'", "'DarkRed'", "'DarkSalmo'", "'DarkSeaGreen'", "'DarkSlateBlue'", "'DarkSlateGray'", "'DarkSlateGrey'", "'DarkTurquoise'", "'DarkViolet'", "'Darkorange'", "'DeepPink'", "'DeepSkyBlue'", "'DimGray'", "'DimGrey'", "'DodgerBlue'", "'FireBrick'", "'FloralWhite'", "'ForestGreen'", "'Fuchsia'", "'Gainsboro'", "'GhostWhite'", "'Gold'", "'GoldenRod'", "'Gray'", "'Green'", "'GreenYellow'", "'Grey'", "'HoneyDew'", "'HotPink'", "'IndianRed'", "'Indigo'", "'Ivory'", "'Khaki'", "'Lavender'", "'LavenderBlush'", "'LawnGreen'", "'LemonChiffon'", "'LightBlue'", "'LightCoral'", "'LightCyan'", "'LightGoldenRodYellow'", "'LightGray'", "'LightGreen'", "'LightGrey'", "'LightPink'", "'LightSalmon'", "'LightSeaGreen'", "'LightSkyBlue'", "'LightSlateGray'", "'LightSlateGrey'", "'LightSteelBlue'", "'LightYellow'", "'Lime'", "'LimeGreen'", "'Linen'", "'Magenta'", "'Maroon'", "'MediumAquaMarine'", "'MediumBlue'", "'MediumOrchid'", "'MediumPurple'", "'MediumSeaGreen'", "'MediumSlateBlue'", "'MediumSpringGreen'", "'MediumTurquoise'", "'MediumVioletRed'", "'MidnightBlue'", "'MintCream'", "'MistyRose'", "'Moccasin'", "'NavajoWhite'", "'Navy'", "'OldLace'", "'Olive'", "'OliveDrab'", "'OrangeRed'", "'Orchid'", "'PaleGoldenRod'", "'PaleGreen'", "'PaleTurquoise'", "'PaleVioletRed'", "'PapayaWhip'", "'PeachPuff'", "'Peru'", "'Pink'", "'Plum'", "'PowderBlue'", "'Purple'", "'Red'", "'RosyBrown'", "'RoyalBlue'", "'SaddleBrown'", "'Salmon'", "'SandyBrown'", "'SeaGreen'", "'Sienna'", "'Silver'", "'SkyBlue'", "'SlateBlue'", "'SlateGray'", "'SlateGrey'", "'Snow'", "'SpringGreen'", "'SteelBlue'", "'Tan'", "'Teal'", "'Thistle'", "'Tomato'", "'Turquoise'", "'Violet'", "'Wheat'", "'White'", "'WhiteSmoke'", "'Yellow'", "'YellowGreen'", "'right'", "'left'", "'center'", "'@startuml'", "'@enduml'", "':'", "'-'", "'>'", "'<'", "'x'", "'\\\\'", "'/'", "'\\\\\\\\'", "'o'", "'|'", "'actor'", "'boundary'", "'control'", "'entity'", "'database'", "'autonumber'", "'#'", "'title'", "'legend'", "'endlegend'", "'newpage'"
     };
     public static final int T__144=144;
     public static final int T__143=143;
@@ -119,6 +119,8 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     public static final int T__94=94;
     public static final int T__101=101;
     public static final int T__90=90;
+    public static final int T__180=180;
+    public static final int T__181=181;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
@@ -134,8 +136,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     public static final int T__97=97;
     public static final int T__10=10;
     public static final int T__98=98;
+    public static final int T__177=177;
+    public static final int T__176=176;
+    public static final int T__179=179;
+    public static final int T__178=178;
     public static final int T__173=173;
     public static final int T__172=172;
+    public static final int T__175=175;
     public static final int T__174=174;
     public static final int T__171=171;
     public static final int T__170=170;
@@ -284,7 +291,7 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==156) ) {
+                if ( (LA1_0==159) ) {
                     alt1=1;
                 }
 
@@ -791,15 +798,246 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleColor"
 
 
+    // $ANTLR start "entryRuleTitle"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:256:1: entryRuleTitle : ruleTitle EOF ;
+    public final void entryRuleTitle() throws RecognitionException {
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:257:1: ( ruleTitle EOF )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:258:1: ruleTitle EOF
+            {
+             before(grammarAccess.getTitleRule()); 
+            pushFollow(FOLLOW_ruleTitle_in_entryRuleTitle482);
+            ruleTitle();
+
+            state._fsp--;
+
+             after(grammarAccess.getTitleRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTitle489); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleTitle"
+
+
+    // $ANTLR start "ruleTitle"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:265:1: ruleTitle : ( ( rule__Title__Group__0 ) ) ;
+    public final void ruleTitle() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:269:2: ( ( ( rule__Title__Group__0 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:270:1: ( ( rule__Title__Group__0 ) )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:270:1: ( ( rule__Title__Group__0 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:271:1: ( rule__Title__Group__0 )
+            {
+             before(grammarAccess.getTitleAccess().getGroup()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:272:1: ( rule__Title__Group__0 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:272:2: rule__Title__Group__0
+            {
+            pushFollow(FOLLOW_rule__Title__Group__0_in_ruleTitle515);
+            rule__Title__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTitleAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleTitle"
+
+
+    // $ANTLR start "entryRuleLegend"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:284:1: entryRuleLegend : ruleLegend EOF ;
+    public final void entryRuleLegend() throws RecognitionException {
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:285:1: ( ruleLegend EOF )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:286:1: ruleLegend EOF
+            {
+             before(grammarAccess.getLegendRule()); 
+            pushFollow(FOLLOW_ruleLegend_in_entryRuleLegend542);
+            ruleLegend();
+
+            state._fsp--;
+
+             after(grammarAccess.getLegendRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLegend549); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleLegend"
+
+
+    // $ANTLR start "ruleLegend"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:293:1: ruleLegend : ( ( rule__Legend__Group__0 ) ) ;
+    public final void ruleLegend() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:297:2: ( ( ( rule__Legend__Group__0 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:298:1: ( ( rule__Legend__Group__0 ) )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:298:1: ( ( rule__Legend__Group__0 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:299:1: ( rule__Legend__Group__0 )
+            {
+             before(grammarAccess.getLegendAccess().getGroup()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:300:1: ( rule__Legend__Group__0 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:300:2: rule__Legend__Group__0
+            {
+            pushFollow(FOLLOW_rule__Legend__Group__0_in_ruleLegend575);
+            rule__Legend__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLegendAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleLegend"
+
+
+    // $ANTLR start "entryRuleNewpage"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:312:1: entryRuleNewpage : ruleNewpage EOF ;
+    public final void entryRuleNewpage() throws RecognitionException {
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:313:1: ( ruleNewpage EOF )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:314:1: ruleNewpage EOF
+            {
+             before(grammarAccess.getNewpageRule()); 
+            pushFollow(FOLLOW_ruleNewpage_in_entryRuleNewpage602);
+            ruleNewpage();
+
+            state._fsp--;
+
+             after(grammarAccess.getNewpageRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNewpage609); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNewpage"
+
+
+    // $ANTLR start "ruleNewpage"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:321:1: ruleNewpage : ( ( rule__Newpage__Group__0 ) ) ;
+    public final void ruleNewpage() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:325:2: ( ( ( rule__Newpage__Group__0 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:326:1: ( ( rule__Newpage__Group__0 ) )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:326:1: ( ( rule__Newpage__Group__0 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:327:1: ( rule__Newpage__Group__0 )
+            {
+             before(grammarAccess.getNewpageAccess().getGroup()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:328:1: ( rule__Newpage__Group__0 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:328:2: rule__Newpage__Group__0
+            {
+            pushFollow(FOLLOW_rule__Newpage__Group__0_in_ruleNewpage635);
+            rule__Newpage__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNewpageAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNewpage"
+
+
     // $ANTLR start "rule__Instruction__Alternatives"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:256:1: rule__Instruction__Alternatives : ( ( ( rule__Instruction__Group_0__0 ) ) | ( RULE_ML_COMMENT ) | ( RULE_SL_COMMENT ) | ( ( rule__Instruction__Group_3__0 ) ) | ( ruleAutoNumber ) );
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:340:1: rule__Instruction__Alternatives : ( ( ( rule__Instruction__Group_0__0 ) ) | ( RULE_ML_COMMENT ) | ( RULE_SL_COMMENT ) | ( ( rule__Instruction__Group_3__0 ) ) | ( ruleAutoNumber ) | ( ruleTitle ) | ( ruleLegend ) | ( ruleNewpage ) );
     public final void rule__Instruction__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:260:1: ( ( ( rule__Instruction__Group_0__0 ) ) | ( RULE_ML_COMMENT ) | ( RULE_SL_COMMENT ) | ( ( rule__Instruction__Group_3__0 ) ) | ( ruleAutoNumber ) )
-            int alt2=5;
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:344:1: ( ( ( rule__Instruction__Group_0__0 ) ) | ( RULE_ML_COMMENT ) | ( RULE_SL_COMMENT ) | ( ( rule__Instruction__Group_3__0 ) ) | ( ruleAutoNumber ) | ( ruleTitle ) | ( ruleLegend ) | ( ruleNewpage ) )
+            int alt2=8;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
@@ -816,18 +1054,33 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                 alt2=3;
                 }
                 break;
-            case 168:
-            case 169:
-            case 170:
             case 171:
             case 172:
+            case 173:
+            case 174:
+            case 175:
                 {
                 alt2=4;
                 }
                 break;
-            case 173:
+            case 176:
                 {
                 alt2=5;
+                }
+                break;
+            case 178:
+                {
+                alt2=6;
+                }
+                break;
+            case 179:
+                {
+                alt2=7;
+                }
+                break;
+            case 181:
+                {
+                alt2=8;
                 }
                 break;
             default:
@@ -839,16 +1092,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
             switch (alt2) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:261:1: ( ( rule__Instruction__Group_0__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:345:1: ( ( rule__Instruction__Group_0__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:261:1: ( ( rule__Instruction__Group_0__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:262:1: ( rule__Instruction__Group_0__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:345:1: ( ( rule__Instruction__Group_0__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:346:1: ( rule__Instruction__Group_0__0 )
                     {
                      before(grammarAccess.getInstructionAccess().getGroup_0()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:263:1: ( rule__Instruction__Group_0__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:263:2: rule__Instruction__Group_0__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:347:1: ( rule__Instruction__Group_0__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:347:2: rule__Instruction__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Instruction__Group_0__0_in_rule__Instruction__Alternatives491);
+                    pushFollow(FOLLOW_rule__Instruction__Group_0__0_in_rule__Instruction__Alternatives671);
                     rule__Instruction__Group_0__0();
 
                     state._fsp--;
@@ -864,13 +1117,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:267:6: ( RULE_ML_COMMENT )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:351:6: ( RULE_ML_COMMENT )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:267:6: ( RULE_ML_COMMENT )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:268:1: RULE_ML_COMMENT
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:351:6: ( RULE_ML_COMMENT )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:352:1: RULE_ML_COMMENT
                     {
                      before(grammarAccess.getInstructionAccess().getML_COMMENTTerminalRuleCall_1()); 
-                    match(input,RULE_ML_COMMENT,FOLLOW_RULE_ML_COMMENT_in_rule__Instruction__Alternatives509); 
+                    match(input,RULE_ML_COMMENT,FOLLOW_RULE_ML_COMMENT_in_rule__Instruction__Alternatives689); 
                      after(grammarAccess.getInstructionAccess().getML_COMMENTTerminalRuleCall_1()); 
 
                     }
@@ -879,13 +1132,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:273:6: ( RULE_SL_COMMENT )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:357:6: ( RULE_SL_COMMENT )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:273:6: ( RULE_SL_COMMENT )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:274:1: RULE_SL_COMMENT
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:357:6: ( RULE_SL_COMMENT )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:358:1: RULE_SL_COMMENT
                     {
                      before(grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()); 
-                    match(input,RULE_SL_COMMENT,FOLLOW_RULE_SL_COMMENT_in_rule__Instruction__Alternatives526); 
+                    match(input,RULE_SL_COMMENT,FOLLOW_RULE_SL_COMMENT_in_rule__Instruction__Alternatives706); 
                      after(grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()); 
 
                     }
@@ -894,16 +1147,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:279:6: ( ( rule__Instruction__Group_3__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:363:6: ( ( rule__Instruction__Group_3__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:279:6: ( ( rule__Instruction__Group_3__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:280:1: ( rule__Instruction__Group_3__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:363:6: ( ( rule__Instruction__Group_3__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:364:1: ( rule__Instruction__Group_3__0 )
                     {
                      before(grammarAccess.getInstructionAccess().getGroup_3()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:281:1: ( rule__Instruction__Group_3__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:281:2: rule__Instruction__Group_3__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:365:1: ( rule__Instruction__Group_3__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:365:2: rule__Instruction__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Instruction__Group_3__0_in_rule__Instruction__Alternatives543);
+                    pushFollow(FOLLOW_rule__Instruction__Group_3__0_in_rule__Instruction__Alternatives723);
                     rule__Instruction__Group_3__0();
 
                     state._fsp--;
@@ -919,18 +1172,75 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:285:6: ( ruleAutoNumber )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:369:6: ( ruleAutoNumber )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:285:6: ( ruleAutoNumber )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:286:1: ruleAutoNumber
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:369:6: ( ruleAutoNumber )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:370:1: ruleAutoNumber
                     {
                      before(grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()); 
-                    pushFollow(FOLLOW_ruleAutoNumber_in_rule__Instruction__Alternatives561);
+                    pushFollow(FOLLOW_ruleAutoNumber_in_rule__Instruction__Alternatives741);
                     ruleAutoNumber();
 
                     state._fsp--;
 
                      after(grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:375:6: ( ruleTitle )
+                    {
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:375:6: ( ruleTitle )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:376:1: ruleTitle
+                    {
+                     before(grammarAccess.getInstructionAccess().getTitleParserRuleCall_5()); 
+                    pushFollow(FOLLOW_ruleTitle_in_rule__Instruction__Alternatives758);
+                    ruleTitle();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getInstructionAccess().getTitleParserRuleCall_5()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:381:6: ( ruleLegend )
+                    {
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:381:6: ( ruleLegend )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:382:1: ruleLegend
+                    {
+                     before(grammarAccess.getInstructionAccess().getLegendParserRuleCall_6()); 
+                    pushFollow(FOLLOW_ruleLegend_in_rule__Instruction__Alternatives775);
+                    ruleLegend();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getInstructionAccess().getLegendParserRuleCall_6()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:387:6: ( ruleNewpage )
+                    {
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:387:6: ( ruleNewpage )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:388:1: ruleNewpage
+                    {
+                     before(grammarAccess.getInstructionAccess().getNewpageParserRuleCall_7()); 
+                    pushFollow(FOLLOW_ruleNewpage_in_rule__Instruction__Alternatives792);
+                    ruleNewpage();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getInstructionAccess().getNewpageParserRuleCall_7()); 
 
                     }
 
@@ -955,27 +1265,27 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Alternatives"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:296:1: rule__Sequence__Alternatives : ( ( ( rule__Sequence__Group_0__0 ) ) | ( ( rule__Sequence__Group_1__0 ) ) | ( ( rule__Sequence__Group_2__0 ) ) | ( ( rule__Sequence__Group_3__0 ) ) | ( ( rule__Sequence__Group_4__0 ) ) | ( ( rule__Sequence__Group_5__0 ) ) | ( ( rule__Sequence__Group_6__0 ) ) | ( ( rule__Sequence__Group_7__0 ) ) | ( ( rule__Sequence__Group_8__0 ) ) | ( ( rule__Sequence__Group_9__0 ) ) | ( ( rule__Sequence__Group_10__0 ) ) | ( ( rule__Sequence__Group_11__0 ) ) | ( ( rule__Sequence__Group_12__0 ) ) | ( ( rule__Sequence__Group_13__0 ) ) | ( ( rule__Sequence__Group_14__0 ) ) | ( ( rule__Sequence__Group_15__0 ) ) | ( ( rule__Sequence__Group_16__0 ) ) | ( ( rule__Sequence__Group_17__0 ) ) | ( ( rule__Sequence__Group_18__0 ) ) | ( ( rule__Sequence__Group_19__0 ) ) | ( '.' ) );
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:398:1: rule__Sequence__Alternatives : ( ( ( rule__Sequence__Group_0__0 ) ) | ( ( rule__Sequence__Group_1__0 ) ) | ( ( rule__Sequence__Group_2__0 ) ) | ( ( rule__Sequence__Group_3__0 ) ) | ( ( rule__Sequence__Group_4__0 ) ) | ( ( rule__Sequence__Group_5__0 ) ) | ( ( rule__Sequence__Group_6__0 ) ) | ( ( rule__Sequence__Group_7__0 ) ) | ( ( rule__Sequence__Group_8__0 ) ) | ( ( rule__Sequence__Group_9__0 ) ) | ( ( rule__Sequence__Group_10__0 ) ) | ( ( rule__Sequence__Group_11__0 ) ) | ( ( rule__Sequence__Group_12__0 ) ) | ( ( rule__Sequence__Group_13__0 ) ) | ( ( rule__Sequence__Group_14__0 ) ) | ( ( rule__Sequence__Group_15__0 ) ) | ( ( rule__Sequence__Group_16__0 ) ) | ( ( rule__Sequence__Group_17__0 ) ) | ( ( rule__Sequence__Group_18__0 ) ) | ( ( rule__Sequence__Group_19__0 ) ) | ( '.' ) );
     public final void rule__Sequence__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:300:1: ( ( ( rule__Sequence__Group_0__0 ) ) | ( ( rule__Sequence__Group_1__0 ) ) | ( ( rule__Sequence__Group_2__0 ) ) | ( ( rule__Sequence__Group_3__0 ) ) | ( ( rule__Sequence__Group_4__0 ) ) | ( ( rule__Sequence__Group_5__0 ) ) | ( ( rule__Sequence__Group_6__0 ) ) | ( ( rule__Sequence__Group_7__0 ) ) | ( ( rule__Sequence__Group_8__0 ) ) | ( ( rule__Sequence__Group_9__0 ) ) | ( ( rule__Sequence__Group_10__0 ) ) | ( ( rule__Sequence__Group_11__0 ) ) | ( ( rule__Sequence__Group_12__0 ) ) | ( ( rule__Sequence__Group_13__0 ) ) | ( ( rule__Sequence__Group_14__0 ) ) | ( ( rule__Sequence__Group_15__0 ) ) | ( ( rule__Sequence__Group_16__0 ) ) | ( ( rule__Sequence__Group_17__0 ) ) | ( ( rule__Sequence__Group_18__0 ) ) | ( ( rule__Sequence__Group_19__0 ) ) | ( '.' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:402:1: ( ( ( rule__Sequence__Group_0__0 ) ) | ( ( rule__Sequence__Group_1__0 ) ) | ( ( rule__Sequence__Group_2__0 ) ) | ( ( rule__Sequence__Group_3__0 ) ) | ( ( rule__Sequence__Group_4__0 ) ) | ( ( rule__Sequence__Group_5__0 ) ) | ( ( rule__Sequence__Group_6__0 ) ) | ( ( rule__Sequence__Group_7__0 ) ) | ( ( rule__Sequence__Group_8__0 ) ) | ( ( rule__Sequence__Group_9__0 ) ) | ( ( rule__Sequence__Group_10__0 ) ) | ( ( rule__Sequence__Group_11__0 ) ) | ( ( rule__Sequence__Group_12__0 ) ) | ( ( rule__Sequence__Group_13__0 ) ) | ( ( rule__Sequence__Group_14__0 ) ) | ( ( rule__Sequence__Group_15__0 ) ) | ( ( rule__Sequence__Group_16__0 ) ) | ( ( rule__Sequence__Group_17__0 ) ) | ( ( rule__Sequence__Group_18__0 ) ) | ( ( rule__Sequence__Group_19__0 ) ) | ( '.' ) )
             int alt3=21;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:301:1: ( ( rule__Sequence__Group_0__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:403:1: ( ( rule__Sequence__Group_0__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:301:1: ( ( rule__Sequence__Group_0__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:302:1: ( rule__Sequence__Group_0__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:403:1: ( ( rule__Sequence__Group_0__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:404:1: ( rule__Sequence__Group_0__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_0()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:303:1: ( rule__Sequence__Group_0__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:303:2: rule__Sequence__Group_0__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:405:1: ( rule__Sequence__Group_0__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:405:2: rule__Sequence__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_0__0_in_rule__Sequence__Alternatives593);
+                    pushFollow(FOLLOW_rule__Sequence__Group_0__0_in_rule__Sequence__Alternatives824);
                     rule__Sequence__Group_0__0();
 
                     state._fsp--;
@@ -991,16 +1301,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:307:6: ( ( rule__Sequence__Group_1__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:409:6: ( ( rule__Sequence__Group_1__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:307:6: ( ( rule__Sequence__Group_1__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:308:1: ( rule__Sequence__Group_1__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:409:6: ( ( rule__Sequence__Group_1__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:410:1: ( rule__Sequence__Group_1__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_1()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:309:1: ( rule__Sequence__Group_1__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:309:2: rule__Sequence__Group_1__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:411:1: ( rule__Sequence__Group_1__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:411:2: rule__Sequence__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_1__0_in_rule__Sequence__Alternatives611);
+                    pushFollow(FOLLOW_rule__Sequence__Group_1__0_in_rule__Sequence__Alternatives842);
                     rule__Sequence__Group_1__0();
 
                     state._fsp--;
@@ -1016,16 +1326,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:313:6: ( ( rule__Sequence__Group_2__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:415:6: ( ( rule__Sequence__Group_2__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:313:6: ( ( rule__Sequence__Group_2__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:314:1: ( rule__Sequence__Group_2__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:415:6: ( ( rule__Sequence__Group_2__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:416:1: ( rule__Sequence__Group_2__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_2()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:315:1: ( rule__Sequence__Group_2__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:315:2: rule__Sequence__Group_2__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:417:1: ( rule__Sequence__Group_2__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:417:2: rule__Sequence__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_2__0_in_rule__Sequence__Alternatives629);
+                    pushFollow(FOLLOW_rule__Sequence__Group_2__0_in_rule__Sequence__Alternatives860);
                     rule__Sequence__Group_2__0();
 
                     state._fsp--;
@@ -1041,16 +1351,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:319:6: ( ( rule__Sequence__Group_3__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:421:6: ( ( rule__Sequence__Group_3__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:319:6: ( ( rule__Sequence__Group_3__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:320:1: ( rule__Sequence__Group_3__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:421:6: ( ( rule__Sequence__Group_3__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:422:1: ( rule__Sequence__Group_3__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_3()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:321:1: ( rule__Sequence__Group_3__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:321:2: rule__Sequence__Group_3__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:423:1: ( rule__Sequence__Group_3__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:423:2: rule__Sequence__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_3__0_in_rule__Sequence__Alternatives647);
+                    pushFollow(FOLLOW_rule__Sequence__Group_3__0_in_rule__Sequence__Alternatives878);
                     rule__Sequence__Group_3__0();
 
                     state._fsp--;
@@ -1066,16 +1376,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:325:6: ( ( rule__Sequence__Group_4__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:427:6: ( ( rule__Sequence__Group_4__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:325:6: ( ( rule__Sequence__Group_4__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:326:1: ( rule__Sequence__Group_4__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:427:6: ( ( rule__Sequence__Group_4__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:428:1: ( rule__Sequence__Group_4__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_4()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:327:1: ( rule__Sequence__Group_4__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:327:2: rule__Sequence__Group_4__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:429:1: ( rule__Sequence__Group_4__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:429:2: rule__Sequence__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_4__0_in_rule__Sequence__Alternatives665);
+                    pushFollow(FOLLOW_rule__Sequence__Group_4__0_in_rule__Sequence__Alternatives896);
                     rule__Sequence__Group_4__0();
 
                     state._fsp--;
@@ -1091,16 +1401,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:331:6: ( ( rule__Sequence__Group_5__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:433:6: ( ( rule__Sequence__Group_5__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:331:6: ( ( rule__Sequence__Group_5__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:332:1: ( rule__Sequence__Group_5__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:433:6: ( ( rule__Sequence__Group_5__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:434:1: ( rule__Sequence__Group_5__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_5()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:333:1: ( rule__Sequence__Group_5__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:333:2: rule__Sequence__Group_5__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:435:1: ( rule__Sequence__Group_5__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:435:2: rule__Sequence__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_5__0_in_rule__Sequence__Alternatives683);
+                    pushFollow(FOLLOW_rule__Sequence__Group_5__0_in_rule__Sequence__Alternatives914);
                     rule__Sequence__Group_5__0();
 
                     state._fsp--;
@@ -1116,16 +1426,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:337:6: ( ( rule__Sequence__Group_6__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:439:6: ( ( rule__Sequence__Group_6__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:337:6: ( ( rule__Sequence__Group_6__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:338:1: ( rule__Sequence__Group_6__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:439:6: ( ( rule__Sequence__Group_6__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:440:1: ( rule__Sequence__Group_6__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_6()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:339:1: ( rule__Sequence__Group_6__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:339:2: rule__Sequence__Group_6__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:441:1: ( rule__Sequence__Group_6__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:441:2: rule__Sequence__Group_6__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_6__0_in_rule__Sequence__Alternatives701);
+                    pushFollow(FOLLOW_rule__Sequence__Group_6__0_in_rule__Sequence__Alternatives932);
                     rule__Sequence__Group_6__0();
 
                     state._fsp--;
@@ -1141,16 +1451,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:343:6: ( ( rule__Sequence__Group_7__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:445:6: ( ( rule__Sequence__Group_7__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:343:6: ( ( rule__Sequence__Group_7__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:344:1: ( rule__Sequence__Group_7__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:445:6: ( ( rule__Sequence__Group_7__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:446:1: ( rule__Sequence__Group_7__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_7()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:345:1: ( rule__Sequence__Group_7__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:345:2: rule__Sequence__Group_7__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:447:1: ( rule__Sequence__Group_7__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:447:2: rule__Sequence__Group_7__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_7__0_in_rule__Sequence__Alternatives719);
+                    pushFollow(FOLLOW_rule__Sequence__Group_7__0_in_rule__Sequence__Alternatives950);
                     rule__Sequence__Group_7__0();
 
                     state._fsp--;
@@ -1166,16 +1476,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:349:6: ( ( rule__Sequence__Group_8__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:451:6: ( ( rule__Sequence__Group_8__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:349:6: ( ( rule__Sequence__Group_8__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:350:1: ( rule__Sequence__Group_8__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:451:6: ( ( rule__Sequence__Group_8__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:452:1: ( rule__Sequence__Group_8__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_8()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:351:1: ( rule__Sequence__Group_8__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:351:2: rule__Sequence__Group_8__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:453:1: ( rule__Sequence__Group_8__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:453:2: rule__Sequence__Group_8__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_8__0_in_rule__Sequence__Alternatives737);
+                    pushFollow(FOLLOW_rule__Sequence__Group_8__0_in_rule__Sequence__Alternatives968);
                     rule__Sequence__Group_8__0();
 
                     state._fsp--;
@@ -1191,16 +1501,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:355:6: ( ( rule__Sequence__Group_9__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:457:6: ( ( rule__Sequence__Group_9__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:355:6: ( ( rule__Sequence__Group_9__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:356:1: ( rule__Sequence__Group_9__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:457:6: ( ( rule__Sequence__Group_9__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:458:1: ( rule__Sequence__Group_9__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_9()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:357:1: ( rule__Sequence__Group_9__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:357:2: rule__Sequence__Group_9__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:459:1: ( rule__Sequence__Group_9__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:459:2: rule__Sequence__Group_9__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_9__0_in_rule__Sequence__Alternatives755);
+                    pushFollow(FOLLOW_rule__Sequence__Group_9__0_in_rule__Sequence__Alternatives986);
                     rule__Sequence__Group_9__0();
 
                     state._fsp--;
@@ -1216,16 +1526,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:361:6: ( ( rule__Sequence__Group_10__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:463:6: ( ( rule__Sequence__Group_10__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:361:6: ( ( rule__Sequence__Group_10__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:362:1: ( rule__Sequence__Group_10__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:463:6: ( ( rule__Sequence__Group_10__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:464:1: ( rule__Sequence__Group_10__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_10()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:363:1: ( rule__Sequence__Group_10__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:363:2: rule__Sequence__Group_10__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:465:1: ( rule__Sequence__Group_10__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:465:2: rule__Sequence__Group_10__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_10__0_in_rule__Sequence__Alternatives773);
+                    pushFollow(FOLLOW_rule__Sequence__Group_10__0_in_rule__Sequence__Alternatives1004);
                     rule__Sequence__Group_10__0();
 
                     state._fsp--;
@@ -1241,16 +1551,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:367:6: ( ( rule__Sequence__Group_11__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:469:6: ( ( rule__Sequence__Group_11__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:367:6: ( ( rule__Sequence__Group_11__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:368:1: ( rule__Sequence__Group_11__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:469:6: ( ( rule__Sequence__Group_11__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:470:1: ( rule__Sequence__Group_11__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_11()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:369:1: ( rule__Sequence__Group_11__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:369:2: rule__Sequence__Group_11__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:471:1: ( rule__Sequence__Group_11__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:471:2: rule__Sequence__Group_11__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_11__0_in_rule__Sequence__Alternatives791);
+                    pushFollow(FOLLOW_rule__Sequence__Group_11__0_in_rule__Sequence__Alternatives1022);
                     rule__Sequence__Group_11__0();
 
                     state._fsp--;
@@ -1266,16 +1576,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:373:6: ( ( rule__Sequence__Group_12__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:475:6: ( ( rule__Sequence__Group_12__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:373:6: ( ( rule__Sequence__Group_12__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:374:1: ( rule__Sequence__Group_12__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:475:6: ( ( rule__Sequence__Group_12__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:476:1: ( rule__Sequence__Group_12__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_12()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:375:1: ( rule__Sequence__Group_12__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:375:2: rule__Sequence__Group_12__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:477:1: ( rule__Sequence__Group_12__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:477:2: rule__Sequence__Group_12__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_12__0_in_rule__Sequence__Alternatives809);
+                    pushFollow(FOLLOW_rule__Sequence__Group_12__0_in_rule__Sequence__Alternatives1040);
                     rule__Sequence__Group_12__0();
 
                     state._fsp--;
@@ -1291,16 +1601,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 14 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:379:6: ( ( rule__Sequence__Group_13__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:481:6: ( ( rule__Sequence__Group_13__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:379:6: ( ( rule__Sequence__Group_13__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:380:1: ( rule__Sequence__Group_13__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:481:6: ( ( rule__Sequence__Group_13__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:482:1: ( rule__Sequence__Group_13__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_13()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:381:1: ( rule__Sequence__Group_13__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:381:2: rule__Sequence__Group_13__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:483:1: ( rule__Sequence__Group_13__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:483:2: rule__Sequence__Group_13__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_13__0_in_rule__Sequence__Alternatives827);
+                    pushFollow(FOLLOW_rule__Sequence__Group_13__0_in_rule__Sequence__Alternatives1058);
                     rule__Sequence__Group_13__0();
 
                     state._fsp--;
@@ -1316,16 +1626,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 15 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:385:6: ( ( rule__Sequence__Group_14__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:487:6: ( ( rule__Sequence__Group_14__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:385:6: ( ( rule__Sequence__Group_14__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:386:1: ( rule__Sequence__Group_14__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:487:6: ( ( rule__Sequence__Group_14__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:488:1: ( rule__Sequence__Group_14__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_14()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:387:1: ( rule__Sequence__Group_14__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:387:2: rule__Sequence__Group_14__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:489:1: ( rule__Sequence__Group_14__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:489:2: rule__Sequence__Group_14__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_14__0_in_rule__Sequence__Alternatives845);
+                    pushFollow(FOLLOW_rule__Sequence__Group_14__0_in_rule__Sequence__Alternatives1076);
                     rule__Sequence__Group_14__0();
 
                     state._fsp--;
@@ -1341,16 +1651,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 16 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:391:6: ( ( rule__Sequence__Group_15__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:493:6: ( ( rule__Sequence__Group_15__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:391:6: ( ( rule__Sequence__Group_15__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:392:1: ( rule__Sequence__Group_15__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:493:6: ( ( rule__Sequence__Group_15__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:494:1: ( rule__Sequence__Group_15__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_15()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:393:1: ( rule__Sequence__Group_15__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:393:2: rule__Sequence__Group_15__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:495:1: ( rule__Sequence__Group_15__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:495:2: rule__Sequence__Group_15__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_15__0_in_rule__Sequence__Alternatives863);
+                    pushFollow(FOLLOW_rule__Sequence__Group_15__0_in_rule__Sequence__Alternatives1094);
                     rule__Sequence__Group_15__0();
 
                     state._fsp--;
@@ -1366,16 +1676,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 17 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:397:6: ( ( rule__Sequence__Group_16__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:499:6: ( ( rule__Sequence__Group_16__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:397:6: ( ( rule__Sequence__Group_16__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:398:1: ( rule__Sequence__Group_16__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:499:6: ( ( rule__Sequence__Group_16__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:500:1: ( rule__Sequence__Group_16__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_16()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:399:1: ( rule__Sequence__Group_16__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:399:2: rule__Sequence__Group_16__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:501:1: ( rule__Sequence__Group_16__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:501:2: rule__Sequence__Group_16__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_16__0_in_rule__Sequence__Alternatives881);
+                    pushFollow(FOLLOW_rule__Sequence__Group_16__0_in_rule__Sequence__Alternatives1112);
                     rule__Sequence__Group_16__0();
 
                     state._fsp--;
@@ -1391,16 +1701,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 18 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:403:6: ( ( rule__Sequence__Group_17__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:505:6: ( ( rule__Sequence__Group_17__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:403:6: ( ( rule__Sequence__Group_17__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:404:1: ( rule__Sequence__Group_17__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:505:6: ( ( rule__Sequence__Group_17__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:506:1: ( rule__Sequence__Group_17__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_17()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:405:1: ( rule__Sequence__Group_17__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:405:2: rule__Sequence__Group_17__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:507:1: ( rule__Sequence__Group_17__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:507:2: rule__Sequence__Group_17__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_17__0_in_rule__Sequence__Alternatives899);
+                    pushFollow(FOLLOW_rule__Sequence__Group_17__0_in_rule__Sequence__Alternatives1130);
                     rule__Sequence__Group_17__0();
 
                     state._fsp--;
@@ -1416,16 +1726,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 19 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:409:6: ( ( rule__Sequence__Group_18__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:511:6: ( ( rule__Sequence__Group_18__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:409:6: ( ( rule__Sequence__Group_18__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:410:1: ( rule__Sequence__Group_18__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:511:6: ( ( rule__Sequence__Group_18__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:512:1: ( rule__Sequence__Group_18__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_18()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:411:1: ( rule__Sequence__Group_18__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:411:2: rule__Sequence__Group_18__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:513:1: ( rule__Sequence__Group_18__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:513:2: rule__Sequence__Group_18__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_18__0_in_rule__Sequence__Alternatives917);
+                    pushFollow(FOLLOW_rule__Sequence__Group_18__0_in_rule__Sequence__Alternatives1148);
                     rule__Sequence__Group_18__0();
 
                     state._fsp--;
@@ -1441,16 +1751,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 20 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:415:6: ( ( rule__Sequence__Group_19__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:517:6: ( ( rule__Sequence__Group_19__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:415:6: ( ( rule__Sequence__Group_19__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:416:1: ( rule__Sequence__Group_19__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:517:6: ( ( rule__Sequence__Group_19__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:518:1: ( rule__Sequence__Group_19__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_19()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:417:1: ( rule__Sequence__Group_19__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:417:2: rule__Sequence__Group_19__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:519:1: ( rule__Sequence__Group_19__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:519:2: rule__Sequence__Group_19__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_19__0_in_rule__Sequence__Alternatives935);
+                    pushFollow(FOLLOW_rule__Sequence__Group_19__0_in_rule__Sequence__Alternatives1166);
                     rule__Sequence__Group_19__0();
 
                     state._fsp--;
@@ -1466,13 +1776,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 21 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:421:6: ( '.' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:523:6: ( '.' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:421:6: ( '.' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:422:1: '.'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:523:6: ( '.' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:524:1: '.'
                     {
                      before(grammarAccess.getSequenceAccess().getFullStopKeyword_20()); 
-                    match(input,10,FOLLOW_10_in_rule__Sequence__Alternatives954); 
+                    match(input,10,FOLLOW_10_in_rule__Sequence__Alternatives1185); 
                      after(grammarAccess.getSequenceAccess().getFullStopKeyword_20()); 
 
                     }
@@ -1498,36 +1808,36 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Alternatives"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:434:1: rule__Definition__Alternatives : ( ( ( rule__Definition__Group_0__0 ) ) | ( ( rule__Definition__Group_1__0 ) ) | ( ( rule__Definition__Group_2__0 ) ) | ( ( rule__Definition__Group_3__0 ) ) | ( ( rule__Definition__Group_4__0 ) ) );
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:536:1: rule__Definition__Alternatives : ( ( ( rule__Definition__Group_0__0 ) ) | ( ( rule__Definition__Group_1__0 ) ) | ( ( rule__Definition__Group_2__0 ) ) | ( ( rule__Definition__Group_3__0 ) ) | ( ( rule__Definition__Group_4__0 ) ) );
     public final void rule__Definition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:438:1: ( ( ( rule__Definition__Group_0__0 ) ) | ( ( rule__Definition__Group_1__0 ) ) | ( ( rule__Definition__Group_2__0 ) ) | ( ( rule__Definition__Group_3__0 ) ) | ( ( rule__Definition__Group_4__0 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:540:1: ( ( ( rule__Definition__Group_0__0 ) ) | ( ( rule__Definition__Group_1__0 ) ) | ( ( rule__Definition__Group_2__0 ) ) | ( ( rule__Definition__Group_3__0 ) ) | ( ( rule__Definition__Group_4__0 ) ) )
             int alt4=5;
             switch ( input.LA(1) ) {
-            case 168:
+            case 171:
                 {
                 alt4=1;
                 }
                 break;
-            case 169:
+            case 172:
                 {
                 alt4=2;
                 }
                 break;
-            case 170:
+            case 173:
                 {
                 alt4=3;
                 }
                 break;
-            case 171:
+            case 174:
                 {
                 alt4=4;
                 }
                 break;
-            case 172:
+            case 175:
                 {
                 alt4=5;
                 }
@@ -1541,16 +1851,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:439:1: ( ( rule__Definition__Group_0__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:541:1: ( ( rule__Definition__Group_0__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:439:1: ( ( rule__Definition__Group_0__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:440:1: ( rule__Definition__Group_0__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:541:1: ( ( rule__Definition__Group_0__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:542:1: ( rule__Definition__Group_0__0 )
                     {
                      before(grammarAccess.getDefinitionAccess().getGroup_0()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:441:1: ( rule__Definition__Group_0__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:441:2: rule__Definition__Group_0__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:543:1: ( rule__Definition__Group_0__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:543:2: rule__Definition__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Definition__Group_0__0_in_rule__Definition__Alternatives988);
+                    pushFollow(FOLLOW_rule__Definition__Group_0__0_in_rule__Definition__Alternatives1219);
                     rule__Definition__Group_0__0();
 
                     state._fsp--;
@@ -1566,16 +1876,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:445:6: ( ( rule__Definition__Group_1__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:547:6: ( ( rule__Definition__Group_1__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:445:6: ( ( rule__Definition__Group_1__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:446:1: ( rule__Definition__Group_1__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:547:6: ( ( rule__Definition__Group_1__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:548:1: ( rule__Definition__Group_1__0 )
                     {
                      before(grammarAccess.getDefinitionAccess().getGroup_1()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:447:1: ( rule__Definition__Group_1__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:447:2: rule__Definition__Group_1__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:549:1: ( rule__Definition__Group_1__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:549:2: rule__Definition__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Definition__Group_1__0_in_rule__Definition__Alternatives1006);
+                    pushFollow(FOLLOW_rule__Definition__Group_1__0_in_rule__Definition__Alternatives1237);
                     rule__Definition__Group_1__0();
 
                     state._fsp--;
@@ -1591,16 +1901,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:451:6: ( ( rule__Definition__Group_2__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:553:6: ( ( rule__Definition__Group_2__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:451:6: ( ( rule__Definition__Group_2__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:452:1: ( rule__Definition__Group_2__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:553:6: ( ( rule__Definition__Group_2__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:554:1: ( rule__Definition__Group_2__0 )
                     {
                      before(grammarAccess.getDefinitionAccess().getGroup_2()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:453:1: ( rule__Definition__Group_2__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:453:2: rule__Definition__Group_2__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:555:1: ( rule__Definition__Group_2__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:555:2: rule__Definition__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Definition__Group_2__0_in_rule__Definition__Alternatives1024);
+                    pushFollow(FOLLOW_rule__Definition__Group_2__0_in_rule__Definition__Alternatives1255);
                     rule__Definition__Group_2__0();
 
                     state._fsp--;
@@ -1616,16 +1926,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:457:6: ( ( rule__Definition__Group_3__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:559:6: ( ( rule__Definition__Group_3__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:457:6: ( ( rule__Definition__Group_3__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:458:1: ( rule__Definition__Group_3__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:559:6: ( ( rule__Definition__Group_3__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:560:1: ( rule__Definition__Group_3__0 )
                     {
                      before(grammarAccess.getDefinitionAccess().getGroup_3()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:459:1: ( rule__Definition__Group_3__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:459:2: rule__Definition__Group_3__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:561:1: ( rule__Definition__Group_3__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:561:2: rule__Definition__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Definition__Group_3__0_in_rule__Definition__Alternatives1042);
+                    pushFollow(FOLLOW_rule__Definition__Group_3__0_in_rule__Definition__Alternatives1273);
                     rule__Definition__Group_3__0();
 
                     state._fsp--;
@@ -1641,16 +1951,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:463:6: ( ( rule__Definition__Group_4__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:565:6: ( ( rule__Definition__Group_4__0 ) )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:463:6: ( ( rule__Definition__Group_4__0 ) )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:464:1: ( rule__Definition__Group_4__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:565:6: ( ( rule__Definition__Group_4__0 ) )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:566:1: ( rule__Definition__Group_4__0 )
                     {
                      before(grammarAccess.getDefinitionAccess().getGroup_4()); 
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:465:1: ( rule__Definition__Group_4__0 )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:465:2: rule__Definition__Group_4__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:567:1: ( rule__Definition__Group_4__0 )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:567:2: rule__Definition__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Definition__Group_4__0_in_rule__Definition__Alternatives1060);
+                    pushFollow(FOLLOW_rule__Definition__Group_4__0_in_rule__Definition__Alternatives1291);
                     rule__Definition__Group_4__0();
 
                     state._fsp--;
@@ -1683,13 +1993,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Color__Alternatives_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:474:1: rule__Color__Alternatives_1 : ( ( 'AliceBlue' ) | ( 'AntiqueWhite' ) | ( 'Aqua' ) | ( 'Aquamarine' ) | ( 'Azure' ) | ( 'Beige' ) | ( 'Bisque' ) | ( 'Black' ) | ( 'BlanchedAlmond' ) | ( 'Blue' ) | ( 'BlueViolet' ) | ( 'Brown' ) | ( 'BurlyWood' ) | ( 'CadetBlue' ) | ( 'Chartreuse' ) | ( 'Chocolate' ) | ( 'Coral' ) | ( 'CornflowerBlue' ) | ( 'Cornsilk' ) | ( 'Crimson' ) | ( 'Cyan' ) | ( 'DarkBlue' ) | ( 'DarkCyan' ) | ( 'DarkGoldenRod' ) | ( 'DarkGray' ) | ( 'DarkGreen' ) | ( 'DarkGrey' ) | ( 'DarkKhaki' ) | ( 'DarkMagenta' ) | ( 'DarkOliveGreen' ) | ( 'DarkOrchid' ) | ( 'DarkRed' ) | ( 'DarkSalmo' ) | ( 'DarkSeaGreen' ) | ( 'DarkSlateBlue' ) | ( 'DarkSlateGray' ) | ( 'DarkSlateGrey' ) | ( 'DarkTurquoise' ) | ( 'DarkViolet' ) | ( 'Darkorange' ) | ( 'DeepPink' ) | ( 'DeepSkyBlue' ) | ( 'DimGray' ) | ( 'DimGrey' ) | ( 'DodgerBlue' ) | ( 'FireBrick' ) | ( 'FloralWhite' ) | ( 'ForestGreen' ) | ( 'Fuchsia' ) | ( 'Gainsboro' ) | ( 'GhostWhite' ) | ( 'Gold' ) | ( 'GoldenRod' ) | ( 'Gray' ) | ( 'Green' ) | ( 'GreenYellow' ) | ( 'Grey' ) | ( 'HoneyDew' ) | ( 'HotPink' ) | ( 'IndianRed' ) | ( 'Indigo' ) | ( 'Ivory' ) | ( 'Khaki' ) | ( 'Lavender' ) | ( 'LavenderBlush' ) | ( 'LawnGreen' ) | ( 'LemonChiffon' ) | ( 'LightBlue' ) | ( 'LightCoral' ) | ( 'LightCyan' ) | ( 'LightGoldenRodYellow' ) | ( 'LightGray' ) | ( 'LightGreen' ) | ( 'LightGrey' ) | ( 'LightPink' ) | ( 'LightSalmon' ) | ( 'LightSeaGreen' ) | ( 'LightSkyBlue' ) | ( 'LightSlateGray' ) | ( 'LightSlateGrey' ) | ( 'LightSteelBlue' ) | ( 'LightYellow' ) | ( 'Lime' ) | ( 'LimeGreen' ) | ( 'Linen' ) | ( 'Magenta' ) | ( 'Maroon' ) | ( 'MediumAquaMarine' ) | ( 'MediumBlue' ) | ( 'MediumOrchid' ) | ( 'MediumPurple' ) | ( 'MediumSeaGreen' ) | ( 'MediumSlateBlue' ) | ( 'MediumSpringGreen' ) | ( 'MediumTurquoise' ) | ( 'MediumVioletRed' ) | ( 'MidnightBlue' ) | ( 'MintCream' ) | ( 'MistyRose' ) | ( 'Moccasin' ) | ( 'NavajoWhite' ) | ( 'Navy' ) | ( 'OldLace' ) | ( 'Olive' ) | ( 'OliveDrab' ) | ( 'OrangeRed' ) | ( 'Orchid' ) | ( 'PaleGoldenRod' ) | ( 'PaleGreen' ) | ( 'PaleTurquoise' ) | ( 'PaleVioletRed' ) | ( 'PapayaWhip' ) | ( 'PeachPuff' ) | ( 'Peru' ) | ( 'Pink' ) | ( 'Plum' ) | ( 'PowderBlue' ) | ( 'Purple' ) | ( 'Red' ) | ( 'RosyBrown' ) | ( 'RoyalBlue' ) | ( 'SaddleBrown' ) | ( 'Salmon' ) | ( 'SandyBrown' ) | ( 'SeaGreen' ) | ( 'Sienna' ) | ( 'Silver' ) | ( 'SkyBlue' ) | ( 'SlateBlue' ) | ( 'SlateGray' ) | ( 'SlateGrey' ) | ( 'Snow' ) | ( 'SpringGreen' ) | ( 'SteelBlue' ) | ( 'Tan' ) | ( 'Teal' ) | ( 'Thistle' ) | ( 'Tomato' ) | ( 'Turquoise' ) | ( 'Violet' ) | ( 'Wheat' ) | ( 'White' ) | ( 'WhiteSmoke' ) | ( 'Yellow' ) | ( 'YellowGreen' ) );
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:576:1: rule__Color__Alternatives_1 : ( ( 'AliceBlue' ) | ( 'AntiqueWhite' ) | ( 'Aqua' ) | ( 'Aquamarine' ) | ( 'Azure' ) | ( 'Beige' ) | ( 'Bisque' ) | ( 'Black' ) | ( 'BlanchedAlmond' ) | ( 'Blue' ) | ( 'BlueViolet' ) | ( 'Brown' ) | ( 'BurlyWood' ) | ( 'CadetBlue' ) | ( 'Chartreuse' ) | ( 'Chocolate' ) | ( 'Coral' ) | ( 'CornflowerBlue' ) | ( 'Cornsilk' ) | ( 'Crimson' ) | ( 'Cyan' ) | ( 'DarkBlue' ) | ( 'DarkCyan' ) | ( 'DarkGoldenRod' ) | ( 'DarkGray' ) | ( 'DarkGreen' ) | ( 'DarkGrey' ) | ( 'DarkKhaki' ) | ( 'DarkMagenta' ) | ( 'DarkOliveGreen' ) | ( 'DarkOrchid' ) | ( 'DarkRed' ) | ( 'DarkSalmo' ) | ( 'DarkSeaGreen' ) | ( 'DarkSlateBlue' ) | ( 'DarkSlateGray' ) | ( 'DarkSlateGrey' ) | ( 'DarkTurquoise' ) | ( 'DarkViolet' ) | ( 'Darkorange' ) | ( 'DeepPink' ) | ( 'DeepSkyBlue' ) | ( 'DimGray' ) | ( 'DimGrey' ) | ( 'DodgerBlue' ) | ( 'FireBrick' ) | ( 'FloralWhite' ) | ( 'ForestGreen' ) | ( 'Fuchsia' ) | ( 'Gainsboro' ) | ( 'GhostWhite' ) | ( 'Gold' ) | ( 'GoldenRod' ) | ( 'Gray' ) | ( 'Green' ) | ( 'GreenYellow' ) | ( 'Grey' ) | ( 'HoneyDew' ) | ( 'HotPink' ) | ( 'IndianRed' ) | ( 'Indigo' ) | ( 'Ivory' ) | ( 'Khaki' ) | ( 'Lavender' ) | ( 'LavenderBlush' ) | ( 'LawnGreen' ) | ( 'LemonChiffon' ) | ( 'LightBlue' ) | ( 'LightCoral' ) | ( 'LightCyan' ) | ( 'LightGoldenRodYellow' ) | ( 'LightGray' ) | ( 'LightGreen' ) | ( 'LightGrey' ) | ( 'LightPink' ) | ( 'LightSalmon' ) | ( 'LightSeaGreen' ) | ( 'LightSkyBlue' ) | ( 'LightSlateGray' ) | ( 'LightSlateGrey' ) | ( 'LightSteelBlue' ) | ( 'LightYellow' ) | ( 'Lime' ) | ( 'LimeGreen' ) | ( 'Linen' ) | ( 'Magenta' ) | ( 'Maroon' ) | ( 'MediumAquaMarine' ) | ( 'MediumBlue' ) | ( 'MediumOrchid' ) | ( 'MediumPurple' ) | ( 'MediumSeaGreen' ) | ( 'MediumSlateBlue' ) | ( 'MediumSpringGreen' ) | ( 'MediumTurquoise' ) | ( 'MediumVioletRed' ) | ( 'MidnightBlue' ) | ( 'MintCream' ) | ( 'MistyRose' ) | ( 'Moccasin' ) | ( 'NavajoWhite' ) | ( 'Navy' ) | ( 'OldLace' ) | ( 'Olive' ) | ( 'OliveDrab' ) | ( 'OrangeRed' ) | ( 'Orchid' ) | ( 'PaleGoldenRod' ) | ( 'PaleGreen' ) | ( 'PaleTurquoise' ) | ( 'PaleVioletRed' ) | ( 'PapayaWhip' ) | ( 'PeachPuff' ) | ( 'Peru' ) | ( 'Pink' ) | ( 'Plum' ) | ( 'PowderBlue' ) | ( 'Purple' ) | ( 'Red' ) | ( 'RosyBrown' ) | ( 'RoyalBlue' ) | ( 'SaddleBrown' ) | ( 'Salmon' ) | ( 'SandyBrown' ) | ( 'SeaGreen' ) | ( 'Sienna' ) | ( 'Silver' ) | ( 'SkyBlue' ) | ( 'SlateBlue' ) | ( 'SlateGray' ) | ( 'SlateGrey' ) | ( 'Snow' ) | ( 'SpringGreen' ) | ( 'SteelBlue' ) | ( 'Tan' ) | ( 'Teal' ) | ( 'Thistle' ) | ( 'Tomato' ) | ( 'Turquoise' ) | ( 'Violet' ) | ( 'Wheat' ) | ( 'White' ) | ( 'WhiteSmoke' ) | ( 'Yellow' ) | ( 'YellowGreen' ) );
     public final void rule__Color__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:478:1: ( ( 'AliceBlue' ) | ( 'AntiqueWhite' ) | ( 'Aqua' ) | ( 'Aquamarine' ) | ( 'Azure' ) | ( 'Beige' ) | ( 'Bisque' ) | ( 'Black' ) | ( 'BlanchedAlmond' ) | ( 'Blue' ) | ( 'BlueViolet' ) | ( 'Brown' ) | ( 'BurlyWood' ) | ( 'CadetBlue' ) | ( 'Chartreuse' ) | ( 'Chocolate' ) | ( 'Coral' ) | ( 'CornflowerBlue' ) | ( 'Cornsilk' ) | ( 'Crimson' ) | ( 'Cyan' ) | ( 'DarkBlue' ) | ( 'DarkCyan' ) | ( 'DarkGoldenRod' ) | ( 'DarkGray' ) | ( 'DarkGreen' ) | ( 'DarkGrey' ) | ( 'DarkKhaki' ) | ( 'DarkMagenta' ) | ( 'DarkOliveGreen' ) | ( 'DarkOrchid' ) | ( 'DarkRed' ) | ( 'DarkSalmo' ) | ( 'DarkSeaGreen' ) | ( 'DarkSlateBlue' ) | ( 'DarkSlateGray' ) | ( 'DarkSlateGrey' ) | ( 'DarkTurquoise' ) | ( 'DarkViolet' ) | ( 'Darkorange' ) | ( 'DeepPink' ) | ( 'DeepSkyBlue' ) | ( 'DimGray' ) | ( 'DimGrey' ) | ( 'DodgerBlue' ) | ( 'FireBrick' ) | ( 'FloralWhite' ) | ( 'ForestGreen' ) | ( 'Fuchsia' ) | ( 'Gainsboro' ) | ( 'GhostWhite' ) | ( 'Gold' ) | ( 'GoldenRod' ) | ( 'Gray' ) | ( 'Green' ) | ( 'GreenYellow' ) | ( 'Grey' ) | ( 'HoneyDew' ) | ( 'HotPink' ) | ( 'IndianRed' ) | ( 'Indigo' ) | ( 'Ivory' ) | ( 'Khaki' ) | ( 'Lavender' ) | ( 'LavenderBlush' ) | ( 'LawnGreen' ) | ( 'LemonChiffon' ) | ( 'LightBlue' ) | ( 'LightCoral' ) | ( 'LightCyan' ) | ( 'LightGoldenRodYellow' ) | ( 'LightGray' ) | ( 'LightGreen' ) | ( 'LightGrey' ) | ( 'LightPink' ) | ( 'LightSalmon' ) | ( 'LightSeaGreen' ) | ( 'LightSkyBlue' ) | ( 'LightSlateGray' ) | ( 'LightSlateGrey' ) | ( 'LightSteelBlue' ) | ( 'LightYellow' ) | ( 'Lime' ) | ( 'LimeGreen' ) | ( 'Linen' ) | ( 'Magenta' ) | ( 'Maroon' ) | ( 'MediumAquaMarine' ) | ( 'MediumBlue' ) | ( 'MediumOrchid' ) | ( 'MediumPurple' ) | ( 'MediumSeaGreen' ) | ( 'MediumSlateBlue' ) | ( 'MediumSpringGreen' ) | ( 'MediumTurquoise' ) | ( 'MediumVioletRed' ) | ( 'MidnightBlue' ) | ( 'MintCream' ) | ( 'MistyRose' ) | ( 'Moccasin' ) | ( 'NavajoWhite' ) | ( 'Navy' ) | ( 'OldLace' ) | ( 'Olive' ) | ( 'OliveDrab' ) | ( 'OrangeRed' ) | ( 'Orchid' ) | ( 'PaleGoldenRod' ) | ( 'PaleGreen' ) | ( 'PaleTurquoise' ) | ( 'PaleVioletRed' ) | ( 'PapayaWhip' ) | ( 'PeachPuff' ) | ( 'Peru' ) | ( 'Pink' ) | ( 'Plum' ) | ( 'PowderBlue' ) | ( 'Purple' ) | ( 'Red' ) | ( 'RosyBrown' ) | ( 'RoyalBlue' ) | ( 'SaddleBrown' ) | ( 'Salmon' ) | ( 'SandyBrown' ) | ( 'SeaGreen' ) | ( 'Sienna' ) | ( 'Silver' ) | ( 'SkyBlue' ) | ( 'SlateBlue' ) | ( 'SlateGray' ) | ( 'SlateGrey' ) | ( 'Snow' ) | ( 'SpringGreen' ) | ( 'SteelBlue' ) | ( 'Tan' ) | ( 'Teal' ) | ( 'Thistle' ) | ( 'Tomato' ) | ( 'Turquoise' ) | ( 'Violet' ) | ( 'Wheat' ) | ( 'White' ) | ( 'WhiteSmoke' ) | ( 'Yellow' ) | ( 'YellowGreen' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:580:1: ( ( 'AliceBlue' ) | ( 'AntiqueWhite' ) | ( 'Aqua' ) | ( 'Aquamarine' ) | ( 'Azure' ) | ( 'Beige' ) | ( 'Bisque' ) | ( 'Black' ) | ( 'BlanchedAlmond' ) | ( 'Blue' ) | ( 'BlueViolet' ) | ( 'Brown' ) | ( 'BurlyWood' ) | ( 'CadetBlue' ) | ( 'Chartreuse' ) | ( 'Chocolate' ) | ( 'Coral' ) | ( 'CornflowerBlue' ) | ( 'Cornsilk' ) | ( 'Crimson' ) | ( 'Cyan' ) | ( 'DarkBlue' ) | ( 'DarkCyan' ) | ( 'DarkGoldenRod' ) | ( 'DarkGray' ) | ( 'DarkGreen' ) | ( 'DarkGrey' ) | ( 'DarkKhaki' ) | ( 'DarkMagenta' ) | ( 'DarkOliveGreen' ) | ( 'DarkOrchid' ) | ( 'DarkRed' ) | ( 'DarkSalmo' ) | ( 'DarkSeaGreen' ) | ( 'DarkSlateBlue' ) | ( 'DarkSlateGray' ) | ( 'DarkSlateGrey' ) | ( 'DarkTurquoise' ) | ( 'DarkViolet' ) | ( 'Darkorange' ) | ( 'DeepPink' ) | ( 'DeepSkyBlue' ) | ( 'DimGray' ) | ( 'DimGrey' ) | ( 'DodgerBlue' ) | ( 'FireBrick' ) | ( 'FloralWhite' ) | ( 'ForestGreen' ) | ( 'Fuchsia' ) | ( 'Gainsboro' ) | ( 'GhostWhite' ) | ( 'Gold' ) | ( 'GoldenRod' ) | ( 'Gray' ) | ( 'Green' ) | ( 'GreenYellow' ) | ( 'Grey' ) | ( 'HoneyDew' ) | ( 'HotPink' ) | ( 'IndianRed' ) | ( 'Indigo' ) | ( 'Ivory' ) | ( 'Khaki' ) | ( 'Lavender' ) | ( 'LavenderBlush' ) | ( 'LawnGreen' ) | ( 'LemonChiffon' ) | ( 'LightBlue' ) | ( 'LightCoral' ) | ( 'LightCyan' ) | ( 'LightGoldenRodYellow' ) | ( 'LightGray' ) | ( 'LightGreen' ) | ( 'LightGrey' ) | ( 'LightPink' ) | ( 'LightSalmon' ) | ( 'LightSeaGreen' ) | ( 'LightSkyBlue' ) | ( 'LightSlateGray' ) | ( 'LightSlateGrey' ) | ( 'LightSteelBlue' ) | ( 'LightYellow' ) | ( 'Lime' ) | ( 'LimeGreen' ) | ( 'Linen' ) | ( 'Magenta' ) | ( 'Maroon' ) | ( 'MediumAquaMarine' ) | ( 'MediumBlue' ) | ( 'MediumOrchid' ) | ( 'MediumPurple' ) | ( 'MediumSeaGreen' ) | ( 'MediumSlateBlue' ) | ( 'MediumSpringGreen' ) | ( 'MediumTurquoise' ) | ( 'MediumVioletRed' ) | ( 'MidnightBlue' ) | ( 'MintCream' ) | ( 'MistyRose' ) | ( 'Moccasin' ) | ( 'NavajoWhite' ) | ( 'Navy' ) | ( 'OldLace' ) | ( 'Olive' ) | ( 'OliveDrab' ) | ( 'OrangeRed' ) | ( 'Orchid' ) | ( 'PaleGoldenRod' ) | ( 'PaleGreen' ) | ( 'PaleTurquoise' ) | ( 'PaleVioletRed' ) | ( 'PapayaWhip' ) | ( 'PeachPuff' ) | ( 'Peru' ) | ( 'Pink' ) | ( 'Plum' ) | ( 'PowderBlue' ) | ( 'Purple' ) | ( 'Red' ) | ( 'RosyBrown' ) | ( 'RoyalBlue' ) | ( 'SaddleBrown' ) | ( 'Salmon' ) | ( 'SandyBrown' ) | ( 'SeaGreen' ) | ( 'Sienna' ) | ( 'Silver' ) | ( 'SkyBlue' ) | ( 'SlateBlue' ) | ( 'SlateGray' ) | ( 'SlateGrey' ) | ( 'Snow' ) | ( 'SpringGreen' ) | ( 'SteelBlue' ) | ( 'Tan' ) | ( 'Teal' ) | ( 'Thistle' ) | ( 'Tomato' ) | ( 'Turquoise' ) | ( 'Violet' ) | ( 'Wheat' ) | ( 'White' ) | ( 'WhiteSmoke' ) | ( 'Yellow' ) | ( 'YellowGreen' ) )
             int alt5=145;
             switch ( input.LA(1) ) {
             case 11:
@@ -2426,13 +2736,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
             switch (alt5) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:479:1: ( 'AliceBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:581:1: ( 'AliceBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:479:1: ( 'AliceBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:480:1: 'AliceBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:581:1: ( 'AliceBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:582:1: 'AliceBlue'
                     {
                      before(grammarAccess.getColorAccess().getAliceBlueKeyword_1_0()); 
-                    match(input,11,FOLLOW_11_in_rule__Color__Alternatives_11094); 
+                    match(input,11,FOLLOW_11_in_rule__Color__Alternatives_11325); 
                      after(grammarAccess.getColorAccess().getAliceBlueKeyword_1_0()); 
 
                     }
@@ -2441,13 +2751,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:487:6: ( 'AntiqueWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:589:6: ( 'AntiqueWhite' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:487:6: ( 'AntiqueWhite' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:488:1: 'AntiqueWhite'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:589:6: ( 'AntiqueWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:590:1: 'AntiqueWhite'
                     {
                      before(grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1_1()); 
-                    match(input,12,FOLLOW_12_in_rule__Color__Alternatives_11114); 
+                    match(input,12,FOLLOW_12_in_rule__Color__Alternatives_11345); 
                      after(grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1_1()); 
 
                     }
@@ -2456,13 +2766,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:495:6: ( 'Aqua' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:597:6: ( 'Aqua' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:495:6: ( 'Aqua' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:496:1: 'Aqua'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:597:6: ( 'Aqua' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:598:1: 'Aqua'
                     {
                      before(grammarAccess.getColorAccess().getAquaKeyword_1_2()); 
-                    match(input,13,FOLLOW_13_in_rule__Color__Alternatives_11134); 
+                    match(input,13,FOLLOW_13_in_rule__Color__Alternatives_11365); 
                      after(grammarAccess.getColorAccess().getAquaKeyword_1_2()); 
 
                     }
@@ -2471,13 +2781,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:503:6: ( 'Aquamarine' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:605:6: ( 'Aquamarine' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:503:6: ( 'Aquamarine' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:504:1: 'Aquamarine'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:605:6: ( 'Aquamarine' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:606:1: 'Aquamarine'
                     {
                      before(grammarAccess.getColorAccess().getAquamarineKeyword_1_3()); 
-                    match(input,14,FOLLOW_14_in_rule__Color__Alternatives_11154); 
+                    match(input,14,FOLLOW_14_in_rule__Color__Alternatives_11385); 
                      after(grammarAccess.getColorAccess().getAquamarineKeyword_1_3()); 
 
                     }
@@ -2486,13 +2796,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:511:6: ( 'Azure' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:613:6: ( 'Azure' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:511:6: ( 'Azure' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:512:1: 'Azure'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:613:6: ( 'Azure' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:614:1: 'Azure'
                     {
                      before(grammarAccess.getColorAccess().getAzureKeyword_1_4()); 
-                    match(input,15,FOLLOW_15_in_rule__Color__Alternatives_11174); 
+                    match(input,15,FOLLOW_15_in_rule__Color__Alternatives_11405); 
                      after(grammarAccess.getColorAccess().getAzureKeyword_1_4()); 
 
                     }
@@ -2501,13 +2811,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:519:6: ( 'Beige' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:621:6: ( 'Beige' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:519:6: ( 'Beige' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:520:1: 'Beige'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:621:6: ( 'Beige' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:622:1: 'Beige'
                     {
                      before(grammarAccess.getColorAccess().getBeigeKeyword_1_5()); 
-                    match(input,16,FOLLOW_16_in_rule__Color__Alternatives_11194); 
+                    match(input,16,FOLLOW_16_in_rule__Color__Alternatives_11425); 
                      after(grammarAccess.getColorAccess().getBeigeKeyword_1_5()); 
 
                     }
@@ -2516,13 +2826,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:527:6: ( 'Bisque' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:629:6: ( 'Bisque' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:527:6: ( 'Bisque' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:528:1: 'Bisque'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:629:6: ( 'Bisque' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:630:1: 'Bisque'
                     {
                      before(grammarAccess.getColorAccess().getBisqueKeyword_1_6()); 
-                    match(input,17,FOLLOW_17_in_rule__Color__Alternatives_11214); 
+                    match(input,17,FOLLOW_17_in_rule__Color__Alternatives_11445); 
                      after(grammarAccess.getColorAccess().getBisqueKeyword_1_6()); 
 
                     }
@@ -2531,13 +2841,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:535:6: ( 'Black' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:637:6: ( 'Black' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:535:6: ( 'Black' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:536:1: 'Black'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:637:6: ( 'Black' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:638:1: 'Black'
                     {
                      before(grammarAccess.getColorAccess().getBlackKeyword_1_7()); 
-                    match(input,18,FOLLOW_18_in_rule__Color__Alternatives_11234); 
+                    match(input,18,FOLLOW_18_in_rule__Color__Alternatives_11465); 
                      after(grammarAccess.getColorAccess().getBlackKeyword_1_7()); 
 
                     }
@@ -2546,13 +2856,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:543:6: ( 'BlanchedAlmond' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:645:6: ( 'BlanchedAlmond' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:543:6: ( 'BlanchedAlmond' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:544:1: 'BlanchedAlmond'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:645:6: ( 'BlanchedAlmond' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:646:1: 'BlanchedAlmond'
                     {
                      before(grammarAccess.getColorAccess().getBlanchedAlmondKeyword_1_8()); 
-                    match(input,19,FOLLOW_19_in_rule__Color__Alternatives_11254); 
+                    match(input,19,FOLLOW_19_in_rule__Color__Alternatives_11485); 
                      after(grammarAccess.getColorAccess().getBlanchedAlmondKeyword_1_8()); 
 
                     }
@@ -2561,13 +2871,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:551:6: ( 'Blue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:653:6: ( 'Blue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:551:6: ( 'Blue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:552:1: 'Blue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:653:6: ( 'Blue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:654:1: 'Blue'
                     {
                      before(grammarAccess.getColorAccess().getBlueKeyword_1_9()); 
-                    match(input,20,FOLLOW_20_in_rule__Color__Alternatives_11274); 
+                    match(input,20,FOLLOW_20_in_rule__Color__Alternatives_11505); 
                      after(grammarAccess.getColorAccess().getBlueKeyword_1_9()); 
 
                     }
@@ -2576,13 +2886,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:559:6: ( 'BlueViolet' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:661:6: ( 'BlueViolet' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:559:6: ( 'BlueViolet' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:560:1: 'BlueViolet'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:661:6: ( 'BlueViolet' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:662:1: 'BlueViolet'
                     {
                      before(grammarAccess.getColorAccess().getBlueVioletKeyword_1_10()); 
-                    match(input,21,FOLLOW_21_in_rule__Color__Alternatives_11294); 
+                    match(input,21,FOLLOW_21_in_rule__Color__Alternatives_11525); 
                      after(grammarAccess.getColorAccess().getBlueVioletKeyword_1_10()); 
 
                     }
@@ -2591,13 +2901,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:567:6: ( 'Brown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:669:6: ( 'Brown' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:567:6: ( 'Brown' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:568:1: 'Brown'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:669:6: ( 'Brown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:670:1: 'Brown'
                     {
                      before(grammarAccess.getColorAccess().getBrownKeyword_1_11()); 
-                    match(input,22,FOLLOW_22_in_rule__Color__Alternatives_11314); 
+                    match(input,22,FOLLOW_22_in_rule__Color__Alternatives_11545); 
                      after(grammarAccess.getColorAccess().getBrownKeyword_1_11()); 
 
                     }
@@ -2606,13 +2916,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:575:6: ( 'BurlyWood' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:677:6: ( 'BurlyWood' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:575:6: ( 'BurlyWood' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:576:1: 'BurlyWood'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:677:6: ( 'BurlyWood' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:678:1: 'BurlyWood'
                     {
                      before(grammarAccess.getColorAccess().getBurlyWoodKeyword_1_12()); 
-                    match(input,23,FOLLOW_23_in_rule__Color__Alternatives_11334); 
+                    match(input,23,FOLLOW_23_in_rule__Color__Alternatives_11565); 
                      after(grammarAccess.getColorAccess().getBurlyWoodKeyword_1_12()); 
 
                     }
@@ -2621,13 +2931,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 14 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:583:6: ( 'CadetBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:685:6: ( 'CadetBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:583:6: ( 'CadetBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:584:1: 'CadetBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:685:6: ( 'CadetBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:686:1: 'CadetBlue'
                     {
                      before(grammarAccess.getColorAccess().getCadetBlueKeyword_1_13()); 
-                    match(input,24,FOLLOW_24_in_rule__Color__Alternatives_11354); 
+                    match(input,24,FOLLOW_24_in_rule__Color__Alternatives_11585); 
                      after(grammarAccess.getColorAccess().getCadetBlueKeyword_1_13()); 
 
                     }
@@ -2636,13 +2946,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 15 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:591:6: ( 'Chartreuse' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:693:6: ( 'Chartreuse' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:591:6: ( 'Chartreuse' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:592:1: 'Chartreuse'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:693:6: ( 'Chartreuse' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:694:1: 'Chartreuse'
                     {
                      before(grammarAccess.getColorAccess().getChartreuseKeyword_1_14()); 
-                    match(input,25,FOLLOW_25_in_rule__Color__Alternatives_11374); 
+                    match(input,25,FOLLOW_25_in_rule__Color__Alternatives_11605); 
                      after(grammarAccess.getColorAccess().getChartreuseKeyword_1_14()); 
 
                     }
@@ -2651,13 +2961,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 16 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:599:6: ( 'Chocolate' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:701:6: ( 'Chocolate' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:599:6: ( 'Chocolate' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:600:1: 'Chocolate'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:701:6: ( 'Chocolate' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:702:1: 'Chocolate'
                     {
                      before(grammarAccess.getColorAccess().getChocolateKeyword_1_15()); 
-                    match(input,26,FOLLOW_26_in_rule__Color__Alternatives_11394); 
+                    match(input,26,FOLLOW_26_in_rule__Color__Alternatives_11625); 
                      after(grammarAccess.getColorAccess().getChocolateKeyword_1_15()); 
 
                     }
@@ -2666,13 +2976,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 17 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:607:6: ( 'Coral' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:709:6: ( 'Coral' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:607:6: ( 'Coral' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:608:1: 'Coral'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:709:6: ( 'Coral' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:710:1: 'Coral'
                     {
                      before(grammarAccess.getColorAccess().getCoralKeyword_1_16()); 
-                    match(input,27,FOLLOW_27_in_rule__Color__Alternatives_11414); 
+                    match(input,27,FOLLOW_27_in_rule__Color__Alternatives_11645); 
                      after(grammarAccess.getColorAccess().getCoralKeyword_1_16()); 
 
                     }
@@ -2681,13 +2991,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 18 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:615:6: ( 'CornflowerBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:717:6: ( 'CornflowerBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:615:6: ( 'CornflowerBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:616:1: 'CornflowerBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:717:6: ( 'CornflowerBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:718:1: 'CornflowerBlue'
                     {
                      before(grammarAccess.getColorAccess().getCornflowerBlueKeyword_1_17()); 
-                    match(input,28,FOLLOW_28_in_rule__Color__Alternatives_11434); 
+                    match(input,28,FOLLOW_28_in_rule__Color__Alternatives_11665); 
                      after(grammarAccess.getColorAccess().getCornflowerBlueKeyword_1_17()); 
 
                     }
@@ -2696,13 +3006,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 19 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:623:6: ( 'Cornsilk' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:725:6: ( 'Cornsilk' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:623:6: ( 'Cornsilk' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:624:1: 'Cornsilk'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:725:6: ( 'Cornsilk' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:726:1: 'Cornsilk'
                     {
                      before(grammarAccess.getColorAccess().getCornsilkKeyword_1_18()); 
-                    match(input,29,FOLLOW_29_in_rule__Color__Alternatives_11454); 
+                    match(input,29,FOLLOW_29_in_rule__Color__Alternatives_11685); 
                      after(grammarAccess.getColorAccess().getCornsilkKeyword_1_18()); 
 
                     }
@@ -2711,13 +3021,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 20 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:631:6: ( 'Crimson' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:733:6: ( 'Crimson' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:631:6: ( 'Crimson' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:632:1: 'Crimson'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:733:6: ( 'Crimson' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:734:1: 'Crimson'
                     {
                      before(grammarAccess.getColorAccess().getCrimsonKeyword_1_19()); 
-                    match(input,30,FOLLOW_30_in_rule__Color__Alternatives_11474); 
+                    match(input,30,FOLLOW_30_in_rule__Color__Alternatives_11705); 
                      after(grammarAccess.getColorAccess().getCrimsonKeyword_1_19()); 
 
                     }
@@ -2726,13 +3036,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 21 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:639:6: ( 'Cyan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:741:6: ( 'Cyan' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:639:6: ( 'Cyan' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:640:1: 'Cyan'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:741:6: ( 'Cyan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:742:1: 'Cyan'
                     {
                      before(grammarAccess.getColorAccess().getCyanKeyword_1_20()); 
-                    match(input,31,FOLLOW_31_in_rule__Color__Alternatives_11494); 
+                    match(input,31,FOLLOW_31_in_rule__Color__Alternatives_11725); 
                      after(grammarAccess.getColorAccess().getCyanKeyword_1_20()); 
 
                     }
@@ -2741,13 +3051,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 22 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:647:6: ( 'DarkBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:749:6: ( 'DarkBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:647:6: ( 'DarkBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:648:1: 'DarkBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:749:6: ( 'DarkBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:750:1: 'DarkBlue'
                     {
                      before(grammarAccess.getColorAccess().getDarkBlueKeyword_1_21()); 
-                    match(input,32,FOLLOW_32_in_rule__Color__Alternatives_11514); 
+                    match(input,32,FOLLOW_32_in_rule__Color__Alternatives_11745); 
                      after(grammarAccess.getColorAccess().getDarkBlueKeyword_1_21()); 
 
                     }
@@ -2756,13 +3066,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 23 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:655:6: ( 'DarkCyan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:757:6: ( 'DarkCyan' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:655:6: ( 'DarkCyan' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:656:1: 'DarkCyan'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:757:6: ( 'DarkCyan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:758:1: 'DarkCyan'
                     {
                      before(grammarAccess.getColorAccess().getDarkCyanKeyword_1_22()); 
-                    match(input,33,FOLLOW_33_in_rule__Color__Alternatives_11534); 
+                    match(input,33,FOLLOW_33_in_rule__Color__Alternatives_11765); 
                      after(grammarAccess.getColorAccess().getDarkCyanKeyword_1_22()); 
 
                     }
@@ -2771,13 +3081,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 24 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:663:6: ( 'DarkGoldenRod' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:765:6: ( 'DarkGoldenRod' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:663:6: ( 'DarkGoldenRod' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:664:1: 'DarkGoldenRod'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:765:6: ( 'DarkGoldenRod' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:766:1: 'DarkGoldenRod'
                     {
                      before(grammarAccess.getColorAccess().getDarkGoldenRodKeyword_1_23()); 
-                    match(input,34,FOLLOW_34_in_rule__Color__Alternatives_11554); 
+                    match(input,34,FOLLOW_34_in_rule__Color__Alternatives_11785); 
                      after(grammarAccess.getColorAccess().getDarkGoldenRodKeyword_1_23()); 
 
                     }
@@ -2786,13 +3096,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 25 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:671:6: ( 'DarkGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:773:6: ( 'DarkGray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:671:6: ( 'DarkGray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:672:1: 'DarkGray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:773:6: ( 'DarkGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:774:1: 'DarkGray'
                     {
                      before(grammarAccess.getColorAccess().getDarkGrayKeyword_1_24()); 
-                    match(input,35,FOLLOW_35_in_rule__Color__Alternatives_11574); 
+                    match(input,35,FOLLOW_35_in_rule__Color__Alternatives_11805); 
                      after(grammarAccess.getColorAccess().getDarkGrayKeyword_1_24()); 
 
                     }
@@ -2801,13 +3111,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 26 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:679:6: ( 'DarkGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:781:6: ( 'DarkGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:679:6: ( 'DarkGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:680:1: 'DarkGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:781:6: ( 'DarkGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:782:1: 'DarkGreen'
                     {
                      before(grammarAccess.getColorAccess().getDarkGreenKeyword_1_25()); 
-                    match(input,36,FOLLOW_36_in_rule__Color__Alternatives_11594); 
+                    match(input,36,FOLLOW_36_in_rule__Color__Alternatives_11825); 
                      after(grammarAccess.getColorAccess().getDarkGreenKeyword_1_25()); 
 
                     }
@@ -2816,13 +3126,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 27 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:687:6: ( 'DarkGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:789:6: ( 'DarkGrey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:687:6: ( 'DarkGrey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:688:1: 'DarkGrey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:789:6: ( 'DarkGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:790:1: 'DarkGrey'
                     {
                      before(grammarAccess.getColorAccess().getDarkGreyKeyword_1_26()); 
-                    match(input,37,FOLLOW_37_in_rule__Color__Alternatives_11614); 
+                    match(input,37,FOLLOW_37_in_rule__Color__Alternatives_11845); 
                      after(grammarAccess.getColorAccess().getDarkGreyKeyword_1_26()); 
 
                     }
@@ -2831,13 +3141,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 28 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:695:6: ( 'DarkKhaki' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:797:6: ( 'DarkKhaki' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:695:6: ( 'DarkKhaki' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:696:1: 'DarkKhaki'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:797:6: ( 'DarkKhaki' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:798:1: 'DarkKhaki'
                     {
                      before(grammarAccess.getColorAccess().getDarkKhakiKeyword_1_27()); 
-                    match(input,38,FOLLOW_38_in_rule__Color__Alternatives_11634); 
+                    match(input,38,FOLLOW_38_in_rule__Color__Alternatives_11865); 
                      after(grammarAccess.getColorAccess().getDarkKhakiKeyword_1_27()); 
 
                     }
@@ -2846,13 +3156,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 29 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:703:6: ( 'DarkMagenta' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:805:6: ( 'DarkMagenta' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:703:6: ( 'DarkMagenta' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:704:1: 'DarkMagenta'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:805:6: ( 'DarkMagenta' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:806:1: 'DarkMagenta'
                     {
                      before(grammarAccess.getColorAccess().getDarkMagentaKeyword_1_28()); 
-                    match(input,39,FOLLOW_39_in_rule__Color__Alternatives_11654); 
+                    match(input,39,FOLLOW_39_in_rule__Color__Alternatives_11885); 
                      after(grammarAccess.getColorAccess().getDarkMagentaKeyword_1_28()); 
 
                     }
@@ -2861,13 +3171,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 30 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:711:6: ( 'DarkOliveGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:813:6: ( 'DarkOliveGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:711:6: ( 'DarkOliveGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:712:1: 'DarkOliveGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:813:6: ( 'DarkOliveGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:814:1: 'DarkOliveGreen'
                     {
                      before(grammarAccess.getColorAccess().getDarkOliveGreenKeyword_1_29()); 
-                    match(input,40,FOLLOW_40_in_rule__Color__Alternatives_11674); 
+                    match(input,40,FOLLOW_40_in_rule__Color__Alternatives_11905); 
                      after(grammarAccess.getColorAccess().getDarkOliveGreenKeyword_1_29()); 
 
                     }
@@ -2876,13 +3186,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 31 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:719:6: ( 'DarkOrchid' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:821:6: ( 'DarkOrchid' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:719:6: ( 'DarkOrchid' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:720:1: 'DarkOrchid'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:821:6: ( 'DarkOrchid' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:822:1: 'DarkOrchid'
                     {
                      before(grammarAccess.getColorAccess().getDarkOrchidKeyword_1_30()); 
-                    match(input,41,FOLLOW_41_in_rule__Color__Alternatives_11694); 
+                    match(input,41,FOLLOW_41_in_rule__Color__Alternatives_11925); 
                      after(grammarAccess.getColorAccess().getDarkOrchidKeyword_1_30()); 
 
                     }
@@ -2891,13 +3201,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 32 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:727:6: ( 'DarkRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:829:6: ( 'DarkRed' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:727:6: ( 'DarkRed' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:728:1: 'DarkRed'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:829:6: ( 'DarkRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:830:1: 'DarkRed'
                     {
                      before(grammarAccess.getColorAccess().getDarkRedKeyword_1_31()); 
-                    match(input,42,FOLLOW_42_in_rule__Color__Alternatives_11714); 
+                    match(input,42,FOLLOW_42_in_rule__Color__Alternatives_11945); 
                      after(grammarAccess.getColorAccess().getDarkRedKeyword_1_31()); 
 
                     }
@@ -2906,13 +3216,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 33 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:735:6: ( 'DarkSalmo' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:837:6: ( 'DarkSalmo' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:735:6: ( 'DarkSalmo' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:736:1: 'DarkSalmo'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:837:6: ( 'DarkSalmo' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:838:1: 'DarkSalmo'
                     {
                      before(grammarAccess.getColorAccess().getDarkSalmoKeyword_1_32()); 
-                    match(input,43,FOLLOW_43_in_rule__Color__Alternatives_11734); 
+                    match(input,43,FOLLOW_43_in_rule__Color__Alternatives_11965); 
                      after(grammarAccess.getColorAccess().getDarkSalmoKeyword_1_32()); 
 
                     }
@@ -2921,13 +3231,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 34 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:743:6: ( 'DarkSeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:845:6: ( 'DarkSeaGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:743:6: ( 'DarkSeaGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:744:1: 'DarkSeaGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:845:6: ( 'DarkSeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:846:1: 'DarkSeaGreen'
                     {
                      before(grammarAccess.getColorAccess().getDarkSeaGreenKeyword_1_33()); 
-                    match(input,44,FOLLOW_44_in_rule__Color__Alternatives_11754); 
+                    match(input,44,FOLLOW_44_in_rule__Color__Alternatives_11985); 
                      after(grammarAccess.getColorAccess().getDarkSeaGreenKeyword_1_33()); 
 
                     }
@@ -2936,13 +3246,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 35 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:751:6: ( 'DarkSlateBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:853:6: ( 'DarkSlateBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:751:6: ( 'DarkSlateBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:752:1: 'DarkSlateBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:853:6: ( 'DarkSlateBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:854:1: 'DarkSlateBlue'
                     {
                      before(grammarAccess.getColorAccess().getDarkSlateBlueKeyword_1_34()); 
-                    match(input,45,FOLLOW_45_in_rule__Color__Alternatives_11774); 
+                    match(input,45,FOLLOW_45_in_rule__Color__Alternatives_12005); 
                      after(grammarAccess.getColorAccess().getDarkSlateBlueKeyword_1_34()); 
 
                     }
@@ -2951,13 +3261,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 36 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:759:6: ( 'DarkSlateGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:861:6: ( 'DarkSlateGray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:759:6: ( 'DarkSlateGray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:760:1: 'DarkSlateGray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:861:6: ( 'DarkSlateGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:862:1: 'DarkSlateGray'
                     {
                      before(grammarAccess.getColorAccess().getDarkSlateGrayKeyword_1_35()); 
-                    match(input,46,FOLLOW_46_in_rule__Color__Alternatives_11794); 
+                    match(input,46,FOLLOW_46_in_rule__Color__Alternatives_12025); 
                      after(grammarAccess.getColorAccess().getDarkSlateGrayKeyword_1_35()); 
 
                     }
@@ -2966,13 +3276,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 37 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:767:6: ( 'DarkSlateGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:869:6: ( 'DarkSlateGrey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:767:6: ( 'DarkSlateGrey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:768:1: 'DarkSlateGrey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:869:6: ( 'DarkSlateGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:870:1: 'DarkSlateGrey'
                     {
                      before(grammarAccess.getColorAccess().getDarkSlateGreyKeyword_1_36()); 
-                    match(input,47,FOLLOW_47_in_rule__Color__Alternatives_11814); 
+                    match(input,47,FOLLOW_47_in_rule__Color__Alternatives_12045); 
                      after(grammarAccess.getColorAccess().getDarkSlateGreyKeyword_1_36()); 
 
                     }
@@ -2981,13 +3291,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 38 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:775:6: ( 'DarkTurquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:877:6: ( 'DarkTurquoise' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:775:6: ( 'DarkTurquoise' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:776:1: 'DarkTurquoise'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:877:6: ( 'DarkTurquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:878:1: 'DarkTurquoise'
                     {
                      before(grammarAccess.getColorAccess().getDarkTurquoiseKeyword_1_37()); 
-                    match(input,48,FOLLOW_48_in_rule__Color__Alternatives_11834); 
+                    match(input,48,FOLLOW_48_in_rule__Color__Alternatives_12065); 
                      after(grammarAccess.getColorAccess().getDarkTurquoiseKeyword_1_37()); 
 
                     }
@@ -2996,13 +3306,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 39 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:783:6: ( 'DarkViolet' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:885:6: ( 'DarkViolet' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:783:6: ( 'DarkViolet' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:784:1: 'DarkViolet'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:885:6: ( 'DarkViolet' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:886:1: 'DarkViolet'
                     {
                      before(grammarAccess.getColorAccess().getDarkVioletKeyword_1_38()); 
-                    match(input,49,FOLLOW_49_in_rule__Color__Alternatives_11854); 
+                    match(input,49,FOLLOW_49_in_rule__Color__Alternatives_12085); 
                      after(grammarAccess.getColorAccess().getDarkVioletKeyword_1_38()); 
 
                     }
@@ -3011,13 +3321,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 40 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:791:6: ( 'Darkorange' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:893:6: ( 'Darkorange' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:791:6: ( 'Darkorange' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:792:1: 'Darkorange'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:893:6: ( 'Darkorange' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:894:1: 'Darkorange'
                     {
                      before(grammarAccess.getColorAccess().getDarkorangeKeyword_1_39()); 
-                    match(input,50,FOLLOW_50_in_rule__Color__Alternatives_11874); 
+                    match(input,50,FOLLOW_50_in_rule__Color__Alternatives_12105); 
                      after(grammarAccess.getColorAccess().getDarkorangeKeyword_1_39()); 
 
                     }
@@ -3026,13 +3336,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 41 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:799:6: ( 'DeepPink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:901:6: ( 'DeepPink' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:799:6: ( 'DeepPink' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:800:1: 'DeepPink'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:901:6: ( 'DeepPink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:902:1: 'DeepPink'
                     {
                      before(grammarAccess.getColorAccess().getDeepPinkKeyword_1_40()); 
-                    match(input,51,FOLLOW_51_in_rule__Color__Alternatives_11894); 
+                    match(input,51,FOLLOW_51_in_rule__Color__Alternatives_12125); 
                      after(grammarAccess.getColorAccess().getDeepPinkKeyword_1_40()); 
 
                     }
@@ -3041,13 +3351,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 42 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:807:6: ( 'DeepSkyBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:909:6: ( 'DeepSkyBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:807:6: ( 'DeepSkyBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:808:1: 'DeepSkyBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:909:6: ( 'DeepSkyBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:910:1: 'DeepSkyBlue'
                     {
                      before(grammarAccess.getColorAccess().getDeepSkyBlueKeyword_1_41()); 
-                    match(input,52,FOLLOW_52_in_rule__Color__Alternatives_11914); 
+                    match(input,52,FOLLOW_52_in_rule__Color__Alternatives_12145); 
                      after(grammarAccess.getColorAccess().getDeepSkyBlueKeyword_1_41()); 
 
                     }
@@ -3056,13 +3366,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 43 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:815:6: ( 'DimGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:917:6: ( 'DimGray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:815:6: ( 'DimGray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:816:1: 'DimGray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:917:6: ( 'DimGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:918:1: 'DimGray'
                     {
                      before(grammarAccess.getColorAccess().getDimGrayKeyword_1_42()); 
-                    match(input,53,FOLLOW_53_in_rule__Color__Alternatives_11934); 
+                    match(input,53,FOLLOW_53_in_rule__Color__Alternatives_12165); 
                      after(grammarAccess.getColorAccess().getDimGrayKeyword_1_42()); 
 
                     }
@@ -3071,13 +3381,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 44 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:823:6: ( 'DimGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:925:6: ( 'DimGrey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:823:6: ( 'DimGrey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:824:1: 'DimGrey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:925:6: ( 'DimGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:926:1: 'DimGrey'
                     {
                      before(grammarAccess.getColorAccess().getDimGreyKeyword_1_43()); 
-                    match(input,54,FOLLOW_54_in_rule__Color__Alternatives_11954); 
+                    match(input,54,FOLLOW_54_in_rule__Color__Alternatives_12185); 
                      after(grammarAccess.getColorAccess().getDimGreyKeyword_1_43()); 
 
                     }
@@ -3086,13 +3396,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 45 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:831:6: ( 'DodgerBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:933:6: ( 'DodgerBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:831:6: ( 'DodgerBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:832:1: 'DodgerBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:933:6: ( 'DodgerBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:934:1: 'DodgerBlue'
                     {
                      before(grammarAccess.getColorAccess().getDodgerBlueKeyword_1_44()); 
-                    match(input,55,FOLLOW_55_in_rule__Color__Alternatives_11974); 
+                    match(input,55,FOLLOW_55_in_rule__Color__Alternatives_12205); 
                      after(grammarAccess.getColorAccess().getDodgerBlueKeyword_1_44()); 
 
                     }
@@ -3101,13 +3411,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 46 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:839:6: ( 'FireBrick' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:941:6: ( 'FireBrick' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:839:6: ( 'FireBrick' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:840:1: 'FireBrick'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:941:6: ( 'FireBrick' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:942:1: 'FireBrick'
                     {
                      before(grammarAccess.getColorAccess().getFireBrickKeyword_1_45()); 
-                    match(input,56,FOLLOW_56_in_rule__Color__Alternatives_11994); 
+                    match(input,56,FOLLOW_56_in_rule__Color__Alternatives_12225); 
                      after(grammarAccess.getColorAccess().getFireBrickKeyword_1_45()); 
 
                     }
@@ -3116,13 +3426,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 47 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:847:6: ( 'FloralWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:949:6: ( 'FloralWhite' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:847:6: ( 'FloralWhite' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:848:1: 'FloralWhite'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:949:6: ( 'FloralWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:950:1: 'FloralWhite'
                     {
                      before(grammarAccess.getColorAccess().getFloralWhiteKeyword_1_46()); 
-                    match(input,57,FOLLOW_57_in_rule__Color__Alternatives_12014); 
+                    match(input,57,FOLLOW_57_in_rule__Color__Alternatives_12245); 
                      after(grammarAccess.getColorAccess().getFloralWhiteKeyword_1_46()); 
 
                     }
@@ -3131,13 +3441,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 48 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:855:6: ( 'ForestGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:957:6: ( 'ForestGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:855:6: ( 'ForestGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:856:1: 'ForestGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:957:6: ( 'ForestGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:958:1: 'ForestGreen'
                     {
                      before(grammarAccess.getColorAccess().getForestGreenKeyword_1_47()); 
-                    match(input,58,FOLLOW_58_in_rule__Color__Alternatives_12034); 
+                    match(input,58,FOLLOW_58_in_rule__Color__Alternatives_12265); 
                      after(grammarAccess.getColorAccess().getForestGreenKeyword_1_47()); 
 
                     }
@@ -3146,13 +3456,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 49 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:863:6: ( 'Fuchsia' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:965:6: ( 'Fuchsia' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:863:6: ( 'Fuchsia' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:864:1: 'Fuchsia'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:965:6: ( 'Fuchsia' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:966:1: 'Fuchsia'
                     {
                      before(grammarAccess.getColorAccess().getFuchsiaKeyword_1_48()); 
-                    match(input,59,FOLLOW_59_in_rule__Color__Alternatives_12054); 
+                    match(input,59,FOLLOW_59_in_rule__Color__Alternatives_12285); 
                      after(grammarAccess.getColorAccess().getFuchsiaKeyword_1_48()); 
 
                     }
@@ -3161,13 +3471,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 50 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:871:6: ( 'Gainsboro' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:973:6: ( 'Gainsboro' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:871:6: ( 'Gainsboro' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:872:1: 'Gainsboro'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:973:6: ( 'Gainsboro' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:974:1: 'Gainsboro'
                     {
                      before(grammarAccess.getColorAccess().getGainsboroKeyword_1_49()); 
-                    match(input,60,FOLLOW_60_in_rule__Color__Alternatives_12074); 
+                    match(input,60,FOLLOW_60_in_rule__Color__Alternatives_12305); 
                      after(grammarAccess.getColorAccess().getGainsboroKeyword_1_49()); 
 
                     }
@@ -3176,13 +3486,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 51 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:879:6: ( 'GhostWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:981:6: ( 'GhostWhite' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:879:6: ( 'GhostWhite' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:880:1: 'GhostWhite'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:981:6: ( 'GhostWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:982:1: 'GhostWhite'
                     {
                      before(grammarAccess.getColorAccess().getGhostWhiteKeyword_1_50()); 
-                    match(input,61,FOLLOW_61_in_rule__Color__Alternatives_12094); 
+                    match(input,61,FOLLOW_61_in_rule__Color__Alternatives_12325); 
                      after(grammarAccess.getColorAccess().getGhostWhiteKeyword_1_50()); 
 
                     }
@@ -3191,13 +3501,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 52 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:887:6: ( 'Gold' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:989:6: ( 'Gold' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:887:6: ( 'Gold' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:888:1: 'Gold'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:989:6: ( 'Gold' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:990:1: 'Gold'
                     {
                      before(grammarAccess.getColorAccess().getGoldKeyword_1_51()); 
-                    match(input,62,FOLLOW_62_in_rule__Color__Alternatives_12114); 
+                    match(input,62,FOLLOW_62_in_rule__Color__Alternatives_12345); 
                      after(grammarAccess.getColorAccess().getGoldKeyword_1_51()); 
 
                     }
@@ -3206,13 +3516,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 53 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:895:6: ( 'GoldenRod' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:997:6: ( 'GoldenRod' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:895:6: ( 'GoldenRod' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:896:1: 'GoldenRod'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:997:6: ( 'GoldenRod' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:998:1: 'GoldenRod'
                     {
                      before(grammarAccess.getColorAccess().getGoldenRodKeyword_1_52()); 
-                    match(input,63,FOLLOW_63_in_rule__Color__Alternatives_12134); 
+                    match(input,63,FOLLOW_63_in_rule__Color__Alternatives_12365); 
                      after(grammarAccess.getColorAccess().getGoldenRodKeyword_1_52()); 
 
                     }
@@ -3221,13 +3531,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 54 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:903:6: ( 'Gray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1005:6: ( 'Gray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:903:6: ( 'Gray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:904:1: 'Gray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1005:6: ( 'Gray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1006:1: 'Gray'
                     {
                      before(grammarAccess.getColorAccess().getGrayKeyword_1_53()); 
-                    match(input,64,FOLLOW_64_in_rule__Color__Alternatives_12154); 
+                    match(input,64,FOLLOW_64_in_rule__Color__Alternatives_12385); 
                      after(grammarAccess.getColorAccess().getGrayKeyword_1_53()); 
 
                     }
@@ -3236,13 +3546,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 55 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:911:6: ( 'Green' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1013:6: ( 'Green' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:911:6: ( 'Green' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:912:1: 'Green'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1013:6: ( 'Green' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1014:1: 'Green'
                     {
                      before(grammarAccess.getColorAccess().getGreenKeyword_1_54()); 
-                    match(input,65,FOLLOW_65_in_rule__Color__Alternatives_12174); 
+                    match(input,65,FOLLOW_65_in_rule__Color__Alternatives_12405); 
                      after(grammarAccess.getColorAccess().getGreenKeyword_1_54()); 
 
                     }
@@ -3251,13 +3561,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 56 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:919:6: ( 'GreenYellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1021:6: ( 'GreenYellow' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:919:6: ( 'GreenYellow' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:920:1: 'GreenYellow'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1021:6: ( 'GreenYellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1022:1: 'GreenYellow'
                     {
                      before(grammarAccess.getColorAccess().getGreenYellowKeyword_1_55()); 
-                    match(input,66,FOLLOW_66_in_rule__Color__Alternatives_12194); 
+                    match(input,66,FOLLOW_66_in_rule__Color__Alternatives_12425); 
                      after(grammarAccess.getColorAccess().getGreenYellowKeyword_1_55()); 
 
                     }
@@ -3266,13 +3576,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 57 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:927:6: ( 'Grey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1029:6: ( 'Grey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:927:6: ( 'Grey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:928:1: 'Grey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1029:6: ( 'Grey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1030:1: 'Grey'
                     {
                      before(grammarAccess.getColorAccess().getGreyKeyword_1_56()); 
-                    match(input,67,FOLLOW_67_in_rule__Color__Alternatives_12214); 
+                    match(input,67,FOLLOW_67_in_rule__Color__Alternatives_12445); 
                      after(grammarAccess.getColorAccess().getGreyKeyword_1_56()); 
 
                     }
@@ -3281,13 +3591,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 58 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:935:6: ( 'HoneyDew' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1037:6: ( 'HoneyDew' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:935:6: ( 'HoneyDew' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:936:1: 'HoneyDew'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1037:6: ( 'HoneyDew' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1038:1: 'HoneyDew'
                     {
                      before(grammarAccess.getColorAccess().getHoneyDewKeyword_1_57()); 
-                    match(input,68,FOLLOW_68_in_rule__Color__Alternatives_12234); 
+                    match(input,68,FOLLOW_68_in_rule__Color__Alternatives_12465); 
                      after(grammarAccess.getColorAccess().getHoneyDewKeyword_1_57()); 
 
                     }
@@ -3296,13 +3606,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 59 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:943:6: ( 'HotPink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1045:6: ( 'HotPink' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:943:6: ( 'HotPink' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:944:1: 'HotPink'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1045:6: ( 'HotPink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1046:1: 'HotPink'
                     {
                      before(grammarAccess.getColorAccess().getHotPinkKeyword_1_58()); 
-                    match(input,69,FOLLOW_69_in_rule__Color__Alternatives_12254); 
+                    match(input,69,FOLLOW_69_in_rule__Color__Alternatives_12485); 
                      after(grammarAccess.getColorAccess().getHotPinkKeyword_1_58()); 
 
                     }
@@ -3311,13 +3621,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 60 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:951:6: ( 'IndianRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1053:6: ( 'IndianRed' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:951:6: ( 'IndianRed' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:952:1: 'IndianRed'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1053:6: ( 'IndianRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1054:1: 'IndianRed'
                     {
                      before(grammarAccess.getColorAccess().getIndianRedKeyword_1_59()); 
-                    match(input,70,FOLLOW_70_in_rule__Color__Alternatives_12274); 
+                    match(input,70,FOLLOW_70_in_rule__Color__Alternatives_12505); 
                      after(grammarAccess.getColorAccess().getIndianRedKeyword_1_59()); 
 
                     }
@@ -3326,13 +3636,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 61 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:959:6: ( 'Indigo' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1061:6: ( 'Indigo' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:959:6: ( 'Indigo' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:960:1: 'Indigo'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1061:6: ( 'Indigo' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1062:1: 'Indigo'
                     {
                      before(grammarAccess.getColorAccess().getIndigoKeyword_1_60()); 
-                    match(input,71,FOLLOW_71_in_rule__Color__Alternatives_12294); 
+                    match(input,71,FOLLOW_71_in_rule__Color__Alternatives_12525); 
                      after(grammarAccess.getColorAccess().getIndigoKeyword_1_60()); 
 
                     }
@@ -3341,13 +3651,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 62 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:967:6: ( 'Ivory' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1069:6: ( 'Ivory' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:967:6: ( 'Ivory' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:968:1: 'Ivory'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1069:6: ( 'Ivory' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1070:1: 'Ivory'
                     {
                      before(grammarAccess.getColorAccess().getIvoryKeyword_1_61()); 
-                    match(input,72,FOLLOW_72_in_rule__Color__Alternatives_12314); 
+                    match(input,72,FOLLOW_72_in_rule__Color__Alternatives_12545); 
                      after(grammarAccess.getColorAccess().getIvoryKeyword_1_61()); 
 
                     }
@@ -3356,13 +3666,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 63 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:975:6: ( 'Khaki' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1077:6: ( 'Khaki' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:975:6: ( 'Khaki' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:976:1: 'Khaki'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1077:6: ( 'Khaki' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1078:1: 'Khaki'
                     {
                      before(grammarAccess.getColorAccess().getKhakiKeyword_1_62()); 
-                    match(input,73,FOLLOW_73_in_rule__Color__Alternatives_12334); 
+                    match(input,73,FOLLOW_73_in_rule__Color__Alternatives_12565); 
                      after(grammarAccess.getColorAccess().getKhakiKeyword_1_62()); 
 
                     }
@@ -3371,13 +3681,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 64 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:983:6: ( 'Lavender' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1085:6: ( 'Lavender' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:983:6: ( 'Lavender' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:984:1: 'Lavender'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1085:6: ( 'Lavender' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1086:1: 'Lavender'
                     {
                      before(grammarAccess.getColorAccess().getLavenderKeyword_1_63()); 
-                    match(input,74,FOLLOW_74_in_rule__Color__Alternatives_12354); 
+                    match(input,74,FOLLOW_74_in_rule__Color__Alternatives_12585); 
                      after(grammarAccess.getColorAccess().getLavenderKeyword_1_63()); 
 
                     }
@@ -3386,13 +3696,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 65 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:991:6: ( 'LavenderBlush' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1093:6: ( 'LavenderBlush' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:991:6: ( 'LavenderBlush' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:992:1: 'LavenderBlush'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1093:6: ( 'LavenderBlush' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1094:1: 'LavenderBlush'
                     {
                      before(grammarAccess.getColorAccess().getLavenderBlushKeyword_1_64()); 
-                    match(input,75,FOLLOW_75_in_rule__Color__Alternatives_12374); 
+                    match(input,75,FOLLOW_75_in_rule__Color__Alternatives_12605); 
                      after(grammarAccess.getColorAccess().getLavenderBlushKeyword_1_64()); 
 
                     }
@@ -3401,13 +3711,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 66 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:999:6: ( 'LawnGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1101:6: ( 'LawnGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:999:6: ( 'LawnGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1000:1: 'LawnGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1101:6: ( 'LawnGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1102:1: 'LawnGreen'
                     {
                      before(grammarAccess.getColorAccess().getLawnGreenKeyword_1_65()); 
-                    match(input,76,FOLLOW_76_in_rule__Color__Alternatives_12394); 
+                    match(input,76,FOLLOW_76_in_rule__Color__Alternatives_12625); 
                      after(grammarAccess.getColorAccess().getLawnGreenKeyword_1_65()); 
 
                     }
@@ -3416,13 +3726,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 67 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1007:6: ( 'LemonChiffon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1109:6: ( 'LemonChiffon' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1007:6: ( 'LemonChiffon' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1008:1: 'LemonChiffon'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1109:6: ( 'LemonChiffon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1110:1: 'LemonChiffon'
                     {
                      before(grammarAccess.getColorAccess().getLemonChiffonKeyword_1_66()); 
-                    match(input,77,FOLLOW_77_in_rule__Color__Alternatives_12414); 
+                    match(input,77,FOLLOW_77_in_rule__Color__Alternatives_12645); 
                      after(grammarAccess.getColorAccess().getLemonChiffonKeyword_1_66()); 
 
                     }
@@ -3431,13 +3741,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 68 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1015:6: ( 'LightBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1117:6: ( 'LightBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1015:6: ( 'LightBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1016:1: 'LightBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1117:6: ( 'LightBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1118:1: 'LightBlue'
                     {
                      before(grammarAccess.getColorAccess().getLightBlueKeyword_1_67()); 
-                    match(input,78,FOLLOW_78_in_rule__Color__Alternatives_12434); 
+                    match(input,78,FOLLOW_78_in_rule__Color__Alternatives_12665); 
                      after(grammarAccess.getColorAccess().getLightBlueKeyword_1_67()); 
 
                     }
@@ -3446,13 +3756,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 69 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1023:6: ( 'LightCoral' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1125:6: ( 'LightCoral' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1023:6: ( 'LightCoral' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1024:1: 'LightCoral'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1125:6: ( 'LightCoral' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1126:1: 'LightCoral'
                     {
                      before(grammarAccess.getColorAccess().getLightCoralKeyword_1_68()); 
-                    match(input,79,FOLLOW_79_in_rule__Color__Alternatives_12454); 
+                    match(input,79,FOLLOW_79_in_rule__Color__Alternatives_12685); 
                      after(grammarAccess.getColorAccess().getLightCoralKeyword_1_68()); 
 
                     }
@@ -3461,13 +3771,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 70 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1031:6: ( 'LightCyan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1133:6: ( 'LightCyan' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1031:6: ( 'LightCyan' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1032:1: 'LightCyan'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1133:6: ( 'LightCyan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1134:1: 'LightCyan'
                     {
                      before(grammarAccess.getColorAccess().getLightCyanKeyword_1_69()); 
-                    match(input,80,FOLLOW_80_in_rule__Color__Alternatives_12474); 
+                    match(input,80,FOLLOW_80_in_rule__Color__Alternatives_12705); 
                      after(grammarAccess.getColorAccess().getLightCyanKeyword_1_69()); 
 
                     }
@@ -3476,13 +3786,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 71 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1039:6: ( 'LightGoldenRodYellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1141:6: ( 'LightGoldenRodYellow' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1039:6: ( 'LightGoldenRodYellow' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1040:1: 'LightGoldenRodYellow'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1141:6: ( 'LightGoldenRodYellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1142:1: 'LightGoldenRodYellow'
                     {
                      before(grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_1_70()); 
-                    match(input,81,FOLLOW_81_in_rule__Color__Alternatives_12494); 
+                    match(input,81,FOLLOW_81_in_rule__Color__Alternatives_12725); 
                      after(grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_1_70()); 
 
                     }
@@ -3491,13 +3801,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 72 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1047:6: ( 'LightGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1149:6: ( 'LightGray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1047:6: ( 'LightGray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1048:1: 'LightGray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1149:6: ( 'LightGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1150:1: 'LightGray'
                     {
                      before(grammarAccess.getColorAccess().getLightGrayKeyword_1_71()); 
-                    match(input,82,FOLLOW_82_in_rule__Color__Alternatives_12514); 
+                    match(input,82,FOLLOW_82_in_rule__Color__Alternatives_12745); 
                      after(grammarAccess.getColorAccess().getLightGrayKeyword_1_71()); 
 
                     }
@@ -3506,13 +3816,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 73 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1055:6: ( 'LightGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1157:6: ( 'LightGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1055:6: ( 'LightGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1056:1: 'LightGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1157:6: ( 'LightGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1158:1: 'LightGreen'
                     {
                      before(grammarAccess.getColorAccess().getLightGreenKeyword_1_72()); 
-                    match(input,83,FOLLOW_83_in_rule__Color__Alternatives_12534); 
+                    match(input,83,FOLLOW_83_in_rule__Color__Alternatives_12765); 
                      after(grammarAccess.getColorAccess().getLightGreenKeyword_1_72()); 
 
                     }
@@ -3521,13 +3831,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 74 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1063:6: ( 'LightGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1165:6: ( 'LightGrey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1063:6: ( 'LightGrey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1064:1: 'LightGrey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1165:6: ( 'LightGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1166:1: 'LightGrey'
                     {
                      before(grammarAccess.getColorAccess().getLightGreyKeyword_1_73()); 
-                    match(input,84,FOLLOW_84_in_rule__Color__Alternatives_12554); 
+                    match(input,84,FOLLOW_84_in_rule__Color__Alternatives_12785); 
                      after(grammarAccess.getColorAccess().getLightGreyKeyword_1_73()); 
 
                     }
@@ -3536,13 +3846,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 75 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1071:6: ( 'LightPink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1173:6: ( 'LightPink' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1071:6: ( 'LightPink' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1072:1: 'LightPink'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1173:6: ( 'LightPink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1174:1: 'LightPink'
                     {
                      before(grammarAccess.getColorAccess().getLightPinkKeyword_1_74()); 
-                    match(input,85,FOLLOW_85_in_rule__Color__Alternatives_12574); 
+                    match(input,85,FOLLOW_85_in_rule__Color__Alternatives_12805); 
                      after(grammarAccess.getColorAccess().getLightPinkKeyword_1_74()); 
 
                     }
@@ -3551,13 +3861,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 76 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1079:6: ( 'LightSalmon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1181:6: ( 'LightSalmon' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1079:6: ( 'LightSalmon' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1080:1: 'LightSalmon'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1181:6: ( 'LightSalmon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1182:1: 'LightSalmon'
                     {
                      before(grammarAccess.getColorAccess().getLightSalmonKeyword_1_75()); 
-                    match(input,86,FOLLOW_86_in_rule__Color__Alternatives_12594); 
+                    match(input,86,FOLLOW_86_in_rule__Color__Alternatives_12825); 
                      after(grammarAccess.getColorAccess().getLightSalmonKeyword_1_75()); 
 
                     }
@@ -3566,13 +3876,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 77 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1087:6: ( 'LightSeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1189:6: ( 'LightSeaGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1087:6: ( 'LightSeaGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1088:1: 'LightSeaGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1189:6: ( 'LightSeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1190:1: 'LightSeaGreen'
                     {
                      before(grammarAccess.getColorAccess().getLightSeaGreenKeyword_1_76()); 
-                    match(input,87,FOLLOW_87_in_rule__Color__Alternatives_12614); 
+                    match(input,87,FOLLOW_87_in_rule__Color__Alternatives_12845); 
                      after(grammarAccess.getColorAccess().getLightSeaGreenKeyword_1_76()); 
 
                     }
@@ -3581,13 +3891,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 78 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1095:6: ( 'LightSkyBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1197:6: ( 'LightSkyBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1095:6: ( 'LightSkyBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1096:1: 'LightSkyBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1197:6: ( 'LightSkyBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1198:1: 'LightSkyBlue'
                     {
                      before(grammarAccess.getColorAccess().getLightSkyBlueKeyword_1_77()); 
-                    match(input,88,FOLLOW_88_in_rule__Color__Alternatives_12634); 
+                    match(input,88,FOLLOW_88_in_rule__Color__Alternatives_12865); 
                      after(grammarAccess.getColorAccess().getLightSkyBlueKeyword_1_77()); 
 
                     }
@@ -3596,13 +3906,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 79 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1103:6: ( 'LightSlateGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1205:6: ( 'LightSlateGray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1103:6: ( 'LightSlateGray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1104:1: 'LightSlateGray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1205:6: ( 'LightSlateGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1206:1: 'LightSlateGray'
                     {
                      before(grammarAccess.getColorAccess().getLightSlateGrayKeyword_1_78()); 
-                    match(input,89,FOLLOW_89_in_rule__Color__Alternatives_12654); 
+                    match(input,89,FOLLOW_89_in_rule__Color__Alternatives_12885); 
                      after(grammarAccess.getColorAccess().getLightSlateGrayKeyword_1_78()); 
 
                     }
@@ -3611,13 +3921,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 80 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1111:6: ( 'LightSlateGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1213:6: ( 'LightSlateGrey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1111:6: ( 'LightSlateGrey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1112:1: 'LightSlateGrey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1213:6: ( 'LightSlateGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1214:1: 'LightSlateGrey'
                     {
                      before(grammarAccess.getColorAccess().getLightSlateGreyKeyword_1_79()); 
-                    match(input,90,FOLLOW_90_in_rule__Color__Alternatives_12674); 
+                    match(input,90,FOLLOW_90_in_rule__Color__Alternatives_12905); 
                      after(grammarAccess.getColorAccess().getLightSlateGreyKeyword_1_79()); 
 
                     }
@@ -3626,13 +3936,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 81 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1119:6: ( 'LightSteelBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1221:6: ( 'LightSteelBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1119:6: ( 'LightSteelBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1120:1: 'LightSteelBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1221:6: ( 'LightSteelBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1222:1: 'LightSteelBlue'
                     {
                      before(grammarAccess.getColorAccess().getLightSteelBlueKeyword_1_80()); 
-                    match(input,91,FOLLOW_91_in_rule__Color__Alternatives_12694); 
+                    match(input,91,FOLLOW_91_in_rule__Color__Alternatives_12925); 
                      after(grammarAccess.getColorAccess().getLightSteelBlueKeyword_1_80()); 
 
                     }
@@ -3641,13 +3951,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 82 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1127:6: ( 'LightYellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1229:6: ( 'LightYellow' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1127:6: ( 'LightYellow' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1128:1: 'LightYellow'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1229:6: ( 'LightYellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1230:1: 'LightYellow'
                     {
                      before(grammarAccess.getColorAccess().getLightYellowKeyword_1_81()); 
-                    match(input,92,FOLLOW_92_in_rule__Color__Alternatives_12714); 
+                    match(input,92,FOLLOW_92_in_rule__Color__Alternatives_12945); 
                      after(grammarAccess.getColorAccess().getLightYellowKeyword_1_81()); 
 
                     }
@@ -3656,13 +3966,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 83 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1135:6: ( 'Lime' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1237:6: ( 'Lime' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1135:6: ( 'Lime' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1136:1: 'Lime'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1237:6: ( 'Lime' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1238:1: 'Lime'
                     {
                      before(grammarAccess.getColorAccess().getLimeKeyword_1_82()); 
-                    match(input,93,FOLLOW_93_in_rule__Color__Alternatives_12734); 
+                    match(input,93,FOLLOW_93_in_rule__Color__Alternatives_12965); 
                      after(grammarAccess.getColorAccess().getLimeKeyword_1_82()); 
 
                     }
@@ -3671,13 +3981,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 84 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1143:6: ( 'LimeGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1245:6: ( 'LimeGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1143:6: ( 'LimeGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1144:1: 'LimeGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1245:6: ( 'LimeGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1246:1: 'LimeGreen'
                     {
                      before(grammarAccess.getColorAccess().getLimeGreenKeyword_1_83()); 
-                    match(input,94,FOLLOW_94_in_rule__Color__Alternatives_12754); 
+                    match(input,94,FOLLOW_94_in_rule__Color__Alternatives_12985); 
                      after(grammarAccess.getColorAccess().getLimeGreenKeyword_1_83()); 
 
                     }
@@ -3686,13 +3996,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 85 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1151:6: ( 'Linen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1253:6: ( 'Linen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1151:6: ( 'Linen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1152:1: 'Linen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1253:6: ( 'Linen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1254:1: 'Linen'
                     {
                      before(grammarAccess.getColorAccess().getLinenKeyword_1_84()); 
-                    match(input,95,FOLLOW_95_in_rule__Color__Alternatives_12774); 
+                    match(input,95,FOLLOW_95_in_rule__Color__Alternatives_13005); 
                      after(grammarAccess.getColorAccess().getLinenKeyword_1_84()); 
 
                     }
@@ -3701,13 +4011,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 86 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1159:6: ( 'Magenta' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1261:6: ( 'Magenta' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1159:6: ( 'Magenta' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1160:1: 'Magenta'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1261:6: ( 'Magenta' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1262:1: 'Magenta'
                     {
                      before(grammarAccess.getColorAccess().getMagentaKeyword_1_85()); 
-                    match(input,96,FOLLOW_96_in_rule__Color__Alternatives_12794); 
+                    match(input,96,FOLLOW_96_in_rule__Color__Alternatives_13025); 
                      after(grammarAccess.getColorAccess().getMagentaKeyword_1_85()); 
 
                     }
@@ -3716,13 +4026,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 87 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1167:6: ( 'Maroon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1269:6: ( 'Maroon' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1167:6: ( 'Maroon' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1168:1: 'Maroon'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1269:6: ( 'Maroon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1270:1: 'Maroon'
                     {
                      before(grammarAccess.getColorAccess().getMaroonKeyword_1_86()); 
-                    match(input,97,FOLLOW_97_in_rule__Color__Alternatives_12814); 
+                    match(input,97,FOLLOW_97_in_rule__Color__Alternatives_13045); 
                      after(grammarAccess.getColorAccess().getMaroonKeyword_1_86()); 
 
                     }
@@ -3731,13 +4041,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 88 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1175:6: ( 'MediumAquaMarine' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1277:6: ( 'MediumAquaMarine' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1175:6: ( 'MediumAquaMarine' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1176:1: 'MediumAquaMarine'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1277:6: ( 'MediumAquaMarine' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1278:1: 'MediumAquaMarine'
                     {
                      before(grammarAccess.getColorAccess().getMediumAquaMarineKeyword_1_87()); 
-                    match(input,98,FOLLOW_98_in_rule__Color__Alternatives_12834); 
+                    match(input,98,FOLLOW_98_in_rule__Color__Alternatives_13065); 
                      after(grammarAccess.getColorAccess().getMediumAquaMarineKeyword_1_87()); 
 
                     }
@@ -3746,13 +4056,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 89 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1183:6: ( 'MediumBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1285:6: ( 'MediumBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1183:6: ( 'MediumBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1184:1: 'MediumBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1285:6: ( 'MediumBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1286:1: 'MediumBlue'
                     {
                      before(grammarAccess.getColorAccess().getMediumBlueKeyword_1_88()); 
-                    match(input,99,FOLLOW_99_in_rule__Color__Alternatives_12854); 
+                    match(input,99,FOLLOW_99_in_rule__Color__Alternatives_13085); 
                      after(grammarAccess.getColorAccess().getMediumBlueKeyword_1_88()); 
 
                     }
@@ -3761,13 +4071,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 90 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1191:6: ( 'MediumOrchid' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1293:6: ( 'MediumOrchid' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1191:6: ( 'MediumOrchid' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1192:1: 'MediumOrchid'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1293:6: ( 'MediumOrchid' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1294:1: 'MediumOrchid'
                     {
                      before(grammarAccess.getColorAccess().getMediumOrchidKeyword_1_89()); 
-                    match(input,100,FOLLOW_100_in_rule__Color__Alternatives_12874); 
+                    match(input,100,FOLLOW_100_in_rule__Color__Alternatives_13105); 
                      after(grammarAccess.getColorAccess().getMediumOrchidKeyword_1_89()); 
 
                     }
@@ -3776,13 +4086,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 91 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1199:6: ( 'MediumPurple' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1301:6: ( 'MediumPurple' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1199:6: ( 'MediumPurple' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1200:1: 'MediumPurple'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1301:6: ( 'MediumPurple' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1302:1: 'MediumPurple'
                     {
                      before(grammarAccess.getColorAccess().getMediumPurpleKeyword_1_90()); 
-                    match(input,101,FOLLOW_101_in_rule__Color__Alternatives_12894); 
+                    match(input,101,FOLLOW_101_in_rule__Color__Alternatives_13125); 
                      after(grammarAccess.getColorAccess().getMediumPurpleKeyword_1_90()); 
 
                     }
@@ -3791,13 +4101,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 92 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1207:6: ( 'MediumSeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1309:6: ( 'MediumSeaGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1207:6: ( 'MediumSeaGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1208:1: 'MediumSeaGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1309:6: ( 'MediumSeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1310:1: 'MediumSeaGreen'
                     {
                      before(grammarAccess.getColorAccess().getMediumSeaGreenKeyword_1_91()); 
-                    match(input,102,FOLLOW_102_in_rule__Color__Alternatives_12914); 
+                    match(input,102,FOLLOW_102_in_rule__Color__Alternatives_13145); 
                      after(grammarAccess.getColorAccess().getMediumSeaGreenKeyword_1_91()); 
 
                     }
@@ -3806,13 +4116,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 93 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1215:6: ( 'MediumSlateBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1317:6: ( 'MediumSlateBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1215:6: ( 'MediumSlateBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1216:1: 'MediumSlateBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1317:6: ( 'MediumSlateBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1318:1: 'MediumSlateBlue'
                     {
                      before(grammarAccess.getColorAccess().getMediumSlateBlueKeyword_1_92()); 
-                    match(input,103,FOLLOW_103_in_rule__Color__Alternatives_12934); 
+                    match(input,103,FOLLOW_103_in_rule__Color__Alternatives_13165); 
                      after(grammarAccess.getColorAccess().getMediumSlateBlueKeyword_1_92()); 
 
                     }
@@ -3821,13 +4131,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 94 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1223:6: ( 'MediumSpringGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1325:6: ( 'MediumSpringGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1223:6: ( 'MediumSpringGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1224:1: 'MediumSpringGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1325:6: ( 'MediumSpringGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1326:1: 'MediumSpringGreen'
                     {
                      before(grammarAccess.getColorAccess().getMediumSpringGreenKeyword_1_93()); 
-                    match(input,104,FOLLOW_104_in_rule__Color__Alternatives_12954); 
+                    match(input,104,FOLLOW_104_in_rule__Color__Alternatives_13185); 
                      after(grammarAccess.getColorAccess().getMediumSpringGreenKeyword_1_93()); 
 
                     }
@@ -3836,13 +4146,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 95 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1231:6: ( 'MediumTurquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1333:6: ( 'MediumTurquoise' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1231:6: ( 'MediumTurquoise' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1232:1: 'MediumTurquoise'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1333:6: ( 'MediumTurquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1334:1: 'MediumTurquoise'
                     {
                      before(grammarAccess.getColorAccess().getMediumTurquoiseKeyword_1_94()); 
-                    match(input,105,FOLLOW_105_in_rule__Color__Alternatives_12974); 
+                    match(input,105,FOLLOW_105_in_rule__Color__Alternatives_13205); 
                      after(grammarAccess.getColorAccess().getMediumTurquoiseKeyword_1_94()); 
 
                     }
@@ -3851,13 +4161,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 96 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1239:6: ( 'MediumVioletRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1341:6: ( 'MediumVioletRed' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1239:6: ( 'MediumVioletRed' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1240:1: 'MediumVioletRed'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1341:6: ( 'MediumVioletRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1342:1: 'MediumVioletRed'
                     {
                      before(grammarAccess.getColorAccess().getMediumVioletRedKeyword_1_95()); 
-                    match(input,106,FOLLOW_106_in_rule__Color__Alternatives_12994); 
+                    match(input,106,FOLLOW_106_in_rule__Color__Alternatives_13225); 
                      after(grammarAccess.getColorAccess().getMediumVioletRedKeyword_1_95()); 
 
                     }
@@ -3866,13 +4176,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 97 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1247:6: ( 'MidnightBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1349:6: ( 'MidnightBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1247:6: ( 'MidnightBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1248:1: 'MidnightBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1349:6: ( 'MidnightBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1350:1: 'MidnightBlue'
                     {
                      before(grammarAccess.getColorAccess().getMidnightBlueKeyword_1_96()); 
-                    match(input,107,FOLLOW_107_in_rule__Color__Alternatives_13014); 
+                    match(input,107,FOLLOW_107_in_rule__Color__Alternatives_13245); 
                      after(grammarAccess.getColorAccess().getMidnightBlueKeyword_1_96()); 
 
                     }
@@ -3881,13 +4191,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 98 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1255:6: ( 'MintCream' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1357:6: ( 'MintCream' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1255:6: ( 'MintCream' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1256:1: 'MintCream'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1357:6: ( 'MintCream' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1358:1: 'MintCream'
                     {
                      before(grammarAccess.getColorAccess().getMintCreamKeyword_1_97()); 
-                    match(input,108,FOLLOW_108_in_rule__Color__Alternatives_13034); 
+                    match(input,108,FOLLOW_108_in_rule__Color__Alternatives_13265); 
                      after(grammarAccess.getColorAccess().getMintCreamKeyword_1_97()); 
 
                     }
@@ -3896,13 +4206,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 99 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1263:6: ( 'MistyRose' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1365:6: ( 'MistyRose' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1263:6: ( 'MistyRose' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1264:1: 'MistyRose'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1365:6: ( 'MistyRose' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1366:1: 'MistyRose'
                     {
                      before(grammarAccess.getColorAccess().getMistyRoseKeyword_1_98()); 
-                    match(input,109,FOLLOW_109_in_rule__Color__Alternatives_13054); 
+                    match(input,109,FOLLOW_109_in_rule__Color__Alternatives_13285); 
                      after(grammarAccess.getColorAccess().getMistyRoseKeyword_1_98()); 
 
                     }
@@ -3911,13 +4221,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 100 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1271:6: ( 'Moccasin' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1373:6: ( 'Moccasin' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1271:6: ( 'Moccasin' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1272:1: 'Moccasin'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1373:6: ( 'Moccasin' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1374:1: 'Moccasin'
                     {
                      before(grammarAccess.getColorAccess().getMoccasinKeyword_1_99()); 
-                    match(input,110,FOLLOW_110_in_rule__Color__Alternatives_13074); 
+                    match(input,110,FOLLOW_110_in_rule__Color__Alternatives_13305); 
                      after(grammarAccess.getColorAccess().getMoccasinKeyword_1_99()); 
 
                     }
@@ -3926,13 +4236,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 101 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1279:6: ( 'NavajoWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1381:6: ( 'NavajoWhite' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1279:6: ( 'NavajoWhite' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1280:1: 'NavajoWhite'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1381:6: ( 'NavajoWhite' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1382:1: 'NavajoWhite'
                     {
                      before(grammarAccess.getColorAccess().getNavajoWhiteKeyword_1_100()); 
-                    match(input,111,FOLLOW_111_in_rule__Color__Alternatives_13094); 
+                    match(input,111,FOLLOW_111_in_rule__Color__Alternatives_13325); 
                      after(grammarAccess.getColorAccess().getNavajoWhiteKeyword_1_100()); 
 
                     }
@@ -3941,13 +4251,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 102 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1287:6: ( 'Navy' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1389:6: ( 'Navy' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1287:6: ( 'Navy' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1288:1: 'Navy'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1389:6: ( 'Navy' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1390:1: 'Navy'
                     {
                      before(grammarAccess.getColorAccess().getNavyKeyword_1_101()); 
-                    match(input,112,FOLLOW_112_in_rule__Color__Alternatives_13114); 
+                    match(input,112,FOLLOW_112_in_rule__Color__Alternatives_13345); 
                      after(grammarAccess.getColorAccess().getNavyKeyword_1_101()); 
 
                     }
@@ -3956,13 +4266,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 103 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1295:6: ( 'OldLace' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1397:6: ( 'OldLace' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1295:6: ( 'OldLace' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1296:1: 'OldLace'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1397:6: ( 'OldLace' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1398:1: 'OldLace'
                     {
                      before(grammarAccess.getColorAccess().getOldLaceKeyword_1_102()); 
-                    match(input,113,FOLLOW_113_in_rule__Color__Alternatives_13134); 
+                    match(input,113,FOLLOW_113_in_rule__Color__Alternatives_13365); 
                      after(grammarAccess.getColorAccess().getOldLaceKeyword_1_102()); 
 
                     }
@@ -3971,13 +4281,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 104 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1303:6: ( 'Olive' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1405:6: ( 'Olive' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1303:6: ( 'Olive' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1304:1: 'Olive'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1405:6: ( 'Olive' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1406:1: 'Olive'
                     {
                      before(grammarAccess.getColorAccess().getOliveKeyword_1_103()); 
-                    match(input,114,FOLLOW_114_in_rule__Color__Alternatives_13154); 
+                    match(input,114,FOLLOW_114_in_rule__Color__Alternatives_13385); 
                      after(grammarAccess.getColorAccess().getOliveKeyword_1_103()); 
 
                     }
@@ -3986,13 +4296,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 105 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1311:6: ( 'OliveDrab' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1413:6: ( 'OliveDrab' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1311:6: ( 'OliveDrab' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1312:1: 'OliveDrab'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1413:6: ( 'OliveDrab' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1414:1: 'OliveDrab'
                     {
                      before(grammarAccess.getColorAccess().getOliveDrabKeyword_1_104()); 
-                    match(input,115,FOLLOW_115_in_rule__Color__Alternatives_13174); 
+                    match(input,115,FOLLOW_115_in_rule__Color__Alternatives_13405); 
                      after(grammarAccess.getColorAccess().getOliveDrabKeyword_1_104()); 
 
                     }
@@ -4001,13 +4311,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 106 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1319:6: ( 'OrangeRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1421:6: ( 'OrangeRed' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1319:6: ( 'OrangeRed' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1320:1: 'OrangeRed'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1421:6: ( 'OrangeRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1422:1: 'OrangeRed'
                     {
                      before(grammarAccess.getColorAccess().getOrangeRedKeyword_1_105()); 
-                    match(input,116,FOLLOW_116_in_rule__Color__Alternatives_13194); 
+                    match(input,116,FOLLOW_116_in_rule__Color__Alternatives_13425); 
                      after(grammarAccess.getColorAccess().getOrangeRedKeyword_1_105()); 
 
                     }
@@ -4016,13 +4326,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 107 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1327:6: ( 'Orchid' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1429:6: ( 'Orchid' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1327:6: ( 'Orchid' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1328:1: 'Orchid'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1429:6: ( 'Orchid' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1430:1: 'Orchid'
                     {
                      before(grammarAccess.getColorAccess().getOrchidKeyword_1_106()); 
-                    match(input,117,FOLLOW_117_in_rule__Color__Alternatives_13214); 
+                    match(input,117,FOLLOW_117_in_rule__Color__Alternatives_13445); 
                      after(grammarAccess.getColorAccess().getOrchidKeyword_1_106()); 
 
                     }
@@ -4031,13 +4341,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 108 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1335:6: ( 'PaleGoldenRod' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1437:6: ( 'PaleGoldenRod' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1335:6: ( 'PaleGoldenRod' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1336:1: 'PaleGoldenRod'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1437:6: ( 'PaleGoldenRod' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1438:1: 'PaleGoldenRod'
                     {
                      before(grammarAccess.getColorAccess().getPaleGoldenRodKeyword_1_107()); 
-                    match(input,118,FOLLOW_118_in_rule__Color__Alternatives_13234); 
+                    match(input,118,FOLLOW_118_in_rule__Color__Alternatives_13465); 
                      after(grammarAccess.getColorAccess().getPaleGoldenRodKeyword_1_107()); 
 
                     }
@@ -4046,13 +4356,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 109 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1343:6: ( 'PaleGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1445:6: ( 'PaleGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1343:6: ( 'PaleGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1344:1: 'PaleGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1445:6: ( 'PaleGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1446:1: 'PaleGreen'
                     {
                      before(grammarAccess.getColorAccess().getPaleGreenKeyword_1_108()); 
-                    match(input,119,FOLLOW_119_in_rule__Color__Alternatives_13254); 
+                    match(input,119,FOLLOW_119_in_rule__Color__Alternatives_13485); 
                      after(grammarAccess.getColorAccess().getPaleGreenKeyword_1_108()); 
 
                     }
@@ -4061,13 +4371,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 110 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1351:6: ( 'PaleTurquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1453:6: ( 'PaleTurquoise' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1351:6: ( 'PaleTurquoise' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1352:1: 'PaleTurquoise'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1453:6: ( 'PaleTurquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1454:1: 'PaleTurquoise'
                     {
                      before(grammarAccess.getColorAccess().getPaleTurquoiseKeyword_1_109()); 
-                    match(input,120,FOLLOW_120_in_rule__Color__Alternatives_13274); 
+                    match(input,120,FOLLOW_120_in_rule__Color__Alternatives_13505); 
                      after(grammarAccess.getColorAccess().getPaleTurquoiseKeyword_1_109()); 
 
                     }
@@ -4076,13 +4386,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 111 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1359:6: ( 'PaleVioletRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1461:6: ( 'PaleVioletRed' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1359:6: ( 'PaleVioletRed' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1360:1: 'PaleVioletRed'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1461:6: ( 'PaleVioletRed' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1462:1: 'PaleVioletRed'
                     {
                      before(grammarAccess.getColorAccess().getPaleVioletRedKeyword_1_110()); 
-                    match(input,121,FOLLOW_121_in_rule__Color__Alternatives_13294); 
+                    match(input,121,FOLLOW_121_in_rule__Color__Alternatives_13525); 
                      after(grammarAccess.getColorAccess().getPaleVioletRedKeyword_1_110()); 
 
                     }
@@ -4091,13 +4401,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 112 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1367:6: ( 'PapayaWhip' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1469:6: ( 'PapayaWhip' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1367:6: ( 'PapayaWhip' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1368:1: 'PapayaWhip'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1469:6: ( 'PapayaWhip' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1470:1: 'PapayaWhip'
                     {
                      before(grammarAccess.getColorAccess().getPapayaWhipKeyword_1_111()); 
-                    match(input,122,FOLLOW_122_in_rule__Color__Alternatives_13314); 
+                    match(input,122,FOLLOW_122_in_rule__Color__Alternatives_13545); 
                      after(grammarAccess.getColorAccess().getPapayaWhipKeyword_1_111()); 
 
                     }
@@ -4106,13 +4416,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 113 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1375:6: ( 'PeachPuff' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1477:6: ( 'PeachPuff' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1375:6: ( 'PeachPuff' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1376:1: 'PeachPuff'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1477:6: ( 'PeachPuff' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1478:1: 'PeachPuff'
                     {
                      before(grammarAccess.getColorAccess().getPeachPuffKeyword_1_112()); 
-                    match(input,123,FOLLOW_123_in_rule__Color__Alternatives_13334); 
+                    match(input,123,FOLLOW_123_in_rule__Color__Alternatives_13565); 
                      after(grammarAccess.getColorAccess().getPeachPuffKeyword_1_112()); 
 
                     }
@@ -4121,13 +4431,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 114 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1383:6: ( 'Peru' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1485:6: ( 'Peru' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1383:6: ( 'Peru' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1384:1: 'Peru'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1485:6: ( 'Peru' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1486:1: 'Peru'
                     {
                      before(grammarAccess.getColorAccess().getPeruKeyword_1_113()); 
-                    match(input,124,FOLLOW_124_in_rule__Color__Alternatives_13354); 
+                    match(input,124,FOLLOW_124_in_rule__Color__Alternatives_13585); 
                      after(grammarAccess.getColorAccess().getPeruKeyword_1_113()); 
 
                     }
@@ -4136,13 +4446,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 115 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1391:6: ( 'Pink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1493:6: ( 'Pink' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1391:6: ( 'Pink' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1392:1: 'Pink'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1493:6: ( 'Pink' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1494:1: 'Pink'
                     {
                      before(grammarAccess.getColorAccess().getPinkKeyword_1_114()); 
-                    match(input,125,FOLLOW_125_in_rule__Color__Alternatives_13374); 
+                    match(input,125,FOLLOW_125_in_rule__Color__Alternatives_13605); 
                      after(grammarAccess.getColorAccess().getPinkKeyword_1_114()); 
 
                     }
@@ -4151,13 +4461,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 116 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1399:6: ( 'Plum' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1501:6: ( 'Plum' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1399:6: ( 'Plum' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1400:1: 'Plum'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1501:6: ( 'Plum' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1502:1: 'Plum'
                     {
                      before(grammarAccess.getColorAccess().getPlumKeyword_1_115()); 
-                    match(input,126,FOLLOW_126_in_rule__Color__Alternatives_13394); 
+                    match(input,126,FOLLOW_126_in_rule__Color__Alternatives_13625); 
                      after(grammarAccess.getColorAccess().getPlumKeyword_1_115()); 
 
                     }
@@ -4166,13 +4476,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 117 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1407:6: ( 'PowderBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1509:6: ( 'PowderBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1407:6: ( 'PowderBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1408:1: 'PowderBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1509:6: ( 'PowderBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1510:1: 'PowderBlue'
                     {
                      before(grammarAccess.getColorAccess().getPowderBlueKeyword_1_116()); 
-                    match(input,127,FOLLOW_127_in_rule__Color__Alternatives_13414); 
+                    match(input,127,FOLLOW_127_in_rule__Color__Alternatives_13645); 
                      after(grammarAccess.getColorAccess().getPowderBlueKeyword_1_116()); 
 
                     }
@@ -4181,13 +4491,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 118 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1415:6: ( 'Purple' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1517:6: ( 'Purple' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1415:6: ( 'Purple' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1416:1: 'Purple'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1517:6: ( 'Purple' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1518:1: 'Purple'
                     {
                      before(grammarAccess.getColorAccess().getPurpleKeyword_1_117()); 
-                    match(input,128,FOLLOW_128_in_rule__Color__Alternatives_13434); 
+                    match(input,128,FOLLOW_128_in_rule__Color__Alternatives_13665); 
                      after(grammarAccess.getColorAccess().getPurpleKeyword_1_117()); 
 
                     }
@@ -4196,13 +4506,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 119 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1423:6: ( 'Red' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1525:6: ( 'Red' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1423:6: ( 'Red' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1424:1: 'Red'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1525:6: ( 'Red' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1526:1: 'Red'
                     {
                      before(grammarAccess.getColorAccess().getRedKeyword_1_118()); 
-                    match(input,129,FOLLOW_129_in_rule__Color__Alternatives_13454); 
+                    match(input,129,FOLLOW_129_in_rule__Color__Alternatives_13685); 
                      after(grammarAccess.getColorAccess().getRedKeyword_1_118()); 
 
                     }
@@ -4211,13 +4521,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 120 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1431:6: ( 'RosyBrown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1533:6: ( 'RosyBrown' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1431:6: ( 'RosyBrown' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1432:1: 'RosyBrown'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1533:6: ( 'RosyBrown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1534:1: 'RosyBrown'
                     {
                      before(grammarAccess.getColorAccess().getRosyBrownKeyword_1_119()); 
-                    match(input,130,FOLLOW_130_in_rule__Color__Alternatives_13474); 
+                    match(input,130,FOLLOW_130_in_rule__Color__Alternatives_13705); 
                      after(grammarAccess.getColorAccess().getRosyBrownKeyword_1_119()); 
 
                     }
@@ -4226,13 +4536,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 121 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1439:6: ( 'RoyalBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1541:6: ( 'RoyalBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1439:6: ( 'RoyalBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1440:1: 'RoyalBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1541:6: ( 'RoyalBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1542:1: 'RoyalBlue'
                     {
                      before(grammarAccess.getColorAccess().getRoyalBlueKeyword_1_120()); 
-                    match(input,131,FOLLOW_131_in_rule__Color__Alternatives_13494); 
+                    match(input,131,FOLLOW_131_in_rule__Color__Alternatives_13725); 
                      after(grammarAccess.getColorAccess().getRoyalBlueKeyword_1_120()); 
 
                     }
@@ -4241,13 +4551,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 122 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1447:6: ( 'SaddleBrown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1549:6: ( 'SaddleBrown' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1447:6: ( 'SaddleBrown' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1448:1: 'SaddleBrown'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1549:6: ( 'SaddleBrown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1550:1: 'SaddleBrown'
                     {
                      before(grammarAccess.getColorAccess().getSaddleBrownKeyword_1_121()); 
-                    match(input,132,FOLLOW_132_in_rule__Color__Alternatives_13514); 
+                    match(input,132,FOLLOW_132_in_rule__Color__Alternatives_13745); 
                      after(grammarAccess.getColorAccess().getSaddleBrownKeyword_1_121()); 
 
                     }
@@ -4256,13 +4566,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 123 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1455:6: ( 'Salmon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1557:6: ( 'Salmon' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1455:6: ( 'Salmon' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1456:1: 'Salmon'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1557:6: ( 'Salmon' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1558:1: 'Salmon'
                     {
                      before(grammarAccess.getColorAccess().getSalmonKeyword_1_122()); 
-                    match(input,133,FOLLOW_133_in_rule__Color__Alternatives_13534); 
+                    match(input,133,FOLLOW_133_in_rule__Color__Alternatives_13765); 
                      after(grammarAccess.getColorAccess().getSalmonKeyword_1_122()); 
 
                     }
@@ -4271,13 +4581,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 124 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1463:6: ( 'SandyBrown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1565:6: ( 'SandyBrown' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1463:6: ( 'SandyBrown' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1464:1: 'SandyBrown'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1565:6: ( 'SandyBrown' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1566:1: 'SandyBrown'
                     {
                      before(grammarAccess.getColorAccess().getSandyBrownKeyword_1_123()); 
-                    match(input,134,FOLLOW_134_in_rule__Color__Alternatives_13554); 
+                    match(input,134,FOLLOW_134_in_rule__Color__Alternatives_13785); 
                      after(grammarAccess.getColorAccess().getSandyBrownKeyword_1_123()); 
 
                     }
@@ -4286,13 +4596,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 125 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1471:6: ( 'SeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1573:6: ( 'SeaGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1471:6: ( 'SeaGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1472:1: 'SeaGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1573:6: ( 'SeaGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1574:1: 'SeaGreen'
                     {
                      before(grammarAccess.getColorAccess().getSeaGreenKeyword_1_124()); 
-                    match(input,135,FOLLOW_135_in_rule__Color__Alternatives_13574); 
+                    match(input,135,FOLLOW_135_in_rule__Color__Alternatives_13805); 
                      after(grammarAccess.getColorAccess().getSeaGreenKeyword_1_124()); 
 
                     }
@@ -4301,13 +4611,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 126 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1479:6: ( 'Sienna' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1581:6: ( 'Sienna' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1479:6: ( 'Sienna' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1480:1: 'Sienna'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1581:6: ( 'Sienna' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1582:1: 'Sienna'
                     {
                      before(grammarAccess.getColorAccess().getSiennaKeyword_1_125()); 
-                    match(input,136,FOLLOW_136_in_rule__Color__Alternatives_13594); 
+                    match(input,136,FOLLOW_136_in_rule__Color__Alternatives_13825); 
                      after(grammarAccess.getColorAccess().getSiennaKeyword_1_125()); 
 
                     }
@@ -4316,13 +4626,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 127 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1487:6: ( 'Silver' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1589:6: ( 'Silver' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1487:6: ( 'Silver' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1488:1: 'Silver'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1589:6: ( 'Silver' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1590:1: 'Silver'
                     {
                      before(grammarAccess.getColorAccess().getSilverKeyword_1_126()); 
-                    match(input,137,FOLLOW_137_in_rule__Color__Alternatives_13614); 
+                    match(input,137,FOLLOW_137_in_rule__Color__Alternatives_13845); 
                      after(grammarAccess.getColorAccess().getSilverKeyword_1_126()); 
 
                     }
@@ -4331,13 +4641,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 128 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1495:6: ( 'SkyBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1597:6: ( 'SkyBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1495:6: ( 'SkyBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1496:1: 'SkyBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1597:6: ( 'SkyBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1598:1: 'SkyBlue'
                     {
                      before(grammarAccess.getColorAccess().getSkyBlueKeyword_1_127()); 
-                    match(input,138,FOLLOW_138_in_rule__Color__Alternatives_13634); 
+                    match(input,138,FOLLOW_138_in_rule__Color__Alternatives_13865); 
                      after(grammarAccess.getColorAccess().getSkyBlueKeyword_1_127()); 
 
                     }
@@ -4346,13 +4656,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 129 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1503:6: ( 'SlateBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1605:6: ( 'SlateBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1503:6: ( 'SlateBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1504:1: 'SlateBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1605:6: ( 'SlateBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1606:1: 'SlateBlue'
                     {
                      before(grammarAccess.getColorAccess().getSlateBlueKeyword_1_128()); 
-                    match(input,139,FOLLOW_139_in_rule__Color__Alternatives_13654); 
+                    match(input,139,FOLLOW_139_in_rule__Color__Alternatives_13885); 
                      after(grammarAccess.getColorAccess().getSlateBlueKeyword_1_128()); 
 
                     }
@@ -4361,13 +4671,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 130 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1511:6: ( 'SlateGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1613:6: ( 'SlateGray' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1511:6: ( 'SlateGray' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1512:1: 'SlateGray'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1613:6: ( 'SlateGray' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1614:1: 'SlateGray'
                     {
                      before(grammarAccess.getColorAccess().getSlateGrayKeyword_1_129()); 
-                    match(input,140,FOLLOW_140_in_rule__Color__Alternatives_13674); 
+                    match(input,140,FOLLOW_140_in_rule__Color__Alternatives_13905); 
                      after(grammarAccess.getColorAccess().getSlateGrayKeyword_1_129()); 
 
                     }
@@ -4376,13 +4686,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 131 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1519:6: ( 'SlateGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1621:6: ( 'SlateGrey' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1519:6: ( 'SlateGrey' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1520:1: 'SlateGrey'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1621:6: ( 'SlateGrey' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1622:1: 'SlateGrey'
                     {
                      before(grammarAccess.getColorAccess().getSlateGreyKeyword_1_130()); 
-                    match(input,141,FOLLOW_141_in_rule__Color__Alternatives_13694); 
+                    match(input,141,FOLLOW_141_in_rule__Color__Alternatives_13925); 
                      after(grammarAccess.getColorAccess().getSlateGreyKeyword_1_130()); 
 
                     }
@@ -4391,13 +4701,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 132 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1527:6: ( 'Snow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1629:6: ( 'Snow' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1527:6: ( 'Snow' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1528:1: 'Snow'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1629:6: ( 'Snow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1630:1: 'Snow'
                     {
                      before(grammarAccess.getColorAccess().getSnowKeyword_1_131()); 
-                    match(input,142,FOLLOW_142_in_rule__Color__Alternatives_13714); 
+                    match(input,142,FOLLOW_142_in_rule__Color__Alternatives_13945); 
                      after(grammarAccess.getColorAccess().getSnowKeyword_1_131()); 
 
                     }
@@ -4406,13 +4716,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 133 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1535:6: ( 'SpringGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1637:6: ( 'SpringGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1535:6: ( 'SpringGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1536:1: 'SpringGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1637:6: ( 'SpringGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1638:1: 'SpringGreen'
                     {
                      before(grammarAccess.getColorAccess().getSpringGreenKeyword_1_132()); 
-                    match(input,143,FOLLOW_143_in_rule__Color__Alternatives_13734); 
+                    match(input,143,FOLLOW_143_in_rule__Color__Alternatives_13965); 
                      after(grammarAccess.getColorAccess().getSpringGreenKeyword_1_132()); 
 
                     }
@@ -4421,13 +4731,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 134 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1543:6: ( 'SteelBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1645:6: ( 'SteelBlue' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1543:6: ( 'SteelBlue' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1544:1: 'SteelBlue'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1645:6: ( 'SteelBlue' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1646:1: 'SteelBlue'
                     {
                      before(grammarAccess.getColorAccess().getSteelBlueKeyword_1_133()); 
-                    match(input,144,FOLLOW_144_in_rule__Color__Alternatives_13754); 
+                    match(input,144,FOLLOW_144_in_rule__Color__Alternatives_13985); 
                      after(grammarAccess.getColorAccess().getSteelBlueKeyword_1_133()); 
 
                     }
@@ -4436,13 +4746,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 135 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1551:6: ( 'Tan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1653:6: ( 'Tan' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1551:6: ( 'Tan' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1552:1: 'Tan'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1653:6: ( 'Tan' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1654:1: 'Tan'
                     {
                      before(grammarAccess.getColorAccess().getTanKeyword_1_134()); 
-                    match(input,145,FOLLOW_145_in_rule__Color__Alternatives_13774); 
+                    match(input,145,FOLLOW_145_in_rule__Color__Alternatives_14005); 
                      after(grammarAccess.getColorAccess().getTanKeyword_1_134()); 
 
                     }
@@ -4451,13 +4761,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 136 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1559:6: ( 'Teal' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1661:6: ( 'Teal' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1559:6: ( 'Teal' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1560:1: 'Teal'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1661:6: ( 'Teal' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1662:1: 'Teal'
                     {
                      before(grammarAccess.getColorAccess().getTealKeyword_1_135()); 
-                    match(input,146,FOLLOW_146_in_rule__Color__Alternatives_13794); 
+                    match(input,146,FOLLOW_146_in_rule__Color__Alternatives_14025); 
                      after(grammarAccess.getColorAccess().getTealKeyword_1_135()); 
 
                     }
@@ -4466,13 +4776,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 137 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1567:6: ( 'Thistle' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1669:6: ( 'Thistle' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1567:6: ( 'Thistle' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1568:1: 'Thistle'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1669:6: ( 'Thistle' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1670:1: 'Thistle'
                     {
                      before(grammarAccess.getColorAccess().getThistleKeyword_1_136()); 
-                    match(input,147,FOLLOW_147_in_rule__Color__Alternatives_13814); 
+                    match(input,147,FOLLOW_147_in_rule__Color__Alternatives_14045); 
                      after(grammarAccess.getColorAccess().getThistleKeyword_1_136()); 
 
                     }
@@ -4481,13 +4791,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 138 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1575:6: ( 'Tomato' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1677:6: ( 'Tomato' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1575:6: ( 'Tomato' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1576:1: 'Tomato'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1677:6: ( 'Tomato' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1678:1: 'Tomato'
                     {
                      before(grammarAccess.getColorAccess().getTomatoKeyword_1_137()); 
-                    match(input,148,FOLLOW_148_in_rule__Color__Alternatives_13834); 
+                    match(input,148,FOLLOW_148_in_rule__Color__Alternatives_14065); 
                      after(grammarAccess.getColorAccess().getTomatoKeyword_1_137()); 
 
                     }
@@ -4496,13 +4806,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 139 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1583:6: ( 'Turquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1685:6: ( 'Turquoise' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1583:6: ( 'Turquoise' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1584:1: 'Turquoise'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1685:6: ( 'Turquoise' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1686:1: 'Turquoise'
                     {
                      before(grammarAccess.getColorAccess().getTurquoiseKeyword_1_138()); 
-                    match(input,149,FOLLOW_149_in_rule__Color__Alternatives_13854); 
+                    match(input,149,FOLLOW_149_in_rule__Color__Alternatives_14085); 
                      after(grammarAccess.getColorAccess().getTurquoiseKeyword_1_138()); 
 
                     }
@@ -4511,13 +4821,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 140 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1591:6: ( 'Violet' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1693:6: ( 'Violet' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1591:6: ( 'Violet' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1592:1: 'Violet'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1693:6: ( 'Violet' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1694:1: 'Violet'
                     {
                      before(grammarAccess.getColorAccess().getVioletKeyword_1_139()); 
-                    match(input,150,FOLLOW_150_in_rule__Color__Alternatives_13874); 
+                    match(input,150,FOLLOW_150_in_rule__Color__Alternatives_14105); 
                      after(grammarAccess.getColorAccess().getVioletKeyword_1_139()); 
 
                     }
@@ -4526,13 +4836,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 141 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1599:6: ( 'Wheat' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1701:6: ( 'Wheat' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1599:6: ( 'Wheat' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1600:1: 'Wheat'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1701:6: ( 'Wheat' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1702:1: 'Wheat'
                     {
                      before(grammarAccess.getColorAccess().getWheatKeyword_1_140()); 
-                    match(input,151,FOLLOW_151_in_rule__Color__Alternatives_13894); 
+                    match(input,151,FOLLOW_151_in_rule__Color__Alternatives_14125); 
                      after(grammarAccess.getColorAccess().getWheatKeyword_1_140()); 
 
                     }
@@ -4541,13 +4851,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 142 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1607:6: ( 'White' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1709:6: ( 'White' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1607:6: ( 'White' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1608:1: 'White'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1709:6: ( 'White' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1710:1: 'White'
                     {
                      before(grammarAccess.getColorAccess().getWhiteKeyword_1_141()); 
-                    match(input,152,FOLLOW_152_in_rule__Color__Alternatives_13914); 
+                    match(input,152,FOLLOW_152_in_rule__Color__Alternatives_14145); 
                      after(grammarAccess.getColorAccess().getWhiteKeyword_1_141()); 
 
                     }
@@ -4556,13 +4866,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 143 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1615:6: ( 'WhiteSmoke' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1717:6: ( 'WhiteSmoke' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1615:6: ( 'WhiteSmoke' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1616:1: 'WhiteSmoke'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1717:6: ( 'WhiteSmoke' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1718:1: 'WhiteSmoke'
                     {
                      before(grammarAccess.getColorAccess().getWhiteSmokeKeyword_1_142()); 
-                    match(input,153,FOLLOW_153_in_rule__Color__Alternatives_13934); 
+                    match(input,153,FOLLOW_153_in_rule__Color__Alternatives_14165); 
                      after(grammarAccess.getColorAccess().getWhiteSmokeKeyword_1_142()); 
 
                     }
@@ -4571,13 +4881,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 144 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1623:6: ( 'Yellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1725:6: ( 'Yellow' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1623:6: ( 'Yellow' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1624:1: 'Yellow'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1725:6: ( 'Yellow' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1726:1: 'Yellow'
                     {
                      before(grammarAccess.getColorAccess().getYellowKeyword_1_143()); 
-                    match(input,154,FOLLOW_154_in_rule__Color__Alternatives_13954); 
+                    match(input,154,FOLLOW_154_in_rule__Color__Alternatives_14185); 
                      after(grammarAccess.getColorAccess().getYellowKeyword_1_143()); 
 
                     }
@@ -4586,13 +4896,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 145 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1631:6: ( 'YellowGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1733:6: ( 'YellowGreen' )
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1631:6: ( 'YellowGreen' )
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1632:1: 'YellowGreen'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1733:6: ( 'YellowGreen' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1734:1: 'YellowGreen'
                     {
                      before(grammarAccess.getColorAccess().getYellowGreenKeyword_1_144()); 
-                    match(input,155,FOLLOW_155_in_rule__Color__Alternatives_13974); 
+                    match(input,155,FOLLOW_155_in_rule__Color__Alternatives_14205); 
                      after(grammarAccess.getColorAccess().getYellowGreenKeyword_1_144()); 
 
                     }
@@ -4617,22 +4927,117 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Color__Alternatives_1"
 
 
+    // $ANTLR start "rule__Legend__Alternatives_1"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1746:1: rule__Legend__Alternatives_1 : ( ( 'right' ) | ( 'left' ) | ( 'center' ) );
+    public final void rule__Legend__Alternatives_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1750:1: ( ( 'right' ) | ( 'left' ) | ( 'center' ) )
+            int alt6=3;
+            switch ( input.LA(1) ) {
+            case 156:
+                {
+                alt6=1;
+                }
+                break;
+            case 157:
+                {
+                alt6=2;
+                }
+                break;
+            case 158:
+                {
+                alt6=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt6) {
+                case 1 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1751:1: ( 'right' )
+                    {
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1751:1: ( 'right' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1752:1: 'right'
+                    {
+                     before(grammarAccess.getLegendAccess().getRightKeyword_1_0()); 
+                    match(input,156,FOLLOW_156_in_rule__Legend__Alternatives_14240); 
+                     after(grammarAccess.getLegendAccess().getRightKeyword_1_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1759:6: ( 'left' )
+                    {
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1759:6: ( 'left' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1760:1: 'left'
+                    {
+                     before(grammarAccess.getLegendAccess().getLeftKeyword_1_1()); 
+                    match(input,157,FOLLOW_157_in_rule__Legend__Alternatives_14260); 
+                     after(grammarAccess.getLegendAccess().getLeftKeyword_1_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1767:6: ( 'center' )
+                    {
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1767:6: ( 'center' )
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1768:1: 'center'
+                    {
+                     before(grammarAccess.getLegendAccess().getCenterKeyword_1_2()); 
+                    match(input,158,FOLLOW_158_in_rule__Legend__Alternatives_14280); 
+                     after(grammarAccess.getLegendAccess().getCenterKeyword_1_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Alternatives_1"
+
+
     // $ANTLR start "rule__Diagram__Group__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1646:1: rule__Diagram__Group__0 : rule__Diagram__Group__0__Impl rule__Diagram__Group__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1782:1: rule__Diagram__Group__0 : rule__Diagram__Group__0__Impl rule__Diagram__Group__1 ;
     public final void rule__Diagram__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1650:1: ( rule__Diagram__Group__0__Impl rule__Diagram__Group__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1651:2: rule__Diagram__Group__0__Impl rule__Diagram__Group__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1786:1: ( rule__Diagram__Group__0__Impl rule__Diagram__Group__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1787:2: rule__Diagram__Group__0__Impl rule__Diagram__Group__1
             {
-            pushFollow(FOLLOW_rule__Diagram__Group__0__Impl_in_rule__Diagram__Group__04006);
+            pushFollow(FOLLOW_rule__Diagram__Group__0__Impl_in_rule__Diagram__Group__04312);
             rule__Diagram__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Diagram__Group__1_in_rule__Diagram__Group__04009);
+            pushFollow(FOLLOW_rule__Diagram__Group__1_in_rule__Diagram__Group__04315);
             rule__Diagram__Group__1();
 
             state._fsp--;
@@ -4656,20 +5061,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Diagram__Group__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1658:1: rule__Diagram__Group__0__Impl : ( '@startuml' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1794:1: rule__Diagram__Group__0__Impl : ( '@startuml' ) ;
     public final void rule__Diagram__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1662:1: ( ( '@startuml' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1663:1: ( '@startuml' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1798:1: ( ( '@startuml' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1799:1: ( '@startuml' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1663:1: ( '@startuml' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1664:1: '@startuml'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1799:1: ( '@startuml' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1800:1: '@startuml'
             {
              before(grammarAccess.getDiagramAccess().getStartumlKeyword_0()); 
-            match(input,156,FOLLOW_156_in_rule__Diagram__Group__0__Impl4037); 
+            match(input,159,FOLLOW_159_in_rule__Diagram__Group__0__Impl4343); 
              after(grammarAccess.getDiagramAccess().getStartumlKeyword_0()); 
 
             }
@@ -4693,21 +5098,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Diagram__Group__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1677:1: rule__Diagram__Group__1 : rule__Diagram__Group__1__Impl rule__Diagram__Group__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1813:1: rule__Diagram__Group__1 : rule__Diagram__Group__1__Impl rule__Diagram__Group__2 ;
     public final void rule__Diagram__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1681:1: ( rule__Diagram__Group__1__Impl rule__Diagram__Group__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1682:2: rule__Diagram__Group__1__Impl rule__Diagram__Group__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1817:1: ( rule__Diagram__Group__1__Impl rule__Diagram__Group__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1818:2: rule__Diagram__Group__1__Impl rule__Diagram__Group__2
             {
-            pushFollow(FOLLOW_rule__Diagram__Group__1__Impl_in_rule__Diagram__Group__14068);
+            pushFollow(FOLLOW_rule__Diagram__Group__1__Impl_in_rule__Diagram__Group__14374);
             rule__Diagram__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Diagram__Group__2_in_rule__Diagram__Group__14071);
+            pushFollow(FOLLOW_rule__Diagram__Group__2_in_rule__Diagram__Group__14377);
             rule__Diagram__Group__2();
 
             state._fsp--;
@@ -4731,35 +5136,35 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Diagram__Group__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1689:1: rule__Diagram__Group__1__Impl : ( ( rule__Diagram__InstructionsAssignment_1 )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1825:1: rule__Diagram__Group__1__Impl : ( ( rule__Diagram__InstructionsAssignment_1 )* ) ;
     public final void rule__Diagram__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1693:1: ( ( ( rule__Diagram__InstructionsAssignment_1 )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1694:1: ( ( rule__Diagram__InstructionsAssignment_1 )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1829:1: ( ( ( rule__Diagram__InstructionsAssignment_1 )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1830:1: ( ( rule__Diagram__InstructionsAssignment_1 )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1694:1: ( ( rule__Diagram__InstructionsAssignment_1 )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1695:1: ( rule__Diagram__InstructionsAssignment_1 )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1830:1: ( ( rule__Diagram__InstructionsAssignment_1 )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1831:1: ( rule__Diagram__InstructionsAssignment_1 )*
             {
              before(grammarAccess.getDiagramAccess().getInstructionsAssignment_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1696:1: ( rule__Diagram__InstructionsAssignment_1 )*
-            loop6:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1832:1: ( rule__Diagram__InstructionsAssignment_1 )*
+            loop7:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( ((LA6_0>=RULE_ML_COMMENT && LA6_0<=RULE_ID)||(LA6_0>=168 && LA6_0<=173)) ) {
-                    alt6=1;
+                if ( ((LA7_0>=RULE_ML_COMMENT && LA7_0<=RULE_ID)||(LA7_0>=171 && LA7_0<=176)||(LA7_0>=178 && LA7_0<=179)||LA7_0==181) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1696:2: rule__Diagram__InstructionsAssignment_1
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1832:2: rule__Diagram__InstructionsAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Diagram__InstructionsAssignment_1_in_rule__Diagram__Group__1__Impl4098);
+            	    pushFollow(FOLLOW_rule__Diagram__InstructionsAssignment_1_in_rule__Diagram__Group__1__Impl4404);
             	    rule__Diagram__InstructionsAssignment_1();
 
             	    state._fsp--;
@@ -4769,7 +5174,7 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop7;
                 }
             } while (true);
 
@@ -4796,16 +5201,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Diagram__Group__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1706:1: rule__Diagram__Group__2 : rule__Diagram__Group__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1842:1: rule__Diagram__Group__2 : rule__Diagram__Group__2__Impl ;
     public final void rule__Diagram__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1710:1: ( rule__Diagram__Group__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1711:2: rule__Diagram__Group__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1846:1: ( rule__Diagram__Group__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1847:2: rule__Diagram__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Diagram__Group__2__Impl_in_rule__Diagram__Group__24129);
+            pushFollow(FOLLOW_rule__Diagram__Group__2__Impl_in_rule__Diagram__Group__24435);
             rule__Diagram__Group__2__Impl();
 
             state._fsp--;
@@ -4829,20 +5234,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Diagram__Group__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1717:1: rule__Diagram__Group__2__Impl : ( '@enduml' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1853:1: rule__Diagram__Group__2__Impl : ( '@enduml' ) ;
     public final void rule__Diagram__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1721:1: ( ( '@enduml' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1722:1: ( '@enduml' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1857:1: ( ( '@enduml' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1858:1: ( '@enduml' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1722:1: ( '@enduml' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1723:1: '@enduml'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1858:1: ( '@enduml' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1859:1: '@enduml'
             {
              before(grammarAccess.getDiagramAccess().getEndumlKeyword_2()); 
-            match(input,157,FOLLOW_157_in_rule__Diagram__Group__2__Impl4157); 
+            match(input,160,FOLLOW_160_in_rule__Diagram__Group__2__Impl4463); 
              after(grammarAccess.getDiagramAccess().getEndumlKeyword_2()); 
 
             }
@@ -4866,21 +5271,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1742:1: rule__Instruction__Group_0__0 : rule__Instruction__Group_0__0__Impl rule__Instruction__Group_0__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1878:1: rule__Instruction__Group_0__0 : rule__Instruction__Group_0__0__Impl rule__Instruction__Group_0__1 ;
     public final void rule__Instruction__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1746:1: ( rule__Instruction__Group_0__0__Impl rule__Instruction__Group_0__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1747:2: rule__Instruction__Group_0__0__Impl rule__Instruction__Group_0__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1882:1: ( rule__Instruction__Group_0__0__Impl rule__Instruction__Group_0__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1883:2: rule__Instruction__Group_0__0__Impl rule__Instruction__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_0__0__Impl_in_rule__Instruction__Group_0__04194);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__0__Impl_in_rule__Instruction__Group_0__04500);
             rule__Instruction__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instruction__Group_0__1_in_rule__Instruction__Group_0__04197);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__1_in_rule__Instruction__Group_0__04503);
             rule__Instruction__Group_0__1();
 
             state._fsp--;
@@ -4904,23 +5309,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1754:1: rule__Instruction__Group_0__0__Impl : ( ( rule__Instruction__Name1Assignment_0_0 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1890:1: rule__Instruction__Group_0__0__Impl : ( ( rule__Instruction__Name1Assignment_0_0 ) ) ;
     public final void rule__Instruction__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1758:1: ( ( ( rule__Instruction__Name1Assignment_0_0 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1759:1: ( ( rule__Instruction__Name1Assignment_0_0 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1894:1: ( ( ( rule__Instruction__Name1Assignment_0_0 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1895:1: ( ( rule__Instruction__Name1Assignment_0_0 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1759:1: ( ( rule__Instruction__Name1Assignment_0_0 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1760:1: ( rule__Instruction__Name1Assignment_0_0 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1895:1: ( ( rule__Instruction__Name1Assignment_0_0 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1896:1: ( rule__Instruction__Name1Assignment_0_0 )
             {
              before(grammarAccess.getInstructionAccess().getName1Assignment_0_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1761:1: ( rule__Instruction__Name1Assignment_0_0 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1761:2: rule__Instruction__Name1Assignment_0_0
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1897:1: ( rule__Instruction__Name1Assignment_0_0 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1897:2: rule__Instruction__Name1Assignment_0_0
             {
-            pushFollow(FOLLOW_rule__Instruction__Name1Assignment_0_0_in_rule__Instruction__Group_0__0__Impl4224);
+            pushFollow(FOLLOW_rule__Instruction__Name1Assignment_0_0_in_rule__Instruction__Group_0__0__Impl4530);
             rule__Instruction__Name1Assignment_0_0();
 
             state._fsp--;
@@ -4951,21 +5356,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1771:1: rule__Instruction__Group_0__1 : rule__Instruction__Group_0__1__Impl rule__Instruction__Group_0__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1907:1: rule__Instruction__Group_0__1 : rule__Instruction__Group_0__1__Impl rule__Instruction__Group_0__2 ;
     public final void rule__Instruction__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1775:1: ( rule__Instruction__Group_0__1__Impl rule__Instruction__Group_0__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1776:2: rule__Instruction__Group_0__1__Impl rule__Instruction__Group_0__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1911:1: ( rule__Instruction__Group_0__1__Impl rule__Instruction__Group_0__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1912:2: rule__Instruction__Group_0__1__Impl rule__Instruction__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_0__1__Impl_in_rule__Instruction__Group_0__14254);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__1__Impl_in_rule__Instruction__Group_0__14560);
             rule__Instruction__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instruction__Group_0__2_in_rule__Instruction__Group_0__14257);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__2_in_rule__Instruction__Group_0__14563);
             rule__Instruction__Group_0__2();
 
             state._fsp--;
@@ -4989,20 +5394,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1783:1: rule__Instruction__Group_0__1__Impl : ( ruleSequence ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1919:1: rule__Instruction__Group_0__1__Impl : ( ruleSequence ) ;
     public final void rule__Instruction__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1787:1: ( ( ruleSequence ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1788:1: ( ruleSequence )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1923:1: ( ( ruleSequence ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1924:1: ( ruleSequence )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1788:1: ( ruleSequence )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1789:1: ruleSequence
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1924:1: ( ruleSequence )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1925:1: ruleSequence
             {
              before(grammarAccess.getInstructionAccess().getSequenceParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_ruleSequence_in_rule__Instruction__Group_0__1__Impl4284);
+            pushFollow(FOLLOW_ruleSequence_in_rule__Instruction__Group_0__1__Impl4590);
             ruleSequence();
 
             state._fsp--;
@@ -5030,21 +5435,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1800:1: rule__Instruction__Group_0__2 : rule__Instruction__Group_0__2__Impl rule__Instruction__Group_0__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1936:1: rule__Instruction__Group_0__2 : rule__Instruction__Group_0__2__Impl rule__Instruction__Group_0__3 ;
     public final void rule__Instruction__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1804:1: ( rule__Instruction__Group_0__2__Impl rule__Instruction__Group_0__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1805:2: rule__Instruction__Group_0__2__Impl rule__Instruction__Group_0__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1940:1: ( rule__Instruction__Group_0__2__Impl rule__Instruction__Group_0__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1941:2: rule__Instruction__Group_0__2__Impl rule__Instruction__Group_0__3
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_0__2__Impl_in_rule__Instruction__Group_0__24313);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__2__Impl_in_rule__Instruction__Group_0__24619);
             rule__Instruction__Group_0__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instruction__Group_0__3_in_rule__Instruction__Group_0__24316);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__3_in_rule__Instruction__Group_0__24622);
             rule__Instruction__Group_0__3();
 
             state._fsp--;
@@ -5068,23 +5473,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1812:1: rule__Instruction__Group_0__2__Impl : ( ( rule__Instruction__Name2Assignment_0_2 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1948:1: rule__Instruction__Group_0__2__Impl : ( ( rule__Instruction__Name2Assignment_0_2 ) ) ;
     public final void rule__Instruction__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1816:1: ( ( ( rule__Instruction__Name2Assignment_0_2 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1817:1: ( ( rule__Instruction__Name2Assignment_0_2 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1952:1: ( ( ( rule__Instruction__Name2Assignment_0_2 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1953:1: ( ( rule__Instruction__Name2Assignment_0_2 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1817:1: ( ( rule__Instruction__Name2Assignment_0_2 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1818:1: ( rule__Instruction__Name2Assignment_0_2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1953:1: ( ( rule__Instruction__Name2Assignment_0_2 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1954:1: ( rule__Instruction__Name2Assignment_0_2 )
             {
              before(grammarAccess.getInstructionAccess().getName2Assignment_0_2()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1819:1: ( rule__Instruction__Name2Assignment_0_2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1819:2: rule__Instruction__Name2Assignment_0_2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1955:1: ( rule__Instruction__Name2Assignment_0_2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1955:2: rule__Instruction__Name2Assignment_0_2
             {
-            pushFollow(FOLLOW_rule__Instruction__Name2Assignment_0_2_in_rule__Instruction__Group_0__2__Impl4343);
+            pushFollow(FOLLOW_rule__Instruction__Name2Assignment_0_2_in_rule__Instruction__Group_0__2__Impl4649);
             rule__Instruction__Name2Assignment_0_2();
 
             state._fsp--;
@@ -5115,16 +5520,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1829:1: rule__Instruction__Group_0__3 : rule__Instruction__Group_0__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1965:1: rule__Instruction__Group_0__3 : rule__Instruction__Group_0__3__Impl ;
     public final void rule__Instruction__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1833:1: ( rule__Instruction__Group_0__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1834:2: rule__Instruction__Group_0__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1969:1: ( rule__Instruction__Group_0__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1970:2: rule__Instruction__Group_0__3__Impl
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_0__3__Impl_in_rule__Instruction__Group_0__34373);
+            pushFollow(FOLLOW_rule__Instruction__Group_0__3__Impl_in_rule__Instruction__Group_0__34679);
             rule__Instruction__Group_0__3__Impl();
 
             state._fsp--;
@@ -5148,31 +5553,31 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1840:1: rule__Instruction__Group_0__3__Impl : ( ( rule__Instruction__Group_0_3__0 )? ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1976:1: rule__Instruction__Group_0__3__Impl : ( ( rule__Instruction__Group_0_3__0 )? ) ;
     public final void rule__Instruction__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1844:1: ( ( ( rule__Instruction__Group_0_3__0 )? ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1845:1: ( ( rule__Instruction__Group_0_3__0 )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1980:1: ( ( ( rule__Instruction__Group_0_3__0 )? ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1981:1: ( ( rule__Instruction__Group_0_3__0 )? )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1845:1: ( ( rule__Instruction__Group_0_3__0 )? )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1846:1: ( rule__Instruction__Group_0_3__0 )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1981:1: ( ( rule__Instruction__Group_0_3__0 )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1982:1: ( rule__Instruction__Group_0_3__0 )?
             {
              before(grammarAccess.getInstructionAccess().getGroup_0_3()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1847:1: ( rule__Instruction__Group_0_3__0 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1983:1: ( rule__Instruction__Group_0_3__0 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==158) ) {
-                alt7=1;
+            if ( (LA8_0==161) ) {
+                alt8=1;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1847:2: rule__Instruction__Group_0_3__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1983:2: rule__Instruction__Group_0_3__0
                     {
-                    pushFollow(FOLLOW_rule__Instruction__Group_0_3__0_in_rule__Instruction__Group_0__3__Impl4400);
+                    pushFollow(FOLLOW_rule__Instruction__Group_0_3__0_in_rule__Instruction__Group_0__3__Impl4706);
                     rule__Instruction__Group_0_3__0();
 
                     state._fsp--;
@@ -5206,21 +5611,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0_3__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1865:1: rule__Instruction__Group_0_3__0 : rule__Instruction__Group_0_3__0__Impl rule__Instruction__Group_0_3__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2001:1: rule__Instruction__Group_0_3__0 : rule__Instruction__Group_0_3__0__Impl rule__Instruction__Group_0_3__1 ;
     public final void rule__Instruction__Group_0_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1869:1: ( rule__Instruction__Group_0_3__0__Impl rule__Instruction__Group_0_3__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1870:2: rule__Instruction__Group_0_3__0__Impl rule__Instruction__Group_0_3__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2005:1: ( rule__Instruction__Group_0_3__0__Impl rule__Instruction__Group_0_3__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2006:2: rule__Instruction__Group_0_3__0__Impl rule__Instruction__Group_0_3__1
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_0_3__0__Impl_in_rule__Instruction__Group_0_3__04439);
+            pushFollow(FOLLOW_rule__Instruction__Group_0_3__0__Impl_in_rule__Instruction__Group_0_3__04745);
             rule__Instruction__Group_0_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instruction__Group_0_3__1_in_rule__Instruction__Group_0_3__04442);
+            pushFollow(FOLLOW_rule__Instruction__Group_0_3__1_in_rule__Instruction__Group_0_3__04748);
             rule__Instruction__Group_0_3__1();
 
             state._fsp--;
@@ -5244,20 +5649,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0_3__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1877:1: rule__Instruction__Group_0_3__0__Impl : ( ':' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2013:1: rule__Instruction__Group_0_3__0__Impl : ( ':' ) ;
     public final void rule__Instruction__Group_0_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1881:1: ( ( ':' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1882:1: ( ':' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2017:1: ( ( ':' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2018:1: ( ':' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1882:1: ( ':' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1883:1: ':'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2018:1: ( ':' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2019:1: ':'
             {
              before(grammarAccess.getInstructionAccess().getColonKeyword_0_3_0()); 
-            match(input,158,FOLLOW_158_in_rule__Instruction__Group_0_3__0__Impl4470); 
+            match(input,161,FOLLOW_161_in_rule__Instruction__Group_0_3__0__Impl4776); 
              after(grammarAccess.getInstructionAccess().getColonKeyword_0_3_0()); 
 
             }
@@ -5281,16 +5686,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0_3__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1896:1: rule__Instruction__Group_0_3__1 : rule__Instruction__Group_0_3__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2032:1: rule__Instruction__Group_0_3__1 : rule__Instruction__Group_0_3__1__Impl ;
     public final void rule__Instruction__Group_0_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1900:1: ( rule__Instruction__Group_0_3__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1901:2: rule__Instruction__Group_0_3__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2036:1: ( rule__Instruction__Group_0_3__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2037:2: rule__Instruction__Group_0_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_0_3__1__Impl_in_rule__Instruction__Group_0_3__14501);
+            pushFollow(FOLLOW_rule__Instruction__Group_0_3__1__Impl_in_rule__Instruction__Group_0_3__14807);
             rule__Instruction__Group_0_3__1__Impl();
 
             state._fsp--;
@@ -5314,20 +5719,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_0_3__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1907:1: rule__Instruction__Group_0_3__1__Impl : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2043:1: rule__Instruction__Group_0_3__1__Impl : ( RULE_ID ) ;
     public final void rule__Instruction__Group_0_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1911:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1912:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2047:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2048:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1912:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1913:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2048:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2049:1: RULE_ID
             {
              before(grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_3_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instruction__Group_0_3__1__Impl4528); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instruction__Group_0_3__1__Impl4834); 
              after(grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_3_1()); 
 
             }
@@ -5351,21 +5756,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_3__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1928:1: rule__Instruction__Group_3__0 : rule__Instruction__Group_3__0__Impl rule__Instruction__Group_3__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2064:1: rule__Instruction__Group_3__0 : rule__Instruction__Group_3__0__Impl rule__Instruction__Group_3__1 ;
     public final void rule__Instruction__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1932:1: ( rule__Instruction__Group_3__0__Impl rule__Instruction__Group_3__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1933:2: rule__Instruction__Group_3__0__Impl rule__Instruction__Group_3__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2068:1: ( rule__Instruction__Group_3__0__Impl rule__Instruction__Group_3__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2069:2: rule__Instruction__Group_3__0__Impl rule__Instruction__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_3__0__Impl_in_rule__Instruction__Group_3__04561);
+            pushFollow(FOLLOW_rule__Instruction__Group_3__0__Impl_in_rule__Instruction__Group_3__04867);
             rule__Instruction__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instruction__Group_3__1_in_rule__Instruction__Group_3__04564);
+            pushFollow(FOLLOW_rule__Instruction__Group_3__1_in_rule__Instruction__Group_3__04870);
             rule__Instruction__Group_3__1();
 
             state._fsp--;
@@ -5389,20 +5794,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_3__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1940:1: rule__Instruction__Group_3__0__Impl : ( ruleDefinition ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2076:1: rule__Instruction__Group_3__0__Impl : ( ruleDefinition ) ;
     public final void rule__Instruction__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1944:1: ( ( ruleDefinition ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1945:1: ( ruleDefinition )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2080:1: ( ( ruleDefinition ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2081:1: ( ruleDefinition )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1945:1: ( ruleDefinition )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1946:1: ruleDefinition
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2081:1: ( ruleDefinition )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2082:1: ruleDefinition
             {
              before(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleDefinition_in_rule__Instruction__Group_3__0__Impl4591);
+            pushFollow(FOLLOW_ruleDefinition_in_rule__Instruction__Group_3__0__Impl4897);
             ruleDefinition();
 
             state._fsp--;
@@ -5430,16 +5835,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_3__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1957:1: rule__Instruction__Group_3__1 : rule__Instruction__Group_3__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2093:1: rule__Instruction__Group_3__1 : rule__Instruction__Group_3__1__Impl ;
     public final void rule__Instruction__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1961:1: ( rule__Instruction__Group_3__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1962:2: rule__Instruction__Group_3__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2097:1: ( rule__Instruction__Group_3__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2098:2: rule__Instruction__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instruction__Group_3__1__Impl_in_rule__Instruction__Group_3__14620);
+            pushFollow(FOLLOW_rule__Instruction__Group_3__1__Impl_in_rule__Instruction__Group_3__14926);
             rule__Instruction__Group_3__1__Impl();
 
             state._fsp--;
@@ -5463,31 +5868,31 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Group_3__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1968:1: rule__Instruction__Group_3__1__Impl : ( ( ruleColor )? ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2104:1: rule__Instruction__Group_3__1__Impl : ( ( ruleColor )? ) ;
     public final void rule__Instruction__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1972:1: ( ( ( ruleColor )? ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1973:1: ( ( ruleColor )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2108:1: ( ( ( ruleColor )? ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2109:1: ( ( ruleColor )? )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1973:1: ( ( ruleColor )? )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1974:1: ( ruleColor )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2109:1: ( ( ruleColor )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2110:1: ( ruleColor )?
             {
              before(grammarAccess.getInstructionAccess().getColorParserRuleCall_3_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1975:1: ( ruleColor )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2111:1: ( ruleColor )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==174) ) {
-                alt8=1;
+            if ( (LA9_0==177) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1975:3: ruleColor
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2111:3: ruleColor
                     {
-                    pushFollow(FOLLOW_ruleColor_in_rule__Instruction__Group_3__1__Impl4648);
+                    pushFollow(FOLLOW_ruleColor_in_rule__Instruction__Group_3__1__Impl4954);
                     ruleColor();
 
                     state._fsp--;
@@ -5521,21 +5926,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_0__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1989:1: rule__Sequence__Group_0__0 : rule__Sequence__Group_0__0__Impl rule__Sequence__Group_0__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2125:1: rule__Sequence__Group_0__0 : rule__Sequence__Group_0__0__Impl rule__Sequence__Group_0__1 ;
     public final void rule__Sequence__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1993:1: ( rule__Sequence__Group_0__0__Impl rule__Sequence__Group_0__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1994:2: rule__Sequence__Group_0__0__Impl rule__Sequence__Group_0__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2129:1: ( rule__Sequence__Group_0__0__Impl rule__Sequence__Group_0__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2130:2: rule__Sequence__Group_0__0__Impl rule__Sequence__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_0__0__Impl_in_rule__Sequence__Group_0__04683);
+            pushFollow(FOLLOW_rule__Sequence__Group_0__0__Impl_in_rule__Sequence__Group_0__04989);
             rule__Sequence__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_0__1_in_rule__Sequence__Group_0__04686);
+            pushFollow(FOLLOW_rule__Sequence__Group_0__1_in_rule__Sequence__Group_0__04992);
             rule__Sequence__Group_0__1();
 
             state._fsp--;
@@ -5559,47 +5964,47 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_0__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2001:1: rule__Sequence__Group_0__0__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2137:1: rule__Sequence__Group_0__0__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2005:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2006:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2141:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2142:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2006:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2007:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2142:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2143:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_0_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2008:1: ( '-' )*
-            loop9:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2144:1: ( '-' )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==159) ) {
-                    int LA9_1 = input.LA(2);
+                if ( (LA10_0==162) ) {
+                    int LA10_1 = input.LA(2);
 
-                    if ( (LA9_1==159) ) {
-                        alt9=1;
+                    if ( (LA10_1==162) ) {
+                        alt10=1;
                     }
 
 
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2009:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2145:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_0__0__Impl4715); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_0__0__Impl5021); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -5626,21 +6031,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_0__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2020:1: rule__Sequence__Group_0__1 : rule__Sequence__Group_0__1__Impl rule__Sequence__Group_0__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2156:1: rule__Sequence__Group_0__1 : rule__Sequence__Group_0__1__Impl rule__Sequence__Group_0__2 ;
     public final void rule__Sequence__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2024:1: ( rule__Sequence__Group_0__1__Impl rule__Sequence__Group_0__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2025:2: rule__Sequence__Group_0__1__Impl rule__Sequence__Group_0__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2160:1: ( rule__Sequence__Group_0__1__Impl rule__Sequence__Group_0__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2161:2: rule__Sequence__Group_0__1__Impl rule__Sequence__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_0__1__Impl_in_rule__Sequence__Group_0__14748);
+            pushFollow(FOLLOW_rule__Sequence__Group_0__1__Impl_in_rule__Sequence__Group_0__15054);
             rule__Sequence__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_0__2_in_rule__Sequence__Group_0__14751);
+            pushFollow(FOLLOW_rule__Sequence__Group_0__2_in_rule__Sequence__Group_0__15057);
             rule__Sequence__Group_0__2();
 
             state._fsp--;
@@ -5664,20 +6069,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_0__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2032:1: rule__Sequence__Group_0__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2168:1: rule__Sequence__Group_0__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2036:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2037:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2172:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2173:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2037:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2038:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2173:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2174:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_0_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_0__1__Impl4779); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_0__1__Impl5085); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_0_1()); 
 
             }
@@ -5701,16 +6106,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_0__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2051:1: rule__Sequence__Group_0__2 : rule__Sequence__Group_0__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2187:1: rule__Sequence__Group_0__2 : rule__Sequence__Group_0__2__Impl ;
     public final void rule__Sequence__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2055:1: ( rule__Sequence__Group_0__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2056:2: rule__Sequence__Group_0__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2191:1: ( rule__Sequence__Group_0__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2192:2: rule__Sequence__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_0__2__Impl_in_rule__Sequence__Group_0__24810);
+            pushFollow(FOLLOW_rule__Sequence__Group_0__2__Impl_in_rule__Sequence__Group_0__25116);
             rule__Sequence__Group_0__2__Impl();
 
             state._fsp--;
@@ -5734,20 +6139,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_0__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2062:1: rule__Sequence__Group_0__2__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2198:1: rule__Sequence__Group_0__2__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2066:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2067:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2202:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2203:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2067:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2068:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2203:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2204:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_0_2()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_0__2__Impl4838); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_0__2__Impl5144); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_0_2()); 
 
             }
@@ -5771,21 +6176,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_1__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2087:1: rule__Sequence__Group_1__0 : rule__Sequence__Group_1__0__Impl rule__Sequence__Group_1__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2223:1: rule__Sequence__Group_1__0 : rule__Sequence__Group_1__0__Impl rule__Sequence__Group_1__1 ;
     public final void rule__Sequence__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2091:1: ( rule__Sequence__Group_1__0__Impl rule__Sequence__Group_1__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2092:2: rule__Sequence__Group_1__0__Impl rule__Sequence__Group_1__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2227:1: ( rule__Sequence__Group_1__0__Impl rule__Sequence__Group_1__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2228:2: rule__Sequence__Group_1__0__Impl rule__Sequence__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_1__0__Impl_in_rule__Sequence__Group_1__04875);
+            pushFollow(FOLLOW_rule__Sequence__Group_1__0__Impl_in_rule__Sequence__Group_1__05181);
             rule__Sequence__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_1__1_in_rule__Sequence__Group_1__04878);
+            pushFollow(FOLLOW_rule__Sequence__Group_1__1_in_rule__Sequence__Group_1__05184);
             rule__Sequence__Group_1__1();
 
             state._fsp--;
@@ -5809,20 +6214,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_1__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2099:1: rule__Sequence__Group_1__0__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2235:1: rule__Sequence__Group_1__0__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2103:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2104:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2239:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2240:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2104:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2105:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2240:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2241:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_1_0()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_1__0__Impl4906); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_1__0__Impl5212); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_1_0()); 
 
             }
@@ -5846,21 +6251,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_1__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2118:1: rule__Sequence__Group_1__1 : rule__Sequence__Group_1__1__Impl rule__Sequence__Group_1__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2254:1: rule__Sequence__Group_1__1 : rule__Sequence__Group_1__1__Impl rule__Sequence__Group_1__2 ;
     public final void rule__Sequence__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2122:1: ( rule__Sequence__Group_1__1__Impl rule__Sequence__Group_1__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2123:2: rule__Sequence__Group_1__1__Impl rule__Sequence__Group_1__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2258:1: ( rule__Sequence__Group_1__1__Impl rule__Sequence__Group_1__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2259:2: rule__Sequence__Group_1__1__Impl rule__Sequence__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_1__1__Impl_in_rule__Sequence__Group_1__14937);
+            pushFollow(FOLLOW_rule__Sequence__Group_1__1__Impl_in_rule__Sequence__Group_1__15243);
             rule__Sequence__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_1__2_in_rule__Sequence__Group_1__14940);
+            pushFollow(FOLLOW_rule__Sequence__Group_1__2_in_rule__Sequence__Group_1__15246);
             rule__Sequence__Group_1__2();
 
             state._fsp--;
@@ -5884,20 +6289,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_1__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2130:1: rule__Sequence__Group_1__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2266:1: rule__Sequence__Group_1__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2134:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2135:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2270:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2271:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2135:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2136:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2271:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2272:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_1__1__Impl4968); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_1__1__Impl5274); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_1()); 
 
             }
@@ -5921,16 +6326,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_1__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2149:1: rule__Sequence__Group_1__2 : rule__Sequence__Group_1__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2285:1: rule__Sequence__Group_1__2 : rule__Sequence__Group_1__2__Impl ;
     public final void rule__Sequence__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2153:1: ( rule__Sequence__Group_1__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2154:2: rule__Sequence__Group_1__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2289:1: ( rule__Sequence__Group_1__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2290:2: rule__Sequence__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_1__2__Impl_in_rule__Sequence__Group_1__24999);
+            pushFollow(FOLLOW_rule__Sequence__Group_1__2__Impl_in_rule__Sequence__Group_1__25305);
             rule__Sequence__Group_1__2__Impl();
 
             state._fsp--;
@@ -5954,41 +6359,41 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_1__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2160:1: rule__Sequence__Group_1__2__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2296:1: rule__Sequence__Group_1__2__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2164:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2165:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2300:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2301:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2165:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2166:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2301:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2302:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_1_2()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2167:1: ( '-' )*
-            loop10:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2303:1: ( '-' )*
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==159) ) {
-                    alt10=1;
+                if ( (LA11_0==162) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2168:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2304:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_1__2__Impl5028); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_1__2__Impl5334); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
@@ -6015,21 +6420,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_2__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2185:1: rule__Sequence__Group_2__0 : rule__Sequence__Group_2__0__Impl rule__Sequence__Group_2__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2321:1: rule__Sequence__Group_2__0 : rule__Sequence__Group_2__0__Impl rule__Sequence__Group_2__1 ;
     public final void rule__Sequence__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2189:1: ( rule__Sequence__Group_2__0__Impl rule__Sequence__Group_2__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2190:2: rule__Sequence__Group_2__0__Impl rule__Sequence__Group_2__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2325:1: ( rule__Sequence__Group_2__0__Impl rule__Sequence__Group_2__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2326:2: rule__Sequence__Group_2__0__Impl rule__Sequence__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_2__0__Impl_in_rule__Sequence__Group_2__05067);
+            pushFollow(FOLLOW_rule__Sequence__Group_2__0__Impl_in_rule__Sequence__Group_2__05373);
             rule__Sequence__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_2__1_in_rule__Sequence__Group_2__05070);
+            pushFollow(FOLLOW_rule__Sequence__Group_2__1_in_rule__Sequence__Group_2__05376);
             rule__Sequence__Group_2__1();
 
             state._fsp--;
@@ -6053,20 +6458,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_2__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2197:1: rule__Sequence__Group_2__0__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2333:1: rule__Sequence__Group_2__0__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2201:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2202:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2337:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2338:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2202:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2203:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2338:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2339:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_2_0()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_2__0__Impl5098); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_2__0__Impl5404); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_2_0()); 
 
             }
@@ -6090,21 +6495,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_2__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2216:1: rule__Sequence__Group_2__1 : rule__Sequence__Group_2__1__Impl rule__Sequence__Group_2__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2352:1: rule__Sequence__Group_2__1 : rule__Sequence__Group_2__1__Impl rule__Sequence__Group_2__2 ;
     public final void rule__Sequence__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2220:1: ( rule__Sequence__Group_2__1__Impl rule__Sequence__Group_2__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2221:2: rule__Sequence__Group_2__1__Impl rule__Sequence__Group_2__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2356:1: ( rule__Sequence__Group_2__1__Impl rule__Sequence__Group_2__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2357:2: rule__Sequence__Group_2__1__Impl rule__Sequence__Group_2__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_2__1__Impl_in_rule__Sequence__Group_2__15129);
+            pushFollow(FOLLOW_rule__Sequence__Group_2__1__Impl_in_rule__Sequence__Group_2__15435);
             rule__Sequence__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_2__2_in_rule__Sequence__Group_2__15132);
+            pushFollow(FOLLOW_rule__Sequence__Group_2__2_in_rule__Sequence__Group_2__15438);
             rule__Sequence__Group_2__2();
 
             state._fsp--;
@@ -6128,20 +6533,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_2__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2228:1: rule__Sequence__Group_2__1__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2364:1: rule__Sequence__Group_2__1__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2232:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2233:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2368:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2369:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2233:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2234:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2369:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2370:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_2_1()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_2__1__Impl5160); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_2__1__Impl5466); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_2_1()); 
 
             }
@@ -6165,16 +6570,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_2__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2247:1: rule__Sequence__Group_2__2 : rule__Sequence__Group_2__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2383:1: rule__Sequence__Group_2__2 : rule__Sequence__Group_2__2__Impl ;
     public final void rule__Sequence__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2251:1: ( rule__Sequence__Group_2__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2252:2: rule__Sequence__Group_2__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2387:1: ( rule__Sequence__Group_2__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2388:2: rule__Sequence__Group_2__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_2__2__Impl_in_rule__Sequence__Group_2__25191);
+            pushFollow(FOLLOW_rule__Sequence__Group_2__2__Impl_in_rule__Sequence__Group_2__25497);
             rule__Sequence__Group_2__2__Impl();
 
             state._fsp--;
@@ -6198,20 +6603,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_2__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2258:1: rule__Sequence__Group_2__2__Impl : ( 'x' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2394:1: rule__Sequence__Group_2__2__Impl : ( 'x' ) ;
     public final void rule__Sequence__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2262:1: ( ( 'x' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2263:1: ( 'x' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2398:1: ( ( 'x' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2399:1: ( 'x' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2263:1: ( 'x' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2264:1: 'x'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2399:1: ( 'x' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2400:1: 'x'
             {
              before(grammarAccess.getSequenceAccess().getXKeyword_2_2()); 
-            match(input,162,FOLLOW_162_in_rule__Sequence__Group_2__2__Impl5219); 
+            match(input,165,FOLLOW_165_in_rule__Sequence__Group_2__2__Impl5525); 
              after(grammarAccess.getSequenceAccess().getXKeyword_2_2()); 
 
             }
@@ -6235,21 +6640,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2283:1: rule__Sequence__Group_3__0 : rule__Sequence__Group_3__0__Impl rule__Sequence__Group_3__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2419:1: rule__Sequence__Group_3__0 : rule__Sequence__Group_3__0__Impl rule__Sequence__Group_3__1 ;
     public final void rule__Sequence__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2287:1: ( rule__Sequence__Group_3__0__Impl rule__Sequence__Group_3__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2288:2: rule__Sequence__Group_3__0__Impl rule__Sequence__Group_3__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2423:1: ( rule__Sequence__Group_3__0__Impl rule__Sequence__Group_3__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2424:2: rule__Sequence__Group_3__0__Impl rule__Sequence__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3__0__Impl_in_rule__Sequence__Group_3__05256);
+            pushFollow(FOLLOW_rule__Sequence__Group_3__0__Impl_in_rule__Sequence__Group_3__05562);
             rule__Sequence__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3__1_in_rule__Sequence__Group_3__05259);
+            pushFollow(FOLLOW_rule__Sequence__Group_3__1_in_rule__Sequence__Group_3__05565);
             rule__Sequence__Group_3__1();
 
             state._fsp--;
@@ -6273,20 +6678,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2295:1: rule__Sequence__Group_3__0__Impl : ( 'x' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2431:1: rule__Sequence__Group_3__0__Impl : ( 'x' ) ;
     public final void rule__Sequence__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2299:1: ( ( 'x' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2300:1: ( 'x' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2435:1: ( ( 'x' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2436:1: ( 'x' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2300:1: ( 'x' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2301:1: 'x'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2436:1: ( 'x' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2437:1: 'x'
             {
              before(grammarAccess.getSequenceAccess().getXKeyword_3_0()); 
-            match(input,162,FOLLOW_162_in_rule__Sequence__Group_3__0__Impl5287); 
+            match(input,165,FOLLOW_165_in_rule__Sequence__Group_3__0__Impl5593); 
              after(grammarAccess.getSequenceAccess().getXKeyword_3_0()); 
 
             }
@@ -6310,21 +6715,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2314:1: rule__Sequence__Group_3__1 : rule__Sequence__Group_3__1__Impl rule__Sequence__Group_3__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2450:1: rule__Sequence__Group_3__1 : rule__Sequence__Group_3__1__Impl rule__Sequence__Group_3__2 ;
     public final void rule__Sequence__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2318:1: ( rule__Sequence__Group_3__1__Impl rule__Sequence__Group_3__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2319:2: rule__Sequence__Group_3__1__Impl rule__Sequence__Group_3__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2454:1: ( rule__Sequence__Group_3__1__Impl rule__Sequence__Group_3__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2455:2: rule__Sequence__Group_3__1__Impl rule__Sequence__Group_3__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3__1__Impl_in_rule__Sequence__Group_3__15318);
+            pushFollow(FOLLOW_rule__Sequence__Group_3__1__Impl_in_rule__Sequence__Group_3__15624);
             rule__Sequence__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3__2_in_rule__Sequence__Group_3__15321);
+            pushFollow(FOLLOW_rule__Sequence__Group_3__2_in_rule__Sequence__Group_3__15627);
             rule__Sequence__Group_3__2();
 
             state._fsp--;
@@ -6348,20 +6753,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2326:1: rule__Sequence__Group_3__1__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2462:1: rule__Sequence__Group_3__1__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2330:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2331:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2466:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2467:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2331:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2332:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2467:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2468:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_3_1()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_3__1__Impl5349); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_3__1__Impl5655); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_3_1()); 
 
             }
@@ -6385,16 +6790,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2345:1: rule__Sequence__Group_3__2 : rule__Sequence__Group_3__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2481:1: rule__Sequence__Group_3__2 : rule__Sequence__Group_3__2__Impl ;
     public final void rule__Sequence__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2349:1: ( rule__Sequence__Group_3__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2350:2: rule__Sequence__Group_3__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2485:1: ( rule__Sequence__Group_3__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2486:2: rule__Sequence__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3__2__Impl_in_rule__Sequence__Group_3__25380);
+            pushFollow(FOLLOW_rule__Sequence__Group_3__2__Impl_in_rule__Sequence__Group_3__25686);
             rule__Sequence__Group_3__2__Impl();
 
             state._fsp--;
@@ -6418,20 +6823,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2356:1: rule__Sequence__Group_3__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2492:1: rule__Sequence__Group_3__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2360:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2361:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2496:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2497:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2361:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2362:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2497:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2498:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_3_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_3__2__Impl5408); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_3__2__Impl5714); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_3_2()); 
 
             }
@@ -6455,21 +6860,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2381:1: rule__Sequence__Group_4__0 : rule__Sequence__Group_4__0__Impl rule__Sequence__Group_4__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2517:1: rule__Sequence__Group_4__0 : rule__Sequence__Group_4__0__Impl rule__Sequence__Group_4__1 ;
     public final void rule__Sequence__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2385:1: ( rule__Sequence__Group_4__0__Impl rule__Sequence__Group_4__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2386:2: rule__Sequence__Group_4__0__Impl rule__Sequence__Group_4__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2521:1: ( rule__Sequence__Group_4__0__Impl rule__Sequence__Group_4__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2522:2: rule__Sequence__Group_4__0__Impl rule__Sequence__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_4__0__Impl_in_rule__Sequence__Group_4__05445);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__0__Impl_in_rule__Sequence__Group_4__05751);
             rule__Sequence__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_4__1_in_rule__Sequence__Group_4__05448);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__1_in_rule__Sequence__Group_4__05754);
             rule__Sequence__Group_4__1();
 
             state._fsp--;
@@ -6493,47 +6898,47 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2393:1: rule__Sequence__Group_4__0__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2529:1: rule__Sequence__Group_4__0__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2397:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2398:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2533:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2534:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2398:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2399:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2534:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2535:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2400:1: ( '-' )*
-            loop11:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2536:1: ( '-' )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==159) ) {
-                    int LA11_1 = input.LA(2);
+                if ( (LA12_0==162) ) {
+                    int LA12_1 = input.LA(2);
 
-                    if ( (LA11_1==159) ) {
-                        alt11=1;
+                    if ( (LA12_1==162) ) {
+                        alt12=1;
                     }
 
 
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2401:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2537:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_4__0__Impl5477); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_4__0__Impl5783); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
@@ -6560,21 +6965,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2412:1: rule__Sequence__Group_4__1 : rule__Sequence__Group_4__1__Impl rule__Sequence__Group_4__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2548:1: rule__Sequence__Group_4__1 : rule__Sequence__Group_4__1__Impl rule__Sequence__Group_4__2 ;
     public final void rule__Sequence__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2416:1: ( rule__Sequence__Group_4__1__Impl rule__Sequence__Group_4__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2417:2: rule__Sequence__Group_4__1__Impl rule__Sequence__Group_4__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2552:1: ( rule__Sequence__Group_4__1__Impl rule__Sequence__Group_4__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2553:2: rule__Sequence__Group_4__1__Impl rule__Sequence__Group_4__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_4__1__Impl_in_rule__Sequence__Group_4__15510);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__1__Impl_in_rule__Sequence__Group_4__15816);
             rule__Sequence__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_4__2_in_rule__Sequence__Group_4__15513);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__2_in_rule__Sequence__Group_4__15819);
             rule__Sequence__Group_4__2();
 
             state._fsp--;
@@ -6598,20 +7003,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2424:1: rule__Sequence__Group_4__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2560:1: rule__Sequence__Group_4__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2428:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2429:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2564:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2565:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2429:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2430:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2565:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2566:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_4__1__Impl5541); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_4__1__Impl5847); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_4_1()); 
 
             }
@@ -6635,21 +7040,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2443:1: rule__Sequence__Group_4__2 : rule__Sequence__Group_4__2__Impl rule__Sequence__Group_4__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2579:1: rule__Sequence__Group_4__2 : rule__Sequence__Group_4__2__Impl rule__Sequence__Group_4__3 ;
     public final void rule__Sequence__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2447:1: ( rule__Sequence__Group_4__2__Impl rule__Sequence__Group_4__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2448:2: rule__Sequence__Group_4__2__Impl rule__Sequence__Group_4__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2583:1: ( rule__Sequence__Group_4__2__Impl rule__Sequence__Group_4__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2584:2: rule__Sequence__Group_4__2__Impl rule__Sequence__Group_4__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_4__2__Impl_in_rule__Sequence__Group_4__25572);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__2__Impl_in_rule__Sequence__Group_4__25878);
             rule__Sequence__Group_4__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_4__3_in_rule__Sequence__Group_4__25575);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__3_in_rule__Sequence__Group_4__25881);
             rule__Sequence__Group_4__3();
 
             state._fsp--;
@@ -6673,20 +7078,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2455:1: rule__Sequence__Group_4__2__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2591:1: rule__Sequence__Group_4__2__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2459:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2460:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2595:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2596:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2460:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2461:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2596:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2597:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_2()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_4__2__Impl5603); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_4__2__Impl5909); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_2()); 
 
             }
@@ -6710,16 +7115,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2474:1: rule__Sequence__Group_4__3 : rule__Sequence__Group_4__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2610:1: rule__Sequence__Group_4__3 : rule__Sequence__Group_4__3__Impl ;
     public final void rule__Sequence__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2478:1: ( rule__Sequence__Group_4__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2479:2: rule__Sequence__Group_4__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2614:1: ( rule__Sequence__Group_4__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2615:2: rule__Sequence__Group_4__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_4__3__Impl_in_rule__Sequence__Group_4__35634);
+            pushFollow(FOLLOW_rule__Sequence__Group_4__3__Impl_in_rule__Sequence__Group_4__35940);
             rule__Sequence__Group_4__3__Impl();
 
             state._fsp--;
@@ -6743,20 +7148,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_4__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2485:1: rule__Sequence__Group_4__3__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2621:1: rule__Sequence__Group_4__3__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2489:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2490:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2625:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2626:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2490:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2491:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2626:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2627:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_3()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_4__3__Impl5662); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_4__3__Impl5968); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_4_3()); 
 
             }
@@ -6780,21 +7185,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2512:1: rule__Sequence__Group_5__0 : rule__Sequence__Group_5__0__Impl rule__Sequence__Group_5__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2648:1: rule__Sequence__Group_5__0 : rule__Sequence__Group_5__0__Impl rule__Sequence__Group_5__1 ;
     public final void rule__Sequence__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2516:1: ( rule__Sequence__Group_5__0__Impl rule__Sequence__Group_5__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2517:2: rule__Sequence__Group_5__0__Impl rule__Sequence__Group_5__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2652:1: ( rule__Sequence__Group_5__0__Impl rule__Sequence__Group_5__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2653:2: rule__Sequence__Group_5__0__Impl rule__Sequence__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_5__0__Impl_in_rule__Sequence__Group_5__05701);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__0__Impl_in_rule__Sequence__Group_5__06007);
             rule__Sequence__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_5__1_in_rule__Sequence__Group_5__05704);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__1_in_rule__Sequence__Group_5__06010);
             rule__Sequence__Group_5__1();
 
             state._fsp--;
@@ -6818,20 +7223,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2524:1: rule__Sequence__Group_5__0__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2660:1: rule__Sequence__Group_5__0__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2528:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2529:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2664:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2665:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2529:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2530:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2665:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2666:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_0()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_5__0__Impl5732); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_5__0__Impl6038); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_0()); 
 
             }
@@ -6855,21 +7260,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2543:1: rule__Sequence__Group_5__1 : rule__Sequence__Group_5__1__Impl rule__Sequence__Group_5__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2679:1: rule__Sequence__Group_5__1 : rule__Sequence__Group_5__1__Impl rule__Sequence__Group_5__2 ;
     public final void rule__Sequence__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2547:1: ( rule__Sequence__Group_5__1__Impl rule__Sequence__Group_5__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2548:2: rule__Sequence__Group_5__1__Impl rule__Sequence__Group_5__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2683:1: ( rule__Sequence__Group_5__1__Impl rule__Sequence__Group_5__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2684:2: rule__Sequence__Group_5__1__Impl rule__Sequence__Group_5__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_5__1__Impl_in_rule__Sequence__Group_5__15763);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__1__Impl_in_rule__Sequence__Group_5__16069);
             rule__Sequence__Group_5__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_5__2_in_rule__Sequence__Group_5__15766);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__2_in_rule__Sequence__Group_5__16072);
             rule__Sequence__Group_5__2();
 
             state._fsp--;
@@ -6893,20 +7298,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2555:1: rule__Sequence__Group_5__1__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2691:1: rule__Sequence__Group_5__1__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2559:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2560:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2695:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2696:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2560:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2561:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2696:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2697:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_1()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_5__1__Impl5794); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_5__1__Impl6100); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_5_1()); 
 
             }
@@ -6930,21 +7335,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2574:1: rule__Sequence__Group_5__2 : rule__Sequence__Group_5__2__Impl rule__Sequence__Group_5__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2710:1: rule__Sequence__Group_5__2 : rule__Sequence__Group_5__2__Impl rule__Sequence__Group_5__3 ;
     public final void rule__Sequence__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2578:1: ( rule__Sequence__Group_5__2__Impl rule__Sequence__Group_5__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2579:2: rule__Sequence__Group_5__2__Impl rule__Sequence__Group_5__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2714:1: ( rule__Sequence__Group_5__2__Impl rule__Sequence__Group_5__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2715:2: rule__Sequence__Group_5__2__Impl rule__Sequence__Group_5__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_5__2__Impl_in_rule__Sequence__Group_5__25825);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__2__Impl_in_rule__Sequence__Group_5__26131);
             rule__Sequence__Group_5__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_5__3_in_rule__Sequence__Group_5__25828);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__3_in_rule__Sequence__Group_5__26134);
             rule__Sequence__Group_5__3();
 
             state._fsp--;
@@ -6968,20 +7373,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2586:1: rule__Sequence__Group_5__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2722:1: rule__Sequence__Group_5__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2590:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2591:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2726:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2727:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2591:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2592:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2727:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2728:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_5__2__Impl5856); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_5__2__Impl6162); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_2()); 
 
             }
@@ -7005,16 +7410,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2605:1: rule__Sequence__Group_5__3 : rule__Sequence__Group_5__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2741:1: rule__Sequence__Group_5__3 : rule__Sequence__Group_5__3__Impl ;
     public final void rule__Sequence__Group_5__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2609:1: ( rule__Sequence__Group_5__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2610:2: rule__Sequence__Group_5__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2745:1: ( rule__Sequence__Group_5__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2746:2: rule__Sequence__Group_5__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_5__3__Impl_in_rule__Sequence__Group_5__35887);
+            pushFollow(FOLLOW_rule__Sequence__Group_5__3__Impl_in_rule__Sequence__Group_5__36193);
             rule__Sequence__Group_5__3__Impl();
 
             state._fsp--;
@@ -7038,41 +7443,41 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_5__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2616:1: rule__Sequence__Group_5__3__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2752:1: rule__Sequence__Group_5__3__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_5__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2620:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2621:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2756:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2757:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2621:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2622:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2757:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2758:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_5_3()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2623:1: ( '-' )*
-            loop12:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2759:1: ( '-' )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==159) ) {
-                    alt12=1;
+                if ( (LA13_0==162) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2624:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2760:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_5__3__Impl5916); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_5__3__Impl6222); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
@@ -7099,21 +7504,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2643:1: rule__Sequence__Group_6__0 : rule__Sequence__Group_6__0__Impl rule__Sequence__Group_6__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2779:1: rule__Sequence__Group_6__0 : rule__Sequence__Group_6__0__Impl rule__Sequence__Group_6__1 ;
     public final void rule__Sequence__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2647:1: ( rule__Sequence__Group_6__0__Impl rule__Sequence__Group_6__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2648:2: rule__Sequence__Group_6__0__Impl rule__Sequence__Group_6__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2783:1: ( rule__Sequence__Group_6__0__Impl rule__Sequence__Group_6__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2784:2: rule__Sequence__Group_6__0__Impl rule__Sequence__Group_6__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_6__0__Impl_in_rule__Sequence__Group_6__05957);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__0__Impl_in_rule__Sequence__Group_6__06263);
             rule__Sequence__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_6__1_in_rule__Sequence__Group_6__05960);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__1_in_rule__Sequence__Group_6__06266);
             rule__Sequence__Group_6__1();
 
             state._fsp--;
@@ -7137,47 +7542,47 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2655:1: rule__Sequence__Group_6__0__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2791:1: rule__Sequence__Group_6__0__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2659:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2660:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2795:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2796:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2660:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2661:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2796:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2797:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2662:1: ( '-' )*
-            loop13:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2798:1: ( '-' )*
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==159) ) {
-                    int LA13_1 = input.LA(2);
+                if ( (LA14_0==162) ) {
+                    int LA14_1 = input.LA(2);
 
-                    if ( (LA13_1==159) ) {
-                        alt13=1;
+                    if ( (LA14_1==162) ) {
+                        alt14=1;
                     }
 
 
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2663:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2799:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_6__0__Impl5989); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_6__0__Impl6295); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -7204,21 +7609,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2674:1: rule__Sequence__Group_6__1 : rule__Sequence__Group_6__1__Impl rule__Sequence__Group_6__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2810:1: rule__Sequence__Group_6__1 : rule__Sequence__Group_6__1__Impl rule__Sequence__Group_6__2 ;
     public final void rule__Sequence__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2678:1: ( rule__Sequence__Group_6__1__Impl rule__Sequence__Group_6__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2679:2: rule__Sequence__Group_6__1__Impl rule__Sequence__Group_6__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2814:1: ( rule__Sequence__Group_6__1__Impl rule__Sequence__Group_6__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2815:2: rule__Sequence__Group_6__1__Impl rule__Sequence__Group_6__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_6__1__Impl_in_rule__Sequence__Group_6__16022);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__1__Impl_in_rule__Sequence__Group_6__16328);
             rule__Sequence__Group_6__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_6__2_in_rule__Sequence__Group_6__16025);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__2_in_rule__Sequence__Group_6__16331);
             rule__Sequence__Group_6__2();
 
             state._fsp--;
@@ -7242,20 +7647,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2686:1: rule__Sequence__Group_6__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2822:1: rule__Sequence__Group_6__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2690:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2691:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2826:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2827:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2691:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2692:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2827:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2828:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_6__1__Impl6053); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_6__1__Impl6359); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_6_1()); 
 
             }
@@ -7279,21 +7684,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2705:1: rule__Sequence__Group_6__2 : rule__Sequence__Group_6__2__Impl rule__Sequence__Group_6__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2841:1: rule__Sequence__Group_6__2 : rule__Sequence__Group_6__2__Impl rule__Sequence__Group_6__3 ;
     public final void rule__Sequence__Group_6__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2709:1: ( rule__Sequence__Group_6__2__Impl rule__Sequence__Group_6__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2710:2: rule__Sequence__Group_6__2__Impl rule__Sequence__Group_6__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2845:1: ( rule__Sequence__Group_6__2__Impl rule__Sequence__Group_6__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2846:2: rule__Sequence__Group_6__2__Impl rule__Sequence__Group_6__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_6__2__Impl_in_rule__Sequence__Group_6__26084);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__2__Impl_in_rule__Sequence__Group_6__26390);
             rule__Sequence__Group_6__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_6__3_in_rule__Sequence__Group_6__26087);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__3_in_rule__Sequence__Group_6__26393);
             rule__Sequence__Group_6__3();
 
             state._fsp--;
@@ -7317,20 +7722,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2717:1: rule__Sequence__Group_6__2__Impl : ( '\\\\' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2853:1: rule__Sequence__Group_6__2__Impl : ( '\\\\' ) ;
     public final void rule__Sequence__Group_6__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2721:1: ( ( '\\\\' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2722:1: ( '\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2857:1: ( ( '\\\\' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2858:1: ( '\\\\' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2722:1: ( '\\\\' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2723:1: '\\\\'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2858:1: ( '\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2859:1: '\\\\'
             {
              before(grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_2()); 
-            match(input,163,FOLLOW_163_in_rule__Sequence__Group_6__2__Impl6115); 
+            match(input,166,FOLLOW_166_in_rule__Sequence__Group_6__2__Impl6421); 
              after(grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_2()); 
 
             }
@@ -7354,16 +7759,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2736:1: rule__Sequence__Group_6__3 : rule__Sequence__Group_6__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2872:1: rule__Sequence__Group_6__3 : rule__Sequence__Group_6__3__Impl ;
     public final void rule__Sequence__Group_6__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2740:1: ( rule__Sequence__Group_6__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2741:2: rule__Sequence__Group_6__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2876:1: ( rule__Sequence__Group_6__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2877:2: rule__Sequence__Group_6__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_6__3__Impl_in_rule__Sequence__Group_6__36146);
+            pushFollow(FOLLOW_rule__Sequence__Group_6__3__Impl_in_rule__Sequence__Group_6__36452);
             rule__Sequence__Group_6__3__Impl();
 
             state._fsp--;
@@ -7387,20 +7792,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_6__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2747:1: rule__Sequence__Group_6__3__Impl : ( '\\\\' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2883:1: rule__Sequence__Group_6__3__Impl : ( '\\\\' ) ;
     public final void rule__Sequence__Group_6__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2751:1: ( ( '\\\\' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2752:1: ( '\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2887:1: ( ( '\\\\' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2888:1: ( '\\\\' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2752:1: ( '\\\\' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2753:1: '\\\\'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2888:1: ( '\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2889:1: '\\\\'
             {
              before(grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_3()); 
-            match(input,163,FOLLOW_163_in_rule__Sequence__Group_6__3__Impl6174); 
+            match(input,166,FOLLOW_166_in_rule__Sequence__Group_6__3__Impl6480); 
              after(grammarAccess.getSequenceAccess().getReverseSolidusKeyword_6_3()); 
 
             }
@@ -7424,21 +7829,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_7__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2774:1: rule__Sequence__Group_7__0 : rule__Sequence__Group_7__0__Impl rule__Sequence__Group_7__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2910:1: rule__Sequence__Group_7__0 : rule__Sequence__Group_7__0__Impl rule__Sequence__Group_7__1 ;
     public final void rule__Sequence__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2778:1: ( rule__Sequence__Group_7__0__Impl rule__Sequence__Group_7__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2779:2: rule__Sequence__Group_7__0__Impl rule__Sequence__Group_7__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2914:1: ( rule__Sequence__Group_7__0__Impl rule__Sequence__Group_7__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2915:2: rule__Sequence__Group_7__0__Impl rule__Sequence__Group_7__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_7__0__Impl_in_rule__Sequence__Group_7__06213);
+            pushFollow(FOLLOW_rule__Sequence__Group_7__0__Impl_in_rule__Sequence__Group_7__06519);
             rule__Sequence__Group_7__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_7__1_in_rule__Sequence__Group_7__06216);
+            pushFollow(FOLLOW_rule__Sequence__Group_7__1_in_rule__Sequence__Group_7__06522);
             rule__Sequence__Group_7__1();
 
             state._fsp--;
@@ -7462,20 +7867,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_7__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2786:1: rule__Sequence__Group_7__0__Impl : ( '/' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2922:1: rule__Sequence__Group_7__0__Impl : ( '/' ) ;
     public final void rule__Sequence__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2790:1: ( ( '/' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2791:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2926:1: ( ( '/' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2927:1: ( '/' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2791:1: ( '/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2792:1: '/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2927:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2928:1: '/'
             {
              before(grammarAccess.getSequenceAccess().getSolidusKeyword_7_0()); 
-            match(input,164,FOLLOW_164_in_rule__Sequence__Group_7__0__Impl6244); 
+            match(input,167,FOLLOW_167_in_rule__Sequence__Group_7__0__Impl6550); 
              after(grammarAccess.getSequenceAccess().getSolidusKeyword_7_0()); 
 
             }
@@ -7499,21 +7904,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_7__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2805:1: rule__Sequence__Group_7__1 : rule__Sequence__Group_7__1__Impl rule__Sequence__Group_7__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2941:1: rule__Sequence__Group_7__1 : rule__Sequence__Group_7__1__Impl rule__Sequence__Group_7__2 ;
     public final void rule__Sequence__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2809:1: ( rule__Sequence__Group_7__1__Impl rule__Sequence__Group_7__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2810:2: rule__Sequence__Group_7__1__Impl rule__Sequence__Group_7__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2945:1: ( rule__Sequence__Group_7__1__Impl rule__Sequence__Group_7__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2946:2: rule__Sequence__Group_7__1__Impl rule__Sequence__Group_7__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_7__1__Impl_in_rule__Sequence__Group_7__16275);
+            pushFollow(FOLLOW_rule__Sequence__Group_7__1__Impl_in_rule__Sequence__Group_7__16581);
             rule__Sequence__Group_7__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_7__2_in_rule__Sequence__Group_7__16278);
+            pushFollow(FOLLOW_rule__Sequence__Group_7__2_in_rule__Sequence__Group_7__16584);
             rule__Sequence__Group_7__2();
 
             state._fsp--;
@@ -7537,20 +7942,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_7__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2817:1: rule__Sequence__Group_7__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2953:1: rule__Sequence__Group_7__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2821:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2822:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2957:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2958:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2822:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2823:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2958:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2959:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_7__1__Impl6306); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_7__1__Impl6612); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_1()); 
 
             }
@@ -7574,16 +7979,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_7__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2836:1: rule__Sequence__Group_7__2 : rule__Sequence__Group_7__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2972:1: rule__Sequence__Group_7__2 : rule__Sequence__Group_7__2__Impl ;
     public final void rule__Sequence__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2840:1: ( rule__Sequence__Group_7__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2841:2: rule__Sequence__Group_7__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2976:1: ( rule__Sequence__Group_7__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2977:2: rule__Sequence__Group_7__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_7__2__Impl_in_rule__Sequence__Group_7__26337);
+            pushFollow(FOLLOW_rule__Sequence__Group_7__2__Impl_in_rule__Sequence__Group_7__26643);
             rule__Sequence__Group_7__2__Impl();
 
             state._fsp--;
@@ -7607,41 +8012,41 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_7__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2847:1: rule__Sequence__Group_7__2__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2983:1: rule__Sequence__Group_7__2__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2851:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2852:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2987:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2988:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2852:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2853:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2988:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2989:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_7_2()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2854:1: ( '-' )*
-            loop14:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2990:1: ( '-' )*
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA14_0==159) ) {
-                    alt14=1;
+                if ( (LA15_0==162) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2855:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2991:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_7__2__Impl6366); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_7__2__Impl6672); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
@@ -7668,21 +8073,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_8__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2872:1: rule__Sequence__Group_8__0 : rule__Sequence__Group_8__0__Impl rule__Sequence__Group_8__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3008:1: rule__Sequence__Group_8__0 : rule__Sequence__Group_8__0__Impl rule__Sequence__Group_8__1 ;
     public final void rule__Sequence__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2876:1: ( rule__Sequence__Group_8__0__Impl rule__Sequence__Group_8__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2877:2: rule__Sequence__Group_8__0__Impl rule__Sequence__Group_8__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3012:1: ( rule__Sequence__Group_8__0__Impl rule__Sequence__Group_8__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3013:2: rule__Sequence__Group_8__0__Impl rule__Sequence__Group_8__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_8__0__Impl_in_rule__Sequence__Group_8__06405);
+            pushFollow(FOLLOW_rule__Sequence__Group_8__0__Impl_in_rule__Sequence__Group_8__06711);
             rule__Sequence__Group_8__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_8__1_in_rule__Sequence__Group_8__06408);
+            pushFollow(FOLLOW_rule__Sequence__Group_8__1_in_rule__Sequence__Group_8__06714);
             rule__Sequence__Group_8__1();
 
             state._fsp--;
@@ -7706,47 +8111,47 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_8__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2884:1: rule__Sequence__Group_8__0__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3020:1: rule__Sequence__Group_8__0__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2888:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2889:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3024:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3025:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2889:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2890:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3025:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3026:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2891:1: ( '-' )*
-            loop15:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3027:1: ( '-' )*
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA15_0==159) ) {
-                    int LA15_1 = input.LA(2);
+                if ( (LA16_0==162) ) {
+                    int LA16_1 = input.LA(2);
 
-                    if ( (LA15_1==159) ) {
-                        alt15=1;
+                    if ( (LA16_1==162) ) {
+                        alt16=1;
                     }
 
 
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2892:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3028:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_8__0__Impl6437); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_8__0__Impl6743); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop16;
                 }
             } while (true);
 
@@ -7773,21 +8178,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_8__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2903:1: rule__Sequence__Group_8__1 : rule__Sequence__Group_8__1__Impl rule__Sequence__Group_8__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3039:1: rule__Sequence__Group_8__1 : rule__Sequence__Group_8__1__Impl rule__Sequence__Group_8__2 ;
     public final void rule__Sequence__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2907:1: ( rule__Sequence__Group_8__1__Impl rule__Sequence__Group_8__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2908:2: rule__Sequence__Group_8__1__Impl rule__Sequence__Group_8__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3043:1: ( rule__Sequence__Group_8__1__Impl rule__Sequence__Group_8__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3044:2: rule__Sequence__Group_8__1__Impl rule__Sequence__Group_8__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_8__1__Impl_in_rule__Sequence__Group_8__16470);
+            pushFollow(FOLLOW_rule__Sequence__Group_8__1__Impl_in_rule__Sequence__Group_8__16776);
             rule__Sequence__Group_8__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_8__2_in_rule__Sequence__Group_8__16473);
+            pushFollow(FOLLOW_rule__Sequence__Group_8__2_in_rule__Sequence__Group_8__16779);
             rule__Sequence__Group_8__2();
 
             state._fsp--;
@@ -7811,20 +8216,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_8__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2915:1: rule__Sequence__Group_8__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3051:1: rule__Sequence__Group_8__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2919:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2920:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3055:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3056:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2920:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2921:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3056:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3057:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_8__1__Impl6501); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_8__1__Impl6807); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_8_1()); 
 
             }
@@ -7848,16 +8253,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_8__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2934:1: rule__Sequence__Group_8__2 : rule__Sequence__Group_8__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3070:1: rule__Sequence__Group_8__2 : rule__Sequence__Group_8__2__Impl ;
     public final void rule__Sequence__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2938:1: ( rule__Sequence__Group_8__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2939:2: rule__Sequence__Group_8__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3074:1: ( rule__Sequence__Group_8__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3075:2: rule__Sequence__Group_8__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_8__2__Impl_in_rule__Sequence__Group_8__26532);
+            pushFollow(FOLLOW_rule__Sequence__Group_8__2__Impl_in_rule__Sequence__Group_8__26838);
             rule__Sequence__Group_8__2__Impl();
 
             state._fsp--;
@@ -7881,20 +8286,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_8__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2945:1: rule__Sequence__Group_8__2__Impl : ( '\\\\\\\\' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3081:1: rule__Sequence__Group_8__2__Impl : ( '\\\\\\\\' ) ;
     public final void rule__Sequence__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2949:1: ( ( '\\\\\\\\' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2950:1: ( '\\\\\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3085:1: ( ( '\\\\\\\\' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3086:1: ( '\\\\\\\\' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2950:1: ( '\\\\\\\\' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2951:1: '\\\\\\\\'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3086:1: ( '\\\\\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3087:1: '\\\\\\\\'
             {
              before(grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_8_2()); 
-            match(input,165,FOLLOW_165_in_rule__Sequence__Group_8__2__Impl6560); 
+            match(input,168,FOLLOW_168_in_rule__Sequence__Group_8__2__Impl6866); 
              after(grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_8_2()); 
 
             }
@@ -7918,21 +8323,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2970:1: rule__Sequence__Group_9__0 : rule__Sequence__Group_9__0__Impl rule__Sequence__Group_9__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3106:1: rule__Sequence__Group_9__0 : rule__Sequence__Group_9__0__Impl rule__Sequence__Group_9__1 ;
     public final void rule__Sequence__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2974:1: ( rule__Sequence__Group_9__0__Impl rule__Sequence__Group_9__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2975:2: rule__Sequence__Group_9__0__Impl rule__Sequence__Group_9__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3110:1: ( rule__Sequence__Group_9__0__Impl rule__Sequence__Group_9__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3111:2: rule__Sequence__Group_9__0__Impl rule__Sequence__Group_9__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_9__0__Impl_in_rule__Sequence__Group_9__06597);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__0__Impl_in_rule__Sequence__Group_9__06903);
             rule__Sequence__Group_9__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_9__1_in_rule__Sequence__Group_9__06600);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__1_in_rule__Sequence__Group_9__06906);
             rule__Sequence__Group_9__1();
 
             state._fsp--;
@@ -7956,20 +8361,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2982:1: rule__Sequence__Group_9__0__Impl : ( '/' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3118:1: rule__Sequence__Group_9__0__Impl : ( '/' ) ;
     public final void rule__Sequence__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2986:1: ( ( '/' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2987:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3122:1: ( ( '/' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3123:1: ( '/' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2987:1: ( '/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:2988:1: '/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3123:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3124:1: '/'
             {
              before(grammarAccess.getSequenceAccess().getSolidusKeyword_9_0()); 
-            match(input,164,FOLLOW_164_in_rule__Sequence__Group_9__0__Impl6628); 
+            match(input,167,FOLLOW_167_in_rule__Sequence__Group_9__0__Impl6934); 
              after(grammarAccess.getSequenceAccess().getSolidusKeyword_9_0()); 
 
             }
@@ -7993,21 +8398,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3001:1: rule__Sequence__Group_9__1 : rule__Sequence__Group_9__1__Impl rule__Sequence__Group_9__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3137:1: rule__Sequence__Group_9__1 : rule__Sequence__Group_9__1__Impl rule__Sequence__Group_9__2 ;
     public final void rule__Sequence__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3005:1: ( rule__Sequence__Group_9__1__Impl rule__Sequence__Group_9__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3006:2: rule__Sequence__Group_9__1__Impl rule__Sequence__Group_9__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3141:1: ( rule__Sequence__Group_9__1__Impl rule__Sequence__Group_9__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3142:2: rule__Sequence__Group_9__1__Impl rule__Sequence__Group_9__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_9__1__Impl_in_rule__Sequence__Group_9__16659);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__1__Impl_in_rule__Sequence__Group_9__16965);
             rule__Sequence__Group_9__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_9__2_in_rule__Sequence__Group_9__16662);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__2_in_rule__Sequence__Group_9__16968);
             rule__Sequence__Group_9__2();
 
             state._fsp--;
@@ -8031,20 +8436,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3013:1: rule__Sequence__Group_9__1__Impl : ( '/' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3149:1: rule__Sequence__Group_9__1__Impl : ( '/' ) ;
     public final void rule__Sequence__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3017:1: ( ( '/' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3018:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3153:1: ( ( '/' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3154:1: ( '/' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3018:1: ( '/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3019:1: '/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3154:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3155:1: '/'
             {
              before(grammarAccess.getSequenceAccess().getSolidusKeyword_9_1()); 
-            match(input,164,FOLLOW_164_in_rule__Sequence__Group_9__1__Impl6690); 
+            match(input,167,FOLLOW_167_in_rule__Sequence__Group_9__1__Impl6996); 
              after(grammarAccess.getSequenceAccess().getSolidusKeyword_9_1()); 
 
             }
@@ -8068,21 +8473,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3032:1: rule__Sequence__Group_9__2 : rule__Sequence__Group_9__2__Impl rule__Sequence__Group_9__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3168:1: rule__Sequence__Group_9__2 : rule__Sequence__Group_9__2__Impl rule__Sequence__Group_9__3 ;
     public final void rule__Sequence__Group_9__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3036:1: ( rule__Sequence__Group_9__2__Impl rule__Sequence__Group_9__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3037:2: rule__Sequence__Group_9__2__Impl rule__Sequence__Group_9__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3172:1: ( rule__Sequence__Group_9__2__Impl rule__Sequence__Group_9__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3173:2: rule__Sequence__Group_9__2__Impl rule__Sequence__Group_9__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_9__2__Impl_in_rule__Sequence__Group_9__26721);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__2__Impl_in_rule__Sequence__Group_9__27027);
             rule__Sequence__Group_9__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_9__3_in_rule__Sequence__Group_9__26724);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__3_in_rule__Sequence__Group_9__27030);
             rule__Sequence__Group_9__3();
 
             state._fsp--;
@@ -8106,20 +8511,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3044:1: rule__Sequence__Group_9__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3180:1: rule__Sequence__Group_9__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3048:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3049:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3184:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3185:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3049:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3050:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3185:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3186:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_9__2__Impl6752); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_9__2__Impl7058); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_2()); 
 
             }
@@ -8143,16 +8548,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3063:1: rule__Sequence__Group_9__3 : rule__Sequence__Group_9__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3199:1: rule__Sequence__Group_9__3 : rule__Sequence__Group_9__3__Impl ;
     public final void rule__Sequence__Group_9__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3067:1: ( rule__Sequence__Group_9__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3068:2: rule__Sequence__Group_9__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3203:1: ( rule__Sequence__Group_9__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3204:2: rule__Sequence__Group_9__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_9__3__Impl_in_rule__Sequence__Group_9__36783);
+            pushFollow(FOLLOW_rule__Sequence__Group_9__3__Impl_in_rule__Sequence__Group_9__37089);
             rule__Sequence__Group_9__3__Impl();
 
             state._fsp--;
@@ -8176,41 +8581,41 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_9__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3074:1: rule__Sequence__Group_9__3__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3210:1: rule__Sequence__Group_9__3__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_9__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3078:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3079:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3214:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3215:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3079:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3080:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3215:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3216:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_9_3()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3081:1: ( '-' )*
-            loop16:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3217:1: ( '-' )*
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==159) ) {
-                    alt16=1;
+                if ( (LA17_0==162) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3082:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3218:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_9__3__Impl6812); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_9__3__Impl7118); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop17;
                 }
             } while (true);
 
@@ -8237,21 +8642,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3101:1: rule__Sequence__Group_10__0 : rule__Sequence__Group_10__0__Impl rule__Sequence__Group_10__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3237:1: rule__Sequence__Group_10__0 : rule__Sequence__Group_10__0__Impl rule__Sequence__Group_10__1 ;
     public final void rule__Sequence__Group_10__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3105:1: ( rule__Sequence__Group_10__0__Impl rule__Sequence__Group_10__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3106:2: rule__Sequence__Group_10__0__Impl rule__Sequence__Group_10__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3241:1: ( rule__Sequence__Group_10__0__Impl rule__Sequence__Group_10__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3242:2: rule__Sequence__Group_10__0__Impl rule__Sequence__Group_10__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_10__0__Impl_in_rule__Sequence__Group_10__06853);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__0__Impl_in_rule__Sequence__Group_10__07159);
             rule__Sequence__Group_10__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_10__1_in_rule__Sequence__Group_10__06856);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__1_in_rule__Sequence__Group_10__07162);
             rule__Sequence__Group_10__1();
 
             state._fsp--;
@@ -8275,47 +8680,47 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3113:1: rule__Sequence__Group_10__0__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3249:1: rule__Sequence__Group_10__0__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3117:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3118:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3253:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3254:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3118:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3119:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3254:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3255:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3120:1: ( '-' )*
-            loop17:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3256:1: ( '-' )*
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA17_0==159) ) {
-                    int LA17_1 = input.LA(2);
+                if ( (LA18_0==162) ) {
+                    int LA18_1 = input.LA(2);
 
-                    if ( (LA17_1==159) ) {
-                        alt17=1;
+                    if ( (LA18_1==162) ) {
+                        alt18=1;
                     }
 
 
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3121:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3257:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_10__0__Impl6885); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_10__0__Impl7191); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop18;
                 }
             } while (true);
 
@@ -8342,21 +8747,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3132:1: rule__Sequence__Group_10__1 : rule__Sequence__Group_10__1__Impl rule__Sequence__Group_10__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3268:1: rule__Sequence__Group_10__1 : rule__Sequence__Group_10__1__Impl rule__Sequence__Group_10__2 ;
     public final void rule__Sequence__Group_10__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3136:1: ( rule__Sequence__Group_10__1__Impl rule__Sequence__Group_10__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3137:2: rule__Sequence__Group_10__1__Impl rule__Sequence__Group_10__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3272:1: ( rule__Sequence__Group_10__1__Impl rule__Sequence__Group_10__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3273:2: rule__Sequence__Group_10__1__Impl rule__Sequence__Group_10__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_10__1__Impl_in_rule__Sequence__Group_10__16918);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__1__Impl_in_rule__Sequence__Group_10__17224);
             rule__Sequence__Group_10__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_10__2_in_rule__Sequence__Group_10__16921);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__2_in_rule__Sequence__Group_10__17227);
             rule__Sequence__Group_10__2();
 
             state._fsp--;
@@ -8380,20 +8785,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3144:1: rule__Sequence__Group_10__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3280:1: rule__Sequence__Group_10__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_10__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3148:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3149:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3284:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3285:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3149:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3150:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3285:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3286:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_10__1__Impl6949); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_10__1__Impl7255); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_10_1()); 
 
             }
@@ -8417,21 +8822,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3163:1: rule__Sequence__Group_10__2 : rule__Sequence__Group_10__2__Impl rule__Sequence__Group_10__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3299:1: rule__Sequence__Group_10__2 : rule__Sequence__Group_10__2__Impl rule__Sequence__Group_10__3 ;
     public final void rule__Sequence__Group_10__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3167:1: ( rule__Sequence__Group_10__2__Impl rule__Sequence__Group_10__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3168:2: rule__Sequence__Group_10__2__Impl rule__Sequence__Group_10__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3303:1: ( rule__Sequence__Group_10__2__Impl rule__Sequence__Group_10__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3304:2: rule__Sequence__Group_10__2__Impl rule__Sequence__Group_10__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_10__2__Impl_in_rule__Sequence__Group_10__26980);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__2__Impl_in_rule__Sequence__Group_10__27286);
             rule__Sequence__Group_10__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_10__3_in_rule__Sequence__Group_10__26983);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__3_in_rule__Sequence__Group_10__27289);
             rule__Sequence__Group_10__3();
 
             state._fsp--;
@@ -8455,20 +8860,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3175:1: rule__Sequence__Group_10__2__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3311:1: rule__Sequence__Group_10__2__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3179:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3180:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3315:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3316:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3180:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3181:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3316:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3317:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_10_2()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_10__2__Impl7011); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_10__2__Impl7317); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_10_2()); 
 
             }
@@ -8492,16 +8897,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3194:1: rule__Sequence__Group_10__3 : rule__Sequence__Group_10__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3330:1: rule__Sequence__Group_10__3 : rule__Sequence__Group_10__3__Impl ;
     public final void rule__Sequence__Group_10__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3198:1: ( rule__Sequence__Group_10__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3199:2: rule__Sequence__Group_10__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3334:1: ( rule__Sequence__Group_10__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3335:2: rule__Sequence__Group_10__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_10__3__Impl_in_rule__Sequence__Group_10__37042);
+            pushFollow(FOLLOW_rule__Sequence__Group_10__3__Impl_in_rule__Sequence__Group_10__37348);
             rule__Sequence__Group_10__3__Impl();
 
             state._fsp--;
@@ -8525,20 +8930,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_10__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3205:1: rule__Sequence__Group_10__3__Impl : ( 'o' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3341:1: rule__Sequence__Group_10__3__Impl : ( 'o' ) ;
     public final void rule__Sequence__Group_10__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3209:1: ( ( 'o' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3210:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3345:1: ( ( 'o' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3346:1: ( 'o' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3210:1: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3211:1: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3346:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3347:1: 'o'
             {
              before(grammarAccess.getSequenceAccess().getOKeyword_10_3()); 
-            match(input,166,FOLLOW_166_in_rule__Sequence__Group_10__3__Impl7070); 
+            match(input,169,FOLLOW_169_in_rule__Sequence__Group_10__3__Impl7376); 
              after(grammarAccess.getSequenceAccess().getOKeyword_10_3()); 
 
             }
@@ -8562,21 +8967,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3232:1: rule__Sequence__Group_11__0 : rule__Sequence__Group_11__0__Impl rule__Sequence__Group_11__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3368:1: rule__Sequence__Group_11__0 : rule__Sequence__Group_11__0__Impl rule__Sequence__Group_11__1 ;
     public final void rule__Sequence__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3236:1: ( rule__Sequence__Group_11__0__Impl rule__Sequence__Group_11__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3237:2: rule__Sequence__Group_11__0__Impl rule__Sequence__Group_11__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3372:1: ( rule__Sequence__Group_11__0__Impl rule__Sequence__Group_11__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3373:2: rule__Sequence__Group_11__0__Impl rule__Sequence__Group_11__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_11__0__Impl_in_rule__Sequence__Group_11__07109);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__0__Impl_in_rule__Sequence__Group_11__07415);
             rule__Sequence__Group_11__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_11__1_in_rule__Sequence__Group_11__07112);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__1_in_rule__Sequence__Group_11__07418);
             rule__Sequence__Group_11__1();
 
             state._fsp--;
@@ -8600,20 +9005,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3244:1: rule__Sequence__Group_11__0__Impl : ( 'o' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3380:1: rule__Sequence__Group_11__0__Impl : ( 'o' ) ;
     public final void rule__Sequence__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3248:1: ( ( 'o' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3249:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3384:1: ( ( 'o' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3385:1: ( 'o' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3249:1: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3250:1: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3385:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3386:1: 'o'
             {
              before(grammarAccess.getSequenceAccess().getOKeyword_11_0()); 
-            match(input,166,FOLLOW_166_in_rule__Sequence__Group_11__0__Impl7140); 
+            match(input,169,FOLLOW_169_in_rule__Sequence__Group_11__0__Impl7446); 
              after(grammarAccess.getSequenceAccess().getOKeyword_11_0()); 
 
             }
@@ -8637,21 +9042,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3263:1: rule__Sequence__Group_11__1 : rule__Sequence__Group_11__1__Impl rule__Sequence__Group_11__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3399:1: rule__Sequence__Group_11__1 : rule__Sequence__Group_11__1__Impl rule__Sequence__Group_11__2 ;
     public final void rule__Sequence__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3267:1: ( rule__Sequence__Group_11__1__Impl rule__Sequence__Group_11__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3268:2: rule__Sequence__Group_11__1__Impl rule__Sequence__Group_11__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3403:1: ( rule__Sequence__Group_11__1__Impl rule__Sequence__Group_11__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3404:2: rule__Sequence__Group_11__1__Impl rule__Sequence__Group_11__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_11__1__Impl_in_rule__Sequence__Group_11__17171);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__1__Impl_in_rule__Sequence__Group_11__17477);
             rule__Sequence__Group_11__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_11__2_in_rule__Sequence__Group_11__17174);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__2_in_rule__Sequence__Group_11__17480);
             rule__Sequence__Group_11__2();
 
             state._fsp--;
@@ -8675,20 +9080,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3275:1: rule__Sequence__Group_11__1__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3411:1: rule__Sequence__Group_11__1__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3279:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3280:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3415:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3416:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3280:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3281:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3416:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3417:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_11_1()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_11__1__Impl7202); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_11__1__Impl7508); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_11_1()); 
 
             }
@@ -8712,21 +9117,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3294:1: rule__Sequence__Group_11__2 : rule__Sequence__Group_11__2__Impl rule__Sequence__Group_11__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3430:1: rule__Sequence__Group_11__2 : rule__Sequence__Group_11__2__Impl rule__Sequence__Group_11__3 ;
     public final void rule__Sequence__Group_11__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3298:1: ( rule__Sequence__Group_11__2__Impl rule__Sequence__Group_11__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3299:2: rule__Sequence__Group_11__2__Impl rule__Sequence__Group_11__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3434:1: ( rule__Sequence__Group_11__2__Impl rule__Sequence__Group_11__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3435:2: rule__Sequence__Group_11__2__Impl rule__Sequence__Group_11__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_11__2__Impl_in_rule__Sequence__Group_11__27233);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__2__Impl_in_rule__Sequence__Group_11__27539);
             rule__Sequence__Group_11__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_11__3_in_rule__Sequence__Group_11__27236);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__3_in_rule__Sequence__Group_11__27542);
             rule__Sequence__Group_11__3();
 
             state._fsp--;
@@ -8750,20 +9155,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3306:1: rule__Sequence__Group_11__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3442:1: rule__Sequence__Group_11__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_11__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3310:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3311:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3446:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3447:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3311:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3312:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3447:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3448:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_11__2__Impl7264); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_11__2__Impl7570); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_2()); 
 
             }
@@ -8787,16 +9192,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3325:1: rule__Sequence__Group_11__3 : rule__Sequence__Group_11__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3461:1: rule__Sequence__Group_11__3 : rule__Sequence__Group_11__3__Impl ;
     public final void rule__Sequence__Group_11__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3329:1: ( rule__Sequence__Group_11__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3330:2: rule__Sequence__Group_11__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3465:1: ( rule__Sequence__Group_11__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3466:2: rule__Sequence__Group_11__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_11__3__Impl_in_rule__Sequence__Group_11__37295);
+            pushFollow(FOLLOW_rule__Sequence__Group_11__3__Impl_in_rule__Sequence__Group_11__37601);
             rule__Sequence__Group_11__3__Impl();
 
             state._fsp--;
@@ -8820,41 +9225,41 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_11__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3336:1: rule__Sequence__Group_11__3__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3472:1: rule__Sequence__Group_11__3__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_11__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3340:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3341:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3476:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3477:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3341:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3342:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3477:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3478:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_11_3()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3343:1: ( '-' )*
-            loop18:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3479:1: ( '-' )*
+            loop19:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA18_0==159) ) {
-                    alt18=1;
+                if ( (LA19_0==162) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt19) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3344:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3480:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_11__3__Impl7324); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_11__3__Impl7630); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop19;
                 }
             } while (true);
 
@@ -8881,21 +9286,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3363:1: rule__Sequence__Group_12__0 : rule__Sequence__Group_12__0__Impl rule__Sequence__Group_12__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3499:1: rule__Sequence__Group_12__0 : rule__Sequence__Group_12__0__Impl rule__Sequence__Group_12__1 ;
     public final void rule__Sequence__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3367:1: ( rule__Sequence__Group_12__0__Impl rule__Sequence__Group_12__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3368:2: rule__Sequence__Group_12__0__Impl rule__Sequence__Group_12__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3503:1: ( rule__Sequence__Group_12__0__Impl rule__Sequence__Group_12__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3504:2: rule__Sequence__Group_12__0__Impl rule__Sequence__Group_12__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_12__0__Impl_in_rule__Sequence__Group_12__07365);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__0__Impl_in_rule__Sequence__Group_12__07671);
             rule__Sequence__Group_12__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_12__1_in_rule__Sequence__Group_12__07368);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__1_in_rule__Sequence__Group_12__07674);
             rule__Sequence__Group_12__1();
 
             state._fsp--;
@@ -8919,33 +9324,33 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3375:1: rule__Sequence__Group_12__0__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3511:1: rule__Sequence__Group_12__0__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3379:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3380:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3515:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3516:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3380:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3381:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3516:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3517:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3382:1: ( '-' )*
-            loop19:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3518:1: ( '-' )*
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA19_0==159) ) {
-                    int LA19_1 = input.LA(2);
+                if ( (LA20_0==162) ) {
+                    int LA20_1 = input.LA(2);
 
-                    if ( (LA19_1==159) ) {
-                        int LA19_2 = input.LA(3);
+                    if ( (LA20_1==162) ) {
+                        int LA20_2 = input.LA(3);
 
-                        if ( (LA19_2==159) ) {
-                            alt19=1;
+                        if ( (LA20_2==162) ) {
+                            alt20=1;
                         }
 
 
@@ -8955,17 +9360,17 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3383:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3519:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_12__0__Impl7397); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_12__0__Impl7703); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
@@ -8992,21 +9397,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3394:1: rule__Sequence__Group_12__1 : rule__Sequence__Group_12__1__Impl rule__Sequence__Group_12__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3530:1: rule__Sequence__Group_12__1 : rule__Sequence__Group_12__1__Impl rule__Sequence__Group_12__2 ;
     public final void rule__Sequence__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3398:1: ( rule__Sequence__Group_12__1__Impl rule__Sequence__Group_12__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3399:2: rule__Sequence__Group_12__1__Impl rule__Sequence__Group_12__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3534:1: ( rule__Sequence__Group_12__1__Impl rule__Sequence__Group_12__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3535:2: rule__Sequence__Group_12__1__Impl rule__Sequence__Group_12__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_12__1__Impl_in_rule__Sequence__Group_12__17430);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__1__Impl_in_rule__Sequence__Group_12__17736);
             rule__Sequence__Group_12__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_12__2_in_rule__Sequence__Group_12__17433);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__2_in_rule__Sequence__Group_12__17739);
             rule__Sequence__Group_12__2();
 
             state._fsp--;
@@ -9030,20 +9435,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3406:1: rule__Sequence__Group_12__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3542:1: rule__Sequence__Group_12__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3410:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3411:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3546:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3547:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3411:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3412:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3547:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3548:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_12__1__Impl7461); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_12__1__Impl7767); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_1()); 
 
             }
@@ -9067,21 +9472,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3425:1: rule__Sequence__Group_12__2 : rule__Sequence__Group_12__2__Impl rule__Sequence__Group_12__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3561:1: rule__Sequence__Group_12__2 : rule__Sequence__Group_12__2__Impl rule__Sequence__Group_12__3 ;
     public final void rule__Sequence__Group_12__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3429:1: ( rule__Sequence__Group_12__2__Impl rule__Sequence__Group_12__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3430:2: rule__Sequence__Group_12__2__Impl rule__Sequence__Group_12__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3565:1: ( rule__Sequence__Group_12__2__Impl rule__Sequence__Group_12__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3566:2: rule__Sequence__Group_12__2__Impl rule__Sequence__Group_12__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_12__2__Impl_in_rule__Sequence__Group_12__27492);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__2__Impl_in_rule__Sequence__Group_12__27798);
             rule__Sequence__Group_12__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_12__3_in_rule__Sequence__Group_12__27495);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__3_in_rule__Sequence__Group_12__27801);
             rule__Sequence__Group_12__3();
 
             state._fsp--;
@@ -9105,20 +9510,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3437:1: rule__Sequence__Group_12__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3573:1: rule__Sequence__Group_12__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_12__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3441:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3442:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3577:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3578:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3442:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3443:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3578:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3579:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_12__2__Impl7523); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_12__2__Impl7829); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_12_2()); 
 
             }
@@ -9142,21 +9547,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3456:1: rule__Sequence__Group_12__3 : rule__Sequence__Group_12__3__Impl rule__Sequence__Group_12__4 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3592:1: rule__Sequence__Group_12__3 : rule__Sequence__Group_12__3__Impl rule__Sequence__Group_12__4 ;
     public final void rule__Sequence__Group_12__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3460:1: ( rule__Sequence__Group_12__3__Impl rule__Sequence__Group_12__4 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3461:2: rule__Sequence__Group_12__3__Impl rule__Sequence__Group_12__4
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3596:1: ( rule__Sequence__Group_12__3__Impl rule__Sequence__Group_12__4 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3597:2: rule__Sequence__Group_12__3__Impl rule__Sequence__Group_12__4
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_12__3__Impl_in_rule__Sequence__Group_12__37554);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__3__Impl_in_rule__Sequence__Group_12__37860);
             rule__Sequence__Group_12__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_12__4_in_rule__Sequence__Group_12__37557);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__4_in_rule__Sequence__Group_12__37863);
             rule__Sequence__Group_12__4();
 
             state._fsp--;
@@ -9180,20 +9585,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3468:1: rule__Sequence__Group_12__3__Impl : ( '/' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3604:1: rule__Sequence__Group_12__3__Impl : ( '/' ) ;
     public final void rule__Sequence__Group_12__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3472:1: ( ( '/' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3473:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3608:1: ( ( '/' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3609:1: ( '/' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3473:1: ( '/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3474:1: '/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3609:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3610:1: '/'
             {
              before(grammarAccess.getSequenceAccess().getSolidusKeyword_12_3()); 
-            match(input,164,FOLLOW_164_in_rule__Sequence__Group_12__3__Impl7585); 
+            match(input,167,FOLLOW_167_in_rule__Sequence__Group_12__3__Impl7891); 
              after(grammarAccess.getSequenceAccess().getSolidusKeyword_12_3()); 
 
             }
@@ -9217,21 +9622,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__4"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3487:1: rule__Sequence__Group_12__4 : rule__Sequence__Group_12__4__Impl rule__Sequence__Group_12__5 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3623:1: rule__Sequence__Group_12__4 : rule__Sequence__Group_12__4__Impl rule__Sequence__Group_12__5 ;
     public final void rule__Sequence__Group_12__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3491:1: ( rule__Sequence__Group_12__4__Impl rule__Sequence__Group_12__5 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3492:2: rule__Sequence__Group_12__4__Impl rule__Sequence__Group_12__5
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3627:1: ( rule__Sequence__Group_12__4__Impl rule__Sequence__Group_12__5 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3628:2: rule__Sequence__Group_12__4__Impl rule__Sequence__Group_12__5
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_12__4__Impl_in_rule__Sequence__Group_12__47616);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__4__Impl_in_rule__Sequence__Group_12__47922);
             rule__Sequence__Group_12__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_12__5_in_rule__Sequence__Group_12__47619);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__5_in_rule__Sequence__Group_12__47925);
             rule__Sequence__Group_12__5();
 
             state._fsp--;
@@ -9255,20 +9660,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__4__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3499:1: rule__Sequence__Group_12__4__Impl : ( '/' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3635:1: rule__Sequence__Group_12__4__Impl : ( '/' ) ;
     public final void rule__Sequence__Group_12__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3503:1: ( ( '/' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3504:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3639:1: ( ( '/' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3640:1: ( '/' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3504:1: ( '/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3505:1: '/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3640:1: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3641:1: '/'
             {
              before(grammarAccess.getSequenceAccess().getSolidusKeyword_12_4()); 
-            match(input,164,FOLLOW_164_in_rule__Sequence__Group_12__4__Impl7647); 
+            match(input,167,FOLLOW_167_in_rule__Sequence__Group_12__4__Impl7953); 
              after(grammarAccess.getSequenceAccess().getSolidusKeyword_12_4()); 
 
             }
@@ -9292,16 +9697,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__5"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3518:1: rule__Sequence__Group_12__5 : rule__Sequence__Group_12__5__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3654:1: rule__Sequence__Group_12__5 : rule__Sequence__Group_12__5__Impl ;
     public final void rule__Sequence__Group_12__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3522:1: ( rule__Sequence__Group_12__5__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3523:2: rule__Sequence__Group_12__5__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3658:1: ( rule__Sequence__Group_12__5__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3659:2: rule__Sequence__Group_12__5__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_12__5__Impl_in_rule__Sequence__Group_12__57678);
+            pushFollow(FOLLOW_rule__Sequence__Group_12__5__Impl_in_rule__Sequence__Group_12__57984);
             rule__Sequence__Group_12__5__Impl();
 
             state._fsp--;
@@ -9325,20 +9730,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_12__5__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3529:1: rule__Sequence__Group_12__5__Impl : ( 'o' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3665:1: rule__Sequence__Group_12__5__Impl : ( 'o' ) ;
     public final void rule__Sequence__Group_12__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3533:1: ( ( 'o' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3534:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3669:1: ( ( 'o' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3670:1: ( 'o' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3534:1: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3535:1: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3670:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3671:1: 'o'
             {
              before(grammarAccess.getSequenceAccess().getOKeyword_12_5()); 
-            match(input,166,FOLLOW_166_in_rule__Sequence__Group_12__5__Impl7706); 
+            match(input,169,FOLLOW_169_in_rule__Sequence__Group_12__5__Impl8012); 
              after(grammarAccess.getSequenceAccess().getOKeyword_12_5()); 
 
             }
@@ -9362,21 +9767,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3560:1: rule__Sequence__Group_13__0 : rule__Sequence__Group_13__0__Impl rule__Sequence__Group_13__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3696:1: rule__Sequence__Group_13__0 : rule__Sequence__Group_13__0__Impl rule__Sequence__Group_13__1 ;
     public final void rule__Sequence__Group_13__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3564:1: ( rule__Sequence__Group_13__0__Impl rule__Sequence__Group_13__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3565:2: rule__Sequence__Group_13__0__Impl rule__Sequence__Group_13__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3700:1: ( rule__Sequence__Group_13__0__Impl rule__Sequence__Group_13__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3701:2: rule__Sequence__Group_13__0__Impl rule__Sequence__Group_13__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_13__0__Impl_in_rule__Sequence__Group_13__07749);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__0__Impl_in_rule__Sequence__Group_13__08055);
             rule__Sequence__Group_13__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_13__1_in_rule__Sequence__Group_13__07752);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__1_in_rule__Sequence__Group_13__08058);
             rule__Sequence__Group_13__1();
 
             state._fsp--;
@@ -9400,20 +9805,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3572:1: rule__Sequence__Group_13__0__Impl : ( 'o' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3708:1: rule__Sequence__Group_13__0__Impl : ( 'o' ) ;
     public final void rule__Sequence__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3576:1: ( ( 'o' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3577:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3712:1: ( ( 'o' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3713:1: ( 'o' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3577:1: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3578:1: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3713:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3714:1: 'o'
             {
              before(grammarAccess.getSequenceAccess().getOKeyword_13_0()); 
-            match(input,166,FOLLOW_166_in_rule__Sequence__Group_13__0__Impl7780); 
+            match(input,169,FOLLOW_169_in_rule__Sequence__Group_13__0__Impl8086); 
              after(grammarAccess.getSequenceAccess().getOKeyword_13_0()); 
 
             }
@@ -9437,21 +9842,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3591:1: rule__Sequence__Group_13__1 : rule__Sequence__Group_13__1__Impl rule__Sequence__Group_13__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3727:1: rule__Sequence__Group_13__1 : rule__Sequence__Group_13__1__Impl rule__Sequence__Group_13__2 ;
     public final void rule__Sequence__Group_13__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3595:1: ( rule__Sequence__Group_13__1__Impl rule__Sequence__Group_13__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3596:2: rule__Sequence__Group_13__1__Impl rule__Sequence__Group_13__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3731:1: ( rule__Sequence__Group_13__1__Impl rule__Sequence__Group_13__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3732:2: rule__Sequence__Group_13__1__Impl rule__Sequence__Group_13__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_13__1__Impl_in_rule__Sequence__Group_13__17811);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__1__Impl_in_rule__Sequence__Group_13__18117);
             rule__Sequence__Group_13__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_13__2_in_rule__Sequence__Group_13__17814);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__2_in_rule__Sequence__Group_13__18120);
             rule__Sequence__Group_13__2();
 
             state._fsp--;
@@ -9475,20 +9880,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3603:1: rule__Sequence__Group_13__1__Impl : ( '\\\\\\\\' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3739:1: rule__Sequence__Group_13__1__Impl : ( '\\\\\\\\' ) ;
     public final void rule__Sequence__Group_13__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3607:1: ( ( '\\\\\\\\' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3608:1: ( '\\\\\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3743:1: ( ( '\\\\\\\\' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3744:1: ( '\\\\\\\\' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3608:1: ( '\\\\\\\\' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3609:1: '\\\\\\\\'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3744:1: ( '\\\\\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3745:1: '\\\\\\\\'
             {
              before(grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_13_1()); 
-            match(input,165,FOLLOW_165_in_rule__Sequence__Group_13__1__Impl7842); 
+            match(input,168,FOLLOW_168_in_rule__Sequence__Group_13__1__Impl8148); 
              after(grammarAccess.getSequenceAccess().getReverseSolidusReverseSolidusKeyword_13_1()); 
 
             }
@@ -9512,21 +9917,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3622:1: rule__Sequence__Group_13__2 : rule__Sequence__Group_13__2__Impl rule__Sequence__Group_13__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3758:1: rule__Sequence__Group_13__2 : rule__Sequence__Group_13__2__Impl rule__Sequence__Group_13__3 ;
     public final void rule__Sequence__Group_13__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3626:1: ( rule__Sequence__Group_13__2__Impl rule__Sequence__Group_13__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3627:2: rule__Sequence__Group_13__2__Impl rule__Sequence__Group_13__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3762:1: ( rule__Sequence__Group_13__2__Impl rule__Sequence__Group_13__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3763:2: rule__Sequence__Group_13__2__Impl rule__Sequence__Group_13__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_13__2__Impl_in_rule__Sequence__Group_13__27873);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__2__Impl_in_rule__Sequence__Group_13__28179);
             rule__Sequence__Group_13__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_13__3_in_rule__Sequence__Group_13__27876);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__3_in_rule__Sequence__Group_13__28182);
             rule__Sequence__Group_13__3();
 
             state._fsp--;
@@ -9550,20 +9955,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3634:1: rule__Sequence__Group_13__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3770:1: rule__Sequence__Group_13__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_13__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3638:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3639:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3774:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3775:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3639:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3640:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3775:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3776:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_13__2__Impl7904); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_13__2__Impl8210); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_2()); 
 
             }
@@ -9587,21 +9992,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3653:1: rule__Sequence__Group_13__3 : rule__Sequence__Group_13__3__Impl rule__Sequence__Group_13__4 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3789:1: rule__Sequence__Group_13__3 : rule__Sequence__Group_13__3__Impl rule__Sequence__Group_13__4 ;
     public final void rule__Sequence__Group_13__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3657:1: ( rule__Sequence__Group_13__3__Impl rule__Sequence__Group_13__4 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3658:2: rule__Sequence__Group_13__3__Impl rule__Sequence__Group_13__4
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3793:1: ( rule__Sequence__Group_13__3__Impl rule__Sequence__Group_13__4 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3794:2: rule__Sequence__Group_13__3__Impl rule__Sequence__Group_13__4
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_13__3__Impl_in_rule__Sequence__Group_13__37935);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__3__Impl_in_rule__Sequence__Group_13__38241);
             rule__Sequence__Group_13__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_13__4_in_rule__Sequence__Group_13__37938);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__4_in_rule__Sequence__Group_13__38244);
             rule__Sequence__Group_13__4();
 
             state._fsp--;
@@ -9625,20 +10030,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3665:1: rule__Sequence__Group_13__3__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3801:1: rule__Sequence__Group_13__3__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_13__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3669:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3670:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3805:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3806:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3670:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3671:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3806:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3807:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_3()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_13__3__Impl7966); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_13__3__Impl8272); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_3()); 
 
             }
@@ -9662,16 +10067,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__4"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3684:1: rule__Sequence__Group_13__4 : rule__Sequence__Group_13__4__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3820:1: rule__Sequence__Group_13__4 : rule__Sequence__Group_13__4__Impl ;
     public final void rule__Sequence__Group_13__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3688:1: ( rule__Sequence__Group_13__4__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3689:2: rule__Sequence__Group_13__4__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3824:1: ( rule__Sequence__Group_13__4__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3825:2: rule__Sequence__Group_13__4__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_13__4__Impl_in_rule__Sequence__Group_13__47997);
+            pushFollow(FOLLOW_rule__Sequence__Group_13__4__Impl_in_rule__Sequence__Group_13__48303);
             rule__Sequence__Group_13__4__Impl();
 
             state._fsp--;
@@ -9695,41 +10100,41 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_13__4__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3695:1: rule__Sequence__Group_13__4__Impl : ( ( '-' )* ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3831:1: rule__Sequence__Group_13__4__Impl : ( ( '-' )* ) ;
     public final void rule__Sequence__Group_13__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3699:1: ( ( ( '-' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3700:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3835:1: ( ( ( '-' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3836:1: ( ( '-' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3700:1: ( ( '-' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3701:1: ( '-' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3836:1: ( ( '-' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3837:1: ( '-' )*
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_13_4()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3702:1: ( '-' )*
-            loop20:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3838:1: ( '-' )*
+            loop21:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA20_0==159) ) {
-                    alt20=1;
+                if ( (LA21_0==162) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt21) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3703:2: '-'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3839:2: '-'
             	    {
-            	    match(input,159,FOLLOW_159_in_rule__Sequence__Group_13__4__Impl8026); 
+            	    match(input,162,FOLLOW_162_in_rule__Sequence__Group_13__4__Impl8332); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop21;
                 }
             } while (true);
 
@@ -9756,21 +10161,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_14__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3724:1: rule__Sequence__Group_14__0 : rule__Sequence__Group_14__0__Impl rule__Sequence__Group_14__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3860:1: rule__Sequence__Group_14__0 : rule__Sequence__Group_14__0__Impl rule__Sequence__Group_14__1 ;
     public final void rule__Sequence__Group_14__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3728:1: ( rule__Sequence__Group_14__0__Impl rule__Sequence__Group_14__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3729:2: rule__Sequence__Group_14__0__Impl rule__Sequence__Group_14__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3864:1: ( rule__Sequence__Group_14__0__Impl rule__Sequence__Group_14__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3865:2: rule__Sequence__Group_14__0__Impl rule__Sequence__Group_14__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_14__0__Impl_in_rule__Sequence__Group_14__08069);
+            pushFollow(FOLLOW_rule__Sequence__Group_14__0__Impl_in_rule__Sequence__Group_14__08375);
             rule__Sequence__Group_14__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_14__1_in_rule__Sequence__Group_14__08072);
+            pushFollow(FOLLOW_rule__Sequence__Group_14__1_in_rule__Sequence__Group_14__08378);
             rule__Sequence__Group_14__1();
 
             state._fsp--;
@@ -9794,20 +10199,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_14__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3736:1: rule__Sequence__Group_14__0__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3872:1: rule__Sequence__Group_14__0__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_14__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3740:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3741:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3876:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3877:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3741:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3742:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3877:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3878:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_14_0()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_14__0__Impl8100); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_14__0__Impl8406); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_14_0()); 
 
             }
@@ -9831,21 +10236,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_14__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3755:1: rule__Sequence__Group_14__1 : rule__Sequence__Group_14__1__Impl rule__Sequence__Group_14__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3891:1: rule__Sequence__Group_14__1 : rule__Sequence__Group_14__1__Impl rule__Sequence__Group_14__2 ;
     public final void rule__Sequence__Group_14__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3759:1: ( rule__Sequence__Group_14__1__Impl rule__Sequence__Group_14__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3760:2: rule__Sequence__Group_14__1__Impl rule__Sequence__Group_14__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3895:1: ( rule__Sequence__Group_14__1__Impl rule__Sequence__Group_14__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3896:2: rule__Sequence__Group_14__1__Impl rule__Sequence__Group_14__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_14__1__Impl_in_rule__Sequence__Group_14__18131);
+            pushFollow(FOLLOW_rule__Sequence__Group_14__1__Impl_in_rule__Sequence__Group_14__18437);
             rule__Sequence__Group_14__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_14__2_in_rule__Sequence__Group_14__18134);
+            pushFollow(FOLLOW_rule__Sequence__Group_14__2_in_rule__Sequence__Group_14__18440);
             rule__Sequence__Group_14__2();
 
             state._fsp--;
@@ -9869,20 +10274,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_14__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3767:1: rule__Sequence__Group_14__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3903:1: rule__Sequence__Group_14__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_14__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3771:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3772:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3907:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3908:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3772:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3773:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3908:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3909:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_14_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_14__1__Impl8162); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_14__1__Impl8468); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_14_1()); 
 
             }
@@ -9906,16 +10311,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_14__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3786:1: rule__Sequence__Group_14__2 : rule__Sequence__Group_14__2__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3922:1: rule__Sequence__Group_14__2 : rule__Sequence__Group_14__2__Impl ;
     public final void rule__Sequence__Group_14__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3790:1: ( rule__Sequence__Group_14__2__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3791:2: rule__Sequence__Group_14__2__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3926:1: ( rule__Sequence__Group_14__2__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3927:2: rule__Sequence__Group_14__2__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_14__2__Impl_in_rule__Sequence__Group_14__28193);
+            pushFollow(FOLLOW_rule__Sequence__Group_14__2__Impl_in_rule__Sequence__Group_14__28499);
             rule__Sequence__Group_14__2__Impl();
 
             state._fsp--;
@@ -9939,20 +10344,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_14__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3797:1: rule__Sequence__Group_14__2__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3933:1: rule__Sequence__Group_14__2__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_14__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3801:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3802:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3937:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3938:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3802:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3803:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3938:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3939:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_14_2()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_14__2__Impl8221); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_14__2__Impl8527); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_14_2()); 
 
             }
@@ -9976,21 +10381,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3822:1: rule__Sequence__Group_15__0 : rule__Sequence__Group_15__0__Impl rule__Sequence__Group_15__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3958:1: rule__Sequence__Group_15__0 : rule__Sequence__Group_15__0__Impl rule__Sequence__Group_15__1 ;
     public final void rule__Sequence__Group_15__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3826:1: ( rule__Sequence__Group_15__0__Impl rule__Sequence__Group_15__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3827:2: rule__Sequence__Group_15__0__Impl rule__Sequence__Group_15__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3962:1: ( rule__Sequence__Group_15__0__Impl rule__Sequence__Group_15__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3963:2: rule__Sequence__Group_15__0__Impl rule__Sequence__Group_15__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_15__0__Impl_in_rule__Sequence__Group_15__08258);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__0__Impl_in_rule__Sequence__Group_15__08564);
             rule__Sequence__Group_15__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_15__1_in_rule__Sequence__Group_15__08261);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__1_in_rule__Sequence__Group_15__08567);
             rule__Sequence__Group_15__1();
 
             state._fsp--;
@@ -10014,20 +10419,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3834:1: rule__Sequence__Group_15__0__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3970:1: rule__Sequence__Group_15__0__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_15__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3838:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3839:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3974:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3975:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3839:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3840:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3975:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3976:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_15_0()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_15__0__Impl8289); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_15__0__Impl8595); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_15_0()); 
 
             }
@@ -10051,21 +10456,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3853:1: rule__Sequence__Group_15__1 : rule__Sequence__Group_15__1__Impl rule__Sequence__Group_15__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3989:1: rule__Sequence__Group_15__1 : rule__Sequence__Group_15__1__Impl rule__Sequence__Group_15__2 ;
     public final void rule__Sequence__Group_15__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3857:1: ( rule__Sequence__Group_15__1__Impl rule__Sequence__Group_15__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3858:2: rule__Sequence__Group_15__1__Impl rule__Sequence__Group_15__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3993:1: ( rule__Sequence__Group_15__1__Impl rule__Sequence__Group_15__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3994:2: rule__Sequence__Group_15__1__Impl rule__Sequence__Group_15__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_15__1__Impl_in_rule__Sequence__Group_15__18320);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__1__Impl_in_rule__Sequence__Group_15__18626);
             rule__Sequence__Group_15__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_15__2_in_rule__Sequence__Group_15__18323);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__2_in_rule__Sequence__Group_15__18629);
             rule__Sequence__Group_15__2();
 
             state._fsp--;
@@ -10089,20 +10494,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3865:1: rule__Sequence__Group_15__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4001:1: rule__Sequence__Group_15__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_15__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3869:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3870:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4005:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4006:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3870:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3871:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4006:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4007:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_15_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_15__1__Impl8351); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_15__1__Impl8657); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_15_1()); 
 
             }
@@ -10126,21 +10531,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3884:1: rule__Sequence__Group_15__2 : rule__Sequence__Group_15__2__Impl rule__Sequence__Group_15__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4020:1: rule__Sequence__Group_15__2 : rule__Sequence__Group_15__2__Impl rule__Sequence__Group_15__3 ;
     public final void rule__Sequence__Group_15__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3888:1: ( rule__Sequence__Group_15__2__Impl rule__Sequence__Group_15__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3889:2: rule__Sequence__Group_15__2__Impl rule__Sequence__Group_15__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4024:1: ( rule__Sequence__Group_15__2__Impl rule__Sequence__Group_15__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4025:2: rule__Sequence__Group_15__2__Impl rule__Sequence__Group_15__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_15__2__Impl_in_rule__Sequence__Group_15__28382);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__2__Impl_in_rule__Sequence__Group_15__28688);
             rule__Sequence__Group_15__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_15__3_in_rule__Sequence__Group_15__28385);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__3_in_rule__Sequence__Group_15__28691);
             rule__Sequence__Group_15__3();
 
             state._fsp--;
@@ -10164,20 +10569,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3896:1: rule__Sequence__Group_15__2__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4032:1: rule__Sequence__Group_15__2__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_15__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3900:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3901:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4036:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4037:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3901:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3902:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4037:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4038:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_15_2()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_15__2__Impl8413); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_15__2__Impl8719); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_15_2()); 
 
             }
@@ -10201,16 +10606,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3915:1: rule__Sequence__Group_15__3 : rule__Sequence__Group_15__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4051:1: rule__Sequence__Group_15__3 : rule__Sequence__Group_15__3__Impl ;
     public final void rule__Sequence__Group_15__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3919:1: ( rule__Sequence__Group_15__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3920:2: rule__Sequence__Group_15__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4055:1: ( rule__Sequence__Group_15__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4056:2: rule__Sequence__Group_15__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_15__3__Impl_in_rule__Sequence__Group_15__38444);
+            pushFollow(FOLLOW_rule__Sequence__Group_15__3__Impl_in_rule__Sequence__Group_15__38750);
             rule__Sequence__Group_15__3__Impl();
 
             state._fsp--;
@@ -10234,20 +10639,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_15__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3926:1: rule__Sequence__Group_15__3__Impl : ( 'o' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4062:1: rule__Sequence__Group_15__3__Impl : ( 'o' ) ;
     public final void rule__Sequence__Group_15__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3930:1: ( ( 'o' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3931:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4066:1: ( ( 'o' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4067:1: ( 'o' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3931:1: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3932:1: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4067:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4068:1: 'o'
             {
              before(grammarAccess.getSequenceAccess().getOKeyword_15_3()); 
-            match(input,166,FOLLOW_166_in_rule__Sequence__Group_15__3__Impl8472); 
+            match(input,169,FOLLOW_169_in_rule__Sequence__Group_15__3__Impl8778); 
              after(grammarAccess.getSequenceAccess().getOKeyword_15_3()); 
 
             }
@@ -10271,21 +10676,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3953:1: rule__Sequence__Group_16__0 : rule__Sequence__Group_16__0__Impl rule__Sequence__Group_16__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4089:1: rule__Sequence__Group_16__0 : rule__Sequence__Group_16__0__Impl rule__Sequence__Group_16__1 ;
     public final void rule__Sequence__Group_16__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3957:1: ( rule__Sequence__Group_16__0__Impl rule__Sequence__Group_16__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3958:2: rule__Sequence__Group_16__0__Impl rule__Sequence__Group_16__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4093:1: ( rule__Sequence__Group_16__0__Impl rule__Sequence__Group_16__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4094:2: rule__Sequence__Group_16__0__Impl rule__Sequence__Group_16__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_16__0__Impl_in_rule__Sequence__Group_16__08511);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__0__Impl_in_rule__Sequence__Group_16__08817);
             rule__Sequence__Group_16__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_16__1_in_rule__Sequence__Group_16__08514);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__1_in_rule__Sequence__Group_16__08820);
             rule__Sequence__Group_16__1();
 
             state._fsp--;
@@ -10309,20 +10714,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3965:1: rule__Sequence__Group_16__0__Impl : ( 'o' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4101:1: rule__Sequence__Group_16__0__Impl : ( 'o' ) ;
     public final void rule__Sequence__Group_16__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3969:1: ( ( 'o' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3970:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4105:1: ( ( 'o' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4106:1: ( 'o' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3970:1: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3971:1: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4106:1: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4107:1: 'o'
             {
              before(grammarAccess.getSequenceAccess().getOKeyword_16_0()); 
-            match(input,166,FOLLOW_166_in_rule__Sequence__Group_16__0__Impl8542); 
+            match(input,169,FOLLOW_169_in_rule__Sequence__Group_16__0__Impl8848); 
              after(grammarAccess.getSequenceAccess().getOKeyword_16_0()); 
 
             }
@@ -10346,21 +10751,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3984:1: rule__Sequence__Group_16__1 : rule__Sequence__Group_16__1__Impl rule__Sequence__Group_16__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4120:1: rule__Sequence__Group_16__1 : rule__Sequence__Group_16__1__Impl rule__Sequence__Group_16__2 ;
     public final void rule__Sequence__Group_16__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3988:1: ( rule__Sequence__Group_16__1__Impl rule__Sequence__Group_16__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3989:2: rule__Sequence__Group_16__1__Impl rule__Sequence__Group_16__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4124:1: ( rule__Sequence__Group_16__1__Impl rule__Sequence__Group_16__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4125:2: rule__Sequence__Group_16__1__Impl rule__Sequence__Group_16__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_16__1__Impl_in_rule__Sequence__Group_16__18573);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__1__Impl_in_rule__Sequence__Group_16__18879);
             rule__Sequence__Group_16__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_16__2_in_rule__Sequence__Group_16__18576);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__2_in_rule__Sequence__Group_16__18882);
             rule__Sequence__Group_16__2();
 
             state._fsp--;
@@ -10384,20 +10789,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:3996:1: rule__Sequence__Group_16__1__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4132:1: rule__Sequence__Group_16__1__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_16__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4000:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4001:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4136:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4137:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4001:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4002:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4137:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4138:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_16_1()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_16__1__Impl8604); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_16__1__Impl8910); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_16_1()); 
 
             }
@@ -10421,21 +10826,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4015:1: rule__Sequence__Group_16__2 : rule__Sequence__Group_16__2__Impl rule__Sequence__Group_16__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4151:1: rule__Sequence__Group_16__2 : rule__Sequence__Group_16__2__Impl rule__Sequence__Group_16__3 ;
     public final void rule__Sequence__Group_16__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4019:1: ( rule__Sequence__Group_16__2__Impl rule__Sequence__Group_16__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4020:2: rule__Sequence__Group_16__2__Impl rule__Sequence__Group_16__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4155:1: ( rule__Sequence__Group_16__2__Impl rule__Sequence__Group_16__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4156:2: rule__Sequence__Group_16__2__Impl rule__Sequence__Group_16__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_16__2__Impl_in_rule__Sequence__Group_16__28635);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__2__Impl_in_rule__Sequence__Group_16__28941);
             rule__Sequence__Group_16__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_16__3_in_rule__Sequence__Group_16__28638);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__3_in_rule__Sequence__Group_16__28944);
             rule__Sequence__Group_16__3();
 
             state._fsp--;
@@ -10459,20 +10864,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4027:1: rule__Sequence__Group_16__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4163:1: rule__Sequence__Group_16__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_16__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4031:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4032:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4167:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4168:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4032:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4033:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4168:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4169:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_16_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_16__2__Impl8666); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_16__2__Impl8972); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_16_2()); 
 
             }
@@ -10496,16 +10901,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4046:1: rule__Sequence__Group_16__3 : rule__Sequence__Group_16__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4182:1: rule__Sequence__Group_16__3 : rule__Sequence__Group_16__3__Impl ;
     public final void rule__Sequence__Group_16__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4050:1: ( rule__Sequence__Group_16__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4051:2: rule__Sequence__Group_16__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4186:1: ( rule__Sequence__Group_16__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4187:2: rule__Sequence__Group_16__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_16__3__Impl_in_rule__Sequence__Group_16__38697);
+            pushFollow(FOLLOW_rule__Sequence__Group_16__3__Impl_in_rule__Sequence__Group_16__39003);
             rule__Sequence__Group_16__3__Impl();
 
             state._fsp--;
@@ -10529,20 +10934,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_16__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4057:1: rule__Sequence__Group_16__3__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4193:1: rule__Sequence__Group_16__3__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_16__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4061:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4062:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4197:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4198:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4062:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4063:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4198:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4199:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_16_3()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_16__3__Impl8725); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_16__3__Impl9031); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_16_3()); 
 
             }
@@ -10566,21 +10971,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4084:1: rule__Sequence__Group_17__0 : rule__Sequence__Group_17__0__Impl rule__Sequence__Group_17__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4220:1: rule__Sequence__Group_17__0 : rule__Sequence__Group_17__0__Impl rule__Sequence__Group_17__1 ;
     public final void rule__Sequence__Group_17__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4088:1: ( rule__Sequence__Group_17__0__Impl rule__Sequence__Group_17__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4089:2: rule__Sequence__Group_17__0__Impl rule__Sequence__Group_17__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4224:1: ( rule__Sequence__Group_17__0__Impl rule__Sequence__Group_17__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4225:2: rule__Sequence__Group_17__0__Impl rule__Sequence__Group_17__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_17__0__Impl_in_rule__Sequence__Group_17__08764);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__0__Impl_in_rule__Sequence__Group_17__09070);
             rule__Sequence__Group_17__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_17__1_in_rule__Sequence__Group_17__08767);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__1_in_rule__Sequence__Group_17__09073);
             rule__Sequence__Group_17__1();
 
             state._fsp--;
@@ -10604,20 +11009,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4096:1: rule__Sequence__Group_17__0__Impl : ( '<' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4232:1: rule__Sequence__Group_17__0__Impl : ( '<' ) ;
     public final void rule__Sequence__Group_17__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4100:1: ( ( '<' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4101:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4236:1: ( ( '<' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4237:1: ( '<' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4101:1: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4102:1: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4237:1: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4238:1: '<'
             {
              before(grammarAccess.getSequenceAccess().getLessThanSignKeyword_17_0()); 
-            match(input,161,FOLLOW_161_in_rule__Sequence__Group_17__0__Impl8795); 
+            match(input,164,FOLLOW_164_in_rule__Sequence__Group_17__0__Impl9101); 
              after(grammarAccess.getSequenceAccess().getLessThanSignKeyword_17_0()); 
 
             }
@@ -10641,21 +11046,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4115:1: rule__Sequence__Group_17__1 : rule__Sequence__Group_17__1__Impl rule__Sequence__Group_17__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4251:1: rule__Sequence__Group_17__1 : rule__Sequence__Group_17__1__Impl rule__Sequence__Group_17__2 ;
     public final void rule__Sequence__Group_17__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4119:1: ( rule__Sequence__Group_17__1__Impl rule__Sequence__Group_17__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4120:2: rule__Sequence__Group_17__1__Impl rule__Sequence__Group_17__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4255:1: ( rule__Sequence__Group_17__1__Impl rule__Sequence__Group_17__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4256:2: rule__Sequence__Group_17__1__Impl rule__Sequence__Group_17__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_17__1__Impl_in_rule__Sequence__Group_17__18826);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__1__Impl_in_rule__Sequence__Group_17__19132);
             rule__Sequence__Group_17__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_17__2_in_rule__Sequence__Group_17__18829);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__2_in_rule__Sequence__Group_17__19135);
             rule__Sequence__Group_17__2();
 
             state._fsp--;
@@ -10679,20 +11084,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4127:1: rule__Sequence__Group_17__1__Impl : ( '|' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4263:1: rule__Sequence__Group_17__1__Impl : ( '|' ) ;
     public final void rule__Sequence__Group_17__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4131:1: ( ( '|' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4132:1: ( '|' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4267:1: ( ( '|' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4268:1: ( '|' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4132:1: ( '|' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4133:1: '|'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4268:1: ( '|' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4269:1: '|'
             {
              before(grammarAccess.getSequenceAccess().getVerticalLineKeyword_17_1()); 
-            match(input,167,FOLLOW_167_in_rule__Sequence__Group_17__1__Impl8857); 
+            match(input,170,FOLLOW_170_in_rule__Sequence__Group_17__1__Impl9163); 
              after(grammarAccess.getSequenceAccess().getVerticalLineKeyword_17_1()); 
 
             }
@@ -10716,21 +11121,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4146:1: rule__Sequence__Group_17__2 : rule__Sequence__Group_17__2__Impl rule__Sequence__Group_17__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4282:1: rule__Sequence__Group_17__2 : rule__Sequence__Group_17__2__Impl rule__Sequence__Group_17__3 ;
     public final void rule__Sequence__Group_17__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4150:1: ( rule__Sequence__Group_17__2__Impl rule__Sequence__Group_17__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4151:2: rule__Sequence__Group_17__2__Impl rule__Sequence__Group_17__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4286:1: ( rule__Sequence__Group_17__2__Impl rule__Sequence__Group_17__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4287:2: rule__Sequence__Group_17__2__Impl rule__Sequence__Group_17__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_17__2__Impl_in_rule__Sequence__Group_17__28888);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__2__Impl_in_rule__Sequence__Group_17__29194);
             rule__Sequence__Group_17__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_17__3_in_rule__Sequence__Group_17__28891);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__3_in_rule__Sequence__Group_17__29197);
             rule__Sequence__Group_17__3();
 
             state._fsp--;
@@ -10754,20 +11159,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4158:1: rule__Sequence__Group_17__2__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4294:1: rule__Sequence__Group_17__2__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_17__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4162:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4163:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4298:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4299:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4163:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4164:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4299:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4300:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_2()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_17__2__Impl8919); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_17__2__Impl9225); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_2()); 
 
             }
@@ -10791,16 +11196,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4177:1: rule__Sequence__Group_17__3 : rule__Sequence__Group_17__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4313:1: rule__Sequence__Group_17__3 : rule__Sequence__Group_17__3__Impl ;
     public final void rule__Sequence__Group_17__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4181:1: ( rule__Sequence__Group_17__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4182:2: rule__Sequence__Group_17__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4317:1: ( rule__Sequence__Group_17__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4318:2: rule__Sequence__Group_17__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_17__3__Impl_in_rule__Sequence__Group_17__38950);
+            pushFollow(FOLLOW_rule__Sequence__Group_17__3__Impl_in_rule__Sequence__Group_17__39256);
             rule__Sequence__Group_17__3__Impl();
 
             state._fsp--;
@@ -10824,20 +11229,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_17__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4188:1: rule__Sequence__Group_17__3__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4324:1: rule__Sequence__Group_17__3__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_17__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4192:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4193:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4328:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4329:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4193:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4194:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4329:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4330:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_3()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_17__3__Impl8978); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_17__3__Impl9284); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_17_3()); 
 
             }
@@ -10861,21 +11266,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4215:1: rule__Sequence__Group_18__0 : rule__Sequence__Group_18__0__Impl rule__Sequence__Group_18__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4351:1: rule__Sequence__Group_18__0 : rule__Sequence__Group_18__0__Impl rule__Sequence__Group_18__1 ;
     public final void rule__Sequence__Group_18__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4219:1: ( rule__Sequence__Group_18__0__Impl rule__Sequence__Group_18__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4220:2: rule__Sequence__Group_18__0__Impl rule__Sequence__Group_18__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4355:1: ( rule__Sequence__Group_18__0__Impl rule__Sequence__Group_18__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4356:2: rule__Sequence__Group_18__0__Impl rule__Sequence__Group_18__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_18__0__Impl_in_rule__Sequence__Group_18__09017);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__0__Impl_in_rule__Sequence__Group_18__09323);
             rule__Sequence__Group_18__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_18__1_in_rule__Sequence__Group_18__09020);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__1_in_rule__Sequence__Group_18__09326);
             rule__Sequence__Group_18__1();
 
             state._fsp--;
@@ -10899,20 +11304,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4227:1: rule__Sequence__Group_18__0__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4363:1: rule__Sequence__Group_18__0__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_18__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4231:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4232:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4367:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4368:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4232:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4233:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4368:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4369:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_0()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_18__0__Impl9048); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_18__0__Impl9354); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_0()); 
 
             }
@@ -10936,21 +11341,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4246:1: rule__Sequence__Group_18__1 : rule__Sequence__Group_18__1__Impl rule__Sequence__Group_18__2 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4382:1: rule__Sequence__Group_18__1 : rule__Sequence__Group_18__1__Impl rule__Sequence__Group_18__2 ;
     public final void rule__Sequence__Group_18__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4250:1: ( rule__Sequence__Group_18__1__Impl rule__Sequence__Group_18__2 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4251:2: rule__Sequence__Group_18__1__Impl rule__Sequence__Group_18__2
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4386:1: ( rule__Sequence__Group_18__1__Impl rule__Sequence__Group_18__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4387:2: rule__Sequence__Group_18__1__Impl rule__Sequence__Group_18__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_18__1__Impl_in_rule__Sequence__Group_18__19079);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__1__Impl_in_rule__Sequence__Group_18__19385);
             rule__Sequence__Group_18__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_18__2_in_rule__Sequence__Group_18__19082);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__2_in_rule__Sequence__Group_18__19388);
             rule__Sequence__Group_18__2();
 
             state._fsp--;
@@ -10974,20 +11379,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4258:1: rule__Sequence__Group_18__1__Impl : ( '-' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4394:1: rule__Sequence__Group_18__1__Impl : ( '-' ) ;
     public final void rule__Sequence__Group_18__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4262:1: ( ( '-' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4263:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4398:1: ( ( '-' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4399:1: ( '-' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4263:1: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4264:1: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4399:1: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4400:1: '-'
             {
              before(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_1()); 
-            match(input,159,FOLLOW_159_in_rule__Sequence__Group_18__1__Impl9110); 
+            match(input,162,FOLLOW_162_in_rule__Sequence__Group_18__1__Impl9416); 
              after(grammarAccess.getSequenceAccess().getHyphenMinusKeyword_18_1()); 
 
             }
@@ -11011,21 +11416,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4277:1: rule__Sequence__Group_18__2 : rule__Sequence__Group_18__2__Impl rule__Sequence__Group_18__3 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4413:1: rule__Sequence__Group_18__2 : rule__Sequence__Group_18__2__Impl rule__Sequence__Group_18__3 ;
     public final void rule__Sequence__Group_18__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4281:1: ( rule__Sequence__Group_18__2__Impl rule__Sequence__Group_18__3 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4282:2: rule__Sequence__Group_18__2__Impl rule__Sequence__Group_18__3
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4417:1: ( rule__Sequence__Group_18__2__Impl rule__Sequence__Group_18__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4418:2: rule__Sequence__Group_18__2__Impl rule__Sequence__Group_18__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_18__2__Impl_in_rule__Sequence__Group_18__29141);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__2__Impl_in_rule__Sequence__Group_18__29447);
             rule__Sequence__Group_18__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_18__3_in_rule__Sequence__Group_18__29144);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__3_in_rule__Sequence__Group_18__29450);
             rule__Sequence__Group_18__3();
 
             state._fsp--;
@@ -11049,20 +11454,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__2__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4289:1: rule__Sequence__Group_18__2__Impl : ( '|' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4425:1: rule__Sequence__Group_18__2__Impl : ( '|' ) ;
     public final void rule__Sequence__Group_18__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4293:1: ( ( '|' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4294:1: ( '|' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4429:1: ( ( '|' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4430:1: ( '|' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4294:1: ( '|' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4295:1: '|'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4430:1: ( '|' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4431:1: '|'
             {
              before(grammarAccess.getSequenceAccess().getVerticalLineKeyword_18_2()); 
-            match(input,167,FOLLOW_167_in_rule__Sequence__Group_18__2__Impl9172); 
+            match(input,170,FOLLOW_170_in_rule__Sequence__Group_18__2__Impl9478); 
              after(grammarAccess.getSequenceAccess().getVerticalLineKeyword_18_2()); 
 
             }
@@ -11086,16 +11491,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__3"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4308:1: rule__Sequence__Group_18__3 : rule__Sequence__Group_18__3__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4444:1: rule__Sequence__Group_18__3 : rule__Sequence__Group_18__3__Impl ;
     public final void rule__Sequence__Group_18__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4312:1: ( rule__Sequence__Group_18__3__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4313:2: rule__Sequence__Group_18__3__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4448:1: ( rule__Sequence__Group_18__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4449:2: rule__Sequence__Group_18__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_18__3__Impl_in_rule__Sequence__Group_18__39203);
+            pushFollow(FOLLOW_rule__Sequence__Group_18__3__Impl_in_rule__Sequence__Group_18__39509);
             rule__Sequence__Group_18__3__Impl();
 
             state._fsp--;
@@ -11119,20 +11524,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_18__3__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4319:1: rule__Sequence__Group_18__3__Impl : ( '>' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4455:1: rule__Sequence__Group_18__3__Impl : ( '>' ) ;
     public final void rule__Sequence__Group_18__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4323:1: ( ( '>' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4324:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4459:1: ( ( '>' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4460:1: ( '>' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4324:1: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4325:1: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4460:1: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4461:1: '>'
             {
              before(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_18_3()); 
-            match(input,160,FOLLOW_160_in_rule__Sequence__Group_18__3__Impl9231); 
+            match(input,163,FOLLOW_163_in_rule__Sequence__Group_18__3__Impl9537); 
              after(grammarAccess.getSequenceAccess().getGreaterThanSignKeyword_18_3()); 
 
             }
@@ -11156,21 +11561,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_19__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4346:1: rule__Sequence__Group_19__0 : rule__Sequence__Group_19__0__Impl rule__Sequence__Group_19__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4482:1: rule__Sequence__Group_19__0 : rule__Sequence__Group_19__0__Impl rule__Sequence__Group_19__1 ;
     public final void rule__Sequence__Group_19__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4350:1: ( rule__Sequence__Group_19__0__Impl rule__Sequence__Group_19__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4351:2: rule__Sequence__Group_19__0__Impl rule__Sequence__Group_19__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4486:1: ( rule__Sequence__Group_19__0__Impl rule__Sequence__Group_19__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4487:2: rule__Sequence__Group_19__0__Impl rule__Sequence__Group_19__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_19__0__Impl_in_rule__Sequence__Group_19__09270);
+            pushFollow(FOLLOW_rule__Sequence__Group_19__0__Impl_in_rule__Sequence__Group_19__09576);
             rule__Sequence__Group_19__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_19__1_in_rule__Sequence__Group_19__09273);
+            pushFollow(FOLLOW_rule__Sequence__Group_19__1_in_rule__Sequence__Group_19__09579);
             rule__Sequence__Group_19__1();
 
             state._fsp--;
@@ -11194,20 +11599,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_19__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4358:1: rule__Sequence__Group_19__0__Impl : ( '.' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4494:1: rule__Sequence__Group_19__0__Impl : ( '.' ) ;
     public final void rule__Sequence__Group_19__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4362:1: ( ( '.' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4363:1: ( '.' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4498:1: ( ( '.' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4499:1: ( '.' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4363:1: ( '.' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4364:1: '.'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4499:1: ( '.' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4500:1: '.'
             {
              before(grammarAccess.getSequenceAccess().getFullStopKeyword_19_0()); 
-            match(input,10,FOLLOW_10_in_rule__Sequence__Group_19__0__Impl9301); 
+            match(input,10,FOLLOW_10_in_rule__Sequence__Group_19__0__Impl9607); 
              after(grammarAccess.getSequenceAccess().getFullStopKeyword_19_0()); 
 
             }
@@ -11231,16 +11636,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_19__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4377:1: rule__Sequence__Group_19__1 : rule__Sequence__Group_19__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4513:1: rule__Sequence__Group_19__1 : rule__Sequence__Group_19__1__Impl ;
     public final void rule__Sequence__Group_19__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4381:1: ( rule__Sequence__Group_19__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4382:2: rule__Sequence__Group_19__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4517:1: ( rule__Sequence__Group_19__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4518:2: rule__Sequence__Group_19__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_19__1__Impl_in_rule__Sequence__Group_19__19332);
+            pushFollow(FOLLOW_rule__Sequence__Group_19__1__Impl_in_rule__Sequence__Group_19__19638);
             rule__Sequence__Group_19__1__Impl();
 
             state._fsp--;
@@ -11264,20 +11669,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_19__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4388:1: rule__Sequence__Group_19__1__Impl : ( '.' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4524:1: rule__Sequence__Group_19__1__Impl : ( '.' ) ;
     public final void rule__Sequence__Group_19__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4392:1: ( ( '.' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4393:1: ( '.' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4528:1: ( ( '.' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4529:1: ( '.' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4393:1: ( '.' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4394:1: '.'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4529:1: ( '.' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4530:1: '.'
             {
              before(grammarAccess.getSequenceAccess().getFullStopKeyword_19_1()); 
-            match(input,10,FOLLOW_10_in_rule__Sequence__Group_19__1__Impl9360); 
+            match(input,10,FOLLOW_10_in_rule__Sequence__Group_19__1__Impl9666); 
              after(grammarAccess.getSequenceAccess().getFullStopKeyword_19_1()); 
 
             }
@@ -11301,21 +11706,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_0__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4411:1: rule__Definition__Group_0__0 : rule__Definition__Group_0__0__Impl rule__Definition__Group_0__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4547:1: rule__Definition__Group_0__0 : rule__Definition__Group_0__0__Impl rule__Definition__Group_0__1 ;
     public final void rule__Definition__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4415:1: ( rule__Definition__Group_0__0__Impl rule__Definition__Group_0__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4416:2: rule__Definition__Group_0__0__Impl rule__Definition__Group_0__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4551:1: ( rule__Definition__Group_0__0__Impl rule__Definition__Group_0__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4552:2: rule__Definition__Group_0__0__Impl rule__Definition__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Definition__Group_0__0__Impl_in_rule__Definition__Group_0__09395);
+            pushFollow(FOLLOW_rule__Definition__Group_0__0__Impl_in_rule__Definition__Group_0__09701);
             rule__Definition__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Definition__Group_0__1_in_rule__Definition__Group_0__09398);
+            pushFollow(FOLLOW_rule__Definition__Group_0__1_in_rule__Definition__Group_0__09704);
             rule__Definition__Group_0__1();
 
             state._fsp--;
@@ -11339,20 +11744,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_0__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4423:1: rule__Definition__Group_0__0__Impl : ( 'actor' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4559:1: rule__Definition__Group_0__0__Impl : ( 'actor' ) ;
     public final void rule__Definition__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4427:1: ( ( 'actor' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4428:1: ( 'actor' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4563:1: ( ( 'actor' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4564:1: ( 'actor' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4428:1: ( 'actor' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4429:1: 'actor'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4564:1: ( 'actor' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4565:1: 'actor'
             {
              before(grammarAccess.getDefinitionAccess().getActorKeyword_0_0()); 
-            match(input,168,FOLLOW_168_in_rule__Definition__Group_0__0__Impl9426); 
+            match(input,171,FOLLOW_171_in_rule__Definition__Group_0__0__Impl9732); 
              after(grammarAccess.getDefinitionAccess().getActorKeyword_0_0()); 
 
             }
@@ -11376,16 +11781,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_0__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4442:1: rule__Definition__Group_0__1 : rule__Definition__Group_0__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4578:1: rule__Definition__Group_0__1 : rule__Definition__Group_0__1__Impl ;
     public final void rule__Definition__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4446:1: ( rule__Definition__Group_0__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4447:2: rule__Definition__Group_0__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4582:1: ( rule__Definition__Group_0__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4583:2: rule__Definition__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Definition__Group_0__1__Impl_in_rule__Definition__Group_0__19457);
+            pushFollow(FOLLOW_rule__Definition__Group_0__1__Impl_in_rule__Definition__Group_0__19763);
             rule__Definition__Group_0__1__Impl();
 
             state._fsp--;
@@ -11409,23 +11814,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_0__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4453:1: rule__Definition__Group_0__1__Impl : ( ( rule__Definition__NameAssignment_0_1 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4589:1: rule__Definition__Group_0__1__Impl : ( ( rule__Definition__NameAssignment_0_1 ) ) ;
     public final void rule__Definition__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4457:1: ( ( ( rule__Definition__NameAssignment_0_1 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4458:1: ( ( rule__Definition__NameAssignment_0_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4593:1: ( ( ( rule__Definition__NameAssignment_0_1 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4594:1: ( ( rule__Definition__NameAssignment_0_1 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4458:1: ( ( rule__Definition__NameAssignment_0_1 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4459:1: ( rule__Definition__NameAssignment_0_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4594:1: ( ( rule__Definition__NameAssignment_0_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4595:1: ( rule__Definition__NameAssignment_0_1 )
             {
              before(grammarAccess.getDefinitionAccess().getNameAssignment_0_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4460:1: ( rule__Definition__NameAssignment_0_1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4460:2: rule__Definition__NameAssignment_0_1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4596:1: ( rule__Definition__NameAssignment_0_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4596:2: rule__Definition__NameAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Definition__NameAssignment_0_1_in_rule__Definition__Group_0__1__Impl9484);
+            pushFollow(FOLLOW_rule__Definition__NameAssignment_0_1_in_rule__Definition__Group_0__1__Impl9790);
             rule__Definition__NameAssignment_0_1();
 
             state._fsp--;
@@ -11456,21 +11861,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_1__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4474:1: rule__Definition__Group_1__0 : rule__Definition__Group_1__0__Impl rule__Definition__Group_1__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4610:1: rule__Definition__Group_1__0 : rule__Definition__Group_1__0__Impl rule__Definition__Group_1__1 ;
     public final void rule__Definition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4478:1: ( rule__Definition__Group_1__0__Impl rule__Definition__Group_1__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4479:2: rule__Definition__Group_1__0__Impl rule__Definition__Group_1__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4614:1: ( rule__Definition__Group_1__0__Impl rule__Definition__Group_1__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4615:2: rule__Definition__Group_1__0__Impl rule__Definition__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Definition__Group_1__0__Impl_in_rule__Definition__Group_1__09518);
+            pushFollow(FOLLOW_rule__Definition__Group_1__0__Impl_in_rule__Definition__Group_1__09824);
             rule__Definition__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Definition__Group_1__1_in_rule__Definition__Group_1__09521);
+            pushFollow(FOLLOW_rule__Definition__Group_1__1_in_rule__Definition__Group_1__09827);
             rule__Definition__Group_1__1();
 
             state._fsp--;
@@ -11494,20 +11899,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_1__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4486:1: rule__Definition__Group_1__0__Impl : ( 'boundary' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4622:1: rule__Definition__Group_1__0__Impl : ( 'boundary' ) ;
     public final void rule__Definition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4490:1: ( ( 'boundary' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4491:1: ( 'boundary' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4626:1: ( ( 'boundary' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4627:1: ( 'boundary' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4491:1: ( 'boundary' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4492:1: 'boundary'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4627:1: ( 'boundary' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4628:1: 'boundary'
             {
              before(grammarAccess.getDefinitionAccess().getBoundaryKeyword_1_0()); 
-            match(input,169,FOLLOW_169_in_rule__Definition__Group_1__0__Impl9549); 
+            match(input,172,FOLLOW_172_in_rule__Definition__Group_1__0__Impl9855); 
              after(grammarAccess.getDefinitionAccess().getBoundaryKeyword_1_0()); 
 
             }
@@ -11531,16 +11936,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_1__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4505:1: rule__Definition__Group_1__1 : rule__Definition__Group_1__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4641:1: rule__Definition__Group_1__1 : rule__Definition__Group_1__1__Impl ;
     public final void rule__Definition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4509:1: ( rule__Definition__Group_1__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4510:2: rule__Definition__Group_1__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4645:1: ( rule__Definition__Group_1__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4646:2: rule__Definition__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Definition__Group_1__1__Impl_in_rule__Definition__Group_1__19580);
+            pushFollow(FOLLOW_rule__Definition__Group_1__1__Impl_in_rule__Definition__Group_1__19886);
             rule__Definition__Group_1__1__Impl();
 
             state._fsp--;
@@ -11564,23 +11969,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_1__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4516:1: rule__Definition__Group_1__1__Impl : ( ( rule__Definition__NameAssignment_1_1 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4652:1: rule__Definition__Group_1__1__Impl : ( ( rule__Definition__NameAssignment_1_1 ) ) ;
     public final void rule__Definition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4520:1: ( ( ( rule__Definition__NameAssignment_1_1 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4521:1: ( ( rule__Definition__NameAssignment_1_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4656:1: ( ( ( rule__Definition__NameAssignment_1_1 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4657:1: ( ( rule__Definition__NameAssignment_1_1 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4521:1: ( ( rule__Definition__NameAssignment_1_1 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4522:1: ( rule__Definition__NameAssignment_1_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4657:1: ( ( rule__Definition__NameAssignment_1_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4658:1: ( rule__Definition__NameAssignment_1_1 )
             {
              before(grammarAccess.getDefinitionAccess().getNameAssignment_1_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4523:1: ( rule__Definition__NameAssignment_1_1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4523:2: rule__Definition__NameAssignment_1_1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4659:1: ( rule__Definition__NameAssignment_1_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4659:2: rule__Definition__NameAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Definition__NameAssignment_1_1_in_rule__Definition__Group_1__1__Impl9607);
+            pushFollow(FOLLOW_rule__Definition__NameAssignment_1_1_in_rule__Definition__Group_1__1__Impl9913);
             rule__Definition__NameAssignment_1_1();
 
             state._fsp--;
@@ -11611,21 +12016,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_2__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4537:1: rule__Definition__Group_2__0 : rule__Definition__Group_2__0__Impl rule__Definition__Group_2__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4673:1: rule__Definition__Group_2__0 : rule__Definition__Group_2__0__Impl rule__Definition__Group_2__1 ;
     public final void rule__Definition__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4541:1: ( rule__Definition__Group_2__0__Impl rule__Definition__Group_2__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4542:2: rule__Definition__Group_2__0__Impl rule__Definition__Group_2__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4677:1: ( rule__Definition__Group_2__0__Impl rule__Definition__Group_2__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4678:2: rule__Definition__Group_2__0__Impl rule__Definition__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Definition__Group_2__0__Impl_in_rule__Definition__Group_2__09641);
+            pushFollow(FOLLOW_rule__Definition__Group_2__0__Impl_in_rule__Definition__Group_2__09947);
             rule__Definition__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Definition__Group_2__1_in_rule__Definition__Group_2__09644);
+            pushFollow(FOLLOW_rule__Definition__Group_2__1_in_rule__Definition__Group_2__09950);
             rule__Definition__Group_2__1();
 
             state._fsp--;
@@ -11649,20 +12054,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_2__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4549:1: rule__Definition__Group_2__0__Impl : ( 'control' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4685:1: rule__Definition__Group_2__0__Impl : ( 'control' ) ;
     public final void rule__Definition__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4553:1: ( ( 'control' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4554:1: ( 'control' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4689:1: ( ( 'control' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4690:1: ( 'control' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4554:1: ( 'control' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4555:1: 'control'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4690:1: ( 'control' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4691:1: 'control'
             {
              before(grammarAccess.getDefinitionAccess().getControlKeyword_2_0()); 
-            match(input,170,FOLLOW_170_in_rule__Definition__Group_2__0__Impl9672); 
+            match(input,173,FOLLOW_173_in_rule__Definition__Group_2__0__Impl9978); 
              after(grammarAccess.getDefinitionAccess().getControlKeyword_2_0()); 
 
             }
@@ -11686,16 +12091,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_2__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4568:1: rule__Definition__Group_2__1 : rule__Definition__Group_2__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4704:1: rule__Definition__Group_2__1 : rule__Definition__Group_2__1__Impl ;
     public final void rule__Definition__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4572:1: ( rule__Definition__Group_2__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4573:2: rule__Definition__Group_2__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4708:1: ( rule__Definition__Group_2__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4709:2: rule__Definition__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Definition__Group_2__1__Impl_in_rule__Definition__Group_2__19703);
+            pushFollow(FOLLOW_rule__Definition__Group_2__1__Impl_in_rule__Definition__Group_2__110009);
             rule__Definition__Group_2__1__Impl();
 
             state._fsp--;
@@ -11719,23 +12124,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_2__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4579:1: rule__Definition__Group_2__1__Impl : ( ( rule__Definition__NameAssignment_2_1 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4715:1: rule__Definition__Group_2__1__Impl : ( ( rule__Definition__NameAssignment_2_1 ) ) ;
     public final void rule__Definition__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4583:1: ( ( ( rule__Definition__NameAssignment_2_1 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4584:1: ( ( rule__Definition__NameAssignment_2_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4719:1: ( ( ( rule__Definition__NameAssignment_2_1 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4720:1: ( ( rule__Definition__NameAssignment_2_1 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4584:1: ( ( rule__Definition__NameAssignment_2_1 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4585:1: ( rule__Definition__NameAssignment_2_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4720:1: ( ( rule__Definition__NameAssignment_2_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4721:1: ( rule__Definition__NameAssignment_2_1 )
             {
              before(grammarAccess.getDefinitionAccess().getNameAssignment_2_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4586:1: ( rule__Definition__NameAssignment_2_1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4586:2: rule__Definition__NameAssignment_2_1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4722:1: ( rule__Definition__NameAssignment_2_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4722:2: rule__Definition__NameAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Definition__NameAssignment_2_1_in_rule__Definition__Group_2__1__Impl9730);
+            pushFollow(FOLLOW_rule__Definition__NameAssignment_2_1_in_rule__Definition__Group_2__1__Impl10036);
             rule__Definition__NameAssignment_2_1();
 
             state._fsp--;
@@ -11766,21 +12171,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_3__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4600:1: rule__Definition__Group_3__0 : rule__Definition__Group_3__0__Impl rule__Definition__Group_3__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4736:1: rule__Definition__Group_3__0 : rule__Definition__Group_3__0__Impl rule__Definition__Group_3__1 ;
     public final void rule__Definition__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4604:1: ( rule__Definition__Group_3__0__Impl rule__Definition__Group_3__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4605:2: rule__Definition__Group_3__0__Impl rule__Definition__Group_3__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4740:1: ( rule__Definition__Group_3__0__Impl rule__Definition__Group_3__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4741:2: rule__Definition__Group_3__0__Impl rule__Definition__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Definition__Group_3__0__Impl_in_rule__Definition__Group_3__09764);
+            pushFollow(FOLLOW_rule__Definition__Group_3__0__Impl_in_rule__Definition__Group_3__010070);
             rule__Definition__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Definition__Group_3__1_in_rule__Definition__Group_3__09767);
+            pushFollow(FOLLOW_rule__Definition__Group_3__1_in_rule__Definition__Group_3__010073);
             rule__Definition__Group_3__1();
 
             state._fsp--;
@@ -11804,20 +12209,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_3__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4612:1: rule__Definition__Group_3__0__Impl : ( 'entity' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4748:1: rule__Definition__Group_3__0__Impl : ( 'entity' ) ;
     public final void rule__Definition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4616:1: ( ( 'entity' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4617:1: ( 'entity' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4752:1: ( ( 'entity' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4753:1: ( 'entity' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4617:1: ( 'entity' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4618:1: 'entity'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4753:1: ( 'entity' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4754:1: 'entity'
             {
              before(grammarAccess.getDefinitionAccess().getEntityKeyword_3_0()); 
-            match(input,171,FOLLOW_171_in_rule__Definition__Group_3__0__Impl9795); 
+            match(input,174,FOLLOW_174_in_rule__Definition__Group_3__0__Impl10101); 
              after(grammarAccess.getDefinitionAccess().getEntityKeyword_3_0()); 
 
             }
@@ -11841,16 +12246,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_3__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4631:1: rule__Definition__Group_3__1 : rule__Definition__Group_3__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4767:1: rule__Definition__Group_3__1 : rule__Definition__Group_3__1__Impl ;
     public final void rule__Definition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4635:1: ( rule__Definition__Group_3__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4636:2: rule__Definition__Group_3__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4771:1: ( rule__Definition__Group_3__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4772:2: rule__Definition__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Definition__Group_3__1__Impl_in_rule__Definition__Group_3__19826);
+            pushFollow(FOLLOW_rule__Definition__Group_3__1__Impl_in_rule__Definition__Group_3__110132);
             rule__Definition__Group_3__1__Impl();
 
             state._fsp--;
@@ -11874,23 +12279,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_3__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4642:1: rule__Definition__Group_3__1__Impl : ( ( rule__Definition__NameAssignment_3_1 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4778:1: rule__Definition__Group_3__1__Impl : ( ( rule__Definition__NameAssignment_3_1 ) ) ;
     public final void rule__Definition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4646:1: ( ( ( rule__Definition__NameAssignment_3_1 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4647:1: ( ( rule__Definition__NameAssignment_3_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4782:1: ( ( ( rule__Definition__NameAssignment_3_1 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4783:1: ( ( rule__Definition__NameAssignment_3_1 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4647:1: ( ( rule__Definition__NameAssignment_3_1 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4648:1: ( rule__Definition__NameAssignment_3_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4783:1: ( ( rule__Definition__NameAssignment_3_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4784:1: ( rule__Definition__NameAssignment_3_1 )
             {
              before(grammarAccess.getDefinitionAccess().getNameAssignment_3_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4649:1: ( rule__Definition__NameAssignment_3_1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4649:2: rule__Definition__NameAssignment_3_1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4785:1: ( rule__Definition__NameAssignment_3_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4785:2: rule__Definition__NameAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Definition__NameAssignment_3_1_in_rule__Definition__Group_3__1__Impl9853);
+            pushFollow(FOLLOW_rule__Definition__NameAssignment_3_1_in_rule__Definition__Group_3__1__Impl10159);
             rule__Definition__NameAssignment_3_1();
 
             state._fsp--;
@@ -11921,21 +12326,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_4__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4663:1: rule__Definition__Group_4__0 : rule__Definition__Group_4__0__Impl rule__Definition__Group_4__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4799:1: rule__Definition__Group_4__0 : rule__Definition__Group_4__0__Impl rule__Definition__Group_4__1 ;
     public final void rule__Definition__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4667:1: ( rule__Definition__Group_4__0__Impl rule__Definition__Group_4__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4668:2: rule__Definition__Group_4__0__Impl rule__Definition__Group_4__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4803:1: ( rule__Definition__Group_4__0__Impl rule__Definition__Group_4__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4804:2: rule__Definition__Group_4__0__Impl rule__Definition__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Definition__Group_4__0__Impl_in_rule__Definition__Group_4__09887);
+            pushFollow(FOLLOW_rule__Definition__Group_4__0__Impl_in_rule__Definition__Group_4__010193);
             rule__Definition__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Definition__Group_4__1_in_rule__Definition__Group_4__09890);
+            pushFollow(FOLLOW_rule__Definition__Group_4__1_in_rule__Definition__Group_4__010196);
             rule__Definition__Group_4__1();
 
             state._fsp--;
@@ -11959,20 +12364,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_4__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4675:1: rule__Definition__Group_4__0__Impl : ( 'database' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4811:1: rule__Definition__Group_4__0__Impl : ( 'database' ) ;
     public final void rule__Definition__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4679:1: ( ( 'database' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4680:1: ( 'database' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4815:1: ( ( 'database' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4816:1: ( 'database' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4680:1: ( 'database' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4681:1: 'database'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4816:1: ( 'database' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4817:1: 'database'
             {
              before(grammarAccess.getDefinitionAccess().getDatabaseKeyword_4_0()); 
-            match(input,172,FOLLOW_172_in_rule__Definition__Group_4__0__Impl9918); 
+            match(input,175,FOLLOW_175_in_rule__Definition__Group_4__0__Impl10224); 
              after(grammarAccess.getDefinitionAccess().getDatabaseKeyword_4_0()); 
 
             }
@@ -11996,16 +12401,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_4__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4694:1: rule__Definition__Group_4__1 : rule__Definition__Group_4__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4830:1: rule__Definition__Group_4__1 : rule__Definition__Group_4__1__Impl ;
     public final void rule__Definition__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4698:1: ( rule__Definition__Group_4__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4699:2: rule__Definition__Group_4__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4834:1: ( rule__Definition__Group_4__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4835:2: rule__Definition__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Definition__Group_4__1__Impl_in_rule__Definition__Group_4__19949);
+            pushFollow(FOLLOW_rule__Definition__Group_4__1__Impl_in_rule__Definition__Group_4__110255);
             rule__Definition__Group_4__1__Impl();
 
             state._fsp--;
@@ -12029,23 +12434,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__Group_4__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4705:1: rule__Definition__Group_4__1__Impl : ( ( rule__Definition__NameAssignment_4_1 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4841:1: rule__Definition__Group_4__1__Impl : ( ( rule__Definition__NameAssignment_4_1 ) ) ;
     public final void rule__Definition__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4709:1: ( ( ( rule__Definition__NameAssignment_4_1 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4710:1: ( ( rule__Definition__NameAssignment_4_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4845:1: ( ( ( rule__Definition__NameAssignment_4_1 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4846:1: ( ( rule__Definition__NameAssignment_4_1 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4710:1: ( ( rule__Definition__NameAssignment_4_1 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4711:1: ( rule__Definition__NameAssignment_4_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4846:1: ( ( rule__Definition__NameAssignment_4_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4847:1: ( rule__Definition__NameAssignment_4_1 )
             {
              before(grammarAccess.getDefinitionAccess().getNameAssignment_4_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4712:1: ( rule__Definition__NameAssignment_4_1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4712:2: rule__Definition__NameAssignment_4_1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4848:1: ( rule__Definition__NameAssignment_4_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4848:2: rule__Definition__NameAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Definition__NameAssignment_4_1_in_rule__Definition__Group_4__1__Impl9976);
+            pushFollow(FOLLOW_rule__Definition__NameAssignment_4_1_in_rule__Definition__Group_4__1__Impl10282);
             rule__Definition__NameAssignment_4_1();
 
             state._fsp--;
@@ -12076,21 +12481,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4726:1: rule__AutoNumber__Group__0 : rule__AutoNumber__Group__0__Impl rule__AutoNumber__Group__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4862:1: rule__AutoNumber__Group__0 : rule__AutoNumber__Group__0__Impl rule__AutoNumber__Group__1 ;
     public final void rule__AutoNumber__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4730:1: ( rule__AutoNumber__Group__0__Impl rule__AutoNumber__Group__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4731:2: rule__AutoNumber__Group__0__Impl rule__AutoNumber__Group__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4866:1: ( rule__AutoNumber__Group__0__Impl rule__AutoNumber__Group__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4867:2: rule__AutoNumber__Group__0__Impl rule__AutoNumber__Group__1
             {
-            pushFollow(FOLLOW_rule__AutoNumber__Group__0__Impl_in_rule__AutoNumber__Group__010010);
+            pushFollow(FOLLOW_rule__AutoNumber__Group__0__Impl_in_rule__AutoNumber__Group__010316);
             rule__AutoNumber__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AutoNumber__Group__1_in_rule__AutoNumber__Group__010013);
+            pushFollow(FOLLOW_rule__AutoNumber__Group__1_in_rule__AutoNumber__Group__010319);
             rule__AutoNumber__Group__1();
 
             state._fsp--;
@@ -12114,20 +12519,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4738:1: rule__AutoNumber__Group__0__Impl : ( 'autonumber' ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4874:1: rule__AutoNumber__Group__0__Impl : ( 'autonumber' ) ;
     public final void rule__AutoNumber__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4742:1: ( ( 'autonumber' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4743:1: ( 'autonumber' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4878:1: ( ( 'autonumber' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4879:1: ( 'autonumber' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4743:1: ( 'autonumber' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4744:1: 'autonumber'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4879:1: ( 'autonumber' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4880:1: 'autonumber'
             {
              before(grammarAccess.getAutoNumberAccess().getAutonumberKeyword_0()); 
-            match(input,173,FOLLOW_173_in_rule__AutoNumber__Group__0__Impl10041); 
+            match(input,176,FOLLOW_176_in_rule__AutoNumber__Group__0__Impl10347); 
              after(grammarAccess.getAutoNumberAccess().getAutonumberKeyword_0()); 
 
             }
@@ -12151,16 +12556,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4757:1: rule__AutoNumber__Group__1 : rule__AutoNumber__Group__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4893:1: rule__AutoNumber__Group__1 : rule__AutoNumber__Group__1__Impl ;
     public final void rule__AutoNumber__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4761:1: ( rule__AutoNumber__Group__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4762:2: rule__AutoNumber__Group__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4897:1: ( rule__AutoNumber__Group__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4898:2: rule__AutoNumber__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AutoNumber__Group__1__Impl_in_rule__AutoNumber__Group__110072);
+            pushFollow(FOLLOW_rule__AutoNumber__Group__1__Impl_in_rule__AutoNumber__Group__110378);
             rule__AutoNumber__Group__1__Impl();
 
             state._fsp--;
@@ -12184,31 +12589,31 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4768:1: rule__AutoNumber__Group__1__Impl : ( ( rule__AutoNumber__Group_1__0 )? ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4904:1: rule__AutoNumber__Group__1__Impl : ( ( rule__AutoNumber__Group_1__0 )? ) ;
     public final void rule__AutoNumber__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4772:1: ( ( ( rule__AutoNumber__Group_1__0 )? ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4773:1: ( ( rule__AutoNumber__Group_1__0 )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4908:1: ( ( ( rule__AutoNumber__Group_1__0 )? ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4909:1: ( ( rule__AutoNumber__Group_1__0 )? )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4773:1: ( ( rule__AutoNumber__Group_1__0 )? )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4774:1: ( rule__AutoNumber__Group_1__0 )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4909:1: ( ( rule__AutoNumber__Group_1__0 )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4910:1: ( rule__AutoNumber__Group_1__0 )?
             {
              before(grammarAccess.getAutoNumberAccess().getGroup_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4775:1: ( rule__AutoNumber__Group_1__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4911:1: ( rule__AutoNumber__Group_1__0 )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==RULE_INT) ) {
-                alt21=1;
+            if ( (LA22_0==RULE_INT) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4775:2: rule__AutoNumber__Group_1__0
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4911:2: rule__AutoNumber__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__AutoNumber__Group_1__0_in_rule__AutoNumber__Group__1__Impl10099);
+                    pushFollow(FOLLOW_rule__AutoNumber__Group_1__0_in_rule__AutoNumber__Group__1__Impl10405);
                     rule__AutoNumber__Group_1__0();
 
                     state._fsp--;
@@ -12242,21 +12647,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group_1__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4789:1: rule__AutoNumber__Group_1__0 : rule__AutoNumber__Group_1__0__Impl rule__AutoNumber__Group_1__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4925:1: rule__AutoNumber__Group_1__0 : rule__AutoNumber__Group_1__0__Impl rule__AutoNumber__Group_1__1 ;
     public final void rule__AutoNumber__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4793:1: ( rule__AutoNumber__Group_1__0__Impl rule__AutoNumber__Group_1__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4794:2: rule__AutoNumber__Group_1__0__Impl rule__AutoNumber__Group_1__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4929:1: ( rule__AutoNumber__Group_1__0__Impl rule__AutoNumber__Group_1__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4930:2: rule__AutoNumber__Group_1__0__Impl rule__AutoNumber__Group_1__1
             {
-            pushFollow(FOLLOW_rule__AutoNumber__Group_1__0__Impl_in_rule__AutoNumber__Group_1__010134);
+            pushFollow(FOLLOW_rule__AutoNumber__Group_1__0__Impl_in_rule__AutoNumber__Group_1__010440);
             rule__AutoNumber__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AutoNumber__Group_1__1_in_rule__AutoNumber__Group_1__010137);
+            pushFollow(FOLLOW_rule__AutoNumber__Group_1__1_in_rule__AutoNumber__Group_1__010443);
             rule__AutoNumber__Group_1__1();
 
             state._fsp--;
@@ -12280,20 +12685,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group_1__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4801:1: rule__AutoNumber__Group_1__0__Impl : ( RULE_INT ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4937:1: rule__AutoNumber__Group_1__0__Impl : ( RULE_INT ) ;
     public final void rule__AutoNumber__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4805:1: ( ( RULE_INT ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4806:1: ( RULE_INT )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4941:1: ( ( RULE_INT ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4942:1: ( RULE_INT )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4806:1: ( RULE_INT )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4807:1: RULE_INT
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4942:1: ( RULE_INT )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4943:1: RULE_INT
             {
              before(grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__0__Impl10164); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__0__Impl10470); 
              after(grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_0()); 
 
             }
@@ -12317,16 +12722,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group_1__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4818:1: rule__AutoNumber__Group_1__1 : rule__AutoNumber__Group_1__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4954:1: rule__AutoNumber__Group_1__1 : rule__AutoNumber__Group_1__1__Impl ;
     public final void rule__AutoNumber__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4822:1: ( rule__AutoNumber__Group_1__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4823:2: rule__AutoNumber__Group_1__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4958:1: ( rule__AutoNumber__Group_1__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4959:2: rule__AutoNumber__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__AutoNumber__Group_1__1__Impl_in_rule__AutoNumber__Group_1__110193);
+            pushFollow(FOLLOW_rule__AutoNumber__Group_1__1__Impl_in_rule__AutoNumber__Group_1__110499);
             rule__AutoNumber__Group_1__1__Impl();
 
             state._fsp--;
@@ -12350,31 +12755,31 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AutoNumber__Group_1__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4829:1: rule__AutoNumber__Group_1__1__Impl : ( ( RULE_INT )? ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4965:1: rule__AutoNumber__Group_1__1__Impl : ( ( RULE_INT )? ) ;
     public final void rule__AutoNumber__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4833:1: ( ( ( RULE_INT )? ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4834:1: ( ( RULE_INT )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4969:1: ( ( ( RULE_INT )? ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4970:1: ( ( RULE_INT )? )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4834:1: ( ( RULE_INT )? )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4835:1: ( RULE_INT )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4970:1: ( ( RULE_INT )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4971:1: ( RULE_INT )?
             {
              before(grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4836:1: ( RULE_INT )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4972:1: ( RULE_INT )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==RULE_INT) ) {
-                alt22=1;
+            if ( (LA23_0==RULE_INT) ) {
+                alt23=1;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4836:3: RULE_INT
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4972:3: RULE_INT
                     {
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__1__Impl10221); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__1__Impl10527); 
 
                     }
                     break;
@@ -12404,21 +12809,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Color__Group__0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4850:1: rule__Color__Group__0 : rule__Color__Group__0__Impl rule__Color__Group__1 ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4986:1: rule__Color__Group__0 : rule__Color__Group__0__Impl rule__Color__Group__1 ;
     public final void rule__Color__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4854:1: ( rule__Color__Group__0__Impl rule__Color__Group__1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4855:2: rule__Color__Group__0__Impl rule__Color__Group__1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4990:1: ( rule__Color__Group__0__Impl rule__Color__Group__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4991:2: rule__Color__Group__0__Impl rule__Color__Group__1
             {
-            pushFollow(FOLLOW_rule__Color__Group__0__Impl_in_rule__Color__Group__010256);
+            pushFollow(FOLLOW_rule__Color__Group__0__Impl_in_rule__Color__Group__010562);
             rule__Color__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Color__Group__1_in_rule__Color__Group__010259);
+            pushFollow(FOLLOW_rule__Color__Group__1_in_rule__Color__Group__010565);
             rule__Color__Group__1();
 
             state._fsp--;
@@ -12442,26 +12847,26 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Color__Group__0__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4862:1: rule__Color__Group__0__Impl : ( ( ( '#' ) ) ( ( '#' )* ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4998:1: rule__Color__Group__0__Impl : ( ( ( '#' ) ) ( ( '#' )* ) ) ;
     public final void rule__Color__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4866:1: ( ( ( ( '#' ) ) ( ( '#' )* ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4867:1: ( ( ( '#' ) ) ( ( '#' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5002:1: ( ( ( ( '#' ) ) ( ( '#' )* ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5003:1: ( ( ( '#' ) ) ( ( '#' )* ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4867:1: ( ( ( '#' ) ) ( ( '#' )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4868:1: ( ( '#' ) ) ( ( '#' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5003:1: ( ( ( '#' ) ) ( ( '#' )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5004:1: ( ( '#' ) ) ( ( '#' )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4868:1: ( ( '#' ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4869:1: ( '#' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5004:1: ( ( '#' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5005:1: ( '#' )
             {
              before(grammarAccess.getColorAccess().getNumberSignKeyword_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4870:1: ( '#' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4871:2: '#'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5006:1: ( '#' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5007:2: '#'
             {
-            match(input,174,FOLLOW_174_in_rule__Color__Group__0__Impl10290); 
+            match(input,177,FOLLOW_177_in_rule__Color__Group__0__Impl10596); 
 
             }
 
@@ -12469,32 +12874,32 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4875:1: ( ( '#' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4876:1: ( '#' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5011:1: ( ( '#' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5012:1: ( '#' )*
             {
              before(grammarAccess.getColorAccess().getNumberSignKeyword_0()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4877:1: ( '#' )*
-            loop23:
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5013:1: ( '#' )*
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA23_0==174) ) {
-                    alt23=1;
+                if ( (LA24_0==177) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4878:2: '#'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5014:2: '#'
             	    {
-            	    match(input,174,FOLLOW_174_in_rule__Color__Group__0__Impl10306); 
+            	    match(input,177,FOLLOW_177_in_rule__Color__Group__0__Impl10612); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -12524,16 +12929,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Color__Group__1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4890:1: rule__Color__Group__1 : rule__Color__Group__1__Impl ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5026:1: rule__Color__Group__1 : rule__Color__Group__1__Impl ;
     public final void rule__Color__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4894:1: ( rule__Color__Group__1__Impl )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4895:2: rule__Color__Group__1__Impl
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5030:1: ( rule__Color__Group__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5031:2: rule__Color__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Color__Group__1__Impl_in_rule__Color__Group__110341);
+            pushFollow(FOLLOW_rule__Color__Group__1__Impl_in_rule__Color__Group__110647);
             rule__Color__Group__1__Impl();
 
             state._fsp--;
@@ -12557,23 +12962,23 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Color__Group__1__Impl"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4901:1: rule__Color__Group__1__Impl : ( ( rule__Color__Alternatives_1 ) ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5037:1: rule__Color__Group__1__Impl : ( ( rule__Color__Alternatives_1 ) ) ;
     public final void rule__Color__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4905:1: ( ( ( rule__Color__Alternatives_1 ) ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4906:1: ( ( rule__Color__Alternatives_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5041:1: ( ( ( rule__Color__Alternatives_1 ) ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5042:1: ( ( rule__Color__Alternatives_1 ) )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4906:1: ( ( rule__Color__Alternatives_1 ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4907:1: ( rule__Color__Alternatives_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5042:1: ( ( rule__Color__Alternatives_1 ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5043:1: ( rule__Color__Alternatives_1 )
             {
              before(grammarAccess.getColorAccess().getAlternatives_1()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4908:1: ( rule__Color__Alternatives_1 )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4908:2: rule__Color__Alternatives_1
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5044:1: ( rule__Color__Alternatives_1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5044:2: rule__Color__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__Color__Alternatives_1_in_rule__Color__Group__1__Impl10368);
+            pushFollow(FOLLOW_rule__Color__Alternatives_1_in_rule__Color__Group__1__Impl10674);
             rule__Color__Alternatives_1();
 
             state._fsp--;
@@ -12603,21 +13008,676 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Color__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Title__Group__0"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5058:1: rule__Title__Group__0 : rule__Title__Group__0__Impl rule__Title__Group__1 ;
+    public final void rule__Title__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5062:1: ( rule__Title__Group__0__Impl rule__Title__Group__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5063:2: rule__Title__Group__0__Impl rule__Title__Group__1
+            {
+            pushFollow(FOLLOW_rule__Title__Group__0__Impl_in_rule__Title__Group__010708);
+            rule__Title__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Title__Group__1_in_rule__Title__Group__010711);
+            rule__Title__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Title__Group__0"
+
+
+    // $ANTLR start "rule__Title__Group__0__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5070:1: rule__Title__Group__0__Impl : ( 'title' ) ;
+    public final void rule__Title__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5074:1: ( ( 'title' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5075:1: ( 'title' )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5075:1: ( 'title' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5076:1: 'title'
+            {
+             before(grammarAccess.getTitleAccess().getTitleKeyword_0()); 
+            match(input,178,FOLLOW_178_in_rule__Title__Group__0__Impl10739); 
+             after(grammarAccess.getTitleAccess().getTitleKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Title__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Title__Group__1"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5089:1: rule__Title__Group__1 : rule__Title__Group__1__Impl ;
+    public final void rule__Title__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5093:1: ( rule__Title__Group__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5094:2: rule__Title__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Title__Group__1__Impl_in_rule__Title__Group__110770);
+            rule__Title__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Title__Group__1"
+
+
+    // $ANTLR start "rule__Title__Group__1__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5100:1: rule__Title__Group__1__Impl : ( RULE_ID ) ;
+    public final void rule__Title__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5104:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5105:1: ( RULE_ID )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5105:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5106:1: RULE_ID
+            {
+             before(grammarAccess.getTitleAccess().getIDTerminalRuleCall_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Title__Group__1__Impl10797); 
+             after(grammarAccess.getTitleAccess().getIDTerminalRuleCall_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Title__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Legend__Group__0"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5121:1: rule__Legend__Group__0 : rule__Legend__Group__0__Impl rule__Legend__Group__1 ;
+    public final void rule__Legend__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5125:1: ( rule__Legend__Group__0__Impl rule__Legend__Group__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5126:2: rule__Legend__Group__0__Impl rule__Legend__Group__1
+            {
+            pushFollow(FOLLOW_rule__Legend__Group__0__Impl_in_rule__Legend__Group__010830);
+            rule__Legend__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Legend__Group__1_in_rule__Legend__Group__010833);
+            rule__Legend__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__0"
+
+
+    // $ANTLR start "rule__Legend__Group__0__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5133:1: rule__Legend__Group__0__Impl : ( 'legend' ) ;
+    public final void rule__Legend__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5137:1: ( ( 'legend' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5138:1: ( 'legend' )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5138:1: ( 'legend' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5139:1: 'legend'
+            {
+             before(grammarAccess.getLegendAccess().getLegendKeyword_0()); 
+            match(input,179,FOLLOW_179_in_rule__Legend__Group__0__Impl10861); 
+             after(grammarAccess.getLegendAccess().getLegendKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Legend__Group__1"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5152:1: rule__Legend__Group__1 : rule__Legend__Group__1__Impl rule__Legend__Group__2 ;
+    public final void rule__Legend__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5156:1: ( rule__Legend__Group__1__Impl rule__Legend__Group__2 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5157:2: rule__Legend__Group__1__Impl rule__Legend__Group__2
+            {
+            pushFollow(FOLLOW_rule__Legend__Group__1__Impl_in_rule__Legend__Group__110892);
+            rule__Legend__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Legend__Group__2_in_rule__Legend__Group__110895);
+            rule__Legend__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__1"
+
+
+    // $ANTLR start "rule__Legend__Group__1__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5164:1: rule__Legend__Group__1__Impl : ( ( rule__Legend__Alternatives_1 )? ) ;
+    public final void rule__Legend__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5168:1: ( ( ( rule__Legend__Alternatives_1 )? ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5169:1: ( ( rule__Legend__Alternatives_1 )? )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5169:1: ( ( rule__Legend__Alternatives_1 )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5170:1: ( rule__Legend__Alternatives_1 )?
+            {
+             before(grammarAccess.getLegendAccess().getAlternatives_1()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5171:1: ( rule__Legend__Alternatives_1 )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
+
+            if ( ((LA25_0>=156 && LA25_0<=158)) ) {
+                alt25=1;
+            }
+            switch (alt25) {
+                case 1 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5171:2: rule__Legend__Alternatives_1
+                    {
+                    pushFollow(FOLLOW_rule__Legend__Alternatives_1_in_rule__Legend__Group__1__Impl10922);
+                    rule__Legend__Alternatives_1();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getLegendAccess().getAlternatives_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Legend__Group__2"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5181:1: rule__Legend__Group__2 : rule__Legend__Group__2__Impl rule__Legend__Group__3 ;
+    public final void rule__Legend__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5185:1: ( rule__Legend__Group__2__Impl rule__Legend__Group__3 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5186:2: rule__Legend__Group__2__Impl rule__Legend__Group__3
+            {
+            pushFollow(FOLLOW_rule__Legend__Group__2__Impl_in_rule__Legend__Group__210953);
+            rule__Legend__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Legend__Group__3_in_rule__Legend__Group__210956);
+            rule__Legend__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__2"
+
+
+    // $ANTLR start "rule__Legend__Group__2__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5193:1: rule__Legend__Group__2__Impl : ( ( rule__Legend__IdsAssignment_2 )* ) ;
+    public final void rule__Legend__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5197:1: ( ( ( rule__Legend__IdsAssignment_2 )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5198:1: ( ( rule__Legend__IdsAssignment_2 )* )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5198:1: ( ( rule__Legend__IdsAssignment_2 )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5199:1: ( rule__Legend__IdsAssignment_2 )*
+            {
+             before(grammarAccess.getLegendAccess().getIdsAssignment_2()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5200:1: ( rule__Legend__IdsAssignment_2 )*
+            loop26:
+            do {
+                int alt26=2;
+                int LA26_0 = input.LA(1);
+
+                if ( (LA26_0==RULE_ID) ) {
+                    alt26=1;
+                }
+
+
+                switch (alt26) {
+            	case 1 :
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5200:2: rule__Legend__IdsAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_rule__Legend__IdsAssignment_2_in_rule__Legend__Group__2__Impl10983);
+            	    rule__Legend__IdsAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop26;
+                }
+            } while (true);
+
+             after(grammarAccess.getLegendAccess().getIdsAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Legend__Group__3"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5210:1: rule__Legend__Group__3 : rule__Legend__Group__3__Impl ;
+    public final void rule__Legend__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5214:1: ( rule__Legend__Group__3__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5215:2: rule__Legend__Group__3__Impl
+            {
+            pushFollow(FOLLOW_rule__Legend__Group__3__Impl_in_rule__Legend__Group__311014);
+            rule__Legend__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__3"
+
+
+    // $ANTLR start "rule__Legend__Group__3__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5221:1: rule__Legend__Group__3__Impl : ( 'endlegend' ) ;
+    public final void rule__Legend__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5225:1: ( ( 'endlegend' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5226:1: ( 'endlegend' )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5226:1: ( 'endlegend' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5227:1: 'endlegend'
+            {
+             before(grammarAccess.getLegendAccess().getEndlegendKeyword_3()); 
+            match(input,180,FOLLOW_180_in_rule__Legend__Group__3__Impl11042); 
+             after(grammarAccess.getLegendAccess().getEndlegendKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Newpage__Group__0"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5248:1: rule__Newpage__Group__0 : rule__Newpage__Group__0__Impl rule__Newpage__Group__1 ;
+    public final void rule__Newpage__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5252:1: ( rule__Newpage__Group__0__Impl rule__Newpage__Group__1 )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5253:2: rule__Newpage__Group__0__Impl rule__Newpage__Group__1
+            {
+            pushFollow(FOLLOW_rule__Newpage__Group__0__Impl_in_rule__Newpage__Group__011081);
+            rule__Newpage__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Newpage__Group__1_in_rule__Newpage__Group__011084);
+            rule__Newpage__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Newpage__Group__0"
+
+
+    // $ANTLR start "rule__Newpage__Group__0__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5260:1: rule__Newpage__Group__0__Impl : ( 'newpage' ) ;
+    public final void rule__Newpage__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5264:1: ( ( 'newpage' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5265:1: ( 'newpage' )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5265:1: ( 'newpage' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5266:1: 'newpage'
+            {
+             before(grammarAccess.getNewpageAccess().getNewpageKeyword_0()); 
+            match(input,181,FOLLOW_181_in_rule__Newpage__Group__0__Impl11112); 
+             after(grammarAccess.getNewpageAccess().getNewpageKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Newpage__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Newpage__Group__1"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5279:1: rule__Newpage__Group__1 : rule__Newpage__Group__1__Impl ;
+    public final void rule__Newpage__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5283:1: ( rule__Newpage__Group__1__Impl )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5284:2: rule__Newpage__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Newpage__Group__1__Impl_in_rule__Newpage__Group__111143);
+            rule__Newpage__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Newpage__Group__1"
+
+
+    // $ANTLR start "rule__Newpage__Group__1__Impl"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5290:1: rule__Newpage__Group__1__Impl : ( ( RULE_ID )? ) ;
+    public final void rule__Newpage__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5294:1: ( ( ( RULE_ID )? ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5295:1: ( ( RULE_ID )? )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5295:1: ( ( RULE_ID )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5296:1: ( RULE_ID )?
+            {
+             before(grammarAccess.getNewpageAccess().getIDTerminalRuleCall_1()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5297:1: ( RULE_ID )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
+
+            if ( (LA27_0==RULE_ID) ) {
+                int LA27_1 = input.LA(2);
+
+                if ( (LA27_1==EOF||(LA27_1>=RULE_ML_COMMENT && LA27_1<=RULE_ID)||LA27_1==160||(LA27_1>=171 && LA27_1<=176)||(LA27_1>=178 && LA27_1<=179)||LA27_1==181) ) {
+                    alt27=1;
+                }
+            }
+            switch (alt27) {
+                case 1 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5297:3: RULE_ID
+                    {
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Newpage__Group__1__Impl11171); 
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getNewpageAccess().getIDTerminalRuleCall_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Newpage__Group__1__Impl"
+
+
     // $ANTLR start "rule__Model__DiagramsAssignment"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4923:1: rule__Model__DiagramsAssignment : ( ruleDiagram ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5312:1: rule__Model__DiagramsAssignment : ( ruleDiagram ) ;
     public final void rule__Model__DiagramsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4927:1: ( ( ruleDiagram ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4928:1: ( ruleDiagram )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5316:1: ( ( ruleDiagram ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5317:1: ( ruleDiagram )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4928:1: ( ruleDiagram )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4929:1: ruleDiagram
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5317:1: ( ruleDiagram )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5318:1: ruleDiagram
             {
              before(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleDiagram_in_rule__Model__DiagramsAssignment10407);
+            pushFollow(FOLLOW_ruleDiagram_in_rule__Model__DiagramsAssignment11211);
             ruleDiagram();
 
             state._fsp--;
@@ -12645,20 +13705,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Diagram__InstructionsAssignment_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4938:1: rule__Diagram__InstructionsAssignment_1 : ( ruleInstruction ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5327:1: rule__Diagram__InstructionsAssignment_1 : ( ruleInstruction ) ;
     public final void rule__Diagram__InstructionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4942:1: ( ( ruleInstruction ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4943:1: ( ruleInstruction )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5331:1: ( ( ruleInstruction ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5332:1: ( ruleInstruction )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4943:1: ( ruleInstruction )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4944:1: ruleInstruction
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5332:1: ( ruleInstruction )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5333:1: ruleInstruction
             {
              before(grammarAccess.getDiagramAccess().getInstructionsInstructionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Diagram__InstructionsAssignment_110438);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Diagram__InstructionsAssignment_111242);
             ruleInstruction();
 
             state._fsp--;
@@ -12686,20 +13746,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Name1Assignment_0_0"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4953:1: rule__Instruction__Name1Assignment_0_0 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5342:1: rule__Instruction__Name1Assignment_0_0 : ( RULE_ID ) ;
     public final void rule__Instruction__Name1Assignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4957:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4958:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5346:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5347:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4958:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4959:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5347:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5348:1: RULE_ID
             {
              before(grammarAccess.getInstructionAccess().getName1IDTerminalRuleCall_0_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instruction__Name1Assignment_0_010469); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instruction__Name1Assignment_0_011273); 
              after(grammarAccess.getInstructionAccess().getName1IDTerminalRuleCall_0_0_0()); 
 
             }
@@ -12723,20 +13783,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Instruction__Name2Assignment_0_2"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4968:1: rule__Instruction__Name2Assignment_0_2 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5357:1: rule__Instruction__Name2Assignment_0_2 : ( RULE_ID ) ;
     public final void rule__Instruction__Name2Assignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4972:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4973:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5361:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5362:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4973:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4974:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5362:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5363:1: RULE_ID
             {
              before(grammarAccess.getInstructionAccess().getName2IDTerminalRuleCall_0_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instruction__Name2Assignment_0_210500); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instruction__Name2Assignment_0_211304); 
              after(grammarAccess.getInstructionAccess().getName2IDTerminalRuleCall_0_2_0()); 
 
             }
@@ -12760,20 +13820,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__NameAssignment_0_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4983:1: rule__Definition__NameAssignment_0_1 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5372:1: rule__Definition__NameAssignment_0_1 : ( RULE_ID ) ;
     public final void rule__Definition__NameAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4987:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4988:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5376:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5377:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4988:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4989:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5377:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5378:1: RULE_ID
             {
              before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_0_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_0_110531); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_0_111335); 
              after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_0_1_0()); 
 
             }
@@ -12797,20 +13857,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__NameAssignment_1_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:4998:1: rule__Definition__NameAssignment_1_1 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5387:1: rule__Definition__NameAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__Definition__NameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5002:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5003:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5391:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5392:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5003:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5004:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5392:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5393:1: RULE_ID
             {
              before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_1_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_1_110562); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_1_111366); 
              after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_1_1_0()); 
 
             }
@@ -12834,20 +13894,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__NameAssignment_2_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5013:1: rule__Definition__NameAssignment_2_1 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5402:1: rule__Definition__NameAssignment_2_1 : ( RULE_ID ) ;
     public final void rule__Definition__NameAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5017:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5018:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5406:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5407:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5018:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5019:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5407:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5408:1: RULE_ID
             {
              before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_2_110593); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_2_111397); 
              after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_1_0()); 
 
             }
@@ -12871,20 +13931,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__NameAssignment_3_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5028:1: rule__Definition__NameAssignment_3_1 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5417:1: rule__Definition__NameAssignment_3_1 : ( RULE_ID ) ;
     public final void rule__Definition__NameAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5032:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5033:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5421:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5422:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5033:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5034:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5422:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5423:1: RULE_ID
             {
              before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_3_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_3_110624); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_3_111428); 
              after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_3_1_0()); 
 
             }
@@ -12908,20 +13968,20 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Definition__NameAssignment_4_1"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5043:1: rule__Definition__NameAssignment_4_1 : ( RULE_ID ) ;
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5432:1: rule__Definition__NameAssignment_4_1 : ( RULE_ID ) ;
     public final void rule__Definition__NameAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5047:1: ( ( RULE_ID ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5048:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5436:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5437:1: ( RULE_ID )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5048:1: ( RULE_ID )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5049:1: RULE_ID
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5437:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5438:1: RULE_ID
             {
              before(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_4_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_4_110655); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_4_111459); 
              after(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_4_1_0()); 
 
             }
@@ -12943,6 +14003,43 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     }
     // $ANTLR end "rule__Definition__NameAssignment_4_1"
 
+
+    // $ANTLR start "rule__Legend__IdsAssignment_2"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5447:1: rule__Legend__IdsAssignment_2 : ( RULE_ID ) ;
+    public final void rule__Legend__IdsAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5451:1: ( ( RULE_ID ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5452:1: ( RULE_ID )
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5452:1: ( RULE_ID )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5453:1: RULE_ID
+            {
+             before(grammarAccess.getLegendAccess().getIdsIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Legend__IdsAssignment_211490); 
+             after(grammarAccess.getLegendAccess().getIdsIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Legend__IdsAssignment_2"
+
     // Delegated rules
 
 
@@ -12950,37 +14047,37 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     static final String DFA3_eotS =
         "\43\uffff";
     static final String DFA3_eofS =
-        "\6\uffff\1\23\2\uffff\1\30\3\uffff\1\34\10\uffff\1\30\6\uffff\1"+
-        "\40\1\42\4\uffff";
+        "\6\uffff\1\22\1\26\3\uffff\1\34\14\uffff\1\26\4\uffff\1\40\1\42"+
+        "\4\uffff";
     static final String DFA3_minS =
-        "\1\12\2\u009f\1\uffff\1\u009f\1\u00a1\1\6\1\u009f\1\uffff\1\6\3"+
-        "\uffff\1\6\2\uffff\1\u009f\4\uffff\1\u009f\1\6\6\uffff\2\6\4\uffff";
+        "\1\12\2\u00a2\1\uffff\1\u00a2\1\u00a4\2\6\1\uffff\1\u00a2\1\uffff"+
+        "\1\6\4\uffff\1\u00a2\7\uffff\1\6\1\u00a2\3\uffff\2\6\4\uffff";
     static final String DFA3_maxS =
-        "\1\u00a6\1\u00a5\1\u00a7\1\uffff\1\u00a4\1\u00a5\1\12\1\u00a7\1"+
-        "\uffff\1\u00a6\3\uffff\1\u00a0\2\uffff\1\u009f\4\uffff\1\u00a5\1"+
-        "\u00a6\6\uffff\1\u00a6\1\u00a0\4\uffff";
+        "\1\u00a9\1\u00a8\1\u00aa\1\uffff\1\u00a7\1\u00a8\1\12\1\u00a9\1"+
+        "\uffff\1\u00aa\1\uffff\1\u00a3\4\uffff\1\u00a2\7\uffff\1\u00a9\1"+
+        "\u00a8\3\uffff\1\u00a9\1\u00a3\4\uffff";
     static final String DFA3_acceptS =
-        "\3\uffff\1\4\4\uffff\1\11\1\uffff\1\7\1\6\1\22\1\uffff\1\12\1\10"+
-        "\1\uffff\1\16\1\24\1\25\1\23\2\uffff\1\15\1\1\1\13\1\3\1\5\1\2\2"+
+        "\3\uffff\1\4\4\uffff\1\7\1\uffff\1\11\1\uffff\1\6\1\22\1\10\1\12"+
+        "\1\uffff\1\16\1\25\1\24\1\5\1\3\1\1\1\13\2\uffff\1\23\1\15\1\2\2"+
         "\uffff\1\20\1\17\1\21\1\14";
     static final String DFA3_specialS =
         "\43\uffff}>";
     static final String[] DFA3_transitionS = {
-            "\1\6\u0094\uffff\1\1\1\uffff\1\2\1\3\1\uffff\1\4\1\uffff\1"+
+            "\1\6\u0097\uffff\1\1\1\uffff\1\2\1\3\1\uffff\1\4\1\uffff\1"+
             "\5",
-            "\1\7\1\11\2\uffff\1\12\1\uffff\1\10",
-            "\1\15\1\uffff\1\13\5\uffff\1\14",
+            "\1\11\1\7\2\uffff\1\10\1\uffff\1\12",
+            "\1\13\1\uffff\1\14\5\uffff\1\15",
             "",
-            "\1\17\4\uffff\1\16",
+            "\1\16\4\uffff\1\17",
             "\1\20\3\uffff\1\21",
-            "\1\23\3\uffff\1\22",
-            "\1\25\1\26\2\uffff\1\12\1\27\1\10\1\uffff\1\24",
+            "\1\22\3\uffff\1\23",
+            "\1\26\u009c\uffff\1\24\1\uffff\1\25\3\uffff\1\27",
             "",
-            "\1\30\u0099\uffff\1\33\1\uffff\1\32\3\uffff\1\31",
+            "\1\31\1\30\2\uffff\1\10\1\33\1\12\1\uffff\1\32",
+            "",
+            "\1\34\u009b\uffff\1\34\1\35",
             "",
             "",
-            "",
-            "\1\34\u0098\uffff\1\34\1\35",
             "",
             "",
             "\1\36",
@@ -12988,16 +14085,16 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
             "",
             "",
             "",
-            "\1\25\1\26\2\uffff\1\12\1\27\1\10",
-            "\1\30\u0099\uffff\1\33\5\uffff\1\31",
             "",
             "",
             "",
+            "\1\26\u009c\uffff\1\24\5\uffff\1\27",
+            "\1\31\1\30\2\uffff\1\10\1\33\1\12",
             "",
             "",
             "",
-            "\1\40\u009f\uffff\1\37",
-            "\1\42\u0098\uffff\1\42\1\41",
+            "\1\40\u00a2\uffff\1\37",
+            "\1\42\u009b\uffff\1\42\1\41",
             "",
             "",
             "",
@@ -13034,14 +14131,14 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "296:1: rule__Sequence__Alternatives : ( ( ( rule__Sequence__Group_0__0 ) ) | ( ( rule__Sequence__Group_1__0 ) ) | ( ( rule__Sequence__Group_2__0 ) ) | ( ( rule__Sequence__Group_3__0 ) ) | ( ( rule__Sequence__Group_4__0 ) ) | ( ( rule__Sequence__Group_5__0 ) ) | ( ( rule__Sequence__Group_6__0 ) ) | ( ( rule__Sequence__Group_7__0 ) ) | ( ( rule__Sequence__Group_8__0 ) ) | ( ( rule__Sequence__Group_9__0 ) ) | ( ( rule__Sequence__Group_10__0 ) ) | ( ( rule__Sequence__Group_11__0 ) ) | ( ( rule__Sequence__Group_12__0 ) ) | ( ( rule__Sequence__Group_13__0 ) ) | ( ( rule__Sequence__Group_14__0 ) ) | ( ( rule__Sequence__Group_15__0 ) ) | ( ( rule__Sequence__Group_16__0 ) ) | ( ( rule__Sequence__Group_17__0 ) ) | ( ( rule__Sequence__Group_18__0 ) ) | ( ( rule__Sequence__Group_19__0 ) ) | ( '.' ) );";
+            return "398:1: rule__Sequence__Alternatives : ( ( ( rule__Sequence__Group_0__0 ) ) | ( ( rule__Sequence__Group_1__0 ) ) | ( ( rule__Sequence__Group_2__0 ) ) | ( ( rule__Sequence__Group_3__0 ) ) | ( ( rule__Sequence__Group_4__0 ) ) | ( ( rule__Sequence__Group_5__0 ) ) | ( ( rule__Sequence__Group_6__0 ) ) | ( ( rule__Sequence__Group_7__0 ) ) | ( ( rule__Sequence__Group_8__0 ) ) | ( ( rule__Sequence__Group_9__0 ) ) | ( ( rule__Sequence__Group_10__0 ) ) | ( ( rule__Sequence__Group_11__0 ) ) | ( ( rule__Sequence__Group_12__0 ) ) | ( ( rule__Sequence__Group_13__0 ) ) | ( ( rule__Sequence__Group_14__0 ) ) | ( ( rule__Sequence__Group_15__0 ) ) | ( ( rule__Sequence__Group_16__0 ) ) | ( ( rule__Sequence__Group_17__0 ) ) | ( ( rule__Sequence__Group_18__0 ) ) | ( ( rule__Sequence__Group_19__0 ) ) | ( '.' ) );";
         }
     }
  
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__DiagramsAssignment_in_ruleModel94 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Model__DiagramsAssignment_in_ruleModel94 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleDiagram_in_entryRuleDiagram122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDiagram129 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Diagram__Group__0_in_ruleDiagram155 = new BitSet(new long[]{0x0000000000000002L});
@@ -13060,462 +14157,499 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_ruleColor_in_entryRuleColor422 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleColor429 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Color__Group__0_in_ruleColor455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__0_in_rule__Instruction__Alternatives491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ML_COMMENT_in_rule__Instruction__Alternatives509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SL_COMMENT_in_rule__Instruction__Alternatives526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_3__0_in_rule__Instruction__Alternatives543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAutoNumber_in_rule__Instruction__Alternatives561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_0__0_in_rule__Sequence__Alternatives593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_1__0_in_rule__Sequence__Alternatives611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_2__0_in_rule__Sequence__Alternatives629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3__0_in_rule__Sequence__Alternatives647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__0_in_rule__Sequence__Alternatives665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__0_in_rule__Sequence__Alternatives683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__0_in_rule__Sequence__Alternatives701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_7__0_in_rule__Sequence__Alternatives719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_8__0_in_rule__Sequence__Alternatives737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__0_in_rule__Sequence__Alternatives755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__0_in_rule__Sequence__Alternatives773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__0_in_rule__Sequence__Alternatives791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__0_in_rule__Sequence__Alternatives809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__0_in_rule__Sequence__Alternatives827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_14__0_in_rule__Sequence__Alternatives845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__0_in_rule__Sequence__Alternatives863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__0_in_rule__Sequence__Alternatives881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__0_in_rule__Sequence__Alternatives899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__0_in_rule__Sequence__Alternatives917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_19__0_in_rule__Sequence__Alternatives935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_rule__Sequence__Alternatives954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_0__0_in_rule__Definition__Alternatives988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_1__0_in_rule__Definition__Alternatives1006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_2__0_in_rule__Definition__Alternatives1024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_3__0_in_rule__Definition__Alternatives1042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_4__0_in_rule__Definition__Alternatives1060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Color__Alternatives_11094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Color__Alternatives_11114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Color__Alternatives_11134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Color__Alternatives_11154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Color__Alternatives_11174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Color__Alternatives_11194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Color__Alternatives_11214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Color__Alternatives_11234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Color__Alternatives_11254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Color__Alternatives_11274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Color__Alternatives_11294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Color__Alternatives_11314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Color__Alternatives_11334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Color__Alternatives_11354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Color__Alternatives_11374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Color__Alternatives_11394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Color__Alternatives_11414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Color__Alternatives_11434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Color__Alternatives_11454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Color__Alternatives_11474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Color__Alternatives_11494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Color__Alternatives_11514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Color__Alternatives_11534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__Color__Alternatives_11554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Color__Alternatives_11574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Color__Alternatives_11594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Color__Alternatives_11614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Color__Alternatives_11634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__Color__Alternatives_11654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__Color__Alternatives_11674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__Color__Alternatives_11694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__Color__Alternatives_11714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__Color__Alternatives_11734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__Color__Alternatives_11754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__Color__Alternatives_11774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__Color__Alternatives_11794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__Color__Alternatives_11814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__Color__Alternatives_11834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__Color__Alternatives_11854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__Color__Alternatives_11874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_rule__Color__Alternatives_11894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rule__Color__Alternatives_11914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__Color__Alternatives_11934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__Color__Alternatives_11954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__Color__Alternatives_11974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_rule__Color__Alternatives_11994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_rule__Color__Alternatives_12014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_rule__Color__Alternatives_12034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_rule__Color__Alternatives_12054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_rule__Color__Alternatives_12074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_rule__Color__Alternatives_12094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rule__Color__Alternatives_12114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_rule__Color__Alternatives_12134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_rule__Color__Alternatives_12154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_rule__Color__Alternatives_12174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_rule__Color__Alternatives_12194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_rule__Color__Alternatives_12214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_rule__Color__Alternatives_12234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_rule__Color__Alternatives_12254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_rule__Color__Alternatives_12274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_rule__Color__Alternatives_12294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_rule__Color__Alternatives_12314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_rule__Color__Alternatives_12334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_rule__Color__Alternatives_12354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_rule__Color__Alternatives_12374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_rule__Color__Alternatives_12394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_rule__Color__Alternatives_12414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_rule__Color__Alternatives_12434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_rule__Color__Alternatives_12454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_rule__Color__Alternatives_12474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_rule__Color__Alternatives_12494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_rule__Color__Alternatives_12514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_rule__Color__Alternatives_12534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_rule__Color__Alternatives_12554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_rule__Color__Alternatives_12574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_rule__Color__Alternatives_12594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_rule__Color__Alternatives_12614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_rule__Color__Alternatives_12634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_rule__Color__Alternatives_12654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_rule__Color__Alternatives_12674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_rule__Color__Alternatives_12694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_rule__Color__Alternatives_12714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_rule__Color__Alternatives_12734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_rule__Color__Alternatives_12754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_rule__Color__Alternatives_12774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_rule__Color__Alternatives_12794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_rule__Color__Alternatives_12814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_rule__Color__Alternatives_12834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_rule__Color__Alternatives_12854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_rule__Color__Alternatives_12874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_rule__Color__Alternatives_12894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_rule__Color__Alternatives_12914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_rule__Color__Alternatives_12934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_rule__Color__Alternatives_12954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_rule__Color__Alternatives_12974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_rule__Color__Alternatives_12994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_rule__Color__Alternatives_13014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_rule__Color__Alternatives_13034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_rule__Color__Alternatives_13054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_rule__Color__Alternatives_13074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_rule__Color__Alternatives_13094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_rule__Color__Alternatives_13114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_rule__Color__Alternatives_13134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_114_in_rule__Color__Alternatives_13154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_rule__Color__Alternatives_13174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_rule__Color__Alternatives_13194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_rule__Color__Alternatives_13214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_118_in_rule__Color__Alternatives_13234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_rule__Color__Alternatives_13254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_rule__Color__Alternatives_13274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_rule__Color__Alternatives_13294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_rule__Color__Alternatives_13314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_rule__Color__Alternatives_13334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_rule__Color__Alternatives_13354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_rule__Color__Alternatives_13374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_rule__Color__Alternatives_13394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_rule__Color__Alternatives_13414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_rule__Color__Alternatives_13434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_129_in_rule__Color__Alternatives_13454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_130_in_rule__Color__Alternatives_13474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_131_in_rule__Color__Alternatives_13494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_132_in_rule__Color__Alternatives_13514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_133_in_rule__Color__Alternatives_13534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_134_in_rule__Color__Alternatives_13554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_135_in_rule__Color__Alternatives_13574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_136_in_rule__Color__Alternatives_13594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_137_in_rule__Color__Alternatives_13614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_138_in_rule__Color__Alternatives_13634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_139_in_rule__Color__Alternatives_13654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_140_in_rule__Color__Alternatives_13674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_141_in_rule__Color__Alternatives_13694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_142_in_rule__Color__Alternatives_13714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_143_in_rule__Color__Alternatives_13734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_144_in_rule__Color__Alternatives_13754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_145_in_rule__Color__Alternatives_13774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_146_in_rule__Color__Alternatives_13794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_147_in_rule__Color__Alternatives_13814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_148_in_rule__Color__Alternatives_13834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_rule__Color__Alternatives_13854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_150_in_rule__Color__Alternatives_13874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_151_in_rule__Color__Alternatives_13894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_152_in_rule__Color__Alternatives_13914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_153_in_rule__Color__Alternatives_13934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_rule__Color__Alternatives_13954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_155_in_rule__Color__Alternatives_13974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diagram__Group__0__Impl_in_rule__Diagram__Group__04006 = new BitSet(new long[]{0x0000000000000070L,0x0000000000000000L,0x00003F0020000000L});
-    public static final BitSet FOLLOW_rule__Diagram__Group__1_in_rule__Diagram__Group__04009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_156_in_rule__Diagram__Group__0__Impl4037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diagram__Group__1__Impl_in_rule__Diagram__Group__14068 = new BitSet(new long[]{0x0000000000000070L,0x0000000000000000L,0x00003F0020000000L});
-    public static final BitSet FOLLOW_rule__Diagram__Group__2_in_rule__Diagram__Group__14071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diagram__InstructionsAssignment_1_in_rule__Diagram__Group__1__Impl4098 = new BitSet(new long[]{0x0000000000000072L,0x0000000000000000L,0x00003F0000000000L});
-    public static final BitSet FOLLOW_rule__Diagram__Group__2__Impl_in_rule__Diagram__Group__24129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_157_in_rule__Diagram__Group__2__Impl4157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__0__Impl_in_rule__Instruction__Group_0__04194 = new BitSet(new long[]{0x0000000000000400L,0x0000000000000000L,0x0000005680000000L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__1_in_rule__Instruction__Group_0__04197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Name1Assignment_0_0_in_rule__Instruction__Group_0__0__Impl4224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__1__Impl_in_rule__Instruction__Group_0__14254 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__2_in_rule__Instruction__Group_0__14257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequence_in_rule__Instruction__Group_0__1__Impl4284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__2__Impl_in_rule__Instruction__Group_0__24313 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__3_in_rule__Instruction__Group_0__24316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Name2Assignment_0_2_in_rule__Instruction__Group_0__2__Impl4343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0__3__Impl_in_rule__Instruction__Group_0__34373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__0_in_rule__Instruction__Group_0__3__Impl4400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__0__Impl_in_rule__Instruction__Group_0_3__04439 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__1_in_rule__Instruction__Group_0_3__04442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_158_in_rule__Instruction__Group_0_3__0__Impl4470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__1__Impl_in_rule__Instruction__Group_0_3__14501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Instruction__Group_0_3__1__Impl4528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_3__0__Impl_in_rule__Instruction__Group_3__04561 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_3__1_in_rule__Instruction__Group_3__04564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefinition_in_rule__Instruction__Group_3__0__Impl4591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instruction__Group_3__1__Impl_in_rule__Instruction__Group_3__14620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColor_in_rule__Instruction__Group_3__1__Impl4648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_0__0__Impl_in_rule__Sequence__Group_0__04683 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_0__1_in_rule__Sequence__Group_0__04686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_0__0__Impl4715 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_0__1__Impl_in_rule__Sequence__Group_0__14748 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_0__2_in_rule__Sequence__Group_0__14751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_0__1__Impl4779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_0__2__Impl_in_rule__Sequence__Group_0__24810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_0__2__Impl4838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_1__0__Impl_in_rule__Sequence__Group_1__04875 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_1__1_in_rule__Sequence__Group_1__04878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_1__0__Impl4906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_1__1__Impl_in_rule__Sequence__Group_1__14937 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_1__2_in_rule__Sequence__Group_1__14940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_1__1__Impl4968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_1__2__Impl_in_rule__Sequence__Group_1__24999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_1__2__Impl5028 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_2__0__Impl_in_rule__Sequence__Group_2__05067 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_2__1_in_rule__Sequence__Group_2__05070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_2__0__Impl5098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_2__1__Impl_in_rule__Sequence__Group_2__15129 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_2__2_in_rule__Sequence__Group_2__15132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_2__1__Impl5160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_2__2__Impl_in_rule__Sequence__Group_2__25191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_2__2__Impl5219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3__0__Impl_in_rule__Sequence__Group_3__05256 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3__1_in_rule__Sequence__Group_3__05259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_3__0__Impl5287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3__1__Impl_in_rule__Sequence__Group_3__15318 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3__2_in_rule__Sequence__Group_3__15321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_3__1__Impl5349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3__2__Impl_in_rule__Sequence__Group_3__25380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_3__2__Impl5408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__0__Impl_in_rule__Sequence__Group_4__05445 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__1_in_rule__Sequence__Group_4__05448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_4__0__Impl5477 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__1__Impl_in_rule__Sequence__Group_4__15510 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__2_in_rule__Sequence__Group_4__15513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_4__1__Impl5541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__2__Impl_in_rule__Sequence__Group_4__25572 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__3_in_rule__Sequence__Group_4__25575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_4__2__Impl5603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_4__3__Impl_in_rule__Sequence__Group_4__35634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_4__3__Impl5662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__0__Impl_in_rule__Sequence__Group_5__05701 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__1_in_rule__Sequence__Group_5__05704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_5__0__Impl5732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__1__Impl_in_rule__Sequence__Group_5__15763 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__2_in_rule__Sequence__Group_5__15766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_5__1__Impl5794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__2__Impl_in_rule__Sequence__Group_5__25825 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__3_in_rule__Sequence__Group_5__25828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_5__2__Impl5856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_5__3__Impl_in_rule__Sequence__Group_5__35887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_5__3__Impl5916 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__0__Impl_in_rule__Sequence__Group_6__05957 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__1_in_rule__Sequence__Group_6__05960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_6__0__Impl5989 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__1__Impl_in_rule__Sequence__Group_6__16022 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__2_in_rule__Sequence__Group_6__16025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_6__1__Impl6053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__2__Impl_in_rule__Sequence__Group_6__26084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__3_in_rule__Sequence__Group_6__26087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_6__2__Impl6115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_6__3__Impl_in_rule__Sequence__Group_6__36146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_6__3__Impl6174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_7__0__Impl_in_rule__Sequence__Group_7__06213 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_7__1_in_rule__Sequence__Group_7__06216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_7__0__Impl6244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_7__1__Impl_in_rule__Sequence__Group_7__16275 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_7__2_in_rule__Sequence__Group_7__16278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_7__1__Impl6306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_7__2__Impl_in_rule__Sequence__Group_7__26337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_7__2__Impl6366 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_8__0__Impl_in_rule__Sequence__Group_8__06405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_8__1_in_rule__Sequence__Group_8__06408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_8__0__Impl6437 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_8__1__Impl_in_rule__Sequence__Group_8__16470 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_8__2_in_rule__Sequence__Group_8__16473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_8__1__Impl6501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_8__2__Impl_in_rule__Sequence__Group_8__26532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_165_in_rule__Sequence__Group_8__2__Impl6560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__0__Impl_in_rule__Sequence__Group_9__06597 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__1_in_rule__Sequence__Group_9__06600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_9__0__Impl6628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__1__Impl_in_rule__Sequence__Group_9__16659 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__2_in_rule__Sequence__Group_9__16662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_9__1__Impl6690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__2__Impl_in_rule__Sequence__Group_9__26721 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__3_in_rule__Sequence__Group_9__26724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_9__2__Impl6752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_9__3__Impl_in_rule__Sequence__Group_9__36783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_9__3__Impl6812 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__0__Impl_in_rule__Sequence__Group_10__06853 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__1_in_rule__Sequence__Group_10__06856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_10__0__Impl6885 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__1__Impl_in_rule__Sequence__Group_10__16918 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__2_in_rule__Sequence__Group_10__16921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_10__1__Impl6949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__2__Impl_in_rule__Sequence__Group_10__26980 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__3_in_rule__Sequence__Group_10__26983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_10__2__Impl7011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_10__3__Impl_in_rule__Sequence__Group_10__37042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_10__3__Impl7070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__0__Impl_in_rule__Sequence__Group_11__07109 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__1_in_rule__Sequence__Group_11__07112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_11__0__Impl7140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__1__Impl_in_rule__Sequence__Group_11__17171 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__2_in_rule__Sequence__Group_11__17174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_11__1__Impl7202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__2__Impl_in_rule__Sequence__Group_11__27233 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__3_in_rule__Sequence__Group_11__27236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_11__2__Impl7264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_11__3__Impl_in_rule__Sequence__Group_11__37295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_11__3__Impl7324 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__0__Impl_in_rule__Sequence__Group_12__07365 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__1_in_rule__Sequence__Group_12__07368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_12__0__Impl7397 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__1__Impl_in_rule__Sequence__Group_12__17430 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__2_in_rule__Sequence__Group_12__17433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_12__1__Impl7461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__2__Impl_in_rule__Sequence__Group_12__27492 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__3_in_rule__Sequence__Group_12__27495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_12__2__Impl7523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__3__Impl_in_rule__Sequence__Group_12__37554 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__4_in_rule__Sequence__Group_12__37557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_12__3__Impl7585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__4__Impl_in_rule__Sequence__Group_12__47616 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__5_in_rule__Sequence__Group_12__47619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_12__4__Impl7647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_12__5__Impl_in_rule__Sequence__Group_12__57678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_12__5__Impl7706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__0__Impl_in_rule__Sequence__Group_13__07749 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__1_in_rule__Sequence__Group_13__07752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_13__0__Impl7780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__1__Impl_in_rule__Sequence__Group_13__17811 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__2_in_rule__Sequence__Group_13__17814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_165_in_rule__Sequence__Group_13__1__Impl7842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__2__Impl_in_rule__Sequence__Group_13__27873 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__3_in_rule__Sequence__Group_13__27876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_13__2__Impl7904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__3__Impl_in_rule__Sequence__Group_13__37935 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__4_in_rule__Sequence__Group_13__37938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_13__3__Impl7966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_13__4__Impl_in_rule__Sequence__Group_13__47997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_13__4__Impl8026 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_14__0__Impl_in_rule__Sequence__Group_14__08069 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_14__1_in_rule__Sequence__Group_14__08072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_14__0__Impl8100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_14__1__Impl_in_rule__Sequence__Group_14__18131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_14__2_in_rule__Sequence__Group_14__18134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_14__1__Impl8162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_14__2__Impl_in_rule__Sequence__Group_14__28193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_14__2__Impl8221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__0__Impl_in_rule__Sequence__Group_15__08258 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__1_in_rule__Sequence__Group_15__08261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_15__0__Impl8289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__1__Impl_in_rule__Sequence__Group_15__18320 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__2_in_rule__Sequence__Group_15__18323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_15__1__Impl8351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__2__Impl_in_rule__Sequence__Group_15__28382 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__3_in_rule__Sequence__Group_15__28385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_15__2__Impl8413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_15__3__Impl_in_rule__Sequence__Group_15__38444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_15__3__Impl8472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__0__Impl_in_rule__Sequence__Group_16__08511 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__1_in_rule__Sequence__Group_16__08514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_16__0__Impl8542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__1__Impl_in_rule__Sequence__Group_16__18573 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__2_in_rule__Sequence__Group_16__18576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_16__1__Impl8604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__2__Impl_in_rule__Sequence__Group_16__28635 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__3_in_rule__Sequence__Group_16__28638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_16__2__Impl8666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_16__3__Impl_in_rule__Sequence__Group_16__38697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_16__3__Impl8725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__0__Impl_in_rule__Sequence__Group_17__08764 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__1_in_rule__Sequence__Group_17__08767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_rule__Sequence__Group_17__0__Impl8795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__1__Impl_in_rule__Sequence__Group_17__18826 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__2_in_rule__Sequence__Group_17__18829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_17__1__Impl8857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__2__Impl_in_rule__Sequence__Group_17__28888 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__3_in_rule__Sequence__Group_17__28891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_17__2__Impl8919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_17__3__Impl_in_rule__Sequence__Group_17__38950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_17__3__Impl8978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__0__Impl_in_rule__Sequence__Group_18__09017 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__1_in_rule__Sequence__Group_18__09020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_18__0__Impl9048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__1__Impl_in_rule__Sequence__Group_18__19079 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__2_in_rule__Sequence__Group_18__19082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_rule__Sequence__Group_18__1__Impl9110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__2__Impl_in_rule__Sequence__Group_18__29141 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__3_in_rule__Sequence__Group_18__29144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_18__2__Impl9172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_18__3__Impl_in_rule__Sequence__Group_18__39203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_rule__Sequence__Group_18__3__Impl9231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_19__0__Impl_in_rule__Sequence__Group_19__09270 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_19__1_in_rule__Sequence__Group_19__09273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_rule__Sequence__Group_19__0__Impl9301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_19__1__Impl_in_rule__Sequence__Group_19__19332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_10_in_rule__Sequence__Group_19__1__Impl9360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_0__0__Impl_in_rule__Definition__Group_0__09395 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Definition__Group_0__1_in_rule__Definition__Group_0__09398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_168_in_rule__Definition__Group_0__0__Impl9426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_0__1__Impl_in_rule__Definition__Group_0__19457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__NameAssignment_0_1_in_rule__Definition__Group_0__1__Impl9484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_1__0__Impl_in_rule__Definition__Group_1__09518 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Definition__Group_1__1_in_rule__Definition__Group_1__09521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_169_in_rule__Definition__Group_1__0__Impl9549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_1__1__Impl_in_rule__Definition__Group_1__19580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__NameAssignment_1_1_in_rule__Definition__Group_1__1__Impl9607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_2__0__Impl_in_rule__Definition__Group_2__09641 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Definition__Group_2__1_in_rule__Definition__Group_2__09644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_170_in_rule__Definition__Group_2__0__Impl9672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_2__1__Impl_in_rule__Definition__Group_2__19703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__NameAssignment_2_1_in_rule__Definition__Group_2__1__Impl9730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_3__0__Impl_in_rule__Definition__Group_3__09764 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Definition__Group_3__1_in_rule__Definition__Group_3__09767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_171_in_rule__Definition__Group_3__0__Impl9795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_3__1__Impl_in_rule__Definition__Group_3__19826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__NameAssignment_3_1_in_rule__Definition__Group_3__1__Impl9853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_4__0__Impl_in_rule__Definition__Group_4__09887 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Definition__Group_4__1_in_rule__Definition__Group_4__09890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_172_in_rule__Definition__Group_4__0__Impl9918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__Group_4__1__Impl_in_rule__Definition__Group_4__19949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Definition__NameAssignment_4_1_in_rule__Definition__Group_4__1__Impl9976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group__0__Impl_in_rule__AutoNumber__Group__010010 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group__1_in_rule__AutoNumber__Group__010013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_173_in_rule__AutoNumber__Group__0__Impl10041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group__1__Impl_in_rule__AutoNumber__Group__110072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__0_in_rule__AutoNumber__Group__1__Impl10099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__0__Impl_in_rule__AutoNumber__Group_1__010134 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__1_in_rule__AutoNumber__Group_1__010137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__0__Impl10164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__1__Impl_in_rule__AutoNumber__Group_1__110193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__1__Impl10221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Color__Group__0__Impl_in_rule__Color__Group__010256 = new BitSet(new long[]{0xFFFFFFFFFFFFF800L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
-    public static final BitSet FOLLOW_rule__Color__Group__1_in_rule__Color__Group__010259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_174_in_rule__Color__Group__0__Impl10290 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_174_in_rule__Color__Group__0__Impl10306 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_rule__Color__Group__1__Impl_in_rule__Color__Group__110341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Color__Alternatives_1_in_rule__Color__Group__1__Impl10368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiagram_in_rule__Model__DiagramsAssignment10407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Diagram__InstructionsAssignment_110438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Instruction__Name1Assignment_0_010469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Instruction__Name2Assignment_0_210500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_0_110531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_1_110562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_2_110593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_3_110624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_4_110655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTitle_in_entryRuleTitle482 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTitle489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Title__Group__0_in_ruleTitle515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLegend_in_entryRuleLegend542 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLegend549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Legend__Group__0_in_ruleLegend575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewpage_in_entryRuleNewpage602 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNewpage609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Newpage__Group__0_in_ruleNewpage635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__0_in_rule__Instruction__Alternatives671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ML_COMMENT_in_rule__Instruction__Alternatives689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SL_COMMENT_in_rule__Instruction__Alternatives706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_3__0_in_rule__Instruction__Alternatives723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAutoNumber_in_rule__Instruction__Alternatives741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTitle_in_rule__Instruction__Alternatives758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLegend_in_rule__Instruction__Alternatives775 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewpage_in_rule__Instruction__Alternatives792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_0__0_in_rule__Sequence__Alternatives824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_1__0_in_rule__Sequence__Alternatives842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_2__0_in_rule__Sequence__Alternatives860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3__0_in_rule__Sequence__Alternatives878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__0_in_rule__Sequence__Alternatives896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__0_in_rule__Sequence__Alternatives914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__0_in_rule__Sequence__Alternatives932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_7__0_in_rule__Sequence__Alternatives950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_8__0_in_rule__Sequence__Alternatives968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__0_in_rule__Sequence__Alternatives986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__0_in_rule__Sequence__Alternatives1004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__0_in_rule__Sequence__Alternatives1022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__0_in_rule__Sequence__Alternatives1040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__0_in_rule__Sequence__Alternatives1058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_14__0_in_rule__Sequence__Alternatives1076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__0_in_rule__Sequence__Alternatives1094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__0_in_rule__Sequence__Alternatives1112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__0_in_rule__Sequence__Alternatives1130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__0_in_rule__Sequence__Alternatives1148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_19__0_in_rule__Sequence__Alternatives1166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_10_in_rule__Sequence__Alternatives1185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_0__0_in_rule__Definition__Alternatives1219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_1__0_in_rule__Definition__Alternatives1237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_2__0_in_rule__Definition__Alternatives1255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_3__0_in_rule__Definition__Alternatives1273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_4__0_in_rule__Definition__Alternatives1291 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Color__Alternatives_11325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Color__Alternatives_11345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Color__Alternatives_11365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Color__Alternatives_11385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Color__Alternatives_11405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Color__Alternatives_11425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Color__Alternatives_11445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Color__Alternatives_11465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Color__Alternatives_11485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Color__Alternatives_11505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Color__Alternatives_11525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Color__Alternatives_11545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Color__Alternatives_11565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Color__Alternatives_11585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Color__Alternatives_11605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Color__Alternatives_11625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Color__Alternatives_11645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Color__Alternatives_11665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Color__Alternatives_11685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Color__Alternatives_11705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Color__Alternatives_11725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Color__Alternatives_11745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__Color__Alternatives_11765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__Color__Alternatives_11785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Color__Alternatives_11805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__Color__Alternatives_11825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Color__Alternatives_11845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Color__Alternatives_11865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__Color__Alternatives_11885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__Color__Alternatives_11905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__Color__Alternatives_11925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__Color__Alternatives_11945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__Color__Alternatives_11965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__Color__Alternatives_11985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__Color__Alternatives_12005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__Color__Alternatives_12025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_rule__Color__Alternatives_12045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__Color__Alternatives_12065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rule__Color__Alternatives_12085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__Color__Alternatives_12105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_rule__Color__Alternatives_12125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_rule__Color__Alternatives_12145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__Color__Alternatives_12165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__Color__Alternatives_12185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__Color__Alternatives_12205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_rule__Color__Alternatives_12225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_rule__Color__Alternatives_12245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_rule__Color__Alternatives_12265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_rule__Color__Alternatives_12285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_rule__Color__Alternatives_12305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_rule__Color__Alternatives_12325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rule__Color__Alternatives_12345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_rule__Color__Alternatives_12365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_rule__Color__Alternatives_12385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_rule__Color__Alternatives_12405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_rule__Color__Alternatives_12425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_rule__Color__Alternatives_12445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_rule__Color__Alternatives_12465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_rule__Color__Alternatives_12485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_rule__Color__Alternatives_12505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_rule__Color__Alternatives_12525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_rule__Color__Alternatives_12545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_rule__Color__Alternatives_12565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_rule__Color__Alternatives_12585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_rule__Color__Alternatives_12605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_rule__Color__Alternatives_12625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_rule__Color__Alternatives_12645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_rule__Color__Alternatives_12665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_rule__Color__Alternatives_12685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_rule__Color__Alternatives_12705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_rule__Color__Alternatives_12725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_rule__Color__Alternatives_12745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_rule__Color__Alternatives_12765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_84_in_rule__Color__Alternatives_12785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_rule__Color__Alternatives_12805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_rule__Color__Alternatives_12825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_rule__Color__Alternatives_12845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_rule__Color__Alternatives_12865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_rule__Color__Alternatives_12885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_rule__Color__Alternatives_12905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_rule__Color__Alternatives_12925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_rule__Color__Alternatives_12945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_rule__Color__Alternatives_12965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_rule__Color__Alternatives_12985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_rule__Color__Alternatives_13005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_96_in_rule__Color__Alternatives_13025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_97_in_rule__Color__Alternatives_13045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_rule__Color__Alternatives_13065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_rule__Color__Alternatives_13085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_rule__Color__Alternatives_13105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_101_in_rule__Color__Alternatives_13125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_rule__Color__Alternatives_13145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_rule__Color__Alternatives_13165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_rule__Color__Alternatives_13185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_rule__Color__Alternatives_13205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_rule__Color__Alternatives_13225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_rule__Color__Alternatives_13245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_rule__Color__Alternatives_13265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_rule__Color__Alternatives_13285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_rule__Color__Alternatives_13305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_rule__Color__Alternatives_13325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_rule__Color__Alternatives_13345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_rule__Color__Alternatives_13365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_114_in_rule__Color__Alternatives_13385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_rule__Color__Alternatives_13405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_rule__Color__Alternatives_13425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_rule__Color__Alternatives_13445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_118_in_rule__Color__Alternatives_13465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_rule__Color__Alternatives_13485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_rule__Color__Alternatives_13505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_rule__Color__Alternatives_13525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_rule__Color__Alternatives_13545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_rule__Color__Alternatives_13565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_rule__Color__Alternatives_13585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_rule__Color__Alternatives_13605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_rule__Color__Alternatives_13625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_rule__Color__Alternatives_13645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_rule__Color__Alternatives_13665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_129_in_rule__Color__Alternatives_13685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_130_in_rule__Color__Alternatives_13705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_131_in_rule__Color__Alternatives_13725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_132_in_rule__Color__Alternatives_13745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_rule__Color__Alternatives_13765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_rule__Color__Alternatives_13785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_rule__Color__Alternatives_13805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_136_in_rule__Color__Alternatives_13825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_137_in_rule__Color__Alternatives_13845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_rule__Color__Alternatives_13865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_rule__Color__Alternatives_13885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_140_in_rule__Color__Alternatives_13905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_141_in_rule__Color__Alternatives_13925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_rule__Color__Alternatives_13945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_143_in_rule__Color__Alternatives_13965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_rule__Color__Alternatives_13985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_rule__Color__Alternatives_14005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_rule__Color__Alternatives_14025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_rule__Color__Alternatives_14045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_148_in_rule__Color__Alternatives_14065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_rule__Color__Alternatives_14085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_rule__Color__Alternatives_14105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_151_in_rule__Color__Alternatives_14125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_rule__Color__Alternatives_14145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_rule__Color__Alternatives_14165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_rule__Color__Alternatives_14185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_rule__Color__Alternatives_14205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_156_in_rule__Legend__Alternatives_14240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_157_in_rule__Legend__Alternatives_14260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_158_in_rule__Legend__Alternatives_14280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diagram__Group__0__Impl_in_rule__Diagram__Group__04312 = new BitSet(new long[]{0x0000000000000070L,0x0000000000000000L,0x002DF80100000000L});
+    public static final BitSet FOLLOW_rule__Diagram__Group__1_in_rule__Diagram__Group__04315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_159_in_rule__Diagram__Group__0__Impl4343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diagram__Group__1__Impl_in_rule__Diagram__Group__14374 = new BitSet(new long[]{0x0000000000000070L,0x0000000000000000L,0x002DF80100000000L});
+    public static final BitSet FOLLOW_rule__Diagram__Group__2_in_rule__Diagram__Group__14377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diagram__InstructionsAssignment_1_in_rule__Diagram__Group__1__Impl4404 = new BitSet(new long[]{0x0000000000000072L,0x0000000000000000L,0x002DF80000000000L});
+    public static final BitSet FOLLOW_rule__Diagram__Group__2__Impl_in_rule__Diagram__Group__24435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_160_in_rule__Diagram__Group__2__Impl4463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__0__Impl_in_rule__Instruction__Group_0__04500 = new BitSet(new long[]{0x0000000000000400L,0x0000000000000000L,0x000002B400000000L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__1_in_rule__Instruction__Group_0__04503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Name1Assignment_0_0_in_rule__Instruction__Group_0__0__Impl4530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__1__Impl_in_rule__Instruction__Group_0__14560 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__2_in_rule__Instruction__Group_0__14563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSequence_in_rule__Instruction__Group_0__1__Impl4590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__2__Impl_in_rule__Instruction__Group_0__24619 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__3_in_rule__Instruction__Group_0__24622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Name2Assignment_0_2_in_rule__Instruction__Group_0__2__Impl4649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0__3__Impl_in_rule__Instruction__Group_0__34679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__0_in_rule__Instruction__Group_0__3__Impl4706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__0__Impl_in_rule__Instruction__Group_0_3__04745 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__1_in_rule__Instruction__Group_0_3__04748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_161_in_rule__Instruction__Group_0_3__0__Impl4776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_0_3__1__Impl_in_rule__Instruction__Group_0_3__14807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instruction__Group_0_3__1__Impl4834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_3__0__Impl_in_rule__Instruction__Group_3__04867 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_3__1_in_rule__Instruction__Group_3__04870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefinition_in_rule__Instruction__Group_3__0__Impl4897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instruction__Group_3__1__Impl_in_rule__Instruction__Group_3__14926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColor_in_rule__Instruction__Group_3__1__Impl4954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_0__0__Impl_in_rule__Sequence__Group_0__04989 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_0__1_in_rule__Sequence__Group_0__04992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_0__0__Impl5021 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_0__1__Impl_in_rule__Sequence__Group_0__15054 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_0__2_in_rule__Sequence__Group_0__15057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_0__1__Impl5085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_0__2__Impl_in_rule__Sequence__Group_0__25116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_0__2__Impl5144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_1__0__Impl_in_rule__Sequence__Group_1__05181 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_1__1_in_rule__Sequence__Group_1__05184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_1__0__Impl5212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_1__1__Impl_in_rule__Sequence__Group_1__15243 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_1__2_in_rule__Sequence__Group_1__15246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_1__1__Impl5274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_1__2__Impl_in_rule__Sequence__Group_1__25305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_1__2__Impl5334 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_2__0__Impl_in_rule__Sequence__Group_2__05373 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_2__1_in_rule__Sequence__Group_2__05376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_2__0__Impl5404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_2__1__Impl_in_rule__Sequence__Group_2__15435 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_2__2_in_rule__Sequence__Group_2__15438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_2__1__Impl5466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_2__2__Impl_in_rule__Sequence__Group_2__25497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_rule__Sequence__Group_2__2__Impl5525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3__0__Impl_in_rule__Sequence__Group_3__05562 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3__1_in_rule__Sequence__Group_3__05565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_rule__Sequence__Group_3__0__Impl5593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3__1__Impl_in_rule__Sequence__Group_3__15624 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3__2_in_rule__Sequence__Group_3__15627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_3__1__Impl5655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3__2__Impl_in_rule__Sequence__Group_3__25686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_3__2__Impl5714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__0__Impl_in_rule__Sequence__Group_4__05751 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__1_in_rule__Sequence__Group_4__05754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_4__0__Impl5783 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__1__Impl_in_rule__Sequence__Group_4__15816 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__2_in_rule__Sequence__Group_4__15819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_4__1__Impl5847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__2__Impl_in_rule__Sequence__Group_4__25878 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__3_in_rule__Sequence__Group_4__25881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_4__2__Impl5909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_4__3__Impl_in_rule__Sequence__Group_4__35940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_4__3__Impl5968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__0__Impl_in_rule__Sequence__Group_5__06007 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__1_in_rule__Sequence__Group_5__06010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_5__0__Impl6038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__1__Impl_in_rule__Sequence__Group_5__16069 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__2_in_rule__Sequence__Group_5__16072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_5__1__Impl6100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__2__Impl_in_rule__Sequence__Group_5__26131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__3_in_rule__Sequence__Group_5__26134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_5__2__Impl6162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_5__3__Impl_in_rule__Sequence__Group_5__36193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_5__3__Impl6222 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__0__Impl_in_rule__Sequence__Group_6__06263 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__1_in_rule__Sequence__Group_6__06266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_6__0__Impl6295 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__1__Impl_in_rule__Sequence__Group_6__16328 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__2_in_rule__Sequence__Group_6__16331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_6__1__Impl6359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__2__Impl_in_rule__Sequence__Group_6__26390 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__3_in_rule__Sequence__Group_6__26393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_6__2__Impl6421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_6__3__Impl_in_rule__Sequence__Group_6__36452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_rule__Sequence__Group_6__3__Impl6480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_7__0__Impl_in_rule__Sequence__Group_7__06519 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_7__1_in_rule__Sequence__Group_7__06522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_7__0__Impl6550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_7__1__Impl_in_rule__Sequence__Group_7__16581 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_7__2_in_rule__Sequence__Group_7__16584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_7__1__Impl6612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_7__2__Impl_in_rule__Sequence__Group_7__26643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_7__2__Impl6672 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_8__0__Impl_in_rule__Sequence__Group_8__06711 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_8__1_in_rule__Sequence__Group_8__06714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_8__0__Impl6743 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_8__1__Impl_in_rule__Sequence__Group_8__16776 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_8__2_in_rule__Sequence__Group_8__16779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_8__1__Impl6807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_8__2__Impl_in_rule__Sequence__Group_8__26838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_rule__Sequence__Group_8__2__Impl6866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__0__Impl_in_rule__Sequence__Group_9__06903 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__1_in_rule__Sequence__Group_9__06906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_9__0__Impl6934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__1__Impl_in_rule__Sequence__Group_9__16965 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__2_in_rule__Sequence__Group_9__16968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_9__1__Impl6996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__2__Impl_in_rule__Sequence__Group_9__27027 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__3_in_rule__Sequence__Group_9__27030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_9__2__Impl7058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_9__3__Impl_in_rule__Sequence__Group_9__37089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_9__3__Impl7118 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__0__Impl_in_rule__Sequence__Group_10__07159 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__1_in_rule__Sequence__Group_10__07162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_10__0__Impl7191 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__1__Impl_in_rule__Sequence__Group_10__17224 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__2_in_rule__Sequence__Group_10__17227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_10__1__Impl7255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__2__Impl_in_rule__Sequence__Group_10__27286 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__3_in_rule__Sequence__Group_10__27289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_10__2__Impl7317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_10__3__Impl_in_rule__Sequence__Group_10__37348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__Sequence__Group_10__3__Impl7376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__0__Impl_in_rule__Sequence__Group_11__07415 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__1_in_rule__Sequence__Group_11__07418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__Sequence__Group_11__0__Impl7446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__1__Impl_in_rule__Sequence__Group_11__17477 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__2_in_rule__Sequence__Group_11__17480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_11__1__Impl7508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__2__Impl_in_rule__Sequence__Group_11__27539 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__3_in_rule__Sequence__Group_11__27542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_11__2__Impl7570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_11__3__Impl_in_rule__Sequence__Group_11__37601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_11__3__Impl7630 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__0__Impl_in_rule__Sequence__Group_12__07671 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__1_in_rule__Sequence__Group_12__07674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_12__0__Impl7703 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__1__Impl_in_rule__Sequence__Group_12__17736 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__2_in_rule__Sequence__Group_12__17739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_12__1__Impl7767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__2__Impl_in_rule__Sequence__Group_12__27798 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__3_in_rule__Sequence__Group_12__27801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_12__2__Impl7829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__3__Impl_in_rule__Sequence__Group_12__37860 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__4_in_rule__Sequence__Group_12__37863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_12__3__Impl7891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__4__Impl_in_rule__Sequence__Group_12__47922 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__5_in_rule__Sequence__Group_12__47925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_rule__Sequence__Group_12__4__Impl7953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_12__5__Impl_in_rule__Sequence__Group_12__57984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__Sequence__Group_12__5__Impl8012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__0__Impl_in_rule__Sequence__Group_13__08055 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__1_in_rule__Sequence__Group_13__08058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__Sequence__Group_13__0__Impl8086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__1__Impl_in_rule__Sequence__Group_13__18117 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__2_in_rule__Sequence__Group_13__18120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_rule__Sequence__Group_13__1__Impl8148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__2__Impl_in_rule__Sequence__Group_13__28179 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__3_in_rule__Sequence__Group_13__28182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_13__2__Impl8210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__3__Impl_in_rule__Sequence__Group_13__38241 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__4_in_rule__Sequence__Group_13__38244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_13__3__Impl8272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_13__4__Impl_in_rule__Sequence__Group_13__48303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_13__4__Impl8332 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_14__0__Impl_in_rule__Sequence__Group_14__08375 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_14__1_in_rule__Sequence__Group_14__08378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_14__0__Impl8406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_14__1__Impl_in_rule__Sequence__Group_14__18437 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_14__2_in_rule__Sequence__Group_14__18440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_14__1__Impl8468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_14__2__Impl_in_rule__Sequence__Group_14__28499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_14__2__Impl8527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__0__Impl_in_rule__Sequence__Group_15__08564 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__1_in_rule__Sequence__Group_15__08567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_15__0__Impl8595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__1__Impl_in_rule__Sequence__Group_15__18626 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__2_in_rule__Sequence__Group_15__18629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_15__1__Impl8657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__2__Impl_in_rule__Sequence__Group_15__28688 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__3_in_rule__Sequence__Group_15__28691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_15__2__Impl8719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_15__3__Impl_in_rule__Sequence__Group_15__38750 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__Sequence__Group_15__3__Impl8778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__0__Impl_in_rule__Sequence__Group_16__08817 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__1_in_rule__Sequence__Group_16__08820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_rule__Sequence__Group_16__0__Impl8848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__1__Impl_in_rule__Sequence__Group_16__18879 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__2_in_rule__Sequence__Group_16__18882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_16__1__Impl8910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__2__Impl_in_rule__Sequence__Group_16__28941 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__3_in_rule__Sequence__Group_16__28944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_16__2__Impl8972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_16__3__Impl_in_rule__Sequence__Group_16__39003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_16__3__Impl9031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__0__Impl_in_rule__Sequence__Group_17__09070 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000040000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__1_in_rule__Sequence__Group_17__09073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_rule__Sequence__Group_17__0__Impl9101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__1__Impl_in_rule__Sequence__Group_17__19132 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__2_in_rule__Sequence__Group_17__19135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_rule__Sequence__Group_17__1__Impl9163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__2__Impl_in_rule__Sequence__Group_17__29194 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__3_in_rule__Sequence__Group_17__29197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_17__2__Impl9225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_17__3__Impl_in_rule__Sequence__Group_17__39256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_17__3__Impl9284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__0__Impl_in_rule__Sequence__Group_18__09323 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__1_in_rule__Sequence__Group_18__09326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_18__0__Impl9354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__1__Impl_in_rule__Sequence__Group_18__19385 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000040000000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__2_in_rule__Sequence__Group_18__19388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_rule__Sequence__Group_18__1__Impl9416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__2__Impl_in_rule__Sequence__Group_18__29447 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__3_in_rule__Sequence__Group_18__29450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_rule__Sequence__Group_18__2__Impl9478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_18__3__Impl_in_rule__Sequence__Group_18__39509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_rule__Sequence__Group_18__3__Impl9537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_19__0__Impl_in_rule__Sequence__Group_19__09576 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_19__1_in_rule__Sequence__Group_19__09579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_10_in_rule__Sequence__Group_19__0__Impl9607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_19__1__Impl_in_rule__Sequence__Group_19__19638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_10_in_rule__Sequence__Group_19__1__Impl9666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_0__0__Impl_in_rule__Definition__Group_0__09701 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Definition__Group_0__1_in_rule__Definition__Group_0__09704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_171_in_rule__Definition__Group_0__0__Impl9732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_0__1__Impl_in_rule__Definition__Group_0__19763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__NameAssignment_0_1_in_rule__Definition__Group_0__1__Impl9790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_1__0__Impl_in_rule__Definition__Group_1__09824 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Definition__Group_1__1_in_rule__Definition__Group_1__09827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_172_in_rule__Definition__Group_1__0__Impl9855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_1__1__Impl_in_rule__Definition__Group_1__19886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__NameAssignment_1_1_in_rule__Definition__Group_1__1__Impl9913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_2__0__Impl_in_rule__Definition__Group_2__09947 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Definition__Group_2__1_in_rule__Definition__Group_2__09950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_173_in_rule__Definition__Group_2__0__Impl9978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_2__1__Impl_in_rule__Definition__Group_2__110009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__NameAssignment_2_1_in_rule__Definition__Group_2__1__Impl10036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_3__0__Impl_in_rule__Definition__Group_3__010070 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Definition__Group_3__1_in_rule__Definition__Group_3__010073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_174_in_rule__Definition__Group_3__0__Impl10101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_3__1__Impl_in_rule__Definition__Group_3__110132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__NameAssignment_3_1_in_rule__Definition__Group_3__1__Impl10159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_4__0__Impl_in_rule__Definition__Group_4__010193 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Definition__Group_4__1_in_rule__Definition__Group_4__010196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_rule__Definition__Group_4__0__Impl10224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__Group_4__1__Impl_in_rule__Definition__Group_4__110255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Definition__NameAssignment_4_1_in_rule__Definition__Group_4__1__Impl10282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group__0__Impl_in_rule__AutoNumber__Group__010316 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group__1_in_rule__AutoNumber__Group__010319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_176_in_rule__AutoNumber__Group__0__Impl10347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group__1__Impl_in_rule__AutoNumber__Group__110378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__0_in_rule__AutoNumber__Group__1__Impl10405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__0__Impl_in_rule__AutoNumber__Group_1__010440 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__1_in_rule__AutoNumber__Group_1__010443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__0__Impl10470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AutoNumber__Group_1__1__Impl_in_rule__AutoNumber__Group_1__110499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__AutoNumber__Group_1__1__Impl10527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Color__Group__0__Impl_in_rule__Color__Group__010562 = new BitSet(new long[]{0xFFFFFFFFFFFFF800L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_rule__Color__Group__1_in_rule__Color__Group__010565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_rule__Color__Group__0__Impl10596 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_177_in_rule__Color__Group__0__Impl10612 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_rule__Color__Group__1__Impl_in_rule__Color__Group__110647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Color__Alternatives_1_in_rule__Color__Group__1__Impl10674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Title__Group__0__Impl_in_rule__Title__Group__010708 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Title__Group__1_in_rule__Title__Group__010711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_178_in_rule__Title__Group__0__Impl10739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Title__Group__1__Impl_in_rule__Title__Group__110770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Title__Group__1__Impl10797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Legend__Group__0__Impl_in_rule__Legend__Group__010830 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0010000070000000L});
+    public static final BitSet FOLLOW_rule__Legend__Group__1_in_rule__Legend__Group__010833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_179_in_rule__Legend__Group__0__Impl10861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Legend__Group__1__Impl_in_rule__Legend__Group__110892 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0010000070000000L});
+    public static final BitSet FOLLOW_rule__Legend__Group__2_in_rule__Legend__Group__110895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Legend__Alternatives_1_in_rule__Legend__Group__1__Impl10922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Legend__Group__2__Impl_in_rule__Legend__Group__210953 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0010000070000000L});
+    public static final BitSet FOLLOW_rule__Legend__Group__3_in_rule__Legend__Group__210956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Legend__IdsAssignment_2_in_rule__Legend__Group__2__Impl10983 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_rule__Legend__Group__3__Impl_in_rule__Legend__Group__311014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_180_in_rule__Legend__Group__3__Impl11042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Newpage__Group__0__Impl_in_rule__Newpage__Group__011081 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Newpage__Group__1_in_rule__Newpage__Group__011084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_181_in_rule__Newpage__Group__0__Impl11112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Newpage__Group__1__Impl_in_rule__Newpage__Group__111143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Newpage__Group__1__Impl11171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDiagram_in_rule__Model__DiagramsAssignment11211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Diagram__InstructionsAssignment_111242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instruction__Name1Assignment_0_011273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instruction__Name2Assignment_0_211304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_0_111335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_1_111366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_2_111397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_3_111428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Definition__NameAssignment_4_111459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Legend__IdsAssignment_211490 = new BitSet(new long[]{0x0000000000000002L});
 
 }

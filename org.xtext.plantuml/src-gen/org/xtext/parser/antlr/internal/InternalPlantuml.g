@@ -252,6 +252,34 @@ ruleAutoNumber
     { 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getInstructionAccess().getTitleParserRuleCall_5()); 
+    }
+ruleTitle
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getInstructionAccess().getLegendParserRuleCall_6()); 
+    }
+    this_Legend_11=ruleLegend
+    { 
+        $current = $this_Legend_11.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getInstructionAccess().getNewpageParserRuleCall_7()); 
+    }
+ruleNewpage
+    { 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1961,6 +1989,135 @@ ruleColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         newLeafNode(kw, grammarAccess.getColorAccess().getYellowGreenKeyword_1_144()); 
     }
 ))
+    ;
+
+
+
+
+
+// Entry rule entryRuleTitle
+entryRuleTitle returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTitleRule()); } 
+	 iv_ruleTitle=ruleTitle 
+	 { $current=$iv_ruleTitle.current.getText(); }  
+	 EOF 
+;
+
+// Rule Title
+ruleTitle returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='title' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTitleAccess().getTitleKeyword_0()); 
+    }
+    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getTitleAccess().getIDTerminalRuleCall_1()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleLegend
+entryRuleLegend returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLegendRule()); }
+	 iv_ruleLegend=ruleLegend 
+	 { $current=$iv_ruleLegend.current; } 
+	 EOF 
+;
+
+// Rule Legend
+ruleLegend returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='legend' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getLegendAccess().getLegendKeyword_0());
+    }
+(	otherlv_1='right' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getLegendAccess().getRightKeyword_1_0());
+    }
+
+    |	otherlv_2='left' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getLegendAccess().getLeftKeyword_1_1());
+    }
+
+    |	otherlv_3='center' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getLegendAccess().getCenterKeyword_1_2());
+    }
+)?(
+(
+		lv_ids_4_0=RULE_ID
+		{
+			newLeafNode(lv_ids_4_0, grammarAccess.getLegendAccess().getIdsIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLegendRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"ids",
+        		lv_ids_4_0, 
+        		"ID");
+	    }
+
+)
+)*	otherlv_5='endlegend' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getLegendAccess().getEndlegendKeyword_3());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleNewpage
+entryRuleNewpage returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNewpageRule()); } 
+	 iv_ruleNewpage=ruleNewpage 
+	 { $current=$iv_ruleNewpage.current.getText(); }  
+	 EOF 
+;
+
+// Rule Newpage
+ruleNewpage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='newpage' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNewpageAccess().getNewpageKeyword_0()); 
+    }
+(    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getNewpageAccess().getIDTerminalRuleCall_1()); 
+    }
+)?)
     ;
 
 

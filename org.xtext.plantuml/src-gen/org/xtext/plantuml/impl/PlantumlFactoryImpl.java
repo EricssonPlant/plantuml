@@ -68,6 +68,7 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
       case PlantumlPackage.DIAGRAM: return createDiagram();
       case PlantumlPackage.INSTRUCTION: return createInstruction();
       case PlantumlPackage.DEFINITION: return createDefinition();
+      case PlantumlPackage.LEGEND: return createLegend();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -115,6 +116,17 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     DefinitionImpl definition = new DefinitionImpl();
     return definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Legend createLegend()
+  {
+    LegendImpl legend = new LegendImpl();
+    return legend;
   }
 
   /**

@@ -19,15 +19,20 @@ Diagram:
 	'@startuml' (instructions+=Instruction)* '@enduml'
 ;
 
-// An instruction is either a sequence or a comment, or an autonumber command
+// An instruction can be any of the rules for single- and multiline commands.
 Instruction:
 	(name1=ID Sequence name2=ID (':' ID)?) 
 	| ML_COMMENT
 	| SL_COMMENT
 	| Definition (Color)?
 	| AutoNumber
+	| Title
+	| Legend
+	| Newpage
 ;
 
+// Rule for sequences.
+// A sequence is any of the following arrows:
 Sequence:
 	('\u002D')* '\u002D' '\u003E'						// - = u002D  | > = u003E
 	| '\u003C' '\u002D' ('\u002D')* 						// < = u003C  | - = u002D
@@ -70,7 +75,8 @@ AutoNumber:
 	'autonumber' (INT (INT)?)?
 ;
 
-// Rule for colors
+// Rule for all the color. Color begins with # followed by the name of the color.
+// TODO: Fix to ignore lower/uppercase.
 Color:
 	'#'+('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
 	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
@@ -95,11 +101,39 @@ Color:
 	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
 ;
 
+// Rule for the title of the diagram
+// TODO: Fix ID -> STRING. Title can only be one word atm.
+Title:
+	'title' ID
+;
+
+// Rule for legends.
+// TODO: Fix ID -> STRING
+// TODO: Fix \n after alignment call
+Legend:
+	'legend' (('right' | 'left' | 'center') )? (ids+=ID)* 'endlegend'
+;
+
+// Rule for newpages
+// TODO: Fix ID -> STRING
+Newpage:
+	'newpage' (ID)?
+;
+
 // Terminals
+//--------------------------------------------------
+
+// Multiline comment begins with /', and ends with '/
 terminal ML_COMMENT : '/\'' -> '\'/';
+
+// Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
 
+// ID can be any following sequence of letters and numbers, without spaces between them.
+// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+
+// INT is a sequence of numbers 0-9.
 terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal WS			: (' '|'\t'|'\r'|'\n')+;

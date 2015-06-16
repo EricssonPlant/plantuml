@@ -37,15 +37,17 @@ public class PlantumlParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
+					put(grammarAccess.getInstructionAccess().getAlternatives_0(), "rule__Instruction__Alternatives_0");
 					put(grammarAccess.getSequenceAccess().getAlternatives(), "rule__Sequence__Alternatives");
 					put(grammarAccess.getDefinitionAccess().getAlternatives(), "rule__Definition__Alternatives");
 					put(grammarAccess.getColorAccess().getAlternatives_1(), "rule__Color__Alternatives_1");
 					put(grammarAccess.getLegendAccess().getAlternatives_1(), "rule__Legend__Alternatives_1");
+					put(grammarAccess.getLegendAccess().getAlternatives_2(), "rule__Legend__Alternatives_2");
 					put(grammarAccess.getDiagramAccess().getGroup(), "rule__Diagram__Group__0");
-					put(grammarAccess.getInstructionAccess().getGroup_0(), "rule__Instruction__Group_0__0");
-					put(grammarAccess.getInstructionAccess().getGroup_0_3(), "rule__Instruction__Group_0_3__0");
-					put(grammarAccess.getInstructionAccess().getGroup_3(), "rule__Instruction__Group_3__0");
+					put(grammarAccess.getInstructionAccess().getGroup(), "rule__Instruction__Group__0");
+					put(grammarAccess.getInstructionAccess().getGroup_0_0(), "rule__Instruction__Group_0_0__0");
+					put(grammarAccess.getInstructionAccess().getGroup_0_0_3(), "rule__Instruction__Group_0_0_3__0");
+					put(grammarAccess.getInstructionAccess().getGroup_0_1(), "rule__Instruction__Group_0_1__0");
 					put(grammarAccess.getSequenceAccess().getGroup_0(), "rule__Sequence__Group_0__0");
 					put(grammarAccess.getSequenceAccess().getGroup_1(), "rule__Sequence__Group_1__0");
 					put(grammarAccess.getSequenceAccess().getGroup_2(), "rule__Sequence__Group_2__0");
@@ -76,17 +78,17 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getColorAccess().getGroup(), "rule__Color__Group__0");
 					put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
 					put(grammarAccess.getLegendAccess().getGroup(), "rule__Legend__Group__0");
+					put(grammarAccess.getLegendAccess().getGroup_2_0(), "rule__Legend__Group_2_0__0");
 					put(grammarAccess.getNewpageAccess().getGroup(), "rule__Newpage__Group__0");
 					put(grammarAccess.getModelAccess().getDiagramsAssignment(), "rule__Model__DiagramsAssignment");
-					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_1(), "rule__Diagram__InstructionsAssignment_1");
-					put(grammarAccess.getInstructionAccess().getName1Assignment_0_0(), "rule__Instruction__Name1Assignment_0_0");
-					put(grammarAccess.getInstructionAccess().getName2Assignment_0_2(), "rule__Instruction__Name2Assignment_0_2");
+					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_2(), "rule__Diagram__InstructionsAssignment_2");
+					put(grammarAccess.getInstructionAccess().getName1Assignment_0_0_0(), "rule__Instruction__Name1Assignment_0_0_0");
+					put(grammarAccess.getInstructionAccess().getName2Assignment_0_0_2(), "rule__Instruction__Name2Assignment_0_0_2");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_0_1(), "rule__Definition__NameAssignment_0_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_1_1(), "rule__Definition__NameAssignment_1_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_2_1(), "rule__Definition__NameAssignment_2_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_3_1(), "rule__Definition__NameAssignment_3_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_4_1(), "rule__Definition__NameAssignment_4_1");
-					put(grammarAccess.getLegendAccess().getIdsAssignment_2(), "rule__Legend__IdsAssignment_2");
 				}
 			};
 		}
@@ -106,7 +108,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_SL_COMMENT" };
+		return new String[] { "RULE_WS", "RULE_SL_COMMENT", "RULE_ML_COMMENT" };
 	}
 	
 	public PlantumlGrammarAccess getGrammarAccess() {

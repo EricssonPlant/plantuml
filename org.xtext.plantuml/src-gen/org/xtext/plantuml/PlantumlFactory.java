@@ -59,15 +59,6 @@ public interface PlantumlFactory extends EFactory
   Definition createDefinition();
 
   /**
-   * Returns a new object of class '<em>Legend</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Legend</em>'.
-   * @generated
-   */
-  Legend createLegend();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

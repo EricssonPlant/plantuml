@@ -39,12 +39,12 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int T__135=135;
     public static final int T__61=61;
     public static final int T__134=134;
-    public static final int RULE_ID=6;
+    public static final int RULE_ID=5;
     public static final int T__131=131;
     public static final int T__130=130;
-    public static final int RULE_INT=7;
+    public static final int RULE_INT=6;
     public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=4;
+    public static final int RULE_ML_COMMENT=7;
     public static final int T__67=67;
     public static final int T__129=129;
     public static final int T__68=68;
@@ -64,6 +64,7 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int T__162=162;
     public static final int T__161=161;
     public static final int T__164=164;
+    public static final int RULE_NEWLINE=4;
     public static final int T__163=163;
     public static final int T__160=160;
     public static final int T__37=37;
@@ -108,6 +109,7 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int T__101=101;
     public static final int T__90=90;
     public static final int T__180=180;
+    public static final int T__182=182;
     public static final int T__181=181;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -122,7 +124,6 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int T__95=95;
     public static final int T__96=96;
     public static final int T__97=97;
-    public static final int T__10=10;
     public static final int T__98=98;
     public static final int T__177=177;
     public static final int T__176=176;
@@ -153,7 +154,7 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int T__72=72;
     public static final int T__123=123;
     public static final int T__120=120;
-    public static final int RULE_SL_COMMENT=5;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__77=77;
     public static final int T__119=119;
     public static final int T__78=78;
@@ -176,8 +177,8 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int T__113=113;
     public static final int T__83=83;
     public static final int T__112=112;
-    public static final int RULE_WS=8;
-    public static final int RULE_ANY_OTHER=9;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__88=88;
     public static final int T__108=108;
     public static final int T__89=89;
@@ -205,36 +206,15 @@ public class InternalPlantumlLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g"; }
 
-    // $ANTLR start "T__10"
-    public final void mT__10() throws RecognitionException {
-        try {
-            int _type = T__10;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:11:7: ( '.' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:11:9: '.'
-            {
-            match('.'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__10"
-
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:12:7: ( 'AliceBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:12:9: 'AliceBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:11:7: ( '.' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:11:9: '.'
             {
-            match("AliceBlue"); 
-
+            match('.'); 
 
             }
 
@@ -251,10 +231,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:13:7: ( 'AntiqueWhite' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:13:9: 'AntiqueWhite'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:12:7: ( 'AliceBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:12:9: 'AliceBlue'
             {
-            match("AntiqueWhite"); 
+            match("AliceBlue"); 
 
 
             }
@@ -272,10 +252,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:14:7: ( 'Aqua' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:14:9: 'Aqua'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:13:7: ( 'AntiqueWhite' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:13:9: 'AntiqueWhite'
             {
-            match("Aqua"); 
+            match("AntiqueWhite"); 
 
 
             }
@@ -293,10 +273,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:15:7: ( 'Aquamarine' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:15:9: 'Aquamarine'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:14:7: ( 'Aqua' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:14:9: 'Aqua'
             {
-            match("Aquamarine"); 
+            match("Aqua"); 
 
 
             }
@@ -314,10 +294,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:16:7: ( 'Azure' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:16:9: 'Azure'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:15:7: ( 'Aquamarine' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:15:9: 'Aquamarine'
             {
-            match("Azure"); 
+            match("Aquamarine"); 
 
 
             }
@@ -335,10 +315,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:17:7: ( 'Beige' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:17:9: 'Beige'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:16:7: ( 'Azure' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:16:9: 'Azure'
             {
-            match("Beige"); 
+            match("Azure"); 
 
 
             }
@@ -356,10 +336,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:18:7: ( 'Bisque' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:18:9: 'Bisque'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:17:7: ( 'Beige' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:17:9: 'Beige'
             {
-            match("Bisque"); 
+            match("Beige"); 
 
 
             }
@@ -377,10 +357,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:19:7: ( 'Black' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:19:9: 'Black'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:18:7: ( 'Bisque' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:18:9: 'Bisque'
             {
-            match("Black"); 
+            match("Bisque"); 
 
 
             }
@@ -398,10 +378,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:20:7: ( 'BlanchedAlmond' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:20:9: 'BlanchedAlmond'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:19:7: ( 'Black' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:19:9: 'Black'
             {
-            match("BlanchedAlmond"); 
+            match("Black"); 
 
 
             }
@@ -419,10 +399,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:21:7: ( 'Blue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:21:9: 'Blue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:20:7: ( 'BlanchedAlmond' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:20:9: 'BlanchedAlmond'
             {
-            match("Blue"); 
+            match("BlanchedAlmond"); 
 
 
             }
@@ -440,10 +420,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:22:7: ( 'BlueViolet' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:22:9: 'BlueViolet'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:21:7: ( 'Blue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:21:9: 'Blue'
             {
-            match("BlueViolet"); 
+            match("Blue"); 
 
 
             }
@@ -461,10 +441,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:23:7: ( 'Brown' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:23:9: 'Brown'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:22:7: ( 'BlueViolet' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:22:9: 'BlueViolet'
             {
-            match("Brown"); 
+            match("BlueViolet"); 
 
 
             }
@@ -482,10 +462,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:24:7: ( 'BurlyWood' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:24:9: 'BurlyWood'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:23:7: ( 'Brown' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:23:9: 'Brown'
             {
-            match("BurlyWood"); 
+            match("Brown"); 
 
 
             }
@@ -503,10 +483,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:25:7: ( 'CadetBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:25:9: 'CadetBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:24:7: ( 'BurlyWood' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:24:9: 'BurlyWood'
             {
-            match("CadetBlue"); 
+            match("BurlyWood"); 
 
 
             }
@@ -524,10 +504,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:26:7: ( 'Chartreuse' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:26:9: 'Chartreuse'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:25:7: ( 'CadetBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:25:9: 'CadetBlue'
             {
-            match("Chartreuse"); 
+            match("CadetBlue"); 
 
 
             }
@@ -545,10 +525,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:27:7: ( 'Chocolate' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:27:9: 'Chocolate'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:26:7: ( 'Chartreuse' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:26:9: 'Chartreuse'
             {
-            match("Chocolate"); 
+            match("Chartreuse"); 
 
 
             }
@@ -566,10 +546,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:28:7: ( 'Coral' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:28:9: 'Coral'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:27:7: ( 'Chocolate' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:27:9: 'Chocolate'
             {
-            match("Coral"); 
+            match("Chocolate"); 
 
 
             }
@@ -587,10 +567,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:29:7: ( 'CornflowerBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:29:9: 'CornflowerBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:28:7: ( 'Coral' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:28:9: 'Coral'
             {
-            match("CornflowerBlue"); 
+            match("Coral"); 
 
 
             }
@@ -608,10 +588,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:30:7: ( 'Cornsilk' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:30:9: 'Cornsilk'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:29:7: ( 'CornflowerBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:29:9: 'CornflowerBlue'
             {
-            match("Cornsilk"); 
+            match("CornflowerBlue"); 
 
 
             }
@@ -629,10 +609,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:31:7: ( 'Crimson' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:31:9: 'Crimson'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:30:7: ( 'Cornsilk' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:30:9: 'Cornsilk'
             {
-            match("Crimson"); 
+            match("Cornsilk"); 
 
 
             }
@@ -650,10 +630,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:32:7: ( 'Cyan' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:32:9: 'Cyan'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:31:7: ( 'Crimson' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:31:9: 'Crimson'
             {
-            match("Cyan"); 
+            match("Crimson"); 
 
 
             }
@@ -671,10 +651,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:33:7: ( 'DarkBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:33:9: 'DarkBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:32:7: ( 'Cyan' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:32:9: 'Cyan'
             {
-            match("DarkBlue"); 
+            match("Cyan"); 
 
 
             }
@@ -692,10 +672,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:34:7: ( 'DarkCyan' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:34:9: 'DarkCyan'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:33:7: ( 'DarkBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:33:9: 'DarkBlue'
             {
-            match("DarkCyan"); 
+            match("DarkBlue"); 
 
 
             }
@@ -713,10 +693,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:35:7: ( 'DarkGoldenRod' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:35:9: 'DarkGoldenRod'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:34:7: ( 'DarkCyan' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:34:9: 'DarkCyan'
             {
-            match("DarkGoldenRod"); 
+            match("DarkCyan"); 
 
 
             }
@@ -734,10 +714,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:36:7: ( 'DarkGray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:36:9: 'DarkGray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:35:7: ( 'DarkGoldenRod' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:35:9: 'DarkGoldenRod'
             {
-            match("DarkGray"); 
+            match("DarkGoldenRod"); 
 
 
             }
@@ -755,10 +735,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:37:7: ( 'DarkGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:37:9: 'DarkGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:36:7: ( 'DarkGray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:36:9: 'DarkGray'
             {
-            match("DarkGreen"); 
+            match("DarkGray"); 
 
 
             }
@@ -776,10 +756,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:38:7: ( 'DarkGrey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:38:9: 'DarkGrey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:37:7: ( 'DarkGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:37:9: 'DarkGreen'
             {
-            match("DarkGrey"); 
+            match("DarkGreen"); 
 
 
             }
@@ -797,10 +777,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:39:7: ( 'DarkKhaki' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:39:9: 'DarkKhaki'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:38:7: ( 'DarkGrey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:38:9: 'DarkGrey'
             {
-            match("DarkKhaki"); 
+            match("DarkGrey"); 
 
 
             }
@@ -818,10 +798,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:40:7: ( 'DarkMagenta' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:40:9: 'DarkMagenta'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:39:7: ( 'DarkKhaki' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:39:9: 'DarkKhaki'
             {
-            match("DarkMagenta"); 
+            match("DarkKhaki"); 
 
 
             }
@@ -839,10 +819,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:41:7: ( 'DarkOliveGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:41:9: 'DarkOliveGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:40:7: ( 'DarkMagenta' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:40:9: 'DarkMagenta'
             {
-            match("DarkOliveGreen"); 
+            match("DarkMagenta"); 
 
 
             }
@@ -860,10 +840,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:42:7: ( 'DarkOrchid' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:42:9: 'DarkOrchid'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:41:7: ( 'DarkOliveGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:41:9: 'DarkOliveGreen'
             {
-            match("DarkOrchid"); 
+            match("DarkOliveGreen"); 
 
 
             }
@@ -881,10 +861,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:43:7: ( 'DarkRed' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:43:9: 'DarkRed'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:42:7: ( 'DarkOrchid' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:42:9: 'DarkOrchid'
             {
-            match("DarkRed"); 
+            match("DarkOrchid"); 
 
 
             }
@@ -902,10 +882,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:44:7: ( 'DarkSalmo' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:44:9: 'DarkSalmo'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:43:7: ( 'DarkRed' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:43:9: 'DarkRed'
             {
-            match("DarkSalmo"); 
+            match("DarkRed"); 
 
 
             }
@@ -923,10 +903,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:45:7: ( 'DarkSeaGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:45:9: 'DarkSeaGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:44:7: ( 'DarkSalmo' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:44:9: 'DarkSalmo'
             {
-            match("DarkSeaGreen"); 
+            match("DarkSalmo"); 
 
 
             }
@@ -944,10 +924,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:46:7: ( 'DarkSlateBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:46:9: 'DarkSlateBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:45:7: ( 'DarkSeaGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:45:9: 'DarkSeaGreen'
             {
-            match("DarkSlateBlue"); 
+            match("DarkSeaGreen"); 
 
 
             }
@@ -965,10 +945,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:47:7: ( 'DarkSlateGray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:47:9: 'DarkSlateGray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:46:7: ( 'DarkSlateBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:46:9: 'DarkSlateBlue'
             {
-            match("DarkSlateGray"); 
+            match("DarkSlateBlue"); 
 
 
             }
@@ -986,10 +966,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:48:7: ( 'DarkSlateGrey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:48:9: 'DarkSlateGrey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:47:7: ( 'DarkSlateGray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:47:9: 'DarkSlateGray'
             {
-            match("DarkSlateGrey"); 
+            match("DarkSlateGray"); 
 
 
             }
@@ -1007,10 +987,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:49:7: ( 'DarkTurquoise' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:49:9: 'DarkTurquoise'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:48:7: ( 'DarkSlateGrey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:48:9: 'DarkSlateGrey'
             {
-            match("DarkTurquoise"); 
+            match("DarkSlateGrey"); 
 
 
             }
@@ -1028,10 +1008,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:50:7: ( 'DarkViolet' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:50:9: 'DarkViolet'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:49:7: ( 'DarkTurquoise' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:49:9: 'DarkTurquoise'
             {
-            match("DarkViolet"); 
+            match("DarkTurquoise"); 
 
 
             }
@@ -1049,10 +1029,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:51:7: ( 'Darkorange' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:51:9: 'Darkorange'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:50:7: ( 'DarkViolet' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:50:9: 'DarkViolet'
             {
-            match("Darkorange"); 
+            match("DarkViolet"); 
 
 
             }
@@ -1070,10 +1050,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:52:7: ( 'DeepPink' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:52:9: 'DeepPink'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:51:7: ( 'Darkorange' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:51:9: 'Darkorange'
             {
-            match("DeepPink"); 
+            match("Darkorange"); 
 
 
             }
@@ -1091,10 +1071,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:53:7: ( 'DeepSkyBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:53:9: 'DeepSkyBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:52:7: ( 'DeepPink' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:52:9: 'DeepPink'
             {
-            match("DeepSkyBlue"); 
+            match("DeepPink"); 
 
 
             }
@@ -1112,10 +1092,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:54:7: ( 'DimGray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:54:9: 'DimGray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:53:7: ( 'DeepSkyBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:53:9: 'DeepSkyBlue'
             {
-            match("DimGray"); 
+            match("DeepSkyBlue"); 
 
 
             }
@@ -1133,10 +1113,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:55:7: ( 'DimGrey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:55:9: 'DimGrey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:54:7: ( 'DimGray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:54:9: 'DimGray'
             {
-            match("DimGrey"); 
+            match("DimGray"); 
 
 
             }
@@ -1154,10 +1134,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:56:7: ( 'DodgerBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:56:9: 'DodgerBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:55:7: ( 'DimGrey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:55:9: 'DimGrey'
             {
-            match("DodgerBlue"); 
+            match("DimGrey"); 
 
 
             }
@@ -1175,10 +1155,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:57:7: ( 'FireBrick' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:57:9: 'FireBrick'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:56:7: ( 'DodgerBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:56:9: 'DodgerBlue'
             {
-            match("FireBrick"); 
+            match("DodgerBlue"); 
 
 
             }
@@ -1196,10 +1176,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:58:7: ( 'FloralWhite' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:58:9: 'FloralWhite'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:57:7: ( 'FireBrick' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:57:9: 'FireBrick'
             {
-            match("FloralWhite"); 
+            match("FireBrick"); 
 
 
             }
@@ -1217,10 +1197,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:59:7: ( 'ForestGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:59:9: 'ForestGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:58:7: ( 'FloralWhite' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:58:9: 'FloralWhite'
             {
-            match("ForestGreen"); 
+            match("FloralWhite"); 
 
 
             }
@@ -1238,10 +1218,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:60:7: ( 'Fuchsia' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:60:9: 'Fuchsia'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:59:7: ( 'ForestGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:59:9: 'ForestGreen'
             {
-            match("Fuchsia"); 
+            match("ForestGreen"); 
 
 
             }
@@ -1259,10 +1239,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:61:7: ( 'Gainsboro' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:61:9: 'Gainsboro'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:60:7: ( 'Fuchsia' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:60:9: 'Fuchsia'
             {
-            match("Gainsboro"); 
+            match("Fuchsia"); 
 
 
             }
@@ -1280,10 +1260,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:62:7: ( 'GhostWhite' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:62:9: 'GhostWhite'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:61:7: ( 'Gainsboro' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:61:9: 'Gainsboro'
             {
-            match("GhostWhite"); 
+            match("Gainsboro"); 
 
 
             }
@@ -1301,10 +1281,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:63:7: ( 'Gold' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:63:9: 'Gold'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:62:7: ( 'GhostWhite' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:62:9: 'GhostWhite'
             {
-            match("Gold"); 
+            match("GhostWhite"); 
 
 
             }
@@ -1322,10 +1302,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:64:7: ( 'GoldenRod' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:64:9: 'GoldenRod'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:63:7: ( 'Gold' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:63:9: 'Gold'
             {
-            match("GoldenRod"); 
+            match("Gold"); 
 
 
             }
@@ -1343,10 +1323,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:65:7: ( 'Gray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:65:9: 'Gray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:64:7: ( 'GoldenRod' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:64:9: 'GoldenRod'
             {
-            match("Gray"); 
+            match("GoldenRod"); 
 
 
             }
@@ -1364,10 +1344,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:66:7: ( 'Green' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:66:9: 'Green'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:65:7: ( 'Gray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:65:9: 'Gray'
             {
-            match("Green"); 
+            match("Gray"); 
 
 
             }
@@ -1385,10 +1365,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:67:7: ( 'GreenYellow' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:67:9: 'GreenYellow'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:66:7: ( 'Green' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:66:9: 'Green'
             {
-            match("GreenYellow"); 
+            match("Green"); 
 
 
             }
@@ -1406,10 +1386,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:68:7: ( 'Grey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:68:9: 'Grey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:67:7: ( 'GreenYellow' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:67:9: 'GreenYellow'
             {
-            match("Grey"); 
+            match("GreenYellow"); 
 
 
             }
@@ -1427,10 +1407,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:69:7: ( 'HoneyDew' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:69:9: 'HoneyDew'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:68:7: ( 'Grey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:68:9: 'Grey'
             {
-            match("HoneyDew"); 
+            match("Grey"); 
 
 
             }
@@ -1448,10 +1428,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:70:7: ( 'HotPink' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:70:9: 'HotPink'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:69:7: ( 'HoneyDew' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:69:9: 'HoneyDew'
             {
-            match("HotPink"); 
+            match("HoneyDew"); 
 
 
             }
@@ -1469,10 +1449,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:71:7: ( 'IndianRed' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:71:9: 'IndianRed'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:70:7: ( 'HotPink' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:70:9: 'HotPink'
             {
-            match("IndianRed"); 
+            match("HotPink"); 
 
 
             }
@@ -1490,10 +1470,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:72:7: ( 'Indigo' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:72:9: 'Indigo'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:71:7: ( 'IndianRed' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:71:9: 'IndianRed'
             {
-            match("Indigo"); 
+            match("IndianRed"); 
 
 
             }
@@ -1511,10 +1491,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:73:7: ( 'Ivory' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:73:9: 'Ivory'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:72:7: ( 'Indigo' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:72:9: 'Indigo'
             {
-            match("Ivory"); 
+            match("Indigo"); 
 
 
             }
@@ -1532,10 +1512,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:74:7: ( 'Khaki' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:74:9: 'Khaki'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:73:7: ( 'Ivory' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:73:9: 'Ivory'
             {
-            match("Khaki"); 
+            match("Ivory"); 
 
 
             }
@@ -1553,10 +1533,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:75:7: ( 'Lavender' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:75:9: 'Lavender'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:74:7: ( 'Khaki' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:74:9: 'Khaki'
             {
-            match("Lavender"); 
+            match("Khaki"); 
 
 
             }
@@ -1574,10 +1554,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:76:7: ( 'LavenderBlush' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:76:9: 'LavenderBlush'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:75:7: ( 'Lavender' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:75:9: 'Lavender'
             {
-            match("LavenderBlush"); 
+            match("Lavender"); 
 
 
             }
@@ -1595,10 +1575,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:77:7: ( 'LawnGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:77:9: 'LawnGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:76:7: ( 'LavenderBlush' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:76:9: 'LavenderBlush'
             {
-            match("LawnGreen"); 
+            match("LavenderBlush"); 
 
 
             }
@@ -1616,10 +1596,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:78:7: ( 'LemonChiffon' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:78:9: 'LemonChiffon'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:77:7: ( 'LawnGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:77:9: 'LawnGreen'
             {
-            match("LemonChiffon"); 
+            match("LawnGreen"); 
 
 
             }
@@ -1637,10 +1617,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:79:7: ( 'LightBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:79:9: 'LightBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:78:7: ( 'LemonChiffon' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:78:9: 'LemonChiffon'
             {
-            match("LightBlue"); 
+            match("LemonChiffon"); 
 
 
             }
@@ -1658,10 +1638,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:80:7: ( 'LightCoral' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:80:9: 'LightCoral'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:79:7: ( 'LightBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:79:9: 'LightBlue'
             {
-            match("LightCoral"); 
+            match("LightBlue"); 
 
 
             }
@@ -1679,10 +1659,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:81:7: ( 'LightCyan' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:81:9: 'LightCyan'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:80:7: ( 'LightCoral' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:80:9: 'LightCoral'
             {
-            match("LightCyan"); 
+            match("LightCoral"); 
 
 
             }
@@ -1700,10 +1680,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:82:7: ( 'LightGoldenRodYellow' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:82:9: 'LightGoldenRodYellow'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:81:7: ( 'LightCyan' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:81:9: 'LightCyan'
             {
-            match("LightGoldenRodYellow"); 
+            match("LightCyan"); 
 
 
             }
@@ -1721,10 +1701,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:83:7: ( 'LightGray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:83:9: 'LightGray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:82:7: ( 'LightGoldenRodYellow' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:82:9: 'LightGoldenRodYellow'
             {
-            match("LightGray"); 
+            match("LightGoldenRodYellow"); 
 
 
             }
@@ -1742,10 +1722,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:84:7: ( 'LightGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:84:9: 'LightGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:83:7: ( 'LightGray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:83:9: 'LightGray'
             {
-            match("LightGreen"); 
+            match("LightGray"); 
 
 
             }
@@ -1763,10 +1743,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:85:7: ( 'LightGrey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:85:9: 'LightGrey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:84:7: ( 'LightGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:84:9: 'LightGreen'
             {
-            match("LightGrey"); 
+            match("LightGreen"); 
 
 
             }
@@ -1784,10 +1764,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:86:7: ( 'LightPink' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:86:9: 'LightPink'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:85:7: ( 'LightGrey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:85:9: 'LightGrey'
             {
-            match("LightPink"); 
+            match("LightGrey"); 
 
 
             }
@@ -1805,10 +1785,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:87:7: ( 'LightSalmon' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:87:9: 'LightSalmon'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:86:7: ( 'LightPink' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:86:9: 'LightPink'
             {
-            match("LightSalmon"); 
+            match("LightPink"); 
 
 
             }
@@ -1826,10 +1806,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:88:7: ( 'LightSeaGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:88:9: 'LightSeaGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:87:7: ( 'LightSalmon' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:87:9: 'LightSalmon'
             {
-            match("LightSeaGreen"); 
+            match("LightSalmon"); 
 
 
             }
@@ -1847,10 +1827,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:89:7: ( 'LightSkyBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:89:9: 'LightSkyBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:88:7: ( 'LightSeaGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:88:9: 'LightSeaGreen'
             {
-            match("LightSkyBlue"); 
+            match("LightSeaGreen"); 
 
 
             }
@@ -1868,10 +1848,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:90:7: ( 'LightSlateGray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:90:9: 'LightSlateGray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:89:7: ( 'LightSkyBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:89:9: 'LightSkyBlue'
             {
-            match("LightSlateGray"); 
+            match("LightSkyBlue"); 
 
 
             }
@@ -1889,10 +1869,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:91:7: ( 'LightSlateGrey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:91:9: 'LightSlateGrey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:90:7: ( 'LightSlateGray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:90:9: 'LightSlateGray'
             {
-            match("LightSlateGrey"); 
+            match("LightSlateGray"); 
 
 
             }
@@ -1910,10 +1890,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:92:7: ( 'LightSteelBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:92:9: 'LightSteelBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:91:7: ( 'LightSlateGrey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:91:9: 'LightSlateGrey'
             {
-            match("LightSteelBlue"); 
+            match("LightSlateGrey"); 
 
 
             }
@@ -1931,10 +1911,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:93:7: ( 'LightYellow' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:93:9: 'LightYellow'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:92:7: ( 'LightSteelBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:92:9: 'LightSteelBlue'
             {
-            match("LightYellow"); 
+            match("LightSteelBlue"); 
 
 
             }
@@ -1952,10 +1932,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:94:7: ( 'Lime' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:94:9: 'Lime'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:93:7: ( 'LightYellow' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:93:9: 'LightYellow'
             {
-            match("Lime"); 
+            match("LightYellow"); 
 
 
             }
@@ -1973,10 +1953,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:95:7: ( 'LimeGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:95:9: 'LimeGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:94:7: ( 'Lime' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:94:9: 'Lime'
             {
-            match("LimeGreen"); 
+            match("Lime"); 
 
 
             }
@@ -1994,10 +1974,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:96:7: ( 'Linen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:96:9: 'Linen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:95:7: ( 'LimeGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:95:9: 'LimeGreen'
             {
-            match("Linen"); 
+            match("LimeGreen"); 
 
 
             }
@@ -2015,10 +1995,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:97:7: ( 'Magenta' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:97:9: 'Magenta'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:96:7: ( 'Linen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:96:9: 'Linen'
             {
-            match("Magenta"); 
+            match("Linen"); 
 
 
             }
@@ -2036,10 +2016,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:98:7: ( 'Maroon' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:98:9: 'Maroon'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:97:7: ( 'Magenta' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:97:9: 'Magenta'
             {
-            match("Maroon"); 
+            match("Magenta"); 
 
 
             }
@@ -2057,10 +2037,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:99:7: ( 'MediumAquaMarine' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:99:9: 'MediumAquaMarine'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:98:7: ( 'Maroon' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:98:9: 'Maroon'
             {
-            match("MediumAquaMarine"); 
+            match("Maroon"); 
 
 
             }
@@ -2078,10 +2058,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:100:7: ( 'MediumBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:100:9: 'MediumBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:99:7: ( 'MediumAquaMarine' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:99:9: 'MediumAquaMarine'
             {
-            match("MediumBlue"); 
+            match("MediumAquaMarine"); 
 
 
             }
@@ -2099,10 +2079,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:101:8: ( 'MediumOrchid' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:101:10: 'MediumOrchid'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:100:8: ( 'MediumBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:100:10: 'MediumBlue'
             {
-            match("MediumOrchid"); 
+            match("MediumBlue"); 
 
 
             }
@@ -2120,10 +2100,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:102:8: ( 'MediumPurple' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:102:10: 'MediumPurple'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:101:8: ( 'MediumOrchid' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:101:10: 'MediumOrchid'
             {
-            match("MediumPurple"); 
+            match("MediumOrchid"); 
 
 
             }
@@ -2141,10 +2121,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:103:8: ( 'MediumSeaGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:103:10: 'MediumSeaGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:102:8: ( 'MediumPurple' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:102:10: 'MediumPurple'
             {
-            match("MediumSeaGreen"); 
+            match("MediumPurple"); 
 
 
             }
@@ -2162,10 +2142,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:104:8: ( 'MediumSlateBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:104:10: 'MediumSlateBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:103:8: ( 'MediumSeaGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:103:10: 'MediumSeaGreen'
             {
-            match("MediumSlateBlue"); 
+            match("MediumSeaGreen"); 
 
 
             }
@@ -2183,10 +2163,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:105:8: ( 'MediumSpringGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:105:10: 'MediumSpringGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:104:8: ( 'MediumSlateBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:104:10: 'MediumSlateBlue'
             {
-            match("MediumSpringGreen"); 
+            match("MediumSlateBlue"); 
 
 
             }
@@ -2204,10 +2184,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:106:8: ( 'MediumTurquoise' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:106:10: 'MediumTurquoise'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:105:8: ( 'MediumSpringGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:105:10: 'MediumSpringGreen'
             {
-            match("MediumTurquoise"); 
+            match("MediumSpringGreen"); 
 
 
             }
@@ -2225,10 +2205,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:107:8: ( 'MediumVioletRed' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:107:10: 'MediumVioletRed'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:106:8: ( 'MediumTurquoise' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:106:10: 'MediumTurquoise'
             {
-            match("MediumVioletRed"); 
+            match("MediumTurquoise"); 
 
 
             }
@@ -2246,10 +2226,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:108:8: ( 'MidnightBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:108:10: 'MidnightBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:107:8: ( 'MediumVioletRed' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:107:10: 'MediumVioletRed'
             {
-            match("MidnightBlue"); 
+            match("MediumVioletRed"); 
 
 
             }
@@ -2267,10 +2247,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:109:8: ( 'MintCream' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:109:10: 'MintCream'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:108:8: ( 'MidnightBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:108:10: 'MidnightBlue'
             {
-            match("MintCream"); 
+            match("MidnightBlue"); 
 
 
             }
@@ -2288,10 +2268,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:110:8: ( 'MistyRose' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:110:10: 'MistyRose'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:109:8: ( 'MintCream' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:109:10: 'MintCream'
             {
-            match("MistyRose"); 
+            match("MintCream"); 
 
 
             }
@@ -2309,10 +2289,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:111:8: ( 'Moccasin' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:111:10: 'Moccasin'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:110:8: ( 'MistyRose' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:110:10: 'MistyRose'
             {
-            match("Moccasin"); 
+            match("MistyRose"); 
 
 
             }
@@ -2330,10 +2310,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:112:8: ( 'NavajoWhite' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:112:10: 'NavajoWhite'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:111:8: ( 'Moccasin' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:111:10: 'Moccasin'
             {
-            match("NavajoWhite"); 
+            match("Moccasin"); 
 
 
             }
@@ -2351,10 +2331,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:113:8: ( 'Navy' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:113:10: 'Navy'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:112:8: ( 'NavajoWhite' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:112:10: 'NavajoWhite'
             {
-            match("Navy"); 
+            match("NavajoWhite"); 
 
 
             }
@@ -2372,10 +2352,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:114:8: ( 'OldLace' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:114:10: 'OldLace'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:113:8: ( 'Navy' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:113:10: 'Navy'
             {
-            match("OldLace"); 
+            match("Navy"); 
 
 
             }
@@ -2393,10 +2373,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:115:8: ( 'Olive' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:115:10: 'Olive'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:114:8: ( 'OldLace' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:114:10: 'OldLace'
             {
-            match("Olive"); 
+            match("OldLace"); 
 
 
             }
@@ -2414,10 +2394,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:116:8: ( 'OliveDrab' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:116:10: 'OliveDrab'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:115:8: ( 'Olive' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:115:10: 'Olive'
             {
-            match("OliveDrab"); 
+            match("Olive"); 
 
 
             }
@@ -2435,10 +2415,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:117:8: ( 'OrangeRed' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:117:10: 'OrangeRed'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:116:8: ( 'OliveDrab' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:116:10: 'OliveDrab'
             {
-            match("OrangeRed"); 
+            match("OliveDrab"); 
 
 
             }
@@ -2456,10 +2436,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:118:8: ( 'Orchid' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:118:10: 'Orchid'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:117:8: ( 'OrangeRed' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:117:10: 'OrangeRed'
             {
-            match("Orchid"); 
+            match("OrangeRed"); 
 
 
             }
@@ -2477,10 +2457,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:119:8: ( 'PaleGoldenRod' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:119:10: 'PaleGoldenRod'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:118:8: ( 'Orchid' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:118:10: 'Orchid'
             {
-            match("PaleGoldenRod"); 
+            match("Orchid"); 
 
 
             }
@@ -2498,10 +2478,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:120:8: ( 'PaleGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:120:10: 'PaleGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:119:8: ( 'PaleGoldenRod' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:119:10: 'PaleGoldenRod'
             {
-            match("PaleGreen"); 
+            match("PaleGoldenRod"); 
 
 
             }
@@ -2519,10 +2499,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:121:8: ( 'PaleTurquoise' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:121:10: 'PaleTurquoise'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:120:8: ( 'PaleGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:120:10: 'PaleGreen'
             {
-            match("PaleTurquoise"); 
+            match("PaleGreen"); 
 
 
             }
@@ -2540,10 +2520,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:122:8: ( 'PaleVioletRed' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:122:10: 'PaleVioletRed'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:121:8: ( 'PaleTurquoise' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:121:10: 'PaleTurquoise'
             {
-            match("PaleVioletRed"); 
+            match("PaleTurquoise"); 
 
 
             }
@@ -2561,10 +2541,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:123:8: ( 'PapayaWhip' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:123:10: 'PapayaWhip'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:122:8: ( 'PaleVioletRed' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:122:10: 'PaleVioletRed'
             {
-            match("PapayaWhip"); 
+            match("PaleVioletRed"); 
 
 
             }
@@ -2582,10 +2562,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:124:8: ( 'PeachPuff' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:124:10: 'PeachPuff'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:123:8: ( 'PapayaWhip' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:123:10: 'PapayaWhip'
             {
-            match("PeachPuff"); 
+            match("PapayaWhip"); 
 
 
             }
@@ -2603,10 +2583,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:125:8: ( 'Peru' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:125:10: 'Peru'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:124:8: ( 'PeachPuff' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:124:10: 'PeachPuff'
             {
-            match("Peru"); 
+            match("PeachPuff"); 
 
 
             }
@@ -2624,10 +2604,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:126:8: ( 'Pink' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:126:10: 'Pink'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:125:8: ( 'Peru' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:125:10: 'Peru'
             {
-            match("Pink"); 
+            match("Peru"); 
 
 
             }
@@ -2645,10 +2625,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:127:8: ( 'Plum' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:127:10: 'Plum'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:126:8: ( 'Pink' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:126:10: 'Pink'
             {
-            match("Plum"); 
+            match("Pink"); 
 
 
             }
@@ -2666,10 +2646,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:128:8: ( 'PowderBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:128:10: 'PowderBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:127:8: ( 'Plum' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:127:10: 'Plum'
             {
-            match("PowderBlue"); 
+            match("Plum"); 
 
 
             }
@@ -2687,10 +2667,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:129:8: ( 'Purple' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:129:10: 'Purple'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:128:8: ( 'PowderBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:128:10: 'PowderBlue'
             {
-            match("Purple"); 
+            match("PowderBlue"); 
 
 
             }
@@ -2708,10 +2688,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:130:8: ( 'Red' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:130:10: 'Red'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:129:8: ( 'Purple' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:129:10: 'Purple'
             {
-            match("Red"); 
+            match("Purple"); 
 
 
             }
@@ -2729,10 +2709,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:131:8: ( 'RosyBrown' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:131:10: 'RosyBrown'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:130:8: ( 'Red' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:130:10: 'Red'
             {
-            match("RosyBrown"); 
+            match("Red"); 
 
 
             }
@@ -2750,10 +2730,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:132:8: ( 'RoyalBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:132:10: 'RoyalBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:131:8: ( 'RosyBrown' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:131:10: 'RosyBrown'
             {
-            match("RoyalBlue"); 
+            match("RosyBrown"); 
 
 
             }
@@ -2771,10 +2751,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:133:8: ( 'SaddleBrown' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:133:10: 'SaddleBrown'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:132:8: ( 'RoyalBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:132:10: 'RoyalBlue'
             {
-            match("SaddleBrown"); 
+            match("RoyalBlue"); 
 
 
             }
@@ -2792,10 +2772,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:134:8: ( 'Salmon' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:134:10: 'Salmon'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:133:8: ( 'SaddleBrown' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:133:10: 'SaddleBrown'
             {
-            match("Salmon"); 
+            match("SaddleBrown"); 
 
 
             }
@@ -2813,10 +2793,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:135:8: ( 'SandyBrown' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:135:10: 'SandyBrown'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:134:8: ( 'Salmon' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:134:10: 'Salmon'
             {
-            match("SandyBrown"); 
+            match("Salmon"); 
 
 
             }
@@ -2834,10 +2814,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:136:8: ( 'SeaGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:136:10: 'SeaGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:135:8: ( 'SandyBrown' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:135:10: 'SandyBrown'
             {
-            match("SeaGreen"); 
+            match("SandyBrown"); 
 
 
             }
@@ -2855,10 +2835,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:137:8: ( 'Sienna' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:137:10: 'Sienna'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:136:8: ( 'SeaGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:136:10: 'SeaGreen'
             {
-            match("Sienna"); 
+            match("SeaGreen"); 
 
 
             }
@@ -2876,10 +2856,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:138:8: ( 'Silver' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:138:10: 'Silver'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:137:8: ( 'Sienna' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:137:10: 'Sienna'
             {
-            match("Silver"); 
+            match("Sienna"); 
 
 
             }
@@ -2897,10 +2877,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:139:8: ( 'SkyBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:139:10: 'SkyBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:138:8: ( 'Silver' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:138:10: 'Silver'
             {
-            match("SkyBlue"); 
+            match("Silver"); 
 
 
             }
@@ -2918,10 +2898,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:140:8: ( 'SlateBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:140:10: 'SlateBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:139:8: ( 'SkyBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:139:10: 'SkyBlue'
             {
-            match("SlateBlue"); 
+            match("SkyBlue"); 
 
 
             }
@@ -2939,10 +2919,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:141:8: ( 'SlateGray' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:141:10: 'SlateGray'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:140:8: ( 'SlateBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:140:10: 'SlateBlue'
             {
-            match("SlateGray"); 
+            match("SlateBlue"); 
 
 
             }
@@ -2960,10 +2940,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:142:8: ( 'SlateGrey' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:142:10: 'SlateGrey'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:141:8: ( 'SlateGray' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:141:10: 'SlateGray'
             {
-            match("SlateGrey"); 
+            match("SlateGray"); 
 
 
             }
@@ -2981,10 +2961,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__142;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:143:8: ( 'Snow' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:143:10: 'Snow'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:142:8: ( 'SlateGrey' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:142:10: 'SlateGrey'
             {
-            match("Snow"); 
+            match("SlateGrey"); 
 
 
             }
@@ -3002,10 +2982,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__143;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:144:8: ( 'SpringGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:144:10: 'SpringGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:143:8: ( 'Snow' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:143:10: 'Snow'
             {
-            match("SpringGreen"); 
+            match("Snow"); 
 
 
             }
@@ -3023,10 +3003,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__144;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:145:8: ( 'SteelBlue' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:145:10: 'SteelBlue'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:144:8: ( 'SpringGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:144:10: 'SpringGreen'
             {
-            match("SteelBlue"); 
+            match("SpringGreen"); 
 
 
             }
@@ -3044,10 +3024,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__145;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:146:8: ( 'Tan' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:146:10: 'Tan'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:145:8: ( 'SteelBlue' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:145:10: 'SteelBlue'
             {
-            match("Tan"); 
+            match("SteelBlue"); 
 
 
             }
@@ -3065,10 +3045,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__146;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:147:8: ( 'Teal' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:147:10: 'Teal'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:146:8: ( 'Tan' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:146:10: 'Tan'
             {
-            match("Teal"); 
+            match("Tan"); 
 
 
             }
@@ -3086,10 +3066,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__147;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:148:8: ( 'Thistle' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:148:10: 'Thistle'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:147:8: ( 'Teal' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:147:10: 'Teal'
             {
-            match("Thistle"); 
+            match("Teal"); 
 
 
             }
@@ -3107,10 +3087,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__148;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:149:8: ( 'Tomato' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:149:10: 'Tomato'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:148:8: ( 'Thistle' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:148:10: 'Thistle'
             {
-            match("Tomato"); 
+            match("Thistle"); 
 
 
             }
@@ -3128,10 +3108,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:150:8: ( 'Turquoise' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:150:10: 'Turquoise'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:149:8: ( 'Tomato' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:149:10: 'Tomato'
             {
-            match("Turquoise"); 
+            match("Tomato"); 
 
 
             }
@@ -3149,10 +3129,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:151:8: ( 'Violet' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:151:10: 'Violet'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:150:8: ( 'Turquoise' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:150:10: 'Turquoise'
             {
-            match("Violet"); 
+            match("Turquoise"); 
 
 
             }
@@ -3170,10 +3150,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__151;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:152:8: ( 'Wheat' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:152:10: 'Wheat'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:151:8: ( 'Violet' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:151:10: 'Violet'
             {
-            match("Wheat"); 
+            match("Violet"); 
 
 
             }
@@ -3191,10 +3171,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__152;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:153:8: ( 'White' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:153:10: 'White'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:152:8: ( 'Wheat' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:152:10: 'Wheat'
             {
-            match("White"); 
+            match("Wheat"); 
 
 
             }
@@ -3212,10 +3192,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__153;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:154:8: ( 'WhiteSmoke' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:154:10: 'WhiteSmoke'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:153:8: ( 'White' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:153:10: 'White'
             {
-            match("WhiteSmoke"); 
+            match("White"); 
 
 
             }
@@ -3233,10 +3213,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__154;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:155:8: ( 'Yellow' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:155:10: 'Yellow'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:154:8: ( 'WhiteSmoke' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:154:10: 'WhiteSmoke'
             {
-            match("Yellow"); 
+            match("WhiteSmoke"); 
 
 
             }
@@ -3254,10 +3234,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__155;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:156:8: ( 'YellowGreen' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:156:10: 'YellowGreen'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:155:8: ( 'Yellow' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:155:10: 'Yellow'
             {
-            match("YellowGreen"); 
+            match("Yellow"); 
 
 
             }
@@ -3275,10 +3255,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__156;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:157:8: ( 'right' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:157:10: 'right'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:156:8: ( 'YellowGreen' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:156:10: 'YellowGreen'
             {
-            match("right"); 
+            match("YellowGreen"); 
 
 
             }
@@ -3296,10 +3276,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__157;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:158:8: ( 'left' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:158:10: 'left'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:157:8: ( 'right' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:157:10: 'right'
             {
-            match("left"); 
+            match("right"); 
 
 
             }
@@ -3317,10 +3297,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__158;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:159:8: ( 'center' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:159:10: 'center'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:158:8: ( 'left' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:158:10: 'left'
             {
-            match("center"); 
+            match("left"); 
 
 
             }
@@ -3338,10 +3318,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__159;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:160:8: ( '@startuml' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:160:10: '@startuml'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:159:8: ( 'center' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:159:10: 'center'
             {
-            match("@startuml"); 
+            match("center"); 
 
 
             }
@@ -3359,10 +3339,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__160;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:161:8: ( '@enduml' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:161:10: '@enduml'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:160:8: ( '@startuml' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:160:10: '@startuml'
             {
-            match("@enduml"); 
+            match("@startuml"); 
 
 
             }
@@ -3380,10 +3360,11 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__161;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:162:8: ( ':' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:162:10: ':'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:161:8: ( '@enduml' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:161:10: '@enduml'
             {
-            match(':'); 
+            match("@enduml"); 
+
 
             }
 
@@ -3400,10 +3381,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__162;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:163:8: ( '-' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:163:10: '-'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:162:8: ( ':' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:162:10: ':'
             {
-            match('-'); 
+            match(':'); 
 
             }
 
@@ -3420,10 +3401,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__163;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:164:8: ( '>' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:164:10: '>'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:163:8: ( '-' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:163:10: '-'
             {
-            match('>'); 
+            match('-'); 
 
             }
 
@@ -3440,10 +3421,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__164;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:165:8: ( '<' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:165:10: '<'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:164:8: ( '>' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:164:10: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -3460,10 +3441,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__165;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:166:8: ( 'x' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:166:10: 'x'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:165:8: ( '<' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:165:10: '<'
             {
-            match('x'); 
+            match('<'); 
 
             }
 
@@ -3480,10 +3461,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__166;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:167:8: ( '\\\\' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:167:10: '\\\\'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:166:8: ( 'x' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:166:10: 'x'
             {
-            match('\\'); 
+            match('x'); 
 
             }
 
@@ -3500,10 +3481,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__167;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:168:8: ( '/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:168:10: '/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:167:8: ( '\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:167:10: '\\\\'
             {
-            match('/'); 
+            match('\\'); 
 
             }
 
@@ -3520,11 +3501,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__168;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:169:8: ( '\\\\\\\\' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:169:10: '\\\\\\\\'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:168:8: ( '/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:168:10: '/'
             {
-            match("\\\\"); 
-
+            match('/'); 
 
             }
 
@@ -3541,10 +3521,11 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__169;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:170:8: ( 'o' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:170:10: 'o'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:169:8: ( '\\\\\\\\' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:169:10: '\\\\\\\\'
             {
-            match('o'); 
+            match("\\\\"); 
+
 
             }
 
@@ -3561,10 +3542,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__170;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:171:8: ( '|' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:171:10: '|'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:170:8: ( 'o' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:170:10: 'o'
             {
-            match('|'); 
+            match('o'); 
 
             }
 
@@ -3581,11 +3562,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__171;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:172:8: ( 'actor' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:172:10: 'actor'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:171:8: ( '|' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:171:10: '|'
             {
-            match("actor"); 
-
+            match('|'); 
 
             }
 
@@ -3602,10 +3582,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__172;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:173:8: ( 'boundary' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:173:10: 'boundary'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:172:8: ( 'actor' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:172:10: 'actor'
             {
-            match("boundary"); 
+            match("actor"); 
 
 
             }
@@ -3623,10 +3603,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__173;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:174:8: ( 'control' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:174:10: 'control'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:173:8: ( 'boundary' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:173:10: 'boundary'
             {
-            match("control"); 
+            match("boundary"); 
 
 
             }
@@ -3644,10 +3624,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__174;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:175:8: ( 'entity' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:175:10: 'entity'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:174:8: ( 'control' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:174:10: 'control'
             {
-            match("entity"); 
+            match("control"); 
 
 
             }
@@ -3665,10 +3645,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__175;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:176:8: ( 'database' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:176:10: 'database'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:175:8: ( 'entity' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:175:10: 'entity'
             {
-            match("database"); 
+            match("entity"); 
 
 
             }
@@ -3686,10 +3666,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__176;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:177:8: ( 'autonumber' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:177:10: 'autonumber'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:176:8: ( 'database' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:176:10: 'database'
             {
-            match("autonumber"); 
+            match("database"); 
 
 
             }
@@ -3707,10 +3687,11 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__177;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:178:8: ( '#' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:178:10: '#'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:177:8: ( 'autonumber' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:177:10: 'autonumber'
             {
-            match('#'); 
+            match("autonumber"); 
+
 
             }
 
@@ -3727,11 +3708,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__178;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:179:8: ( 'title' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:179:10: 'title'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:178:8: ( '#' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:178:10: '#'
             {
-            match("title"); 
-
+            match('#'); 
 
             }
 
@@ -3748,10 +3728,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__179;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:180:8: ( 'legend' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:180:10: 'legend'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:179:8: ( 'title' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:179:10: 'title'
             {
-            match("legend"); 
+            match("title"); 
 
 
             }
@@ -3769,10 +3749,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__180;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:181:8: ( 'endlegend' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:181:10: 'endlegend'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:180:8: ( 'legend' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:180:10: 'legend'
             {
-            match("endlegend"); 
+            match("legend"); 
 
 
             }
@@ -3790,6 +3770,27 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = T__181;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:181:8: ( 'endlegend' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:181:10: 'endlegend'
+            {
+            match("endlegend"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__181"
+
+    // $ANTLR start "T__182"
+    public final void mT__182() throws RecognitionException {
+        try {
+            int _type = T__182;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:182:8: ( 'newpage' )
             // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:182:10: 'newpage'
             {
@@ -3804,19 +3805,19 @@ public class InternalPlantumlLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__181"
+    // $ANTLR end "T__182"
 
     // $ANTLR start "RULE_ML_COMMENT"
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5463:17: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5463:19: '/\\'' ( options {greedy=false; } : . )* '\\'/'
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5642:17: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5642:19: '/\\'' ( options {greedy=false; } : . )* '\\'/'
             {
             match("/'"); 
 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5463:25: ( options {greedy=false; } : . )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5642:25: ( options {greedy=false; } : . )*
             loop1:
             do {
                 int alt1=2;
@@ -3841,7 +3842,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5463:53: .
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5642:53: .
             	    {
             	    matchAny(); 
 
@@ -3871,11 +3872,11 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:17: ( '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:19: '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:17: ( '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:19: '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('\''); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop2:
             do {
                 int alt2=2;
@@ -3888,7 +3889,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3908,7 +3909,7 @@ public class InternalPlantumlLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:40: ( ( '\\r' )? '\\n' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -3917,9 +3918,9 @@ public class InternalPlantumlLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:41: ( '\\r' )?
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:41: ( '\\r' )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -3928,7 +3929,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5465:41: '\\r'
+                            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5644:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3960,10 +3961,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5467:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '\\u00E5' | '\\u00E4' | '\\u00F6' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5467:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '\\u00E5' | '\\u00E4' | '\\u00F6' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5646:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '\\u00E5' | '\\u00E4' | '\\u00F6' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5646:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '\\u00E5' | '\\u00E4' | '\\u00F6' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5467:11: ( '^' )?
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5646:11: ( '^' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -3972,7 +3973,7 @@ public class InternalPlantumlLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5467:11: '^'
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5646:11: '^'
                     {
                     match('^'); 
 
@@ -3990,7 +3991,7 @@ public class InternalPlantumlLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5467:67: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5646:67: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
             loop6:
             do {
                 int alt6=2;
@@ -4039,10 +4040,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5469:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5469:12: ( '0' .. '9' )+
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5648:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5648:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5469:12: ( '0' .. '9' )+
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5648:12: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -4056,7 +4057,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5469:13: '0' .. '9'
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5648:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -4083,51 +4084,60 @@ public class InternalPlantumlLexer extends Lexer {
     }
     // $ANTLR end "RULE_INT"
 
+    // $ANTLR start "RULE_NEWLINE"
+    public final void mRULE_NEWLINE() throws RecognitionException {
+        try {
+            int _type = RULE_NEWLINE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5650:14: ( ( '\\r' )? '\\n' )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5650:16: ( '\\r' )? '\\n'
+            {
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5650:16: ( '\\r' )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0=='\r') ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5650:16: '\\r'
+                    {
+                    match('\r'); 
+
+                    }
+                    break;
+
+            }
+
+            match('\n'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_NEWLINE"
+
     // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5471:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5471:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5652:9: ( ( ' ' | '\\t' ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5652:11: ( ' ' | '\\t' )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5471:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt8=0;
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+            if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
+                input.consume();
 
-                if ( ((LA8_0>='\t' && LA8_0<='\n')||LA8_0=='\r'||LA8_0==' ') ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:
-            	    {
-            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
-            	        input.consume();
-
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt8 >= 1 ) break loop8;
-                        EarlyExitException eee =
-                            new EarlyExitException(8, input);
-                        throw eee;
-                }
-                cnt8++;
-            } while (true);
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
 
             }
@@ -4145,8 +4155,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5473:16: ( . )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5473:18: .
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5654:16: ( . )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:5654:18: .
             {
             matchAny(); 
 
@@ -4161,1251 +4171,1258 @@ public class InternalPlantumlLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:8: ( T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_WS | RULE_ANY_OTHER )
-        int alt9=178;
+        // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_NEWLINE | RULE_WS | RULE_ANY_OTHER )
+        int alt9=179;
         alt9 = dfa9.predict(input);
         switch (alt9) {
             case 1 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:10: T__10
-                {
-                mT__10(); 
-
-                }
-                break;
-            case 2 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:16: T__11
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
-            case 3 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:22: T__12
+            case 2 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
-            case 4 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:28: T__13
+            case 3 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
-            case 5 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:34: T__14
+            case 4 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
-            case 6 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:40: T__15
+            case 5 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 7 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:46: T__16
+            case 6 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 8 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:52: T__17
+            case 7 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 9 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:58: T__18
+            case 8 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 10 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:64: T__19
+            case 9 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 11 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:70: T__20
+            case 10 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 12 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:76: T__21
+            case 11 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 13 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:82: T__22
+            case 12 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 14 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:88: T__23
+            case 13 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 15 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:94: T__24
+            case 14 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 16 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:100: T__25
+            case 15 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 17 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:106: T__26
+            case 16 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 18 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:112: T__27
+            case 17 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:118: T__28
+            case 18 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:124: T__29
+            case 19 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:130: T__30
+            case 20 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:136: T__31
+            case 21 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:142: T__32
+            case 22 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
-            case 24 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:148: T__33
+            case 23 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:142: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:154: T__34
+            case 24 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:148: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:160: T__35
+            case 25 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:154: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:166: T__36
+            case 26 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:160: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 28 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:172: T__37
+            case 27 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:166: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 29 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:178: T__38
+            case 28 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:172: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 30 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:184: T__39
+            case 29 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:178: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 31 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:190: T__40
+            case 30 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:184: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
-            case 32 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:196: T__41
+            case 31 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:190: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
-            case 33 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:202: T__42
+            case 32 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:196: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
-            case 34 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:208: T__43
+            case 33 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:202: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
-            case 35 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:214: T__44
+            case 34 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:208: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
-            case 36 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:220: T__45
+            case 35 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:214: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
-            case 37 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:226: T__46
+            case 36 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:220: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
-            case 38 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:232: T__47
+            case 37 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:226: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
-            case 39 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:238: T__48
+            case 38 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:232: T__48
                 {
                 mT__48(); 
 
                 }
                 break;
-            case 40 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:244: T__49
+            case 39 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:238: T__49
                 {
                 mT__49(); 
 
                 }
                 break;
-            case 41 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:250: T__50
+            case 40 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:244: T__50
                 {
                 mT__50(); 
 
                 }
                 break;
-            case 42 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:256: T__51
+            case 41 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:250: T__51
                 {
                 mT__51(); 
 
                 }
                 break;
-            case 43 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:262: T__52
+            case 42 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:256: T__52
                 {
                 mT__52(); 
 
                 }
                 break;
-            case 44 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:268: T__53
+            case 43 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:262: T__53
                 {
                 mT__53(); 
 
                 }
                 break;
-            case 45 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:274: T__54
+            case 44 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:268: T__54
                 {
                 mT__54(); 
 
                 }
                 break;
-            case 46 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:280: T__55
+            case 45 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:274: T__55
                 {
                 mT__55(); 
 
                 }
                 break;
-            case 47 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:286: T__56
+            case 46 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:280: T__56
                 {
                 mT__56(); 
 
                 }
                 break;
-            case 48 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:292: T__57
+            case 47 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:286: T__57
                 {
                 mT__57(); 
 
                 }
                 break;
-            case 49 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:298: T__58
+            case 48 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:292: T__58
                 {
                 mT__58(); 
 
                 }
                 break;
-            case 50 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:304: T__59
+            case 49 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:298: T__59
                 {
                 mT__59(); 
 
                 }
                 break;
-            case 51 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:310: T__60
+            case 50 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:304: T__60
                 {
                 mT__60(); 
 
                 }
                 break;
-            case 52 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:316: T__61
+            case 51 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:310: T__61
                 {
                 mT__61(); 
 
                 }
                 break;
-            case 53 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:322: T__62
+            case 52 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:316: T__62
                 {
                 mT__62(); 
 
                 }
                 break;
-            case 54 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:328: T__63
+            case 53 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:322: T__63
                 {
                 mT__63(); 
 
                 }
                 break;
-            case 55 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:334: T__64
+            case 54 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:328: T__64
                 {
                 mT__64(); 
 
                 }
                 break;
-            case 56 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:340: T__65
+            case 55 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:334: T__65
                 {
                 mT__65(); 
 
                 }
                 break;
-            case 57 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:346: T__66
+            case 56 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:340: T__66
                 {
                 mT__66(); 
 
                 }
                 break;
-            case 58 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:352: T__67
+            case 57 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:346: T__67
                 {
                 mT__67(); 
 
                 }
                 break;
-            case 59 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:358: T__68
+            case 58 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:352: T__68
                 {
                 mT__68(); 
 
                 }
                 break;
-            case 60 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:364: T__69
+            case 59 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:358: T__69
                 {
                 mT__69(); 
 
                 }
                 break;
-            case 61 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:370: T__70
+            case 60 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:364: T__70
                 {
                 mT__70(); 
 
                 }
                 break;
-            case 62 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:376: T__71
+            case 61 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:370: T__71
                 {
                 mT__71(); 
 
                 }
                 break;
-            case 63 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:382: T__72
+            case 62 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:376: T__72
                 {
                 mT__72(); 
 
                 }
                 break;
-            case 64 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:388: T__73
+            case 63 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:382: T__73
                 {
                 mT__73(); 
 
                 }
                 break;
-            case 65 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:394: T__74
+            case 64 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:388: T__74
                 {
                 mT__74(); 
 
                 }
                 break;
-            case 66 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:400: T__75
+            case 65 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:394: T__75
                 {
                 mT__75(); 
 
                 }
                 break;
-            case 67 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:406: T__76
+            case 66 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:400: T__76
                 {
                 mT__76(); 
 
                 }
                 break;
-            case 68 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:412: T__77
+            case 67 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:406: T__77
                 {
                 mT__77(); 
 
                 }
                 break;
-            case 69 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:418: T__78
+            case 68 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:412: T__78
                 {
                 mT__78(); 
 
                 }
                 break;
-            case 70 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:424: T__79
+            case 69 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:418: T__79
                 {
                 mT__79(); 
 
                 }
                 break;
-            case 71 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:430: T__80
+            case 70 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:424: T__80
                 {
                 mT__80(); 
 
                 }
                 break;
-            case 72 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:436: T__81
+            case 71 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:430: T__81
                 {
                 mT__81(); 
 
                 }
                 break;
-            case 73 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:442: T__82
+            case 72 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:436: T__82
                 {
                 mT__82(); 
 
                 }
                 break;
-            case 74 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:448: T__83
+            case 73 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:442: T__83
                 {
                 mT__83(); 
 
                 }
                 break;
-            case 75 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:454: T__84
+            case 74 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:448: T__84
                 {
                 mT__84(); 
 
                 }
                 break;
-            case 76 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:460: T__85
+            case 75 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:454: T__85
                 {
                 mT__85(); 
 
                 }
                 break;
-            case 77 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:466: T__86
+            case 76 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:460: T__86
                 {
                 mT__86(); 
 
                 }
                 break;
-            case 78 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:472: T__87
+            case 77 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:466: T__87
                 {
                 mT__87(); 
 
                 }
                 break;
-            case 79 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:478: T__88
+            case 78 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:472: T__88
                 {
                 mT__88(); 
 
                 }
                 break;
-            case 80 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:484: T__89
+            case 79 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:478: T__89
                 {
                 mT__89(); 
 
                 }
                 break;
-            case 81 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:490: T__90
+            case 80 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:484: T__90
                 {
                 mT__90(); 
 
                 }
                 break;
-            case 82 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:496: T__91
+            case 81 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:490: T__91
                 {
                 mT__91(); 
 
                 }
                 break;
-            case 83 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:502: T__92
+            case 82 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:496: T__92
                 {
                 mT__92(); 
 
                 }
                 break;
-            case 84 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:508: T__93
+            case 83 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:502: T__93
                 {
                 mT__93(); 
 
                 }
                 break;
-            case 85 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:514: T__94
+            case 84 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:508: T__94
                 {
                 mT__94(); 
 
                 }
                 break;
-            case 86 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:520: T__95
+            case 85 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:514: T__95
                 {
                 mT__95(); 
 
                 }
                 break;
-            case 87 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:526: T__96
+            case 86 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:520: T__96
                 {
                 mT__96(); 
 
                 }
                 break;
-            case 88 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:532: T__97
+            case 87 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:526: T__97
                 {
                 mT__97(); 
 
                 }
                 break;
-            case 89 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:538: T__98
+            case 88 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:532: T__98
                 {
                 mT__98(); 
 
                 }
                 break;
-            case 90 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:544: T__99
+            case 89 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:538: T__99
                 {
                 mT__99(); 
 
                 }
                 break;
-            case 91 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:550: T__100
+            case 90 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:544: T__100
                 {
                 mT__100(); 
 
                 }
                 break;
-            case 92 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:557: T__101
+            case 91 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:551: T__101
                 {
                 mT__101(); 
 
                 }
                 break;
-            case 93 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:564: T__102
+            case 92 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:558: T__102
                 {
                 mT__102(); 
 
                 }
                 break;
-            case 94 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:571: T__103
+            case 93 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:565: T__103
                 {
                 mT__103(); 
 
                 }
                 break;
-            case 95 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:578: T__104
+            case 94 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:572: T__104
                 {
                 mT__104(); 
 
                 }
                 break;
-            case 96 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:585: T__105
+            case 95 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:579: T__105
                 {
                 mT__105(); 
 
                 }
                 break;
-            case 97 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:592: T__106
+            case 96 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:586: T__106
                 {
                 mT__106(); 
 
                 }
                 break;
-            case 98 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:599: T__107
+            case 97 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:593: T__107
                 {
                 mT__107(); 
 
                 }
                 break;
-            case 99 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:606: T__108
+            case 98 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:600: T__108
                 {
                 mT__108(); 
 
                 }
                 break;
-            case 100 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:613: T__109
+            case 99 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:607: T__109
                 {
                 mT__109(); 
 
                 }
                 break;
-            case 101 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:620: T__110
+            case 100 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:614: T__110
                 {
                 mT__110(); 
 
                 }
                 break;
-            case 102 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:627: T__111
+            case 101 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:621: T__111
                 {
                 mT__111(); 
 
                 }
                 break;
-            case 103 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:634: T__112
+            case 102 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:628: T__112
                 {
                 mT__112(); 
 
                 }
                 break;
-            case 104 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:641: T__113
+            case 103 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:635: T__113
                 {
                 mT__113(); 
 
                 }
                 break;
-            case 105 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:648: T__114
+            case 104 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:642: T__114
                 {
                 mT__114(); 
 
                 }
                 break;
-            case 106 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:655: T__115
+            case 105 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:649: T__115
                 {
                 mT__115(); 
 
                 }
                 break;
-            case 107 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:662: T__116
+            case 106 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:656: T__116
                 {
                 mT__116(); 
 
                 }
                 break;
-            case 108 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:669: T__117
+            case 107 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:663: T__117
                 {
                 mT__117(); 
 
                 }
                 break;
-            case 109 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:676: T__118
+            case 108 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:670: T__118
                 {
                 mT__118(); 
 
                 }
                 break;
-            case 110 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:683: T__119
+            case 109 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:677: T__119
                 {
                 mT__119(); 
 
                 }
                 break;
-            case 111 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:690: T__120
+            case 110 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:684: T__120
                 {
                 mT__120(); 
 
                 }
                 break;
-            case 112 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:697: T__121
+            case 111 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:691: T__121
                 {
                 mT__121(); 
 
                 }
                 break;
-            case 113 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:704: T__122
+            case 112 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:698: T__122
                 {
                 mT__122(); 
 
                 }
                 break;
-            case 114 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:711: T__123
+            case 113 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:705: T__123
                 {
                 mT__123(); 
 
                 }
                 break;
-            case 115 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:718: T__124
+            case 114 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:712: T__124
                 {
                 mT__124(); 
 
                 }
                 break;
-            case 116 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:725: T__125
+            case 115 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:719: T__125
                 {
                 mT__125(); 
 
                 }
                 break;
-            case 117 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:732: T__126
+            case 116 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:726: T__126
                 {
                 mT__126(); 
 
                 }
                 break;
-            case 118 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:739: T__127
+            case 117 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:733: T__127
                 {
                 mT__127(); 
 
                 }
                 break;
-            case 119 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:746: T__128
+            case 118 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:740: T__128
                 {
                 mT__128(); 
 
                 }
                 break;
-            case 120 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:753: T__129
+            case 119 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:747: T__129
                 {
                 mT__129(); 
 
                 }
                 break;
-            case 121 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:760: T__130
+            case 120 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:754: T__130
                 {
                 mT__130(); 
 
                 }
                 break;
-            case 122 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:767: T__131
+            case 121 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:761: T__131
                 {
                 mT__131(); 
 
                 }
                 break;
-            case 123 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:774: T__132
+            case 122 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:768: T__132
                 {
                 mT__132(); 
 
                 }
                 break;
-            case 124 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:781: T__133
+            case 123 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:775: T__133
                 {
                 mT__133(); 
 
                 }
                 break;
-            case 125 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:788: T__134
+            case 124 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:782: T__134
                 {
                 mT__134(); 
 
                 }
                 break;
-            case 126 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:795: T__135
+            case 125 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:789: T__135
                 {
                 mT__135(); 
 
                 }
                 break;
-            case 127 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:802: T__136
+            case 126 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:796: T__136
                 {
                 mT__136(); 
 
                 }
                 break;
-            case 128 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:809: T__137
+            case 127 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:803: T__137
                 {
                 mT__137(); 
 
                 }
                 break;
-            case 129 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:816: T__138
+            case 128 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:810: T__138
                 {
                 mT__138(); 
 
                 }
                 break;
-            case 130 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:823: T__139
+            case 129 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:817: T__139
                 {
                 mT__139(); 
 
                 }
                 break;
-            case 131 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:830: T__140
+            case 130 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:824: T__140
                 {
                 mT__140(); 
 
                 }
                 break;
-            case 132 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:837: T__141
+            case 131 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:831: T__141
                 {
                 mT__141(); 
 
                 }
                 break;
-            case 133 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:844: T__142
+            case 132 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:838: T__142
                 {
                 mT__142(); 
 
                 }
                 break;
-            case 134 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:851: T__143
+            case 133 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:845: T__143
                 {
                 mT__143(); 
 
                 }
                 break;
-            case 135 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:858: T__144
+            case 134 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:852: T__144
                 {
                 mT__144(); 
 
                 }
                 break;
-            case 136 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:865: T__145
+            case 135 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:859: T__145
                 {
                 mT__145(); 
 
                 }
                 break;
-            case 137 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:872: T__146
+            case 136 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:866: T__146
                 {
                 mT__146(); 
 
                 }
                 break;
-            case 138 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:879: T__147
+            case 137 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:873: T__147
                 {
                 mT__147(); 
 
                 }
                 break;
-            case 139 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:886: T__148
+            case 138 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:880: T__148
                 {
                 mT__148(); 
 
                 }
                 break;
-            case 140 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:893: T__149
+            case 139 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:887: T__149
                 {
                 mT__149(); 
 
                 }
                 break;
-            case 141 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:900: T__150
+            case 140 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:894: T__150
                 {
                 mT__150(); 
 
                 }
                 break;
-            case 142 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:907: T__151
+            case 141 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:901: T__151
                 {
                 mT__151(); 
 
                 }
                 break;
-            case 143 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:914: T__152
+            case 142 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:908: T__152
                 {
                 mT__152(); 
 
                 }
                 break;
-            case 144 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:921: T__153
+            case 143 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:915: T__153
                 {
                 mT__153(); 
 
                 }
                 break;
-            case 145 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:928: T__154
+            case 144 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:922: T__154
                 {
                 mT__154(); 
 
                 }
                 break;
-            case 146 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:935: T__155
+            case 145 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:929: T__155
                 {
                 mT__155(); 
 
                 }
                 break;
-            case 147 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:942: T__156
+            case 146 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:936: T__156
                 {
                 mT__156(); 
 
                 }
                 break;
-            case 148 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:949: T__157
+            case 147 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:943: T__157
                 {
                 mT__157(); 
 
                 }
                 break;
-            case 149 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:956: T__158
+            case 148 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:950: T__158
                 {
                 mT__158(); 
 
                 }
                 break;
-            case 150 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:963: T__159
+            case 149 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:957: T__159
                 {
                 mT__159(); 
 
                 }
                 break;
-            case 151 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:970: T__160
+            case 150 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:964: T__160
                 {
                 mT__160(); 
 
                 }
                 break;
-            case 152 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:977: T__161
+            case 151 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:971: T__161
                 {
                 mT__161(); 
 
                 }
                 break;
-            case 153 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:984: T__162
+            case 152 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:978: T__162
                 {
                 mT__162(); 
 
                 }
                 break;
-            case 154 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:991: T__163
+            case 153 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:985: T__163
                 {
                 mT__163(); 
 
                 }
                 break;
-            case 155 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:998: T__164
+            case 154 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:992: T__164
                 {
                 mT__164(); 
 
                 }
                 break;
-            case 156 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1005: T__165
+            case 155 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:999: T__165
                 {
                 mT__165(); 
 
                 }
                 break;
-            case 157 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1012: T__166
+            case 156 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1006: T__166
                 {
                 mT__166(); 
 
                 }
                 break;
-            case 158 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1019: T__167
+            case 157 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1013: T__167
                 {
                 mT__167(); 
 
                 }
                 break;
-            case 159 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1026: T__168
+            case 158 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1020: T__168
                 {
                 mT__168(); 
 
                 }
                 break;
-            case 160 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1033: T__169
+            case 159 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1027: T__169
                 {
                 mT__169(); 
 
                 }
                 break;
-            case 161 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1040: T__170
+            case 160 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1034: T__170
                 {
                 mT__170(); 
 
                 }
                 break;
-            case 162 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1047: T__171
+            case 161 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1041: T__171
                 {
                 mT__171(); 
 
                 }
                 break;
-            case 163 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1054: T__172
+            case 162 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1048: T__172
                 {
                 mT__172(); 
 
                 }
                 break;
-            case 164 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1061: T__173
+            case 163 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1055: T__173
                 {
                 mT__173(); 
 
                 }
                 break;
-            case 165 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1068: T__174
+            case 164 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1062: T__174
                 {
                 mT__174(); 
 
                 }
                 break;
-            case 166 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1075: T__175
+            case 165 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1069: T__175
                 {
                 mT__175(); 
 
                 }
                 break;
-            case 167 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1082: T__176
+            case 166 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1076: T__176
                 {
                 mT__176(); 
 
                 }
                 break;
-            case 168 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1089: T__177
+            case 167 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1083: T__177
                 {
                 mT__177(); 
 
                 }
                 break;
-            case 169 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1096: T__178
+            case 168 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1090: T__178
                 {
                 mT__178(); 
 
                 }
                 break;
-            case 170 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1103: T__179
+            case 169 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1097: T__179
                 {
                 mT__179(); 
 
                 }
                 break;
-            case 171 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1110: T__180
+            case 170 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1104: T__180
                 {
                 mT__180(); 
 
                 }
                 break;
-            case 172 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1117: T__181
+            case 171 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1111: T__181
                 {
                 mT__181(); 
 
                 }
                 break;
+            case 172 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1118: T__182
+                {
+                mT__182(); 
+
+                }
+                break;
             case 173 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1124: RULE_ML_COMMENT
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1125: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 174 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1140: RULE_SL_COMMENT
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1141: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 175 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1156: RULE_ID
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1157: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 176 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1164: RULE_INT
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1165: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 177 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1173: RULE_WS
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1174: RULE_NEWLINE
+                {
+                mRULE_NEWLINE(); 
+
+                }
+                break;
+            case 178 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1187: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 178 :
-                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1181: RULE_ANY_OTHER
+            case 179 :
+                // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantuml.g:1:1195: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -5419,135 +5436,135 @@ public class InternalPlantumlLexer extends Lexer {
 
     protected DFA9 dfa9 = new DFA9(this);
     static final String DFA9_eotS =
-        "\2\uffff\27\65\1\57\4\uffff\1\174\1\176\1\u0080\1\u0081\1\uffff"+
-        "\4\65\1\uffff\2\65\1\uffff\1\57\5\uffff\4\65\1\uffff\100\65\15\uffff"+
-        "\5\65\1\uffff\2\65\3\uffff\74\65\1\u012e\15\65\1\u013c\27\65\1\u0155"+
-        "\5\65\1\u015c\10\65\1\u0166\12\65\1\u017d\1\u017e\1\65\1\u0180\11"+
-        "\65\1\u018c\11\65\1\u0196\7\65\1\u01a0\1\u01a1\1\u01a2\2\65\1\uffff"+
-        "\12\65\1\u01af\2\65\1\uffff\1\u01b2\10\65\1\u01bb\16\65\1\uffff"+
-        "\1\u01ca\1\u01cb\1\65\1\u01cd\2\65\1\uffff\1\u01d0\4\65\1\u01d5"+
-        "\3\65\1\uffff\26\65\2\uffff\1\u01f5\1\uffff\4\65\1\u01fa\1\u01fb"+
-        "\5\65\1\uffff\1\u0206\10\65\1\uffff\1\65\1\u0211\7\65\3\uffff\14"+
-        "\65\1\uffff\2\65\1\uffff\4\65\1\u022d\1\u022f\1\65\1\u0231\1\uffff"+
-        "\3\65\1\u0235\5\65\1\u023b\4\65\2\uffff\1\u0240\1\uffff\2\65\1\uffff"+
-        "\4\65\1\uffff\37\65\1\uffff\3\65\1\u026a\2\uffff\12\65\1\uffff\1"+
-        "\65\1\u027c\10\65\1\uffff\1\65\1\u028c\7\65\1\u0294\3\65\1\u0298"+
-        "\2\65\1\u029b\1\u029c\6\65\1\u02a3\1\65\1\u02a5\1\uffff\1\65\1\uffff"+
-        "\1\u02a8\1\uffff\1\u02a9\1\u02aa\1\65\1\uffff\2\65\1\u02ae\2\65"+
-        "\1\uffff\4\65\1\uffff\10\65\1\u02bd\11\65\1\u02c8\10\65\1\u02d1"+
-        "\1\u02d2\4\65\1\u02d7\5\65\1\u02dd\1\65\1\uffff\20\65\1\u02f0\1"+
-        "\uffff\14\65\1\u02ff\2\65\1\uffff\7\65\1\uffff\3\65\1\uffff\2\65"+
-        "\2\uffff\1\u030e\4\65\1\u0314\1\uffff\1\65\1\uffff\2\65\3\uffff"+
-        "\1\u0318\2\65\1\uffff\2\65\1\u031d\12\65\1\u0328\1\uffff\1\u0329"+
-        "\1\u032a\1\65\1\u032c\1\65\1\u032e\4\65\1\uffff\6\65\1\u0339\1\65"+
-        "\2\uffff\4\65\1\uffff\4\65\1\u0343\1\uffff\1\65\1\u0346\20\65\1"+
-        "\uffff\14\65\1\u0364\1\65\1\uffff\15\65\1\u0373\1\uffff\5\65\1\uffff"+
-        "\3\65\1\uffff\1\65\1\u037d\1\65\1\u037f\1\uffff\1\u0380\4\65\1\u0385"+
-        "\1\u0386\1\65\1\u0388\1\65\3\uffff\1\65\1\uffff\1\u038b\1\uffff"+
-        "\1\u038c\3\65\1\u0390\5\65\1\uffff\2\65\1\u0399\2\65\1\u039c\1\65"+
-        "\1\u039e\1\65\1\uffff\1\u03a0\1\65\1\uffff\1\u03a2\1\65\1\u03a4"+
-        "\1\65\1\u03a6\1\65\1\u03a8\1\65\1\u03aa\1\u03ab\6\65\1\u03b2\12"+
-        "\65\1\u03bd\1\u03be\1\uffff\1\65\1\u03c0\1\u03c1\1\65\1\u03c3\3"+
-        "\65\1\u03c7\1\65\1\u03c9\1\u03ca\2\65\1\uffff\1\u03cd\1\u03ce\1"+
-        "\u03cf\1\65\1\u03d1\1\u03d2\3\65\1\uffff\1\u03d6\2\uffff\1\65\1"+
-        "\u03d8\1\65\1\u03da\2\uffff\1\u03db\1\uffff\2\65\2\uffff\2\65\1"+
-        "\u03e0\1\uffff\4\65\1\u03e5\1\u03e6\1\65\1\u03e8\1\uffff\2\65\1"+
-        "\uffff\1\u03eb\1\uffff\1\65\1\uffff\1\65\1\uffff\1\65\1\uffff\1"+
-        "\u03ef\1\uffff\1\65\1\uffff\1\u03f1\2\uffff\6\65\1\uffff\1\65\1"+
-        "\u03f9\10\65\2\uffff\1\65\2\uffff\1\65\1\uffff\2\65\1\u0406\1\uffff"+
-        "\1\u0407\2\uffff\1\65\1\u0409\3\uffff\1\65\2\uffff\1\u040b\1\65"+
-        "\1\u040d\1\uffff\1\65\1\uffff\1\65\2\uffff\2\65\1\u0412\1\65\1\uffff"+
-        "\4\65\2\uffff\1\u0419\1\uffff\1\u041a\1\u041b\1\uffff\1\u041c\2"+
-        "\65\1\uffff\1\65\1\uffff\1\u0420\4\65\1\u0425\1\65\1\uffff\10\65"+
-        "\1\u042f\3\65\2\uffff\1\u0433\1\uffff\1\u0434\1\uffff\1\u0435\1"+
-        "\uffff\1\u0436\3\65\1\uffff\1\65\1\u043b\4\65\4\uffff\1\65\1\u0441"+
-        "\1\65\1\uffff\1\65\1\u0444\2\65\1\uffff\1\65\1\u0449\1\u044a\5\65"+
-        "\1\u0450\1\uffff\3\65\4\uffff\2\65\1\u0456\1\65\1\uffff\1\u0458"+
-        "\1\u0459\1\u045a\1\u045b\1\u045c\1\uffff\1\65\1\u045e\1\uffff\4"+
-        "\65\2\uffff\5\65\1\uffff\1\u0468\1\u0469\1\u046a\1\u046b\1\u046c"+
-        "\1\uffff\1\u046d\5\uffff\1\65\1\uffff\1\u046f\1\u0470\1\u0471\1"+
-        "\65\1\u0473\4\65\6\uffff\1\65\3\uffff\1\65\1\uffff\1\u047a\1\65"+
-        "\1\u047c\1\u047d\1\65\1\u047f\1\uffff\1\65\2\uffff\1\65\1\uffff"+
-        "\1\u0482\1\65\1\uffff\1\65\1\u0485\1\uffff";
+        "\2\uffff\27\67\1\61\4\uffff\1\176\1\u0080\1\u0082\1\u0083\1\uffff"+
+        "\4\67\1\uffff\2\67\1\uffff\1\61\2\uffff\1\61\4\uffff\4\67\1\uffff"+
+        "\100\67\15\uffff\5\67\1\uffff\2\67\4\uffff\74\67\1\u0131\15\67\1"+
+        "\u013f\27\67\1\u0158\5\67\1\u015f\10\67\1\u0169\12\67\1\u0180\1"+
+        "\u0181\1\67\1\u0183\11\67\1\u018f\11\67\1\u0199\7\67\1\u01a3\1\u01a4"+
+        "\1\u01a5\2\67\1\uffff\12\67\1\u01b2\2\67\1\uffff\1\u01b5\10\67\1"+
+        "\u01be\16\67\1\uffff\1\u01cd\1\u01ce\1\67\1\u01d0\2\67\1\uffff\1"+
+        "\u01d3\4\67\1\u01d8\3\67\1\uffff\26\67\2\uffff\1\u01f8\1\uffff\4"+
+        "\67\1\u01fd\1\u01fe\5\67\1\uffff\1\u0209\10\67\1\uffff\1\67\1\u0214"+
+        "\7\67\3\uffff\14\67\1\uffff\2\67\1\uffff\4\67\1\u0230\1\u0232\1"+
+        "\67\1\u0234\1\uffff\3\67\1\u0238\5\67\1\u023e\4\67\2\uffff\1\u0243"+
+        "\1\uffff\2\67\1\uffff\4\67\1\uffff\37\67\1\uffff\3\67\1\u026d\2"+
+        "\uffff\12\67\1\uffff\1\67\1\u027f\10\67\1\uffff\1\67\1\u028f\7\67"+
+        "\1\u0297\3\67\1\u029b\2\67\1\u029e\1\u029f\6\67\1\u02a6\1\67\1\u02a8"+
+        "\1\uffff\1\67\1\uffff\1\u02ab\1\uffff\1\u02ac\1\u02ad\1\67\1\uffff"+
+        "\2\67\1\u02b1\2\67\1\uffff\4\67\1\uffff\10\67\1\u02c0\11\67\1\u02cb"+
+        "\10\67\1\u02d4\1\u02d5\4\67\1\u02da\5\67\1\u02e0\1\67\1\uffff\20"+
+        "\67\1\u02f3\1\uffff\14\67\1\u0302\2\67\1\uffff\7\67\1\uffff\3\67"+
+        "\1\uffff\2\67\2\uffff\1\u0311\4\67\1\u0317\1\uffff\1\67\1\uffff"+
+        "\2\67\3\uffff\1\u031b\2\67\1\uffff\2\67\1\u0320\12\67\1\u032b\1"+
+        "\uffff\1\u032c\1\u032d\1\67\1\u032f\1\67\1\u0331\4\67\1\uffff\6"+
+        "\67\1\u033c\1\67\2\uffff\4\67\1\uffff\4\67\1\u0346\1\uffff\1\67"+
+        "\1\u0349\20\67\1\uffff\14\67\1\u0367\1\67\1\uffff\15\67\1\u0376"+
+        "\1\uffff\5\67\1\uffff\3\67\1\uffff\1\67\1\u0380\1\67\1\u0382\1\uffff"+
+        "\1\u0383\4\67\1\u0388\1\u0389\1\67\1\u038b\1\67\3\uffff\1\67\1\uffff"+
+        "\1\u038e\1\uffff\1\u038f\3\67\1\u0393\5\67\1\uffff\2\67\1\u039c"+
+        "\2\67\1\u039f\1\67\1\u03a1\1\67\1\uffff\1\u03a3\1\67\1\uffff\1\u03a5"+
+        "\1\67\1\u03a7\1\67\1\u03a9\1\67\1\u03ab\1\67\1\u03ad\1\u03ae\6\67"+
+        "\1\u03b5\12\67\1\u03c0\1\u03c1\1\uffff\1\67\1\u03c3\1\u03c4\1\67"+
+        "\1\u03c6\3\67\1\u03ca\1\67\1\u03cc\1\u03cd\2\67\1\uffff\1\u03d0"+
+        "\1\u03d1\1\u03d2\1\67\1\u03d4\1\u03d5\3\67\1\uffff\1\u03d9\2\uffff"+
+        "\1\67\1\u03db\1\67\1\u03dd\2\uffff\1\u03de\1\uffff\2\67\2\uffff"+
+        "\2\67\1\u03e3\1\uffff\4\67\1\u03e8\1\u03e9\1\67\1\u03eb\1\uffff"+
+        "\2\67\1\uffff\1\u03ee\1\uffff\1\67\1\uffff\1\67\1\uffff\1\67\1\uffff"+
+        "\1\u03f2\1\uffff\1\67\1\uffff\1\u03f4\2\uffff\6\67\1\uffff\1\67"+
+        "\1\u03fc\10\67\2\uffff\1\67\2\uffff\1\67\1\uffff\2\67\1\u0409\1"+
+        "\uffff\1\u040a\2\uffff\1\67\1\u040c\3\uffff\1\67\2\uffff\1\u040e"+
+        "\1\67\1\u0410\1\uffff\1\67\1\uffff\1\67\2\uffff\2\67\1\u0415\1\67"+
+        "\1\uffff\4\67\2\uffff\1\u041c\1\uffff\1\u041d\1\u041e\1\uffff\1"+
+        "\u041f\2\67\1\uffff\1\67\1\uffff\1\u0423\4\67\1\u0428\1\67\1\uffff"+
+        "\10\67\1\u0432\3\67\2\uffff\1\u0436\1\uffff\1\u0437\1\uffff\1\u0438"+
+        "\1\uffff\1\u0439\3\67\1\uffff\1\67\1\u043e\4\67\4\uffff\1\67\1\u0444"+
+        "\1\67\1\uffff\1\67\1\u0447\2\67\1\uffff\1\67\1\u044c\1\u044d\5\67"+
+        "\1\u0453\1\uffff\3\67\4\uffff\2\67\1\u0459\1\67\1\uffff\1\u045b"+
+        "\1\u045c\1\u045d\1\u045e\1\u045f\1\uffff\1\67\1\u0461\1\uffff\4"+
+        "\67\2\uffff\5\67\1\uffff\1\u046b\1\u046c\1\u046d\1\u046e\1\u046f"+
+        "\1\uffff\1\u0470\5\uffff\1\67\1\uffff\1\u0472\1\u0473\1\u0474\1"+
+        "\67\1\u0476\4\67\6\uffff\1\67\3\uffff\1\67\1\uffff\1\u047d\1\67"+
+        "\1\u047f\1\u0480\1\67\1\u0482\1\uffff\1\67\2\uffff\1\67\1\uffff"+
+        "\1\u0485\1\67\1\uffff\1\67\1\u0488\1\uffff";
     static final String DFA9_eofS =
-        "\u0486\uffff";
+        "\u0489\uffff";
     static final String DFA9_minS =
         "\1\0\1\uffff\1\154\1\145\2\141\1\151\1\141\1\157\1\156\1\150\3"+
         "\141\1\154\1\141\1\145\2\141\1\151\1\150\1\145\1\151\3\145\4\uffff"+
         "\1\60\1\134\1\47\1\60\1\uffff\1\143\1\157\1\156\1\141\1\uffff\1"+
-        "\151\1\145\1\uffff\1\101\5\uffff\1\151\1\164\2\165\1\uffff\1\151"+
-        "\1\163\1\141\1\157\1\162\1\144\1\141\1\162\1\151\1\141\1\162\1\145"+
-        "\1\155\1\144\1\162\1\157\1\162\1\143\1\151\1\157\1\154\1\141\1\156"+
-        "\1\144\1\157\1\141\1\166\1\155\2\147\2\144\1\143\1\166\1\144\1\141"+
-        "\1\154\1\141\1\156\1\165\1\167\1\162\1\144\1\163\1\144\1\141\1\145"+
-        "\1\171\1\141\1\157\1\162\1\145\1\156\1\141\1\151\1\155\1\162\1\157"+
-        "\1\145\1\154\1\147\1\146\2\156\15\uffff\2\164\1\165\1\144\1\164"+
-        "\1\uffff\1\164\1\167\3\uffff\1\143\1\151\1\141\1\162\1\147\1\161"+
-        "\1\143\1\145\1\167\1\154\1\145\1\162\1\143\1\141\1\155\1\156\1\153"+
-        "\1\160\1\107\1\147\1\145\1\162\1\145\1\150\1\156\1\163\1\144\1\171"+
-        "\2\145\1\120\1\151\1\162\1\153\1\145\1\156\1\157\1\150\3\145\1\157"+
-        "\1\151\1\156\2\164\1\143\1\141\1\114\1\166\1\156\1\150\1\145\1\141"+
-        "\1\143\1\165\1\153\1\155\1\144\1\160\1\60\1\171\1\141\1\144\1\155"+
-        "\1\144\1\107\1\156\1\166\1\102\1\164\1\167\1\151\1\145\1\60\1\154"+
-        "\1\163\1\141\1\161\1\154\1\141\1\164\1\154\1\150\1\164\1\145\2\164"+
-        "\2\157\1\156\1\151\1\154\1\141\1\154\1\160\1\145\1\161\1\60\2\145"+
-        "\1\165\1\153\1\143\1\60\1\156\1\171\2\164\1\157\1\154\1\146\1\163"+
-        "\1\60\1\102\1\120\1\162\1\145\1\102\1\141\3\163\1\164\2\60\1\156"+
-        "\1\60\1\171\1\151\1\141\1\171\1\151\1\156\1\107\1\156\1\164\1\60"+
-        "\2\156\1\157\1\165\1\151\1\103\1\171\1\141\1\152\1\60\1\141\1\145"+
-        "\1\147\1\151\1\107\1\171\1\150\3\60\1\145\1\154\1\uffff\1\102\2"+
-        "\154\1\157\1\171\1\162\1\156\1\145\1\154\1\145\1\60\1\156\1\154"+
-        "\1\uffff\1\60\2\164\1\165\1\145\1\164\1\145\1\157\1\164\1\60\1\156"+
-        "\1\145\2\162\1\156\1\144\1\164\1\145\1\142\1\145\1\141\1\102\1\165"+
-        "\1\141\1\uffff\2\60\1\145\1\60\1\150\1\151\1\uffff\1\60\1\127\1"+
-        "\102\1\162\1\154\1\60\1\154\1\151\1\157\1\uffff\1\154\1\171\1\157"+
-        "\1\150\1\141\1\154\1\145\1\141\1\165\1\151\1\162\1\151\1\153\1\141"+
-        "\2\162\1\154\1\164\1\151\1\142\1\127\1\156\2\uffff\1\60\1\uffff"+
-        "\1\104\2\156\1\157\2\60\1\144\1\162\1\103\1\102\1\162\1\uffff\1"+
-        "\60\1\164\1\156\1\155\1\147\1\162\1\122\1\163\1\157\1\uffff\1\143"+
-        "\1\60\1\145\1\144\1\157\1\165\1\151\1\141\1\120\3\uffff\1\162\1"+
-        "\145\1\162\1\102\1\145\1\156\1\102\1\145\1\141\1\162\1\165\1\102"+
-        "\1\uffff\1\147\1\102\1\uffff\1\154\2\157\1\164\2\60\1\167\1\60\1"+
-        "\uffff\1\144\1\162\1\157\1\60\1\165\1\141\1\171\1\147\1\141\1\60"+
-        "\1\147\1\154\1\145\1\162\2\uffff\1\60\1\uffff\1\145\1\157\1\uffff"+
-        "\1\157\1\154\1\145\1\141\1\uffff\1\157\1\154\1\156\1\165\1\141\1"+
-        "\154\2\141\1\147\1\151\1\143\1\144\1\154\2\141\1\162\1\157\1\141"+
-        "\1\156\3\171\1\102\1\151\1\127\1\107\1\141\1\157\1\150\1\122\1\145"+
-        "\1\uffff\1\145\1\153\1\122\1\60\2\uffff\2\145\1\150\1\154\2\157"+
-        "\1\151\1\141\2\145\1\uffff\1\141\1\60\1\101\1\150\1\145\1\157\1"+
-        "\151\1\127\1\145\1\162\1\uffff\1\122\1\60\1\154\1\145\1\162\1\157"+
-        "\1\127\1\165\1\102\1\60\1\157\1\154\1\102\1\60\1\162\1\145\2\60"+
-        "\1\145\1\154\1\162\1\107\1\154\1\145\1\60\1\151\1\60\1\uffff\1\155"+
-        "\1\uffff\1\60\1\uffff\2\60\1\154\1\uffff\1\155\1\162\1\60\1\145"+
-        "\1\163\1\uffff\1\145\1\165\1\127\1\151\1\uffff\1\144\1\154\1\157"+
-        "\2\165\1\164\1\167\1\153\1\60\1\145\1\156\1\144\1\171\1\145\1\153"+
-        "\1\145\1\166\1\150\1\60\1\155\1\107\1\164\1\161\1\154\1\156\1\153"+
-        "\1\102\2\60\1\154\1\143\1\150\1\162\1\60\1\162\1\151\1\157\1\154"+
-        "\1\167\1\60\1\145\1\uffff\1\162\1\145\1\151\1\165\1\162\1\141\1"+
-        "\154\1\141\1\156\1\154\1\141\1\171\1\141\1\145\1\154\1\145\1\60"+
-        "\1\uffff\1\161\1\154\1\162\1\165\1\145\1\165\1\151\1\164\1\141\1"+
-        "\163\1\156\1\150\1\60\1\141\1\145\1\uffff\1\144\1\145\1\161\1\154"+
-        "\1\150\1\146\1\154\1\uffff\1\167\1\165\1\162\1\uffff\1\157\1\156"+
-        "\2\uffff\1\60\1\165\1\141\1\162\1\165\1\60\1\uffff\1\163\1\uffff"+
-        "\1\157\1\162\3\uffff\1\60\1\142\1\171\1\uffff\1\156\1\145\1\60\1"+
-        "\145\1\150\1\156\1\101\1\145\1\144\1\145\1\163\2\145\1\60\1\uffff"+
-        "\2\60\1\145\1\60\1\156\1\60\1\151\1\156\1\145\1\151\1\uffff\1\157"+
-        "\1\162\1\145\1\165\1\145\1\147\1\60\1\154\2\uffff\1\165\1\153\1"+
-        "\151\1\145\1\uffff\1\157\1\164\1\144\1\154\1\60\1\uffff\1\144\1"+
-        "\60\1\156\1\146\1\145\1\141\1\156\1\144\1\171\1\145\1\153\1\155"+
-        "\1\107\1\102\1\164\1\145\1\154\1\156\1\uffff\2\165\1\143\1\162\2"+
-        "\141\2\162\1\157\1\102\1\155\1\145\1\60\1\151\1\uffff\1\142\1\144"+
-        "\1\145\1\156\1\165\1\145\1\151\1\146\1\165\1\156\1\145\1\157\1\167"+
-        "\1\60\1\uffff\1\145\2\171\2\145\1\uffff\1\145\1\153\1\145\1\uffff"+
-        "\1\145\1\60\1\144\1\60\1\uffff\1\60\1\151\1\145\1\154\1\164\2\60"+
-        "\1\145\1\60\1\162\3\uffff\1\156\1\uffff\1\60\1\uffff\1\60\1\164"+
-        "\1\107\1\144\1\60\1\145\1\102\1\157\1\164\1\145\1\uffff\1\165\1"+
-        "\145\1\60\1\164\1\145\1\60\1\145\1\60\1\157\1\uffff\1\60\1\154\1"+
-        "\uffff\1\60\1\146\1\60\1\154\1\60\1\145\1\60\1\156\2\60\1\157\1"+
-        "\162\1\154\1\145\1\154\1\157\1\60\1\141\1\145\1\150\1\160\1\107"+
-        "\1\164\1\151\1\161\2\154\2\60\1\uffff\1\164\2\60\1\156\1\60\1\157"+
-        "\1\164\1\160\1\60\1\145\2\60\1\167\1\156\1\uffff\3\60\1\145\2\60"+
-        "\2\145\1\162\1\uffff\1\60\2\uffff\1\164\1\60\1\155\1\60\2\uffff"+
+        "\151\1\145\1\uffff\1\101\2\uffff\1\12\4\uffff\1\151\1\164\2\165"+
+        "\1\uffff\1\151\1\163\1\141\1\157\1\162\1\144\1\141\1\162\1\151\1"+
+        "\141\1\162\1\145\1\155\1\144\1\162\1\157\1\162\1\143\1\151\1\157"+
+        "\1\154\1\141\1\156\1\144\1\157\1\141\1\166\1\155\2\147\2\144\1\143"+
+        "\1\166\1\144\1\141\1\154\1\141\1\156\1\165\1\167\1\162\1\144\1\163"+
+        "\1\144\1\141\1\145\1\171\1\141\1\157\1\162\1\145\1\156\1\141\1\151"+
+        "\1\155\1\162\1\157\1\145\1\154\1\147\1\146\2\156\15\uffff\2\164"+
+        "\1\165\1\144\1\164\1\uffff\1\164\1\167\4\uffff\1\143\1\151\1\141"+
+        "\1\162\1\147\1\161\1\143\1\145\1\167\1\154\1\145\1\162\1\143\1\141"+
+        "\1\155\1\156\1\153\1\160\1\107\1\147\1\145\1\162\1\145\1\150\1\156"+
+        "\1\163\1\144\1\171\2\145\1\120\1\151\1\162\1\153\1\145\1\156\1\157"+
+        "\1\150\3\145\1\157\1\151\1\156\2\164\1\143\1\141\1\114\1\166\1\156"+
+        "\1\150\1\145\1\141\1\143\1\165\1\153\1\155\1\144\1\160\1\60\1\171"+
+        "\1\141\1\144\1\155\1\144\1\107\1\156\1\166\1\102\1\164\1\167\1\151"+
+        "\1\145\1\60\1\154\1\163\1\141\1\161\1\154\1\141\1\164\1\154\1\150"+
+        "\1\164\1\145\2\164\2\157\1\156\1\151\1\154\1\141\1\154\1\160\1\145"+
+        "\1\161\1\60\2\145\1\165\1\153\1\143\1\60\1\156\1\171\2\164\1\157"+
+        "\1\154\1\146\1\163\1\60\1\102\1\120\1\162\1\145\1\102\1\141\3\163"+
+        "\1\164\2\60\1\156\1\60\1\171\1\151\1\141\1\171\1\151\1\156\1\107"+
+        "\1\156\1\164\1\60\2\156\1\157\1\165\1\151\1\103\1\171\1\141\1\152"+
+        "\1\60\1\141\1\145\1\147\1\151\1\107\1\171\1\150\3\60\1\145\1\154"+
+        "\1\uffff\1\102\2\154\1\157\1\171\1\162\1\156\1\145\1\154\1\145\1"+
+        "\60\1\156\1\154\1\uffff\1\60\2\164\1\165\1\145\1\164\1\145\1\157"+
+        "\1\164\1\60\1\156\1\145\2\162\1\156\1\144\1\164\1\145\1\142\1\145"+
+        "\1\141\1\102\1\165\1\141\1\uffff\2\60\1\145\1\60\1\150\1\151\1\uffff"+
+        "\1\60\1\127\1\102\1\162\1\154\1\60\1\154\1\151\1\157\1\uffff\1\154"+
+        "\1\171\1\157\1\150\1\141\1\154\1\145\1\141\1\165\1\151\1\162\1\151"+
+        "\1\153\1\141\2\162\1\154\1\164\1\151\1\142\1\127\1\156\2\uffff\1"+
+        "\60\1\uffff\1\104\2\156\1\157\2\60\1\144\1\162\1\103\1\102\1\162"+
+        "\1\uffff\1\60\1\164\1\156\1\155\1\147\1\162\1\122\1\163\1\157\1"+
+        "\uffff\1\143\1\60\1\145\1\144\1\157\1\165\1\151\1\141\1\120\3\uffff"+
+        "\1\162\1\145\1\162\1\102\1\145\1\156\1\102\1\145\1\141\1\162\1\165"+
+        "\1\102\1\uffff\1\147\1\102\1\uffff\1\154\2\157\1\164\2\60\1\167"+
+        "\1\60\1\uffff\1\144\1\162\1\157\1\60\1\165\1\141\1\171\1\147\1\141"+
+        "\1\60\1\147\1\154\1\145\1\162\2\uffff\1\60\1\uffff\1\145\1\157\1"+
+        "\uffff\1\157\1\154\1\145\1\141\1\uffff\1\157\1\154\1\156\1\165\1"+
+        "\141\1\154\2\141\1\147\1\151\1\143\1\144\1\154\2\141\1\162\1\157"+
+        "\1\141\1\156\3\171\1\102\1\151\1\127\1\107\1\141\1\157\1\150\1\122"+
+        "\1\145\1\uffff\1\145\1\153\1\122\1\60\2\uffff\2\145\1\150\1\154"+
+        "\2\157\1\151\1\141\2\145\1\uffff\1\141\1\60\1\101\1\150\1\145\1"+
+        "\157\1\151\1\127\1\145\1\162\1\uffff\1\122\1\60\1\154\1\145\1\162"+
+        "\1\157\1\127\1\165\1\102\1\60\1\157\1\154\1\102\1\60\1\162\1\145"+
+        "\2\60\1\145\1\154\1\162\1\107\1\154\1\145\1\60\1\151\1\60\1\uffff"+
+        "\1\155\1\uffff\1\60\1\uffff\2\60\1\154\1\uffff\1\155\1\162\1\60"+
+        "\1\145\1\163\1\uffff\1\145\1\165\1\127\1\151\1\uffff\1\144\1\154"+
+        "\1\157\2\165\1\164\1\167\1\153\1\60\1\145\1\156\1\144\1\171\1\145"+
+        "\1\153\1\145\1\166\1\150\1\60\1\155\1\107\1\164\1\161\1\154\1\156"+
+        "\1\153\1\102\2\60\1\154\1\143\1\150\1\162\1\60\1\162\1\151\1\157"+
+        "\1\154\1\167\1\60\1\145\1\uffff\1\162\1\145\1\151\1\165\1\162\1"+
+        "\141\1\154\1\141\1\156\1\154\1\141\1\171\1\141\1\145\1\154\1\145"+
+        "\1\60\1\uffff\1\161\1\154\1\162\1\165\1\145\1\165\1\151\1\164\1"+
+        "\141\1\163\1\156\1\150\1\60\1\141\1\145\1\uffff\1\144\1\145\1\161"+
+        "\1\154\1\150\1\146\1\154\1\uffff\1\167\1\165\1\162\1\uffff\1\157"+
+        "\1\156\2\uffff\1\60\1\165\1\141\1\162\1\165\1\60\1\uffff\1\163\1"+
+        "\uffff\1\157\1\162\3\uffff\1\60\1\142\1\171\1\uffff\1\156\1\145"+
+        "\1\60\1\145\1\150\1\156\1\101\1\145\1\144\1\145\1\163\2\145\1\60"+
+        "\1\uffff\2\60\1\145\1\60\1\156\1\60\1\151\1\156\1\145\1\151\1\uffff"+
+        "\1\157\1\162\1\145\1\165\1\145\1\147\1\60\1\154\2\uffff\1\165\1"+
+        "\153\1\151\1\145\1\uffff\1\157\1\164\1\144\1\154\1\60\1\uffff\1"+
+        "\144\1\60\1\156\1\146\1\145\1\141\1\156\1\144\1\171\1\145\1\153"+
+        "\1\155\1\107\1\102\1\164\1\145\1\154\1\156\1\uffff\2\165\1\143\1"+
+        "\162\2\141\2\162\1\157\1\102\1\155\1\145\1\60\1\151\1\uffff\1\142"+
+        "\1\144\1\145\1\156\1\165\1\145\1\151\1\146\1\165\1\156\1\145\1\157"+
+        "\1\167\1\60\1\uffff\1\145\2\171\2\145\1\uffff\1\145\1\153\1\145"+
+        "\1\uffff\1\145\1\60\1\144\1\60\1\uffff\1\60\1\151\1\145\1\154\1"+
+        "\164\2\60\1\145\1\60\1\162\3\uffff\1\156\1\uffff\1\60\1\uffff\1"+
+        "\60\1\164\1\107\1\144\1\60\1\145\1\102\1\157\1\164\1\145\1\uffff"+
+        "\1\165\1\145\1\60\1\164\1\145\1\60\1\145\1\60\1\157\1\uffff\1\60"+
+        "\1\154\1\uffff\1\60\1\146\1\60\1\154\1\60\1\145\1\60\1\156\2\60"+
+        "\1\157\1\162\1\154\1\145\1\154\1\157\1\60\1\141\1\145\1\150\1\160"+
+        "\1\107\1\164\1\151\1\161\2\154\2\60\1\uffff\1\164\2\60\1\156\1\60"+
+        "\1\157\1\164\1\160\1\60\1\145\2\60\1\167\1\156\1\uffff\3\60\1\145"+
+        "\2\60\2\145\1\162\1\uffff\1\60\2\uffff\1\164\1\60\1\155\1\60\2\uffff"+
         "\1\60\1\uffff\1\102\1\122\2\uffff\1\141\1\162\1\60\1\uffff\1\145"+
         "\1\154\1\162\1\151\2\60\1\145\1\60\1\uffff\1\145\1\156\1\uffff\1"+
         "\60\1\uffff\1\167\1\uffff\1\165\1\uffff\1\157\1\uffff\1\60\1\uffff"+
@@ -5574,219 +5591,218 @@ public class InternalPlantumlLexer extends Lexer {
         "\1\150\1\151\1\157\1\141\1\162\1\165\1\157\1\164\1\165\1\151\1\150"+
         "\1\145\1\151\1\145\1\157\1\163\4\uffff\1\u00f6\1\134\1\47\1\u00f6"+
         "\1\uffff\1\165\1\157\1\156\1\141\1\uffff\1\151\1\145\1\uffff\1\u00f6"+
-        "\5\uffff\1\151\1\164\2\165\1\uffff\1\151\1\163\1\165\1\157\1\162"+
-        "\1\144\1\157\1\162\1\151\1\141\1\162\1\145\1\155\1\144\1\162\1\157"+
-        "\1\162\1\143\1\151\1\157\1\154\1\145\1\164\1\144\1\157\1\141\1\167"+
-        "\1\155\1\156\1\162\1\144\1\163\1\143\1\166\1\151\1\143\1\160\1\162"+
-        "\1\156\1\165\1\167\1\162\1\144\1\171\1\156\1\141\1\154\1\171\1\141"+
-        "\1\157\1\162\1\145\1\156\1\141\1\151\1\155\1\162\1\157\1\151\1\154"+
-        "\2\147\2\156\15\uffff\2\164\1\165\2\164\1\uffff\1\164\1\167\3\uffff"+
-        "\1\143\1\151\1\141\1\162\1\147\1\161\1\156\1\145\1\167\1\154\1\145"+
-        "\1\162\1\143\1\156\1\155\1\156\1\153\1\160\1\107\1\147\1\145\1\162"+
-        "\1\145\1\150\1\156\1\163\1\144\2\171\1\145\1\120\1\151\1\162\1\153"+
-        "\1\145\1\156\1\157\1\150\3\145\1\157\1\151\1\156\2\164\1\143\1\171"+
-        "\1\114\1\166\1\156\1\150\1\145\1\141\1\143\1\165\1\153\1\155\1\144"+
-        "\1\160\1\u00f6\1\171\1\141\1\144\1\155\1\144\1\107\1\156\1\166\1"+
-        "\102\1\164\1\167\1\151\1\145\1\u00f6\1\154\1\163\1\141\1\161\1\154"+
-        "\1\141\1\164\1\154\1\150\1\164\1\145\2\164\2\157\1\156\1\151\1\154"+
-        "\1\141\1\154\1\160\1\145\1\161\1\u00f6\2\145\1\165\1\153\1\143\1"+
-        "\u00f6\1\156\1\171\2\164\1\157\1\154\2\163\1\u00f6\1\157\1\123\1"+
-        "\162\1\145\1\102\1\141\3\163\1\164\2\u00f6\1\156\1\u00f6\1\171\1"+
-        "\151\1\147\1\171\1\151\1\156\1\107\1\156\1\164\1\u00f6\2\156\1\157"+
-        "\1\165\1\151\1\103\1\171\1\141\1\152\1\u00f6\1\141\1\145\1\147\1"+
-        "\151\1\126\1\171\1\150\3\u00f6\1\145\1\154\1\uffff\1\102\2\154\1"+
-        "\157\1\171\1\162\1\156\1\145\1\154\1\145\1\u00f6\1\156\1\154\1\uffff"+
-        "\1\u00f6\2\164\1\165\1\145\1\164\1\145\1\157\1\164\1\u00f6\1\156"+
-        "\1\145\2\162\1\156\1\144\1\164\1\145\1\142\1\145\1\141\1\102\1\165"+
-        "\1\141\1\uffff\2\u00f6\1\145\1\u00f6\1\150\1\151\1\uffff\1\u00f6"+
-        "\1\127\1\102\1\162\1\154\1\u00f6\1\154\1\151\1\157\1\uffff\1\154"+
-        "\1\171\1\162\1\150\1\141\1\162\1\145\1\154\1\165\1\151\1\162\1\151"+
-        "\1\153\1\145\2\162\1\154\1\164\1\151\1\142\1\127\1\156\2\uffff\1"+
-        "\u00f6\1\uffff\1\104\2\156\1\157\2\u00f6\1\144\1\162\1\103\1\131"+
-        "\1\162\1\uffff\1\u00f6\1\164\1\156\1\155\1\147\1\162\1\122\1\163"+
-        "\1\157\1\uffff\1\143\1\u00f6\1\145\1\144\1\162\1\165\1\151\1\141"+
-        "\1\120\3\uffff\1\162\1\145\1\162\1\102\1\145\1\156\1\102\1\145\1"+
-        "\141\1\162\1\165\1\107\1\uffff\1\147\1\102\1\uffff\1\154\2\157\1"+
-        "\164\2\u00f6\1\167\1\u00f6\1\uffff\1\144\1\162\1\157\1\u00f6\1\165"+
-        "\1\141\1\171\1\147\1\141\1\u00f6\1\147\1\154\1\145\1\162\2\uffff"+
-        "\1\u00f6\1\uffff\1\145\1\157\1\uffff\1\157\1\154\1\145\1\141\1\uffff"+
-        "\1\157\1\154\1\156\1\165\1\141\1\154\1\145\1\141\1\147\1\151\1\143"+
-        "\1\144\1\154\2\141\1\162\1\157\1\141\1\156\3\171\1\102\1\151\1\127"+
-        "\1\107\1\141\1\157\1\150\1\122\1\145\1\uffff\1\145\1\153\1\122\1"+
-        "\u00f6\2\uffff\2\145\1\150\1\154\1\171\1\162\1\151\1\164\2\145\1"+
-        "\uffff\1\141\1\u00f6\1\126\1\150\1\145\1\157\1\151\1\127\1\145\1"+
-        "\162\1\uffff\1\122\1\u00f6\1\154\1\145\1\162\1\157\1\127\1\165\1"+
-        "\102\1\u00f6\1\157\1\154\1\102\1\u00f6\1\162\1\145\2\u00f6\1\145"+
-        "\1\154\1\162\1\107\1\154\1\145\1\u00f6\1\151\1\u00f6\1\uffff\1\155"+
-        "\1\uffff\1\u00f6\1\uffff\2\u00f6\1\154\1\uffff\1\155\1\162\1\u00f6"+
-        "\1\145\1\163\1\uffff\1\145\1\165\1\127\1\151\1\uffff\1\144\1\154"+
-        "\1\157\2\165\1\164\1\167\1\153\1\u00f6\1\145\1\156\1\144\2\171\1"+
-        "\153\1\145\1\166\1\150\1\u00f6\1\155\1\107\1\164\1\161\1\154\1\156"+
-        "\1\153\1\102\2\u00f6\1\154\1\143\1\150\1\162\1\u00f6\1\162\1\151"+
-        "\1\157\1\154\1\167\1\u00f6\1\145\1\uffff\1\162\1\145\1\151\1\165"+
-        "\1\162\1\141\1\154\1\145\1\156\1\154\1\141\1\171\1\141\1\145\1\154"+
-        "\1\145\1\u00f6\1\uffff\1\161\1\154\1\162\1\165\1\160\1\165\1\151"+
-        "\1\164\1\141\1\163\1\156\1\150\1\u00f6\1\141\1\145\1\uffff\1\144"+
-        "\1\145\1\161\1\154\1\150\1\146\1\154\1\uffff\1\167\1\165\1\162\1"+
-        "\uffff\1\157\1\156\2\uffff\1\u00f6\1\165\1\145\1\162\1\165\1\u00f6"+
-        "\1\uffff\1\163\1\uffff\1\157\1\162\3\uffff\1\u00f6\1\142\1\171\1"+
-        "\uffff\1\156\1\145\1\u00f6\1\145\1\150\1\156\1\101\1\145\1\144\1"+
-        "\145\1\163\2\145\1\u00f6\1\uffff\2\u00f6\1\145\1\u00f6\1\156\1\u00f6"+
-        "\1\151\1\156\1\145\1\151\1\uffff\1\157\1\162\1\145\1\165\1\145\1"+
-        "\147\1\u00f6\1\154\2\uffff\1\165\1\153\1\151\1\145\1\uffff\1\157"+
-        "\1\164\1\144\1\154\1\u00f6\1\uffff\1\144\1\u00f6\1\156\1\146\1\145"+
-        "\1\141\1\156\1\144\2\171\1\153\1\155\1\107\1\102\1\164\1\145\1\154"+
-        "\1\156\1\uffff\2\165\1\143\1\162\2\141\2\162\1\157\1\102\1\155\1"+
-        "\145\1\u00f6\1\151\1\uffff\1\142\1\144\1\145\1\156\1\165\1\145\1"+
-        "\151\1\146\1\165\1\156\1\145\1\157\1\167\1\u00f6\1\uffff\1\145\2"+
-        "\171\2\145\1\uffff\1\145\1\153\1\145\1\uffff\1\145\1\u00f6\1\144"+
-        "\1\u00f6\1\uffff\1\u00f6\1\151\1\145\1\154\1\164\2\u00f6\1\145\1"+
-        "\u00f6\1\162\3\uffff\1\156\1\uffff\1\u00f6\1\uffff\1\u00f6\1\164"+
-        "\1\107\1\144\1\u00f6\1\145\1\107\1\157\1\164\1\145\1\uffff\1\165"+
-        "\1\145\1\u00f6\1\164\1\145\1\u00f6\1\145\1\u00f6\1\157\1\uffff\1"+
-        "\u00f6\1\154\1\uffff\1\u00f6\1\146\1\u00f6\1\154\1\u00f6\1\145\1"+
-        "\u00f6\1\156\2\u00f6\1\157\1\162\1\154\1\145\1\154\1\157\1\u00f6"+
-        "\1\141\1\145\1\150\1\160\1\107\1\164\1\151\1\161\2\154\2\u00f6\1"+
-        "\uffff\1\164\2\u00f6\1\156\1\u00f6\1\157\1\164\1\160\1\u00f6\1\145"+
-        "\2\u00f6\1\167\1\156\1\uffff\3\u00f6\1\145\2\u00f6\2\145\1\162\1"+
-        "\uffff\1\u00f6\2\uffff\1\164\1\u00f6\1\155\1\u00f6\2\uffff\1\u00f6"+
-        "\1\uffff\1\102\1\122\2\uffff\1\141\1\162\1\u00f6\1\uffff\1\145\1"+
-        "\154\1\162\1\151\2\u00f6\1\145\1\u00f6\1\uffff\1\145\1\156\1\uffff"+
-        "\1\u00f6\1\uffff\1\167\1\uffff\1\165\1\uffff\1\157\1\uffff\1\u00f6"+
-        "\1\uffff\1\156\1\uffff\1\u00f6\2\uffff\1\156\1\145\1\165\1\107\1"+
-        "\102\1\167\1\uffff\1\115\1\u00f6\1\151\1\154\1\162\1\145\1\156\1"+
-        "\165\1\145\1\165\2\uffff\1\145\2\uffff\1\122\1\uffff\1\151\1\122"+
-        "\1\u00f6\1\uffff\1\u00f6\2\uffff\1\156\1\u00f6\3\uffff\1\156\2\uffff"+
-        "\1\u00f6\1\156\1\u00f6\1\uffff\1\145\1\uffff\1\157\2\uffff\1\154"+
-        "\1\157\1\u00f6\1\145\1\uffff\1\156\1\165\1\145\1\163\2\uffff\1\u00f6"+
-        "\1\uffff\2\u00f6\1\uffff\1\u00f6\1\163\1\156\1\uffff\1\122\1\uffff"+
-        "\1\u00f6\2\145\1\162\1\154\1\u00f6\1\141\1\uffff\1\144\2\145\1\102"+
-        "\1\147\1\157\1\164\1\145\1\u00f6\1\157\1\163\1\145\2\uffff\1\u00f6"+
-        "\1\uffff\1\u00f6\1\uffff\1\u00f6\1\uffff\1\u00f6\1\156\1\165\1\144"+
-        "\1\uffff\1\145\1\u00f6\1\145\2\171\1\145\4\uffff\1\150\1\u00f6\1"+
-        "\157\1\uffff\1\156\1\u00f6\1\145\1\165\1\uffff\1\162\2\u00f6\1\145"+
-        "\1\154\1\107\1\151\1\122\1\u00f6\1\uffff\1\144\1\145\1\144\4\uffff"+
-        "\1\144\1\145\1\u00f6\1\156\1\uffff\5\u00f6\1\uffff\1\144\1\u00f6"+
-        "\1\uffff\2\171\1\145\1\151\2\uffff\1\156\1\165\1\162\1\163\1\145"+
-        "\1\uffff\5\u00f6\1\uffff\1\u00f6\5\uffff\1\131\1\uffff\3\u00f6\1"+
-        "\156\1\u00f6\3\145\1\144\6\uffff\1\145\3\uffff\1\145\1\uffff\1\u00f6"+
-        "\1\145\2\u00f6\1\154\1\u00f6\1\uffff\1\156\2\uffff\1\154\1\uffff"+
-        "\1\u00f6\1\157\1\uffff\1\167\1\u00f6\1\uffff";
+        "\2\uffff\1\12\4\uffff\1\151\1\164\2\165\1\uffff\1\151\1\163\1\165"+
+        "\1\157\1\162\1\144\1\157\1\162\1\151\1\141\1\162\1\145\1\155\1\144"+
+        "\1\162\1\157\1\162\1\143\1\151\1\157\1\154\1\145\1\164\1\144\1\157"+
+        "\1\141\1\167\1\155\1\156\1\162\1\144\1\163\1\143\1\166\1\151\1\143"+
+        "\1\160\1\162\1\156\1\165\1\167\1\162\1\144\1\171\1\156\1\141\1\154"+
+        "\1\171\1\141\1\157\1\162\1\145\1\156\1\141\1\151\1\155\1\162\1\157"+
+        "\1\151\1\154\2\147\2\156\15\uffff\2\164\1\165\2\164\1\uffff\1\164"+
+        "\1\167\4\uffff\1\143\1\151\1\141\1\162\1\147\1\161\1\156\1\145\1"+
+        "\167\1\154\1\145\1\162\1\143\1\156\1\155\1\156\1\153\1\160\1\107"+
+        "\1\147\1\145\1\162\1\145\1\150\1\156\1\163\1\144\2\171\1\145\1\120"+
+        "\1\151\1\162\1\153\1\145\1\156\1\157\1\150\3\145\1\157\1\151\1\156"+
+        "\2\164\1\143\1\171\1\114\1\166\1\156\1\150\1\145\1\141\1\143\1\165"+
+        "\1\153\1\155\1\144\1\160\1\u00f6\1\171\1\141\1\144\1\155\1\144\1"+
+        "\107\1\156\1\166\1\102\1\164\1\167\1\151\1\145\1\u00f6\1\154\1\163"+
+        "\1\141\1\161\1\154\1\141\1\164\1\154\1\150\1\164\1\145\2\164\2\157"+
+        "\1\156\1\151\1\154\1\141\1\154\1\160\1\145\1\161\1\u00f6\2\145\1"+
+        "\165\1\153\1\143\1\u00f6\1\156\1\171\2\164\1\157\1\154\2\163\1\u00f6"+
+        "\1\157\1\123\1\162\1\145\1\102\1\141\3\163\1\164\2\u00f6\1\156\1"+
+        "\u00f6\1\171\1\151\1\147\1\171\1\151\1\156\1\107\1\156\1\164\1\u00f6"+
+        "\2\156\1\157\1\165\1\151\1\103\1\171\1\141\1\152\1\u00f6\1\141\1"+
+        "\145\1\147\1\151\1\126\1\171\1\150\3\u00f6\1\145\1\154\1\uffff\1"+
+        "\102\2\154\1\157\1\171\1\162\1\156\1\145\1\154\1\145\1\u00f6\1\156"+
+        "\1\154\1\uffff\1\u00f6\2\164\1\165\1\145\1\164\1\145\1\157\1\164"+
+        "\1\u00f6\1\156\1\145\2\162\1\156\1\144\1\164\1\145\1\142\1\145\1"+
+        "\141\1\102\1\165\1\141\1\uffff\2\u00f6\1\145\1\u00f6\1\150\1\151"+
+        "\1\uffff\1\u00f6\1\127\1\102\1\162\1\154\1\u00f6\1\154\1\151\1\157"+
+        "\1\uffff\1\154\1\171\1\162\1\150\1\141\1\162\1\145\1\154\1\165\1"+
+        "\151\1\162\1\151\1\153\1\145\2\162\1\154\1\164\1\151\1\142\1\127"+
+        "\1\156\2\uffff\1\u00f6\1\uffff\1\104\2\156\1\157\2\u00f6\1\144\1"+
+        "\162\1\103\1\131\1\162\1\uffff\1\u00f6\1\164\1\156\1\155\1\147\1"+
+        "\162\1\122\1\163\1\157\1\uffff\1\143\1\u00f6\1\145\1\144\1\162\1"+
+        "\165\1\151\1\141\1\120\3\uffff\1\162\1\145\1\162\1\102\1\145\1\156"+
+        "\1\102\1\145\1\141\1\162\1\165\1\107\1\uffff\1\147\1\102\1\uffff"+
+        "\1\154\2\157\1\164\2\u00f6\1\167\1\u00f6\1\uffff\1\144\1\162\1\157"+
+        "\1\u00f6\1\165\1\141\1\171\1\147\1\141\1\u00f6\1\147\1\154\1\145"+
+        "\1\162\2\uffff\1\u00f6\1\uffff\1\145\1\157\1\uffff\1\157\1\154\1"+
+        "\145\1\141\1\uffff\1\157\1\154\1\156\1\165\1\141\1\154\1\145\1\141"+
+        "\1\147\1\151\1\143\1\144\1\154\2\141\1\162\1\157\1\141\1\156\3\171"+
+        "\1\102\1\151\1\127\1\107\1\141\1\157\1\150\1\122\1\145\1\uffff\1"+
+        "\145\1\153\1\122\1\u00f6\2\uffff\2\145\1\150\1\154\1\171\1\162\1"+
+        "\151\1\164\2\145\1\uffff\1\141\1\u00f6\1\126\1\150\1\145\1\157\1"+
+        "\151\1\127\1\145\1\162\1\uffff\1\122\1\u00f6\1\154\1\145\1\162\1"+
+        "\157\1\127\1\165\1\102\1\u00f6\1\157\1\154\1\102\1\u00f6\1\162\1"+
+        "\145\2\u00f6\1\145\1\154\1\162\1\107\1\154\1\145\1\u00f6\1\151\1"+
+        "\u00f6\1\uffff\1\155\1\uffff\1\u00f6\1\uffff\2\u00f6\1\154\1\uffff"+
+        "\1\155\1\162\1\u00f6\1\145\1\163\1\uffff\1\145\1\165\1\127\1\151"+
+        "\1\uffff\1\144\1\154\1\157\2\165\1\164\1\167\1\153\1\u00f6\1\145"+
+        "\1\156\1\144\2\171\1\153\1\145\1\166\1\150\1\u00f6\1\155\1\107\1"+
+        "\164\1\161\1\154\1\156\1\153\1\102\2\u00f6\1\154\1\143\1\150\1\162"+
+        "\1\u00f6\1\162\1\151\1\157\1\154\1\167\1\u00f6\1\145\1\uffff\1\162"+
+        "\1\145\1\151\1\165\1\162\1\141\1\154\1\145\1\156\1\154\1\141\1\171"+
+        "\1\141\1\145\1\154\1\145\1\u00f6\1\uffff\1\161\1\154\1\162\1\165"+
+        "\1\160\1\165\1\151\1\164\1\141\1\163\1\156\1\150\1\u00f6\1\141\1"+
+        "\145\1\uffff\1\144\1\145\1\161\1\154\1\150\1\146\1\154\1\uffff\1"+
+        "\167\1\165\1\162\1\uffff\1\157\1\156\2\uffff\1\u00f6\1\165\1\145"+
+        "\1\162\1\165\1\u00f6\1\uffff\1\163\1\uffff\1\157\1\162\3\uffff\1"+
+        "\u00f6\1\142\1\171\1\uffff\1\156\1\145\1\u00f6\1\145\1\150\1\156"+
+        "\1\101\1\145\1\144\1\145\1\163\2\145\1\u00f6\1\uffff\2\u00f6\1\145"+
+        "\1\u00f6\1\156\1\u00f6\1\151\1\156\1\145\1\151\1\uffff\1\157\1\162"+
+        "\1\145\1\165\1\145\1\147\1\u00f6\1\154\2\uffff\1\165\1\153\1\151"+
+        "\1\145\1\uffff\1\157\1\164\1\144\1\154\1\u00f6\1\uffff\1\144\1\u00f6"+
+        "\1\156\1\146\1\145\1\141\1\156\1\144\2\171\1\153\1\155\1\107\1\102"+
+        "\1\164\1\145\1\154\1\156\1\uffff\2\165\1\143\1\162\2\141\2\162\1"+
+        "\157\1\102\1\155\1\145\1\u00f6\1\151\1\uffff\1\142\1\144\1\145\1"+
+        "\156\1\165\1\145\1\151\1\146\1\165\1\156\1\145\1\157\1\167\1\u00f6"+
+        "\1\uffff\1\145\2\171\2\145\1\uffff\1\145\1\153\1\145\1\uffff\1\145"+
+        "\1\u00f6\1\144\1\u00f6\1\uffff\1\u00f6\1\151\1\145\1\154\1\164\2"+
+        "\u00f6\1\145\1\u00f6\1\162\3\uffff\1\156\1\uffff\1\u00f6\1\uffff"+
+        "\1\u00f6\1\164\1\107\1\144\1\u00f6\1\145\1\107\1\157\1\164\1\145"+
+        "\1\uffff\1\165\1\145\1\u00f6\1\164\1\145\1\u00f6\1\145\1\u00f6\1"+
+        "\157\1\uffff\1\u00f6\1\154\1\uffff\1\u00f6\1\146\1\u00f6\1\154\1"+
+        "\u00f6\1\145\1\u00f6\1\156\2\u00f6\1\157\1\162\1\154\1\145\1\154"+
+        "\1\157\1\u00f6\1\141\1\145\1\150\1\160\1\107\1\164\1\151\1\161\2"+
+        "\154\2\u00f6\1\uffff\1\164\2\u00f6\1\156\1\u00f6\1\157\1\164\1\160"+
+        "\1\u00f6\1\145\2\u00f6\1\167\1\156\1\uffff\3\u00f6\1\145\2\u00f6"+
+        "\2\145\1\162\1\uffff\1\u00f6\2\uffff\1\164\1\u00f6\1\155\1\u00f6"+
+        "\2\uffff\1\u00f6\1\uffff\1\102\1\122\2\uffff\1\141\1\162\1\u00f6"+
+        "\1\uffff\1\145\1\154\1\162\1\151\2\u00f6\1\145\1\u00f6\1\uffff\1"+
+        "\145\1\156\1\uffff\1\u00f6\1\uffff\1\167\1\uffff\1\165\1\uffff\1"+
+        "\157\1\uffff\1\u00f6\1\uffff\1\156\1\uffff\1\u00f6\2\uffff\1\156"+
+        "\1\145\1\165\1\107\1\102\1\167\1\uffff\1\115\1\u00f6\1\151\1\154"+
+        "\1\162\1\145\1\156\1\165\1\145\1\165\2\uffff\1\145\2\uffff\1\122"+
+        "\1\uffff\1\151\1\122\1\u00f6\1\uffff\1\u00f6\2\uffff\1\156\1\u00f6"+
+        "\3\uffff\1\156\2\uffff\1\u00f6\1\156\1\u00f6\1\uffff\1\145\1\uffff"+
+        "\1\157\2\uffff\1\154\1\157\1\u00f6\1\145\1\uffff\1\156\1\165\1\145"+
+        "\1\163\2\uffff\1\u00f6\1\uffff\2\u00f6\1\uffff\1\u00f6\1\163\1\156"+
+        "\1\uffff\1\122\1\uffff\1\u00f6\2\145\1\162\1\154\1\u00f6\1\141\1"+
+        "\uffff\1\144\2\145\1\102\1\147\1\157\1\164\1\145\1\u00f6\1\157\1"+
+        "\163\1\145\2\uffff\1\u00f6\1\uffff\1\u00f6\1\uffff\1\u00f6\1\uffff"+
+        "\1\u00f6\1\156\1\165\1\144\1\uffff\1\145\1\u00f6\1\145\2\171\1\145"+
+        "\4\uffff\1\150\1\u00f6\1\157\1\uffff\1\156\1\u00f6\1\145\1\165\1"+
+        "\uffff\1\162\2\u00f6\1\145\1\154\1\107\1\151\1\122\1\u00f6\1\uffff"+
+        "\1\144\1\145\1\144\4\uffff\1\144\1\145\1\u00f6\1\156\1\uffff\5\u00f6"+
+        "\1\uffff\1\144\1\u00f6\1\uffff\2\171\1\145\1\151\2\uffff\1\156\1"+
+        "\165\1\162\1\163\1\145\1\uffff\5\u00f6\1\uffff\1\u00f6\5\uffff\1"+
+        "\131\1\uffff\3\u00f6\1\156\1\u00f6\3\145\1\144\6\uffff\1\145\3\uffff"+
+        "\1\145\1\uffff\1\u00f6\1\145\2\u00f6\1\154\1\u00f6\1\uffff\1\156"+
+        "\2\uffff\1\154\1\uffff\1\u00f6\1\157\1\uffff\1\167\1\u00f6\1\uffff";
     static final String DFA9_acceptS =
         "\1\uffff\1\1\30\uffff\1\u0098\1\u0099\1\u009a\1\u009b\4\uffff\1"+
         "\u00a1\4\uffff\1\u00a8\2\uffff\1\u00ae\1\uffff\1\u00af\1\u00b0\1"+
-        "\u00b1\1\u00b2\1\1\4\uffff\1\u00af\100\uffff\1\u0096\1\u0097\1\u0098"+
-        "\1\u0099\1\u009a\1\u009b\1\u009c\1\u009f\1\u009d\1\u00ad\1\u009e"+
-        "\1\u00a0\1\u00a1\5\uffff\1\u00a8\2\uffff\1\u00ae\1\u00b0\1\u00b1"+
-        "\u00a0\uffff\1\170\15\uffff\1\u0088\30\uffff\1\4\6\uffff\1\13\11"+
-        "\uffff\1\26\26\uffff\1\65\1\67\1\uffff\1\72\13\uffff\1\124\11\uffff"+
-        "\1\147\11\uffff\1\163\1\164\1\165\14\uffff\1\u0085\2\uffff\1\u0089"+
-        "\10\uffff\1\u0094\16\uffff\1\6\1\7\1\uffff\1\11\2\uffff\1\15\4\uffff"+
-        "\1\22\37\uffff\1\70\4\uffff\1\77\1\100\12\uffff\1\126\12\uffff\1"+
-        "\151\33\uffff\1\u008e\1\uffff\1\u008f\1\uffff\1\u0093\3\uffff\1"+
-        "\u00a2\5\uffff\1\u00a9\4\uffff\1\10\51\uffff\1\76\21\uffff\1\130"+
-        "\17\uffff\1\154\7\uffff\1\167\3\uffff\1\174\2\uffff\1\177\1\u0080"+
-        "\6\uffff\1\u008b\1\uffff\1\u008d\2\uffff\1\u0091\1\u00aa\1\u0095"+
-        "\3\uffff\1\u00a5\16\uffff\1\25\12\uffff\1\41\10\uffff\1\54\1\55"+
-        "\4\uffff\1\62\5\uffff\1\74\22\uffff\1\127\16\uffff\1\150\16\uffff"+
-        "\1\u0081\5\uffff\1\u008a\3\uffff\1\u00a4\4\uffff\1\u00ac\12\uffff"+
-        "\1\24\1\27\1\30\1\uffff\1\32\1\uffff\1\34\12\uffff\1\52\11\uffff"+
-        "\1\73\2\uffff\1\101\35\uffff\1\145\16\uffff\1\176\11\uffff\1\u00a3"+
-        "\1\uffff\1\u00a6\1\2\4\uffff\1\16\1\17\1\uffff\1\21\2\uffff\1\33"+
-        "\1\35\3\uffff\1\42\10\uffff\1\57\2\uffff\1\63\1\uffff\1\66\1\uffff"+
-        "\1\75\1\uffff\1\103\1\uffff\1\105\1\uffff\1\107\1\uffff\1\111\1"+
-        "\uffff\1\113\1\114\6\uffff\1\125\12\uffff\1\143\1\144\1\uffff\1"+
-        "\152\1\153\1\uffff\1\156\3\uffff\1\162\1\uffff\1\171\1\172\2\uffff"+
-        "\1\u0082\1\u0083\1\u0084\1\uffff\1\u0087\1\u008c\3\uffff\1\u00ab"+
-        "\1\uffff\1\5\1\uffff\1\14\1\20\4\uffff\1\40\4\uffff\1\50\1\51\1"+
-        "\uffff\1\56\2\uffff\1\64\3\uffff\1\106\1\uffff\1\112\7\uffff\1\132"+
-        "\14\uffff\1\161\1\166\1\uffff\1\175\1\uffff\1\u0090\1\uffff\1\u00a7"+
-        "\4\uffff\1\36\6\uffff\1\53\1\60\1\61\1\71\3\uffff\1\115\4\uffff"+
-        "\1\123\11\uffff\1\146\3\uffff\1\173\1\u0086\1\u0092\1\3\4\uffff"+
-        "\1\43\5\uffff\1\104\2\uffff\1\117\4\uffff\1\133\1\134\5\uffff\1"+
-        "\142\5\uffff\1\31\1\uffff\1\44\1\45\1\46\1\47\1\102\1\uffff\1\116"+
-        "\11\uffff\1\155\1\157\1\160\1\12\1\23\1\37\1\uffff\1\120\1\121\1"+
-        "\122\1\uffff\1\135\6\uffff\1\136\1\uffff\1\140\1\141\1\uffff\1\131"+
-        "\2\uffff\1\137\2\uffff\1\110";
+        "\uffff\1\u00b1\1\u00b2\1\u00b3\1\1\4\uffff\1\u00af\100\uffff\1\u0096"+
+        "\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c\1\u009f\1\u009d"+
+        "\1\u00ad\1\u009e\1\u00a0\1\u00a1\5\uffff\1\u00a8\2\uffff\1\u00ae"+
+        "\1\u00b0\1\u00b1\1\u00b2\u00a0\uffff\1\170\15\uffff\1\u0088\30\uffff"+
+        "\1\4\6\uffff\1\13\11\uffff\1\26\26\uffff\1\65\1\67\1\uffff\1\72"+
+        "\13\uffff\1\124\11\uffff\1\147\11\uffff\1\163\1\164\1\165\14\uffff"+
+        "\1\u0085\2\uffff\1\u0089\10\uffff\1\u0094\16\uffff\1\6\1\7\1\uffff"+
+        "\1\11\2\uffff\1\15\4\uffff\1\22\37\uffff\1\70\4\uffff\1\77\1\100"+
+        "\12\uffff\1\126\12\uffff\1\151\33\uffff\1\u008e\1\uffff\1\u008f"+
+        "\1\uffff\1\u0093\3\uffff\1\u00a2\5\uffff\1\u00a9\4\uffff\1\10\51"+
+        "\uffff\1\76\21\uffff\1\130\17\uffff\1\154\7\uffff\1\167\3\uffff"+
+        "\1\174\2\uffff\1\177\1\u0080\6\uffff\1\u008b\1\uffff\1\u008d\2\uffff"+
+        "\1\u0091\1\u00aa\1\u0095\3\uffff\1\u00a5\16\uffff\1\25\12\uffff"+
+        "\1\41\10\uffff\1\54\1\55\4\uffff\1\62\5\uffff\1\74\22\uffff\1\127"+
+        "\16\uffff\1\150\16\uffff\1\u0081\5\uffff\1\u008a\3\uffff\1\u00a4"+
+        "\4\uffff\1\u00ac\12\uffff\1\24\1\27\1\30\1\uffff\1\32\1\uffff\1"+
+        "\34\12\uffff\1\52\11\uffff\1\73\2\uffff\1\101\35\uffff\1\145\16"+
+        "\uffff\1\176\11\uffff\1\u00a3\1\uffff\1\u00a6\1\2\4\uffff\1\16\1"+
+        "\17\1\uffff\1\21\2\uffff\1\33\1\35\3\uffff\1\42\10\uffff\1\57\2"+
+        "\uffff\1\63\1\uffff\1\66\1\uffff\1\75\1\uffff\1\103\1\uffff\1\105"+
+        "\1\uffff\1\107\1\uffff\1\111\1\uffff\1\113\1\114\6\uffff\1\125\12"+
+        "\uffff\1\143\1\144\1\uffff\1\152\1\153\1\uffff\1\156\3\uffff\1\162"+
+        "\1\uffff\1\171\1\172\2\uffff\1\u0082\1\u0083\1\u0084\1\uffff\1\u0087"+
+        "\1\u008c\3\uffff\1\u00ab\1\uffff\1\5\1\uffff\1\14\1\20\4\uffff\1"+
+        "\40\4\uffff\1\50\1\51\1\uffff\1\56\2\uffff\1\64\3\uffff\1\106\1"+
+        "\uffff\1\112\7\uffff\1\132\14\uffff\1\161\1\166\1\uffff\1\175\1"+
+        "\uffff\1\u0090\1\uffff\1\u00a7\4\uffff\1\36\6\uffff\1\53\1\60\1"+
+        "\61\1\71\3\uffff\1\115\4\uffff\1\123\11\uffff\1\146\3\uffff\1\173"+
+        "\1\u0086\1\u0092\1\3\4\uffff\1\43\5\uffff\1\104\2\uffff\1\117\4"+
+        "\uffff\1\133\1\134\5\uffff\1\142\5\uffff\1\31\1\uffff\1\44\1\45"+
+        "\1\46\1\47\1\102\1\uffff\1\116\11\uffff\1\155\1\157\1\160\1\12\1"+
+        "\23\1\37\1\uffff\1\120\1\121\1\122\1\uffff\1\135\6\uffff\1\136\1"+
+        "\uffff\1\140\1\141\1\uffff\1\131\2\uffff\1\137\2\uffff\1\110";
     static final String DFA9_specialS =
-        "\1\0\u0485\uffff}>";
+        "\1\0\u0488\uffff}>";
     static final String[] DFA9_transitionS = {
-            "\11\57\2\56\2\57\1\56\22\57\1\56\2\57\1\47\3\57\1\52\5\57\1"+
-            "\33\1\1\1\40\12\55\1\32\1\57\1\35\1\57\1\34\1\57\1\31\1\2\1"+
-            "\3\1\4\1\5\1\54\1\6\1\7\1\10\1\11\1\54\1\12\1\13\1\14\1\15\1"+
-            "\16\1\17\1\54\1\20\1\21\1\22\1\54\1\23\1\24\1\54\1\25\1\54\1"+
-            "\57\1\37\1\57\1\53\1\54\1\57\1\43\1\44\1\30\1\46\1\45\6\54\1"+
-            "\27\1\54\1\51\1\41\2\54\1\26\1\54\1\50\3\54\1\36\2\54\1\57\1"+
-            "\42\147\57\2\54\20\57\1\54\uff09\57",
+            "\11\61\1\60\1\57\2\61\1\56\22\61\1\60\2\61\1\47\3\61\1\52\5"+
+            "\61\1\33\1\1\1\40\12\55\1\32\1\61\1\35\1\61\1\34\1\61\1\31\1"+
+            "\2\1\3\1\4\1\5\1\54\1\6\1\7\1\10\1\11\1\54\1\12\1\13\1\14\1"+
+            "\15\1\16\1\17\1\54\1\20\1\21\1\22\1\54\1\23\1\24\1\54\1\25\1"+
+            "\54\1\61\1\37\1\61\1\53\1\54\1\61\1\43\1\44\1\30\1\46\1\45\6"+
+            "\54\1\27\1\54\1\51\1\41\2\54\1\26\1\54\1\50\3\54\1\36\2\54\1"+
+            "\61\1\42\147\61\2\54\20\61\1\54\uff09\61",
             "",
-            "\1\61\1\uffff\1\62\2\uffff\1\63\10\uffff\1\64",
-            "\1\66\3\uffff\1\67\2\uffff\1\70\5\uffff\1\71\2\uffff\1\72",
-            "\1\73\6\uffff\1\74\6\uffff\1\75\2\uffff\1\76\6\uffff\1\77",
-            "\1\100\3\uffff\1\101\3\uffff\1\102\5\uffff\1\103",
-            "\1\104\2\uffff\1\105\2\uffff\1\106\5\uffff\1\107",
-            "\1\110\6\uffff\1\111\6\uffff\1\112\2\uffff\1\113",
-            "\1\114",
-            "\1\115\7\uffff\1\116",
-            "\1\117",
-            "\1\120\3\uffff\1\121\3\uffff\1\122",
-            "\1\123\3\uffff\1\124\3\uffff\1\125\5\uffff\1\126",
-            "\1\127",
-            "\1\130\5\uffff\1\131",
-            "\1\132\3\uffff\1\133\3\uffff\1\134\2\uffff\1\135\2\uffff\1"+
-            "\136\5\uffff\1\137",
-            "\1\140\11\uffff\1\141",
-            "\1\142\3\uffff\1\143\3\uffff\1\144\1\uffff\1\145\1\146\1\uffff"+
-            "\1\147\1\uffff\1\150\3\uffff\1\151",
-            "\1\152\3\uffff\1\153\2\uffff\1\154\6\uffff\1\155\5\uffff\1"+
-            "\156",
-            "\1\157",
-            "\1\160",
+            "\1\63\1\uffff\1\64\2\uffff\1\65\10\uffff\1\66",
+            "\1\70\3\uffff\1\71\2\uffff\1\72\5\uffff\1\73\2\uffff\1\74",
+            "\1\75\6\uffff\1\76\6\uffff\1\77\2\uffff\1\100\6\uffff\1\101",
+            "\1\102\3\uffff\1\103\3\uffff\1\104\5\uffff\1\105",
+            "\1\106\2\uffff\1\107\2\uffff\1\110\5\uffff\1\111",
+            "\1\112\6\uffff\1\113\6\uffff\1\114\2\uffff\1\115",
+            "\1\116",
+            "\1\117\7\uffff\1\120",
+            "\1\121",
+            "\1\122\3\uffff\1\123\3\uffff\1\124",
+            "\1\125\3\uffff\1\126\3\uffff\1\127\5\uffff\1\130",
+            "\1\131",
+            "\1\132\5\uffff\1\133",
+            "\1\134\3\uffff\1\135\3\uffff\1\136\2\uffff\1\137\2\uffff\1"+
+            "\140\5\uffff\1\141",
+            "\1\142\11\uffff\1\143",
+            "\1\144\3\uffff\1\145\3\uffff\1\146\1\uffff\1\147\1\150\1\uffff"+
+            "\1\151\1\uffff\1\152\3\uffff\1\153",
+            "\1\154\3\uffff\1\155\2\uffff\1\156\6\uffff\1\157\5\uffff\1"+
+            "\160",
             "\1\161",
             "\1\162",
             "\1\163",
-            "\1\164\11\uffff\1\165",
-            "\1\167\15\uffff\1\166",
+            "\1\164",
+            "\1\165",
+            "\1\166\11\uffff\1\167",
+            "\1\171\15\uffff\1\170",
             "",
             "",
             "",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\175",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\177",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0081",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\1\u0083\21\uffff\1\u0084",
-            "\1\u0085",
-            "\1\u0086",
+            "\1\u0085\21\uffff\1\u0086",
             "\1\u0087",
-            "",
+            "\1\u0088",
             "\1\u0089",
-            "\1\u008a",
             "",
-            "\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff\2\65\20\uffff"+
-            "\1\65",
+            "\1\u008b",
+            "\1\u008c",
+            "",
+            "\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff\2\67\20\uffff"+
+            "\1\67",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\u008e",
             "\1\u008f",
-            "\1\u0090",
-            "\1\u0091",
             "",
+            "",
+            "",
+            "",
+            "\1\u0091",
             "\1\u0092",
             "\1\u0093",
-            "\1\u0094\23\uffff\1\u0095",
+            "\1\u0094",
+            "",
+            "\1\u0095",
             "\1\u0096",
-            "\1\u0097",
-            "\1\u0098",
-            "\1\u0099\15\uffff\1\u009a",
+            "\1\u0097\23\uffff\1\u0098",
+            "\1\u0099",
+            "\1\u009a",
             "\1\u009b",
-            "\1\u009c",
-            "\1\u009d",
+            "\1\u009c\15\uffff\1\u009d",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
@@ -5798,35 +5814,35 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u00a6",
             "\1\u00a7",
             "\1\u00a8",
-            "\1\u00a9\3\uffff\1\u00aa",
-            "\1\u00ab\5\uffff\1\u00ac",
-            "\1\u00ad",
-            "\1\u00ae",
-            "\1\u00af",
-            "\1\u00b0\1\u00b1",
+            "\1\u00a9",
+            "\1\u00aa",
+            "\1\u00ab",
+            "\1\u00ac\3\uffff\1\u00ad",
+            "\1\u00ae\5\uffff\1\u00af",
+            "\1\u00b0",
+            "\1\u00b1",
             "\1\u00b2",
-            "\1\u00b3\5\uffff\1\u00b4\1\u00b5",
-            "\1\u00b6\12\uffff\1\u00b7",
-            "\1\u00b8",
-            "\1\u00b9\11\uffff\1\u00ba\4\uffff\1\u00bb",
-            "\1\u00bc",
-            "\1\u00bd",
-            "\1\u00be\4\uffff\1\u00bf",
-            "\1\u00c0\1\uffff\1\u00c1",
-            "\1\u00c2\3\uffff\1\u00c3",
-            "\1\u00c4\20\uffff\1\u00c5",
-            "\1\u00c6",
-            "\1\u00c7",
-            "\1\u00c8",
+            "\1\u00b3\1\u00b4",
+            "\1\u00b5",
+            "\1\u00b6\5\uffff\1\u00b7\1\u00b8",
+            "\1\u00b9\12\uffff\1\u00ba",
+            "\1\u00bb",
+            "\1\u00bc\11\uffff\1\u00bd\4\uffff\1\u00be",
+            "\1\u00bf",
+            "\1\u00c0",
+            "\1\u00c1\4\uffff\1\u00c2",
+            "\1\u00c3\1\uffff\1\u00c4",
+            "\1\u00c5\3\uffff\1\u00c6",
+            "\1\u00c7\20\uffff\1\u00c8",
             "\1\u00c9",
             "\1\u00ca",
-            "\1\u00cb\5\uffff\1\u00cc",
-            "\1\u00cd\7\uffff\1\u00ce\1\uffff\1\u00cf",
-            "\1\u00d0",
-            "\1\u00d1\6\uffff\1\u00d2",
+            "\1\u00cb",
+            "\1\u00cc",
+            "\1\u00cd",
+            "\1\u00ce\5\uffff\1\u00cf",
+            "\1\u00d0\7\uffff\1\u00d1\1\uffff\1\u00d2",
             "\1\u00d3",
-            "\1\u00d4",
-            "\1\u00d5",
+            "\1\u00d4\6\uffff\1\u00d5",
             "\1\u00d6",
             "\1\u00d7",
             "\1\u00d8",
@@ -5835,53 +5851,54 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u00db",
             "\1\u00dc",
             "\1\u00dd",
-            "\1\u00de\3\uffff\1\u00df",
+            "\1\u00de",
+            "\1\u00df",
             "\1\u00e0",
-            "\1\u00e1",
-            "\1\u00e2\1\u00e3",
+            "\1\u00e1\3\uffff\1\u00e2",
+            "\1\u00e3",
             "\1\u00e4",
-            "\1\u00e5",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00e6",
+            "\1\u00e5\1\u00e6",
             "\1\u00e7",
             "\1\u00e8",
-            "\1\u00ea\17\uffff\1\u00e9",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00e9",
+            "\1\u00ea",
             "\1\u00eb",
-            "",
-            "\1\u00ec",
-            "\1\u00ed",
-            "",
-            "",
-            "",
+            "\1\u00ed\17\uffff\1\u00ec",
             "\1\u00ee",
+            "",
             "\1\u00ef",
             "\1\u00f0",
+            "",
+            "",
+            "",
+            "",
             "\1\u00f1",
             "\1\u00f2",
             "\1\u00f3",
-            "\1\u00f4\12\uffff\1\u00f5",
+            "\1\u00f4",
+            "\1\u00f5",
             "\1\u00f6",
-            "\1\u00f7",
-            "\1\u00f8",
+            "\1\u00f7\12\uffff\1\u00f8",
             "\1\u00f9",
             "\1\u00fa",
             "\1\u00fb",
-            "\1\u00fc\14\uffff\1\u00fd",
+            "\1\u00fc",
+            "\1\u00fd",
             "\1\u00fe",
-            "\1\u00ff",
-            "\1\u0100",
+            "\1\u00ff\14\uffff\1\u0100",
             "\1\u0101",
             "\1\u0102",
             "\1\u0103",
@@ -5893,10 +5910,10 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0109",
             "\1\u010a",
             "\1\u010b",
-            "\1\u010c\23\uffff\1\u010d",
+            "\1\u010c",
+            "\1\u010d",
             "\1\u010e",
-            "\1\u010f",
-            "\1\u0110",
+            "\1\u010f\23\uffff\1\u0110",
             "\1\u0111",
             "\1\u0112",
             "\1\u0113",
@@ -5912,10 +5929,10 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u011d",
             "\1\u011e",
             "\1\u011f",
-            "\1\u0120\27\uffff\1\u0121",
+            "\1\u0120",
+            "\1\u0121",
             "\1\u0122",
-            "\1\u0123",
-            "\1\u0124",
+            "\1\u0123\27\uffff\1\u0124",
             "\1\u0125",
             "\1\u0126",
             "\1\u0127",
@@ -5925,11 +5942,11 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u012b",
             "\1\u012c",
             "\1\u012d",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u012e",
             "\1\u012f",
             "\1\u0130",
-            "\1\u0131",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0132",
             "\1\u0133",
             "\1\u0134",
@@ -5940,11 +5957,11 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0139",
             "\1\u013a",
             "\1\u013b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u013c",
             "\1\u013d",
             "\1\u013e",
-            "\1\u013f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0140",
             "\1\u0141",
             "\1\u0142",
@@ -5965,85 +5982,85 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0151",
             "\1\u0152",
             "\1\u0153",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\14\65\1\u0154\15"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
+            "\1\u0154",
+            "\1\u0155",
             "\1\u0156",
-            "\1\u0157",
-            "\1\u0158",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\14\67\1\u0157\15"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
             "\1\u0159",
             "\1\u015a",
-            "\12\65\7\uffff\25\65\1\u015b\4\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
+            "\1\u015b",
+            "\1\u015c",
             "\1\u015d",
-            "\1\u015e",
-            "\1\u015f",
+            "\12\67\7\uffff\25\67\1\u015e\4\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
             "\1\u0160",
             "\1\u0161",
             "\1\u0162",
-            "\1\u0163\14\uffff\1\u0164",
+            "\1\u0163",
+            "\1\u0164",
             "\1\u0165",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0167\1\u0168\3\uffff\1\u0169\3\uffff\1\u016a\1\uffff\1"+
-            "\u016b\1\uffff\1\u016c\2\uffff\1\u016d\1\u016e\1\u016f\1\uffff"+
-            "\1\u0170\30\uffff\1\u0171",
-            "\1\u0172\2\uffff\1\u0173",
-            "\1\u0174",
-            "\1\u0175",
-            "\1\u0176",
+            "\1\u0166\14\uffff\1\u0167",
+            "\1\u0168",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u016a\1\u016b\3\uffff\1\u016c\3\uffff\1\u016d\1\uffff\1"+
+            "\u016e\1\uffff\1\u016f\2\uffff\1\u0170\1\u0171\1\u0172\1\uffff"+
+            "\1\u0173\30\uffff\1\u0174",
+            "\1\u0175\2\uffff\1\u0176",
             "\1\u0177",
             "\1\u0178",
             "\1\u0179",
             "\1\u017a",
             "\1\u017b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\4\65\1\u017c\25"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u017f",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0181",
+            "\1\u017c",
+            "\1\u017d",
+            "\1\u017e",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\4\67\1\u017f\25"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0182",
-            "\1\u0183\5\uffff\1\u0184",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0184",
             "\1\u0185",
-            "\1\u0186",
-            "\1\u0187",
+            "\1\u0186\5\uffff\1\u0187",
             "\1\u0188",
             "\1\u0189",
             "\1\u018a",
-            "\12\65\7\uffff\6\65\1\u018b\23\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
+            "\1\u018b",
+            "\1\u018c",
             "\1\u018d",
-            "\1\u018e",
-            "\1\u018f",
+            "\12\67\7\uffff\6\67\1\u018e\23\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
             "\1\u0190",
             "\1\u0191",
             "\1\u0192",
             "\1\u0193",
             "\1\u0194",
             "\1\u0195",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0196",
             "\1\u0197",
             "\1\u0198",
-            "\1\u0199",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u019a",
-            "\1\u019b\14\uffff\1\u019c\1\uffff\1\u019d",
-            "\1\u019e",
-            "\1\u019f",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u01a3",
-            "\1\u01a4",
-            "",
-            "\1\u01a5",
+            "\1\u019b",
+            "\1\u019c",
+            "\1\u019d",
+            "\1\u019e\14\uffff\1\u019f\1\uffff\1\u01a0",
+            "\1\u01a1",
+            "\1\u01a2",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01a6",
             "\1\u01a7",
+            "",
             "\1\u01a8",
             "\1\u01a9",
             "\1\u01aa",
@@ -6051,26 +6068,26 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u01ac",
             "\1\u01ad",
             "\1\u01ae",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u01af",
             "\1\u01b0",
             "\1\u01b1",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01b3",
             "\1\u01b4",
-            "\1\u01b5",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01b6",
             "\1\u01b7",
             "\1\u01b8",
             "\1\u01b9",
             "\1\u01ba",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u01bb",
             "\1\u01bc",
             "\1\u01bd",
-            "\1\u01be",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01bf",
             "\1\u01c0",
             "\1\u01c1",
@@ -6082,98 +6099,98 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u01ca",
+            "\1\u01cb",
             "\1\u01cc",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u01ce",
-            "\1\u01cf",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u01cf",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01d1",
             "\1\u01d2",
-            "\1\u01d3",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01d4",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u01d5",
             "\1\u01d6",
             "\1\u01d7",
-            "\1\u01d8",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u01d9",
             "\1\u01da",
-            "\1\u01db\2\uffff\1\u01dc",
+            "\1\u01db",
+            "",
+            "\1\u01dc",
             "\1\u01dd",
-            "\1\u01de",
-            "\1\u01df\5\uffff\1\u01e0",
+            "\1\u01de\2\uffff\1\u01df",
+            "\1\u01e0",
             "\1\u01e1",
-            "\1\u01e2\3\uffff\1\u01e3\6\uffff\1\u01e4",
-            "\1\u01e5",
-            "\1\u01e6",
-            "\1\u01e7",
+            "\1\u01e2\5\uffff\1\u01e3",
+            "\1\u01e4",
+            "\1\u01e5\3\uffff\1\u01e6\6\uffff\1\u01e7",
             "\1\u01e8",
             "\1\u01e9",
-            "\1\u01ea\3\uffff\1\u01eb",
+            "\1\u01ea",
+            "\1\u01eb",
             "\1\u01ec",
-            "\1\u01ed",
-            "\1\u01ee",
+            "\1\u01ed\3\uffff\1\u01ee",
             "\1\u01ef",
             "\1\u01f0",
             "\1\u01f1",
             "\1\u01f2",
             "\1\u01f3",
-            "",
-            "",
-            "\12\65\7\uffff\30\65\1\u01f4\1\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
-            "",
+            "\1\u01f4",
+            "\1\u01f5",
             "\1\u01f6",
-            "\1\u01f7",
-            "\1\u01f8",
-            "\1\u01f9",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u01fc",
-            "\1\u01fd",
-            "\1\u01fe",
-            "\1\u01ff\1\u0200\3\uffff\1\u0201\10\uffff\1\u0202\2\uffff"+
-            "\1\u0203\5\uffff\1\u0204",
-            "\1\u0205",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0207",
+            "",
+            "\12\67\7\uffff\30\67\1\u01f7\1\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
+            "",
+            "\1\u01f9",
+            "\1\u01fa",
+            "\1\u01fb",
+            "\1\u01fc",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u01ff",
+            "\1\u0200",
+            "\1\u0201",
+            "\1\u0202\1\u0203\3\uffff\1\u0204\10\uffff\1\u0205\2\uffff"+
+            "\1\u0206\5\uffff\1\u0207",
             "\1\u0208",
-            "\1\u0209",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u020a",
             "\1\u020b",
             "\1\u020c",
             "\1\u020d",
             "\1\u020e",
-            "",
             "\1\u020f",
-            "\12\65\7\uffff\3\65\1\u0210\26\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
+            "\1\u0210",
+            "\1\u0211",
+            "",
             "\1\u0212",
-            "\1\u0213",
-            "\1\u0214\2\uffff\1\u0215",
+            "\12\67\7\uffff\3\67\1\u0213\26\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
+            "\1\u0215",
             "\1\u0216",
-            "\1\u0217",
-            "\1\u0218",
+            "\1\u0217\2\uffff\1\u0218",
             "\1\u0219",
-            "",
-            "",
-            "",
             "\1\u021a",
             "\1\u021b",
             "\1\u021c",
+            "",
+            "",
+            "",
             "\1\u021d",
             "\1\u021e",
             "\1\u021f",
@@ -6182,62 +6199,62 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0222",
             "\1\u0223",
             "\1\u0224",
-            "\1\u0225\4\uffff\1\u0226",
-            "",
+            "\1\u0225",
+            "\1\u0226",
             "\1\u0227",
-            "\1\u0228",
+            "\1\u0228\4\uffff\1\u0229",
             "",
-            "\1\u0229",
             "\1\u022a",
             "\1\u022b",
-            "\1\u022c",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\22\65\1\u022e\7\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
-            "\1\u0230",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "",
-            "\1\u0232",
+            "\1\u022c",
+            "\1\u022d",
+            "\1\u022e",
+            "\1\u022f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\22\67\1\u0231\7\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
             "\1\u0233",
-            "\1\u0234",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
+            "\1\u0235",
             "\1\u0236",
             "\1\u0237",
-            "\1\u0238",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0239",
             "\1\u023a",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u023b",
             "\1\u023c",
             "\1\u023d",
-            "\1\u023e",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u023f",
-            "",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u0240",
             "\1\u0241",
             "\1\u0242",
             "",
-            "\1\u0243",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u0244",
             "\1\u0245",
-            "\1\u0246",
             "",
+            "\1\u0246",
             "\1\u0247",
             "\1\u0248",
             "\1\u0249",
+            "",
             "\1\u024a",
             "\1\u024b",
             "\1\u024c",
-            "\1\u024d\3\uffff\1\u024e",
+            "\1\u024d",
+            "\1\u024e",
             "\1\u024f",
-            "\1\u0250",
-            "\1\u0251",
+            "\1\u0250\3\uffff\1\u0251",
             "\1\u0252",
             "\1\u0253",
             "\1\u0254",
@@ -6259,225 +6276,225 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0264",
             "\1\u0265",
             "\1\u0266",
-            "",
             "\1\u0267",
             "\1\u0268",
             "\1\u0269",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "",
-            "",
+            "\1\u026a",
             "\1\u026b",
             "\1\u026c",
-            "\1\u026d",
-            "\1\u026e",
-            "\1\u026f\11\uffff\1\u0270",
-            "\1\u0271\2\uffff\1\u0272",
-            "\1\u0273",
-            "\1\u0274\3\uffff\1\u0275\5\uffff\1\u0276\1\u0277\7\uffff\1"+
-            "\u0278",
-            "\1\u0279",
-            "\1\u027a",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\1\u027b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u027d\1\u027e\14\uffff\1\u027f\1\u0280\2\uffff\1\u0281"+
-            "\1\u0282\1\uffff\1\u0283",
-            "\1\u0284",
-            "\1\u0285",
-            "\1\u0286",
+            "",
+            "\1\u026e",
+            "\1\u026f",
+            "\1\u0270",
+            "\1\u0271",
+            "\1\u0272\11\uffff\1\u0273",
+            "\1\u0274\2\uffff\1\u0275",
+            "\1\u0276",
+            "\1\u0277\3\uffff\1\u0278\5\uffff\1\u0279\1\u027a\7\uffff\1"+
+            "\u027b",
+            "\1\u027c",
+            "\1\u027d",
+            "",
+            "\1\u027e",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0280\1\u0281\14\uffff\1\u0282\1\u0283\2\uffff\1\u0284"+
+            "\1\u0285\1\uffff\1\u0286",
             "\1\u0287",
             "\1\u0288",
             "\1\u0289",
             "\1\u028a",
-            "",
             "\1\u028b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u028c",
             "\1\u028d",
+            "",
             "\1\u028e",
-            "\1\u028f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0290",
             "\1\u0291",
             "\1\u0292",
             "\1\u0293",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0294",
             "\1\u0295",
             "\1\u0296",
-            "\1\u0297",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0298",
             "\1\u0299",
             "\1\u029a",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u029c",
             "\1\u029d",
-            "\1\u029e",
-            "\1\u029f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02a0",
             "\1\u02a1",
             "\1\u02a2",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02a3",
             "\1\u02a4",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02a5",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u02a7",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\1\u02a6",
+            "\1\u02a9",
             "",
-            "\12\65\7\uffff\6\65\1\u02a7\23\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\6\67\1\u02aa\23\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u02ab",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u02ae",
             "",
-            "\1\u02ac",
-            "\1\u02ad",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "\1\u02af",
             "\1\u02b0",
-            "",
-            "\1\u02b1",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02b2",
             "\1\u02b3",
-            "\1\u02b4",
             "",
+            "\1\u02b4",
             "\1\u02b5",
             "\1\u02b6",
             "\1\u02b7",
+            "",
             "\1\u02b8",
             "\1\u02b9",
             "\1\u02ba",
             "\1\u02bb",
             "\1\u02bc",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02bd",
             "\1\u02be",
             "\1\u02bf",
-            "\1\u02c0",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02c1",
-            "\1\u02c2\23\uffff\1\u02c3",
+            "\1\u02c2",
+            "\1\u02c3",
             "\1\u02c4",
-            "\1\u02c5",
-            "\1\u02c6",
+            "\1\u02c5\23\uffff\1\u02c6",
             "\1\u02c7",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02c8",
             "\1\u02c9",
             "\1\u02ca",
-            "\1\u02cb",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02cc",
             "\1\u02cd",
             "\1\u02ce",
             "\1\u02cf",
             "\1\u02d0",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02d1",
+            "\1\u02d2",
             "\1\u02d3",
-            "\1\u02d4",
-            "\1\u02d5",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02d6",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02d7",
             "\1\u02d8",
             "\1\u02d9",
-            "\1\u02da",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02db",
             "\1\u02dc",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02dd",
             "\1\u02de",
-            "",
             "\1\u02df",
-            "\1\u02e0",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u02e1",
+            "",
             "\1\u02e2",
             "\1\u02e3",
             "\1\u02e4",
             "\1\u02e5",
-            "\1\u02e6\3\uffff\1\u02e7",
+            "\1\u02e6",
+            "\1\u02e7",
             "\1\u02e8",
-            "\1\u02e9",
-            "\1\u02ea",
+            "\1\u02e9\3\uffff\1\u02ea",
             "\1\u02eb",
             "\1\u02ec",
             "\1\u02ed",
             "\1\u02ee",
             "\1\u02ef",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u02f0",
             "\1\u02f1",
             "\1\u02f2",
-            "\1\u02f3",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u02f4",
-            "\1\u02f5\6\uffff\1\u02f6\3\uffff\1\u02f7",
-            "\1\u02f8",
-            "\1\u02f9",
-            "\1\u02fa",
+            "\1\u02f5",
+            "\1\u02f6",
+            "\1\u02f7",
+            "\1\u02f8\6\uffff\1\u02f9\3\uffff\1\u02fa",
             "\1\u02fb",
             "\1\u02fc",
             "\1\u02fd",
             "\1\u02fe",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u02ff",
             "\1\u0300",
             "\1\u0301",
-            "",
-            "\1\u0302",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0303",
             "\1\u0304",
+            "",
             "\1\u0305",
             "\1\u0306",
             "\1\u0307",
             "\1\u0308",
-            "",
             "\1\u0309",
             "\1\u030a",
             "\1\u030b",
             "",
             "\1\u030c",
             "\1\u030d",
+            "\1\u030e",
             "",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "\1\u030f",
-            "\1\u0310\3\uffff\1\u0311",
+            "\1\u0310",
+            "",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0312",
-            "\1\u0313",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u0313\3\uffff\1\u0314",
             "\1\u0315",
-            "",
             "\1\u0316",
-            "\1\u0317",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
+            "\1\u0318",
             "",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "\1\u0319",
             "\1\u031a",
             "",
-            "\1\u031b",
+            "",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u031c",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u031d",
+            "",
             "\1\u031e",
             "\1\u031f",
-            "\1\u0320",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0321",
             "\1\u0322",
             "\1\u0323",
@@ -6485,70 +6502,70 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0325",
             "\1\u0326",
             "\1\u0327",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0328",
+            "\1\u0329",
+            "\1\u032a",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u032b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u032d",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u032f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u032e",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0330",
-            "\1\u0331",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0332",
-            "",
             "\1\u0333",
             "\1\u0334",
             "\1\u0335",
+            "",
             "\1\u0336",
             "\1\u0337",
             "\1\u0338",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0339",
             "\1\u033a",
-            "",
-            "",
             "\1\u033b",
-            "\1\u033c",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u033d",
-            "\1\u033e",
             "",
+            "",
+            "\1\u033e",
             "\1\u033f",
             "\1\u0340",
             "\1\u0341",
-            "\1\u0342",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "",
+            "\1\u0342",
+            "\1\u0343",
             "\1\u0344",
-            "\12\65\7\uffff\1\65\1\u0345\30\65\4\uffff\1\65\1\uffff\32"+
-            "\65\151\uffff\2\65\20\uffff\1\65",
+            "\1\u0345",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u0347",
-            "\1\u0348",
-            "\1\u0349",
+            "\12\67\7\uffff\1\67\1\u0348\30\67\4\uffff\1\67\1\uffff\32"+
+            "\67\151\uffff\2\67\20\uffff\1\67",
             "\1\u034a",
             "\1\u034b",
             "\1\u034c",
             "\1\u034d",
-            "\1\u034e\23\uffff\1\u034f",
+            "\1\u034e",
+            "\1\u034f",
             "\1\u0350",
-            "\1\u0351",
-            "\1\u0352",
+            "\1\u0351\23\uffff\1\u0352",
             "\1\u0353",
             "\1\u0354",
             "\1\u0355",
             "\1\u0356",
             "\1\u0357",
-            "",
             "\1\u0358",
             "\1\u0359",
             "\1\u035a",
+            "",
             "\1\u035b",
             "\1\u035c",
             "\1\u035d",
@@ -6558,13 +6575,13 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0361",
             "\1\u0362",
             "\1\u0363",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0364",
             "\1\u0365",
-            "",
             "\1\u0366",
-            "\1\u0367",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0368",
+            "",
             "\1\u0369",
             "\1\u036a",
             "\1\u036b",
@@ -6575,105 +6592,105 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0370",
             "\1\u0371",
             "\1\u0372",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u0373",
             "\1\u0374",
             "\1\u0375",
-            "\1\u0376",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u0377",
             "\1\u0378",
-            "",
             "\1\u0379",
             "\1\u037a",
             "\1\u037b",
             "",
             "\1\u037c",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u037d",
             "\1\u037e",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u037f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0381",
-            "\1\u0382",
-            "\1\u0383",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0384",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0385",
+            "\1\u0386",
             "\1\u0387",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0389",
-            "",
-            "",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u038a",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u038c",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "",
             "\1\u038d",
-            "\1\u038e",
-            "\1\u038f",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0391",
-            "\1\u0392\4\uffff\1\u0393",
-            "\1\u0394",
-            "\1\u0395",
-            "\1\u0396",
             "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0390",
+            "\1\u0391",
+            "\1\u0392",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0394",
+            "\1\u0395\4\uffff\1\u0396",
             "\1\u0397",
             "\1\u0398",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0399",
+            "",
             "\1\u039a",
             "\1\u039b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u039d",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u039f",
+            "\1\u039e",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03a0",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03a2",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03a1",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03a4",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03a3",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03a5",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03a7",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03a9",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03a6",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03a8",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03aa",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03ac",
-            "\1\u03ad",
-            "\1\u03ae",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03af",
             "\1\u03b0",
             "\1\u03b1",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03b2",
             "\1\u03b3",
             "\1\u03b4",
-            "\1\u03b5",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03b6",
             "\1\u03b7",
             "\1\u03b8",
@@ -6681,368 +6698,371 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u03ba",
             "\1\u03bb",
             "\1\u03bc",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u03bd",
+            "\1\u03be",
             "\1\u03bf",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u03c2",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03c4",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03c5",
-            "\1\u03c6",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03c7",
             "\1\u03c8",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03c9",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03cb",
-            "\1\u03cc",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03ce",
+            "\1\u03cf",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03d0",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03d3",
-            "\1\u03d4",
-            "\1\u03d5",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u03d6",
             "\1\u03d7",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u03d9",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03d8",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u03da",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03dc",
-            "\1\u03dd",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
             "",
-            "\1\u03de",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u03df",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03e0",
+            "",
             "",
             "\1\u03e1",
             "\1\u03e2",
-            "\1\u03e3",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u03e4",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03e5",
+            "\1\u03e6",
             "\1\u03e7",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "\1\u03e9",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03ea",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
             "\1\u03ec",
-            "",
             "\1\u03ed",
             "",
-            "\1\u03ee",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03ef",
             "",
             "\1\u03f0",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03f1",
             "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\1\u03f2",
             "\1\u03f3",
-            "\1\u03f4",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
+            "",
             "\1\u03f5",
             "\1\u03f6",
             "\1\u03f7",
-            "",
             "\1\u03f8",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u03f9",
             "\1\u03fa",
+            "",
             "\1\u03fb",
-            "\1\u03fc",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u03fd",
             "\1\u03fe",
             "\1\u03ff",
             "\1\u0400",
             "\1\u0401",
-            "",
-            "",
             "\1\u0402",
-            "",
-            "",
             "\1\u0403",
-            "",
             "\1\u0404",
+            "",
+            "",
             "\1\u0405",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "",
             "",
+            "\1\u0406",
+            "",
+            "\1\u0407",
             "\1\u0408",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
+            "",
+            "\1\u040b",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
             "",
             "",
-            "\1\u040a",
+            "\1\u040d",
             "",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u040c",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "\1\u040e",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u040f",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "",
-            "\1\u0410",
             "\1\u0411",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "",
+            "\1\u0412",
+            "",
+            "",
             "\1\u0413",
-            "",
             "\1\u0414",
-            "\1\u0415",
-            "\1\u0416\3\uffff\1\u0417",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0416",
+            "",
+            "\1\u0417",
             "\1\u0418",
+            "\1\u0419\3\uffff\1\u041a",
+            "\1\u041b",
             "",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u041d",
-            "\1\u041e",
-            "",
-            "\1\u041f",
-            "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0420",
             "\1\u0421",
-            "\1\u0422",
-            "\1\u0423",
-            "\1\u0424",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0426",
             "",
+            "\1\u0422",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0424",
+            "\1\u0425",
+            "\1\u0426",
             "\1\u0427",
-            "\1\u0428",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0429",
+            "",
             "\1\u042a",
             "\1\u042b",
             "\1\u042c",
             "\1\u042d",
             "\1\u042e",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u042f",
             "\1\u0430",
             "\1\u0431",
-            "\1\u0432",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0433",
+            "\1\u0434",
+            "\1\u0435",
             "",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0437",
-            "\1\u0438",
-            "\1\u0439",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u043a",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u043b",
             "\1\u043c",
+            "",
             "\1\u043d",
-            "\1\u043e",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u043f",
-            "",
-            "",
-            "",
-            "",
             "\1\u0440",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0441",
             "\1\u0442",
             "",
-            "\1\u0443",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0445\3\uffff\1\u0446",
-            "\1\u0447",
             "",
-            "\1\u0448",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "",
+            "",
+            "\1\u0443",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0445",
+            "",
+            "\1\u0446",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0448\3\uffff\1\u0449",
+            "\1\u044a",
+            "",
             "\1\u044b",
-            "\1\u044c",
-            "\1\u044d",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u044e",
             "\1\u044f",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
+            "\1\u0450",
             "\1\u0451",
             "\1\u0452",
-            "\1\u0453",
-            "",
-            "",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
             "\1\u0454",
             "\1\u0455",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\1\u0456",
+            "",
+            "",
+            "",
+            "",
             "\1\u0457",
+            "\1\u0458",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u045a",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\1\u045d",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "\1\u045f",
             "\1\u0460",
-            "\1\u0461",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "",
             "\1\u0462",
-            "",
-            "",
             "\1\u0463",
             "\1\u0464",
             "\1\u0465",
+            "",
+            "",
             "\1\u0466",
             "\1\u0467",
+            "\1\u0468",
+            "\1\u0469",
+            "\1\u046a",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
             "",
             "",
-            "\1\u046e",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0472",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\1\u0474",
+            "",
+            "\1\u0471",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0475",
-            "\1\u0476",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0477",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u0478",
-            "",
-            "",
-            "",
             "\1\u0479",
+            "\1\u047a",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u047b",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "",
+            "",
+            "",
+            "\1\u047c",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u047e",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
-            "",
-            "\1\u0480",
-            "",
-            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "\1\u0481",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             "",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
             "\1\u0483",
             "",
+            "",
             "\1\u0484",
-            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65\151\uffff"+
-            "\2\65\20\uffff\1\65",
+            "",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
+            "\1\u0486",
+            "",
+            "\1\u0487",
+            "\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32\67\151\uffff"+
+            "\2\67\20\uffff\1\67",
             ""
     };
 
@@ -7076,7 +7096,7 @@ public class InternalPlantumlLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_NEWLINE | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -7176,9 +7196,13 @@ public class InternalPlantumlLexer extends Lexer {
 
                         else if ( ((LA9_0>='0' && LA9_0<='9')) ) {s = 45;}
 
-                        else if ( ((LA9_0>='\t' && LA9_0<='\n')||LA9_0=='\r'||LA9_0==' ') ) {s = 46;}
+                        else if ( (LA9_0=='\r') ) {s = 46;}
 
-                        else if ( ((LA9_0>='\u0000' && LA9_0<='\b')||(LA9_0>='\u000B' && LA9_0<='\f')||(LA9_0>='\u000E' && LA9_0<='\u001F')||(LA9_0>='!' && LA9_0<='\"')||(LA9_0>='$' && LA9_0<='&')||(LA9_0>='(' && LA9_0<=',')||LA9_0==';'||LA9_0=='='||LA9_0=='?'||LA9_0=='['||LA9_0==']'||LA9_0=='`'||LA9_0=='{'||(LA9_0>='}' && LA9_0<='\u00E3')||(LA9_0>='\u00E6' && LA9_0<='\u00F5')||(LA9_0>='\u00F7' && LA9_0<='\uFFFF')) ) {s = 47;}
+                        else if ( (LA9_0=='\n') ) {s = 47;}
+
+                        else if ( (LA9_0=='\t'||LA9_0==' ') ) {s = 48;}
+
+                        else if ( ((LA9_0>='\u0000' && LA9_0<='\b')||(LA9_0>='\u000B' && LA9_0<='\f')||(LA9_0>='\u000E' && LA9_0<='\u001F')||(LA9_0>='!' && LA9_0<='\"')||(LA9_0>='$' && LA9_0<='&')||(LA9_0>='(' && LA9_0<=',')||LA9_0==';'||LA9_0=='='||LA9_0=='?'||LA9_0=='['||LA9_0==']'||LA9_0=='`'||LA9_0=='{'||(LA9_0>='}' && LA9_0<='\u00E3')||(LA9_0>='\u00E6' && LA9_0<='\u00F5')||(LA9_0>='\u00F7' && LA9_0<='\uFFFF')) ) {s = 49;}
 
                         if ( s>=0 ) return s;
                         break;

@@ -38,117 +38,119 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Diagram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStartumlKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cInstructionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cInstructionsInstructionParserRuleCall_1_0 = (RuleCall)cInstructionsAssignment_1.eContents().get(0);
-		private final Keyword cEndumlKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cInstructionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInstructionsInstructionParserRuleCall_2_0 = (RuleCall)cInstructionsAssignment_2.eContents().get(0);
+		private final Keyword cEndumlKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//// A diagram starts with @Startuml and ends with @enduml, 
 		//// with some number of instructions in between
 		//Diagram:
-		//	"@startuml" instructions+=Instruction* "@enduml";
+		//	"@startuml" NEWLINE instructions+=Instruction* "@enduml";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"@startuml" instructions+=Instruction* "@enduml"
+		//"@startuml" NEWLINE instructions+=Instruction* "@enduml"
 		public Group getGroup() { return cGroup; }
 
 		//"@startuml"
 		public Keyword getStartumlKeyword_0() { return cStartumlKeyword_0; }
 
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
+
 		//instructions+=Instruction*
-		public Assignment getInstructionsAssignment_1() { return cInstructionsAssignment_1; }
+		public Assignment getInstructionsAssignment_2() { return cInstructionsAssignment_2; }
 
 		//Instruction
-		public RuleCall getInstructionsInstructionParserRuleCall_1_0() { return cInstructionsInstructionParserRuleCall_1_0; }
+		public RuleCall getInstructionsInstructionParserRuleCall_2_0() { return cInstructionsInstructionParserRuleCall_2_0; }
 
 		//"@enduml"
-		public Keyword getEndumlKeyword_2() { return cEndumlKeyword_2; }
+		public Keyword getEndumlKeyword_3() { return cEndumlKeyword_3; }
 	}
 
 	public class InstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Instruction");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cName1Assignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cName1IDTerminalRuleCall_0_0_0 = (RuleCall)cName1Assignment_0_0.eContents().get(0);
-		private final RuleCall cSequenceParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Assignment cName2Assignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cName2IDTerminalRuleCall_0_2_0 = (RuleCall)cName2Assignment_0_2.eContents().get(0);
-		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
-		private final Keyword cColonKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_0_3_1 = (RuleCall)cGroup_0_3.eContents().get(1);
-		private final RuleCall cML_COMMENTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cSL_COMMENTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cDefinitionParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cColorParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final RuleCall cAutoNumberParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cTitleParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cLegendParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cNewpageParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
+		private final Assignment cName1Assignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
+		private final RuleCall cName1IDTerminalRuleCall_0_0_0_0 = (RuleCall)cName1Assignment_0_0_0.eContents().get(0);
+		private final RuleCall cSequenceParserRuleCall_0_0_1 = (RuleCall)cGroup_0_0.eContents().get(1);
+		private final Assignment cName2Assignment_0_0_2 = (Assignment)cGroup_0_0.eContents().get(2);
+		private final RuleCall cName2IDTerminalRuleCall_0_0_2_0 = (RuleCall)cName2Assignment_0_0_2.eContents().get(0);
+		private final Group cGroup_0_0_3 = (Group)cGroup_0_0.eContents().get(3);
+		private final Keyword cColonKeyword_0_0_3_0 = (Keyword)cGroup_0_0_3.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_0_3_1 = (RuleCall)cGroup_0_0_3.eContents().get(1);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final RuleCall cDefinitionParserRuleCall_0_1_0 = (RuleCall)cGroup_0_1.eContents().get(0);
+		private final RuleCall cColorParserRuleCall_0_1_1 = (RuleCall)cGroup_0_1.eContents().get(1);
+		private final RuleCall cAutoNumberParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
+		private final RuleCall cTitleParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
+		private final RuleCall cLegendParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
+		private final RuleCall cNewpageParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
+		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
-		//	name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber | Title | Legend |
-		//	Newpage;
+		//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)? NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
-		//name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber | Title | Legend |
-		//Newpage
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)? NEWLINE
+		public Group getGroup() { return cGroup; }
+
+		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)?
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//name1=ID Sequence name2=ID (":" ID)?
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//name1=ID
-		public Assignment getName1Assignment_0_0() { return cName1Assignment_0_0; }
+		public Assignment getName1Assignment_0_0_0() { return cName1Assignment_0_0_0; }
 
 		//ID
-		public RuleCall getName1IDTerminalRuleCall_0_0_0() { return cName1IDTerminalRuleCall_0_0_0; }
+		public RuleCall getName1IDTerminalRuleCall_0_0_0_0() { return cName1IDTerminalRuleCall_0_0_0_0; }
 
 		//Sequence
-		public RuleCall getSequenceParserRuleCall_0_1() { return cSequenceParserRuleCall_0_1; }
+		public RuleCall getSequenceParserRuleCall_0_0_1() { return cSequenceParserRuleCall_0_0_1; }
 
 		//name2=ID
-		public Assignment getName2Assignment_0_2() { return cName2Assignment_0_2; }
+		public Assignment getName2Assignment_0_0_2() { return cName2Assignment_0_0_2; }
 
 		//ID
-		public RuleCall getName2IDTerminalRuleCall_0_2_0() { return cName2IDTerminalRuleCall_0_2_0; }
+		public RuleCall getName2IDTerminalRuleCall_0_0_2_0() { return cName2IDTerminalRuleCall_0_0_2_0; }
 
 		//(":" ID)?
-		public Group getGroup_0_3() { return cGroup_0_3; }
+		public Group getGroup_0_0_3() { return cGroup_0_0_3; }
 
 		//":"
-		public Keyword getColonKeyword_0_3_0() { return cColonKeyword_0_3_0; }
+		public Keyword getColonKeyword_0_0_3_0() { return cColonKeyword_0_0_3_0; }
 
 		//ID
-		public RuleCall getIDTerminalRuleCall_0_3_1() { return cIDTerminalRuleCall_0_3_1; }
-
-		//ML_COMMENT
-		public RuleCall getML_COMMENTTerminalRuleCall_1() { return cML_COMMENTTerminalRuleCall_1; }
-
-		//SL_COMMENT
-		public RuleCall getSL_COMMENTTerminalRuleCall_2() { return cSL_COMMENTTerminalRuleCall_2; }
+		public RuleCall getIDTerminalRuleCall_0_0_3_1() { return cIDTerminalRuleCall_0_0_3_1; }
 
 		//Definition Color?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_0_1() { return cGroup_0_1; }
 
 		//Definition
-		public RuleCall getDefinitionParserRuleCall_3_0() { return cDefinitionParserRuleCall_3_0; }
+		public RuleCall getDefinitionParserRuleCall_0_1_0() { return cDefinitionParserRuleCall_0_1_0; }
 
 		//Color?
-		public RuleCall getColorParserRuleCall_3_1() { return cColorParserRuleCall_3_1; }
+		public RuleCall getColorParserRuleCall_0_1_1() { return cColorParserRuleCall_0_1_1; }
 
 		//AutoNumber
-		public RuleCall getAutoNumberParserRuleCall_4() { return cAutoNumberParserRuleCall_4; }
+		public RuleCall getAutoNumberParserRuleCall_0_2() { return cAutoNumberParserRuleCall_0_2; }
 
 		//Title
-		public RuleCall getTitleParserRuleCall_5() { return cTitleParserRuleCall_5; }
+		public RuleCall getTitleParserRuleCall_0_3() { return cTitleParserRuleCall_0_3; }
 
 		//Legend
-		public RuleCall getLegendParserRuleCall_6() { return cLegendParserRuleCall_6; }
+		public RuleCall getLegendParserRuleCall_0_4() { return cLegendParserRuleCall_0_4; }
 
 		//Newpage
-		public RuleCall getNewpageParserRuleCall_7() { return cNewpageParserRuleCall_7; }
+		public RuleCall getNewpageParserRuleCall_0_5() { return cNewpageParserRuleCall_0_5; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
 	}
 
 	public class SequenceElements extends AbstractParserRuleElementFinder {
@@ -1422,18 +1424,22 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cLeftKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Keyword cCenterKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
-		private final Assignment cIdsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIdsIDTerminalRuleCall_2_0 = (RuleCall)cIdsAssignment_2.eContents().get(0);
-		private final Keyword cEndlegendKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final RuleCall cNEWLINETerminalRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_2_1 = (RuleCall)cAlternatives_2.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Keyword cEndlegendKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//// Rule for legends.
 		//// TODO: Fix ID -> STRING
 		//// TODO: Fix \n after alignment call
 		//Legend:
-		//	"legend" ("right" | "left" | "center")? ids+=ID* "endlegend";
+		//	"legend" ("right" | "left" | "center")? (NEWLINE ID | NEWLINE)* NEWLINE "endlegend";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"legend" ("right" | "left" | "center")? ids+=ID* "endlegend"
+		//"legend" ("right" | "left" | "center")? (NEWLINE ID | NEWLINE)* NEWLINE "endlegend"
 		public Group getGroup() { return cGroup; }
 
 		//"legend"
@@ -1451,14 +1457,26 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//"center"
 		public Keyword getCenterKeyword_1_2() { return cCenterKeyword_1_2; }
 
-		//ids+=ID*
-		public Assignment getIdsAssignment_2() { return cIdsAssignment_2; }
+		//(NEWLINE ID | NEWLINE)*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//NEWLINE ID
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_2_0_0() { return cNEWLINETerminalRuleCall_2_0_0; }
 
 		//ID
-		public RuleCall getIdsIDTerminalRuleCall_2_0() { return cIdsIDTerminalRuleCall_2_0; }
+		public RuleCall getIDTerminalRuleCall_2_0_1() { return cIDTerminalRuleCall_2_0_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_2_1() { return cNEWLINETerminalRuleCall_2_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_3() { return cNEWLINETerminalRuleCall_3; }
 
 		//"endlegend"
-		public Keyword getEndlegendKeyword_3() { return cEndlegendKeyword_3; }
+		public Keyword getEndlegendKeyword_4() { return cEndlegendKeyword_4; }
 	}
 
 	public class NewpageElements extends AbstractParserRuleElementFinder {
@@ -1498,6 +1516,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
+	private final TerminalRule tNEWLINE;
 	private final TerminalRule tWS;
 	private final TerminalRule tANY_OTHER;
 	
@@ -1520,6 +1539,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 	}
@@ -1561,7 +1581,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// A diagram starts with @Startuml and ends with @enduml, 
 	//// with some number of instructions in between
 	//Diagram:
-	//	"@startuml" instructions+=Instruction* "@enduml";
+	//	"@startuml" NEWLINE instructions+=Instruction* "@enduml";
 	public DiagramElements getDiagramAccess() {
 		return pDiagram;
 	}
@@ -1572,8 +1592,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
-	//	name1=ID Sequence name2=ID (":" ID)? | ML_COMMENT | SL_COMMENT | Definition Color? | AutoNumber | Title | Legend |
-	//	Newpage;
+	//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)? NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1683,7 +1702,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// TODO: Fix ID -> STRING
 	//// TODO: Fix \n after alignment call
 	//Legend:
-	//	"legend" ("right" | "left" | "center")? ids+=ID* "endlegend";
+	//	"legend" ("right" | "left" | "center")? (NEWLINE ID | NEWLINE)* NEWLINE "endlegend";
 	public LegendElements getLegendAccess() {
 		return pLegend;
 	}
@@ -1704,6 +1723,11 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getNewpageAccess().getRule();
 	}
 
+	////AltElse:
+	////	'alt' ID name1=ID Sequence name2=ID (':' ID) (elses+=Else)*
+	////;
+	////Else:
+	////;
 	//// Terminals
 	////--------------------------------------------------
 	//// Multiline comment begins with /', and ends with '/
@@ -1735,8 +1759,15 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return tINT;
 	} 
 
+	//terminal NEWLINE:
+	//	"\r"? "\n";
+	public TerminalRule getNEWLINERule() {
+		return tNEWLINE;
+	} 
+
+	//// Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	" " | "\t";
 	public TerminalRule getWSRule() {
 		return tWS;
 	} 

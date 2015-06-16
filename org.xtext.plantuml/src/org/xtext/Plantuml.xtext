@@ -3,7 +3,7 @@
 
 grammar org.xtext.Plantuml 
 	//with org.eclipse.xtext.common.Terminals
-	hidden (WS, SL_COMMENT)
+	hidden (WS, SL_COMMENT, ML_COMMENT)
 
 generate plantuml "http://www.xtext.org/Plantuml"
 
@@ -16,19 +16,17 @@ Model:
 // A diagram starts with @Startuml and ends with @enduml, 
 // with some number of instructions in between
 Diagram:
-	'@startuml' (instructions+=Instruction)* '@enduml'
+	'@startuml' NEWLINE (instructions+=(Instruction))* '@enduml'
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction:
-	(name1=ID Sequence name2=ID (':' ID)?) 
-	| ML_COMMENT
-	| SL_COMMENT
+	((name1=ID Sequence name2=ID (':' ID)?) 
 	| Definition (Color)?
 	| AutoNumber
 	| Title
 	| Legend
-	| Newpage
+	| Newpage)? NEWLINE
 ;
 
 // Rule for sequences.
@@ -109,9 +107,8 @@ Title:
 
 // Rule for legends.
 // TODO: Fix ID -> STRING
-// TODO: Fix \n after alignment call
 Legend:
-	'legend' (('right' | 'left' | 'center') )? (ids+=ID)* 'endlegend'
+	'legend' ('right' | 'left' | 'center')?  ((NEWLINE ID|NEWLINE)?)* NEWLINE 'endlegend'
 ;
 
 // Rule for newpages
@@ -119,6 +116,7 @@ Legend:
 Newpage:
 	'newpage' (ID)?
 ;
+
 
 // Terminals
 //--------------------------------------------------
@@ -136,7 +134,9 @@ terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'.
 // INT is a sequence of numbers 0-9.
 terminal INT returns ecore::EInt: ('0'..'9')+;
 
-terminal WS			: (' '|'\t'|'\r'|'\n')+;
+terminal NEWLINE 	: ('\r'? '\n');
+
+terminal WS			: (' '|'\t'); // Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;
 
 terminal ANY_OTHER: .;
 

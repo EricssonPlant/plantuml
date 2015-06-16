@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Instruction;
-import org.xtext.plantuml.Legend;
 import org.xtext.plantuml.Model;
 import org.xtext.plantuml.PlantumlFactory;
 import org.xtext.plantuml.PlantumlPackage;
@@ -52,13 +51,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * @generated
    */
   private EClass definitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass legendEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -218,26 +210,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLegend()
-  {
-    return legendEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLegend_Ids()
-  {
-    return (EAttribute)legendEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public PlantumlFactory getPlantumlFactory()
   {
     return (PlantumlFactory)getEFactoryInstance();
@@ -275,9 +247,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     definitionEClass = createEClass(DEFINITION);
     createEAttribute(definitionEClass, DEFINITION__NAME);
-
-    legendEClass = createEClass(LEGEND);
-    createEAttribute(legendEClass, LEGEND__IDS);
   }
 
   /**
@@ -310,7 +279,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     // Add supertypes to classes
     definitionEClass.getESuperTypes().add(this.getInstruction());
-    legendEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -325,9 +293,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(legendEClass, Legend.class, "Legend", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLegend_Ids(), ecorePackage.getEString(), "ids", null, 0, -1, Legend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -22,18 +22,16 @@ import org.xtext.services.PlantumlGrammarAccess;
 public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PlantumlGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_NewpageParserRuleCall_7_or_SL_COMMENTTerminalRuleCall_2_or_TitleParserRuleCall_5;
-	protected AbstractElementAlias match_Instruction_ColorParserRuleCall_3_1_q;
-	protected AbstractElementAlias match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q;
-	protected AbstractElementAlias match_Legend___CenterKeyword_1_2_or_LeftKeyword_1_1_or_RightKeyword_1_0__q;
+	protected AbstractElementAlias match_Instruction_ColorParserRuleCall_0_1_1_q;
+	protected AbstractElementAlias match_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q;
+	protected AbstractElementAlias match_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PlantumlGrammarAccess) access;
-		match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_NewpageParserRuleCall_7_or_SL_COMMENTTerminalRuleCall_2_or_TitleParserRuleCall_5 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getML_COMMENTTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getNewpageParserRuleCall_7()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getSL_COMMENTTerminalRuleCall_2()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getTitleParserRuleCall_5()));
-		match_Instruction_ColorParserRuleCall_3_1_q = new TokenAlias(false, true, grammarAccess.getInstructionAccess().getColorParserRuleCall_3_1());
-		match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getColonKeyword_0_3_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_3_1()));
-		match_Legend___CenterKeyword_1_2_or_LeftKeyword_1_1_or_RightKeyword_1_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getLegendAccess().getCenterKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getLegendAccess().getLeftKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getLegendAccess().getRightKeyword_1_0()));
+		match_Instruction_ColorParserRuleCall_0_1_1_q = new TokenAlias(false, true, grammarAccess.getInstructionAccess().getColorParserRuleCall_0_1_1());
+		match_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_0_2()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getLegendParserRuleCall_0_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getNewpageParserRuleCall_0_5()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getTitleParserRuleCall_0_3()));
+		match_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getColonKeyword_0_0_3_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_0_3_1()));
 	}
 	
 	@Override
@@ -44,12 +42,12 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getColorToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getML_COMMENTRule())
-			return getML_COMMENTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getLegendRule())
+			return getLegendToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getNEWLINERule())
+			return getNEWLINEToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getNewpageRule())
 			return getNewpageToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getSL_COMMENTRule())
-			return getSL_COMMENTToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSequenceRule())
 			return getSequenceToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getTitleRule())
@@ -109,12 +107,23 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal ML_COMMENT : '/\'' -> '\'/';
+	 * Legend:
+	 * 	'legend' ('right' | 'left' | 'center')?  ((NEWLINE ID|NEWLINE)?)* NEWLINE 'endlegend'
+	 * ;
 	 */
-	protected String getML_COMMENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getLegendToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "/\'";
+		return "legend\nendlegend";
+	}
+	
+	/**
+	 * terminal NEWLINE 	: ('\r'? '\n');
+	 */
+	protected String getNEWLINEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\n";
 	}
 	
 	/**
@@ -126,15 +135,6 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "newpage";
-	}
-	
-	/**
-	 * terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
-	 */
-	protected String getSL_COMMENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\'";
 	}
 	
 	/**
@@ -165,37 +165,35 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_NewpageParserRuleCall_7_or_SL_COMMENTTerminalRuleCall_2_or_TitleParserRuleCall_5.equals(syntax))
-				emit_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_NewpageParserRuleCall_7_or_SL_COMMENTTerminalRuleCall_2_or_TitleParserRuleCall_5(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Instruction_ColorParserRuleCall_3_1_q.equals(syntax))
-				emit_Instruction_ColorParserRuleCall_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q.equals(syntax))
-				emit_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Legend___CenterKeyword_1_2_or_LeftKeyword_1_1_or_RightKeyword_1_0__q.equals(syntax))
-				emit_Legend___CenterKeyword_1_2_or_LeftKeyword_1_1_or_RightKeyword_1_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Instruction_ColorParserRuleCall_0_1_1_q.equals(syntax))
+				emit_Instruction_ColorParserRuleCall_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q.equals(syntax))
+				emit_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q.equals(syntax))
+				emit_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     ML_COMMENT | SL_COMMENT | AutoNumber | Title | Newpage
+	 *     Color?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
+	 *     name=ID (ambiguity) NEWLINE (rule end)
 	 */
-	protected void emit_Instruction_AutoNumberParserRuleCall_4_or_ML_COMMENTTerminalRuleCall_1_or_NewpageParserRuleCall_7_or_SL_COMMENTTerminalRuleCall_2_or_TitleParserRuleCall_5(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Instruction_ColorParserRuleCall_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     Color?
+	 *     (AutoNumber | Title | Legend | Newpage)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) (rule end)
+	 *     (rule start) (ambiguity) NEWLINE (rule start)
 	 */
-	protected void emit_Instruction_ColorParserRuleCall_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -204,21 +202,9 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (':' ID)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name2=ID (ambiguity) (rule end)
+	 *     name2=ID (ambiguity) NEWLINE (rule end)
 	 */
-	protected void emit_Instruction___ColonKeyword_0_3_0_IDTerminalRuleCall_0_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('right' | 'left' | 'center')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'legend' (ambiguity) 'endlegend' (rule start)
-	 *     (rule start) 'legend' (ambiguity) ids+=ID
-	 */
-	protected void emit_Legend___CenterKeyword_1_2_or_LeftKeyword_1_1_or_RightKeyword_1_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

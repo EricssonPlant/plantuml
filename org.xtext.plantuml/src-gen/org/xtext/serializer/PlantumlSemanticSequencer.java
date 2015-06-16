@@ -19,7 +19,6 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Instruction;
-import org.xtext.plantuml.Legend;
 import org.xtext.plantuml.Model;
 import org.xtext.plantuml.PlantumlPackage;
 import org.xtext.services.PlantumlGrammarAccess;
@@ -41,9 +40,6 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case PlantumlPackage.INSTRUCTION:
 				sequence_Instruction(context, (Instruction) semanticObject); 
-				return; 
-			case PlantumlPackage.LEGEND:
-				sequence_Legend(context, (Legend) semanticObject); 
 				return; 
 			case PlantumlPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -83,18 +79,9 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInstructionAccess().getName1IDTerminalRuleCall_0_0_0(), semanticObject.getName1());
-		feeder.accept(grammarAccess.getInstructionAccess().getName2IDTerminalRuleCall_0_2_0(), semanticObject.getName2());
+		feeder.accept(grammarAccess.getInstructionAccess().getName1IDTerminalRuleCall_0_0_0_0(), semanticObject.getName1());
+		feeder.accept(grammarAccess.getInstructionAccess().getName2IDTerminalRuleCall_0_0_2_0(), semanticObject.getName2());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ids+=ID+
-	 */
-	protected void sequence_Legend(EObject context, Legend semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

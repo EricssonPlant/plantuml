@@ -195,6 +195,89 @@ public interface PlantumlPackage extends EPackage
    */
   int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link org.xtext.plantuml.impl.AltElseImpl <em>Alt Else</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.plantuml.impl.AltElseImpl
+   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getAltElse()
+   * @generated
+   */
+  int ALT_ELSE = 4;
+
+  /**
+   * The feature id for the '<em><b>Name1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALT_ELSE__NAME1 = INSTRUCTION__NAME1;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALT_ELSE__NAME2 = INSTRUCTION__NAME2;
+
+  /**
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALT_ELSE__INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Elses</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALT_ELSE__ELSES = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Alt Else</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALT_ELSE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.plantuml.impl.ElseImpl <em>Else</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.plantuml.impl.ElseImpl
+   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getElse()
+   * @generated
+   */
+  int ELSE = 5;
+
+  /**
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE__INSTRUCTIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>Else</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Model <em>Model</em>}'.
@@ -290,6 +373,59 @@ public interface PlantumlPackage extends EPackage
    * @generated
    */
   EAttribute getDefinition_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.plantuml.AltElse <em>Alt Else</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alt Else</em>'.
+   * @see org.xtext.plantuml.AltElse
+   * @generated
+   */
+  EClass getAltElse();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.AltElse#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see org.xtext.plantuml.AltElse#getInstructions()
+   * @see #getAltElse()
+   * @generated
+   */
+  EReference getAltElse_Instructions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.AltElse#getElses <em>Elses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elses</em>'.
+   * @see org.xtext.plantuml.AltElse#getElses()
+   * @see #getAltElse()
+   * @generated
+   */
+  EReference getAltElse_Elses();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.plantuml.Else <em>Else</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Else</em>'.
+   * @see org.xtext.plantuml.Else
+   * @generated
+   */
+  EClass getElse();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.Else#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see org.xtext.plantuml.Else#getInstructions()
+   * @see #getElse()
+   * @generated
+   */
+  EReference getElse_Instructions();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -393,6 +529,50 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EAttribute DEFINITION__NAME = eINSTANCE.getDefinition_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.plantuml.impl.AltElseImpl <em>Alt Else</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.plantuml.impl.AltElseImpl
+     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getAltElse()
+     * @generated
+     */
+    EClass ALT_ELSE = eINSTANCE.getAltElse();
+
+    /**
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALT_ELSE__INSTRUCTIONS = eINSTANCE.getAltElse_Instructions();
+
+    /**
+     * The meta object literal for the '<em><b>Elses</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALT_ELSE__ELSES = eINSTANCE.getAltElse_Elses();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.plantuml.impl.ElseImpl <em>Else</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.plantuml.impl.ElseImpl
+     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getElse()
+     * @generated
+     */
+    EClass ELSE = eINSTANCE.getElse();
+
+    /**
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELSE__INSTRUCTIONS = eINSTANCE.getElse_Instructions();
 
   }
 

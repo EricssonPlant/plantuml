@@ -59,6 +59,24 @@ public interface PlantumlFactory extends EFactory
   Definition createDefinition();
 
   /**
+   * Returns a new object of class '<em>Alt Else</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alt Else</em>'.
+   * @generated
+   */
+  AltElse createAltElse();
+
+  /**
+   * Returns a new object of class '<em>Else</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Else</em>'.
+   * @generated
+   */
+  Else createElse();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -80,6 +80,8 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLegendAccess().getGroup(), "rule__Legend__Group__0");
 					put(grammarAccess.getLegendAccess().getGroup_2_0(), "rule__Legend__Group_2_0__0");
 					put(grammarAccess.getNewpageAccess().getGroup(), "rule__Newpage__Group__0");
+					put(grammarAccess.getAltElseAccess().getGroup(), "rule__AltElse__Group__0");
+					put(grammarAccess.getElseAccess().getGroup(), "rule__Else__Group__0");
 					put(grammarAccess.getModelAccess().getDiagramsAssignment(), "rule__Model__DiagramsAssignment");
 					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_2(), "rule__Diagram__InstructionsAssignment_2");
 					put(grammarAccess.getInstructionAccess().getName1Assignment_0_0_0(), "rule__Instruction__Name1Assignment_0_0_0");
@@ -89,6 +91,9 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_2_1(), "rule__Definition__NameAssignment_2_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_3_1(), "rule__Definition__NameAssignment_3_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_4_1(), "rule__Definition__NameAssignment_4_1");
+					put(grammarAccess.getAltElseAccess().getInstructionsAssignment_3(), "rule__AltElse__InstructionsAssignment_3");
+					put(grammarAccess.getAltElseAccess().getElsesAssignment_4(), "rule__AltElse__ElsesAssignment_4");
+					put(grammarAccess.getElseAccess().getInstructionsAssignment_3(), "rule__Else__InstructionsAssignment_3");
 				}
 			};
 		}

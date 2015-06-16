@@ -9,8 +9,10 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.plantuml.AltElse;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
+import org.xtext.plantuml.Else;
 import org.xtext.plantuml.Instruction;
 import org.xtext.plantuml.Model;
 import org.xtext.plantuml.PlantumlFactory;
@@ -51,6 +53,20 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * @generated
    */
   private EClass definitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass altElseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elseEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -210,6 +226,56 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAltElse()
+  {
+    return altElseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAltElse_Instructions()
+  {
+    return (EReference)altElseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAltElse_Elses()
+  {
+    return (EReference)altElseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElse()
+  {
+    return elseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getElse_Instructions()
+  {
+    return (EReference)elseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PlantumlFactory getPlantumlFactory()
   {
     return (PlantumlFactory)getEFactoryInstance();
@@ -247,6 +313,13 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     definitionEClass = createEClass(DEFINITION);
     createEAttribute(definitionEClass, DEFINITION__NAME);
+
+    altElseEClass = createEClass(ALT_ELSE);
+    createEReference(altElseEClass, ALT_ELSE__INSTRUCTIONS);
+    createEReference(altElseEClass, ALT_ELSE__ELSES);
+
+    elseEClass = createEClass(ELSE);
+    createEReference(elseEClass, ELSE__INSTRUCTIONS);
   }
 
   /**
@@ -279,6 +352,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     // Add supertypes to classes
     definitionEClass.getESuperTypes().add(this.getInstruction());
+    altElseEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -293,6 +367,13 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(altElseEClass, AltElse.class, "AltElse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAltElse_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, AltElse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAltElse_Elses(), this.getElse(), null, "elses", null, 0, -1, AltElse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getElse_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Else.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

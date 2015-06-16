@@ -273,9 +273,19 @@ ruleNewpage
     { 
         afterParserOrEnumRuleCall();
     }
-)?this_NEWLINE_11=RULE_NEWLINE
+
+    |
     { 
-    newLeafNode(this_NEWLINE_11, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getAltElseParserRuleCall_0_6()); 
+    }
+    this_AltElse_11=ruleAltElse
+    { 
+        $current = $this_AltElse_11.current; 
+        afterParserOrEnumRuleCall();
+    }
+)?this_NEWLINE_12=RULE_NEWLINE
+    { 
+    newLeafNode(this_NEWLINE_12, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
     }
 )
 ;
@@ -2137,6 +2147,130 @@ ruleNewpage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     }
 )?)
     ;
+
+
+
+
+
+// Entry rule entryRuleAltElse
+entryRuleAltElse returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAltElseRule()); }
+	 iv_ruleAltElse=ruleAltElse 
+	 { $current=$iv_ruleAltElse.current; } 
+	 EOF 
+;
+
+// Rule AltElse
+ruleAltElse returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='alt' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getAltElseAccess().getAltKeyword_0());
+    }
+this_ID_1=RULE_ID
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getAltElseAccess().getIDTerminalRuleCall_1()); 
+    }
+this_NEWLINE_2=RULE_NEWLINE
+    { 
+    newLeafNode(this_NEWLINE_2, grammarAccess.getAltElseAccess().getNEWLINETerminalRuleCall_2()); 
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAltElseAccess().getInstructionsInstructionParserRuleCall_3_0()); 
+	    }
+		lv_instructions_3_0=ruleInstruction		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAltElseRule());
+	        }
+       		add(
+       			$current, 
+       			"instructions",
+        		lv_instructions_3_0, 
+        		"Instruction");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAltElseAccess().getElsesElseParserRuleCall_4_0()); 
+	    }
+		lv_elses_4_0=ruleElse		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAltElseRule());
+	        }
+       		add(
+       			$current, 
+       			"elses",
+        		lv_elses_4_0, 
+        		"Else");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_5='end' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getAltElseAccess().getEndKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleElse
+entryRuleElse returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getElseRule()); }
+	 iv_ruleElse=ruleElse 
+	 { $current=$iv_ruleElse.current; } 
+	 EOF 
+;
+
+// Rule Else
+ruleElse returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='else' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getElseAccess().getElseKeyword_0());
+    }
+this_ID_1=RULE_ID
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getElseAccess().getIDTerminalRuleCall_1()); 
+    }
+this_NEWLINE_2=RULE_NEWLINE
+    { 
+    newLeafNode(this_NEWLINE_2, grammarAccess.getElseAccess().getNEWLINETerminalRuleCall_2()); 
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getElseAccess().getInstructionsInstructionParserRuleCall_3_0()); 
+	    }
+		lv_instructions_3_0=ruleInstruction		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getElseRule());
+	        }
+       		add(
+       			$current, 
+       			"instructions",
+        		lv_instructions_3_0, 
+        		"Instruction");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
+;
 
 
 

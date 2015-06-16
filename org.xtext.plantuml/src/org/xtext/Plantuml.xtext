@@ -26,7 +26,8 @@ Instruction:
 	| AutoNumber
 	| Title
 	| Legend
-	| Newpage)? NEWLINE
+	| Newpage
+	| AltElse)? NEWLINE
 ;
 
 // Rule for sequences.
@@ -117,6 +118,15 @@ Newpage:
 	'newpage' (ID)?
 ;
 
+
+// Rules for Alt-Else clauses.
+AltElse:
+	'alt' ID NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
+;
+
+Else:
+	'else' ID NEWLINE (instructions+=Instruction)*
+;
 
 // Terminals
 //--------------------------------------------------

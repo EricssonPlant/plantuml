@@ -88,17 +88,19 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTitleParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
 		private final RuleCall cLegendParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
 		private final RuleCall cNewpageParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
+		private final RuleCall cAltElseParserRuleCall_0_6 = (RuleCall)cAlternatives_0.eContents().get(6);
 		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
-		//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)? NEWLINE;
+		//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)?
+		//	NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)? NEWLINE
+		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)? NEWLINE
 		public Group getGroup() { return cGroup; }
 
-		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)?
+		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//name1=ID Sequence name2=ID (":" ID)?
@@ -148,6 +150,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Newpage
 		public RuleCall getNewpageParserRuleCall_0_5() { return cNewpageParserRuleCall_0_5; }
+
+		//AltElse
+		public RuleCall getAltElseParserRuleCall_0_6() { return cAltElseParserRuleCall_0_6; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
@@ -1434,7 +1439,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// Rule for legends.
 		//// TODO: Fix ID -> STRING
-		//// TODO: Fix \n after alignment call
 		//Legend:
 		//	"legend" ("right" | "left" | "center")? (NEWLINE ID | NEWLINE)* NEWLINE "endlegend";
 		@Override public ParserRule getRule() { return rule; }
@@ -1500,6 +1504,83 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID?
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
+
+	public class AltElseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AltElse");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAltKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
+		private final Assignment cElsesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElsesElseParserRuleCall_4_0 = (RuleCall)cElsesAssignment_4.eContents().get(0);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//// Rules for Alt-Else clauses.
+		//AltElse:
+		//	"alt" ID NEWLINE instructions+=Instruction* elses+=Else* "end";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"alt" ID NEWLINE instructions+=Instruction* elses+=Else* "end"
+		public Group getGroup() { return cGroup; }
+
+		//"alt"
+		public Keyword getAltKeyword_0() { return cAltKeyword_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_2() { return cNEWLINETerminalRuleCall_2; }
+
+		//instructions+=Instruction*
+		public Assignment getInstructionsAssignment_3() { return cInstructionsAssignment_3; }
+
+		//Instruction
+		public RuleCall getInstructionsInstructionParserRuleCall_3_0() { return cInstructionsInstructionParserRuleCall_3_0; }
+
+		//elses+=Else*
+		public Assignment getElsesAssignment_4() { return cElsesAssignment_4; }
+
+		//Else
+		public RuleCall getElsesElseParserRuleCall_4_0() { return cElsesElseParserRuleCall_4_0; }
+
+		//"end"
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
+	}
+
+	public class ElseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Else");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cElseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
+		
+		//Else:
+		//	"else" ID NEWLINE instructions+=Instruction*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"else" ID NEWLINE instructions+=Instruction*
+		public Group getGroup() { return cGroup; }
+
+		//"else"
+		public Keyword getElseKeyword_0() { return cElseKeyword_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_2() { return cNEWLINETerminalRuleCall_2; }
+
+		//instructions+=Instruction*
+		public Assignment getInstructionsAssignment_3() { return cInstructionsAssignment_3; }
+
+		//Instruction
+		public RuleCall getInstructionsInstructionParserRuleCall_3_0() { return cInstructionsInstructionParserRuleCall_3_0; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -1512,6 +1593,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final TitleElements pTitle;
 	private final LegendElements pLegend;
 	private final NewpageElements pNewpage;
+	private final AltElseElements pAltElse;
+	private final ElseElements pElse;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tID;
@@ -1535,6 +1618,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTitle = new TitleElements();
 		this.pLegend = new LegendElements();
 		this.pNewpage = new NewpageElements();
+		this.pAltElse = new AltElseElements();
+		this.pElse = new ElseElements();
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
@@ -1592,7 +1677,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
-	//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage)? NEWLINE;
+	//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)?
+	//	NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1700,7 +1786,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rule for legends.
 	//// TODO: Fix ID -> STRING
-	//// TODO: Fix \n after alignment call
 	//Legend:
 	//	"legend" ("right" | "left" | "center")? (NEWLINE ID | NEWLINE)* NEWLINE "endlegend";
 	public LegendElements getLegendAccess() {
@@ -1723,11 +1808,27 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getNewpageAccess().getRule();
 	}
 
-	////AltElse:
-	////	'alt' ID name1=ID Sequence name2=ID (':' ID) (elses+=Else)*
-	////;
-	////Else:
-	////;
+	//// Rules for Alt-Else clauses.
+	//AltElse:
+	//	"alt" ID NEWLINE instructions+=Instruction* elses+=Else* "end";
+	public AltElseElements getAltElseAccess() {
+		return pAltElse;
+	}
+	
+	public ParserRule getAltElseRule() {
+		return getAltElseAccess().getRule();
+	}
+
+	//Else:
+	//	"else" ID NEWLINE instructions+=Instruction*;
+	public ElseElements getElseAccess() {
+		return pElse;
+	}
+	
+	public ParserRule getElseRule() {
+		return getElseAccess().getRule();
+	}
+
 	//// Terminals
 	////--------------------------------------------------
 	//// Multiline comment begins with /', and ends with '/

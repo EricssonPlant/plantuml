@@ -16,8 +16,10 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.plantuml.AltElse;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
+import org.xtext.plantuml.Else;
 import org.xtext.plantuml.Instruction;
 import org.xtext.plantuml.Model;
 import org.xtext.plantuml.PlantumlPackage;
@@ -32,11 +34,17 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == PlantumlPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case PlantumlPackage.ALT_ELSE:
+				sequence_AltElse(context, (AltElse) semanticObject); 
+				return; 
 			case PlantumlPackage.DEFINITION:
 				sequence_Definition(context, (Definition) semanticObject); 
 				return; 
 			case PlantumlPackage.DIAGRAM:
 				sequence_Diagram(context, (Diagram) semanticObject); 
+				return; 
+			case PlantumlPackage.ELSE:
+				sequence_Else(context, (Else) semanticObject); 
 				return; 
 			case PlantumlPackage.INSTRUCTION:
 				sequence_Instruction(context, (Instruction) semanticObject); 
@@ -47,6 +55,15 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (instructions+=Instruction* elses+=Else*)
+	 */
+	protected void sequence_AltElse(EObject context, AltElse semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -62,6 +79,15 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     instructions+=Instruction*
 	 */
 	protected void sequence_Diagram(EObject context, Diagram semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     instructions+=Instruction*
+	 */
+	protected void sequence_Else(EObject context, Else semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

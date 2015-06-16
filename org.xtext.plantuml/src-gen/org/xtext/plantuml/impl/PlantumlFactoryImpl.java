@@ -68,6 +68,8 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
       case PlantumlPackage.DIAGRAM: return createDiagram();
       case PlantumlPackage.INSTRUCTION: return createInstruction();
       case PlantumlPackage.DEFINITION: return createDefinition();
+      case PlantumlPackage.ALT_ELSE: return createAltElse();
+      case PlantumlPackage.ELSE: return createElse();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -115,6 +117,28 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     DefinitionImpl definition = new DefinitionImpl();
     return definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AltElse createAltElse()
+  {
+    AltElseImpl altElse = new AltElseImpl();
+    return altElse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Else createElse()
+  {
+    ElseImpl else_ = new ElseImpl();
+    return else_;
   }
 
   /**

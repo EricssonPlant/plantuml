@@ -21,7 +21,7 @@ Diagram:
 
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction:
-	((name1=ID Sequence name2=ID (':' ID)?) 
+	((name1=ID SEQUENCE name2=ID (':' ID)?) 
 	| Definition (Color)?
 	| AutoNumber
 	| Title
@@ -32,30 +32,6 @@ Instruction:
 
 // Rule for sequences.
 // A sequence is any of the following arrows:
-Sequence:
-	('\u002D')* '\u002D' '\u003E'						// - = u002D  | > = u003E
-	| '\u003C' '\u002D' ('\u002D')* 						// < = u003C  | - = u002D
-	| '\u002D' '\u003E' 'x'									// - = u002D  | > = u003E
-	| 'x' '\u003C' '\u002D' 								// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u003E' '\u003E'				// - = u002D | > = u003E
-	| '\u003C' '\u003C' '\u002D' ('\u002D')*				// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\\' '\\'						// - = u002D
-	| '\u002F' '\u002D' ('\u002D')*							// / = u002F | - = u002D
-	| ('\u002D')* '\u002D' '\\\\' 							// - = u0g02D
-	| '\u002F' '\u002F' '\u002D' ('\u002D')*				// / = u002F | - = u002D
-	| ('\u002D')* '\u002D' '\u003E' 'o'						// - = u002D | > = u003E
-	| 'o' '\u003C' '\u002D' ('\u002D')*						// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u002D' '\u002F' '\u002F' 'o'	// - = u002D | / = u002F
-	| 'o' '\\\\' '\u002D' '\u002D' ('\u002D')* 				// - = u002D
-	| '\u003C' '\u002D' '\u003E' 							// < = u003C | - = u002D | > = u003E
-	| '\u003C' '\u002D' '\u003E' 'o' 						// < = u003C | - = u002D | > = u003E
-	| 'o' '\u003C' '\u002D' '\u003E' 						// < = u003C | - = u002D | > = u003E
-	| '\u003C' '\u007C' '\u002D' '\u002D' 					// < = u003C | | = u007C | - = u002D
-	| '\u002D' '\u002D' '\u007C' '\u003E' 					// - = u002D | | = u007C | > = u003E
-	| '\u002E' '\u002E' 									// . = u002E
-	| '\u002E'												// . = u002E
-	
-;
 
 	
 // Rule for defining objects in PlantUML, such as
@@ -140,6 +116,30 @@ terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
 // ID can be any following sequence of letters and numbers, without spaces between them.
 // TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+
+terminal SEQUENCE:
+	('\u002D')* '\u002D' '\u003E'							// - = u002D  | > = u003E
+	| '\u003C' '\u002D' ('\u002D')* 						// < = u003C  | - = u002D
+	| '\u002D' '\u003E' 'x'									// - = u002D  | > = u003E
+	| 'x' '\u003C' '\u002D' 								// < = u003C | - = u002D
+	| ('\u002D')* '\u002D' '\u003E' '\u003E'				// - = u002D | > = u003E
+	| '\u003C' '\u003C' '\u002D' ('\u002D')*				// < = u003C | - = u002D
+	| ('\u002D')* '\u002D' '\u005C' '\u005C'				// - = u002D
+	| '\u002F' '\u002D' ('\u002D')*							// / = u002F | - = u002D
+	| '\u002F' '\u002F' '\u002D' ('\u002D')*				// / = u002F | - = u002D
+	| ('\u002D')* '\u002D' '\u003E' 'o'						// - = u002D | > = u003E
+	| 'o' '\u003C' '\u002D' ('\u002D')*						// < = u003C | - = u002D
+	| ('\u002D')* '\u002D' '\u002D' '\u002F' '\u002F' 'o'	// - = u002D | / = u002F
+	| 'o' '\\\\' '\u002D' '\u002D' ('\u002D')* 				// - = u002D
+	| '\u003C' '\u002D' '\u003E' 							// < = u003C | - = u002D | > = u003E
+	| '\u003C' '\u002D' '\u003E' 'o' 						// < = u003C | - = u002D | > = u003E
+	| 'o' '\u003C' '\u002D' '\u003E' 						// < = u003C | - = u002D | > = u003E
+	| '\u003C' '\u007C' '\u002D' '\u002D' 					// < = u003C | | = u007C | - = u002D
+	| '\u002D' '\u002D' '\u007C' '\u003E' 					// - = u002D | | = u007C | > = u003E
+	| '\u002E' '\u002E' 									// . = u002E
+	| '\u002E'												// . = u002E
+	
+;
 
 // INT is a sequence of numbers 0-9.
 terminal INT returns ecore::EInt: ('0'..'9')+;

@@ -4,7 +4,8 @@
 package org.xtext.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -14,10 +15,13 @@ public class PlantumlUiModule extends org.xtext.ui.AbstractPlantumlUiModule {
 		super(plugin);
 	}
 	
-	// Adds support for PlantUML comments.
-	// Removes autocompletion of brackets, parathesis and curly brackets.
-	@Override
-	public Class<? extends AbstractEditStrategyProvider> bindAbstractEditStrategyProvider() {
-		return QuotesAutoEditStrategy.class;
+	public Class<? extends IHighlightingConfiguration>
+	bindIHighlightingConfiguration () {
+		return PlantumlHighlightingConfiguration.class;
+	}
+	
+	public Class<? extends ISemanticHighlightingCalculator>
+	bindISemanticHIghlightingCalculator(){
+		return PlantumlHighlightingCalculator.class;
 	}
 }

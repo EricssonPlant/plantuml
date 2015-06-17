@@ -70,6 +70,7 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
       case PlantumlPackage.DEFINITION: return createDefinition();
       case PlantumlPackage.ALT_ELSE: return createAltElse();
       case PlantumlPackage.ELSE: return createElse();
+      case PlantumlPackage.GROUPING_MESSAGES: return createGroupingMessages();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -139,6 +140,17 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     ElseImpl else_ = new ElseImpl();
     return else_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GroupingMessages createGroupingMessages()
+  {
+    GroupingMessagesImpl groupingMessages = new GroupingMessagesImpl();
+    return groupingMessages;
   }
 
   /**

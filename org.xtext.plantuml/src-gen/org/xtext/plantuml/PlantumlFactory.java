@@ -77,6 +77,15 @@ public interface PlantumlFactory extends EFactory
   Else createElse();
 
   /**
+   * Returns a new object of class '<em>Grouping Messages</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Grouping Messages</em>'.
+   * @generated
+   */
+  GroupingMessages createGroupingMessages();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

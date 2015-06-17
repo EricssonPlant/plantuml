@@ -75,7 +75,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
 		private final Assignment cName1Assignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
 		private final RuleCall cName1IDTerminalRuleCall_0_0_0_0 = (RuleCall)cName1Assignment_0_0_0.eContents().get(0);
-		private final RuleCall cSequenceParserRuleCall_0_0_1 = (RuleCall)cGroup_0_0.eContents().get(1);
+		private final RuleCall cSEQUENCETerminalRuleCall_0_0_1 = (RuleCall)cGroup_0_0.eContents().get(1);
 		private final Assignment cName2Assignment_0_0_2 = (Assignment)cGroup_0_0.eContents().get(2);
 		private final RuleCall cName2IDTerminalRuleCall_0_0_2_0 = (RuleCall)cName2Assignment_0_0_2.eContents().get(0);
 		private final Group cGroup_0_0_3 = (Group)cGroup_0_0.eContents().get(3);
@@ -89,21 +89,29 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLegendParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
 		private final RuleCall cNewpageParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
 		private final RuleCall cAltElseParserRuleCall_0_6 = (RuleCall)cAlternatives_0.eContents().get(6);
+		private final RuleCall cGroupingMessagesParserRuleCall_0_7 = (RuleCall)cAlternatives_0.eContents().get(7);
+		private final RuleCall cNoteParserRuleCall_0_8 = (RuleCall)cAlternatives_0.eContents().get(8);
+		private final RuleCall cDividerParserRuleCall_0_9 = (RuleCall)cAlternatives_0.eContents().get(9);
+		private final RuleCall cReferenceParserRuleCall_0_10 = (RuleCall)cAlternatives_0.eContents().get(10);
+		private final RuleCall cDelayParserRuleCall_0_11 = (RuleCall)cAlternatives_0.eContents().get(11);
+		private final RuleCall cSpaceParserRuleCall_0_12 = (RuleCall)cAlternatives_0.eContents().get(12);
 		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
-		//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)?
-		//	NEWLINE;
+		//	(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
+		//	GroupingMessages | Note | Divider | Reference | Delay | Space)? NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)? NEWLINE
+		//(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
+		//GroupingMessages | Note | Divider | Reference | Delay | Space)? NEWLINE
 		public Group getGroup() { return cGroup; }
 
-		//(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)?
+		//(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
+		//GroupingMessages | Note | Divider | Reference | Delay | Space)?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//name1=ID Sequence name2=ID (":" ID)?
+		//name1=ID SEQUENCE name2=ID (":" ID)?
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//name1=ID
@@ -112,8 +120,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getName1IDTerminalRuleCall_0_0_0_0() { return cName1IDTerminalRuleCall_0_0_0_0; }
 
-		//Sequence
-		public RuleCall getSequenceParserRuleCall_0_0_1() { return cSequenceParserRuleCall_0_0_1; }
+		//SEQUENCE
+		public RuleCall getSEQUENCETerminalRuleCall_0_0_1() { return cSEQUENCETerminalRuleCall_0_0_1; }
 
 		//name2=ID
 		public Assignment getName2Assignment_0_0_2() { return cName2Assignment_0_0_2; }
@@ -154,473 +162,26 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//AltElse
 		public RuleCall getAltElseParserRuleCall_0_6() { return cAltElseParserRuleCall_0_6; }
 
+		//GroupingMessages
+		public RuleCall getGroupingMessagesParserRuleCall_0_7() { return cGroupingMessagesParserRuleCall_0_7; }
+
+		//Note
+		public RuleCall getNoteParserRuleCall_0_8() { return cNoteParserRuleCall_0_8; }
+
+		//Divider
+		public RuleCall getDividerParserRuleCall_0_9() { return cDividerParserRuleCall_0_9; }
+
+		//Reference
+		public RuleCall getReferenceParserRuleCall_0_10() { return cReferenceParserRuleCall_0_10; }
+
+		//Delay
+		public RuleCall getDelayParserRuleCall_0_11() { return cDelayParserRuleCall_0_11; }
+
+		//Space
+		public RuleCall getSpaceParserRuleCall_0_12() { return cSpaceParserRuleCall_0_12; }
+
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
-	}
-
-	public class SequenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sequence");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Keyword cXKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cXKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cHyphenMinusKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Keyword cGreaterThanSignKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Keyword cLessThanSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Keyword cHyphenMinusKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Keyword cReverseSolidusKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Keyword cReverseSolidusKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Keyword cSolidusKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
-		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Keyword cHyphenMinusKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Keyword cReverseSolidusReverseSolidusKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
-		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Keyword cSolidusKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cSolidusKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_9_2 = (Keyword)cGroup_9.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
-		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Keyword cHyphenMinusKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_10_2 = (Keyword)cGroup_10.eContents().get(2);
-		private final Keyword cOKeyword_10_3 = (Keyword)cGroup_10.eContents().get(3);
-		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Keyword cOKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_11_2 = (Keyword)cGroup_11.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_11_3 = (Keyword)cGroup_11.eContents().get(3);
-		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
-		private final Keyword cHyphenMinusKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_12_2 = (Keyword)cGroup_12.eContents().get(2);
-		private final Keyword cSolidusKeyword_12_3 = (Keyword)cGroup_12.eContents().get(3);
-		private final Keyword cSolidusKeyword_12_4 = (Keyword)cGroup_12.eContents().get(4);
-		private final Keyword cOKeyword_12_5 = (Keyword)cGroup_12.eContents().get(5);
-		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Keyword cOKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Keyword cReverseSolidusReverseSolidusKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_13_2 = (Keyword)cGroup_13.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_13_3 = (Keyword)cGroup_13.eContents().get(3);
-		private final Keyword cHyphenMinusKeyword_13_4 = (Keyword)cGroup_13.eContents().get(4);
-		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
-		private final Keyword cLessThanSignKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_14_2 = (Keyword)cGroup_14.eContents().get(2);
-		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
-		private final Keyword cLessThanSignKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_15_2 = (Keyword)cGroup_15.eContents().get(2);
-		private final Keyword cOKeyword_15_3 = (Keyword)cGroup_15.eContents().get(3);
-		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
-		private final Keyword cOKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_16_2 = (Keyword)cGroup_16.eContents().get(2);
-		private final Keyword cGreaterThanSignKeyword_16_3 = (Keyword)cGroup_16.eContents().get(3);
-		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
-		private final Keyword cLessThanSignKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
-		private final Keyword cVerticalLineKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_17_2 = (Keyword)cGroup_17.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_17_3 = (Keyword)cGroup_17.eContents().get(3);
-		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
-		private final Keyword cHyphenMinusKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
-		private final Keyword cVerticalLineKeyword_18_2 = (Keyword)cGroup_18.eContents().get(2);
-		private final Keyword cGreaterThanSignKeyword_18_3 = (Keyword)cGroup_18.eContents().get(3);
-		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
-		private final Keyword cFullStopKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
-		private final Keyword cFullStopKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
-		private final Keyword cFullStopKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
-		
-		//// Rule for sequences.
-		//// A sequence is any of the following arrows:
-		//Sequence:
-		//	"-"* "-" // - = u002D  | > = u003E
-		//	">" | "<" "-" "-"* // < = u003C  | - = u002D
-		//	| "-" ">" // - = u002D  | > = u003E
-		//	"x" | "x" "<" // < = u003C | - = u002D
-		//	"-" | "-"* "-" ">" // - = u002D | > = u003E
-		//	">" | "<" "<" "-" "-"* // < = u003C | - = u002D
-		//	| "-"* "-" "\\" // - = u002D
-		//	"\\" | "/" "-" "-"* // / = u002F | - = u002D
-		//	| "-"* "-" // - = u0g02D
-		//	"\\\\" | "/" "/" "-" "-"* // / = u002F | - = u002D
-		//	| "-"* "-" ">" // - = u002D | > = u003E
-		//	"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
-		//	| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
-		//	"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
-		//	| "<" "-" // < = u003C | - = u002D | > = u003E
-		//	">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
-		//	"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
-		//	">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
-		//	"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
-		//	">" | "." // . = u002E
-		//	"." | // . = u002E
-		//	".";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"-"* "-" // - = u002D  | > = u003E
-		//">" | "<" "-" "-"* // < = u003C  | - = u002D
-		//| "-" ">" // - = u002D  | > = u003E
-		//"x" | "x" "<" // < = u003C | - = u002D
-		//"-" | "-"* "-" ">" // - = u002D | > = u003E
-		//">" | "<" "<" "-" "-"* // < = u003C | - = u002D
-		//| "-"* "-" "\\" // - = u002D
-		//"\\" | "/" "-" "-"* // / = u002F | - = u002D
-		//| "-"* "-" // - = u0g02D
-		//"\\\\" | "/" "/" "-" "-"* // / = u002F | - = u002D
-		//| "-"* "-" ">" // - = u002D | > = u003E
-		//"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
-		//| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
-		//"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
-		//| "<" "-" // < = u003C | - = u002D | > = u003E
-		//">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
-		//"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
-		//">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
-		//"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
-		//">" | "." // . = u002E
-		//"." | // . = u002E
-		//"."
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"-"* "-" // - = u002D  | > = u003E
-		//">"
-		public Group getGroup_0() { return cGroup_0; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_0_0() { return cHyphenMinusKeyword_0_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_0_1() { return cHyphenMinusKeyword_0_1; }
-
-		//// - = u002D  | > = u003E
-		//">"
-		public Keyword getGreaterThanSignKeyword_0_2() { return cGreaterThanSignKeyword_0_2; }
-
-		//"<" "-" "-"* // < = u003C  | - = u002D
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_1_0() { return cLessThanSignKeyword_1_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_1_2() { return cHyphenMinusKeyword_1_2; }
-
-		//"-" ">" // - = u002D  | > = u003E
-		//"x"
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_2_0() { return cHyphenMinusKeyword_2_0; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_2_1() { return cGreaterThanSignKeyword_2_1; }
-
-		//// - = u002D  | > = u003E
-		//"x"
-		public Keyword getXKeyword_2_2() { return cXKeyword_2_2; }
-
-		//"x" "<" // < = u003C | - = u002D
-		//"-"
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"x"
-		public Keyword getXKeyword_3_0() { return cXKeyword_3_0; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_3_1() { return cLessThanSignKeyword_3_1; }
-
-		//// < = u003C | - = u002D
-		//"-"
-		public Keyword getHyphenMinusKeyword_3_2() { return cHyphenMinusKeyword_3_2; }
-
-		//"-"* "-" ">" // - = u002D | > = u003E
-		//">"
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_4_0() { return cHyphenMinusKeyword_4_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_4_1() { return cHyphenMinusKeyword_4_1; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_4_2() { return cGreaterThanSignKeyword_4_2; }
-
-		//// - = u002D | > = u003E
-		//">"
-		public Keyword getGreaterThanSignKeyword_4_3() { return cGreaterThanSignKeyword_4_3; }
-
-		//"<" "<" "-" "-"* // < = u003C | - = u002D
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_5_0() { return cLessThanSignKeyword_5_0; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_5_1() { return cLessThanSignKeyword_5_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_5_2() { return cHyphenMinusKeyword_5_2; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_5_3() { return cHyphenMinusKeyword_5_3; }
-
-		//"-"* "-" "\\" // - = u002D
-		//"\\"
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_6_0() { return cHyphenMinusKeyword_6_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_6_1() { return cHyphenMinusKeyword_6_1; }
-
-		//"\\"
-		public Keyword getReverseSolidusKeyword_6_2() { return cReverseSolidusKeyword_6_2; }
-
-		//// - = u002D
-		//"\\"
-		public Keyword getReverseSolidusKeyword_6_3() { return cReverseSolidusKeyword_6_3; }
-
-		//"/" "-" "-"* // / = u002F | - = u002D
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"/"
-		public Keyword getSolidusKeyword_7_0() { return cSolidusKeyword_7_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_7_1() { return cHyphenMinusKeyword_7_1; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_7_2() { return cHyphenMinusKeyword_7_2; }
-
-		//"-"* "-" // - = u0g02D
-		//"\\\\"
-		public Group getGroup_8() { return cGroup_8; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_8_0() { return cHyphenMinusKeyword_8_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_8_1() { return cHyphenMinusKeyword_8_1; }
-
-		//// - = u0g02D
-		//"\\\\"
-		public Keyword getReverseSolidusReverseSolidusKeyword_8_2() { return cReverseSolidusReverseSolidusKeyword_8_2; }
-
-		//"/" "/" "-" "-"* // / = u002F | - = u002D
-		public Group getGroup_9() { return cGroup_9; }
-
-		//"/"
-		public Keyword getSolidusKeyword_9_0() { return cSolidusKeyword_9_0; }
-
-		//"/"
-		public Keyword getSolidusKeyword_9_1() { return cSolidusKeyword_9_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_9_2() { return cHyphenMinusKeyword_9_2; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_9_3() { return cHyphenMinusKeyword_9_3; }
-
-		//"-"* "-" ">" // - = u002D | > = u003E
-		//"o"
-		public Group getGroup_10() { return cGroup_10; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_10_0() { return cHyphenMinusKeyword_10_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_10_1() { return cHyphenMinusKeyword_10_1; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_10_2() { return cGreaterThanSignKeyword_10_2; }
-
-		//// - = u002D | > = u003E
-		//"o"
-		public Keyword getOKeyword_10_3() { return cOKeyword_10_3; }
-
-		//"o" "<" "-" "-"* // < = u003C | - = u002D
-		public Group getGroup_11() { return cGroup_11; }
-
-		//"o"
-		public Keyword getOKeyword_11_0() { return cOKeyword_11_0; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_11_1() { return cLessThanSignKeyword_11_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_11_2() { return cHyphenMinusKeyword_11_2; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_11_3() { return cHyphenMinusKeyword_11_3; }
-
-		//"-"* "-" "-" "/" "/" // - = u002D | / = u002F
-		//"o"
-		public Group getGroup_12() { return cGroup_12; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_12_0() { return cHyphenMinusKeyword_12_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_12_1() { return cHyphenMinusKeyword_12_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_12_2() { return cHyphenMinusKeyword_12_2; }
-
-		//"/"
-		public Keyword getSolidusKeyword_12_3() { return cSolidusKeyword_12_3; }
-
-		//"/"
-		public Keyword getSolidusKeyword_12_4() { return cSolidusKeyword_12_4; }
-
-		//// - = u002D | / = u002F
-		//"o"
-		public Keyword getOKeyword_12_5() { return cOKeyword_12_5; }
-
-		//"o" "\\\\" "-" "-" "-"* // - = u002D
-		public Group getGroup_13() { return cGroup_13; }
-
-		//"o"
-		public Keyword getOKeyword_13_0() { return cOKeyword_13_0; }
-
-		//"\\\\"
-		public Keyword getReverseSolidusReverseSolidusKeyword_13_1() { return cReverseSolidusReverseSolidusKeyword_13_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_13_2() { return cHyphenMinusKeyword_13_2; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_13_3() { return cHyphenMinusKeyword_13_3; }
-
-		//"-"*
-		public Keyword getHyphenMinusKeyword_13_4() { return cHyphenMinusKeyword_13_4; }
-
-		//"<" "-" // < = u003C | - = u002D | > = u003E
-		//">"
-		public Group getGroup_14() { return cGroup_14; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_14_0() { return cLessThanSignKeyword_14_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_14_1() { return cHyphenMinusKeyword_14_1; }
-
-		//// < = u003C | - = u002D | > = u003E
-		//">"
-		public Keyword getGreaterThanSignKeyword_14_2() { return cGreaterThanSignKeyword_14_2; }
-
-		//"<" "-" ">" // < = u003C | - = u002D | > = u003E
-		//"o"
-		public Group getGroup_15() { return cGroup_15; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_15_0() { return cLessThanSignKeyword_15_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_15_1() { return cHyphenMinusKeyword_15_1; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_15_2() { return cGreaterThanSignKeyword_15_2; }
-
-		//// < = u003C | - = u002D | > = u003E
-		//"o"
-		public Keyword getOKeyword_15_3() { return cOKeyword_15_3; }
-
-		//"o" "<" "-" // < = u003C | - = u002D | > = u003E
-		//">"
-		public Group getGroup_16() { return cGroup_16; }
-
-		//"o"
-		public Keyword getOKeyword_16_0() { return cOKeyword_16_0; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_16_1() { return cLessThanSignKeyword_16_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_16_2() { return cHyphenMinusKeyword_16_2; }
-
-		//// < = u003C | - = u002D | > = u003E
-		//">"
-		public Keyword getGreaterThanSignKeyword_16_3() { return cGreaterThanSignKeyword_16_3; }
-
-		//"<" "|" "-" // < = u003C | | = u007C | - = u002D
-		//"-"
-		public Group getGroup_17() { return cGroup_17; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_17_0() { return cLessThanSignKeyword_17_0; }
-
-		//"|"
-		public Keyword getVerticalLineKeyword_17_1() { return cVerticalLineKeyword_17_1; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_17_2() { return cHyphenMinusKeyword_17_2; }
-
-		//// < = u003C | | = u007C | - = u002D
-		//"-"
-		public Keyword getHyphenMinusKeyword_17_3() { return cHyphenMinusKeyword_17_3; }
-
-		//"-" "-" "|" // - = u002D | | = u007C | > = u003E
-		//">"
-		public Group getGroup_18() { return cGroup_18; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_18_0() { return cHyphenMinusKeyword_18_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_18_1() { return cHyphenMinusKeyword_18_1; }
-
-		//"|"
-		public Keyword getVerticalLineKeyword_18_2() { return cVerticalLineKeyword_18_2; }
-
-		//// - = u002D | | = u007C | > = u003E
-		//">"
-		public Keyword getGreaterThanSignKeyword_18_3() { return cGreaterThanSignKeyword_18_3; }
-
-		//"." // . = u002E
-		//"."
-		public Group getGroup_19() { return cGroup_19; }
-
-		//"."
-		public Keyword getFullStopKeyword_19_0() { return cFullStopKeyword_19_0; }
-
-		//// . = u002E
-		//"."
-		public Keyword getFullStopKeyword_19_1() { return cFullStopKeyword_19_1; }
-
-		//// . = u002E
-		//"."
-		public Keyword getFullStopKeyword_20() { return cFullStopKeyword_20; }
 	}
 
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
@@ -646,14 +207,21 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDatabaseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Keyword cParticipantKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cNameAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
 		
+		//// Rule for sequences.
+		//// A sequence is any of the following arrows:
 		//// Rule for defining objects in PlantUML, such as
 		//// actors, boundaries, controls, entities and databases
 		//Definition:
-		//	"actor" name=ID | "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID;
+		//	"actor" name=ID | "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID | "participant"
+		//	name=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"actor" name=ID | "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID
+		//"actor" name=ID | "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID | "participant" name=ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"actor" name=ID
@@ -715,6 +283,18 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
+
+		//"participant" name=ID
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"participant"
+		public Keyword getParticipantKeyword_5_0() { return cParticipantKeyword_5_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_5_1() { return cNameAssignment_5_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_5_1_0() { return cNameIDTerminalRuleCall_5_1_0; }
 	}
 
 	public class AutoNumberElements extends AbstractParserRuleElementFinder {
@@ -1581,12 +1161,407 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//Instruction
 		public RuleCall getInstructionsInstructionParserRuleCall_3_0() { return cInstructionsInstructionParserRuleCall_3_0; }
 	}
+
+	public class GroupingMessagesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GroupingMessages");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cOptKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cLoopKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cParKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
+		private final Keyword cBreakKeyword_0_3 = (Keyword)cAlternatives_0.eContents().get(3);
+		private final Keyword cCriticalKeyword_0_4 = (Keyword)cAlternatives_0.eContents().get(4);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//// Rule for "grouping-messages"
+		//GroupingMessages:
+		//	("opt" | "loop" | "par" | "break" | "critical") ID NEWLINE instructions+=Instruction* "end";
+		@Override public ParserRule getRule() { return rule; }
+
+		//("opt" | "loop" | "par" | "break" | "critical") ID NEWLINE instructions+=Instruction* "end"
+		public Group getGroup() { return cGroup; }
+
+		//"opt" | "loop" | "par" | "break" | "critical"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//"opt"
+		public Keyword getOptKeyword_0_0() { return cOptKeyword_0_0; }
+
+		//"loop"
+		public Keyword getLoopKeyword_0_1() { return cLoopKeyword_0_1; }
+
+		//"par"
+		public Keyword getParKeyword_0_2() { return cParKeyword_0_2; }
+
+		//"break"
+		public Keyword getBreakKeyword_0_3() { return cBreakKeyword_0_3; }
+
+		//"critical"
+		public Keyword getCriticalKeyword_0_4() { return cCriticalKeyword_0_4; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_2() { return cNEWLINETerminalRuleCall_2; }
+
+		//instructions+=Instruction*
+		public Assignment getInstructionsAssignment_3() { return cInstructionsAssignment_3; }
+
+		//Instruction
+		public RuleCall getInstructionsInstructionParserRuleCall_3_0() { return cInstructionsInstructionParserRuleCall_3_0; }
+
+		//"end"
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+	}
+
+	public class GroupElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Group");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGroupKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//// Rule for groups.
+		//// TODO: Change from ID to String when done
+		//Group:
+		//	"group" ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"group" ID
+		public Group getGroup() { return cGroup; }
+
+		//"group"
+		public Keyword getGroupKeyword_0() { return cGroupKeyword_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
+
+	public class NoteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Note");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNoteKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Keyword cRightKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Group cGroup_1_0_1 = (Group)cGroup_1_0.eContents().get(1);
+		private final Keyword cOfKeyword_1_0_1_0 = (Keyword)cGroup_1_0_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_0_1_1 = (RuleCall)cGroup_1_0_1.eContents().get(1);
+		private final Group cGroup_1_0_1_2 = (Group)cGroup_1_0_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_0_1_2_0 = (Keyword)cGroup_1_0_1_2.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_0_1_2_1 = (RuleCall)cGroup_1_0_1_2.eContents().get(1);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Keyword cLeftKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cGroup_1_1.eContents().get(1);
+		private final Keyword cOfKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1_1_1 = (RuleCall)cGroup_1_1_1.eContents().get(1);
+		private final Group cGroup_1_1_1_2 = (Group)cGroup_1_1_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_1_1_2_0 = (Keyword)cGroup_1_1_1_2.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1_1_2_1 = (RuleCall)cGroup_1_1_1_2.eContents().get(1);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Keyword cOverKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_2_1 = (RuleCall)cGroup_1_2.eContents().get(1);
+		private final Group cGroup_1_2_2 = (Group)cGroup_1_2.eContents().get(2);
+		private final Keyword cCommaKeyword_1_2_2_0 = (Keyword)cGroup_1_2_2.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_2_2_1 = (RuleCall)cGroup_1_2_2.eContents().get(1);
+		private final RuleCall cColorParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
+		private final Group cGroup_3_1_0 = (Group)cGroup_3_1.eContents().get(0);
+		private final RuleCall cNEWLINETerminalRuleCall_3_1_0_0 = (RuleCall)cGroup_3_1_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_3_1_0_1 = (RuleCall)cGroup_3_1_0.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_3_1_1 = (RuleCall)cGroup_3_1.eContents().get(1);
+		private final Keyword cEndNoteKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
+		
+		//// Rule for notes
+		//// TODO: Change :ID and NEWLINE ID to STRING
+		//// TODO: Add reference to created defined entity instead of ID
+		//Note:
+		//	"note" ("right" ("of" ID ("," ID)*)? | "left" ("of" ID ("," ID)*)? | "over" ID ("," ID)*) Color* (":" ID | (NEWLINE
+		//	ID)* NEWLINE "end note");
+		@Override public ParserRule getRule() { return rule; }
+
+		//"note" ("right" ("of" ID ("," ID)*)? | "left" ("of" ID ("," ID)*)? | "over" ID ("," ID)*) Color* (":" ID | (NEWLINE ID)*
+		//NEWLINE "end note")
+		public Group getGroup() { return cGroup; }
+
+		//"note"
+		public Keyword getNoteKeyword_0() { return cNoteKeyword_0; }
+
+		//"right" ("of" ID ("," ID)*)? | "left" ("of" ID ("," ID)*)? | "over" ID ("," ID)*
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//"right" ("of" ID ("," ID)*)?
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//"right"
+		public Keyword getRightKeyword_1_0_0() { return cRightKeyword_1_0_0; }
+
+		//("of" ID ("," ID)*)?
+		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
+
+		//"of"
+		public Keyword getOfKeyword_1_0_1_0() { return cOfKeyword_1_0_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_0_1_1() { return cIDTerminalRuleCall_1_0_1_1; }
+
+		//("," ID)*
+		public Group getGroup_1_0_1_2() { return cGroup_1_0_1_2; }
+
+		//","
+		public Keyword getCommaKeyword_1_0_1_2_0() { return cCommaKeyword_1_0_1_2_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_0_1_2_1() { return cIDTerminalRuleCall_1_0_1_2_1; }
+
+		//"left" ("of" ID ("," ID)*)?
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//"left"
+		public Keyword getLeftKeyword_1_1_0() { return cLeftKeyword_1_1_0; }
+
+		//("of" ID ("," ID)*)?
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+
+		//"of"
+		public Keyword getOfKeyword_1_1_1_0() { return cOfKeyword_1_1_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1_1_1() { return cIDTerminalRuleCall_1_1_1_1; }
+
+		//("," ID)*
+		public Group getGroup_1_1_1_2() { return cGroup_1_1_1_2; }
+
+		//","
+		public Keyword getCommaKeyword_1_1_1_2_0() { return cCommaKeyword_1_1_1_2_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1_1_2_1() { return cIDTerminalRuleCall_1_1_1_2_1; }
+
+		//"over" ID ("," ID)*
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//"over"
+		public Keyword getOverKeyword_1_2_0() { return cOverKeyword_1_2_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_2_1() { return cIDTerminalRuleCall_1_2_1; }
+
+		//("," ID)*
+		public Group getGroup_1_2_2() { return cGroup_1_2_2; }
+
+		//","
+		public Keyword getCommaKeyword_1_2_2_0() { return cCommaKeyword_1_2_2_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_2_2_1() { return cIDTerminalRuleCall_1_2_2_1; }
+
+		//Color*
+		public RuleCall getColorParserRuleCall_2() { return cColorParserRuleCall_2; }
+
+		//":" ID | (NEWLINE ID)* NEWLINE "end note"
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//":" ID
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_0_0() { return cColonKeyword_3_0_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_3_0_1() { return cIDTerminalRuleCall_3_0_1; }
+
+		//(NEWLINE ID)* NEWLINE "end note"
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//(NEWLINE ID)*
+		public Group getGroup_3_1_0() { return cGroup_3_1_0; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_3_1_0_0() { return cNEWLINETerminalRuleCall_3_1_0_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_3_1_0_1() { return cIDTerminalRuleCall_3_1_0_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_3_1_1() { return cNEWLINETerminalRuleCall_3_1_1; }
+
+		//"end note"
+		public Keyword getEndNoteKeyword_3_1_2() { return cEndNoteKeyword_3_1_2; }
+	}
+
+	public class DividerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Divider");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEqualsSignEqualsSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//// Rule for Dividers.
+		//// TODO: Change ID -> STRING when done
+		//Divider:
+		//	"==" ID "==";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"==" ID "=="
+		public Group getGroup() { return cGroup; }
+
+		//"=="
+		public Keyword getEqualsSignEqualsSignKeyword_0() { return cEqualsSignEqualsSignKeyword_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//"=="
+		public Keyword getEqualsSignEqualsSignKeyword_2() { return cEqualsSignEqualsSignKeyword_2; }
+	}
+
+	public class ReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Reference");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRefOverKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
+		private final Group cGroup_3_1_0 = (Group)cGroup_3_1.eContents().get(0);
+		private final RuleCall cNEWLINETerminalRuleCall_3_1_0_0 = (RuleCall)cGroup_3_1_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_3_1_0_1 = (RuleCall)cGroup_3_1_0.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_3_1_1 = (RuleCall)cGroup_3_1.eContents().get(1);
+		private final Keyword cEndRefKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
+		
+		//// Rule for References
+		//// TODO: Link to created participant
+		//// TODO: Change : ID -> : STRING when done
+		//Reference:
+		//	"ref over" ID ("," ID)* (":" ID | (NEWLINE ID)* NEWLINE "end ref");
+		@Override public ParserRule getRule() { return rule; }
+
+		//"ref over" ID ("," ID)* (":" ID | (NEWLINE ID)* NEWLINE "end ref")
+		public Group getGroup() { return cGroup; }
+
+		//"ref over"
+		public Keyword getRefOverKeyword_0() { return cRefOverKeyword_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//("," ID)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_2_1() { return cIDTerminalRuleCall_2_1; }
+
+		//":" ID | (NEWLINE ID)* NEWLINE "end ref"
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//":" ID
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_0_0() { return cColonKeyword_3_0_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_3_0_1() { return cIDTerminalRuleCall_3_0_1; }
+
+		//(NEWLINE ID)* NEWLINE "end ref"
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//(NEWLINE ID)*
+		public Group getGroup_3_1_0() { return cGroup_3_1_0; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_3_1_0_0() { return cNEWLINETerminalRuleCall_3_1_0_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_3_1_0_1() { return cIDTerminalRuleCall_3_1_0_1; }
+
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_3_1_1() { return cNEWLINETerminalRuleCall_3_1_1; }
+
+		//"end ref"
+		public Keyword getEndRefKeyword_3_1_2() { return cEndRefKeyword_3_1_2; }
+	}
+
+	public class DelayElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Delay");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFullStopFullStopFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cFullStopFullStopFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//// Rule for delays
+		//// TODO: Change ID -> STRING when done, maybe should be 1 line only.
+		//Delay:
+		//	"..." ID* "...";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"..." ID* "..."
+		public Group getGroup() { return cGroup; }
+
+		//"..."
+		public Keyword getFullStopFullStopFullStopKeyword_0() { return cFullStopFullStopFullStopKeyword_0; }
+
+		//ID*
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//"..."
+		public Keyword getFullStopFullStopFullStopKeyword_2() { return cFullStopFullStopFullStopKeyword_2; }
+	}
+
+	public class SpaceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Space");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cVerticalLineVerticalLineVerticalLineKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cVerticalLineVerticalLineKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cVerticalLineVerticalLineKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//// Rule for Spaces
+		//Space:
+		//	"|||" | "||" INT "||";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"|||" | "||" INT "||"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"|||"
+		public Keyword getVerticalLineVerticalLineVerticalLineKeyword_0() { return cVerticalLineVerticalLineVerticalLineKeyword_0; }
+
+		//"||" INT "||"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_1_0() { return cVerticalLineVerticalLineKeyword_1_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
+
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_1_2() { return cVerticalLineVerticalLineKeyword_1_2; }
+	}
 	
 	
 	private final ModelElements pModel;
 	private final DiagramElements pDiagram;
 	private final InstructionElements pInstruction;
-	private final SequenceElements pSequence;
 	private final DefinitionElements pDefinition;
 	private final AutoNumberElements pAutoNumber;
 	private final ColorElements pColor;
@@ -1595,11 +1570,19 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final NewpageElements pNewpage;
 	private final AltElseElements pAltElse;
 	private final ElseElements pElse;
+	private final GroupingMessagesElements pGroupingMessages;
+	private final GroupElements pGroup;
+	private final NoteElements pNote;
+	private final DividerElements pDivider;
+	private final ReferenceElements pReference;
+	private final DelayElements pDelay;
+	private final SpaceElements pSpace;
+	private final TerminalRule tNEWLINE;
+	private final TerminalRule tID;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
-	private final TerminalRule tID;
 	private final TerminalRule tINT;
-	private final TerminalRule tNEWLINE;
+	private final TerminalRule tSEQUENCE;
 	private final TerminalRule tWS;
 	private final TerminalRule tANY_OTHER;
 	
@@ -1611,7 +1594,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pDiagram = new DiagramElements();
 		this.pInstruction = new InstructionElements();
-		this.pSequence = new SequenceElements();
 		this.pDefinition = new DefinitionElements();
 		this.pAutoNumber = new AutoNumberElements();
 		this.pColor = new ColorElements();
@@ -1620,11 +1602,19 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNewpage = new NewpageElements();
 		this.pAltElse = new AltElseElements();
 		this.pElse = new ElseElements();
+		this.pGroupingMessages = new GroupingMessagesElements();
+		this.pGroup = new GroupElements();
+		this.pNote = new NoteElements();
+		this.pDivider = new DividerElements();
+		this.pReference = new ReferenceElements();
+		this.pDelay = new DelayElements();
+		this.pSpace = new SpaceElements();
+		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
-		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
+		this.tSEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEQUENCE");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 	}
@@ -1677,8 +1667,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
-	//	(name1=ID Sequence name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse)?
-	//	NEWLINE;
+	//	(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
+	//	GroupingMessages | Note | Divider | Reference | Delay | Space)? NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1689,41 +1679,11 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rule for sequences.
 	//// A sequence is any of the following arrows:
-	//Sequence:
-	//	"-"* "-" // - = u002D  | > = u003E
-	//	">" | "<" "-" "-"* // < = u003C  | - = u002D
-	//	| "-" ">" // - = u002D  | > = u003E
-	//	"x" | "x" "<" // < = u003C | - = u002D
-	//	"-" | "-"* "-" ">" // - = u002D | > = u003E
-	//	">" | "<" "<" "-" "-"* // < = u003C | - = u002D
-	//	| "-"* "-" "\\" // - = u002D
-	//	"\\" | "/" "-" "-"* // / = u002F | - = u002D
-	//	| "-"* "-" // - = u0g02D
-	//	"\\\\" | "/" "/" "-" "-"* // / = u002F | - = u002D
-	//	| "-"* "-" ">" // - = u002D | > = u003E
-	//	"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
-	//	| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
-	//	"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
-	//	| "<" "-" // < = u003C | - = u002D | > = u003E
-	//	">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
-	//	"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
-	//	">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
-	//	"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
-	//	">" | "." // . = u002E
-	//	"." | // . = u002E
-	//	".";
-	public SequenceElements getSequenceAccess() {
-		return pSequence;
-	}
-	
-	public ParserRule getSequenceRule() {
-		return getSequenceAccess().getRule();
-	}
-
 	//// Rule for defining objects in PlantUML, such as
 	//// actors, boundaries, controls, entities and databases
 	//Definition:
-	//	"actor" name=ID | "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID;
+	//	"actor" name=ID | "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID | "participant"
+	//	name=ID;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
 	}
@@ -1829,8 +1789,108 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getElseAccess().getRule();
 	}
 
+	//// Rule for "grouping-messages"
+	//GroupingMessages:
+	//	("opt" | "loop" | "par" | "break" | "critical") ID NEWLINE instructions+=Instruction* "end";
+	public GroupingMessagesElements getGroupingMessagesAccess() {
+		return pGroupingMessages;
+	}
+	
+	public ParserRule getGroupingMessagesRule() {
+		return getGroupingMessagesAccess().getRule();
+	}
+
+	//// Rule for groups.
+	//// TODO: Change from ID to String when done
+	//Group:
+	//	"group" ID;
+	public GroupElements getGroupAccess() {
+		return pGroup;
+	}
+	
+	public ParserRule getGroupRule() {
+		return getGroupAccess().getRule();
+	}
+
+	//// Rule for notes
+	//// TODO: Change :ID and NEWLINE ID to STRING
+	//// TODO: Add reference to created defined entity instead of ID
+	//Note:
+	//	"note" ("right" ("of" ID ("," ID)*)? | "left" ("of" ID ("," ID)*)? | "over" ID ("," ID)*) Color* (":" ID | (NEWLINE
+	//	ID)* NEWLINE "end note");
+	public NoteElements getNoteAccess() {
+		return pNote;
+	}
+	
+	public ParserRule getNoteRule() {
+		return getNoteAccess().getRule();
+	}
+
+	//// Rule for Dividers.
+	//// TODO: Change ID -> STRING when done
+	//Divider:
+	//	"==" ID "==";
+	public DividerElements getDividerAccess() {
+		return pDivider;
+	}
+	
+	public ParserRule getDividerRule() {
+		return getDividerAccess().getRule();
+	}
+
+	//// Rule for References
+	//// TODO: Link to created participant
+	//// TODO: Change : ID -> : STRING when done
+	//Reference:
+	//	"ref over" ID ("," ID)* (":" ID | (NEWLINE ID)* NEWLINE "end ref");
+	public ReferenceElements getReferenceAccess() {
+		return pReference;
+	}
+	
+	public ParserRule getReferenceRule() {
+		return getReferenceAccess().getRule();
+	}
+
+	//// Rule for delays
+	//// TODO: Change ID -> STRING when done, maybe should be 1 line only.
+	//Delay:
+	//	"..." ID* "...";
+	public DelayElements getDelayAccess() {
+		return pDelay;
+	}
+	
+	public ParserRule getDelayRule() {
+		return getDelayAccess().getRule();
+	}
+
+	//// Rule for Spaces
+	//Space:
+	//	"|||" | "||" INT "||";
+	public SpaceElements getSpaceAccess() {
+		return pSpace;
+	}
+	
+	public ParserRule getSpaceRule() {
+		return getSpaceAccess().getRule();
+	}
+
 	//// Terminals
 	////--------------------------------------------------
+	//terminal NEWLINE:
+	//	"\r"? "\n";
+	public TerminalRule getNEWLINERule() {
+		return tNEWLINE;
+	} 
+
+	//// ID can be any following sequence of letters and numbers, without spaces between them.
+	//// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
+	//terminal ID:
+	//	"^"? ("a".."z" | "A".."Z" | "_" | "å" | "ä" | "ö") ("a".."z" | "A".."Z" | "_" | "0".."9" | "å" | "ä" | "ö")*;
+	public TerminalRule getIDRule() {
+		return tID;
+	} 
+
+	////terminal ID : !(NEWLINE);
 	//// Multiline comment begins with /', and ends with '/
 	//terminal ML_COMMENT:
 	//	"/\'"->"\'/";
@@ -1845,14 +1905,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return tSL_COMMENT;
 	} 
 
-	//// ID can be any following sequence of letters and numbers, without spaces between them.
-	//// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
-	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_" | "å" | "ä" | "ö") ("a".."z" | "A".."Z" | "_" | "0".."9" | "å" | "ä" | "ö")*;
-	public TerminalRule getIDRule() {
-		return tID;
-	} 
-
 	//// INT is a sequence of numbers 0-9.
 	//terminal INT returns ecore::EInt:
 	//	"0".."9"+;
@@ -1860,15 +1912,39 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return tINT;
 	} 
 
-	//terminal NEWLINE:
-	//	"\r"? "\n";
-	public TerminalRule getNEWLINERule() {
-		return tNEWLINE;
+	//// Words can be any characters, and can also be divided by newlines.
+	////terminal WORDS	: 
+	////			('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö' | '\n' | ' ')*;
+	//// Sequences are arrows connecting two actors. Has to be defined in unicode.
+	//terminal SEQUENCE:
+	//	"-"* "-" // - = u002D  | > = u003E
+	//	">" | "<" "-" "-"* // < = u003C  | - = u002D
+	//	| "-" ">" // - = u002D  | > = u003E
+	//	"x" | "x" "<" // < = u003C | - = u002D
+	//	"-" | "-"* "-" ">" // - = u002D | > = u003E
+	//	">" | "<" "<" "-" "-"* // < = u003C | - = u002D
+	//	| "-"* "-" "\\" // - = u002D
+	//	"\\" | "/" "-" "-"* // / = u002F | - = u002D
+	//	| "/" "/" "-" "-"* // / = u002F | - = u002D
+	//	| "-"* "-" ">" // - = u002D | > = u003E
+	//	"o" | "o" "<" "-" "-"* // < = u003C | - = u002D
+	//	| "-"* "-" "-" "/" "/" // - = u002D | / = u002F
+	//	"o" | "o" "\\\\" "-" "-" "-"* // - = u002D
+	//	| "<" "-" // < = u003C | - = u002D | > = u003E
+	//	">" | "<" "-" ">" // < = u003C | - = u002D | > = u003E
+	//	"o" | "o" "<" "-" // < = u003C | - = u002D | > = u003E
+	//	">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
+	//	"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
+	//	">" | "." // . = u002E
+	//	"." | // . = u002E	
+	//	".";
+	public TerminalRule getSEQUENCERule() {
+		return tSEQUENCE;
 	} 
 
 	//// Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;
 	//terminal WS:
-	//	" " | "\t";
+	//	(" " | "\t")+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	} 

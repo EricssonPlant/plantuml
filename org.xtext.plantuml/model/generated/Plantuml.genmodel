@@ -27,5 +27,8 @@
     <genClasses ecoreClass="Plantuml.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//GroupingMessages">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessages/instructions"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

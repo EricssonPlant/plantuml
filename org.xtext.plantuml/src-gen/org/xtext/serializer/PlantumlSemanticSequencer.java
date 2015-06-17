@@ -20,6 +20,7 @@ import org.xtext.plantuml.AltElse;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Else;
+import org.xtext.plantuml.GroupingMessages;
 import org.xtext.plantuml.Instruction;
 import org.xtext.plantuml.Model;
 import org.xtext.plantuml.PlantumlPackage;
@@ -46,6 +47,9 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PlantumlPackage.ELSE:
 				sequence_Else(context, (Else) semanticObject); 
 				return; 
+			case PlantumlPackage.GROUPING_MESSAGES:
+				sequence_GroupingMessages(context, (GroupingMessages) semanticObject); 
+				return; 
 			case PlantumlPackage.INSTRUCTION:
 				sequence_Instruction(context, (Instruction) semanticObject); 
 				return; 
@@ -67,7 +71,14 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID | name=ID | name=ID | name=ID | name=ID)
+	 *     (
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID | 
+	 *         name=ID
+	 *     )
 	 */
 	protected void sequence_Definition(EObject context, Definition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -88,6 +99,15 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     instructions+=Instruction*
 	 */
 	protected void sequence_Else(EObject context, Else semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     instructions+=Instruction+
+	 */
+	protected void sequence_GroupingMessages(EObject context, GroupingMessages semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

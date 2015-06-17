@@ -13,6 +13,7 @@ import org.xtext.plantuml.AltElse;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Else;
+import org.xtext.plantuml.GroupingMessages;
 import org.xtext.plantuml.Instruction;
 import org.xtext.plantuml.Model;
 import org.xtext.plantuml.PlantumlFactory;
@@ -67,6 +68,13 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * @generated
    */
   private EClass elseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass groupingMessagesEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -276,6 +284,26 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getGroupingMessages()
+  {
+    return groupingMessagesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGroupingMessages_Instructions()
+  {
+    return (EReference)groupingMessagesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PlantumlFactory getPlantumlFactory()
   {
     return (PlantumlFactory)getEFactoryInstance();
@@ -320,6 +348,9 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     elseEClass = createEClass(ELSE);
     createEReference(elseEClass, ELSE__INSTRUCTIONS);
+
+    groupingMessagesEClass = createEClass(GROUPING_MESSAGES);
+    createEReference(groupingMessagesEClass, GROUPING_MESSAGES__INSTRUCTIONS);
   }
 
   /**
@@ -353,6 +384,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     // Add supertypes to classes
     definitionEClass.getESuperTypes().add(this.getInstruction());
     altElseEClass.getESuperTypes().add(this.getInstruction());
+    groupingMessagesEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -374,6 +406,9 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElse_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Else.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(groupingMessagesEClass, GroupingMessages.class, "GroupingMessages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGroupingMessages_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, GroupingMessages.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

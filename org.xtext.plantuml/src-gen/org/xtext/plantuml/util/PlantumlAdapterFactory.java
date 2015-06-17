@@ -105,6 +105,11 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
         return createElseAdapter();
       }
       @Override
+      public Adapter caseGroupingMessages(GroupingMessages object)
+      {
+        return createGroupingMessagesAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -212,6 +217,21 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createElseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.plantuml.GroupingMessages <em>Grouping Messages</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.plantuml.GroupingMessages
+   * @generated
+   */
+  public Adapter createGroupingMessagesAdapter()
   {
     return null;
   }

@@ -278,6 +278,52 @@ public interface PlantumlPackage extends EPackage
    */
   int ELSE_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link org.xtext.plantuml.impl.GroupingMessagesImpl <em>Grouping Messages</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.plantuml.impl.GroupingMessagesImpl
+   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getGroupingMessages()
+   * @generated
+   */
+  int GROUPING_MESSAGES = 6;
+
+  /**
+   * The feature id for the '<em><b>Name1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUPING_MESSAGES__NAME1 = INSTRUCTION__NAME1;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUPING_MESSAGES__NAME2 = INSTRUCTION__NAME2;
+
+  /**
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUPING_MESSAGES__INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Grouping Messages</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUPING_MESSAGES_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Model <em>Model</em>}'.
@@ -428,6 +474,27 @@ public interface PlantumlPackage extends EPackage
   EReference getElse_Instructions();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.plantuml.GroupingMessages <em>Grouping Messages</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Grouping Messages</em>'.
+   * @see org.xtext.plantuml.GroupingMessages
+   * @generated
+   */
+  EClass getGroupingMessages();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.GroupingMessages#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see org.xtext.plantuml.GroupingMessages#getInstructions()
+   * @see #getGroupingMessages()
+   * @generated
+   */
+  EReference getGroupingMessages_Instructions();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -573,6 +640,24 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EReference ELSE__INSTRUCTIONS = eINSTANCE.getElse_Instructions();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.plantuml.impl.GroupingMessagesImpl <em>Grouping Messages</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.plantuml.impl.GroupingMessagesImpl
+     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getGroupingMessages()
+     * @generated
+     */
+    EClass GROUPING_MESSAGES = eINSTANCE.getGroupingMessages();
+
+    /**
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUPING_MESSAGES__INSTRUCTIONS = eINSTANCE.getGroupingMessages_Instructions();
 
   }
 

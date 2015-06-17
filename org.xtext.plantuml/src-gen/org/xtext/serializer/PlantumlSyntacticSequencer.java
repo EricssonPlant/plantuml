@@ -22,15 +22,17 @@ import org.xtext.services.PlantumlGrammarAccess;
 public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PlantumlGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2;
 	protected AbstractElementAlias match_Instruction_ColorParserRuleCall_0_1_1_q;
-	protected AbstractElementAlias match_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q;
+	protected AbstractElementAlias match_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_NoteParserRuleCall_0_8_or_ReferenceParserRuleCall_0_10_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q;
 	protected AbstractElementAlias match_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PlantumlGrammarAccess) access;
+		match_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getBreakKeyword_0_3()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getCriticalKeyword_0_4()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getLoopKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getOptKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getParKeyword_0_2()));
 		match_Instruction_ColorParserRuleCall_0_1_1_q = new TokenAlias(false, true, grammarAccess.getInstructionAccess().getColorParserRuleCall_0_1_1());
-		match_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_0_2()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getLegendParserRuleCall_0_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getNewpageParserRuleCall_0_5()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getTitleParserRuleCall_0_3()));
+		match_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_NoteParserRuleCall_0_8_or_ReferenceParserRuleCall_0_10_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_0_2()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getDelayParserRuleCall_0_11()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getDividerParserRuleCall_0_9()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getLegendParserRuleCall_0_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getNewpageParserRuleCall_0_5()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getNoteParserRuleCall_0_8()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getReferenceParserRuleCall_0_10()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getSpaceParserRuleCall_0_12()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getTitleParserRuleCall_0_3()));
 		match_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getColonKeyword_0_0_3_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getIDTerminalRuleCall_0_0_3_1()));
 	}
 	
@@ -40,6 +42,10 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getAutoNumberToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getColorRule())
 			return getColorToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getDelayRule())
+			return getDelayToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getDividerRule())
+			return getDividerToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getLegendRule())
@@ -48,8 +54,14 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getNEWLINEToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getNewpageRule())
 			return getNewpageToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getSequenceRule())
-			return getSequenceToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getNoteRule())
+			return getNoteToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getReferenceRule())
+			return getReferenceToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getSEQUENCERule())
+			return getSEQUENCEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getSpaceRule())
+			return getSpaceToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getTitleRule())
 			return getTitleToken(semanticObject, ruleCall, node);
 		return "";
@@ -98,6 +110,28 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * Delay:
+	 * 	'...' ID* '...'
+	 * ;
+	 */
+	protected String getDelayToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "......";
+	}
+	
+	/**
+	 * Divider:
+	 * 	'==' ID '=='
+	 * ;
+	 */
+	protected String getDividerToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "====";
+	}
+	
+	/**
 	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 	 */
 	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -138,14 +172,46 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * Sequence:
-	 * 	('\u002D')* '\u002D' '\u003E'							| '\u003C' '\u002D' ('\u002D')* 							| '\u002D' '\u003E' 'x'										| 'x' '\u003C' '\u002D' 									| ('\u002D')* '\u002D' '\u003E' '\u003E'					| '\u003C' '\u003C' '\u002D' ('\u002D')*					| ('\u002D')* '\u002D' '\\' '\\'							| '\u002F' '\u002D' ('\u002D')*								| ('\u002D')* '\u002D' '\\\\' 								| '\u002F' '\u002F' '\u002D' ('\u002D')*					| ('\u002D')* '\u002D' '\u003E' 'o'							| 'o' '\u003C' '\u002D' ('\u002D')*							| ('\u002D')* '\u002D' '\u002D' '\u002F' '\u002F' 'o'		| 'o' '\\\\' '\u002D' '\u002D' ('\u002D')* 					| '\u003C' '\u002D' '\u003E' 								| '\u003C' '\u002D' '\u003E' 'o' 							| 'o' '\u003C' '\u002D' '\u003E' 							| '\u003C' '\u007C' '\u002D' '\u002D' 						| '\u002D' '\u002D' '\u007C' '\u003E' 						| '\u002E' '\u002E' 										| '\u002E'													
+	 * Note:
+	 * 	'note' (('right' ('of' ID (',' ID)*)?)|('left' ('of' ID(',' ID)*)?)|('over' ID(',' ID)*)) (Color)* (':' ID| (NEWLINE ID)* NEWLINE 'end note')
 	 * ;
 	 */
-	protected String getSequenceToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getNoteToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "noteright:";
+	}
+	
+	/**
+	 * Reference:
+	 * 	'ref over' ID (',' ID)* ((':' ID)|((NEWLINE ID)*) NEWLINE 'end ref') 
+	 * ;
+	 */
+	protected String getReferenceToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "ref over:";
+	}
+	
+	/**
+	 * terminal SEQUENCE:
+	 * 	('\u002D')* '\u002D' '\u003E'								| '\u003C' '\u002D' ('\u002D')* 							| '\u002D' '\u003E' 'x'										| 'x' '\u003C' '\u002D' 									| ('\u002D')* '\u002D' '\u003E' '\u003E'					| '\u003C' '\u003C' '\u002D' ('\u002D')*					| ('\u002D')* '\u002D' '\u005C' '\u005C'					| '\u002F' '\u002D' ('\u002D')*								| '\u002F' '\u002F' '\u002D' ('\u002D')*					| ('\u002D')* '\u002D' '\u003E' 'o'							| 'o' '\u003C' '\u002D' ('\u002D')*							| ('\u002D')* '\u002D' '\u002D' '\u002F' '\u002F' 'o'		| 'o' '\\\\' '\u002D' '\u002D' ('\u002D')* 					| '\u003C' '\u002D' '\u003E' 								| '\u003C' '\u002D' '\u003E' 'o' 							| 'o' '\u003C' '\u002D' '\u003E' 							| '\u003C' '\u007C' '\u002D' '\u002D' 						| '\u002D' '\u002D' '\u007C' '\u003E' 						| '\u002E' '\u002E' 										| '\u002E'												;
+	 */
+	protected String getSEQUENCEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "->";
+	}
+	
+	/**
+	 * Space:
+	 * 	('|||'|('||' INT '||'))
+	 * ;
+	 */
+	protected String getSpaceToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "|||";
 	}
 	
 	/**
@@ -165,16 +231,30 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Instruction_ColorParserRuleCall_0_1_1_q.equals(syntax))
+			if(match_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2.equals(syntax))
+				emit_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction_ColorParserRuleCall_0_1_1_q.equals(syntax))
 				emit_Instruction_ColorParserRuleCall_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q.equals(syntax))
-				emit_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_NoteParserRuleCall_0_8_or_ReferenceParserRuleCall_0_10_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q.equals(syntax))
+				emit_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_NoteParserRuleCall_0_8_or_ReferenceParserRuleCall_0_10_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q.equals(syntax))
 				emit_Instruction___ColonKeyword_0_0_3_0_IDTerminalRuleCall_0_0_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'opt' | 'loop' | 'par' | 'break' | 'critical'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) ID NEWLINE 'end' (rule start)
+	 *     (rule start) (ambiguity) ID NEWLINE instructions+=Instruction
+	 */
+	protected void emit_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     Color?
@@ -188,12 +268,22 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (AutoNumber | Title | Legend | Newpage)?
+	 *     (
+	  *         AutoNumber | 
+	  *         Title | 
+	  *         Legend | 
+	  *         Newpage | 
+	  *         Note | 
+	  *         Divider | 
+	  *         Reference | 
+	  *         Delay | 
+	  *         Space
+	  *     )?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) NEWLINE (rule start)
 	 */
-	protected void emit_Instruction___AutoNumberParserRuleCall_0_2_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_TitleParserRuleCall_0_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_NoteParserRuleCall_0_8_or_ReferenceParserRuleCall_0_10_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

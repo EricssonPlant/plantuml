@@ -20,7 +20,7 @@ Diagram:
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
-Instruction:
+Instruction: 
 	((name1=ID SEQUENCE name2=ID (':' ID)?) 
 	| Definition (Color)?
 	| AutoNumber
@@ -29,7 +29,11 @@ Instruction:
 	| Newpage
 	| AltElse
 	| GroupingMessages
-	| Note)? NEWLINE
+	| Note
+	| Divider
+	| Reference
+	| Delay
+	| Space)? NEWLINE
 ;
 
 // Rule for sequences.
@@ -97,7 +101,6 @@ Newpage:
 	'newpage' (ID)?
 ;
 
-
 // Rules for Alt-Else clauses.
 AltElse:
 	'alt' ID NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
@@ -124,8 +127,40 @@ Note:
 	'note' (('right' ('of' ID (',' ID)*)?)|('left' ('of' ID(',' ID)*)?)|('over' ID(',' ID)*)) (Color)* (':' ID| (NEWLINE ID)* NEWLINE 'end note')
 ;
 
+// Rule for Dividers.
+// TODO: Change ID -> STRING when done
+Divider:
+	'==' ID '=='
+;
+
+// Rule for References
+// TODO: Link to created participant
+// TODO: Change : ID -> : STRING when done
+Reference:
+	'ref over' ID (',' ID)* ((':' ID)|((NEWLINE ID)*) NEWLINE 'end ref') 
+;
+
+// Rule for delays
+// TODO: Change ID -> STRING when done, maybe should be 1 line only.
+Delay:
+	'...' ID* '...'
+;
+
+// Rule for Spaces
+// TODO: Make it possible to "see" the hidden whitespaces.
+Space:
+	('|||'|('||' INT '||'))
+;
+
+
 // Terminals
 //--------------------------------------------------
+
+terminal NEWLINE 	: ('\r'? '\n');
+
+// ID can be any following sequence of letters and numbers, without spaces between them.
+// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
+terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 // Multiline comment begins with /', and ends with '/
 terminal ML_COMMENT : '/\'' -> '\'/';
@@ -133,10 +168,14 @@ terminal ML_COMMENT : '/\'' -> '\'/';
 // Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
 
-// ID can be any following sequence of letters and numbers, without spaces between them.
-// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
-terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+// INT is a sequence of numbers 0-9.
+terminal INT returns ecore::EInt: ('0'..'9')+;
 
+// Words can be any characters, and can also be divided by newlines.
+//terminal WORDS	: 
+//			('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö' | '\n' | ' ')*;
+
+// Sequences are arrows connecting two actors. Has to be defined in unicode.
 terminal SEQUENCE:
 	('\u002D')* '\u002D' '\u003E'							// - = u002D  | > = u003E
 	| '\u003C' '\u002D' ('\u002D')* 						// < = u003C  | - = u002D
@@ -157,16 +196,10 @@ terminal SEQUENCE:
 	| '\u003C' '\u007C' '\u002D' '\u002D' 					// < = u003C | | = u007C | - = u002D
 	| '\u002D' '\u002D' '\u007C' '\u003E' 					// - = u002D | | = u007C | > = u003E
 	| '\u002E' '\u002E' 									// . = u002E
-	| '\u002E'												// . = u002E
-	
+	| '\u002E'												// . = u002E	
 ;
 
-// INT is a sequence of numbers 0-9.
-terminal INT returns ecore::EInt: ('0'..'9')+;
-
-terminal NEWLINE 	: ('\r'? '\n');
-
-terminal WS			: (' '|'\t'); // Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;
+terminal WS			: (' '|'\t')+; // Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;
 
 terminal ANY_OTHER: .;
 

@@ -33,7 +33,8 @@ Instruction:
 	| Divider
 	| Reference
 	| Delay
-	| Space)? NEWLINE
+	| Space
+	| Hidefootbox)? NEWLINE
 ;
 
 // Rule for sequences.
@@ -150,6 +151,11 @@ Delay:
 // TODO: Make it possible to "see" the hidden whitespaces.
 Space:
 	('|||'|('||' INT '||'))
+;
+
+// To hide the footbox
+Hidefootbox:
+	'hide footbox'
 ;
 
 

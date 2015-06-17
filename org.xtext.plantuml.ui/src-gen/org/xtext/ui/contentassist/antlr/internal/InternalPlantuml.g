@@ -534,6 +534,36 @@ finally {
 
 
 
+// Entry rule entryRuleHidefootbox
+entryRuleHidefootbox 
+:
+{ before(grammarAccess.getHidefootboxRule()); }
+	 ruleHidefootbox
+{ after(grammarAccess.getHidefootboxRule()); } 
+	 EOF 
+;
+
+// Rule Hidefootbox
+ruleHidefootbox
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getHidefootboxAccess().getHideFootboxKeyword()); }
+
+	'hide footbox' 
+
+{ after(grammarAccess.getHidefootboxAccess().getHideFootboxKeyword()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 
 rule__Instruction__Alternatives_0
     @init {
@@ -616,6 +646,12 @@ rule__Instruction__Alternatives_0
 { before(grammarAccess.getInstructionAccess().getSpaceParserRuleCall_0_12()); }
 	ruleSpace
 { after(grammarAccess.getInstructionAccess().getSpaceParserRuleCall_0_12()); }
+)
+
+    |(
+{ before(grammarAccess.getInstructionAccess().getHidefootboxParserRuleCall_0_13()); }
+	ruleHidefootbox
+{ after(grammarAccess.getInstructionAccess().getHidefootboxParserRuleCall_0_13()); }
 )
 
 ;

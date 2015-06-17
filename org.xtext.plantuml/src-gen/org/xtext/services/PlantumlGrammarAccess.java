@@ -95,20 +95,21 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cReferenceParserRuleCall_0_10 = (RuleCall)cAlternatives_0.eContents().get(10);
 		private final RuleCall cDelayParserRuleCall_0_11 = (RuleCall)cAlternatives_0.eContents().get(11);
 		private final RuleCall cSpaceParserRuleCall_0_12 = (RuleCall)cAlternatives_0.eContents().get(12);
+		private final RuleCall cHidefootboxParserRuleCall_0_13 = (RuleCall)cAlternatives_0.eContents().get(13);
 		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
 		//	(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-		//	GroupingMessages | Note | Divider | Reference | Delay | Space)? NEWLINE;
+		//	GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)? NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
 		//(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-		//GroupingMessages | Note | Divider | Reference | Delay | Space)? NEWLINE
+		//GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)? NEWLINE
 		public Group getGroup() { return cGroup; }
 
 		//(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-		//GroupingMessages | Note | Divider | Reference | Delay | Space)?
+		//GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//name1=ID SEQUENCE name2=ID (":" ID)?
@@ -179,6 +180,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Space
 		public RuleCall getSpaceParserRuleCall_0_12() { return cSpaceParserRuleCall_0_12; }
+
+		//Hidefootbox
+		public RuleCall getHidefootboxParserRuleCall_0_13() { return cHidefootboxParserRuleCall_0_13; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
@@ -1535,6 +1539,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVerticalLineVerticalLineKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//// Rule for Spaces
+		//// TODO: Make it possible to "see" the hidden whitespaces.
 		//Space:
 		//	"|||" | "||" INT "||";
 		@Override public ParserRule getRule() { return rule; }
@@ -1557,6 +1562,19 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//"||"
 		public Keyword getVerticalLineVerticalLineKeyword_1_2() { return cVerticalLineVerticalLineKeyword_1_2; }
 	}
+
+	public class HidefootboxElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Hidefootbox");
+		private final Keyword cHideFootboxKeyword = (Keyword)rule.eContents().get(1);
+		
+		//// To hide the footbox
+		//Hidefootbox:
+		//	"hide footbox";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"hide footbox"
+		public Keyword getHideFootboxKeyword() { return cHideFootboxKeyword; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -1577,6 +1595,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final ReferenceElements pReference;
 	private final DelayElements pDelay;
 	private final SpaceElements pSpace;
+	private final HidefootboxElements pHidefootbox;
 	private final TerminalRule tNEWLINE;
 	private final TerminalRule tID;
 	private final TerminalRule tML_COMMENT;
@@ -1609,6 +1628,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pReference = new ReferenceElements();
 		this.pDelay = new DelayElements();
 		this.pSpace = new SpaceElements();
+		this.pHidefootbox = new HidefootboxElements();
 		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
@@ -1668,7 +1688,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
 	//	(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-	//	GroupingMessages | Note | Divider | Reference | Delay | Space)? NEWLINE;
+	//	GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)? NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1864,6 +1884,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Rule for Spaces
+	//// TODO: Make it possible to "see" the hidden whitespaces.
 	//Space:
 	//	"|||" | "||" INT "||";
 	public SpaceElements getSpaceAccess() {
@@ -1872,6 +1893,17 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSpaceRule() {
 		return getSpaceAccess().getRule();
+	}
+
+	//// To hide the footbox
+	//Hidefootbox:
+	//	"hide footbox";
+	public HidefootboxElements getHidefootboxAccess() {
+		return pHidefootbox;
+	}
+	
+	public ParserRule getHidefootboxRule() {
+		return getHidefootboxAccess().getRule();
 	}
 
 	//// Terminals
@@ -1890,7 +1922,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return tID;
 	} 
 
-	////terminal ID : !(NEWLINE);
 	//// Multiline comment begins with /', and ends with '/
 	//terminal ML_COMMENT:
 	//	"/\'"->"\'/";

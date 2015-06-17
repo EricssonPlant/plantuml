@@ -334,9 +334,18 @@ ruleSpace
     { 
         afterParserOrEnumRuleCall();
     }
-)?this_NEWLINE_18=RULE_NEWLINE
+
+    |
     { 
-    newLeafNode(this_NEWLINE_18, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getHidefootboxParserRuleCall_0_13()); 
+    }
+ruleHidefootbox
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?this_NEWLINE_19=RULE_NEWLINE
+    { 
+    newLeafNode(this_NEWLINE_19, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
     }
 )
 ;
@@ -2316,6 +2325,33 @@ ruleSpace returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         newLeafNode(kw, grammarAccess.getSpaceAccess().getVerticalLineVerticalLineKeyword_1_2()); 
     }
 ))
+    ;
+
+
+
+
+
+// Entry rule entryRuleHidefootbox
+entryRuleHidefootbox returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getHidefootboxRule()); } 
+	 iv_ruleHidefootbox=ruleHidefootbox 
+	 { $current=$iv_ruleHidefootbox.current.getText(); }  
+	 EOF 
+;
+
+// Rule Hidefootbox
+ruleHidefootbox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='hide footbox' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getHidefootboxAccess().getHideFootboxKeyword()); 
+    }
+
     ;
 
 

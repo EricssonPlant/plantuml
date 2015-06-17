@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.Instruction#getName1 <em>Name1</em>}</li>
  *   <li>{@link org.xtext.plantuml.Instruction#getName2 <em>Name2</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getInstruction()
  * @model

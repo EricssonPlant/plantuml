@@ -18,11 +18,11 @@ import org.xtext.plantuml.PlantumlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.impl.InstructionImpl#getName1 <em>Name1</em>}</li>
  *   <li>{@link org.xtext.plantuml.impl.InstructionImpl#getName2 <em>Name2</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

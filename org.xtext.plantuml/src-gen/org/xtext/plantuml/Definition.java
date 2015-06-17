@@ -10,10 +10,10 @@ package org.xtext.plantuml;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.Definition#getName <em>Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getDefinition()
  * @model

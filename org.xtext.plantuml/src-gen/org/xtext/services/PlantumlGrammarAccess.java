@@ -37,23 +37,23 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	public class DiagramElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Diagram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStartumlKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cSTARTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cInstructionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cInstructionsInstructionParserRuleCall_2_0 = (RuleCall)cInstructionsAssignment_2.eContents().get(0);
-		private final Keyword cEndumlKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cENDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//// A diagram starts with @Startuml and ends with @enduml, 
 		//// with some number of instructions in between
 		//Diagram:
-		//	"@startuml" NEWLINE instructions+=Instruction* "@enduml";
+		//	START NEWLINE instructions+=Instruction* END;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"@startuml" NEWLINE instructions+=Instruction* "@enduml"
+		//START NEWLINE instructions+=Instruction* END
 		public Group getGroup() { return cGroup; }
 
-		//"@startuml"
-		public Keyword getStartumlKeyword_0() { return cStartumlKeyword_0; }
+		//START
+		public RuleCall getSTARTTerminalRuleCall_0() { return cSTARTTerminalRuleCall_0; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
@@ -64,8 +64,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//Instruction
 		public RuleCall getInstructionsInstructionParserRuleCall_2_0() { return cInstructionsInstructionParserRuleCall_2_0; }
 
-		//"@enduml"
-		public Keyword getEndumlKeyword_3() { return cEndumlKeyword_3; }
+		//END
+		public RuleCall getENDTerminalRuleCall_3() { return cENDTerminalRuleCall_3; }
 	}
 
 	public class InstructionElements extends AbstractParserRuleElementFinder {
@@ -91,25 +91,20 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAltElseParserRuleCall_0_6 = (RuleCall)cAlternatives_0.eContents().get(6);
 		private final RuleCall cGroupingMessagesParserRuleCall_0_7 = (RuleCall)cAlternatives_0.eContents().get(7);
 		private final RuleCall cNoteParserRuleCall_0_8 = (RuleCall)cAlternatives_0.eContents().get(8);
-		private final RuleCall cDividerParserRuleCall_0_9 = (RuleCall)cAlternatives_0.eContents().get(9);
-		private final RuleCall cReferenceParserRuleCall_0_10 = (RuleCall)cAlternatives_0.eContents().get(10);
-		private final RuleCall cDelayParserRuleCall_0_11 = (RuleCall)cAlternatives_0.eContents().get(11);
-		private final RuleCall cSpaceParserRuleCall_0_12 = (RuleCall)cAlternatives_0.eContents().get(12);
-		private final RuleCall cHidefootboxParserRuleCall_0_13 = (RuleCall)cAlternatives_0.eContents().get(13);
 		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
 		//	(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-		//	GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)? NEWLINE;
+		//	GroupingMessages | Note)? NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
 		//(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-		//GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)? NEWLINE
+		//GroupingMessages | Note)? NEWLINE
 		public Group getGroup() { return cGroup; }
 
 		//(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-		//GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)?
+		//GroupingMessages | Note)?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//name1=ID SEQUENCE name2=ID (":" ID)?
@@ -168,21 +163,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Note
 		public RuleCall getNoteParserRuleCall_0_8() { return cNoteParserRuleCall_0_8; }
-
-		//Divider
-		public RuleCall getDividerParserRuleCall_0_9() { return cDividerParserRuleCall_0_9; }
-
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0_10() { return cReferenceParserRuleCall_0_10; }
-
-		//Delay
-		public RuleCall getDelayParserRuleCall_0_11() { return cDelayParserRuleCall_0_11; }
-
-		//Space
-		public RuleCall getSpaceParserRuleCall_0_12() { return cSpaceParserRuleCall_0_12; }
-
-		//Hidefootbox
-		public RuleCall getHidefootboxParserRuleCall_0_13() { return cHidefootboxParserRuleCall_0_13; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
@@ -1401,180 +1381,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//"end note"
 		public Keyword getEndNoteKeyword_3_1_2() { return cEndNoteKeyword_3_1_2; }
 	}
-
-	public class DividerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Divider");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEqualsSignEqualsSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cEqualsSignEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//// Rule for Dividers.
-		//// TODO: Change ID -> STRING when done
-		//Divider:
-		//	"==" ID "==";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"==" ID "=="
-		public Group getGroup() { return cGroup; }
-
-		//"=="
-		public Keyword getEqualsSignEqualsSignKeyword_0() { return cEqualsSignEqualsSignKeyword_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-
-		//"=="
-		public Keyword getEqualsSignEqualsSignKeyword_2() { return cEqualsSignEqualsSignKeyword_2; }
-	}
-
-	public class ReferenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Reference");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRefOverKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cColonKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Group cGroup_3_1_0 = (Group)cGroup_3_1.eContents().get(0);
-		private final RuleCall cNEWLINETerminalRuleCall_3_1_0_0 = (RuleCall)cGroup_3_1_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_3_1_0_1 = (RuleCall)cGroup_3_1_0.eContents().get(1);
-		private final RuleCall cNEWLINETerminalRuleCall_3_1_1 = (RuleCall)cGroup_3_1.eContents().get(1);
-		private final Keyword cEndRefKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
-		
-		//// Rule for References
-		//// TODO: Link to created participant
-		//// TODO: Change : ID -> : STRING when done
-		//Reference:
-		//	"ref over" ID ("," ID)* (":" ID | (NEWLINE ID)* NEWLINE "end ref");
-		@Override public ParserRule getRule() { return rule; }
-
-		//"ref over" ID ("," ID)* (":" ID | (NEWLINE ID)* NEWLINE "end ref")
-		public Group getGroup() { return cGroup; }
-
-		//"ref over"
-		public Keyword getRefOverKeyword_0() { return cRefOverKeyword_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-
-		//("," ID)*
-		public Group getGroup_2() { return cGroup_2; }
-
-		//","
-		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_2_1() { return cIDTerminalRuleCall_2_1; }
-
-		//":" ID | (NEWLINE ID)* NEWLINE "end ref"
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-
-		//":" ID
-		public Group getGroup_3_0() { return cGroup_3_0; }
-
-		//":"
-		public Keyword getColonKeyword_3_0_0() { return cColonKeyword_3_0_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_3_0_1() { return cIDTerminalRuleCall_3_0_1; }
-
-		//(NEWLINE ID)* NEWLINE "end ref"
-		public Group getGroup_3_1() { return cGroup_3_1; }
-
-		//(NEWLINE ID)*
-		public Group getGroup_3_1_0() { return cGroup_3_1_0; }
-
-		//NEWLINE
-		public RuleCall getNEWLINETerminalRuleCall_3_1_0_0() { return cNEWLINETerminalRuleCall_3_1_0_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_3_1_0_1() { return cIDTerminalRuleCall_3_1_0_1; }
-
-		//NEWLINE
-		public RuleCall getNEWLINETerminalRuleCall_3_1_1() { return cNEWLINETerminalRuleCall_3_1_1; }
-
-		//"end ref"
-		public Keyword getEndRefKeyword_3_1_2() { return cEndRefKeyword_3_1_2; }
-	}
-
-	public class DelayElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Delay");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFullStopFullStopFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cFullStopFullStopFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//// Rule for delays
-		//// TODO: Change ID -> STRING when done, maybe should be 1 line only.
-		//Delay:
-		//	"..." ID* "...";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"..." ID* "..."
-		public Group getGroup() { return cGroup; }
-
-		//"..."
-		public Keyword getFullStopFullStopFullStopKeyword_0() { return cFullStopFullStopFullStopKeyword_0; }
-
-		//ID*
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-
-		//"..."
-		public Keyword getFullStopFullStopFullStopKeyword_2() { return cFullStopFullStopFullStopKeyword_2; }
-	}
-
-	public class SpaceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Space");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cVerticalLineVerticalLineVerticalLineKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cVerticalLineVerticalLineKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cVerticalLineVerticalLineKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		
-		//// Rule for Spaces
-		//// TODO: Make it possible to "see" the hidden whitespaces.
-		//Space:
-		//	"|||" | "||" INT "||";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"|||" | "||" INT "||"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"|||"
-		public Keyword getVerticalLineVerticalLineVerticalLineKeyword_0() { return cVerticalLineVerticalLineVerticalLineKeyword_0; }
-
-		//"||" INT "||"
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"||"
-		public Keyword getVerticalLineVerticalLineKeyword_1_0() { return cVerticalLineVerticalLineKeyword_1_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
-
-		//"||"
-		public Keyword getVerticalLineVerticalLineKeyword_1_2() { return cVerticalLineVerticalLineKeyword_1_2; }
-	}
-
-	public class HidefootboxElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Hidefootbox");
-		private final Keyword cHideFootboxKeyword = (Keyword)rule.eContents().get(1);
-		
-		//// To hide the footbox
-		//Hidefootbox:
-		//	"hide footbox";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"hide footbox"
-		public Keyword getHideFootboxKeyword() { return cHideFootboxKeyword; }
-	}
 	
 	
 	private final ModelElements pModel;
@@ -1591,17 +1397,14 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final GroupingMessagesElements pGroupingMessages;
 	private final GroupElements pGroup;
 	private final NoteElements pNote;
-	private final DividerElements pDivider;
-	private final ReferenceElements pReference;
-	private final DelayElements pDelay;
-	private final SpaceElements pSpace;
-	private final HidefootboxElements pHidefootbox;
-	private final TerminalRule tNEWLINE;
-	private final TerminalRule tID;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
-	private final TerminalRule tINT;
+	private final TerminalRule tID;
+	private final TerminalRule tSTART;
+	private final TerminalRule tEND;
 	private final TerminalRule tSEQUENCE;
+	private final TerminalRule tINT;
+	private final TerminalRule tNEWLINE;
 	private final TerminalRule tWS;
 	private final TerminalRule tANY_OTHER;
 	
@@ -1624,17 +1427,14 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pGroupingMessages = new GroupingMessagesElements();
 		this.pGroup = new GroupElements();
 		this.pNote = new NoteElements();
-		this.pDivider = new DividerElements();
-		this.pReference = new ReferenceElements();
-		this.pDelay = new DelayElements();
-		this.pSpace = new SpaceElements();
-		this.pHidefootbox = new HidefootboxElements();
-		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
-		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tSTART = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "START");
+		this.tEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "END");
 		this.tSEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEQUENCE");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 	}
@@ -1676,7 +1476,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// A diagram starts with @Startuml and ends with @enduml, 
 	//// with some number of instructions in between
 	//Diagram:
-	//	"@startuml" NEWLINE instructions+=Instruction* "@enduml";
+	//	START NEWLINE instructions+=Instruction* END;
 	public DiagramElements getDiagramAccess() {
 		return pDiagram;
 	}
@@ -1688,7 +1488,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
 	//	(name1=ID SEQUENCE name2=ID (":" ID)? | Definition Color? | AutoNumber | Title | Legend | Newpage | AltElse |
-	//	GroupingMessages | Note | Divider | Reference | Delay | Space | Hidefootbox)? NEWLINE;
+	//	GroupingMessages | Note)? NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1846,82 +1646,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return getNoteAccess().getRule();
 	}
 
-	//// Rule for Dividers.
-	//// TODO: Change ID -> STRING when done
-	//Divider:
-	//	"==" ID "==";
-	public DividerElements getDividerAccess() {
-		return pDivider;
-	}
-	
-	public ParserRule getDividerRule() {
-		return getDividerAccess().getRule();
-	}
-
-	//// Rule for References
-	//// TODO: Link to created participant
-	//// TODO: Change : ID -> : STRING when done
-	//Reference:
-	//	"ref over" ID ("," ID)* (":" ID | (NEWLINE ID)* NEWLINE "end ref");
-	public ReferenceElements getReferenceAccess() {
-		return pReference;
-	}
-	
-	public ParserRule getReferenceRule() {
-		return getReferenceAccess().getRule();
-	}
-
-	//// Rule for delays
-	//// TODO: Change ID -> STRING when done, maybe should be 1 line only.
-	//Delay:
-	//	"..." ID* "...";
-	public DelayElements getDelayAccess() {
-		return pDelay;
-	}
-	
-	public ParserRule getDelayRule() {
-		return getDelayAccess().getRule();
-	}
-
-	//// Rule for Spaces
-	//// TODO: Make it possible to "see" the hidden whitespaces.
-	//Space:
-	//	"|||" | "||" INT "||";
-	public SpaceElements getSpaceAccess() {
-		return pSpace;
-	}
-	
-	public ParserRule getSpaceRule() {
-		return getSpaceAccess().getRule();
-	}
-
-	//// To hide the footbox
-	//Hidefootbox:
-	//	"hide footbox";
-	public HidefootboxElements getHidefootboxAccess() {
-		return pHidefootbox;
-	}
-	
-	public ParserRule getHidefootboxRule() {
-		return getHidefootboxAccess().getRule();
-	}
-
 	//// Terminals
 	////--------------------------------------------------
-	//terminal NEWLINE:
-	//	"\r"? "\n";
-	public TerminalRule getNEWLINERule() {
-		return tNEWLINE;
-	} 
-
-	//// ID can be any following sequence of letters and numbers, without spaces between them.
-	//// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
-	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_" | "å" | "ä" | "ö") ("a".."z" | "A".."Z" | "_" | "0".."9" | "å" | "ä" | "ö")*;
-	public TerminalRule getIDRule() {
-		return tID;
-	} 
-
 	//// Multiline comment begins with /', and ends with '/
 	//terminal ML_COMMENT:
 	//	"/\'"->"\'/";
@@ -1936,17 +1662,26 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return tSL_COMMENT;
 	} 
 
-	//// INT is a sequence of numbers 0-9.
-	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
-	public TerminalRule getINTRule() {
-		return tINT;
+	//// ID can be any following sequence of letters and numbers, without spaces between them.
+	//// TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
+	//terminal ID:
+	//	"^"? ("a".."z" | "A".."Z" | "_" | "Ã¥" | "Ã¤" | "Ã¶") ("a".."z" | "A".."Z" | "_" | "0".."9" | "Ã¥" | "Ã¤" | "Ã¶")*;
+	public TerminalRule getIDRule() {
+		return tID;
 	} 
 
-	//// Words can be any characters, and can also be divided by newlines.
-	////terminal WORDS	: 
-	////			('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö' | '\n' | ' ')*;
-	//// Sequences are arrows connecting two actors. Has to be defined in unicode.
+	//terminal START:
+	//	"@" "startuml";
+	public TerminalRule getSTARTRule() {
+		return tSTART;
+	} 
+
+	//terminal END:
+	//	"@" "enduml";
+	public TerminalRule getENDRule() {
+		return tEND;
+	} 
+
 	//terminal SEQUENCE:
 	//	"-"* "-" // - = u002D  | > = u003E
 	//	">" | "<" "-" "-"* // < = u003C  | - = u002D
@@ -1967,15 +1702,28 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//	">" | "<" "|" "-" // < = u003C | | = u007C | - = u002D
 	//	"-" | "-" "-" "|" // - = u002D | | = u007C | > = u003E
 	//	">" | "." // . = u002E
-	//	"." | // . = u002E	
+	//	"." | // . = u002E
 	//	".";
 	public TerminalRule getSEQUENCERule() {
 		return tSEQUENCE;
 	} 
 
+	//// INT is a sequence of numbers 0-9.
+	//terminal INT returns ecore::EInt:
+	//	"0".."9"+;
+	public TerminalRule getINTRule() {
+		return tINT;
+	} 
+
+	//terminal NEWLINE:
+	//	"\r"? "\n";
+	public TerminalRule getNEWLINERule() {
+		return tNEWLINE;
+	} 
+
 	//// Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;
 	//terminal WS:
-	//	(" " | "\t")+;
+	//	" " | "\t";
 	public TerminalRule getWSRule() {
 		return tWS;
 	} 

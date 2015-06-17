@@ -45,8 +45,6 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGroupingMessagesAccess().getAlternatives_0(), "rule__GroupingMessages__Alternatives_0");
 					put(grammarAccess.getNoteAccess().getAlternatives_1(), "rule__Note__Alternatives_1");
 					put(grammarAccess.getNoteAccess().getAlternatives_3(), "rule__Note__Alternatives_3");
-					put(grammarAccess.getReferenceAccess().getAlternatives_3(), "rule__Reference__Alternatives_3");
-					put(grammarAccess.getSpaceAccess().getAlternatives(), "rule__Space__Alternatives");
 					put(grammarAccess.getDiagramAccess().getGroup(), "rule__Diagram__Group__0");
 					put(grammarAccess.getInstructionAccess().getGroup(), "rule__Instruction__Group__0");
 					put(grammarAccess.getInstructionAccess().getGroup_0_0(), "rule__Instruction__Group_0_0__0");
@@ -81,14 +79,6 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNoteAccess().getGroup_3_0(), "rule__Note__Group_3_0__0");
 					put(grammarAccess.getNoteAccess().getGroup_3_1(), "rule__Note__Group_3_1__0");
 					put(grammarAccess.getNoteAccess().getGroup_3_1_0(), "rule__Note__Group_3_1_0__0");
-					put(grammarAccess.getDividerAccess().getGroup(), "rule__Divider__Group__0");
-					put(grammarAccess.getReferenceAccess().getGroup(), "rule__Reference__Group__0");
-					put(grammarAccess.getReferenceAccess().getGroup_2(), "rule__Reference__Group_2__0");
-					put(grammarAccess.getReferenceAccess().getGroup_3_0(), "rule__Reference__Group_3_0__0");
-					put(grammarAccess.getReferenceAccess().getGroup_3_1(), "rule__Reference__Group_3_1__0");
-					put(grammarAccess.getReferenceAccess().getGroup_3_1_0(), "rule__Reference__Group_3_1_0__0");
-					put(grammarAccess.getDelayAccess().getGroup(), "rule__Delay__Group__0");
-					put(grammarAccess.getSpaceAccess().getGroup_1(), "rule__Space__Group_1__0");
 					put(grammarAccess.getModelAccess().getDiagramsAssignment(), "rule__Model__DiagramsAssignment");
 					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_2(), "rule__Diagram__InstructionsAssignment_2");
 					put(grammarAccess.getInstructionAccess().getName1Assignment_0_0_0(), "rule__Instruction__Name1Assignment_0_0_0");

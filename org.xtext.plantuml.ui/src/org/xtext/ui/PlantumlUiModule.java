@@ -15,11 +15,15 @@ public class PlantumlUiModule extends org.xtext.ui.AbstractPlantumlUiModule {
 		super(plugin);
 	}
 	
+	// This will make sure that PlantumlHighlightingConfiguration 
+	// is used instead of the default version.
 	public Class<? extends IHighlightingConfiguration>
 	bindIHighlightingConfiguration () {
 		return PlantumlHighlightingConfiguration.class;
 	}
 	
+	// This will make sure that PlantumlHighlightingCalculator
+	// is used instead of the default version.
 	public Class<? extends ISemanticHighlightingCalculator>
 	bindISemanticHIghlightingCalculator(){
 		return PlantumlHighlightingCalculator.class;

@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.plantuml.editor/src" modelPluginID="org.xtext.plantuml"
     forceOverwrite="true" modelName="Plantuml" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.plantuml.edit"
-    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.11">
+    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.10">
   <genPackages prefix="Plantuml" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="plantuml" ecorePackage="Plantuml.ecore#/">
     <genClasses ecoreClass="Plantuml.ecore#//Model">

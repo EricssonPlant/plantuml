@@ -202,28 +202,66 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 //			('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö' | '\n' | ' ')*;
 
 
+
+
+// [ = u005B  |  # = u0023  |  ] = u005D
+terminal COLOURS : '\u005B' '\u0023' ('a'..'z'|'A'..'Z' | '0'..'9')* '\u005D';
+
+
 // Sequences are arrows connecting two actors. Has to be defined in unicode.
+
 terminal SEQUENCE:
-	('\u002D')* '\u002D' '\u003E'							// - = u002D  | > = u003E
-	| '\u003C' '\u002D' ('\u002D')* 						// < = u003C  | - = u002D
-	| '\u002D' '\u003E' 'x'									// - = u002D  | > = u003E
-	| 'x' '\u003C' '\u002D' 								// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u003E' '\u003E'				// - = u002D | > = u003E
-	| '\u003C' '\u003C' '\u002D' ('\u002D')*				// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u005C' '\u005C'				// - = u002D
-	| '\u002F' '\u002D' ('\u002D')*							// / = u002F | - = u002D
-	| '\u002F' '\u002F' '\u002D' ('\u002D')*				// / = u002F | - = u002D
-	| ('\u002D')* '\u002D' '\u003E' 'o'						// - = u002D | > = u003E
-	| 'o' '\u003C' '\u002D' ('\u002D')*						// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u002D' '\u002F' '\u002F' 'o'	// - = u002D | / = u002F
-	| 'o' '\\\\' '\u002D' '\u002D' ('\u002D')* 				// - = u002D
-	| '\u003C' '\u002D' '\u003E' 							// < = u003C | - = u002D | > = u003E
-	| '\u003C' '\u002D' '\u003E' 'o' 						// < = u003C | - = u002D | > = u003E
-	| 'o' '\u003C' '\u002D' '\u003E' 						// < = u003C | - = u002D | > = u003E
-	| '\u003C' '\u007C' '\u002D' '\u002D' 					// < = u003C | | = u007C | - = u002D
-	| '\u002D' '\u002D' '\u007C' '\u003E' 					// - = u002D | | = u007C | > = u003E
-	| '\u002E' '\u002E' 									// . = u002E
-	| '\u002E'												// . = u002E	
+	('\u002D' | COLOURS)* '\u002D' (COLOURS)? '\u003E'		
+	// - = u002D  | > = u003E
+	| '\u003C' (COLOURS)? '\u002D' ('\u002D' | COLOURS)* 						
+	// < = u003C  | - = u002D
+	| (COLOURS)? '\u0023' ('\u002D' | COLOURS)* '\u003E'							
+	// # = u0023  | - = u002D | > = u003E
+	| '\u003C' (COLOURS)?  '\u002D' (COLOURS)? '\u0023'							
+	// < = u003C  | - = u002D | # = u0023
+	| (COLOURS)? '\u002D' (COLOURS)? '\u003E' (COLOURS)? 'x'					
+	// - = u002D  | > = u003E
+	| 'x' (COLOURS)? '\u003C' (COLOURS)? '\u002D' (COLOURS)?				
+	// < = u003C | - = u002D
+	
+	| ('\u002D' | COLOURS)* '\u002D' (COLOURS)? '\u003E' (COLOURS)? '\u003E'				
+	// - = u002D | > = u003E
+	| '\u003C' (COLOURS)? '\u003C' (COLOURS)? '\u002D' ('\u002D' | COLOURS)*				
+	// < = u003C | - = u002D
+	| ('\u002D' | COLOURS)* '\u002D' (COLOURS)? '\u005C' (COLOURS)? '\u005C'				
+	// - = u002D | \ = u005C
+	| '\u002F' (COLOURS)? '\u002D' ('\u002D' | COLOURS)*							
+	// / = u002F | - = u002D
+	| '\u002F' (COLOURS)? '\u002F' (COLOURS)? '\u002D' ('\u002D' | COLOURS)*				
+	// / = u002F | - = u002D
+	| ('\u002D' | COLOURS)* '\u002D' (COLOURS)? '\u003E' (COLOURS)? 'o'						
+	// - = u002D | > = u003E
+	
+	| 'o' (COLOURS)? '\u003C' (COLOURS)? '\u002D' ('\u002D' | COLOURS)*						
+	// < = u003C | - = u002D
+	| ('\u002D' | COLOURS)* '\u002D' (COLOURS)? '\u002D' (COLOURS)? '\u002F' (COLOURS)? '\u002F' (COLOURS)? 'o'	
+	// - = u002D | / = u002F
+	| 'o' (COLOURS)? '\\' (COLOURS)? '\\' (COLOURS)? '\u002D' (COLOURS)? '\u002D' ('\u002D' | COLOURS)* 				
+	// - = u002D
+	| '\u003C' (COLOURS)? '\u002D' (COLOURS)? '\u003E' 							
+	// < = u003C | - = u002D | > = u003E
+	| '\u003C' (COLOURS)? '\u002D' (COLOURS)? '\u003E' 'o' 						
+	// < = u003C | - = u002D | > = u003E
+	| 'o' (COLOURS)? '\u003C' (COLOURS)? '\u002D' (COLOURS)? '\u003E' 						
+	// < = u003C | - = u002D | > = u003E
+	
+	| '\u003C' (COLOURS)? '\u007C' (COLOURS)? '\u002D' ('\u002D' | COLOURS)* 					
+	// < = u003C | | = u007C | - = u002D
+	| (COLOURS | '\u002D') '\u002D' (COLOURS)? '\u007C' (COLOURS)? '\u003E' 					
+	// - = u002D | | = u007C | > = u003E
+	| (COLOURS)? '\u005B' (COLOURS)? '\u002D' (COLOURS)? '\u003E'							
+	// [ = u005B | - = u002D | > = u003E
+	| '\u003C' (COLOURS)? '\u002D' (COLOURS)? '\u005D'	(COLOURS)?						
+	// < = u003C | - = u002D | ] = u005D
+	| '\u002E' (COLOURS)? '\u002E' (COLOURS)?									
+	// . = u002E
+	| ('\u002D' ( '\u002D' | COLOURS)*)? '\u002E' (COLOURS)?											
+	// . = u002E
 ;
 
 terminal WS			: (' '|'\t')+; // Removed \n & \r from this terminal as it was in conflict with terminal 'NEWLINE'  original: (' '|'\t'|'\r'|'\n')+;

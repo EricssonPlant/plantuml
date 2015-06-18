@@ -8,7 +8,7 @@ import static org.eclipse.swt.SWT.*;
 
 
 public class PlantumlHighlightingConfiguration implements IHighlightingConfiguration{
-		// The values of these strings will be displayed on the settings page
+		// The values of these strings will be displayed on the settings page:
 		// Window->Preferenes->Plantuml->Syntax Coloring 
 		public static final String STND = "Start- and enduml";
 		public static final String SEQ_ARR = "Sequence arrow";

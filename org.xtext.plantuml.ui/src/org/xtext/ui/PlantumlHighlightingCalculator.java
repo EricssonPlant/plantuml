@@ -27,16 +27,31 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 			// Checks if the node is a RuleCall
 			if(node.getGrammarElement() instanceof RuleCall){
 				
-				RuleCall rc = (RuleCall) node.getGrammarElement();				
+				RuleCall rc = (RuleCall) node.getGrammarElement();		
 				AbstractRule r = rc.getRule();
 				
-				// If the called rule is of the type START or END the specific 
+				// For example if the called rule is of the type START or END the specific 
 				// node will be coloured according the style STND.
 				if(r.getName().equals("START") || r.getName().equals("END")){
 					acceptor.addPosition( node.getOffset(), node.getLength(), STND );
 				}
 				else if(r.getName().equals("SEQUENCE")){
 					acceptor.addPosition( node.getOffset(), node.getLength(), SEQ_ARR);
+				}
+				else if(r.getName().equals("Definition")){
+					it.next();
+					
+					/*
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
+					System.out.println(node.getLength()+" ");
+					System.out.println(node.getOffset()+" ");
+					System.out.println(node.getGrammarElement());
+					System.out.println(node.getText());
+					*/
+					
+					acceptor.addPosition( node.getOffset(), node.getLength(), DEFINITION);
+					it.previous();
+					
 				}
 			}
 			

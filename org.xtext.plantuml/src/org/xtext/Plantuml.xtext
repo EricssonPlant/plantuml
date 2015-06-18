@@ -16,7 +16,7 @@ Model:
 // A diagram starts with @Startuml and ends with @enduml, 
 // with some number of instructions in between
 Diagram:
-	'@startuml' NEWLINE (instructions+=(Instruction))* '@enduml' NEWLINE*
+	START NEWLINE (instructions+=(Instruction))* END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -175,9 +175,14 @@ ParticipantCreation:
 
 
 
+
 // Terminals
 //--------------------------------------------------
 terminal NEWLINE 	: ('\r'? '\n');
+
+terminal START		: '\u0040' 'startuml';
+
+terminal END		: '\u0040' 'enduml';
 
 // ID can be any following sequence of letters and numbers, without spaces between them.
 // TODO: Separate between ID's and sequences of words. Not currently possible to have spaces in ID's.
@@ -195,6 +200,7 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 // Words can be any characters, and can also be divided by newlines.
 //terminal WORDS	: 
 //			('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö' | '\n' | ' ')*;
+
 
 // Sequences are arrows connecting two actors. Has to be defined in unicode.
 terminal SEQUENCE:

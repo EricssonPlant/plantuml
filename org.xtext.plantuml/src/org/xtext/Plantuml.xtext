@@ -36,7 +36,8 @@ Instruction:
 	| Space
 	| Hidefootbox
 	| Lifeline
-	| ParticipantCreation)? NEWLINE
+	| ParticipantCreation
+	| Box)? NEWLINE
 ;
 
 // Rule for sequences.
@@ -173,6 +174,12 @@ ParticipantCreation:
 	'create' ID
 ;
 
+// Rule for box/end box
+Box:
+	'box' '\"' ID '\"' Color? NEWLINE
+	(definitions+=Definition NEWLINE)*
+	'end box'
+;
 
 
 

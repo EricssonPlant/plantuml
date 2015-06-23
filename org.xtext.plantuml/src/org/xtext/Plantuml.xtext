@@ -13,7 +13,7 @@ Model:
 // A diagram starts with @Startuml and ends with @enduml, 
 // with some number of instructions in between
 Diagram:
-	{Diagram} START NEWLINE (instructions+=Instruction)* END NEWLINE*
+	{Diagram}START NEWLINE (instructions+=Instruction)* END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -35,7 +35,8 @@ Instruction:
 	| Hidefootbox
 	| Activate
 	| Deactivate
-	| ParticipantCreation)? NEWLINE // Add Box
+	| ParticipantCreation
+	| Box)? NEWLINE
 ;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
@@ -102,16 +103,16 @@ Newpage:
 
 // Rules for Alt-Else clauses.
 AltElse:
-	{AltElse}'alt' ID* NEWLINE (instructions+=Instruction)* (elses+=Else)* NEWLINE 'end'
+	{AltElse}'alt' ID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end' //NEWLINE 'end'
 ;
 
 Else:
-	{Else} ID* NEWLINE (instructions+=Instruction)*
+	{Else}'else' ID* NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	{GroupingMessages}('opt'|'loop'|'par'|'break'|'critical'|'group') ID* NEWLINE (instructions+=Instruction)* 'end'
+	{GroupingMessage}('opt'|'loop'|'par'|'break'|'critical'|'group') ID* NEWLINE (instructions+=Instruction)* 'end'
 ;
 
 // Rule for notes
@@ -130,7 +131,6 @@ Divider:
 // Rule for References
 Reference:
 	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' ID*)|((NEWLINE ID*)* 'end' 'ref'))
-	// old: 'ref' 'over' ID (',' ID)* (((':' ID)|((NEWLINE ID)*)) NEWLINE 'end ref') 
 ;
 
 // Rule for delays
@@ -165,12 +165,11 @@ ParticipantCreation:
 ;
 
 // Rule for box/end box
-// TODO: Fix ID -> String
-/*Box:
-	'box' '\"' ID* '\"' Color? ('\r'? '\n')
-	//(definitions+=Definition)*
+Box:
+	{Box} 'box' '\"' ID* '\"' Color? NEWLINE
+	(definitions+=Definition? NEWLINE)* 
 	'end' 'box'
-;*/
+;
 
 
 // Terminals

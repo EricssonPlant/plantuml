@@ -13,9 +13,9 @@
     <genClasses ecoreClass="Plantuml.ecore#//Diagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Diagram/instructions"/>
     </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//Instruction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Instruction/name1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Instruction/name2"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Instruction"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Arrow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
@@ -27,8 +27,30 @@
     <genClasses ecoreClass="Plantuml.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>
     </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//GroupingMessages">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessages/instructions"/>
+    <genClasses ecoreClass="Plantuml.ecore#//GroupingMessages"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Note">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/rid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/rids"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/lid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/lids"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oids"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Reference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/ids"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Activate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Deactivate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Deactivate/id"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Box">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Box/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//GroupingMessage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessage/instructions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

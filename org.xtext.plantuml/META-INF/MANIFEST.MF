@@ -27,4 +27,5 @@ Export-Package: org.xtext,
  org.xtext.validation,
  org.xtext.scoping,
  org.xtext.generator,
- org.xtext.formatting
+ org.xtext.formatting,
+ org.xtext.parser.antlr.lexer

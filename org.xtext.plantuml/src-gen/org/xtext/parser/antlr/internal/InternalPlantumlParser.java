@@ -255,7 +255,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     	
     	@Override
     	protected String getFirstRuleName() {
-    		return "Model";	
+    		return "Plantuml";	
     	} 
     	   	   	
     	@Override
@@ -265,26 +265,26 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start "entryRuleModel"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:61:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
-    public final EObject entryRuleModel() throws RecognitionException {
+    // $ANTLR start "entryRulePlantuml"
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:61:1: entryRulePlantuml returns [EObject current=null] : iv_rulePlantuml= rulePlantuml EOF ;
+    public final EObject entryRulePlantuml() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleModel = null;
+        EObject iv_rulePlantuml = null;
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:62:2: (iv_ruleModel= ruleModel EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:63:2: iv_ruleModel= ruleModel EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:62:2: (iv_rulePlantuml= rulePlantuml EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:63:2: iv_rulePlantuml= rulePlantuml EOF
             {
-             newCompositeNode(grammarAccess.getModelRule()); 
-            pushFollow(FOLLOW_ruleModel_in_entryRuleModel67);
-            iv_ruleModel=ruleModel();
+             newCompositeNode(grammarAccess.getPlantumlRule()); 
+            pushFollow(FOLLOW_rulePlantuml_in_entryRulePlantuml67);
+            iv_rulePlantuml=rulePlantuml();
 
             state._fsp--;
 
-             current =iv_ruleModel; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModel77); 
+             current =iv_rulePlantuml; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePlantuml77); 
 
             }
 
@@ -298,12 +298,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleModel"
+    // $ANTLR end "entryRulePlantuml"
 
 
-    // $ANTLR start "ruleModel"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:70:1: ruleModel returns [EObject current=null] : ( (lv_diagrams_0_0= ruleDiagram ) )* ;
-    public final EObject ruleModel() throws RecognitionException {
+    // $ANTLR start "rulePlantuml"
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:70:1: rulePlantuml returns [EObject current=null] : ( (lv_diagrams_0_0= ruleDiagram ) )* ;
+    public final EObject rulePlantuml() throws RecognitionException {
         EObject current = null;
 
         EObject lv_diagrams_0_0 = null;
@@ -334,16 +334,16 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:76:3: lv_diagrams_0_0= ruleDiagram
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); 
+            	    	        newCompositeNode(grammarAccess.getPlantumlAccess().getDiagramsDiagramParserRuleCall_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleDiagram_in_ruleModel122);
+            	    pushFollow(FOLLOW_ruleDiagram_in_rulePlantuml122);
             	    lv_diagrams_0_0=ruleDiagram();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getModelRule());
+            	    	            current = createModelElementForParent(grammarAccess.getPlantumlRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -378,7 +378,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleModel"
+    // $ANTLR end "rulePlantuml"
 
 
     // $ANTLR start "entryRuleDiagram"
@@ -7622,9 +7622,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     }
  
 
-    public static final BitSet FOLLOW_ruleModel_in_entryRuleModel67 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModel77 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiagram_in_ruleModel122 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePlantuml_in_entryRulePlantuml67 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePlantuml77 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDiagram_in_rulePlantuml122 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_ruleDiagram_in_entryRuleDiagram157 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDiagram167 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_START_in_ruleDiagram212 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});

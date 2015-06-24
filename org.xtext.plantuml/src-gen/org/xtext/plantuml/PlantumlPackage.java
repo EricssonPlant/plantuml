@@ -57,14 +57,14 @@ public interface PlantumlPackage extends EPackage
   PlantumlPackage eINSTANCE = org.xtext.plantuml.impl.PlantumlPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.xtext.plantuml.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link org.xtext.plantuml.impl.PlantumlImpl <em>Plantuml</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.plantuml.impl.ModelImpl
-   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getModel()
+   * @see org.xtext.plantuml.impl.PlantumlImpl
+   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getPlantuml()
    * @generated
    */
-  int MODEL = 0;
+  int PLANTUML = 0;
 
   /**
    * The feature id for the '<em><b>Diagrams</b></em>' containment reference list.
@@ -73,16 +73,16 @@ public interface PlantumlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__DIAGRAMS = 0;
+  int PLANTUML__DIAGRAMS = 0;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>Plantuml</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int PLANTUML_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.plantuml.impl.DiagramImpl <em>Diagram</em>}' class.
@@ -495,25 +495,25 @@ public interface PlantumlPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link org.xtext.plantuml.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link org.xtext.plantuml.Plantuml <em>Plantuml</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see org.xtext.plantuml.Model
+   * @return the meta object for class '<em>Plantuml</em>'.
+   * @see org.xtext.plantuml.Plantuml
    * @generated
    */
-  EClass getModel();
+  EClass getPlantuml();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.Model#getDiagrams <em>Diagrams</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.Plantuml#getDiagrams <em>Diagrams</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Diagrams</em>'.
-   * @see org.xtext.plantuml.Model#getDiagrams()
-   * @see #getModel()
+   * @see org.xtext.plantuml.Plantuml#getDiagrams()
+   * @see #getPlantuml()
    * @generated
    */
-  EReference getModel_Diagrams();
+  EReference getPlantuml_Diagrams();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Diagram <em>Diagram</em>}'.
@@ -867,14 +867,14 @@ public interface PlantumlPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.xtext.plantuml.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link org.xtext.plantuml.impl.PlantumlImpl <em>Plantuml</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.plantuml.impl.ModelImpl
-     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getModel()
+     * @see org.xtext.plantuml.impl.PlantumlImpl
+     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getPlantuml()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass PLANTUML = eINSTANCE.getPlantuml();
 
     /**
      * The meta object literal for the '<em><b>Diagrams</b></em>' containment reference list feature.
@@ -882,7 +882,7 @@ public interface PlantumlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__DIAGRAMS = eINSTANCE.getModel_Diagrams();
+    EReference PLANTUML__DIAGRAMS = eINSTANCE.getPlantuml_Diagrams();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.DiagramImpl <em>Diagram</em>}' class.

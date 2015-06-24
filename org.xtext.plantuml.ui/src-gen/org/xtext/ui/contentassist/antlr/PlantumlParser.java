@@ -99,7 +99,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParticipantCreationAccess().getGroup(), "rule__ParticipantCreation__Group__0");
 					put(grammarAccess.getBoxAccess().getGroup(), "rule__Box__Group__0");
 					put(grammarAccess.getBoxAccess().getGroup_7(), "rule__Box__Group_7__0");
-					put(grammarAccess.getModelAccess().getDiagramsAssignment(), "rule__Model__DiagramsAssignment");
+					put(grammarAccess.getPlantumlAccess().getDiagramsAssignment(), "rule__Plantuml__DiagramsAssignment");
 					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_3(), "rule__Diagram__InstructionsAssignment_3");
 					put(grammarAccess.getArrowAccess().getNameAssignment_0(), "rule__Arrow__NameAssignment_0");
 					put(grammarAccess.getArrowAccess().getNameAssignment_2(), "rule__Arrow__NameAssignment_2");
@@ -134,7 +134,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			org.xtext.ui.contentassist.antlr.internal.InternalPlantumlParser typedParser = (org.xtext.ui.contentassist.antlr.internal.InternalPlantumlParser) parser;
-			typedParser.entryRuleModel();
+			typedParser.entryRulePlantuml();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

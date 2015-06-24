@@ -64,7 +64,7 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     switch (eClass.getClassifierID())
     {
-      case PlantumlPackage.MODEL: return createModel();
+      case PlantumlPackage.PLANTUML: return createPlantuml();
       case PlantumlPackage.DIAGRAM: return createDiagram();
       case PlantumlPackage.INSTRUCTION: return createInstruction();
       case PlantumlPackage.ARROW: return createArrow();
@@ -88,10 +88,10 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  public Plantuml createPlantuml()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    PlantumlImpl plantuml = new PlantumlImpl();
+    return plantuml;
   }
 
   /**

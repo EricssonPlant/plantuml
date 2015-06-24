@@ -465,21 +465,21 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
 
 
-    // $ANTLR start "entryRuleModel"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:254:1: entryRuleModel : ruleModel EOF ;
-    public final void entryRuleModel() throws RecognitionException {
+    // $ANTLR start "entryRulePlantuml"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:254:1: entryRulePlantuml : rulePlantuml EOF ;
+    public final void entryRulePlantuml() throws RecognitionException {
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:255:1: ( ruleModel EOF )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:256:1: ruleModel EOF
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:255:1: ( rulePlantuml EOF )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:256:1: rulePlantuml EOF
             {
-             before(grammarAccess.getModelRule()); 
-            pushFollow(FOLLOW_ruleModel_in_entryRuleModel54);
-            ruleModel();
+             before(grammarAccess.getPlantumlRule()); 
+            pushFollow(FOLLOW_rulePlantuml_in_entryRulePlantuml54);
+            rulePlantuml();
 
             state._fsp--;
 
-             after(grammarAccess.getModelRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModel61); 
+             after(grammarAccess.getPlantumlRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePlantuml61); 
 
             }
 
@@ -492,24 +492,24 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "entryRuleModel"
+    // $ANTLR end "entryRulePlantuml"
 
 
-    // $ANTLR start "ruleModel"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:263:1: ruleModel : ( ( rule__Model__DiagramsAssignment )* ) ;
-    public final void ruleModel() throws RecognitionException {
+    // $ANTLR start "rulePlantuml"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:263:1: rulePlantuml : ( ( rule__Plantuml__DiagramsAssignment )* ) ;
+    public final void rulePlantuml() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:267:5: ( ( ( rule__Model__DiagramsAssignment )* ) )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:268:1: ( ( rule__Model__DiagramsAssignment )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:267:5: ( ( ( rule__Plantuml__DiagramsAssignment )* ) )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:268:1: ( ( rule__Plantuml__DiagramsAssignment )* )
             {
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:268:1: ( ( rule__Model__DiagramsAssignment )* )
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:269:1: ( rule__Model__DiagramsAssignment )*
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:268:1: ( ( rule__Plantuml__DiagramsAssignment )* )
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:269:1: ( rule__Plantuml__DiagramsAssignment )*
             {
-             before(grammarAccess.getModelAccess().getDiagramsAssignment()); 
-            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:270:1: ( rule__Model__DiagramsAssignment )*
+             before(grammarAccess.getPlantumlAccess().getDiagramsAssignment()); 
+            // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:270:1: ( rule__Plantuml__DiagramsAssignment )*
             loop1:
             do {
                 int alt1=2;
@@ -522,10 +522,10 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:270:2: rule__Model__DiagramsAssignment
+            	    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:270:2: rule__Plantuml__DiagramsAssignment
             	    {
-            	    pushFollow(FOLLOW_rule__Model__DiagramsAssignment_in_ruleModel91);
-            	    rule__Model__DiagramsAssignment();
+            	    pushFollow(FOLLOW_rule__Plantuml__DiagramsAssignment_in_rulePlantuml91);
+            	    rule__Plantuml__DiagramsAssignment();
 
             	    state._fsp--;
 
@@ -538,7 +538,7 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
                 }
             } while (true);
 
-             after(grammarAccess.getModelAccess().getDiagramsAssignment()); 
+             after(grammarAccess.getPlantumlAccess().getDiagramsAssignment()); 
 
             }
 
@@ -557,7 +557,7 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "ruleModel"
+    // $ANTLR end "rulePlantuml"
 
 
     // $ANTLR start "entryRuleDiagram"
@@ -19251,9 +19251,9 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Box__Group_7__1__Impl"
 
 
-    // $ANTLR start "rule__Model__DiagramsAssignment"
-    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:7328:1: rule__Model__DiagramsAssignment : ( ruleDiagram ) ;
-    public final void rule__Model__DiagramsAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Plantuml__DiagramsAssignment"
+    // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:7328:1: rule__Plantuml__DiagramsAssignment : ( ruleDiagram ) ;
+    public final void rule__Plantuml__DiagramsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -19264,13 +19264,13 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
             // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:7333:1: ( ruleDiagram )
             // ../org.xtext.plantuml.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalPlantumlParser.g:7334:1: ruleDiagram
             {
-             before(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleDiagram_in_rule__Model__DiagramsAssignment15009);
+             before(grammarAccess.getPlantumlAccess().getDiagramsDiagramParserRuleCall_0()); 
+            pushFollow(FOLLOW_ruleDiagram_in_rule__Plantuml__DiagramsAssignment15009);
             ruleDiagram();
 
             state._fsp--;
 
-             after(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); 
+             after(grammarAccess.getPlantumlAccess().getDiagramsDiagramParserRuleCall_0()); 
 
             }
 
@@ -19289,7 +19289,7 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Model__DiagramsAssignment"
+    // $ANTLR end "rule__Plantuml__DiagramsAssignment"
 
 
     // $ANTLR start "rule__Diagram__InstructionsAssignment_3"
@@ -20500,9 +20500,9 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     }
  
 
-    public static final BitSet FOLLOW_ruleModel_in_entryRuleModel54 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__DiagramsAssignment_in_ruleModel91 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePlantuml_in_entryRulePlantuml54 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePlantuml61 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Plantuml__DiagramsAssignment_in_rulePlantuml91 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_ruleDiagram_in_entryRuleDiagram119 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDiagram126 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Diagram__Group__0_in_ruleDiagram156 = new BitSet(new long[]{0x0000000000000002L});
@@ -21166,7 +21166,7 @@ public class InternalPlantumlParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_rule__Box__DefinitionsAssignment_7_0_in_rule__Box__Group_7__0__Impl14913 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Box__Group_7__1__Impl_in_rule__Box__Group_7__114944 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_NEWLINE_in_rule__Box__Group_7__1__Impl14971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiagram_in_rule__Model__DiagramsAssignment15009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDiagram_in_rule__Plantuml__DiagramsAssignment15009 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInstruction_in_rule__Diagram__InstructionsAssignment_315040 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Arrow__NameAssignment_015071 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Arrow__NameAssignment_215102 = new BitSet(new long[]{0x0000000000000002L});

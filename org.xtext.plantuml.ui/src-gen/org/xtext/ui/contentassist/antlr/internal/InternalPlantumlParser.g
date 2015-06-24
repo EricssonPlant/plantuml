@@ -250,25 +250,25 @@ import org.xtext.services.PlantumlGrammarAccess;
 
 
 
-// Entry rule entryRuleModel
-entryRuleModel 
+// Entry rule entryRulePlantuml
+entryRulePlantuml 
 :
-{ before(grammarAccess.getModelRule()); }
-	 ruleModel
-{ after(grammarAccess.getModelRule()); } 
+{ before(grammarAccess.getPlantumlRule()); }
+	 rulePlantuml
+{ after(grammarAccess.getPlantumlRule()); } 
 	 EOF 
 ;
 
-// Rule Model
-ruleModel 
+// Rule Plantuml
+rulePlantuml 
     @init {
 		int stackSize = keepStackSize();
     }
     :
 (
-{ before(grammarAccess.getModelAccess().getDiagramsAssignment()); }
-(rule__Model__DiagramsAssignment)*
-{ after(grammarAccess.getModelAccess().getDiagramsAssignment()); }
+{ before(grammarAccess.getPlantumlAccess().getDiagramsAssignment()); }
+(rule__Plantuml__DiagramsAssignment)*
+{ after(grammarAccess.getPlantumlAccess().getDiagramsAssignment()); }
 )
 
 ;
@@ -7325,14 +7325,14 @@ finally {
 
 
 
-rule__Model__DiagramsAssignment
+rule__Plantuml__DiagramsAssignment
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); }
-	ruleDiagram{ after(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); }
+{ before(grammarAccess.getPlantumlAccess().getDiagramsDiagramParserRuleCall_0()); }
+	ruleDiagram{ after(grammarAccess.getPlantumlAccess().getDiagramsDiagramParserRuleCall_0()); }
 )
 
 ;

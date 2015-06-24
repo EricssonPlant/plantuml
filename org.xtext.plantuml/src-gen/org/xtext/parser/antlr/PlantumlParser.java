@@ -25,7 +25,7 @@ public class PlantumlParser extends org.eclipse.xtext.parser.antlr.AbstractAntlr
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Plantuml";
 	}
 	
 	public PlantumlGrammarAccess getGrammarAccess() {

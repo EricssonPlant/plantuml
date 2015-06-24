@@ -17,13 +17,13 @@ import org.eclipse.xtext.service.AbstractElementFinder.*;
 public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
+	public class PlantumlElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Plantuml");
 		private final Assignment cDiagramsAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cDiagramsDiagramParserRuleCall_0 = (RuleCall)cDiagramsAssignment.eContents().get(0);
 		
 		//// Model is a number of @startuml's and @enduml's
-		//Model:
+		//Plantuml:
 		//	diagrams+=Diagram*;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -1909,7 +1909,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private final ModelElements pModel;
+	private final PlantumlElements pPlantuml;
 	private final DiagramElements pDiagram;
 	private final InstructionElements pInstruction;
 	private final ArrowElements pArrow;
@@ -1948,7 +1948,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	@Inject
 	public PlantumlGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.pModel = new ModelElements();
+		this.pPlantuml = new PlantumlElements();
 		this.pDiagram = new DiagramElements();
 		this.pInstruction = new InstructionElements();
 		this.pArrow = new ArrowElements();
@@ -2007,14 +2007,14 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//// Model is a number of @startuml's and @enduml's
-	//Model:
+	//Plantuml:
 	//	diagrams+=Diagram*;
-	public ModelElements getModelAccess() {
-		return pModel;
+	public PlantumlElements getPlantumlAccess() {
+		return pPlantuml;
 	}
 	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
+	public ParserRule getPlantumlRule() {
+		return getPlantumlAccess().getRule();
 	}
 
 	//// A diagram starts with @Startuml and ends with @enduml, 

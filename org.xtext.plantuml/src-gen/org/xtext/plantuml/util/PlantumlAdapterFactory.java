@@ -75,9 +75,9 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
     new PlantumlSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter casePlantuml(Plantuml object)
       {
-        return createModelAdapter();
+        return createPlantumlAdapter();
       }
       @Override
       public Adapter caseDiagram(Diagram object)
@@ -167,16 +167,16 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.plantuml.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.plantuml.Plantuml <em>Plantuml</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.plantuml.Model
+   * @see org.xtext.plantuml.Plantuml
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createPlantumlAdapter()
   {
     return null;
   }

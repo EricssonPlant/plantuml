@@ -23,13 +23,13 @@ public interface PlantumlFactory extends EFactory
   PlantumlFactory eINSTANCE = org.xtext.plantuml.impl.PlantumlFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Plantuml</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Plantuml</em>'.
    * @generated
    */
-  Model createModel();
+  Plantuml createPlantuml();
 
   /**
    * Returns a new object of class '<em>Diagram</em>'.

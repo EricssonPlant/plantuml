@@ -38,7 +38,7 @@ import org.xtext.services.PlantumlGrammarAccess;
 	
 	@Override
 	protected String getFirstRuleName() {
-		return "Model";	
+		return "Plantuml";	
 	} 
 	   	   	
 	@Override
@@ -57,28 +57,28 @@ import org.xtext.services.PlantumlGrammarAccess;
 
 
 
-// Entry rule entryRuleModel
-entryRuleModel returns [EObject current=null]
+// Entry rule entryRulePlantuml
+entryRulePlantuml returns [EObject current=null]
 	:
-	{ newCompositeNode(grammarAccess.getModelRule()); }
-	 iv_ruleModel=ruleModel 
-	 { $current=$iv_ruleModel.current; } 
+	{ newCompositeNode(grammarAccess.getPlantumlRule()); }
+	 iv_rulePlantuml=rulePlantuml 
+	 { $current=$iv_rulePlantuml.current; } 
 	 EOF 
 ;
 
-// Rule Model
-ruleModel returns [EObject current=null] 
+// Rule Plantuml
+rulePlantuml returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getDiagramsDiagramParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getPlantumlAccess().getDiagramsDiagramParserRuleCall_0()); 
 	    }
 		lv_diagrams_0_0=ruleDiagram		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	            $current = createModelElementForParent(grammarAccess.getPlantumlRule());
 	        }
        		add(
        			$current, 

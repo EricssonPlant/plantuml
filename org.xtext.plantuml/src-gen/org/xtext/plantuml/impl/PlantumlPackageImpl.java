@@ -20,8 +20,8 @@ import org.xtext.plantuml.Else;
 import org.xtext.plantuml.GroupingMessage;
 import org.xtext.plantuml.GroupingMessages;
 import org.xtext.plantuml.Instruction;
-import org.xtext.plantuml.Model;
 import org.xtext.plantuml.Note;
+import org.xtext.plantuml.Plantuml;
 import org.xtext.plantuml.PlantumlFactory;
 import org.xtext.plantuml.PlantumlPackage;
 import org.xtext.plantuml.Reference;
@@ -39,7 +39,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass plantumlEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -200,9 +200,9 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  public EClass getPlantuml()
   {
-    return modelEClass;
+    return plantumlEClass;
   }
 
   /**
@@ -210,9 +210,9 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Diagrams()
+  public EReference getPlantuml_Diagrams()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)plantumlEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -555,8 +555,8 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__DIAGRAMS);
+    plantumlEClass = createEClass(PLANTUML);
+    createEReference(plantumlEClass, PLANTUML__DIAGRAMS);
 
     diagramEClass = createEClass(DIAGRAM);
     createEReference(diagramEClass, DIAGRAM__INSTRUCTIONS);
@@ -644,8 +644,8 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     groupingMessageEClass.getESuperTypes().add(this.getGroupingMessages());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Diagrams(), this.getDiagram(), null, "diagrams", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(plantumlEClass, Plantuml.class, "Plantuml", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPlantuml_Diagrams(), this.getDiagram(), null, "diagrams", null, 0, -1, Plantuml.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(diagramEClass, Diagram.class, "Diagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDiagram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -17,23 +17,23 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.plantuml.Diagram;
-import org.xtext.plantuml.Model;
+import org.xtext.plantuml.Plantuml;
 import org.xtext.plantuml.PlantumlPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Plantuml</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.plantuml.impl.ModelImpl#getDiagrams <em>Diagrams</em>}</li>
+ *   <li>{@link org.xtext.plantuml.impl.PlantumlImpl#getDiagrams <em>Diagrams</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class PlantumlImpl extends MinimalEObjectImpl.Container implements Plantuml
 {
   /**
    * The cached value of the '{@link #getDiagrams() <em>Diagrams</em>}' containment reference list.
@@ -50,7 +50,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected PlantumlImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return PlantumlPackage.Literals.MODEL;
+    return PlantumlPackage.Literals.PLANTUML;
   }
 
   /**
@@ -75,7 +75,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     if (diagrams == null)
     {
-      diagrams = new EObjectContainmentEList<Diagram>(Diagram.class, this, PlantumlPackage.MODEL__DIAGRAMS);
+      diagrams = new EObjectContainmentEList<Diagram>(Diagram.class, this, PlantumlPackage.PLANTUML__DIAGRAMS);
     }
     return diagrams;
   }
@@ -90,7 +90,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlantumlPackage.MODEL__DIAGRAMS:
+      case PlantumlPackage.PLANTUML__DIAGRAMS:
         return ((InternalEList<?>)getDiagrams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -106,7 +106,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlantumlPackage.MODEL__DIAGRAMS:
+      case PlantumlPackage.PLANTUML__DIAGRAMS:
         return getDiagrams();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -123,7 +123,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlantumlPackage.MODEL__DIAGRAMS:
+      case PlantumlPackage.PLANTUML__DIAGRAMS:
         getDiagrams().clear();
         getDiagrams().addAll((Collection<? extends Diagram>)newValue);
         return;
@@ -141,7 +141,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlantumlPackage.MODEL__DIAGRAMS:
+      case PlantumlPackage.PLANTUML__DIAGRAMS:
         getDiagrams().clear();
         return;
     }
@@ -158,10 +158,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlantumlPackage.MODEL__DIAGRAMS:
+      case PlantumlPackage.PLANTUML__DIAGRAMS:
         return diagrams != null && !diagrams.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //PlantumlImpl

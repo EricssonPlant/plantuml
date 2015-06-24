@@ -25,8 +25,8 @@ import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Else;
 import org.xtext.plantuml.GroupingMessage;
-import org.xtext.plantuml.Model;
 import org.xtext.plantuml.Note;
+import org.xtext.plantuml.Plantuml;
 import org.xtext.plantuml.PlantumlPackage;
 import org.xtext.plantuml.Reference;
 import org.xtext.services.PlantumlGrammarAccess;
@@ -67,11 +67,11 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PlantumlPackage.GROUPING_MESSAGE:
 				sequence_GroupingMessages(context, (GroupingMessage) semanticObject); 
 				return; 
-			case PlantumlPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
-				return; 
 			case PlantumlPackage.NOTE:
 				sequence_Note(context, (Note) semanticObject); 
+				return; 
+			case PlantumlPackage.PLANTUML:
+				sequence_Plantuml(context, (Plantuml) semanticObject); 
 				return; 
 			case PlantumlPackage.REFERENCE:
 				sequence_Reference(context, (Reference) semanticObject); 
@@ -184,18 +184,18 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     diagrams+=Diagram*
+	 *     ((rid=[Definition|ID] rids+=[Definition|ID]*)? | (lid=[Definition|ID] lids+=[Definition|ID]*)? | (oid=[Definition|ID] oids+=[Definition|ID]*))
 	 */
-	protected void sequence_Model(EObject context, Model semanticObject) {
+	protected void sequence_Note(EObject context, Note semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     ((rid=[Definition|ID] rids+=[Definition|ID]*)? | (lid=[Definition|ID] lids+=[Definition|ID]*)? | (oid=[Definition|ID] oids+=[Definition|ID]*))
+	 *     diagrams+=Diagram*
 	 */
-	protected void sequence_Note(EObject context, Note semanticObject) {
+	protected void sequence_Plantuml(EObject context, Plantuml semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

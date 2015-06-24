@@ -172,15 +172,6 @@ public class PlantumlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PlantumlPackage.GROUPING_MESSAGE:
-      {
-        GroupingMessage groupingMessage = (GroupingMessage)theEObject;
-        T result = caseGroupingMessage(groupingMessage);
-        if (result == null) result = caseGroupingMessages(groupingMessage);
-        if (result == null) result = caseInstruction(groupingMessage);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -389,22 +380,6 @@ public class PlantumlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBox(Box object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Grouping Message</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Grouping Message</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGroupingMessage(GroupingMessage object)
   {
     return null;
   }

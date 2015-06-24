@@ -21,210 +21,66 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "LightGoldenRodYellow", "MediumSpringGreen", "MediumAquaMarine", "MediumSlateBlue", "MediumTurquoise", "MediumVioletRed", "BlanchedAlmond", "CornflowerBlue", "DarkOliveGreen", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "MediumSeaGreen", "DarkGoldenRod", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "LavenderBlush", "LightSeaGreen", "PaleGoldenRod", "PaleTurquoise", "PaleVioletRed", "AntiqueWhite", "DarkSeaGreen", "LemonChiffon", "LightSkyBlue", "MediumOrchid", "MediumPurple", "MidnightBlue", "DarkMagenta", "DeepSkyBlue", "FloralWhite", "ForestGreen", "GreenYellow", "LightSalmon", "LightYellow", "NavajoWhite", "SaddleBrown", "SpringGreen", "YellowGreen", "Participant", "Aquamarine", "BlueViolet", "Chartreuse", "DarkOrchid", "DarkViolet", "Darkorange", "DodgerBlue", "GhostWhite", "LightCoral", "LightGreen", "MediumBlue", "PapayaWhip", "PowderBlue", "SandyBrown", "WhiteSmoke", "Autonumber", "Deactivate", "AliceBlue", "BurlyWood", "CadetBlue", "Chocolate", "DarkGreen", "DarkKhaki", "DarkSalmo", "FireBrick", "Gainsboro", "GoldenRod", "IndianRed", "LawnGreen", "LightBlue", "LightCyan", "LightGray", "LightGrey", "LightPink", "LimeGreen", "MintCream", "MistyRose", "OliveDrab", "OrangeRed", "PaleGreen", "PeachPuff", "RosyBrown", "RoyalBlue", "SlateBlue", "SlateGray", "SlateGrey", "SteelBlue", "Turquoise", "Endlegend", "Cornsilk", "DarkBlue", "DarkCyan", "DarkGray", "DarkGrey", "DeepPink", "HoneyDew", "Lavender", "Moccasin", "SeaGreen", "Activate", "Boundary", "Critical", "Database", "Crimson", "DarkRed", "DimGray", "DimGrey", "Fuchsia", "HotPink", "Magenta", "OldLace", "SkyBlue", "Thistle", "Control", "Destroy", "Footbox", "Newpage", "Bisque", "Indigo", "Maroon", "Orchid", "Purple", "Salmon", "Sienna", "Silver", "Tomato", "Violet", "Yellow", "Center", "Create", "Entity", "Legend", "Azure", "Beige", "Black", "Brown", "Coral", "Green", "Ivory", "Khaki", "Linen", "Olive", "Wheat", "White", "Actor", "Break", "Group", "Right", "Title", "Aqua", "Blue", "Cyan", "Gold", "Gray", "Grey", "Lime", "Navy", "Peru", "Pink", "Plum", "Snow", "Teal", "Else", "Hide", "Left", "Loop", "Note", "Over", "FullStopFullStopFullStop", "Red", "Tan", "Alt", "Box", "End", "Opt", "Par", "Ref", "VerticalLineVerticalLineVerticalLine", "LessThanSignLessThanSign", "EqualsSignEqualsSign", "GreaterThanSignGreaterThanSign", "Of", "VerticalLineVerticalLine", "QuotationMark", "NumberSign", "LeftParenthesis", "RightParenthesis", "Comma", "Colon", "RULE_NEWLINE", "RULE_START", "RULE_END", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_INT", "RULE_SEQUENCE", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Participant", "Autonumber", "Deactivate", "Endlegend", "Activate", "Boundary", "Critical", "Database", "Control", "Destroy", "Footbox", "Newpage", "Center", "Create", "Entity", "Legend", "Actor", "Break", "Group", "Right", "Title", "Else", "Hide", "Left", "Loop", "Note", "Over", "FullStopFullStopFullStop", "Alt", "Box", "End", "Opt", "Par", "Ref", "VerticalLineVerticalLineVerticalLine", "LessThanSignLessThanSign", "EqualsSignEqualsSign", "GreaterThanSignGreaterThanSign", "Of", "VerticalLineVerticalLine", "QuotationMark", "LeftParenthesis", "RightParenthesis", "Comma", "Colon", "RULE_NEWLINE", "RULE_START", "RULE_END", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_SEQUENCE", "RULE_COLOR", "RULE_HEXCODE", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int Entity=136;
-    public static final int Left=170;
-    public static final int MediumOrchid=31;
-    public static final int PaleGoldenRod=24;
-    public static final int DarkSeaGreen=28;
-    public static final int Sienna=129;
-    public static final int Black=140;
-    public static final int Gainsboro=71;
-    public static final int LightCoral=54;
-    public static final int DarkGrey=99;
-    public static final int DodgerBlue=52;
-    public static final int Aquamarine=46;
-    public static final int Beige=139;
-    public static final int Actor=150;
-    public static final int OliveDrab=83;
-    public static final int Violet=132;
-    public static final int LimeGreen=80;
-    public static final int RULE_ID=198;
-    public static final int PowderBlue=58;
-    public static final int Magenta=115;
-    public static final int DarkTurquoise=21;
-    public static final int IndianRed=73;
-    public static final int LightGray=77;
-    public static final int PeachPuff=86;
-    public static final int Participant=45;
-    public static final int Activate=105;
-    public static final int RULE_INT=201;
-    public static final int Note=172;
-    public static final int LightBlue=75;
-    public static final int SpringGreen=43;
-    public static final int Indigo=124;
-    public static final int DarkRed=110;
-    public static final int Wheat=148;
-    public static final int LessThanSignLessThanSign=184;
-    public static final int MediumAquaMarine=6;
-    public static final int DarkCyan=97;
-    public static final int Group=152;
-    public static final int LawnGreen=74;
-    public static final int QuotationMark=189;
-    public static final int DarkSalmo=69;
-    public static final int Teal=167;
-    public static final int HoneyDew=101;
-    public static final int Maroon=125;
-    public static final int Center=134;
-    public static final int Blue=156;
-    public static final int Moccasin=103;
-    public static final int Chocolate=66;
-    public static final int LightGoldenRodYellow=4;
-    public static final int SeaGreen=104;
-    public static final int Thistle=118;
-    public static final int Red=175;
-    public static final int Ref=182;
-    public static final int MistyRose=82;
-    public static final int Crimson=109;
-    public static final int Par=181;
-    public static final int DarkGray=98;
-    public static final int DarkBlue=96;
-    public static final int Fuchsia=113;
-    public static final int Darkorange=51;
-    public static final int Opt=180;
-    public static final int Cornsilk=95;
-    public static final int DarkSlateGrey=20;
-    public static final int PaleGreen=85;
-    public static final int DimGray=111;
-    public static final int Gold=158;
-    public static final int DarkOliveGreen=12;
-    public static final int Gray=159;
-    public static final int RightParenthesis=192;
-    public static final int LemonChiffon=29;
-    public static final int FloralWhite=36;
-    public static final int GreenYellow=38;
-    public static final int Silver=130;
-    public static final int Khaki=145;
-    public static final int LightSkyBlue=30;
-    public static final int Ivory=144;
-    public static final int DarkGreen=67;
-    public static final int Linen=146;
-    public static final int End=179;
-    public static final int LightGreen=55;
-    public static final int LightGrey=78;
-    public static final int Brown=141;
-    public static final int RULE_END=197;
-    public static final int Aqua=155;
-    public static final int RULE_START=196;
-    public static final int Bisque=123;
-    public static final int Footbox=121;
-    public static final int MediumBlue=56;
-    public static final int RULE_SL_COMMENT=200;
-    public static final int BlueViolet=47;
-    public static final int Over=173;
-    public static final int Control=119;
-    public static final int Lavender=102;
-    public static final int CornflowerBlue=11;
-    public static final int Colon=194;
+    public static final int Par=36;
+    public static final int Entity=18;
+    public static final int Left=27;
+    public static final int RULE_SEQUENCE=56;
+    public static final int Break=21;
+    public static final int Alt=32;
+    public static final int Critical=10;
+    public static final int FullStopFullStopFullStop=31;
+    public static final int Boundary=9;
+    public static final int Opt=35;
+    public static final int LeftParenthesis=45;
+    public static final int Actor=20;
+    public static final int VerticalLineVerticalLineVerticalLine=38;
+    public static final int Database=11;
+    public static final int RULE_ID=53;
+    public static final int Endlegend=7;
+    public static final int RightParenthesis=46;
+    public static final int Box=33;
+    public static final int EqualsSignEqualsSign=40;
+    public static final int Participant=4;
+    public static final int Activate=8;
+    public static final int RULE_INT=52;
+    public static final int Note=29;
+    public static final int RULE_ML_COMMENT=54;
+    public static final int RULE_HEXCODE=58;
+    public static final int End=34;
+    public static final int LessThanSignLessThanSign=39;
+    public static final int Hide=26;
+    public static final int Group=22;
+    public static final int Legend=19;
+    public static final int RULE_END=51;
+    public static final int RULE_START=50;
+    public static final int VerticalLineVerticalLine=43;
+    public static final int RULE_NEWLINE=49;
+    public static final int Right=23;
+    public static final int Footbox=14;
+    public static final int QuotationMark=44;
+    public static final int Newpage=15;
+    public static final int RULE_SL_COMMENT=55;
+    public static final int Over=30;
+    public static final int Comma=47;
+    public static final int Control=12;
+    public static final int Destroy=13;
+    public static final int Create=17;
+    public static final int RULE_COLOR=57;
+    public static final int Deactivate=6;
+    public static final int Colon=48;
     public static final int EOF=-1;
-    public static final int Grey=160;
-    public static final int MediumSpringGreen=5;
-    public static final int Loop=171;
-    public static final int DarkKhaki=68;
-    public static final int Title=154;
-    public static final int ForestGreen=37;
-    public static final int GreaterThanSignGreaterThanSign=186;
-    public static final int DarkOrchid=49;
-    public static final int White=149;
-    public static final int Purple=127;
-    public static final int DarkMagenta=34;
-    public static final int GoldenRod=72;
-    public static final int Green=143;
-    public static final int SkyBlue=117;
-    public static final int Break=151;
-    public static final int LightSlateGray=13;
-    public static final int DarkSlateGray=19;
-    public static final int DimGrey=112;
-    public static final int LightSeaGreen=23;
-    public static final int LeftParenthesis=191;
-    public static final int RoyalBlue=88;
-    public static final int DarkViolet=50;
-    public static final int Database=108;
-    public static final int MediumSlateBlue=7;
-    public static final int MidnightBlue=33;
-    public static final int SandyBrown=59;
-    public static final int DarkSlateBlue=18;
-    public static final int DeepSkyBlue=35;
-    public static final int Chartreuse=48;
-    public static final int Olive=147;
-    public static final int EqualsSignEqualsSign=185;
-    public static final int MediumPurple=32;
-    public static final int Yellow=133;
-    public static final int RULE_ML_COMMENT=199;
-    public static final int Peru=163;
-    public static final int RosyBrown=87;
-    public static final int Hide=169;
-    public static final int FireBrick=70;
-    public static final int Legend=137;
-    public static final int VerticalLineVerticalLine=188;
-    public static final int RULE_NEWLINE=195;
-    public static final int Right=153;
-    public static final int Newpage=122;
-    public static final int Comma=193;
-    public static final int OrangeRed=84;
-    public static final int Deactivate=62;
-    public static final int Turquoise=93;
-    public static final int Cyan=157;
-    public static final int WhiteSmoke=60;
-    public static final int MediumSeaGreen=16;
-    public static final int LavenderBlush=22;
-    public static final int LightCyan=76;
-    public static final int SlateGray=90;
-    public static final int Else=168;
-    public static final int NavajoWhite=41;
-    public static final int SlateBlue=89;
-    public static final int Orchid=126;
-    public static final int Tan=176;
-    public static final int LightSalmon=39;
-    public static final int Snow=166;
-    public static final int RULE_SEQUENCE=202;
-    public static final int Alt=177;
-    public static final int Critical=107;
-    public static final int Tomato=131;
-    public static final int FullStopFullStopFullStop=174;
-    public static final int LightSlateGrey=14;
-    public static final int Boundary=106;
-    public static final int Plum=165;
-    public static final int YellowGreen=44;
-    public static final int MintCream=81;
-    public static final int VerticalLineVerticalLineVerticalLine=183;
-    public static final int PaleVioletRed=26;
-    public static final int Azure=138;
-    public static final int Endlegend=94;
-    public static final int Salmon=128;
-    public static final int Box=178;
-    public static final int BlanchedAlmond=10;
-    public static final int Pink=164;
-    public static final int AliceBlue=63;
-    public static final int NumberSign=190;
-    public static final int PapayaWhip=57;
-    public static final int MediumTurquoise=8;
-    public static final int AntiqueWhite=27;
-    public static final int LightPink=79;
-    public static final int OldLace=116;
-    public static final int DarkGoldenRod=17;
-    public static final int CadetBlue=65;
-    public static final int BurlyWood=64;
-    public static final int Lime=161;
-    public static final int Destroy=120;
-    public static final int Create=135;
-    public static final int LightSteelBlue=15;
-    public static final int GhostWhite=53;
-    public static final int SteelBlue=92;
-    public static final int PaleTurquoise=25;
-    public static final int RULE_WS=203;
-    public static final int RULE_ANY_OTHER=204;
-    public static final int DeepPink=100;
-    public static final int MediumVioletRed=9;
-    public static final int HotPink=114;
-    public static final int LightYellow=40;
-    public static final int Navy=162;
-    public static final int SaddleBrown=42;
-    public static final int Coral=142;
-    public static final int SlateGrey=91;
-    public static final int Of=187;
-    public static final int Autonumber=61;
+    public static final int Loop=28;
+    public static final int Center=16;
+    public static final int RULE_WS=59;
+    public static final int Title=24;
+    public static final int RULE_ANY_OTHER=60;
+    public static final int GreaterThanSignGreaterThanSign=41;
+    public static final int Ref=37;
+    public static final int Of=42;
+    public static final int Else=25;
+    public static final int Autonumber=5;
 
     // delegates
     // delegators
@@ -463,7 +319,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==Participant||(LA2_0>=Autonumber && LA2_0<=Deactivate)||(LA2_0>=Activate && LA2_0<=Database)||(LA2_0>=Control && LA2_0<=Destroy)||LA2_0==Newpage||(LA2_0>=Create && LA2_0<=Legend)||(LA2_0>=Actor && LA2_0<=Group)||LA2_0==Title||LA2_0==Hide||(LA2_0>=Loop && LA2_0<=Note)||LA2_0==FullStopFullStopFullStop||(LA2_0>=Alt && LA2_0<=Box)||(LA2_0>=Opt && LA2_0<=VerticalLineVerticalLineVerticalLine)||LA2_0==EqualsSignEqualsSign||LA2_0==VerticalLineVerticalLine||LA2_0==RULE_NEWLINE||LA2_0==RULE_ID) ) {
+                if ( ((LA2_0>=Participant && LA2_0<=Deactivate)||(LA2_0>=Activate && LA2_0<=Destroy)||LA2_0==Newpage||(LA2_0>=Create && LA2_0<=Group)||LA2_0==Title||LA2_0==Hide||(LA2_0>=Loop && LA2_0<=Note)||(LA2_0>=FullStopFullStopFullStop && LA2_0<=Box)||(LA2_0>=Opt && LA2_0<=VerticalLineVerticalLineVerticalLine)||LA2_0==EqualsSignEqualsSign||LA2_0==VerticalLineVerticalLine||LA2_0==RULE_NEWLINE||LA2_0==RULE_ID) ) {
                     alt2=1;
                 }
 
@@ -595,40 +451,42 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstruction"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:170:1: ruleInstruction returns [EObject current=null] : ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition ( ruleColor )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_7= ruleAltElse | this_GroupingMessages_8= ruleGroupingMessages | this_Note_9= ruleNote | ruleDivider | this_Reference_11= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_15= ruleActivate | this_Deactivate_16= ruleDeactivate | ruleParticipantCreation | this_Box_18= ruleBox )? this_NEWLINE_19= RULE_NEWLINE ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:170:1: ruleInstruction returns [EObject current=null] : ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_8= ruleAltElse | this_GroupingMessages_9= ruleGroupingMessages | this_Note_10= ruleNote | ruleDivider | this_Reference_12= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_16= ruleActivate | this_Deactivate_17= ruleDeactivate | ruleParticipantCreation | this_Box_19= ruleBox )? this_NEWLINE_20= RULE_NEWLINE ) ;
     public final EObject ruleInstruction() throws RecognitionException {
         EObject current = null;
 
-        Token this_NEWLINE_19=null;
+        Token this_COLOR_2=null;
+        Token this_HEXCODE_3=null;
+        Token this_NEWLINE_20=null;
         EObject this_Arrow_0 = null;
 
         EObject this_Definition_1 = null;
 
-        EObject this_AltElse_7 = null;
+        EObject this_AltElse_8 = null;
 
-        EObject this_GroupingMessages_8 = null;
+        EObject this_GroupingMessages_9 = null;
 
-        EObject this_Note_9 = null;
+        EObject this_Note_10 = null;
 
-        EObject this_Reference_11 = null;
+        EObject this_Reference_12 = null;
 
-        EObject this_Activate_15 = null;
+        EObject this_Activate_16 = null;
 
-        EObject this_Deactivate_16 = null;
+        EObject this_Deactivate_17 = null;
 
-        EObject this_Box_18 = null;
+        EObject this_Box_19 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:173:28: ( ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition ( ruleColor )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_7= ruleAltElse | this_GroupingMessages_8= ruleGroupingMessages | this_Note_9= ruleNote | ruleDivider | this_Reference_11= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_15= ruleActivate | this_Deactivate_16= ruleDeactivate | ruleParticipantCreation | this_Box_18= ruleBox )? this_NEWLINE_19= RULE_NEWLINE ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:1: ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition ( ruleColor )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_7= ruleAltElse | this_GroupingMessages_8= ruleGroupingMessages | this_Note_9= ruleNote | ruleDivider | this_Reference_11= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_15= ruleActivate | this_Deactivate_16= ruleDeactivate | ruleParticipantCreation | this_Box_18= ruleBox )? this_NEWLINE_19= RULE_NEWLINE )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:173:28: ( ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_8= ruleAltElse | this_GroupingMessages_9= ruleGroupingMessages | this_Note_10= ruleNote | ruleDivider | this_Reference_12= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_16= ruleActivate | this_Deactivate_17= ruleDeactivate | ruleParticipantCreation | this_Box_19= ruleBox )? this_NEWLINE_20= RULE_NEWLINE ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:1: ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_8= ruleAltElse | this_GroupingMessages_9= ruleGroupingMessages | this_Note_10= ruleNote | ruleDivider | this_Reference_12= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_16= ruleActivate | this_Deactivate_17= ruleDeactivate | ruleParticipantCreation | this_Box_19= ruleBox )? this_NEWLINE_20= RULE_NEWLINE )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:1: ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition ( ruleColor )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_7= ruleAltElse | this_GroupingMessages_8= ruleGroupingMessages | this_Note_9= ruleNote | ruleDivider | this_Reference_11= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_15= ruleActivate | this_Deactivate_16= ruleDeactivate | ruleParticipantCreation | this_Box_18= ruleBox )? this_NEWLINE_19= RULE_NEWLINE )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:2: (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition ( ruleColor )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_7= ruleAltElse | this_GroupingMessages_8= ruleGroupingMessages | this_Note_9= ruleNote | ruleDivider | this_Reference_11= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_15= ruleActivate | this_Deactivate_16= ruleDeactivate | ruleParticipantCreation | this_Box_18= ruleBox )? this_NEWLINE_19= RULE_NEWLINE
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:1: ( (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_8= ruleAltElse | this_GroupingMessages_9= ruleGroupingMessages | this_Note_10= ruleNote | ruleDivider | this_Reference_12= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_16= ruleActivate | this_Deactivate_17= ruleDeactivate | ruleParticipantCreation | this_Box_19= ruleBox )? this_NEWLINE_20= RULE_NEWLINE )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:2: (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_8= ruleAltElse | this_GroupingMessages_9= ruleGroupingMessages | this_Note_10= ruleNote | ruleDivider | this_Reference_12= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_16= ruleActivate | this_Deactivate_17= ruleDeactivate | ruleParticipantCreation | this_Box_19= ruleBox )? this_NEWLINE_20= RULE_NEWLINE
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:2: (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition ( ruleColor )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_7= ruleAltElse | this_GroupingMessages_8= ruleGroupingMessages | this_Note_9= ruleNote | ruleDivider | this_Reference_11= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_15= ruleActivate | this_Deactivate_16= ruleDeactivate | ruleParticipantCreation | this_Box_18= ruleBox )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:174:2: (this_Arrow_0= ruleArrow | (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? ) | ruleAutoNumber | ruleTitle | ruleLegend | ruleNewpage | this_AltElse_8= ruleAltElse | this_GroupingMessages_9= ruleGroupingMessages | this_Note_10= ruleNote | ruleDivider | this_Reference_12= ruleReference | ruleDelay | ruleSpace | ruleHidefootbox | this_Activate_16= ruleActivate | this_Deactivate_17= ruleDeactivate | ruleParticipantCreation | this_Box_19= ruleBox )?
             int alt5=19;
             switch ( input.LA(1) ) {
                 case RULE_ID:
@@ -755,10 +613,10 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:184:6: (this_Definition_1= ruleDefinition ( ruleColor )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:184:6: (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:184:6: (this_Definition_1= ruleDefinition ( ruleColor )? )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:185:5: this_Definition_1= ruleDefinition ( ruleColor )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:184:6: (this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:185:5: this_Definition_1= ruleDefinition (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )?
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_0_1_0()); 
@@ -772,27 +630,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                             current = this_Definition_1;
                             afterParserOrEnumRuleCall();
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:193:1: ( ruleColor )?
-                    int alt4=2;
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:193:1: (this_COLOR_2= RULE_COLOR | this_HEXCODE_3= RULE_HEXCODE )?
+                    int alt4=3;
                     int LA4_0 = input.LA(1);
 
-                    if ( (LA4_0==NumberSign) ) {
+                    if ( (LA4_0==RULE_COLOR) ) {
                         alt4=1;
+                    }
+                    else if ( (LA4_0==RULE_HEXCODE) ) {
+                        alt4=2;
                     }
                     switch (alt4) {
                         case 1 :
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:194:5: ruleColor
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:193:2: this_COLOR_2= RULE_COLOR
                             {
+                            this_COLOR_2=(Token)match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_ruleInstruction398); 
                              
-                                    newCompositeNode(grammarAccess.getInstructionAccess().getColorParserRuleCall_0_1_1()); 
+                                newLeafNode(this_COLOR_2, grammarAccess.getInstructionAccess().getCOLORTerminalRuleCall_0_1_1_0()); 
                                 
-                            pushFollow(FOLLOW_ruleColor_in_ruleInstruction403);
-                            ruleColor();
 
-                            state._fsp--;
-
-
-                                    afterParserOrEnumRuleCall();
+                            }
+                            break;
+                        case 2 :
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:198:6: this_HEXCODE_3= RULE_HEXCODE
+                            {
+                            this_HEXCODE_3=(Token)match(input,RULE_HEXCODE,FOLLOW_RULE_HEXCODE_in_ruleInstruction414); 
+                             
+                                newLeafNode(this_HEXCODE_3, grammarAccess.getInstructionAccess().getHEXCODETerminalRuleCall_0_1_1_1()); 
                                 
 
                             }
@@ -807,12 +671,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:203:5: ruleAutoNumber
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:204:5: ruleAutoNumber
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_0_2()); 
                         
-                    pushFollow(FOLLOW_ruleAutoNumber_in_ruleInstruction427);
+                    pushFollow(FOLLOW_ruleAutoNumber_in_ruleInstruction438);
                     ruleAutoNumber();
 
                     state._fsp--;
@@ -824,12 +688,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:212:5: ruleTitle
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:213:5: ruleTitle
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getTitleParserRuleCall_0_3()); 
                         
-                    pushFollow(FOLLOW_ruleTitle_in_ruleInstruction448);
+                    pushFollow(FOLLOW_ruleTitle_in_ruleInstruction459);
                     ruleTitle();
 
                     state._fsp--;
@@ -841,12 +705,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:221:5: ruleLegend
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:222:5: ruleLegend
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getLegendParserRuleCall_0_4()); 
                         
-                    pushFollow(FOLLOW_ruleLegend_in_ruleInstruction469);
+                    pushFollow(FOLLOW_ruleLegend_in_ruleInstruction480);
                     ruleLegend();
 
                     state._fsp--;
@@ -858,12 +722,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:230:5: ruleNewpage
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:231:5: ruleNewpage
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getNewpageParserRuleCall_0_5()); 
                         
-                    pushFollow(FOLLOW_ruleNewpage_in_ruleInstruction490);
+                    pushFollow(FOLLOW_ruleNewpage_in_ruleInstruction501);
                     ruleNewpage();
 
                     state._fsp--;
@@ -875,66 +739,66 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:239:5: this_AltElse_7= ruleAltElse
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:240:5: this_AltElse_8= ruleAltElse
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getAltElseParserRuleCall_0_6()); 
                         
-                    pushFollow(FOLLOW_ruleAltElse_in_ruleInstruction517);
-                    this_AltElse_7=ruleAltElse();
+                    pushFollow(FOLLOW_ruleAltElse_in_ruleInstruction528);
+                    this_AltElse_8=ruleAltElse();
 
                     state._fsp--;
 
 
-                            current = this_AltElse_7;
+                            current = this_AltElse_8;
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:249:5: this_GroupingMessages_8= ruleGroupingMessages
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:250:5: this_GroupingMessages_9= ruleGroupingMessages
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getGroupingMessagesParserRuleCall_0_7()); 
                         
-                    pushFollow(FOLLOW_ruleGroupingMessages_in_ruleInstruction544);
-                    this_GroupingMessages_8=ruleGroupingMessages();
+                    pushFollow(FOLLOW_ruleGroupingMessages_in_ruleInstruction555);
+                    this_GroupingMessages_9=ruleGroupingMessages();
 
                     state._fsp--;
 
 
-                            current = this_GroupingMessages_8;
+                            current = this_GroupingMessages_9;
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:259:5: this_Note_9= ruleNote
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:260:5: this_Note_10= ruleNote
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getNoteParserRuleCall_0_8()); 
                         
-                    pushFollow(FOLLOW_ruleNote_in_ruleInstruction571);
-                    this_Note_9=ruleNote();
+                    pushFollow(FOLLOW_ruleNote_in_ruleInstruction582);
+                    this_Note_10=ruleNote();
 
                     state._fsp--;
 
 
-                            current = this_Note_9;
+                            current = this_Note_10;
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:269:5: ruleDivider
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:270:5: ruleDivider
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getDividerParserRuleCall_0_9()); 
                         
-                    pushFollow(FOLLOW_ruleDivider_in_ruleInstruction592);
+                    pushFollow(FOLLOW_ruleDivider_in_ruleInstruction603);
                     ruleDivider();
 
                     state._fsp--;
@@ -946,30 +810,30 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:278:5: this_Reference_11= ruleReference
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:279:5: this_Reference_12= ruleReference
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getReferenceParserRuleCall_0_10()); 
                         
-                    pushFollow(FOLLOW_ruleReference_in_ruleInstruction619);
-                    this_Reference_11=ruleReference();
+                    pushFollow(FOLLOW_ruleReference_in_ruleInstruction630);
+                    this_Reference_12=ruleReference();
 
                     state._fsp--;
 
 
-                            current = this_Reference_11;
+                            current = this_Reference_12;
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:288:5: ruleDelay
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:289:5: ruleDelay
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getDelayParserRuleCall_0_11()); 
                         
-                    pushFollow(FOLLOW_ruleDelay_in_ruleInstruction640);
+                    pushFollow(FOLLOW_ruleDelay_in_ruleInstruction651);
                     ruleDelay();
 
                     state._fsp--;
@@ -981,12 +845,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:297:5: ruleSpace
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:298:5: ruleSpace
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getSpaceParserRuleCall_0_12()); 
                         
-                    pushFollow(FOLLOW_ruleSpace_in_ruleInstruction661);
+                    pushFollow(FOLLOW_ruleSpace_in_ruleInstruction672);
                     ruleSpace();
 
                     state._fsp--;
@@ -998,12 +862,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:306:5: ruleHidefootbox
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:307:5: ruleHidefootbox
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getHidefootboxParserRuleCall_0_13()); 
                         
-                    pushFollow(FOLLOW_ruleHidefootbox_in_ruleInstruction682);
+                    pushFollow(FOLLOW_ruleHidefootbox_in_ruleInstruction693);
                     ruleHidefootbox();
 
                     state._fsp--;
@@ -1015,48 +879,48 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:315:5: this_Activate_15= ruleActivate
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:316:5: this_Activate_16= ruleActivate
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getActivateParserRuleCall_0_14()); 
                         
-                    pushFollow(FOLLOW_ruleActivate_in_ruleInstruction709);
-                    this_Activate_15=ruleActivate();
+                    pushFollow(FOLLOW_ruleActivate_in_ruleInstruction720);
+                    this_Activate_16=ruleActivate();
 
                     state._fsp--;
 
 
-                            current = this_Activate_15;
+                            current = this_Activate_16;
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 16 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:325:5: this_Deactivate_16= ruleDeactivate
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:326:5: this_Deactivate_17= ruleDeactivate
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getDeactivateParserRuleCall_0_15()); 
                         
-                    pushFollow(FOLLOW_ruleDeactivate_in_ruleInstruction736);
-                    this_Deactivate_16=ruleDeactivate();
+                    pushFollow(FOLLOW_ruleDeactivate_in_ruleInstruction747);
+                    this_Deactivate_17=ruleDeactivate();
 
                     state._fsp--;
 
 
-                            current = this_Deactivate_16;
+                            current = this_Deactivate_17;
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 17 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:335:5: ruleParticipantCreation
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:336:5: ruleParticipantCreation
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getParticipantCreationParserRuleCall_0_16()); 
                         
-                    pushFollow(FOLLOW_ruleParticipantCreation_in_ruleInstruction757);
+                    pushFollow(FOLLOW_ruleParticipantCreation_in_ruleInstruction768);
                     ruleParticipantCreation();
 
                     state._fsp--;
@@ -1068,18 +932,18 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:344:5: this_Box_18= ruleBox
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:345:5: this_Box_19= ruleBox
                     {
                      
                             newCompositeNode(grammarAccess.getInstructionAccess().getBoxParserRuleCall_0_17()); 
                         
-                    pushFollow(FOLLOW_ruleBox_in_ruleInstruction784);
-                    this_Box_18=ruleBox();
+                    pushFollow(FOLLOW_ruleBox_in_ruleInstruction795);
+                    this_Box_19=ruleBox();
 
                     state._fsp--;
 
 
-                            current = this_Box_18;
+                            current = this_Box_19;
                             afterParserOrEnumRuleCall();
                         
 
@@ -1088,9 +952,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_NEWLINE_19=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleInstruction796); 
+            this_NEWLINE_20=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleInstruction807); 
              
-                newLeafNode(this_NEWLINE_19, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
+                newLeafNode(this_NEWLINE_20, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
                 
 
             }
@@ -1113,7 +977,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrow"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:364:1: entryRuleArrow returns [EObject current=null] : iv_ruleArrow= ruleArrow EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:365:1: entryRuleArrow returns [EObject current=null] : iv_ruleArrow= ruleArrow EOF ;
     public final EObject entryRuleArrow() throws RecognitionException {
         EObject current = null;
 
@@ -1121,17 +985,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:365:2: (iv_ruleArrow= ruleArrow EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:366:2: iv_ruleArrow= ruleArrow EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:366:2: (iv_ruleArrow= ruleArrow EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:367:2: iv_ruleArrow= ruleArrow EOF
             {
              newCompositeNode(grammarAccess.getArrowRule()); 
-            pushFollow(FOLLOW_ruleArrow_in_entryRuleArrow830);
+            pushFollow(FOLLOW_ruleArrow_in_entryRuleArrow841);
             iv_ruleArrow=ruleArrow();
 
             state._fsp--;
 
              current =iv_ruleArrow; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArrow840); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArrow851); 
 
             }
 
@@ -1149,34 +1013,34 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrow"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:373:1: ruleArrow returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:374:1: ruleArrow returns [EObject current=null] : ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) ;
     public final EObject ruleArrow() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
+        Token lv_ids_0_0=null;
         Token this_SEQUENCE_1=null;
-        Token lv_name_2_0=null;
+        Token lv_ids_2_0=null;
         Token otherlv_3=null;
         Token this_ID_4=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:376:28: ( ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:1: ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:28: ( ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:1: ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:2: ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:2: ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )?
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: (lv_name_0_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:2: ( (lv_ids_0_0= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:1: (lv_ids_0_0= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: (lv_name_0_0= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:3: lv_name_0_0= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:1: (lv_ids_0_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:380:3: lv_ids_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow882); 
+            lv_ids_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow893); 
 
-            			newLeafNode(lv_name_0_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_0_0()); 
+            			newLeafNode(lv_ids_0_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_0_0()); 
             		
 
             	        if (current==null) {
@@ -1184,8 +1048,8 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	        }
                    		addWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_0_0, 
+                   			"ids",
+                    		lv_ids_0_0, 
                     		"ID");
             	    
 
@@ -1194,19 +1058,19 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_SEQUENCE_1=(Token)match(input,RULE_SEQUENCE,FOLLOW_RULE_SEQUENCE_in_ruleArrow898); 
+            this_SEQUENCE_1=(Token)match(input,RULE_SEQUENCE,FOLLOW_RULE_SEQUENCE_in_ruleArrow909); 
              
                 newLeafNode(this_SEQUENCE_1, grammarAccess.getArrowAccess().getSEQUENCETerminalRuleCall_1()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:399:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:400:1: (lv_name_2_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:400:1: ( (lv_ids_2_0= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:1: (lv_ids_2_0= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:400:1: (lv_name_2_0= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:3: lv_name_2_0= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:1: (lv_ids_2_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:402:3: lv_ids_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow914); 
+            lv_ids_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow925); 
 
-            			newLeafNode(lv_name_2_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_2_0()); 
+            			newLeafNode(lv_ids_2_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_2_0()); 
             		
 
             	        if (current==null) {
@@ -1214,8 +1078,8 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	        }
                    		addWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_2_0, 
+                   			"ids",
+                    		lv_ids_2_0, 
                     		"ID");
             	    
 
@@ -1224,7 +1088,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:417:2: (otherlv_3= Colon (this_ID_4= RULE_ID )* )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:418:2: (otherlv_3= Colon (this_ID_4= RULE_ID )* )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1233,13 +1097,13 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:418:2: otherlv_3= Colon (this_ID_4= RULE_ID )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:419:2: otherlv_3= Colon (this_ID_4= RULE_ID )*
                     {
-                    otherlv_3=(Token)match(input,Colon,FOLLOW_Colon_in_ruleArrow933); 
+                    otherlv_3=(Token)match(input,Colon,FOLLOW_Colon_in_ruleArrow944); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getArrowAccess().getColonKeyword_3_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:422:1: (this_ID_4= RULE_ID )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:423:1: (this_ID_4= RULE_ID )*
                     loop6:
                     do {
                         int alt6=2;
@@ -1252,9 +1116,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:422:2: this_ID_4= RULE_ID
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:423:2: this_ID_4= RULE_ID
                     	    {
-                    	    this_ID_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow944); 
+                    	    this_ID_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow955); 
                     	     
                     	        newLeafNode(this_ID_4, grammarAccess.getArrowAccess().getIDTerminalRuleCall_3_1()); 
                     	        
@@ -1294,7 +1158,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefinition"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:434:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:435:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
     public final EObject entryRuleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1302,17 +1166,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:435:2: (iv_ruleDefinition= ruleDefinition EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:436:2: iv_ruleDefinition= ruleDefinition EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:436:2: (iv_ruleDefinition= ruleDefinition EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:437:2: iv_ruleDefinition= ruleDefinition EOF
             {
              newCompositeNode(grammarAccess.getDefinitionRule()); 
-            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition982);
+            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition993);
             iv_ruleDefinition=ruleDefinition();
 
             state._fsp--;
 
              current =iv_ruleDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition992); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition1003); 
 
             }
 
@@ -1330,7 +1194,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefinition"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:443:1: ruleDefinition returns [EObject current=null] : ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:444:1: ruleDefinition returns [EObject current=null] : ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) ) ;
     public final EObject ruleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -1350,10 +1214,12 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
         Token otherlv_13=null;
         Token this_ID_14=null;
         Token otherlv_15=null;
+        Token this_COLOR_16=null;
         Token otherlv_17=null;
         Token otherlv_18=null;
         Token this_ID_19=null;
         Token otherlv_20=null;
+        Token this_COLOR_21=null;
         Token otherlv_22=null;
         Token this_ID_23=null;
         Token this_ID_24=null;
@@ -1362,10 +1228,10 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:446:28: ( ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:447:1: ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:447:28: ( ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:448:1: ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:447:1: ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:448:1: ( (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) ) | (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) ) | (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) ) | (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) ) | (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) ) | (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? ) )
             int alt10=6;
             switch ( input.LA(1) ) {
             case Actor:
@@ -1407,22 +1273,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:447:2: (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:448:2: (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:447:2: (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:448:2: otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:448:2: (otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:449:2: otherlv_0= Actor ( (lv_name_1_0= RULE_ID ) )
                     {
-                    otherlv_0=(Token)match(input,Actor,FOLLOW_Actor_in_ruleDefinition1031); 
+                    otherlv_0=(Token)match(input,Actor,FOLLOW_Actor_in_ruleDefinition1042); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getDefinitionAccess().getActorKeyword_0_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:452:1: ( (lv_name_1_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:453:1: (lv_name_1_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:453:1: ( (lv_name_1_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:454:1: (lv_name_1_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:453:1: (lv_name_1_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:454:3: lv_name_1_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:454:1: (lv_name_1_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:455:3: lv_name_1_0= RULE_ID
                     {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1047); 
+                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1058); 
 
                     			newLeafNode(lv_name_1_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_0_1_0()); 
                     		
@@ -1449,22 +1315,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:471:6: (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:472:6: (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:471:6: (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:472:2: otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:472:6: (otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:473:2: otherlv_2= Boundary ( (lv_name_3_0= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,Boundary,FOLLOW_Boundary_in_ruleDefinition1073); 
+                    otherlv_2=(Token)match(input,Boundary,FOLLOW_Boundary_in_ruleDefinition1084); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getDefinitionAccess().getBoundaryKeyword_1_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:476:1: ( (lv_name_3_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:477:1: (lv_name_3_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:477:1: ( (lv_name_3_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:478:1: (lv_name_3_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:477:1: (lv_name_3_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:478:3: lv_name_3_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:478:1: (lv_name_3_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:479:3: lv_name_3_0= RULE_ID
                     {
-                    lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1089); 
+                    lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1100); 
 
                     			newLeafNode(lv_name_3_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_1_1_0()); 
                     		
@@ -1491,22 +1357,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:495:6: (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:496:6: (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:495:6: (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:496:2: otherlv_4= Control ( (lv_name_5_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:496:6: (otherlv_4= Control ( (lv_name_5_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:497:2: otherlv_4= Control ( (lv_name_5_0= RULE_ID ) )
                     {
-                    otherlv_4=(Token)match(input,Control,FOLLOW_Control_in_ruleDefinition1115); 
+                    otherlv_4=(Token)match(input,Control,FOLLOW_Control_in_ruleDefinition1126); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getDefinitionAccess().getControlKeyword_2_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:500:1: ( (lv_name_5_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:501:1: (lv_name_5_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:501:1: ( (lv_name_5_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:502:1: (lv_name_5_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:501:1: (lv_name_5_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:502:3: lv_name_5_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:502:1: (lv_name_5_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:503:3: lv_name_5_0= RULE_ID
                     {
-                    lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1131); 
+                    lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1142); 
 
                     			newLeafNode(lv_name_5_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_2_1_0()); 
                     		
@@ -1533,22 +1399,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:519:6: (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:520:6: (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:519:6: (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:520:2: otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:520:6: (otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:521:2: otherlv_6= Entity ( (lv_name_7_0= RULE_ID ) )
                     {
-                    otherlv_6=(Token)match(input,Entity,FOLLOW_Entity_in_ruleDefinition1157); 
+                    otherlv_6=(Token)match(input,Entity,FOLLOW_Entity_in_ruleDefinition1168); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getDefinitionAccess().getEntityKeyword_3_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:524:1: ( (lv_name_7_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:525:1: (lv_name_7_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:525:1: ( (lv_name_7_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:526:1: (lv_name_7_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:525:1: (lv_name_7_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:526:3: lv_name_7_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:526:1: (lv_name_7_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:527:3: lv_name_7_0= RULE_ID
                     {
-                    lv_name_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1173); 
+                    lv_name_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1184); 
 
                     			newLeafNode(lv_name_7_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_3_1_0()); 
                     		
@@ -1575,22 +1441,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:543:6: (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:544:6: (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:543:6: (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:544:2: otherlv_8= Database ( (lv_name_9_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:544:6: (otherlv_8= Database ( (lv_name_9_0= RULE_ID ) ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:545:2: otherlv_8= Database ( (lv_name_9_0= RULE_ID ) )
                     {
-                    otherlv_8=(Token)match(input,Database,FOLLOW_Database_in_ruleDefinition1199); 
+                    otherlv_8=(Token)match(input,Database,FOLLOW_Database_in_ruleDefinition1210); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getDefinitionAccess().getDatabaseKeyword_4_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:548:1: ( (lv_name_9_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:549:1: (lv_name_9_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:549:1: ( (lv_name_9_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:550:1: (lv_name_9_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:549:1: (lv_name_9_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:550:3: lv_name_9_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:550:1: (lv_name_9_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:551:3: lv_name_9_0= RULE_ID
                     {
-                    lv_name_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1215); 
+                    lv_name_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1226); 
 
                     			newLeafNode(lv_name_9_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_4_1_0()); 
                     		
@@ -1617,22 +1483,22 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:567:6: (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:568:6: (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:567:6: (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:568:2: otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:568:6: (otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:569:2: otherlv_10= Participant ( (lv_name_11_0= RULE_ID ) ) (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )?
                     {
-                    otherlv_10=(Token)match(input,Participant,FOLLOW_Participant_in_ruleDefinition1241); 
+                    otherlv_10=(Token)match(input,Participant,FOLLOW_Participant_in_ruleDefinition1252); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getDefinitionAccess().getParticipantKeyword_5_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:572:1: ( (lv_name_11_0= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:573:1: (lv_name_11_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:573:1: ( (lv_name_11_0= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:574:1: (lv_name_11_0= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:573:1: (lv_name_11_0= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:574:3: lv_name_11_0= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:574:1: (lv_name_11_0= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:575:3: lv_name_11_0= RULE_ID
                     {
-                    lv_name_11_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1257); 
+                    lv_name_11_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1268); 
 
                     			newLeafNode(lv_name_11_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_5_1_0()); 
                     		
@@ -1652,7 +1518,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:590:2: (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:591:2: (otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1661,46 +1527,105 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:591:2: otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:592:2: otherlv_12= LessThanSignLessThanSign ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID ) otherlv_25= GreaterThanSignGreaterThanSign
                             {
-                            otherlv_12=(Token)match(input,LessThanSignLessThanSign,FOLLOW_LessThanSignLessThanSign_in_ruleDefinition1276); 
+                            otherlv_12=(Token)match(input,LessThanSignLessThanSign,FOLLOW_LessThanSignLessThanSign_in_ruleDefinition1287); 
 
                                 	newLeafNode(otherlv_12, grammarAccess.getDefinitionAccess().getLessThanSignLessThanSignKeyword_5_2_0());
                                 
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:595:1: ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:596:1: ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID )
                             int alt8=3;
-                            alt8 = dfa8.predict(input);
+                            int LA8_0 = input.LA(1);
+
+                            if ( (LA8_0==LeftParenthesis) ) {
+                                int LA8_1 = input.LA(2);
+
+                                if ( (LA8_1==RULE_ID) ) {
+                                    int LA8_3 = input.LA(3);
+
+                                    if ( (LA8_3==Comma) ) {
+                                        int LA8_4 = input.LA(4);
+
+                                        if ( (LA8_4==RULE_COLOR) ) {
+                                            int LA8_5 = input.LA(5);
+
+                                            if ( (LA8_5==RightParenthesis) ) {
+                                                int LA8_6 = input.LA(6);
+
+                                                if ( (LA8_6==GreaterThanSignGreaterThanSign) ) {
+                                                    alt8=1;
+                                                }
+                                                else if ( (LA8_6==RULE_ID) ) {
+                                                    alt8=2;
+                                                }
+                                                else {
+                                                    NoViableAltException nvae =
+                                                        new NoViableAltException("", 8, 6, input);
+
+                                                    throw nvae;
+                                                }
+                                            }
+                                            else {
+                                                NoViableAltException nvae =
+                                                    new NoViableAltException("", 8, 5, input);
+
+                                                throw nvae;
+                                            }
+                                        }
+                                        else {
+                                            NoViableAltException nvae =
+                                                new NoViableAltException("", 8, 4, input);
+
+                                            throw nvae;
+                                        }
+                                    }
+                                    else {
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("", 8, 3, input);
+
+                                        throw nvae;
+                                    }
+                                }
+                                else {
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("", 8, 1, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else if ( (LA8_0==RULE_ID) ) {
+                                alt8=3;
+                            }
+                            else {
+                                NoViableAltException nvae =
+                                    new NoViableAltException("", 8, 0, input);
+
+                                throw nvae;
+                            }
                             switch (alt8) {
                                 case 1 :
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:595:2: (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis )
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:596:2: (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis )
                                     {
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:595:2: (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis )
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:596:2: otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:596:2: (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis )
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:597:2: otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma this_COLOR_16= RULE_COLOR otherlv_17= RightParenthesis
                                     {
-                                    otherlv_13=(Token)match(input,LeftParenthesis,FOLLOW_LeftParenthesis_in_ruleDefinition1290); 
+                                    otherlv_13=(Token)match(input,LeftParenthesis,FOLLOW_LeftParenthesis_in_ruleDefinition1301); 
 
                                         	newLeafNode(otherlv_13, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_0_0());
                                         
-                                    this_ID_14=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1300); 
+                                    this_ID_14=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1311); 
                                      
                                         newLeafNode(this_ID_14, grammarAccess.getDefinitionAccess().getIDTerminalRuleCall_5_2_1_0_1()); 
                                         
-                                    otherlv_15=(Token)match(input,Comma,FOLLOW_Comma_in_ruleDefinition1312); 
+                                    otherlv_15=(Token)match(input,Comma,FOLLOW_Comma_in_ruleDefinition1323); 
 
                                         	newLeafNode(otherlv_15, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_0_2());
                                         
+                                    this_COLOR_16=(Token)match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_ruleDefinition1333); 
                                      
-                                            newCompositeNode(grammarAccess.getDefinitionAccess().getColorParserRuleCall_5_2_1_0_3()); 
+                                        newLeafNode(this_COLOR_16, grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_0_3()); 
                                         
-                                    pushFollow(FOLLOW_ruleColor_in_ruleDefinition1327);
-                                    ruleColor();
-
-                                    state._fsp--;
-
-
-                                            afterParserOrEnumRuleCall();
-                                        
-                                    otherlv_17=(Token)match(input,RightParenthesis,FOLLOW_RightParenthesis_in_ruleDefinition1339); 
+                                    otherlv_17=(Token)match(input,RightParenthesis,FOLLOW_RightParenthesis_in_ruleDefinition1345); 
 
                                         	newLeafNode(otherlv_17, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_0_4());
                                         
@@ -1711,39 +1636,32 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 2 :
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:623:6: (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID )
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:620:6: (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID )
                                     {
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:623:6: (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID )
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:624:2: otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:620:6: (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID )
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:621:2: otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma this_COLOR_21= RULE_COLOR otherlv_22= RightParenthesis this_ID_23= RULE_ID
                                     {
-                                    otherlv_18=(Token)match(input,LeftParenthesis,FOLLOW_LeftParenthesis_in_ruleDefinition1359); 
+                                    otherlv_18=(Token)match(input,LeftParenthesis,FOLLOW_LeftParenthesis_in_ruleDefinition1365); 
 
                                         	newLeafNode(otherlv_18, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_1_0());
                                         
-                                    this_ID_19=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1369); 
+                                    this_ID_19=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1375); 
                                      
                                         newLeafNode(this_ID_19, grammarAccess.getDefinitionAccess().getIDTerminalRuleCall_5_2_1_1_1()); 
                                         
-                                    otherlv_20=(Token)match(input,Comma,FOLLOW_Comma_in_ruleDefinition1381); 
+                                    otherlv_20=(Token)match(input,Comma,FOLLOW_Comma_in_ruleDefinition1387); 
 
                                         	newLeafNode(otherlv_20, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_1_2());
                                         
+                                    this_COLOR_21=(Token)match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_ruleDefinition1397); 
                                      
-                                            newCompositeNode(grammarAccess.getDefinitionAccess().getColorParserRuleCall_5_2_1_1_3()); 
+                                        newLeafNode(this_COLOR_21, grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_1_3()); 
                                         
-                                    pushFollow(FOLLOW_ruleColor_in_ruleDefinition1396);
-                                    ruleColor();
-
-                                    state._fsp--;
-
-
-                                            afterParserOrEnumRuleCall();
-                                        
-                                    otherlv_22=(Token)match(input,RightParenthesis,FOLLOW_RightParenthesis_in_ruleDefinition1408); 
+                                    otherlv_22=(Token)match(input,RightParenthesis,FOLLOW_RightParenthesis_in_ruleDefinition1409); 
 
                                         	newLeafNode(otherlv_22, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_1_4());
                                         
-                                    this_ID_23=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1418); 
+                                    this_ID_23=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1419); 
                                      
                                         newLeafNode(this_ID_23, grammarAccess.getDefinitionAccess().getIDTerminalRuleCall_5_2_1_1_5()); 
                                         
@@ -1754,9 +1672,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 3 :
-                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:655:6: this_ID_24= RULE_ID
+                                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:648:6: this_ID_24= RULE_ID
                                     {
-                                    this_ID_24=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1435); 
+                                    this_ID_24=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDefinition1436); 
                                      
                                         newLeafNode(this_ID_24, grammarAccess.getDefinitionAccess().getIDTerminalRuleCall_5_2_1_2()); 
                                         
@@ -1766,7 +1684,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            otherlv_25=(Token)match(input,GreaterThanSignGreaterThanSign,FOLLOW_GreaterThanSignGreaterThanSign_in_ruleDefinition1448); 
+                            otherlv_25=(Token)match(input,GreaterThanSignGreaterThanSign,FOLLOW_GreaterThanSignGreaterThanSign_in_ruleDefinition1449); 
 
                                 	newLeafNode(otherlv_25, grammarAccess.getDefinitionAccess().getGreaterThanSignGreaterThanSignKeyword_5_2_2());
                                 
@@ -1803,7 +1721,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAutoNumber"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:672:1: entryRuleAutoNumber returns [String current=null] : iv_ruleAutoNumber= ruleAutoNumber EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:665:1: entryRuleAutoNumber returns [String current=null] : iv_ruleAutoNumber= ruleAutoNumber EOF ;
     public final String entryRuleAutoNumber() throws RecognitionException {
         String current = null;
 
@@ -1811,17 +1729,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:673:1: (iv_ruleAutoNumber= ruleAutoNumber EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:674:2: iv_ruleAutoNumber= ruleAutoNumber EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:666:1: (iv_ruleAutoNumber= ruleAutoNumber EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:667:2: iv_ruleAutoNumber= ruleAutoNumber EOF
             {
              newCompositeNode(grammarAccess.getAutoNumberRule()); 
-            pushFollow(FOLLOW_ruleAutoNumber_in_entryRuleAutoNumber1486);
+            pushFollow(FOLLOW_ruleAutoNumber_in_entryRuleAutoNumber1487);
             iv_ruleAutoNumber=ruleAutoNumber();
 
             state._fsp--;
 
              current =iv_ruleAutoNumber.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAutoNumber1497); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAutoNumber1498); 
 
             }
 
@@ -1839,7 +1757,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAutoNumber"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:681:1: ruleAutoNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:674:1: ruleAutoNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? ) ;
     public final AntlrDatatypeRuleToken ruleAutoNumber() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1850,18 +1768,18 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:685:6: ( (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:686:1: (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:678:6: ( (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:679:1: (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:686:1: (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:687:2: kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:679:1: (kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:680:2: kw= Autonumber (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )?
             {
-            kw=(Token)match(input,Autonumber,FOLLOW_Autonumber_in_ruleAutoNumber1535); 
+            kw=(Token)match(input,Autonumber,FOLLOW_Autonumber_in_ruleAutoNumber1536); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getAutoNumberAccess().getAutonumberKeyword_0()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:692:1: (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:685:1: (this_INT_1= RULE_INT (this_INT_2= RULE_INT )? )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1870,16 +1788,16 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:692:6: this_INT_1= RULE_INT (this_INT_2= RULE_INT )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:685:6: this_INT_1= RULE_INT (this_INT_2= RULE_INT )?
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAutoNumber1551); 
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAutoNumber1552); 
 
                     		current.merge(this_INT_1);
                         
                      
                         newLeafNode(this_INT_1, grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_0()); 
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:699:1: (this_INT_2= RULE_INT )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:692:1: (this_INT_2= RULE_INT )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1888,9 +1806,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:699:6: this_INT_2= RULE_INT
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:692:6: this_INT_2= RULE_INT
                             {
-                            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAutoNumber1572); 
+                            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAutoNumber1573); 
 
                             		current.merge(this_INT_2);
                                 
@@ -1930,2420 +1848,8 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAutoNumber"
 
 
-    // $ANTLR start "entryRuleColor"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:714:1: entryRuleColor returns [String current=null] : iv_ruleColor= ruleColor EOF ;
-    public final String entryRuleColor() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleColor = null;
-
-
-        try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:715:1: (iv_ruleColor= ruleColor EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:716:2: iv_ruleColor= ruleColor EOF
-            {
-             newCompositeNode(grammarAccess.getColorRule()); 
-            pushFollow(FOLLOW_ruleColor_in_entryRuleColor1621);
-            iv_ruleColor=ruleColor();
-
-            state._fsp--;
-
-             current =iv_ruleColor.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleColor1632); 
-
-            }
-
-        }
-         
-        	catch (RecognitionException re) { 
-        	    recover(input,re); 
-        	    appendSkippedTokens();
-        	}
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleColor"
-
-
-    // $ANTLR start "ruleColor"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:723:1: ruleColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= NumberSign (kw= AliceBlue | kw= AntiqueWhite | kw= Aqua | kw= Aquamarine | kw= Azure | kw= Beige | kw= Bisque | kw= Black | kw= BlanchedAlmond | kw= Blue | kw= BlueViolet | kw= Brown | kw= BurlyWood | kw= CadetBlue | kw= Chartreuse | kw= Chocolate | kw= Coral | kw= CornflowerBlue | kw= Cornsilk | kw= Crimson | kw= Cyan | kw= DarkBlue | kw= DarkCyan | kw= DarkGoldenRod | kw= DarkGray | kw= DarkGreen | kw= DarkGrey | kw= DarkKhaki | kw= DarkMagenta | kw= DarkOliveGreen | kw= DarkOrchid | kw= DarkRed | kw= DarkSalmo | kw= DarkSeaGreen | kw= DarkSlateBlue | kw= DarkSlateGray | kw= DarkSlateGrey | kw= DarkTurquoise | kw= DarkViolet | kw= Darkorange | kw= DeepPink | kw= DeepSkyBlue | kw= DimGray | kw= DimGrey | kw= DodgerBlue | kw= FireBrick | kw= FloralWhite | kw= ForestGreen | kw= Fuchsia | kw= Gainsboro | kw= GhostWhite | kw= Gold | kw= GoldenRod | kw= Gray | kw= Green | kw= GreenYellow | kw= Grey | kw= HoneyDew | kw= HotPink | kw= IndianRed | kw= Indigo | kw= Ivory | kw= Khaki | kw= Lavender | kw= LavenderBlush | kw= LawnGreen | kw= LemonChiffon | kw= LightBlue | kw= LightCoral | kw= LightCyan | kw= LightGoldenRodYellow | kw= LightGray | kw= LightGreen | kw= LightGrey | kw= LightPink | kw= LightSalmon | kw= LightSeaGreen | kw= LightSkyBlue | kw= LightSlateGray | kw= LightSlateGrey | kw= LightSteelBlue | kw= LightYellow | kw= Lime | kw= LimeGreen | kw= Linen | kw= Magenta | kw= Maroon | kw= MediumAquaMarine | kw= MediumBlue | kw= MediumOrchid | kw= MediumPurple | kw= MediumSeaGreen | kw= MediumSlateBlue | kw= MediumSpringGreen | kw= MediumTurquoise | kw= MediumVioletRed | kw= MidnightBlue | kw= MintCream | kw= MistyRose | kw= Moccasin | kw= NavajoWhite | kw= Navy | kw= OldLace | kw= Olive | kw= OliveDrab | kw= OrangeRed | kw= Orchid | kw= PaleGoldenRod | kw= PaleGreen | kw= PaleTurquoise | kw= PaleVioletRed | kw= PapayaWhip | kw= PeachPuff | kw= Peru | kw= Pink | kw= Plum | kw= PowderBlue | kw= Purple | kw= Red | kw= RosyBrown | kw= RoyalBlue | kw= SaddleBrown | kw= Salmon | kw= SandyBrown | kw= SeaGreen | kw= Sienna | kw= Silver | kw= SkyBlue | kw= SlateBlue | kw= SlateGray | kw= SlateGrey | kw= Snow | kw= SpringGreen | kw= SteelBlue | kw= Tan | kw= Teal | kw= Thistle | kw= Tomato | kw= Turquoise | kw= Violet | kw= Wheat | kw= White | kw= WhiteSmoke | kw= Yellow | kw= YellowGreen ) ) ;
-    public final AntlrDatatypeRuleToken ruleColor() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-         enterRule(); 
-            
-        try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:727:6: ( (kw= NumberSign (kw= AliceBlue | kw= AntiqueWhite | kw= Aqua | kw= Aquamarine | kw= Azure | kw= Beige | kw= Bisque | kw= Black | kw= BlanchedAlmond | kw= Blue | kw= BlueViolet | kw= Brown | kw= BurlyWood | kw= CadetBlue | kw= Chartreuse | kw= Chocolate | kw= Coral | kw= CornflowerBlue | kw= Cornsilk | kw= Crimson | kw= Cyan | kw= DarkBlue | kw= DarkCyan | kw= DarkGoldenRod | kw= DarkGray | kw= DarkGreen | kw= DarkGrey | kw= DarkKhaki | kw= DarkMagenta | kw= DarkOliveGreen | kw= DarkOrchid | kw= DarkRed | kw= DarkSalmo | kw= DarkSeaGreen | kw= DarkSlateBlue | kw= DarkSlateGray | kw= DarkSlateGrey | kw= DarkTurquoise | kw= DarkViolet | kw= Darkorange | kw= DeepPink | kw= DeepSkyBlue | kw= DimGray | kw= DimGrey | kw= DodgerBlue | kw= FireBrick | kw= FloralWhite | kw= ForestGreen | kw= Fuchsia | kw= Gainsboro | kw= GhostWhite | kw= Gold | kw= GoldenRod | kw= Gray | kw= Green | kw= GreenYellow | kw= Grey | kw= HoneyDew | kw= HotPink | kw= IndianRed | kw= Indigo | kw= Ivory | kw= Khaki | kw= Lavender | kw= LavenderBlush | kw= LawnGreen | kw= LemonChiffon | kw= LightBlue | kw= LightCoral | kw= LightCyan | kw= LightGoldenRodYellow | kw= LightGray | kw= LightGreen | kw= LightGrey | kw= LightPink | kw= LightSalmon | kw= LightSeaGreen | kw= LightSkyBlue | kw= LightSlateGray | kw= LightSlateGrey | kw= LightSteelBlue | kw= LightYellow | kw= Lime | kw= LimeGreen | kw= Linen | kw= Magenta | kw= Maroon | kw= MediumAquaMarine | kw= MediumBlue | kw= MediumOrchid | kw= MediumPurple | kw= MediumSeaGreen | kw= MediumSlateBlue | kw= MediumSpringGreen | kw= MediumTurquoise | kw= MediumVioletRed | kw= MidnightBlue | kw= MintCream | kw= MistyRose | kw= Moccasin | kw= NavajoWhite | kw= Navy | kw= OldLace | kw= Olive | kw= OliveDrab | kw= OrangeRed | kw= Orchid | kw= PaleGoldenRod | kw= PaleGreen | kw= PaleTurquoise | kw= PaleVioletRed | kw= PapayaWhip | kw= PeachPuff | kw= Peru | kw= Pink | kw= Plum | kw= PowderBlue | kw= Purple | kw= Red | kw= RosyBrown | kw= RoyalBlue | kw= SaddleBrown | kw= Salmon | kw= SandyBrown | kw= SeaGreen | kw= Sienna | kw= Silver | kw= SkyBlue | kw= SlateBlue | kw= SlateGray | kw= SlateGrey | kw= Snow | kw= SpringGreen | kw= SteelBlue | kw= Tan | kw= Teal | kw= Thistle | kw= Tomato | kw= Turquoise | kw= Violet | kw= Wheat | kw= White | kw= WhiteSmoke | kw= Yellow | kw= YellowGreen ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:728:1: (kw= NumberSign (kw= AliceBlue | kw= AntiqueWhite | kw= Aqua | kw= Aquamarine | kw= Azure | kw= Beige | kw= Bisque | kw= Black | kw= BlanchedAlmond | kw= Blue | kw= BlueViolet | kw= Brown | kw= BurlyWood | kw= CadetBlue | kw= Chartreuse | kw= Chocolate | kw= Coral | kw= CornflowerBlue | kw= Cornsilk | kw= Crimson | kw= Cyan | kw= DarkBlue | kw= DarkCyan | kw= DarkGoldenRod | kw= DarkGray | kw= DarkGreen | kw= DarkGrey | kw= DarkKhaki | kw= DarkMagenta | kw= DarkOliveGreen | kw= DarkOrchid | kw= DarkRed | kw= DarkSalmo | kw= DarkSeaGreen | kw= DarkSlateBlue | kw= DarkSlateGray | kw= DarkSlateGrey | kw= DarkTurquoise | kw= DarkViolet | kw= Darkorange | kw= DeepPink | kw= DeepSkyBlue | kw= DimGray | kw= DimGrey | kw= DodgerBlue | kw= FireBrick | kw= FloralWhite | kw= ForestGreen | kw= Fuchsia | kw= Gainsboro | kw= GhostWhite | kw= Gold | kw= GoldenRod | kw= Gray | kw= Green | kw= GreenYellow | kw= Grey | kw= HoneyDew | kw= HotPink | kw= IndianRed | kw= Indigo | kw= Ivory | kw= Khaki | kw= Lavender | kw= LavenderBlush | kw= LawnGreen | kw= LemonChiffon | kw= LightBlue | kw= LightCoral | kw= LightCyan | kw= LightGoldenRodYellow | kw= LightGray | kw= LightGreen | kw= LightGrey | kw= LightPink | kw= LightSalmon | kw= LightSeaGreen | kw= LightSkyBlue | kw= LightSlateGray | kw= LightSlateGrey | kw= LightSteelBlue | kw= LightYellow | kw= Lime | kw= LimeGreen | kw= Linen | kw= Magenta | kw= Maroon | kw= MediumAquaMarine | kw= MediumBlue | kw= MediumOrchid | kw= MediumPurple | kw= MediumSeaGreen | kw= MediumSlateBlue | kw= MediumSpringGreen | kw= MediumTurquoise | kw= MediumVioletRed | kw= MidnightBlue | kw= MintCream | kw= MistyRose | kw= Moccasin | kw= NavajoWhite | kw= Navy | kw= OldLace | kw= Olive | kw= OliveDrab | kw= OrangeRed | kw= Orchid | kw= PaleGoldenRod | kw= PaleGreen | kw= PaleTurquoise | kw= PaleVioletRed | kw= PapayaWhip | kw= PeachPuff | kw= Peru | kw= Pink | kw= Plum | kw= PowderBlue | kw= Purple | kw= Red | kw= RosyBrown | kw= RoyalBlue | kw= SaddleBrown | kw= Salmon | kw= SandyBrown | kw= SeaGreen | kw= Sienna | kw= Silver | kw= SkyBlue | kw= SlateBlue | kw= SlateGray | kw= SlateGrey | kw= Snow | kw= SpringGreen | kw= SteelBlue | kw= Tan | kw= Teal | kw= Thistle | kw= Tomato | kw= Turquoise | kw= Violet | kw= Wheat | kw= White | kw= WhiteSmoke | kw= Yellow | kw= YellowGreen ) )
-            {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:728:1: (kw= NumberSign (kw= AliceBlue | kw= AntiqueWhite | kw= Aqua | kw= Aquamarine | kw= Azure | kw= Beige | kw= Bisque | kw= Black | kw= BlanchedAlmond | kw= Blue | kw= BlueViolet | kw= Brown | kw= BurlyWood | kw= CadetBlue | kw= Chartreuse | kw= Chocolate | kw= Coral | kw= CornflowerBlue | kw= Cornsilk | kw= Crimson | kw= Cyan | kw= DarkBlue | kw= DarkCyan | kw= DarkGoldenRod | kw= DarkGray | kw= DarkGreen | kw= DarkGrey | kw= DarkKhaki | kw= DarkMagenta | kw= DarkOliveGreen | kw= DarkOrchid | kw= DarkRed | kw= DarkSalmo | kw= DarkSeaGreen | kw= DarkSlateBlue | kw= DarkSlateGray | kw= DarkSlateGrey | kw= DarkTurquoise | kw= DarkViolet | kw= Darkorange | kw= DeepPink | kw= DeepSkyBlue | kw= DimGray | kw= DimGrey | kw= DodgerBlue | kw= FireBrick | kw= FloralWhite | kw= ForestGreen | kw= Fuchsia | kw= Gainsboro | kw= GhostWhite | kw= Gold | kw= GoldenRod | kw= Gray | kw= Green | kw= GreenYellow | kw= Grey | kw= HoneyDew | kw= HotPink | kw= IndianRed | kw= Indigo | kw= Ivory | kw= Khaki | kw= Lavender | kw= LavenderBlush | kw= LawnGreen | kw= LemonChiffon | kw= LightBlue | kw= LightCoral | kw= LightCyan | kw= LightGoldenRodYellow | kw= LightGray | kw= LightGreen | kw= LightGrey | kw= LightPink | kw= LightSalmon | kw= LightSeaGreen | kw= LightSkyBlue | kw= LightSlateGray | kw= LightSlateGrey | kw= LightSteelBlue | kw= LightYellow | kw= Lime | kw= LimeGreen | kw= Linen | kw= Magenta | kw= Maroon | kw= MediumAquaMarine | kw= MediumBlue | kw= MediumOrchid | kw= MediumPurple | kw= MediumSeaGreen | kw= MediumSlateBlue | kw= MediumSpringGreen | kw= MediumTurquoise | kw= MediumVioletRed | kw= MidnightBlue | kw= MintCream | kw= MistyRose | kw= Moccasin | kw= NavajoWhite | kw= Navy | kw= OldLace | kw= Olive | kw= OliveDrab | kw= OrangeRed | kw= Orchid | kw= PaleGoldenRod | kw= PaleGreen | kw= PaleTurquoise | kw= PaleVioletRed | kw= PapayaWhip | kw= PeachPuff | kw= Peru | kw= Pink | kw= Plum | kw= PowderBlue | kw= Purple | kw= Red | kw= RosyBrown | kw= RoyalBlue | kw= SaddleBrown | kw= Salmon | kw= SandyBrown | kw= SeaGreen | kw= Sienna | kw= Silver | kw= SkyBlue | kw= SlateBlue | kw= SlateGray | kw= SlateGrey | kw= Snow | kw= SpringGreen | kw= SteelBlue | kw= Tan | kw= Teal | kw= Thistle | kw= Tomato | kw= Turquoise | kw= Violet | kw= Wheat | kw= White | kw= WhiteSmoke | kw= Yellow | kw= YellowGreen ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:729:2: kw= NumberSign (kw= AliceBlue | kw= AntiqueWhite | kw= Aqua | kw= Aquamarine | kw= Azure | kw= Beige | kw= Bisque | kw= Black | kw= BlanchedAlmond | kw= Blue | kw= BlueViolet | kw= Brown | kw= BurlyWood | kw= CadetBlue | kw= Chartreuse | kw= Chocolate | kw= Coral | kw= CornflowerBlue | kw= Cornsilk | kw= Crimson | kw= Cyan | kw= DarkBlue | kw= DarkCyan | kw= DarkGoldenRod | kw= DarkGray | kw= DarkGreen | kw= DarkGrey | kw= DarkKhaki | kw= DarkMagenta | kw= DarkOliveGreen | kw= DarkOrchid | kw= DarkRed | kw= DarkSalmo | kw= DarkSeaGreen | kw= DarkSlateBlue | kw= DarkSlateGray | kw= DarkSlateGrey | kw= DarkTurquoise | kw= DarkViolet | kw= Darkorange | kw= DeepPink | kw= DeepSkyBlue | kw= DimGray | kw= DimGrey | kw= DodgerBlue | kw= FireBrick | kw= FloralWhite | kw= ForestGreen | kw= Fuchsia | kw= Gainsboro | kw= GhostWhite | kw= Gold | kw= GoldenRod | kw= Gray | kw= Green | kw= GreenYellow | kw= Grey | kw= HoneyDew | kw= HotPink | kw= IndianRed | kw= Indigo | kw= Ivory | kw= Khaki | kw= Lavender | kw= LavenderBlush | kw= LawnGreen | kw= LemonChiffon | kw= LightBlue | kw= LightCoral | kw= LightCyan | kw= LightGoldenRodYellow | kw= LightGray | kw= LightGreen | kw= LightGrey | kw= LightPink | kw= LightSalmon | kw= LightSeaGreen | kw= LightSkyBlue | kw= LightSlateGray | kw= LightSlateGrey | kw= LightSteelBlue | kw= LightYellow | kw= Lime | kw= LimeGreen | kw= Linen | kw= Magenta | kw= Maroon | kw= MediumAquaMarine | kw= MediumBlue | kw= MediumOrchid | kw= MediumPurple | kw= MediumSeaGreen | kw= MediumSlateBlue | kw= MediumSpringGreen | kw= MediumTurquoise | kw= MediumVioletRed | kw= MidnightBlue | kw= MintCream | kw= MistyRose | kw= Moccasin | kw= NavajoWhite | kw= Navy | kw= OldLace | kw= Olive | kw= OliveDrab | kw= OrangeRed | kw= Orchid | kw= PaleGoldenRod | kw= PaleGreen | kw= PaleTurquoise | kw= PaleVioletRed | kw= PapayaWhip | kw= PeachPuff | kw= Peru | kw= Pink | kw= Plum | kw= PowderBlue | kw= Purple | kw= Red | kw= RosyBrown | kw= RoyalBlue | kw= SaddleBrown | kw= Salmon | kw= SandyBrown | kw= SeaGreen | kw= Sienna | kw= Silver | kw= SkyBlue | kw= SlateBlue | kw= SlateGray | kw= SlateGrey | kw= Snow | kw= SpringGreen | kw= SteelBlue | kw= Tan | kw= Teal | kw= Thistle | kw= Tomato | kw= Turquoise | kw= Violet | kw= Wheat | kw= White | kw= WhiteSmoke | kw= Yellow | kw= YellowGreen )
-            {
-            kw=(Token)match(input,NumberSign,FOLLOW_NumberSign_in_ruleColor1670); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getColorAccess().getNumberSignKeyword_0()); 
-                
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:734:1: (kw= AliceBlue | kw= AntiqueWhite | kw= Aqua | kw= Aquamarine | kw= Azure | kw= Beige | kw= Bisque | kw= Black | kw= BlanchedAlmond | kw= Blue | kw= BlueViolet | kw= Brown | kw= BurlyWood | kw= CadetBlue | kw= Chartreuse | kw= Chocolate | kw= Coral | kw= CornflowerBlue | kw= Cornsilk | kw= Crimson | kw= Cyan | kw= DarkBlue | kw= DarkCyan | kw= DarkGoldenRod | kw= DarkGray | kw= DarkGreen | kw= DarkGrey | kw= DarkKhaki | kw= DarkMagenta | kw= DarkOliveGreen | kw= DarkOrchid | kw= DarkRed | kw= DarkSalmo | kw= DarkSeaGreen | kw= DarkSlateBlue | kw= DarkSlateGray | kw= DarkSlateGrey | kw= DarkTurquoise | kw= DarkViolet | kw= Darkorange | kw= DeepPink | kw= DeepSkyBlue | kw= DimGray | kw= DimGrey | kw= DodgerBlue | kw= FireBrick | kw= FloralWhite | kw= ForestGreen | kw= Fuchsia | kw= Gainsboro | kw= GhostWhite | kw= Gold | kw= GoldenRod | kw= Gray | kw= Green | kw= GreenYellow | kw= Grey | kw= HoneyDew | kw= HotPink | kw= IndianRed | kw= Indigo | kw= Ivory | kw= Khaki | kw= Lavender | kw= LavenderBlush | kw= LawnGreen | kw= LemonChiffon | kw= LightBlue | kw= LightCoral | kw= LightCyan | kw= LightGoldenRodYellow | kw= LightGray | kw= LightGreen | kw= LightGrey | kw= LightPink | kw= LightSalmon | kw= LightSeaGreen | kw= LightSkyBlue | kw= LightSlateGray | kw= LightSlateGrey | kw= LightSteelBlue | kw= LightYellow | kw= Lime | kw= LimeGreen | kw= Linen | kw= Magenta | kw= Maroon | kw= MediumAquaMarine | kw= MediumBlue | kw= MediumOrchid | kw= MediumPurple | kw= MediumSeaGreen | kw= MediumSlateBlue | kw= MediumSpringGreen | kw= MediumTurquoise | kw= MediumVioletRed | kw= MidnightBlue | kw= MintCream | kw= MistyRose | kw= Moccasin | kw= NavajoWhite | kw= Navy | kw= OldLace | kw= Olive | kw= OliveDrab | kw= OrangeRed | kw= Orchid | kw= PaleGoldenRod | kw= PaleGreen | kw= PaleTurquoise | kw= PaleVioletRed | kw= PapayaWhip | kw= PeachPuff | kw= Peru | kw= Pink | kw= Plum | kw= PowderBlue | kw= Purple | kw= Red | kw= RosyBrown | kw= RoyalBlue | kw= SaddleBrown | kw= Salmon | kw= SandyBrown | kw= SeaGreen | kw= Sienna | kw= Silver | kw= SkyBlue | kw= SlateBlue | kw= SlateGray | kw= SlateGrey | kw= Snow | kw= SpringGreen | kw= SteelBlue | kw= Tan | kw= Teal | kw= Thistle | kw= Tomato | kw= Turquoise | kw= Violet | kw= Wheat | kw= White | kw= WhiteSmoke | kw= Yellow | kw= YellowGreen )
-            int alt13=145;
-            switch ( input.LA(1) ) {
-            case AliceBlue:
-                {
-                alt13=1;
-                }
-                break;
-            case AntiqueWhite:
-                {
-                alt13=2;
-                }
-                break;
-            case Aqua:
-                {
-                alt13=3;
-                }
-                break;
-            case Aquamarine:
-                {
-                alt13=4;
-                }
-                break;
-            case Azure:
-                {
-                alt13=5;
-                }
-                break;
-            case Beige:
-                {
-                alt13=6;
-                }
-                break;
-            case Bisque:
-                {
-                alt13=7;
-                }
-                break;
-            case Black:
-                {
-                alt13=8;
-                }
-                break;
-            case BlanchedAlmond:
-                {
-                alt13=9;
-                }
-                break;
-            case Blue:
-                {
-                alt13=10;
-                }
-                break;
-            case BlueViolet:
-                {
-                alt13=11;
-                }
-                break;
-            case Brown:
-                {
-                alt13=12;
-                }
-                break;
-            case BurlyWood:
-                {
-                alt13=13;
-                }
-                break;
-            case CadetBlue:
-                {
-                alt13=14;
-                }
-                break;
-            case Chartreuse:
-                {
-                alt13=15;
-                }
-                break;
-            case Chocolate:
-                {
-                alt13=16;
-                }
-                break;
-            case Coral:
-                {
-                alt13=17;
-                }
-                break;
-            case CornflowerBlue:
-                {
-                alt13=18;
-                }
-                break;
-            case Cornsilk:
-                {
-                alt13=19;
-                }
-                break;
-            case Crimson:
-                {
-                alt13=20;
-                }
-                break;
-            case Cyan:
-                {
-                alt13=21;
-                }
-                break;
-            case DarkBlue:
-                {
-                alt13=22;
-                }
-                break;
-            case DarkCyan:
-                {
-                alt13=23;
-                }
-                break;
-            case DarkGoldenRod:
-                {
-                alt13=24;
-                }
-                break;
-            case DarkGray:
-                {
-                alt13=25;
-                }
-                break;
-            case DarkGreen:
-                {
-                alt13=26;
-                }
-                break;
-            case DarkGrey:
-                {
-                alt13=27;
-                }
-                break;
-            case DarkKhaki:
-                {
-                alt13=28;
-                }
-                break;
-            case DarkMagenta:
-                {
-                alt13=29;
-                }
-                break;
-            case DarkOliveGreen:
-                {
-                alt13=30;
-                }
-                break;
-            case DarkOrchid:
-                {
-                alt13=31;
-                }
-                break;
-            case DarkRed:
-                {
-                alt13=32;
-                }
-                break;
-            case DarkSalmo:
-                {
-                alt13=33;
-                }
-                break;
-            case DarkSeaGreen:
-                {
-                alt13=34;
-                }
-                break;
-            case DarkSlateBlue:
-                {
-                alt13=35;
-                }
-                break;
-            case DarkSlateGray:
-                {
-                alt13=36;
-                }
-                break;
-            case DarkSlateGrey:
-                {
-                alt13=37;
-                }
-                break;
-            case DarkTurquoise:
-                {
-                alt13=38;
-                }
-                break;
-            case DarkViolet:
-                {
-                alt13=39;
-                }
-                break;
-            case Darkorange:
-                {
-                alt13=40;
-                }
-                break;
-            case DeepPink:
-                {
-                alt13=41;
-                }
-                break;
-            case DeepSkyBlue:
-                {
-                alt13=42;
-                }
-                break;
-            case DimGray:
-                {
-                alt13=43;
-                }
-                break;
-            case DimGrey:
-                {
-                alt13=44;
-                }
-                break;
-            case DodgerBlue:
-                {
-                alt13=45;
-                }
-                break;
-            case FireBrick:
-                {
-                alt13=46;
-                }
-                break;
-            case FloralWhite:
-                {
-                alt13=47;
-                }
-                break;
-            case ForestGreen:
-                {
-                alt13=48;
-                }
-                break;
-            case Fuchsia:
-                {
-                alt13=49;
-                }
-                break;
-            case Gainsboro:
-                {
-                alt13=50;
-                }
-                break;
-            case GhostWhite:
-                {
-                alt13=51;
-                }
-                break;
-            case Gold:
-                {
-                alt13=52;
-                }
-                break;
-            case GoldenRod:
-                {
-                alt13=53;
-                }
-                break;
-            case Gray:
-                {
-                alt13=54;
-                }
-                break;
-            case Green:
-                {
-                alt13=55;
-                }
-                break;
-            case GreenYellow:
-                {
-                alt13=56;
-                }
-                break;
-            case Grey:
-                {
-                alt13=57;
-                }
-                break;
-            case HoneyDew:
-                {
-                alt13=58;
-                }
-                break;
-            case HotPink:
-                {
-                alt13=59;
-                }
-                break;
-            case IndianRed:
-                {
-                alt13=60;
-                }
-                break;
-            case Indigo:
-                {
-                alt13=61;
-                }
-                break;
-            case Ivory:
-                {
-                alt13=62;
-                }
-                break;
-            case Khaki:
-                {
-                alt13=63;
-                }
-                break;
-            case Lavender:
-                {
-                alt13=64;
-                }
-                break;
-            case LavenderBlush:
-                {
-                alt13=65;
-                }
-                break;
-            case LawnGreen:
-                {
-                alt13=66;
-                }
-                break;
-            case LemonChiffon:
-                {
-                alt13=67;
-                }
-                break;
-            case LightBlue:
-                {
-                alt13=68;
-                }
-                break;
-            case LightCoral:
-                {
-                alt13=69;
-                }
-                break;
-            case LightCyan:
-                {
-                alt13=70;
-                }
-                break;
-            case LightGoldenRodYellow:
-                {
-                alt13=71;
-                }
-                break;
-            case LightGray:
-                {
-                alt13=72;
-                }
-                break;
-            case LightGreen:
-                {
-                alt13=73;
-                }
-                break;
-            case LightGrey:
-                {
-                alt13=74;
-                }
-                break;
-            case LightPink:
-                {
-                alt13=75;
-                }
-                break;
-            case LightSalmon:
-                {
-                alt13=76;
-                }
-                break;
-            case LightSeaGreen:
-                {
-                alt13=77;
-                }
-                break;
-            case LightSkyBlue:
-                {
-                alt13=78;
-                }
-                break;
-            case LightSlateGray:
-                {
-                alt13=79;
-                }
-                break;
-            case LightSlateGrey:
-                {
-                alt13=80;
-                }
-                break;
-            case LightSteelBlue:
-                {
-                alt13=81;
-                }
-                break;
-            case LightYellow:
-                {
-                alt13=82;
-                }
-                break;
-            case Lime:
-                {
-                alt13=83;
-                }
-                break;
-            case LimeGreen:
-                {
-                alt13=84;
-                }
-                break;
-            case Linen:
-                {
-                alt13=85;
-                }
-                break;
-            case Magenta:
-                {
-                alt13=86;
-                }
-                break;
-            case Maroon:
-                {
-                alt13=87;
-                }
-                break;
-            case MediumAquaMarine:
-                {
-                alt13=88;
-                }
-                break;
-            case MediumBlue:
-                {
-                alt13=89;
-                }
-                break;
-            case MediumOrchid:
-                {
-                alt13=90;
-                }
-                break;
-            case MediumPurple:
-                {
-                alt13=91;
-                }
-                break;
-            case MediumSeaGreen:
-                {
-                alt13=92;
-                }
-                break;
-            case MediumSlateBlue:
-                {
-                alt13=93;
-                }
-                break;
-            case MediumSpringGreen:
-                {
-                alt13=94;
-                }
-                break;
-            case MediumTurquoise:
-                {
-                alt13=95;
-                }
-                break;
-            case MediumVioletRed:
-                {
-                alt13=96;
-                }
-                break;
-            case MidnightBlue:
-                {
-                alt13=97;
-                }
-                break;
-            case MintCream:
-                {
-                alt13=98;
-                }
-                break;
-            case MistyRose:
-                {
-                alt13=99;
-                }
-                break;
-            case Moccasin:
-                {
-                alt13=100;
-                }
-                break;
-            case NavajoWhite:
-                {
-                alt13=101;
-                }
-                break;
-            case Navy:
-                {
-                alt13=102;
-                }
-                break;
-            case OldLace:
-                {
-                alt13=103;
-                }
-                break;
-            case Olive:
-                {
-                alt13=104;
-                }
-                break;
-            case OliveDrab:
-                {
-                alt13=105;
-                }
-                break;
-            case OrangeRed:
-                {
-                alt13=106;
-                }
-                break;
-            case Orchid:
-                {
-                alt13=107;
-                }
-                break;
-            case PaleGoldenRod:
-                {
-                alt13=108;
-                }
-                break;
-            case PaleGreen:
-                {
-                alt13=109;
-                }
-                break;
-            case PaleTurquoise:
-                {
-                alt13=110;
-                }
-                break;
-            case PaleVioletRed:
-                {
-                alt13=111;
-                }
-                break;
-            case PapayaWhip:
-                {
-                alt13=112;
-                }
-                break;
-            case PeachPuff:
-                {
-                alt13=113;
-                }
-                break;
-            case Peru:
-                {
-                alt13=114;
-                }
-                break;
-            case Pink:
-                {
-                alt13=115;
-                }
-                break;
-            case Plum:
-                {
-                alt13=116;
-                }
-                break;
-            case PowderBlue:
-                {
-                alt13=117;
-                }
-                break;
-            case Purple:
-                {
-                alt13=118;
-                }
-                break;
-            case Red:
-                {
-                alt13=119;
-                }
-                break;
-            case RosyBrown:
-                {
-                alt13=120;
-                }
-                break;
-            case RoyalBlue:
-                {
-                alt13=121;
-                }
-                break;
-            case SaddleBrown:
-                {
-                alt13=122;
-                }
-                break;
-            case Salmon:
-                {
-                alt13=123;
-                }
-                break;
-            case SandyBrown:
-                {
-                alt13=124;
-                }
-                break;
-            case SeaGreen:
-                {
-                alt13=125;
-                }
-                break;
-            case Sienna:
-                {
-                alt13=126;
-                }
-                break;
-            case Silver:
-                {
-                alt13=127;
-                }
-                break;
-            case SkyBlue:
-                {
-                alt13=128;
-                }
-                break;
-            case SlateBlue:
-                {
-                alt13=129;
-                }
-                break;
-            case SlateGray:
-                {
-                alt13=130;
-                }
-                break;
-            case SlateGrey:
-                {
-                alt13=131;
-                }
-                break;
-            case Snow:
-                {
-                alt13=132;
-                }
-                break;
-            case SpringGreen:
-                {
-                alt13=133;
-                }
-                break;
-            case SteelBlue:
-                {
-                alt13=134;
-                }
-                break;
-            case Tan:
-                {
-                alt13=135;
-                }
-                break;
-            case Teal:
-                {
-                alt13=136;
-                }
-                break;
-            case Thistle:
-                {
-                alt13=137;
-                }
-                break;
-            case Tomato:
-                {
-                alt13=138;
-                }
-                break;
-            case Turquoise:
-                {
-                alt13=139;
-                }
-                break;
-            case Violet:
-                {
-                alt13=140;
-                }
-                break;
-            case Wheat:
-                {
-                alt13=141;
-                }
-                break;
-            case White:
-                {
-                alt13=142;
-                }
-                break;
-            case WhiteSmoke:
-                {
-                alt13=143;
-                }
-                break;
-            case Yellow:
-                {
-                alt13=144;
-                }
-                break;
-            case YellowGreen:
-                {
-                alt13=145;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt13) {
-                case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:735:2: kw= AliceBlue
-                    {
-                    kw=(Token)match(input,AliceBlue,FOLLOW_AliceBlue_in_ruleColor1684); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getAliceBlueKeyword_1_0()); 
-                        
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:742:2: kw= AntiqueWhite
-                    {
-                    kw=(Token)match(input,AntiqueWhite,FOLLOW_AntiqueWhite_in_ruleColor1703); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1_1()); 
-                        
-
-                    }
-                    break;
-                case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:749:2: kw= Aqua
-                    {
-                    kw=(Token)match(input,Aqua,FOLLOW_Aqua_in_ruleColor1722); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getAquaKeyword_1_2()); 
-                        
-
-                    }
-                    break;
-                case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:756:2: kw= Aquamarine
-                    {
-                    kw=(Token)match(input,Aquamarine,FOLLOW_Aquamarine_in_ruleColor1741); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getAquamarineKeyword_1_3()); 
-                        
-
-                    }
-                    break;
-                case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:763:2: kw= Azure
-                    {
-                    kw=(Token)match(input,Azure,FOLLOW_Azure_in_ruleColor1760); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getAzureKeyword_1_4()); 
-                        
-
-                    }
-                    break;
-                case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:770:2: kw= Beige
-                    {
-                    kw=(Token)match(input,Beige,FOLLOW_Beige_in_ruleColor1779); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBeigeKeyword_1_5()); 
-                        
-
-                    }
-                    break;
-                case 7 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:777:2: kw= Bisque
-                    {
-                    kw=(Token)match(input,Bisque,FOLLOW_Bisque_in_ruleColor1798); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBisqueKeyword_1_6()); 
-                        
-
-                    }
-                    break;
-                case 8 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:784:2: kw= Black
-                    {
-                    kw=(Token)match(input,Black,FOLLOW_Black_in_ruleColor1817); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBlackKeyword_1_7()); 
-                        
-
-                    }
-                    break;
-                case 9 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:791:2: kw= BlanchedAlmond
-                    {
-                    kw=(Token)match(input,BlanchedAlmond,FOLLOW_BlanchedAlmond_in_ruleColor1836); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBlanchedAlmondKeyword_1_8()); 
-                        
-
-                    }
-                    break;
-                case 10 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:798:2: kw= Blue
-                    {
-                    kw=(Token)match(input,Blue,FOLLOW_Blue_in_ruleColor1855); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBlueKeyword_1_9()); 
-                        
-
-                    }
-                    break;
-                case 11 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:805:2: kw= BlueViolet
-                    {
-                    kw=(Token)match(input,BlueViolet,FOLLOW_BlueViolet_in_ruleColor1874); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBlueVioletKeyword_1_10()); 
-                        
-
-                    }
-                    break;
-                case 12 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:812:2: kw= Brown
-                    {
-                    kw=(Token)match(input,Brown,FOLLOW_Brown_in_ruleColor1893); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBrownKeyword_1_11()); 
-                        
-
-                    }
-                    break;
-                case 13 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:819:2: kw= BurlyWood
-                    {
-                    kw=(Token)match(input,BurlyWood,FOLLOW_BurlyWood_in_ruleColor1912); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getBurlyWoodKeyword_1_12()); 
-                        
-
-                    }
-                    break;
-                case 14 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:826:2: kw= CadetBlue
-                    {
-                    kw=(Token)match(input,CadetBlue,FOLLOW_CadetBlue_in_ruleColor1931); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getCadetBlueKeyword_1_13()); 
-                        
-
-                    }
-                    break;
-                case 15 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:833:2: kw= Chartreuse
-                    {
-                    kw=(Token)match(input,Chartreuse,FOLLOW_Chartreuse_in_ruleColor1950); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getChartreuseKeyword_1_14()); 
-                        
-
-                    }
-                    break;
-                case 16 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:840:2: kw= Chocolate
-                    {
-                    kw=(Token)match(input,Chocolate,FOLLOW_Chocolate_in_ruleColor1969); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getChocolateKeyword_1_15()); 
-                        
-
-                    }
-                    break;
-                case 17 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:847:2: kw= Coral
-                    {
-                    kw=(Token)match(input,Coral,FOLLOW_Coral_in_ruleColor1988); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getCoralKeyword_1_16()); 
-                        
-
-                    }
-                    break;
-                case 18 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:854:2: kw= CornflowerBlue
-                    {
-                    kw=(Token)match(input,CornflowerBlue,FOLLOW_CornflowerBlue_in_ruleColor2007); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getCornflowerBlueKeyword_1_17()); 
-                        
-
-                    }
-                    break;
-                case 19 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:861:2: kw= Cornsilk
-                    {
-                    kw=(Token)match(input,Cornsilk,FOLLOW_Cornsilk_in_ruleColor2026); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getCornsilkKeyword_1_18()); 
-                        
-
-                    }
-                    break;
-                case 20 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:868:2: kw= Crimson
-                    {
-                    kw=(Token)match(input,Crimson,FOLLOW_Crimson_in_ruleColor2045); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getCrimsonKeyword_1_19()); 
-                        
-
-                    }
-                    break;
-                case 21 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:875:2: kw= Cyan
-                    {
-                    kw=(Token)match(input,Cyan,FOLLOW_Cyan_in_ruleColor2064); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getCyanKeyword_1_20()); 
-                        
-
-                    }
-                    break;
-                case 22 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:882:2: kw= DarkBlue
-                    {
-                    kw=(Token)match(input,DarkBlue,FOLLOW_DarkBlue_in_ruleColor2083); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkBlueKeyword_1_21()); 
-                        
-
-                    }
-                    break;
-                case 23 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:889:2: kw= DarkCyan
-                    {
-                    kw=(Token)match(input,DarkCyan,FOLLOW_DarkCyan_in_ruleColor2102); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkCyanKeyword_1_22()); 
-                        
-
-                    }
-                    break;
-                case 24 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:896:2: kw= DarkGoldenRod
-                    {
-                    kw=(Token)match(input,DarkGoldenRod,FOLLOW_DarkGoldenRod_in_ruleColor2121); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkGoldenRodKeyword_1_23()); 
-                        
-
-                    }
-                    break;
-                case 25 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:903:2: kw= DarkGray
-                    {
-                    kw=(Token)match(input,DarkGray,FOLLOW_DarkGray_in_ruleColor2140); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkGrayKeyword_1_24()); 
-                        
-
-                    }
-                    break;
-                case 26 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:910:2: kw= DarkGreen
-                    {
-                    kw=(Token)match(input,DarkGreen,FOLLOW_DarkGreen_in_ruleColor2159); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkGreenKeyword_1_25()); 
-                        
-
-                    }
-                    break;
-                case 27 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:917:2: kw= DarkGrey
-                    {
-                    kw=(Token)match(input,DarkGrey,FOLLOW_DarkGrey_in_ruleColor2178); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkGreyKeyword_1_26()); 
-                        
-
-                    }
-                    break;
-                case 28 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:924:2: kw= DarkKhaki
-                    {
-                    kw=(Token)match(input,DarkKhaki,FOLLOW_DarkKhaki_in_ruleColor2197); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkKhakiKeyword_1_27()); 
-                        
-
-                    }
-                    break;
-                case 29 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:931:2: kw= DarkMagenta
-                    {
-                    kw=(Token)match(input,DarkMagenta,FOLLOW_DarkMagenta_in_ruleColor2216); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkMagentaKeyword_1_28()); 
-                        
-
-                    }
-                    break;
-                case 30 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:938:2: kw= DarkOliveGreen
-                    {
-                    kw=(Token)match(input,DarkOliveGreen,FOLLOW_DarkOliveGreen_in_ruleColor2235); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkOliveGreenKeyword_1_29()); 
-                        
-
-                    }
-                    break;
-                case 31 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:945:2: kw= DarkOrchid
-                    {
-                    kw=(Token)match(input,DarkOrchid,FOLLOW_DarkOrchid_in_ruleColor2254); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkOrchidKeyword_1_30()); 
-                        
-
-                    }
-                    break;
-                case 32 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:952:2: kw= DarkRed
-                    {
-                    kw=(Token)match(input,DarkRed,FOLLOW_DarkRed_in_ruleColor2273); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkRedKeyword_1_31()); 
-                        
-
-                    }
-                    break;
-                case 33 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:959:2: kw= DarkSalmo
-                    {
-                    kw=(Token)match(input,DarkSalmo,FOLLOW_DarkSalmo_in_ruleColor2292); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkSalmoKeyword_1_32()); 
-                        
-
-                    }
-                    break;
-                case 34 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:966:2: kw= DarkSeaGreen
-                    {
-                    kw=(Token)match(input,DarkSeaGreen,FOLLOW_DarkSeaGreen_in_ruleColor2311); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkSeaGreenKeyword_1_33()); 
-                        
-
-                    }
-                    break;
-                case 35 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:973:2: kw= DarkSlateBlue
-                    {
-                    kw=(Token)match(input,DarkSlateBlue,FOLLOW_DarkSlateBlue_in_ruleColor2330); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateBlueKeyword_1_34()); 
-                        
-
-                    }
-                    break;
-                case 36 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:980:2: kw= DarkSlateGray
-                    {
-                    kw=(Token)match(input,DarkSlateGray,FOLLOW_DarkSlateGray_in_ruleColor2349); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateGrayKeyword_1_35()); 
-                        
-
-                    }
-                    break;
-                case 37 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:987:2: kw= DarkSlateGrey
-                    {
-                    kw=(Token)match(input,DarkSlateGrey,FOLLOW_DarkSlateGrey_in_ruleColor2368); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateGreyKeyword_1_36()); 
-                        
-
-                    }
-                    break;
-                case 38 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:994:2: kw= DarkTurquoise
-                    {
-                    kw=(Token)match(input,DarkTurquoise,FOLLOW_DarkTurquoise_in_ruleColor2387); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkTurquoiseKeyword_1_37()); 
-                        
-
-                    }
-                    break;
-                case 39 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1001:2: kw= DarkViolet
-                    {
-                    kw=(Token)match(input,DarkViolet,FOLLOW_DarkViolet_in_ruleColor2406); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkVioletKeyword_1_38()); 
-                        
-
-                    }
-                    break;
-                case 40 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1008:2: kw= Darkorange
-                    {
-                    kw=(Token)match(input,Darkorange,FOLLOW_Darkorange_in_ruleColor2425); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDarkorangeKeyword_1_39()); 
-                        
-
-                    }
-                    break;
-                case 41 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1015:2: kw= DeepPink
-                    {
-                    kw=(Token)match(input,DeepPink,FOLLOW_DeepPink_in_ruleColor2444); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDeepPinkKeyword_1_40()); 
-                        
-
-                    }
-                    break;
-                case 42 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1022:2: kw= DeepSkyBlue
-                    {
-                    kw=(Token)match(input,DeepSkyBlue,FOLLOW_DeepSkyBlue_in_ruleColor2463); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDeepSkyBlueKeyword_1_41()); 
-                        
-
-                    }
-                    break;
-                case 43 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1029:2: kw= DimGray
-                    {
-                    kw=(Token)match(input,DimGray,FOLLOW_DimGray_in_ruleColor2482); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDimGrayKeyword_1_42()); 
-                        
-
-                    }
-                    break;
-                case 44 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1036:2: kw= DimGrey
-                    {
-                    kw=(Token)match(input,DimGrey,FOLLOW_DimGrey_in_ruleColor2501); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDimGreyKeyword_1_43()); 
-                        
-
-                    }
-                    break;
-                case 45 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1043:2: kw= DodgerBlue
-                    {
-                    kw=(Token)match(input,DodgerBlue,FOLLOW_DodgerBlue_in_ruleColor2520); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getDodgerBlueKeyword_1_44()); 
-                        
-
-                    }
-                    break;
-                case 46 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1050:2: kw= FireBrick
-                    {
-                    kw=(Token)match(input,FireBrick,FOLLOW_FireBrick_in_ruleColor2539); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getFireBrickKeyword_1_45()); 
-                        
-
-                    }
-                    break;
-                case 47 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1057:2: kw= FloralWhite
-                    {
-                    kw=(Token)match(input,FloralWhite,FOLLOW_FloralWhite_in_ruleColor2558); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getFloralWhiteKeyword_1_46()); 
-                        
-
-                    }
-                    break;
-                case 48 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1064:2: kw= ForestGreen
-                    {
-                    kw=(Token)match(input,ForestGreen,FOLLOW_ForestGreen_in_ruleColor2577); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getForestGreenKeyword_1_47()); 
-                        
-
-                    }
-                    break;
-                case 49 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1071:2: kw= Fuchsia
-                    {
-                    kw=(Token)match(input,Fuchsia,FOLLOW_Fuchsia_in_ruleColor2596); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getFuchsiaKeyword_1_48()); 
-                        
-
-                    }
-                    break;
-                case 50 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1078:2: kw= Gainsboro
-                    {
-                    kw=(Token)match(input,Gainsboro,FOLLOW_Gainsboro_in_ruleColor2615); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGainsboroKeyword_1_49()); 
-                        
-
-                    }
-                    break;
-                case 51 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1085:2: kw= GhostWhite
-                    {
-                    kw=(Token)match(input,GhostWhite,FOLLOW_GhostWhite_in_ruleColor2634); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGhostWhiteKeyword_1_50()); 
-                        
-
-                    }
-                    break;
-                case 52 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1092:2: kw= Gold
-                    {
-                    kw=(Token)match(input,Gold,FOLLOW_Gold_in_ruleColor2653); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGoldKeyword_1_51()); 
-                        
-
-                    }
-                    break;
-                case 53 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1099:2: kw= GoldenRod
-                    {
-                    kw=(Token)match(input,GoldenRod,FOLLOW_GoldenRod_in_ruleColor2672); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGoldenRodKeyword_1_52()); 
-                        
-
-                    }
-                    break;
-                case 54 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1106:2: kw= Gray
-                    {
-                    kw=(Token)match(input,Gray,FOLLOW_Gray_in_ruleColor2691); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGrayKeyword_1_53()); 
-                        
-
-                    }
-                    break;
-                case 55 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1113:2: kw= Green
-                    {
-                    kw=(Token)match(input,Green,FOLLOW_Green_in_ruleColor2710); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGreenKeyword_1_54()); 
-                        
-
-                    }
-                    break;
-                case 56 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1120:2: kw= GreenYellow
-                    {
-                    kw=(Token)match(input,GreenYellow,FOLLOW_GreenYellow_in_ruleColor2729); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGreenYellowKeyword_1_55()); 
-                        
-
-                    }
-                    break;
-                case 57 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1127:2: kw= Grey
-                    {
-                    kw=(Token)match(input,Grey,FOLLOW_Grey_in_ruleColor2748); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getGreyKeyword_1_56()); 
-                        
-
-                    }
-                    break;
-                case 58 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1134:2: kw= HoneyDew
-                    {
-                    kw=(Token)match(input,HoneyDew,FOLLOW_HoneyDew_in_ruleColor2767); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getHoneyDewKeyword_1_57()); 
-                        
-
-                    }
-                    break;
-                case 59 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1141:2: kw= HotPink
-                    {
-                    kw=(Token)match(input,HotPink,FOLLOW_HotPink_in_ruleColor2786); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getHotPinkKeyword_1_58()); 
-                        
-
-                    }
-                    break;
-                case 60 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1148:2: kw= IndianRed
-                    {
-                    kw=(Token)match(input,IndianRed,FOLLOW_IndianRed_in_ruleColor2805); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getIndianRedKeyword_1_59()); 
-                        
-
-                    }
-                    break;
-                case 61 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1155:2: kw= Indigo
-                    {
-                    kw=(Token)match(input,Indigo,FOLLOW_Indigo_in_ruleColor2824); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getIndigoKeyword_1_60()); 
-                        
-
-                    }
-                    break;
-                case 62 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1162:2: kw= Ivory
-                    {
-                    kw=(Token)match(input,Ivory,FOLLOW_Ivory_in_ruleColor2843); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getIvoryKeyword_1_61()); 
-                        
-
-                    }
-                    break;
-                case 63 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1169:2: kw= Khaki
-                    {
-                    kw=(Token)match(input,Khaki,FOLLOW_Khaki_in_ruleColor2862); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getKhakiKeyword_1_62()); 
-                        
-
-                    }
-                    break;
-                case 64 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1176:2: kw= Lavender
-                    {
-                    kw=(Token)match(input,Lavender,FOLLOW_Lavender_in_ruleColor2881); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLavenderKeyword_1_63()); 
-                        
-
-                    }
-                    break;
-                case 65 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1183:2: kw= LavenderBlush
-                    {
-                    kw=(Token)match(input,LavenderBlush,FOLLOW_LavenderBlush_in_ruleColor2900); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLavenderBlushKeyword_1_64()); 
-                        
-
-                    }
-                    break;
-                case 66 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1190:2: kw= LawnGreen
-                    {
-                    kw=(Token)match(input,LawnGreen,FOLLOW_LawnGreen_in_ruleColor2919); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLawnGreenKeyword_1_65()); 
-                        
-
-                    }
-                    break;
-                case 67 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1197:2: kw= LemonChiffon
-                    {
-                    kw=(Token)match(input,LemonChiffon,FOLLOW_LemonChiffon_in_ruleColor2938); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLemonChiffonKeyword_1_66()); 
-                        
-
-                    }
-                    break;
-                case 68 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1204:2: kw= LightBlue
-                    {
-                    kw=(Token)match(input,LightBlue,FOLLOW_LightBlue_in_ruleColor2957); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightBlueKeyword_1_67()); 
-                        
-
-                    }
-                    break;
-                case 69 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1211:2: kw= LightCoral
-                    {
-                    kw=(Token)match(input,LightCoral,FOLLOW_LightCoral_in_ruleColor2976); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightCoralKeyword_1_68()); 
-                        
-
-                    }
-                    break;
-                case 70 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1218:2: kw= LightCyan
-                    {
-                    kw=(Token)match(input,LightCyan,FOLLOW_LightCyan_in_ruleColor2995); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightCyanKeyword_1_69()); 
-                        
-
-                    }
-                    break;
-                case 71 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1225:2: kw= LightGoldenRodYellow
-                    {
-                    kw=(Token)match(input,LightGoldenRodYellow,FOLLOW_LightGoldenRodYellow_in_ruleColor3014); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_1_70()); 
-                        
-
-                    }
-                    break;
-                case 72 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1232:2: kw= LightGray
-                    {
-                    kw=(Token)match(input,LightGray,FOLLOW_LightGray_in_ruleColor3033); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightGrayKeyword_1_71()); 
-                        
-
-                    }
-                    break;
-                case 73 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1239:2: kw= LightGreen
-                    {
-                    kw=(Token)match(input,LightGreen,FOLLOW_LightGreen_in_ruleColor3052); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightGreenKeyword_1_72()); 
-                        
-
-                    }
-                    break;
-                case 74 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1246:2: kw= LightGrey
-                    {
-                    kw=(Token)match(input,LightGrey,FOLLOW_LightGrey_in_ruleColor3071); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightGreyKeyword_1_73()); 
-                        
-
-                    }
-                    break;
-                case 75 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1253:2: kw= LightPink
-                    {
-                    kw=(Token)match(input,LightPink,FOLLOW_LightPink_in_ruleColor3090); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightPinkKeyword_1_74()); 
-                        
-
-                    }
-                    break;
-                case 76 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1260:2: kw= LightSalmon
-                    {
-                    kw=(Token)match(input,LightSalmon,FOLLOW_LightSalmon_in_ruleColor3109); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightSalmonKeyword_1_75()); 
-                        
-
-                    }
-                    break;
-                case 77 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1267:2: kw= LightSeaGreen
-                    {
-                    kw=(Token)match(input,LightSeaGreen,FOLLOW_LightSeaGreen_in_ruleColor3128); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightSeaGreenKeyword_1_76()); 
-                        
-
-                    }
-                    break;
-                case 78 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1274:2: kw= LightSkyBlue
-                    {
-                    kw=(Token)match(input,LightSkyBlue,FOLLOW_LightSkyBlue_in_ruleColor3147); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightSkyBlueKeyword_1_77()); 
-                        
-
-                    }
-                    break;
-                case 79 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1281:2: kw= LightSlateGray
-                    {
-                    kw=(Token)match(input,LightSlateGray,FOLLOW_LightSlateGray_in_ruleColor3166); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightSlateGrayKeyword_1_78()); 
-                        
-
-                    }
-                    break;
-                case 80 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1288:2: kw= LightSlateGrey
-                    {
-                    kw=(Token)match(input,LightSlateGrey,FOLLOW_LightSlateGrey_in_ruleColor3185); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightSlateGreyKeyword_1_79()); 
-                        
-
-                    }
-                    break;
-                case 81 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1295:2: kw= LightSteelBlue
-                    {
-                    kw=(Token)match(input,LightSteelBlue,FOLLOW_LightSteelBlue_in_ruleColor3204); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightSteelBlueKeyword_1_80()); 
-                        
-
-                    }
-                    break;
-                case 82 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1302:2: kw= LightYellow
-                    {
-                    kw=(Token)match(input,LightYellow,FOLLOW_LightYellow_in_ruleColor3223); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLightYellowKeyword_1_81()); 
-                        
-
-                    }
-                    break;
-                case 83 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1309:2: kw= Lime
-                    {
-                    kw=(Token)match(input,Lime,FOLLOW_Lime_in_ruleColor3242); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLimeKeyword_1_82()); 
-                        
-
-                    }
-                    break;
-                case 84 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1316:2: kw= LimeGreen
-                    {
-                    kw=(Token)match(input,LimeGreen,FOLLOW_LimeGreen_in_ruleColor3261); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLimeGreenKeyword_1_83()); 
-                        
-
-                    }
-                    break;
-                case 85 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1323:2: kw= Linen
-                    {
-                    kw=(Token)match(input,Linen,FOLLOW_Linen_in_ruleColor3280); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getLinenKeyword_1_84()); 
-                        
-
-                    }
-                    break;
-                case 86 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1330:2: kw= Magenta
-                    {
-                    kw=(Token)match(input,Magenta,FOLLOW_Magenta_in_ruleColor3299); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMagentaKeyword_1_85()); 
-                        
-
-                    }
-                    break;
-                case 87 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1337:2: kw= Maroon
-                    {
-                    kw=(Token)match(input,Maroon,FOLLOW_Maroon_in_ruleColor3318); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMaroonKeyword_1_86()); 
-                        
-
-                    }
-                    break;
-                case 88 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1344:2: kw= MediumAquaMarine
-                    {
-                    kw=(Token)match(input,MediumAquaMarine,FOLLOW_MediumAquaMarine_in_ruleColor3337); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumAquaMarineKeyword_1_87()); 
-                        
-
-                    }
-                    break;
-                case 89 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1351:2: kw= MediumBlue
-                    {
-                    kw=(Token)match(input,MediumBlue,FOLLOW_MediumBlue_in_ruleColor3356); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumBlueKeyword_1_88()); 
-                        
-
-                    }
-                    break;
-                case 90 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1358:2: kw= MediumOrchid
-                    {
-                    kw=(Token)match(input,MediumOrchid,FOLLOW_MediumOrchid_in_ruleColor3375); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumOrchidKeyword_1_89()); 
-                        
-
-                    }
-                    break;
-                case 91 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1365:2: kw= MediumPurple
-                    {
-                    kw=(Token)match(input,MediumPurple,FOLLOW_MediumPurple_in_ruleColor3394); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumPurpleKeyword_1_90()); 
-                        
-
-                    }
-                    break;
-                case 92 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1372:2: kw= MediumSeaGreen
-                    {
-                    kw=(Token)match(input,MediumSeaGreen,FOLLOW_MediumSeaGreen_in_ruleColor3413); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumSeaGreenKeyword_1_91()); 
-                        
-
-                    }
-                    break;
-                case 93 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1379:2: kw= MediumSlateBlue
-                    {
-                    kw=(Token)match(input,MediumSlateBlue,FOLLOW_MediumSlateBlue_in_ruleColor3432); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumSlateBlueKeyword_1_92()); 
-                        
-
-                    }
-                    break;
-                case 94 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1386:2: kw= MediumSpringGreen
-                    {
-                    kw=(Token)match(input,MediumSpringGreen,FOLLOW_MediumSpringGreen_in_ruleColor3451); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumSpringGreenKeyword_1_93()); 
-                        
-
-                    }
-                    break;
-                case 95 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1393:2: kw= MediumTurquoise
-                    {
-                    kw=(Token)match(input,MediumTurquoise,FOLLOW_MediumTurquoise_in_ruleColor3470); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumTurquoiseKeyword_1_94()); 
-                        
-
-                    }
-                    break;
-                case 96 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1400:2: kw= MediumVioletRed
-                    {
-                    kw=(Token)match(input,MediumVioletRed,FOLLOW_MediumVioletRed_in_ruleColor3489); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMediumVioletRedKeyword_1_95()); 
-                        
-
-                    }
-                    break;
-                case 97 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1407:2: kw= MidnightBlue
-                    {
-                    kw=(Token)match(input,MidnightBlue,FOLLOW_MidnightBlue_in_ruleColor3508); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMidnightBlueKeyword_1_96()); 
-                        
-
-                    }
-                    break;
-                case 98 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1414:2: kw= MintCream
-                    {
-                    kw=(Token)match(input,MintCream,FOLLOW_MintCream_in_ruleColor3527); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMintCreamKeyword_1_97()); 
-                        
-
-                    }
-                    break;
-                case 99 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1421:2: kw= MistyRose
-                    {
-                    kw=(Token)match(input,MistyRose,FOLLOW_MistyRose_in_ruleColor3546); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMistyRoseKeyword_1_98()); 
-                        
-
-                    }
-                    break;
-                case 100 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1428:2: kw= Moccasin
-                    {
-                    kw=(Token)match(input,Moccasin,FOLLOW_Moccasin_in_ruleColor3565); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getMoccasinKeyword_1_99()); 
-                        
-
-                    }
-                    break;
-                case 101 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1435:2: kw= NavajoWhite
-                    {
-                    kw=(Token)match(input,NavajoWhite,FOLLOW_NavajoWhite_in_ruleColor3584); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getNavajoWhiteKeyword_1_100()); 
-                        
-
-                    }
-                    break;
-                case 102 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1442:2: kw= Navy
-                    {
-                    kw=(Token)match(input,Navy,FOLLOW_Navy_in_ruleColor3603); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getNavyKeyword_1_101()); 
-                        
-
-                    }
-                    break;
-                case 103 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1449:2: kw= OldLace
-                    {
-                    kw=(Token)match(input,OldLace,FOLLOW_OldLace_in_ruleColor3622); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getOldLaceKeyword_1_102()); 
-                        
-
-                    }
-                    break;
-                case 104 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1456:2: kw= Olive
-                    {
-                    kw=(Token)match(input,Olive,FOLLOW_Olive_in_ruleColor3641); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getOliveKeyword_1_103()); 
-                        
-
-                    }
-                    break;
-                case 105 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1463:2: kw= OliveDrab
-                    {
-                    kw=(Token)match(input,OliveDrab,FOLLOW_OliveDrab_in_ruleColor3660); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getOliveDrabKeyword_1_104()); 
-                        
-
-                    }
-                    break;
-                case 106 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1470:2: kw= OrangeRed
-                    {
-                    kw=(Token)match(input,OrangeRed,FOLLOW_OrangeRed_in_ruleColor3679); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getOrangeRedKeyword_1_105()); 
-                        
-
-                    }
-                    break;
-                case 107 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1477:2: kw= Orchid
-                    {
-                    kw=(Token)match(input,Orchid,FOLLOW_Orchid_in_ruleColor3698); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getOrchidKeyword_1_106()); 
-                        
-
-                    }
-                    break;
-                case 108 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1484:2: kw= PaleGoldenRod
-                    {
-                    kw=(Token)match(input,PaleGoldenRod,FOLLOW_PaleGoldenRod_in_ruleColor3717); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPaleGoldenRodKeyword_1_107()); 
-                        
-
-                    }
-                    break;
-                case 109 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1491:2: kw= PaleGreen
-                    {
-                    kw=(Token)match(input,PaleGreen,FOLLOW_PaleGreen_in_ruleColor3736); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPaleGreenKeyword_1_108()); 
-                        
-
-                    }
-                    break;
-                case 110 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1498:2: kw= PaleTurquoise
-                    {
-                    kw=(Token)match(input,PaleTurquoise,FOLLOW_PaleTurquoise_in_ruleColor3755); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPaleTurquoiseKeyword_1_109()); 
-                        
-
-                    }
-                    break;
-                case 111 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1505:2: kw= PaleVioletRed
-                    {
-                    kw=(Token)match(input,PaleVioletRed,FOLLOW_PaleVioletRed_in_ruleColor3774); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPaleVioletRedKeyword_1_110()); 
-                        
-
-                    }
-                    break;
-                case 112 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1512:2: kw= PapayaWhip
-                    {
-                    kw=(Token)match(input,PapayaWhip,FOLLOW_PapayaWhip_in_ruleColor3793); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPapayaWhipKeyword_1_111()); 
-                        
-
-                    }
-                    break;
-                case 113 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1519:2: kw= PeachPuff
-                    {
-                    kw=(Token)match(input,PeachPuff,FOLLOW_PeachPuff_in_ruleColor3812); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPeachPuffKeyword_1_112()); 
-                        
-
-                    }
-                    break;
-                case 114 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1526:2: kw= Peru
-                    {
-                    kw=(Token)match(input,Peru,FOLLOW_Peru_in_ruleColor3831); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPeruKeyword_1_113()); 
-                        
-
-                    }
-                    break;
-                case 115 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1533:2: kw= Pink
-                    {
-                    kw=(Token)match(input,Pink,FOLLOW_Pink_in_ruleColor3850); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPinkKeyword_1_114()); 
-                        
-
-                    }
-                    break;
-                case 116 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1540:2: kw= Plum
-                    {
-                    kw=(Token)match(input,Plum,FOLLOW_Plum_in_ruleColor3869); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPlumKeyword_1_115()); 
-                        
-
-                    }
-                    break;
-                case 117 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1547:2: kw= PowderBlue
-                    {
-                    kw=(Token)match(input,PowderBlue,FOLLOW_PowderBlue_in_ruleColor3888); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPowderBlueKeyword_1_116()); 
-                        
-
-                    }
-                    break;
-                case 118 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1554:2: kw= Purple
-                    {
-                    kw=(Token)match(input,Purple,FOLLOW_Purple_in_ruleColor3907); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getPurpleKeyword_1_117()); 
-                        
-
-                    }
-                    break;
-                case 119 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1561:2: kw= Red
-                    {
-                    kw=(Token)match(input,Red,FOLLOW_Red_in_ruleColor3926); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getRedKeyword_1_118()); 
-                        
-
-                    }
-                    break;
-                case 120 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1568:2: kw= RosyBrown
-                    {
-                    kw=(Token)match(input,RosyBrown,FOLLOW_RosyBrown_in_ruleColor3945); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getRosyBrownKeyword_1_119()); 
-                        
-
-                    }
-                    break;
-                case 121 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1575:2: kw= RoyalBlue
-                    {
-                    kw=(Token)match(input,RoyalBlue,FOLLOW_RoyalBlue_in_ruleColor3964); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getRoyalBlueKeyword_1_120()); 
-                        
-
-                    }
-                    break;
-                case 122 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1582:2: kw= SaddleBrown
-                    {
-                    kw=(Token)match(input,SaddleBrown,FOLLOW_SaddleBrown_in_ruleColor3983); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSaddleBrownKeyword_1_121()); 
-                        
-
-                    }
-                    break;
-                case 123 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1589:2: kw= Salmon
-                    {
-                    kw=(Token)match(input,Salmon,FOLLOW_Salmon_in_ruleColor4002); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSalmonKeyword_1_122()); 
-                        
-
-                    }
-                    break;
-                case 124 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1596:2: kw= SandyBrown
-                    {
-                    kw=(Token)match(input,SandyBrown,FOLLOW_SandyBrown_in_ruleColor4021); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSandyBrownKeyword_1_123()); 
-                        
-
-                    }
-                    break;
-                case 125 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1603:2: kw= SeaGreen
-                    {
-                    kw=(Token)match(input,SeaGreen,FOLLOW_SeaGreen_in_ruleColor4040); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSeaGreenKeyword_1_124()); 
-                        
-
-                    }
-                    break;
-                case 126 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1610:2: kw= Sienna
-                    {
-                    kw=(Token)match(input,Sienna,FOLLOW_Sienna_in_ruleColor4059); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSiennaKeyword_1_125()); 
-                        
-
-                    }
-                    break;
-                case 127 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1617:2: kw= Silver
-                    {
-                    kw=(Token)match(input,Silver,FOLLOW_Silver_in_ruleColor4078); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSilverKeyword_1_126()); 
-                        
-
-                    }
-                    break;
-                case 128 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1624:2: kw= SkyBlue
-                    {
-                    kw=(Token)match(input,SkyBlue,FOLLOW_SkyBlue_in_ruleColor4097); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSkyBlueKeyword_1_127()); 
-                        
-
-                    }
-                    break;
-                case 129 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1631:2: kw= SlateBlue
-                    {
-                    kw=(Token)match(input,SlateBlue,FOLLOW_SlateBlue_in_ruleColor4116); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSlateBlueKeyword_1_128()); 
-                        
-
-                    }
-                    break;
-                case 130 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1638:2: kw= SlateGray
-                    {
-                    kw=(Token)match(input,SlateGray,FOLLOW_SlateGray_in_ruleColor4135); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSlateGrayKeyword_1_129()); 
-                        
-
-                    }
-                    break;
-                case 131 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1645:2: kw= SlateGrey
-                    {
-                    kw=(Token)match(input,SlateGrey,FOLLOW_SlateGrey_in_ruleColor4154); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSlateGreyKeyword_1_130()); 
-                        
-
-                    }
-                    break;
-                case 132 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1652:2: kw= Snow
-                    {
-                    kw=(Token)match(input,Snow,FOLLOW_Snow_in_ruleColor4173); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSnowKeyword_1_131()); 
-                        
-
-                    }
-                    break;
-                case 133 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1659:2: kw= SpringGreen
-                    {
-                    kw=(Token)match(input,SpringGreen,FOLLOW_SpringGreen_in_ruleColor4192); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSpringGreenKeyword_1_132()); 
-                        
-
-                    }
-                    break;
-                case 134 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1666:2: kw= SteelBlue
-                    {
-                    kw=(Token)match(input,SteelBlue,FOLLOW_SteelBlue_in_ruleColor4211); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getSteelBlueKeyword_1_133()); 
-                        
-
-                    }
-                    break;
-                case 135 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1673:2: kw= Tan
-                    {
-                    kw=(Token)match(input,Tan,FOLLOW_Tan_in_ruleColor4230); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getTanKeyword_1_134()); 
-                        
-
-                    }
-                    break;
-                case 136 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1680:2: kw= Teal
-                    {
-                    kw=(Token)match(input,Teal,FOLLOW_Teal_in_ruleColor4249); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getTealKeyword_1_135()); 
-                        
-
-                    }
-                    break;
-                case 137 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1687:2: kw= Thistle
-                    {
-                    kw=(Token)match(input,Thistle,FOLLOW_Thistle_in_ruleColor4268); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getThistleKeyword_1_136()); 
-                        
-
-                    }
-                    break;
-                case 138 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1694:2: kw= Tomato
-                    {
-                    kw=(Token)match(input,Tomato,FOLLOW_Tomato_in_ruleColor4287); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getTomatoKeyword_1_137()); 
-                        
-
-                    }
-                    break;
-                case 139 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1701:2: kw= Turquoise
-                    {
-                    kw=(Token)match(input,Turquoise,FOLLOW_Turquoise_in_ruleColor4306); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getTurquoiseKeyword_1_138()); 
-                        
-
-                    }
-                    break;
-                case 140 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1708:2: kw= Violet
-                    {
-                    kw=(Token)match(input,Violet,FOLLOW_Violet_in_ruleColor4325); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getVioletKeyword_1_139()); 
-                        
-
-                    }
-                    break;
-                case 141 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1715:2: kw= Wheat
-                    {
-                    kw=(Token)match(input,Wheat,FOLLOW_Wheat_in_ruleColor4344); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getWheatKeyword_1_140()); 
-                        
-
-                    }
-                    break;
-                case 142 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1722:2: kw= White
-                    {
-                    kw=(Token)match(input,White,FOLLOW_White_in_ruleColor4363); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getWhiteKeyword_1_141()); 
-                        
-
-                    }
-                    break;
-                case 143 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1729:2: kw= WhiteSmoke
-                    {
-                    kw=(Token)match(input,WhiteSmoke,FOLLOW_WhiteSmoke_in_ruleColor4382); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getWhiteSmokeKeyword_1_142()); 
-                        
-
-                    }
-                    break;
-                case 144 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1736:2: kw= Yellow
-                    {
-                    kw=(Token)match(input,Yellow,FOLLOW_Yellow_in_ruleColor4401); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getYellowKeyword_1_143()); 
-                        
-
-                    }
-                    break;
-                case 145 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1743:2: kw= YellowGreen
-                    {
-                    kw=(Token)match(input,YellowGreen,FOLLOW_YellowGreen_in_ruleColor4420); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getColorAccess().getYellowGreenKeyword_1_144()); 
-                        
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule();
-                
-        }
-         
-        	catch (RecognitionException re) { 
-        	    recover(input,re); 
-        	    appendSkippedTokens();
-        	}
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleColor"
-
-
     // $ANTLR start "entryRuleTitle"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1756:1: entryRuleTitle returns [String current=null] : iv_ruleTitle= ruleTitle EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:707:1: entryRuleTitle returns [String current=null] : iv_ruleTitle= ruleTitle EOF ;
     public final String entryRuleTitle() throws RecognitionException {
         String current = null;
 
@@ -4351,17 +1857,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1757:1: (iv_ruleTitle= ruleTitle EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1758:2: iv_ruleTitle= ruleTitle EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:708:1: (iv_ruleTitle= ruleTitle EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:709:2: iv_ruleTitle= ruleTitle EOF
             {
              newCompositeNode(grammarAccess.getTitleRule()); 
-            pushFollow(FOLLOW_ruleTitle_in_entryRuleTitle4461);
+            pushFollow(FOLLOW_ruleTitle_in_entryRuleTitle1622);
             iv_ruleTitle=ruleTitle();
 
             state._fsp--;
 
              current =iv_ruleTitle.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTitle4472); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTitle1633); 
 
             }
 
@@ -4379,7 +1885,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTitle"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1765:1: ruleTitle returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Title (this_ID_1= RULE_ID )* ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:716:1: ruleTitle returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Title (this_ID_1= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleTitle() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4389,33 +1895,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1769:6: ( (kw= Title (this_ID_1= RULE_ID )* ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1770:1: (kw= Title (this_ID_1= RULE_ID )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:720:6: ( (kw= Title (this_ID_1= RULE_ID )* ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:721:1: (kw= Title (this_ID_1= RULE_ID )* )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1770:1: (kw= Title (this_ID_1= RULE_ID )* )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1771:2: kw= Title (this_ID_1= RULE_ID )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:721:1: (kw= Title (this_ID_1= RULE_ID )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:722:2: kw= Title (this_ID_1= RULE_ID )*
             {
-            kw=(Token)match(input,Title,FOLLOW_Title_in_ruleTitle4510); 
+            kw=(Token)match(input,Title,FOLLOW_Title_in_ruleTitle1671); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTitleAccess().getTitleKeyword_0()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1776:1: (this_ID_1= RULE_ID )*
-            loop14:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:727:1: (this_ID_1= RULE_ID )*
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA14_0==RULE_ID) ) {
-                    alt14=1;
+                if ( (LA13_0==RULE_ID) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1776:6: this_ID_1= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:727:6: this_ID_1= RULE_ID
             	    {
-            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTitle4526); 
+            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTitle1687); 
 
             	    		current.merge(this_ID_1);
             	        
@@ -4427,7 +1933,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop13;
                 }
             } while (true);
 
@@ -4453,7 +1959,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLegend"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1791:1: entryRuleLegend returns [String current=null] : iv_ruleLegend= ruleLegend EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:742:1: entryRuleLegend returns [String current=null] : iv_ruleLegend= ruleLegend EOF ;
     public final String entryRuleLegend() throws RecognitionException {
         String current = null;
 
@@ -4461,17 +1967,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1792:1: (iv_ruleLegend= ruleLegend EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1793:2: iv_ruleLegend= ruleLegend EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:743:1: (iv_ruleLegend= ruleLegend EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:744:2: iv_ruleLegend= ruleLegend EOF
             {
              newCompositeNode(grammarAccess.getLegendRule()); 
-            pushFollow(FOLLOW_ruleLegend_in_entryRuleLegend4573);
+            pushFollow(FOLLOW_ruleLegend_in_entryRuleLegend1734);
             iv_ruleLegend=ruleLegend();
 
             state._fsp--;
 
              current =iv_ruleLegend.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLegend4584); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLegend1745); 
 
             }
 
@@ -4489,7 +1995,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLegend"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1800:1: ruleLegend returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:751:1: ruleLegend returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend ) ;
     public final AntlrDatatypeRuleToken ruleLegend() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4500,42 +2006,42 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1804:6: ( (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1805:1: (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:755:6: ( (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:756:1: (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1805:1: (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1806:2: kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:756:1: (kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:757:2: kw= Legend (kw= Right | kw= Left | kw= Center )? (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )* kw= Endlegend
             {
-            kw=(Token)match(input,Legend,FOLLOW_Legend_in_ruleLegend4622); 
+            kw=(Token)match(input,Legend,FOLLOW_Legend_in_ruleLegend1783); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getLegendAccess().getLegendKeyword_0()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1811:1: (kw= Right | kw= Left | kw= Center )?
-            int alt15=4;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:762:1: (kw= Right | kw= Left | kw= Center )?
+            int alt14=4;
             switch ( input.LA(1) ) {
                 case Right:
                     {
-                    alt15=1;
+                    alt14=1;
                     }
                     break;
                 case Left:
                     {
-                    alt15=2;
+                    alt14=2;
                     }
                     break;
                 case Center:
                     {
-                    alt15=3;
+                    alt14=3;
                     }
                     break;
             }
 
-            switch (alt15) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1812:2: kw= Right
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:763:2: kw= Right
                     {
-                    kw=(Token)match(input,Right,FOLLOW_Right_in_ruleLegend4636); 
+                    kw=(Token)match(input,Right,FOLLOW_Right_in_ruleLegend1797); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLegendAccess().getRightKeyword_1_0()); 
@@ -4544,9 +2050,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1819:2: kw= Left
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:770:2: kw= Left
                     {
-                    kw=(Token)match(input,Left,FOLLOW_Left_in_ruleLegend4655); 
+                    kw=(Token)match(input,Left,FOLLOW_Left_in_ruleLegend1816); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLegendAccess().getLeftKeyword_1_1()); 
@@ -4555,9 +2061,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1826:2: kw= Center
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:777:2: kw= Center
                     {
-                    kw=(Token)match(input,Center,FOLLOW_Center_in_ruleLegend4674); 
+                    kw=(Token)match(input,Center,FOLLOW_Center_in_ruleLegend1835); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLegendAccess().getCenterKeyword_1_2()); 
@@ -4568,44 +2074,44 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1831:3: (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )*
-            loop17:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:782:3: (this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )* )*
+            loop16:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_NEWLINE) ) {
-                    alt17=1;
+                if ( (LA16_0==RULE_NEWLINE) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt16) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1831:8: this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )*
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:782:8: this_NEWLINE_4= RULE_NEWLINE (this_ID_5= RULE_ID )*
             	    {
-            	    this_NEWLINE_4=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleLegend4692); 
+            	    this_NEWLINE_4=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleLegend1853); 
 
             	    		current.merge(this_NEWLINE_4);
             	        
             	     
             	        newLeafNode(this_NEWLINE_4, grammarAccess.getLegendAccess().getNEWLINETerminalRuleCall_2_0()); 
             	        
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1838:1: (this_ID_5= RULE_ID )*
-            	    loop16:
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:789:1: (this_ID_5= RULE_ID )*
+            	    loop15:
             	    do {
-            	        int alt16=2;
-            	        int LA16_0 = input.LA(1);
+            	        int alt15=2;
+            	        int LA15_0 = input.LA(1);
 
-            	        if ( (LA16_0==RULE_ID) ) {
-            	            alt16=1;
+            	        if ( (LA15_0==RULE_ID) ) {
+            	            alt15=1;
             	        }
 
 
-            	        switch (alt16) {
+            	        switch (alt15) {
             	    	case 1 :
-            	    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1838:6: this_ID_5= RULE_ID
+            	    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:789:6: this_ID_5= RULE_ID
             	    	    {
-            	    	    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLegend4713); 
+            	    	    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLegend1874); 
 
             	    	    		current.merge(this_ID_5);
             	    	        
@@ -4617,7 +2123,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop16;
+            	    	    break loop15;
             	        }
             	    } while (true);
 
@@ -4626,11 +2132,11 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop16;
                 }
             } while (true);
 
-            kw=(Token)match(input,Endlegend,FOLLOW_Endlegend_in_ruleLegend4735); 
+            kw=(Token)match(input,Endlegend,FOLLOW_Endlegend_in_ruleLegend1896); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getLegendAccess().getEndlegendKeyword_3()); 
@@ -4657,7 +2163,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNewpage"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1859:1: entryRuleNewpage returns [String current=null] : iv_ruleNewpage= ruleNewpage EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:810:1: entryRuleNewpage returns [String current=null] : iv_ruleNewpage= ruleNewpage EOF ;
     public final String entryRuleNewpage() throws RecognitionException {
         String current = null;
 
@@ -4665,17 +2171,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1860:1: (iv_ruleNewpage= ruleNewpage EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1861:2: iv_ruleNewpage= ruleNewpage EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:811:1: (iv_ruleNewpage= ruleNewpage EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:812:2: iv_ruleNewpage= ruleNewpage EOF
             {
              newCompositeNode(grammarAccess.getNewpageRule()); 
-            pushFollow(FOLLOW_ruleNewpage_in_entryRuleNewpage4775);
+            pushFollow(FOLLOW_ruleNewpage_in_entryRuleNewpage1936);
             iv_ruleNewpage=ruleNewpage();
 
             state._fsp--;
 
              current =iv_ruleNewpage.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNewpage4786); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNewpage1947); 
 
             }
 
@@ -4693,7 +2199,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNewpage"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1868:1: ruleNewpage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Newpage (this_ID_1= RULE_ID )* ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:819:1: ruleNewpage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Newpage (this_ID_1= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleNewpage() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4703,33 +2209,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1872:6: ( (kw= Newpage (this_ID_1= RULE_ID )* ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1873:1: (kw= Newpage (this_ID_1= RULE_ID )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:823:6: ( (kw= Newpage (this_ID_1= RULE_ID )* ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:824:1: (kw= Newpage (this_ID_1= RULE_ID )* )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1873:1: (kw= Newpage (this_ID_1= RULE_ID )* )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1874:2: kw= Newpage (this_ID_1= RULE_ID )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:824:1: (kw= Newpage (this_ID_1= RULE_ID )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:825:2: kw= Newpage (this_ID_1= RULE_ID )*
             {
-            kw=(Token)match(input,Newpage,FOLLOW_Newpage_in_ruleNewpage4824); 
+            kw=(Token)match(input,Newpage,FOLLOW_Newpage_in_ruleNewpage1985); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNewpageAccess().getNewpageKeyword_0()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1879:1: (this_ID_1= RULE_ID )*
-            loop18:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:830:1: (this_ID_1= RULE_ID )*
+            loop17:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA18_0==RULE_ID) ) {
-                    alt18=1;
+                if ( (LA17_0==RULE_ID) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt17) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1879:6: this_ID_1= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:830:6: this_ID_1= RULE_ID
             	    {
-            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNewpage4840); 
+            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNewpage2001); 
 
             	    		current.merge(this_ID_1);
             	        
@@ -4741,7 +2247,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop17;
                 }
             } while (true);
 
@@ -4767,7 +2273,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAltElse"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1894:1: entryRuleAltElse returns [EObject current=null] : iv_ruleAltElse= ruleAltElse EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:845:1: entryRuleAltElse returns [EObject current=null] : iv_ruleAltElse= ruleAltElse EOF ;
     public final EObject entryRuleAltElse() throws RecognitionException {
         EObject current = null;
 
@@ -4775,17 +2281,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1895:2: (iv_ruleAltElse= ruleAltElse EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1896:2: iv_ruleAltElse= ruleAltElse EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:846:2: (iv_ruleAltElse= ruleAltElse EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:847:2: iv_ruleAltElse= ruleAltElse EOF
             {
              newCompositeNode(grammarAccess.getAltElseRule()); 
-            pushFollow(FOLLOW_ruleAltElse_in_entryRuleAltElse4886);
+            pushFollow(FOLLOW_ruleAltElse_in_entryRuleAltElse2047);
             iv_ruleAltElse=ruleAltElse();
 
             state._fsp--;
 
              current =iv_ruleAltElse; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAltElse4896); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAltElse2057); 
 
             }
 
@@ -4803,98 +2309,87 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAltElse"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1903:1: ruleAltElse returns [EObject current=null] : ( () otherlv_1= Alt (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ( (lv_elses_5_0= ruleElse ) )* otherlv_6= End ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:854:1: ruleAltElse returns [EObject current=null] : (otherlv_0= Alt (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ( (lv_elses_4_0= ruleElse ) )* otherlv_5= End ) ;
     public final EObject ruleAltElse() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token this_ID_2=null;
-        Token this_NEWLINE_3=null;
-        Token otherlv_6=null;
-        EObject lv_instructions_4_0 = null;
+        Token otherlv_0=null;
+        Token this_ID_1=null;
+        Token this_NEWLINE_2=null;
+        Token otherlv_5=null;
+        EObject lv_instructions_3_0 = null;
 
-        EObject lv_elses_5_0 = null;
+        EObject lv_elses_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1906:28: ( ( () otherlv_1= Alt (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ( (lv_elses_5_0= ruleElse ) )* otherlv_6= End ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1907:1: ( () otherlv_1= Alt (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ( (lv_elses_5_0= ruleElse ) )* otherlv_6= End )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:857:28: ( (otherlv_0= Alt (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ( (lv_elses_4_0= ruleElse ) )* otherlv_5= End ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:858:1: (otherlv_0= Alt (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ( (lv_elses_4_0= ruleElse ) )* otherlv_5= End )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1907:1: ( () otherlv_1= Alt (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ( (lv_elses_5_0= ruleElse ) )* otherlv_6= End )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1907:2: () otherlv_1= Alt (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ( (lv_elses_5_0= ruleElse ) )* otherlv_6= End
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:858:1: (otherlv_0= Alt (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ( (lv_elses_4_0= ruleElse ) )* otherlv_5= End )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:859:2: otherlv_0= Alt (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ( (lv_elses_4_0= ruleElse ) )* otherlv_5= End
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1907:2: ()
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1908:5: 
-            {
+            otherlv_0=(Token)match(input,Alt,FOLLOW_Alt_in_ruleAltElse2095); 
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getAltElseAccess().getAltElseAction_0(),
-                        current);
+                	newLeafNode(otherlv_0, grammarAccess.getAltElseAccess().getAltKeyword_0());
                 
-
-            }
-
-            otherlv_1=(Token)match(input,Alt,FOLLOW_Alt_in_ruleAltElse4943); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getAltElseAccess().getAltKeyword_1());
-                
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1918:1: (this_ID_2= RULE_ID )*
-            loop19:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:863:1: (this_ID_1= RULE_ID )*
+            loop18:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA19_0==RULE_ID) ) {
-                    alt19=1;
+                if ( (LA18_0==RULE_ID) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt18) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1918:2: this_ID_2= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:863:2: this_ID_1= RULE_ID
             	    {
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAltElse4954); 
+            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAltElse2106); 
             	     
-            	        newLeafNode(this_ID_2, grammarAccess.getAltElseAccess().getIDTerminalRuleCall_2()); 
+            	        newLeafNode(this_ID_1, grammarAccess.getAltElseAccess().getIDTerminalRuleCall_1()); 
             	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop18;
                 }
             } while (true);
 
-            this_NEWLINE_3=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleAltElse4966); 
+            this_NEWLINE_2=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleAltElse2118); 
              
-                newLeafNode(this_NEWLINE_3, grammarAccess.getAltElseAccess().getNEWLINETerminalRuleCall_3()); 
+                newLeafNode(this_NEWLINE_2, grammarAccess.getAltElseAccess().getNEWLINETerminalRuleCall_2()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1926:1: ( (lv_instructions_4_0= ruleInstruction ) )*
-            loop20:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:871:1: ( (lv_instructions_3_0= ruleInstruction ) )*
+            loop19:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA20_0==Participant||(LA20_0>=Autonumber && LA20_0<=Deactivate)||(LA20_0>=Activate && LA20_0<=Database)||(LA20_0>=Control && LA20_0<=Destroy)||LA20_0==Newpage||(LA20_0>=Create && LA20_0<=Legend)||(LA20_0>=Actor && LA20_0<=Group)||LA20_0==Title||LA20_0==Hide||(LA20_0>=Loop && LA20_0<=Note)||LA20_0==FullStopFullStopFullStop||(LA20_0>=Alt && LA20_0<=Box)||(LA20_0>=Opt && LA20_0<=VerticalLineVerticalLineVerticalLine)||LA20_0==EqualsSignEqualsSign||LA20_0==VerticalLineVerticalLine||LA20_0==RULE_NEWLINE||LA20_0==RULE_ID) ) {
-                    alt20=1;
+                if ( ((LA19_0>=Participant && LA19_0<=Deactivate)||(LA19_0>=Activate && LA19_0<=Destroy)||LA19_0==Newpage||(LA19_0>=Create && LA19_0<=Group)||LA19_0==Title||LA19_0==Hide||(LA19_0>=Loop && LA19_0<=Note)||(LA19_0>=FullStopFullStopFullStop && LA19_0<=Box)||(LA19_0>=Opt && LA19_0<=VerticalLineVerticalLineVerticalLine)||LA19_0==EqualsSignEqualsSign||LA19_0==VerticalLineVerticalLine||LA19_0==RULE_NEWLINE||LA19_0==RULE_ID) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt19) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1927:1: (lv_instructions_4_0= ruleInstruction )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:872:1: (lv_instructions_3_0= ruleInstruction )
             	    {
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1927:1: (lv_instructions_4_0= ruleInstruction )
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1928:3: lv_instructions_4_0= ruleInstruction
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:872:1: (lv_instructions_3_0= ruleInstruction )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:873:3: lv_instructions_3_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getAltElseAccess().getInstructionsInstructionParserRuleCall_4_0()); 
+            	    	        newCompositeNode(grammarAccess.getAltElseAccess().getInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleAltElse4986);
-            	    lv_instructions_4_0=ruleInstruction();
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleAltElse2138);
+            	    lv_instructions_3_0=ruleInstruction();
 
             	    state._fsp--;
 
@@ -4905,8 +2400,57 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"instructions",
-            	            		lv_instructions_4_0, 
+            	            		lv_instructions_3_0, 
             	            		"Instruction");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop19;
+                }
+            } while (true);
+
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:889:3: ( (lv_elses_4_0= ruleElse ) )*
+            loop20:
+            do {
+                int alt20=2;
+                int LA20_0 = input.LA(1);
+
+                if ( (LA20_0==Else) ) {
+                    alt20=1;
+                }
+
+
+                switch (alt20) {
+            	case 1 :
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:890:1: (lv_elses_4_0= ruleElse )
+            	    {
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:890:1: (lv_elses_4_0= ruleElse )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:891:3: lv_elses_4_0= ruleElse
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getAltElseAccess().getElsesElseParserRuleCall_4_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleElse_in_ruleAltElse2160);
+            	    lv_elses_4_0=ruleElse();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getAltElseRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"elses",
+            	            		lv_elses_4_0, 
+            	            		"Else");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -4921,58 +2465,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1944:3: ( (lv_elses_5_0= ruleElse ) )*
-            loop21:
-            do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+            otherlv_5=(Token)match(input,End,FOLLOW_End_in_ruleAltElse2174); 
 
-                if ( (LA21_0==Else) ) {
-                    alt21=1;
-                }
-
-
-                switch (alt21) {
-            	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1945:1: (lv_elses_5_0= ruleElse )
-            	    {
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1945:1: (lv_elses_5_0= ruleElse )
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1946:3: lv_elses_5_0= ruleElse
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getAltElseAccess().getElsesElseParserRuleCall_5_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleElse_in_ruleAltElse5008);
-            	    lv_elses_5_0=ruleElse();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getAltElseRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"elses",
-            	            		lv_elses_5_0, 
-            	            		"Else");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop21;
-                }
-            } while (true);
-
-            otherlv_6=(Token)match(input,End,FOLLOW_End_in_ruleAltElse5022); 
-
-                	newLeafNode(otherlv_6, grammarAccess.getAltElseAccess().getEndKeyword_6());
+                	newLeafNode(otherlv_5, grammarAccess.getAltElseAccess().getEndKeyword_5());
                 
 
             }
@@ -4995,7 +2490,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElse"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1975:1: entryRuleElse returns [EObject current=null] : iv_ruleElse= ruleElse EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:920:1: entryRuleElse returns [EObject current=null] : iv_ruleElse= ruleElse EOF ;
     public final EObject entryRuleElse() throws RecognitionException {
         EObject current = null;
 
@@ -5003,17 +2498,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1976:2: (iv_ruleElse= ruleElse EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1977:2: iv_ruleElse= ruleElse EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:921:2: (iv_ruleElse= ruleElse EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:922:2: iv_ruleElse= ruleElse EOF
             {
              newCompositeNode(grammarAccess.getElseRule()); 
-            pushFollow(FOLLOW_ruleElse_in_entryRuleElse5056);
+            pushFollow(FOLLOW_ruleElse_in_entryRuleElse2208);
             iv_ruleElse=ruleElse();
 
             state._fsp--;
 
              current =iv_ruleElse; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElse5066); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElse2218); 
 
             }
 
@@ -5031,95 +2526,84 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElse"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1984:1: ruleElse returns [EObject current=null] : ( () otherlv_1= Else (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:929:1: ruleElse returns [EObject current=null] : (otherlv_0= Else (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ) ;
     public final EObject ruleElse() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token this_ID_2=null;
-        Token this_NEWLINE_3=null;
-        EObject lv_instructions_4_0 = null;
+        Token otherlv_0=null;
+        Token this_ID_1=null;
+        Token this_NEWLINE_2=null;
+        EObject lv_instructions_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1987:28: ( ( () otherlv_1= Else (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1988:1: ( () otherlv_1= Else (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:932:28: ( (otherlv_0= Else (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:933:1: (otherlv_0= Else (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1988:1: ( () otherlv_1= Else (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )* )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1988:2: () otherlv_1= Else (this_ID_2= RULE_ID )* this_NEWLINE_3= RULE_NEWLINE ( (lv_instructions_4_0= ruleInstruction ) )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:933:1: (otherlv_0= Else (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:934:2: otherlv_0= Else (this_ID_1= RULE_ID )* this_NEWLINE_2= RULE_NEWLINE ( (lv_instructions_3_0= ruleInstruction ) )*
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1988:2: ()
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1989:5: 
-            {
+            otherlv_0=(Token)match(input,Else,FOLLOW_Else_in_ruleElse2256); 
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getElseAccess().getElseAction_0(),
-                        current);
+                	newLeafNode(otherlv_0, grammarAccess.getElseAccess().getElseKeyword_0());
                 
-
-            }
-
-            otherlv_1=(Token)match(input,Else,FOLLOW_Else_in_ruleElse5113); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getElseAccess().getElseKeyword_1());
-                
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1999:1: (this_ID_2= RULE_ID )*
-            loop22:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:938:1: (this_ID_1= RULE_ID )*
+            loop21:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA22_0==RULE_ID) ) {
-                    alt22=1;
+                if ( (LA21_0==RULE_ID) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt21) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1999:2: this_ID_2= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:938:2: this_ID_1= RULE_ID
             	    {
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElse5124); 
+            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElse2267); 
             	     
-            	        newLeafNode(this_ID_2, grammarAccess.getElseAccess().getIDTerminalRuleCall_2()); 
+            	        newLeafNode(this_ID_1, grammarAccess.getElseAccess().getIDTerminalRuleCall_1()); 
             	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop21;
                 }
             } while (true);
 
-            this_NEWLINE_3=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleElse5136); 
+            this_NEWLINE_2=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleElse2279); 
              
-                newLeafNode(this_NEWLINE_3, grammarAccess.getElseAccess().getNEWLINETerminalRuleCall_3()); 
+                newLeafNode(this_NEWLINE_2, grammarAccess.getElseAccess().getNEWLINETerminalRuleCall_2()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2007:1: ( (lv_instructions_4_0= ruleInstruction ) )*
-            loop23:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:946:1: ( (lv_instructions_3_0= ruleInstruction ) )*
+            loop22:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA23_0==Participant||(LA23_0>=Autonumber && LA23_0<=Deactivate)||(LA23_0>=Activate && LA23_0<=Database)||(LA23_0>=Control && LA23_0<=Destroy)||LA23_0==Newpage||(LA23_0>=Create && LA23_0<=Legend)||(LA23_0>=Actor && LA23_0<=Group)||LA23_0==Title||LA23_0==Hide||(LA23_0>=Loop && LA23_0<=Note)||LA23_0==FullStopFullStopFullStop||(LA23_0>=Alt && LA23_0<=Box)||(LA23_0>=Opt && LA23_0<=VerticalLineVerticalLineVerticalLine)||LA23_0==EqualsSignEqualsSign||LA23_0==VerticalLineVerticalLine||LA23_0==RULE_NEWLINE||LA23_0==RULE_ID) ) {
-                    alt23=1;
+                if ( ((LA22_0>=Participant && LA22_0<=Deactivate)||(LA22_0>=Activate && LA22_0<=Destroy)||LA22_0==Newpage||(LA22_0>=Create && LA22_0<=Group)||LA22_0==Title||LA22_0==Hide||(LA22_0>=Loop && LA22_0<=Note)||(LA22_0>=FullStopFullStopFullStop && LA22_0<=Box)||(LA22_0>=Opt && LA22_0<=VerticalLineVerticalLineVerticalLine)||LA22_0==EqualsSignEqualsSign||LA22_0==VerticalLineVerticalLine||LA22_0==RULE_NEWLINE||LA22_0==RULE_ID) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt22) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2008:1: (lv_instructions_4_0= ruleInstruction )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:947:1: (lv_instructions_3_0= ruleInstruction )
             	    {
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2008:1: (lv_instructions_4_0= ruleInstruction )
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2009:3: lv_instructions_4_0= ruleInstruction
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:947:1: (lv_instructions_3_0= ruleInstruction )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:948:3: lv_instructions_3_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getElseAccess().getInstructionsInstructionParserRuleCall_4_0()); 
+            	    	        newCompositeNode(grammarAccess.getElseAccess().getInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleElse5156);
-            	    lv_instructions_4_0=ruleInstruction();
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleElse2299);
+            	    lv_instructions_3_0=ruleInstruction();
 
             	    state._fsp--;
 
@@ -5130,7 +2614,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"instructions",
-            	            		lv_instructions_4_0, 
+            	            		lv_instructions_3_0, 
             	            		"Instruction");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -5142,7 +2626,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop22;
                 }
             } while (true);
 
@@ -5167,7 +2651,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGroupingMessages"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2033:1: entryRuleGroupingMessages returns [EObject current=null] : iv_ruleGroupingMessages= ruleGroupingMessages EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:972:1: entryRuleGroupingMessages returns [EObject current=null] : iv_ruleGroupingMessages= ruleGroupingMessages EOF ;
     public final EObject entryRuleGroupingMessages() throws RecognitionException {
         EObject current = null;
 
@@ -5175,17 +2659,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2034:2: (iv_ruleGroupingMessages= ruleGroupingMessages EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2035:2: iv_ruleGroupingMessages= ruleGroupingMessages EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:973:2: (iv_ruleGroupingMessages= ruleGroupingMessages EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:974:2: iv_ruleGroupingMessages= ruleGroupingMessages EOF
             {
              newCompositeNode(grammarAccess.getGroupingMessagesRule()); 
-            pushFollow(FOLLOW_ruleGroupingMessages_in_entryRuleGroupingMessages5192);
+            pushFollow(FOLLOW_ruleGroupingMessages_in_entryRuleGroupingMessages2335);
             iv_ruleGroupingMessages=ruleGroupingMessages();
 
             state._fsp--;
 
              current =iv_ruleGroupingMessages; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGroupingMessages5202); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGroupingMessages2345); 
 
             }
 
@@ -5203,139 +2687,128 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGroupingMessages"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2042:1: ruleGroupingMessages returns [EObject current=null] : ( () (otherlv_1= Opt | otherlv_2= Loop | otherlv_3= Par | otherlv_4= Break | otherlv_5= Critical | otherlv_6= Group ) (this_ID_7= RULE_ID )* this_NEWLINE_8= RULE_NEWLINE ( (lv_instructions_9_0= ruleInstruction ) )* otherlv_10= End ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:981:1: ruleGroupingMessages returns [EObject current=null] : ( (otherlv_0= Opt | otherlv_1= Loop | otherlv_2= Par | otherlv_3= Break | otherlv_4= Critical | otherlv_5= Group ) (this_ID_6= RULE_ID )* this_NEWLINE_7= RULE_NEWLINE ( (lv_instructions_8_0= ruleInstruction ) )* otherlv_9= End ) ;
     public final EObject ruleGroupingMessages() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token this_ID_7=null;
-        Token this_NEWLINE_8=null;
-        Token otherlv_10=null;
-        EObject lv_instructions_9_0 = null;
+        Token this_ID_6=null;
+        Token this_NEWLINE_7=null;
+        Token otherlv_9=null;
+        EObject lv_instructions_8_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2045:28: ( ( () (otherlv_1= Opt | otherlv_2= Loop | otherlv_3= Par | otherlv_4= Break | otherlv_5= Critical | otherlv_6= Group ) (this_ID_7= RULE_ID )* this_NEWLINE_8= RULE_NEWLINE ( (lv_instructions_9_0= ruleInstruction ) )* otherlv_10= End ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2046:1: ( () (otherlv_1= Opt | otherlv_2= Loop | otherlv_3= Par | otherlv_4= Break | otherlv_5= Critical | otherlv_6= Group ) (this_ID_7= RULE_ID )* this_NEWLINE_8= RULE_NEWLINE ( (lv_instructions_9_0= ruleInstruction ) )* otherlv_10= End )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:984:28: ( ( (otherlv_0= Opt | otherlv_1= Loop | otherlv_2= Par | otherlv_3= Break | otherlv_4= Critical | otherlv_5= Group ) (this_ID_6= RULE_ID )* this_NEWLINE_7= RULE_NEWLINE ( (lv_instructions_8_0= ruleInstruction ) )* otherlv_9= End ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:985:1: ( (otherlv_0= Opt | otherlv_1= Loop | otherlv_2= Par | otherlv_3= Break | otherlv_4= Critical | otherlv_5= Group ) (this_ID_6= RULE_ID )* this_NEWLINE_7= RULE_NEWLINE ( (lv_instructions_8_0= ruleInstruction ) )* otherlv_9= End )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2046:1: ( () (otherlv_1= Opt | otherlv_2= Loop | otherlv_3= Par | otherlv_4= Break | otherlv_5= Critical | otherlv_6= Group ) (this_ID_7= RULE_ID )* this_NEWLINE_8= RULE_NEWLINE ( (lv_instructions_9_0= ruleInstruction ) )* otherlv_10= End )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2046:2: () (otherlv_1= Opt | otherlv_2= Loop | otherlv_3= Par | otherlv_4= Break | otherlv_5= Critical | otherlv_6= Group ) (this_ID_7= RULE_ID )* this_NEWLINE_8= RULE_NEWLINE ( (lv_instructions_9_0= ruleInstruction ) )* otherlv_10= End
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:985:1: ( (otherlv_0= Opt | otherlv_1= Loop | otherlv_2= Par | otherlv_3= Break | otherlv_4= Critical | otherlv_5= Group ) (this_ID_6= RULE_ID )* this_NEWLINE_7= RULE_NEWLINE ( (lv_instructions_8_0= ruleInstruction ) )* otherlv_9= End )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:985:2: (otherlv_0= Opt | otherlv_1= Loop | otherlv_2= Par | otherlv_3= Break | otherlv_4= Critical | otherlv_5= Group ) (this_ID_6= RULE_ID )* this_NEWLINE_7= RULE_NEWLINE ( (lv_instructions_8_0= ruleInstruction ) )* otherlv_9= End
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2046:2: ()
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2047:5: 
-            {
-
-                    current = forceCreateModelElement(
-                        grammarAccess.getGroupingMessagesAccess().getGroupingMessageAction_0(),
-                        current);
-                
-
-            }
-
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2052:2: (otherlv_1= Opt | otherlv_2= Loop | otherlv_3= Par | otherlv_4= Break | otherlv_5= Critical | otherlv_6= Group )
-            int alt24=6;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:985:2: (otherlv_0= Opt | otherlv_1= Loop | otherlv_2= Par | otherlv_3= Break | otherlv_4= Critical | otherlv_5= Group )
+            int alt23=6;
             switch ( input.LA(1) ) {
             case Opt:
                 {
-                alt24=1;
+                alt23=1;
                 }
                 break;
             case Loop:
                 {
-                alt24=2;
+                alt23=2;
                 }
                 break;
             case Par:
                 {
-                alt24=3;
+                alt23=3;
                 }
                 break;
             case Break:
                 {
-                alt24=4;
+                alt23=4;
                 }
                 break;
             case Critical:
                 {
-                alt24=5;
+                alt23=5;
                 }
                 break;
             case Group:
                 {
-                alt24=6;
+                alt23=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt24) {
+            switch (alt23) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2053:2: otherlv_1= Opt
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:986:2: otherlv_0= Opt
                     {
-                    otherlv_1=(Token)match(input,Opt,FOLLOW_Opt_in_ruleGroupingMessages5250); 
+                    otherlv_0=(Token)match(input,Opt,FOLLOW_Opt_in_ruleGroupingMessages2384); 
 
-                        	newLeafNode(otherlv_1, grammarAccess.getGroupingMessagesAccess().getOptKeyword_1_0());
+                        	newLeafNode(otherlv_0, grammarAccess.getGroupingMessagesAccess().getOptKeyword_0_0());
                         
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2059:2: otherlv_2= Loop
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:992:2: otherlv_1= Loop
                     {
-                    otherlv_2=(Token)match(input,Loop,FOLLOW_Loop_in_ruleGroupingMessages5268); 
+                    otherlv_1=(Token)match(input,Loop,FOLLOW_Loop_in_ruleGroupingMessages2402); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getGroupingMessagesAccess().getLoopKeyword_1_1());
+                        	newLeafNode(otherlv_1, grammarAccess.getGroupingMessagesAccess().getLoopKeyword_0_1());
                         
 
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2065:2: otherlv_3= Par
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:998:2: otherlv_2= Par
                     {
-                    otherlv_3=(Token)match(input,Par,FOLLOW_Par_in_ruleGroupingMessages5286); 
+                    otherlv_2=(Token)match(input,Par,FOLLOW_Par_in_ruleGroupingMessages2420); 
 
-                        	newLeafNode(otherlv_3, grammarAccess.getGroupingMessagesAccess().getParKeyword_1_2());
+                        	newLeafNode(otherlv_2, grammarAccess.getGroupingMessagesAccess().getParKeyword_0_2());
                         
 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2071:2: otherlv_4= Break
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1004:2: otherlv_3= Break
                     {
-                    otherlv_4=(Token)match(input,Break,FOLLOW_Break_in_ruleGroupingMessages5304); 
+                    otherlv_3=(Token)match(input,Break,FOLLOW_Break_in_ruleGroupingMessages2438); 
 
-                        	newLeafNode(otherlv_4, grammarAccess.getGroupingMessagesAccess().getBreakKeyword_1_3());
+                        	newLeafNode(otherlv_3, grammarAccess.getGroupingMessagesAccess().getBreakKeyword_0_3());
                         
 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2077:2: otherlv_5= Critical
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1010:2: otherlv_4= Critical
                     {
-                    otherlv_5=(Token)match(input,Critical,FOLLOW_Critical_in_ruleGroupingMessages5322); 
+                    otherlv_4=(Token)match(input,Critical,FOLLOW_Critical_in_ruleGroupingMessages2456); 
 
-                        	newLeafNode(otherlv_5, grammarAccess.getGroupingMessagesAccess().getCriticalKeyword_1_4());
+                        	newLeafNode(otherlv_4, grammarAccess.getGroupingMessagesAccess().getCriticalKeyword_0_4());
                         
 
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2083:2: otherlv_6= Group
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1016:2: otherlv_5= Group
                     {
-                    otherlv_6=(Token)match(input,Group,FOLLOW_Group_in_ruleGroupingMessages5340); 
+                    otherlv_5=(Token)match(input,Group,FOLLOW_Group_in_ruleGroupingMessages2474); 
 
-                        	newLeafNode(otherlv_6, grammarAccess.getGroupingMessagesAccess().getGroupKeyword_1_5());
+                        	newLeafNode(otherlv_5, grammarAccess.getGroupingMessagesAccess().getGroupKeyword_0_5());
                         
 
                     }
@@ -5343,61 +2816,61 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2087:2: (this_ID_7= RULE_ID )*
-            loop25:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1020:2: (this_ID_6= RULE_ID )*
+            loop24:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA25_0==RULE_ID) ) {
-                    alt25=1;
+                if ( (LA24_0==RULE_ID) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt24) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2087:3: this_ID_7= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1020:3: this_ID_6= RULE_ID
             	    {
-            	    this_ID_7=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGroupingMessages5352); 
+            	    this_ID_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGroupingMessages2486); 
             	     
-            	        newLeafNode(this_ID_7, grammarAccess.getGroupingMessagesAccess().getIDTerminalRuleCall_2()); 
+            	        newLeafNode(this_ID_6, grammarAccess.getGroupingMessagesAccess().getIDTerminalRuleCall_1()); 
             	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop24;
                 }
             } while (true);
 
-            this_NEWLINE_8=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleGroupingMessages5364); 
+            this_NEWLINE_7=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleGroupingMessages2498); 
              
-                newLeafNode(this_NEWLINE_8, grammarAccess.getGroupingMessagesAccess().getNEWLINETerminalRuleCall_3()); 
+                newLeafNode(this_NEWLINE_7, grammarAccess.getGroupingMessagesAccess().getNEWLINETerminalRuleCall_2()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2095:1: ( (lv_instructions_9_0= ruleInstruction ) )*
-            loop26:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1028:1: ( (lv_instructions_8_0= ruleInstruction ) )*
+            loop25:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA26_0==Participant||(LA26_0>=Autonumber && LA26_0<=Deactivate)||(LA26_0>=Activate && LA26_0<=Database)||(LA26_0>=Control && LA26_0<=Destroy)||LA26_0==Newpage||(LA26_0>=Create && LA26_0<=Legend)||(LA26_0>=Actor && LA26_0<=Group)||LA26_0==Title||LA26_0==Hide||(LA26_0>=Loop && LA26_0<=Note)||LA26_0==FullStopFullStopFullStop||(LA26_0>=Alt && LA26_0<=Box)||(LA26_0>=Opt && LA26_0<=VerticalLineVerticalLineVerticalLine)||LA26_0==EqualsSignEqualsSign||LA26_0==VerticalLineVerticalLine||LA26_0==RULE_NEWLINE||LA26_0==RULE_ID) ) {
-                    alt26=1;
+                if ( ((LA25_0>=Participant && LA25_0<=Deactivate)||(LA25_0>=Activate && LA25_0<=Destroy)||LA25_0==Newpage||(LA25_0>=Create && LA25_0<=Group)||LA25_0==Title||LA25_0==Hide||(LA25_0>=Loop && LA25_0<=Note)||(LA25_0>=FullStopFullStopFullStop && LA25_0<=Box)||(LA25_0>=Opt && LA25_0<=VerticalLineVerticalLineVerticalLine)||LA25_0==EqualsSignEqualsSign||LA25_0==VerticalLineVerticalLine||LA25_0==RULE_NEWLINE||LA25_0==RULE_ID) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt25) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2096:1: (lv_instructions_9_0= ruleInstruction )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1029:1: (lv_instructions_8_0= ruleInstruction )
             	    {
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2096:1: (lv_instructions_9_0= ruleInstruction )
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2097:3: lv_instructions_9_0= ruleInstruction
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1029:1: (lv_instructions_8_0= ruleInstruction )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1030:3: lv_instructions_8_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getGroupingMessagesAccess().getInstructionsInstructionParserRuleCall_4_0()); 
+            	    	        newCompositeNode(grammarAccess.getGroupingMessagesAccess().getInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleGroupingMessages5384);
-            	    lv_instructions_9_0=ruleInstruction();
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleGroupingMessages2518);
+            	    lv_instructions_8_0=ruleInstruction();
 
             	    state._fsp--;
 
@@ -5408,7 +2881,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"instructions",
-            	            		lv_instructions_9_0, 
+            	            		lv_instructions_8_0, 
             	            		"Instruction");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -5420,13 +2893,13 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop25;
                 }
             } while (true);
 
-            otherlv_10=(Token)match(input,End,FOLLOW_End_in_ruleGroupingMessages5398); 
+            otherlv_9=(Token)match(input,End,FOLLOW_End_in_ruleGroupingMessages2532); 
 
-                	newLeafNode(otherlv_10, grammarAccess.getGroupingMessagesAccess().getEndKeyword_5());
+                	newLeafNode(otherlv_9, grammarAccess.getGroupingMessagesAccess().getEndKeyword_4());
                 
 
             }
@@ -5449,7 +2922,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNote"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2126:1: entryRuleNote returns [EObject current=null] : iv_ruleNote= ruleNote EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1059:1: entryRuleNote returns [EObject current=null] : iv_ruleNote= ruleNote EOF ;
     public final EObject entryRuleNote() throws RecognitionException {
         EObject current = null;
 
@@ -5457,17 +2930,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2127:2: (iv_ruleNote= ruleNote EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2128:2: iv_ruleNote= ruleNote EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1060:2: (iv_ruleNote= ruleNote EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1061:2: iv_ruleNote= ruleNote EOF
             {
              newCompositeNode(grammarAccess.getNoteRule()); 
-            pushFollow(FOLLOW_ruleNote_in_entryRuleNote5432);
+            pushFollow(FOLLOW_ruleNote_in_entryRuleNote2566);
             iv_ruleNote=ruleNote();
 
             state._fsp--;
 
              current =iv_ruleNote; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNote5442); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNote2576); 
 
             }
 
@@ -5485,10 +2958,11 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2135:1: ruleNote returns [EObject current=null] : ( () otherlv_1= Note ( (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? ) | (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? ) | (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* ) ) ( ruleColor )* ( (otherlv_17= Colon this_ID_18= RULE_ID ) | ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note ) ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1068:1: ruleNote returns [EObject current=null] : (otherlv_0= Note ( (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? ) | (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? ) | (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* ) ) (this_COLOR_15= RULE_COLOR )* ( (otherlv_16= Colon this_ID_17= RULE_ID ) | ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note ) ) ) ;
     public final EObject ruleNote() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -5503,104 +2977,93 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
         Token otherlv_12=null;
         Token otherlv_13=null;
         Token otherlv_14=null;
-        Token otherlv_15=null;
-        Token otherlv_17=null;
-        Token this_ID_18=null;
-        Token this_NEWLINE_19=null;
-        Token this_ID_20=null;
-        Token this_NEWLINE_21=null;
+        Token this_COLOR_15=null;
+        Token otherlv_16=null;
+        Token this_ID_17=null;
+        Token this_NEWLINE_18=null;
+        Token this_ID_19=null;
+        Token this_NEWLINE_20=null;
+        Token otherlv_21=null;
         Token otherlv_22=null;
-        Token otherlv_23=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2138:28: ( ( () otherlv_1= Note ( (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? ) | (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? ) | (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* ) ) ( ruleColor )* ( (otherlv_17= Colon this_ID_18= RULE_ID ) | ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note ) ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2139:1: ( () otherlv_1= Note ( (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? ) | (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? ) | (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* ) ) ( ruleColor )* ( (otherlv_17= Colon this_ID_18= RULE_ID ) | ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1071:28: ( (otherlv_0= Note ( (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? ) | (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? ) | (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* ) ) (this_COLOR_15= RULE_COLOR )* ( (otherlv_16= Colon this_ID_17= RULE_ID ) | ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1072:1: (otherlv_0= Note ( (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? ) | (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? ) | (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* ) ) (this_COLOR_15= RULE_COLOR )* ( (otherlv_16= Colon this_ID_17= RULE_ID ) | ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note ) ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2139:1: ( () otherlv_1= Note ( (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? ) | (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? ) | (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* ) ) ( ruleColor )* ( (otherlv_17= Colon this_ID_18= RULE_ID ) | ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2139:2: () otherlv_1= Note ( (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? ) | (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? ) | (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* ) ) ( ruleColor )* ( (otherlv_17= Colon this_ID_18= RULE_ID ) | ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1072:1: (otherlv_0= Note ( (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? ) | (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? ) | (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* ) ) (this_COLOR_15= RULE_COLOR )* ( (otherlv_16= Colon this_ID_17= RULE_ID ) | ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1073:2: otherlv_0= Note ( (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? ) | (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? ) | (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* ) ) (this_COLOR_15= RULE_COLOR )* ( (otherlv_16= Colon this_ID_17= RULE_ID ) | ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2139:2: ()
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2140:5: 
-            {
+            otherlv_0=(Token)match(input,Note,FOLLOW_Note_in_ruleNote2614); 
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getNoteAccess().getNoteAction_0(),
-                        current);
+                	newLeafNode(otherlv_0, grammarAccess.getNoteAccess().getNoteKeyword_0());
                 
-
-            }
-
-            otherlv_1=(Token)match(input,Note,FOLLOW_Note_in_ruleNote5489); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getNoteAccess().getNoteKeyword_1());
-                
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2150:1: ( (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? ) | (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? ) | (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* ) )
-            int alt32=3;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1077:1: ( (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? ) | (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? ) | (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* ) )
+            int alt31=3;
             switch ( input.LA(1) ) {
             case Right:
                 {
-                alt32=1;
+                alt31=1;
                 }
                 break;
             case Left:
                 {
-                alt32=2;
+                alt31=2;
                 }
                 break;
             case Over:
                 {
-                alt32=3;
+                alt31=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt31) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2150:2: (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1077:2: (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2150:2: (otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )? )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2151:2: otherlv_2= Right (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1077:2: (otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1078:2: otherlv_1= Right (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )?
                     {
-                    otherlv_2=(Token)match(input,Right,FOLLOW_Right_in_ruleNote5503); 
+                    otherlv_1=(Token)match(input,Right,FOLLOW_Right_in_ruleNote2628); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getNoteAccess().getRightKeyword_2_0_0());
+                        	newLeafNode(otherlv_1, grammarAccess.getNoteAccess().getRightKeyword_1_0_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2155:1: (otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )* )?
-                    int alt28=2;
-                    int LA28_0 = input.LA(1);
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1082:1: (otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )* )?
+                    int alt27=2;
+                    int LA27_0 = input.LA(1);
 
-                    if ( (LA28_0==Of) ) {
-                        alt28=1;
+                    if ( (LA27_0==Of) ) {
+                        alt27=1;
                     }
-                    switch (alt28) {
+                    switch (alt27) {
                         case 1 :
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2156:2: otherlv_3= Of ( (otherlv_4= RULE_ID ) ) (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )*
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1083:2: otherlv_2= Of ( (otherlv_3= RULE_ID ) ) (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )*
                             {
-                            otherlv_3=(Token)match(input,Of,FOLLOW_Of_in_ruleNote5516); 
+                            otherlv_2=(Token)match(input,Of,FOLLOW_Of_in_ruleNote2641); 
 
-                                	newLeafNode(otherlv_3, grammarAccess.getNoteAccess().getOfKeyword_2_0_1_0());
+                                	newLeafNode(otherlv_2, grammarAccess.getNoteAccess().getOfKeyword_1_0_1_0());
                                 
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2160:1: ( (otherlv_4= RULE_ID ) )
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2161:1: (otherlv_4= RULE_ID )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1087:1: ( (otherlv_3= RULE_ID ) )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1088:1: (otherlv_3= RULE_ID )
                             {
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2161:1: (otherlv_4= RULE_ID )
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2162:3: otherlv_4= RULE_ID
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1088:1: (otherlv_3= RULE_ID )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1089:3: otherlv_3= RULE_ID
                             {
 
                             			if (current==null) {
                             	            current = createModelElement(grammarAccess.getNoteRule());
                             	        }
                                     
-                            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5535); 
+                            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2660); 
 
-                            		newLeafNode(otherlv_4, grammarAccess.getNoteAccess().getRidDefinitionCrossReference_2_0_1_1_0()); 
+                            		newLeafNode(otherlv_3, grammarAccess.getNoteAccess().getRidDefinitionCrossReference_1_0_1_1_0()); 
                             	
 
                             }
@@ -5608,39 +3071,39 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2173:2: (otherlv_5= Comma ( (otherlv_6= RULE_ID ) ) )*
-                            loop27:
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1100:2: (otherlv_4= Comma ( (otherlv_5= RULE_ID ) ) )*
+                            loop26:
                             do {
-                                int alt27=2;
-                                int LA27_0 = input.LA(1);
+                                int alt26=2;
+                                int LA26_0 = input.LA(1);
 
-                                if ( (LA27_0==Comma) ) {
-                                    alt27=1;
+                                if ( (LA26_0==Comma) ) {
+                                    alt26=1;
                                 }
 
 
-                                switch (alt27) {
+                                switch (alt26) {
                             	case 1 :
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2174:2: otherlv_5= Comma ( (otherlv_6= RULE_ID ) )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1101:2: otherlv_4= Comma ( (otherlv_5= RULE_ID ) )
                             	    {
-                            	    otherlv_5=(Token)match(input,Comma,FOLLOW_Comma_in_ruleNote5549); 
+                            	    otherlv_4=(Token)match(input,Comma,FOLLOW_Comma_in_ruleNote2674); 
 
-                            	        	newLeafNode(otherlv_5, grammarAccess.getNoteAccess().getCommaKeyword_2_0_1_2_0());
+                            	        	newLeafNode(otherlv_4, grammarAccess.getNoteAccess().getCommaKeyword_1_0_1_2_0());
                             	        
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2178:1: ( (otherlv_6= RULE_ID ) )
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2179:1: (otherlv_6= RULE_ID )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1105:1: ( (otherlv_5= RULE_ID ) )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1106:1: (otherlv_5= RULE_ID )
                             	    {
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2179:1: (otherlv_6= RULE_ID )
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2180:3: otherlv_6= RULE_ID
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1106:1: (otherlv_5= RULE_ID )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1107:3: otherlv_5= RULE_ID
                             	    {
 
                             	    			if (current==null) {
                             	    	            current = createModelElement(grammarAccess.getNoteRule());
                             	    	        }
                             	            
-                            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5568); 
+                            	    otherlv_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2693); 
 
-                            	    		newLeafNode(otherlv_6, grammarAccess.getNoteAccess().getRidsDefinitionCrossReference_2_0_1_2_1_0()); 
+                            	    		newLeafNode(otherlv_5, grammarAccess.getNoteAccess().getRidsDefinitionCrossReference_1_0_1_2_1_0()); 
                             	    	
 
                             	    }
@@ -5653,7 +3116,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop27;
+                            	    break loop26;
                                 }
                             } while (true);
 
@@ -5670,44 +3133,44 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2192:6: (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1119:6: (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2192:6: (otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )? )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2193:2: otherlv_7= Left (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1119:6: (otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )? )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1120:2: otherlv_6= Left (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )?
                     {
-                    otherlv_7=(Token)match(input,Left,FOLLOW_Left_in_ruleNote5593); 
+                    otherlv_6=(Token)match(input,Left,FOLLOW_Left_in_ruleNote2718); 
 
-                        	newLeafNode(otherlv_7, grammarAccess.getNoteAccess().getLeftKeyword_2_1_0());
+                        	newLeafNode(otherlv_6, grammarAccess.getNoteAccess().getLeftKeyword_1_1_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2197:1: (otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )* )?
-                    int alt30=2;
-                    int LA30_0 = input.LA(1);
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1124:1: (otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )* )?
+                    int alt29=2;
+                    int LA29_0 = input.LA(1);
 
-                    if ( (LA30_0==Of) ) {
-                        alt30=1;
+                    if ( (LA29_0==Of) ) {
+                        alt29=1;
                     }
-                    switch (alt30) {
+                    switch (alt29) {
                         case 1 :
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2198:2: otherlv_8= Of ( (otherlv_9= RULE_ID ) ) (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )*
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1125:2: otherlv_7= Of ( (otherlv_8= RULE_ID ) ) (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )*
                             {
-                            otherlv_8=(Token)match(input,Of,FOLLOW_Of_in_ruleNote5606); 
+                            otherlv_7=(Token)match(input,Of,FOLLOW_Of_in_ruleNote2731); 
 
-                                	newLeafNode(otherlv_8, grammarAccess.getNoteAccess().getOfKeyword_2_1_1_0());
+                                	newLeafNode(otherlv_7, grammarAccess.getNoteAccess().getOfKeyword_1_1_1_0());
                                 
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2202:1: ( (otherlv_9= RULE_ID ) )
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2203:1: (otherlv_9= RULE_ID )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1129:1: ( (otherlv_8= RULE_ID ) )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1130:1: (otherlv_8= RULE_ID )
                             {
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2203:1: (otherlv_9= RULE_ID )
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2204:3: otherlv_9= RULE_ID
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1130:1: (otherlv_8= RULE_ID )
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1131:3: otherlv_8= RULE_ID
                             {
 
                             			if (current==null) {
                             	            current = createModelElement(grammarAccess.getNoteRule());
                             	        }
                                     
-                            otherlv_9=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5625); 
+                            otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2750); 
 
-                            		newLeafNode(otherlv_9, grammarAccess.getNoteAccess().getLidDefinitionCrossReference_2_1_1_1_0()); 
+                            		newLeafNode(otherlv_8, grammarAccess.getNoteAccess().getLidDefinitionCrossReference_1_1_1_1_0()); 
                             	
 
                             }
@@ -5715,39 +3178,39 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2215:2: (otherlv_10= Comma ( (otherlv_11= RULE_ID ) ) )*
-                            loop29:
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1142:2: (otherlv_9= Comma ( (otherlv_10= RULE_ID ) ) )*
+                            loop28:
                             do {
-                                int alt29=2;
-                                int LA29_0 = input.LA(1);
+                                int alt28=2;
+                                int LA28_0 = input.LA(1);
 
-                                if ( (LA29_0==Comma) ) {
-                                    alt29=1;
+                                if ( (LA28_0==Comma) ) {
+                                    alt28=1;
                                 }
 
 
-                                switch (alt29) {
+                                switch (alt28) {
                             	case 1 :
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2216:2: otherlv_10= Comma ( (otherlv_11= RULE_ID ) )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1143:2: otherlv_9= Comma ( (otherlv_10= RULE_ID ) )
                             	    {
-                            	    otherlv_10=(Token)match(input,Comma,FOLLOW_Comma_in_ruleNote5639); 
+                            	    otherlv_9=(Token)match(input,Comma,FOLLOW_Comma_in_ruleNote2764); 
 
-                            	        	newLeafNode(otherlv_10, grammarAccess.getNoteAccess().getCommaKeyword_2_1_1_2_0());
+                            	        	newLeafNode(otherlv_9, grammarAccess.getNoteAccess().getCommaKeyword_1_1_1_2_0());
                             	        
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2220:1: ( (otherlv_11= RULE_ID ) )
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2221:1: (otherlv_11= RULE_ID )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1147:1: ( (otherlv_10= RULE_ID ) )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1148:1: (otherlv_10= RULE_ID )
                             	    {
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2221:1: (otherlv_11= RULE_ID )
-                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2222:3: otherlv_11= RULE_ID
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1148:1: (otherlv_10= RULE_ID )
+                            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1149:3: otherlv_10= RULE_ID
                             	    {
 
                             	    			if (current==null) {
                             	    	            current = createModelElement(grammarAccess.getNoteRule());
                             	    	        }
                             	            
-                            	    otherlv_11=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5658); 
+                            	    otherlv_10=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2783); 
 
-                            	    		newLeafNode(otherlv_11, grammarAccess.getNoteAccess().getLidsDefinitionCrossReference_2_1_1_2_1_0()); 
+                            	    		newLeafNode(otherlv_10, grammarAccess.getNoteAccess().getLidsDefinitionCrossReference_1_1_1_2_1_0()); 
                             	    	
 
                             	    }
@@ -5760,7 +3223,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop29;
+                            	    break loop28;
                                 }
                             } while (true);
 
@@ -5777,29 +3240,29 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2234:6: (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1161:6: (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2234:6: (otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2235:2: otherlv_12= Over ( (otherlv_13= RULE_ID ) ) (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1161:6: (otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1162:2: otherlv_11= Over ( (otherlv_12= RULE_ID ) ) (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )*
                     {
-                    otherlv_12=(Token)match(input,Over,FOLLOW_Over_in_ruleNote5683); 
+                    otherlv_11=(Token)match(input,Over,FOLLOW_Over_in_ruleNote2808); 
 
-                        	newLeafNode(otherlv_12, grammarAccess.getNoteAccess().getOverKeyword_2_2_0());
+                        	newLeafNode(otherlv_11, grammarAccess.getNoteAccess().getOverKeyword_1_2_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2239:1: ( (otherlv_13= RULE_ID ) )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2240:1: (otherlv_13= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1166:1: ( (otherlv_12= RULE_ID ) )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1167:1: (otherlv_12= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2240:1: (otherlv_13= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2241:3: otherlv_13= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1167:1: (otherlv_12= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1168:3: otherlv_12= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getNoteRule());
                     	        }
                             
-                    otherlv_13=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5702); 
+                    otherlv_12=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2827); 
 
-                    		newLeafNode(otherlv_13, grammarAccess.getNoteAccess().getOidDefinitionCrossReference_2_2_1_0()); 
+                    		newLeafNode(otherlv_12, grammarAccess.getNoteAccess().getOidDefinitionCrossReference_1_2_1_0()); 
                     	
 
                     }
@@ -5807,39 +3270,39 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2252:2: (otherlv_14= Comma ( (otherlv_15= RULE_ID ) ) )*
-                    loop31:
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1179:2: (otherlv_13= Comma ( (otherlv_14= RULE_ID ) ) )*
+                    loop30:
                     do {
-                        int alt31=2;
-                        int LA31_0 = input.LA(1);
+                        int alt30=2;
+                        int LA30_0 = input.LA(1);
 
-                        if ( (LA31_0==Comma) ) {
-                            alt31=1;
+                        if ( (LA30_0==Comma) ) {
+                            alt30=1;
                         }
 
 
-                        switch (alt31) {
+                        switch (alt30) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2253:2: otherlv_14= Comma ( (otherlv_15= RULE_ID ) )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1180:2: otherlv_13= Comma ( (otherlv_14= RULE_ID ) )
                     	    {
-                    	    otherlv_14=(Token)match(input,Comma,FOLLOW_Comma_in_ruleNote5716); 
+                    	    otherlv_13=(Token)match(input,Comma,FOLLOW_Comma_in_ruleNote2841); 
 
-                    	        	newLeafNode(otherlv_14, grammarAccess.getNoteAccess().getCommaKeyword_2_2_2_0());
+                    	        	newLeafNode(otherlv_13, grammarAccess.getNoteAccess().getCommaKeyword_1_2_2_0());
                     	        
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2257:1: ( (otherlv_15= RULE_ID ) )
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2258:1: (otherlv_15= RULE_ID )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1184:1: ( (otherlv_14= RULE_ID ) )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1185:1: (otherlv_14= RULE_ID )
                     	    {
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2258:1: (otherlv_15= RULE_ID )
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2259:3: otherlv_15= RULE_ID
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1185:1: (otherlv_14= RULE_ID )
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1186:3: otherlv_14= RULE_ID
                     	    {
 
                     	    			if (current==null) {
                     	    	            current = createModelElement(grammarAccess.getNoteRule());
                     	    	        }
                     	            
-                    	    otherlv_15=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5735); 
+                    	    otherlv_14=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2860); 
 
-                    	    		newLeafNode(otherlv_15, grammarAccess.getNoteAccess().getOidsDefinitionCrossReference_2_2_2_1_0()); 
+                    	    		newLeafNode(otherlv_14, grammarAccess.getNoteAccess().getOidsDefinitionCrossReference_1_2_2_1_0()); 
                     	    	
 
                     	    }
@@ -5852,7 +3315,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop31;
+                    	    break loop30;
                         }
                     } while (true);
 
@@ -5865,71 +3328,64 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2270:6: ( ruleColor )*
-            loop33:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1197:6: (this_COLOR_15= RULE_COLOR )*
+            loop32:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA33_0==NumberSign) ) {
-                    alt33=1;
+                if ( (LA32_0==RULE_COLOR) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt32) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2271:5: ruleColor
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1197:7: this_COLOR_15= RULE_COLOR
             	    {
+            	    this_COLOR_15=(Token)match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_ruleNote2876); 
             	     
-            	            newCompositeNode(grammarAccess.getNoteAccess().getColorParserRuleCall_3()); 
-            	        
-            	    pushFollow(FOLLOW_ruleColor_in_ruleNote5756);
-            	    ruleColor();
-
-            	    state._fsp--;
-
-
-            	            afterParserOrEnumRuleCall();
+            	        newLeafNode(this_COLOR_15, grammarAccess.getNoteAccess().getCOLORTerminalRuleCall_2()); 
             	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop32;
                 }
             } while (true);
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2278:3: ( (otherlv_17= Colon this_ID_18= RULE_ID ) | ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note ) )
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1201:3: ( (otherlv_16= Colon this_ID_17= RULE_ID ) | ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note ) )
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA36_0==Colon) ) {
-                alt36=1;
+            if ( (LA35_0==Colon) ) {
+                alt35=1;
             }
-            else if ( (LA36_0==RULE_NEWLINE) ) {
-                alt36=2;
+            else if ( (LA35_0==RULE_NEWLINE) ) {
+                alt35=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
-            switch (alt36) {
+            switch (alt35) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2278:4: (otherlv_17= Colon this_ID_18= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1201:4: (otherlv_16= Colon this_ID_17= RULE_ID )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2278:4: (otherlv_17= Colon this_ID_18= RULE_ID )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2279:2: otherlv_17= Colon this_ID_18= RULE_ID
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1201:4: (otherlv_16= Colon this_ID_17= RULE_ID )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1202:2: otherlv_16= Colon this_ID_17= RULE_ID
                     {
-                    otherlv_17=(Token)match(input,Colon,FOLLOW_Colon_in_ruleNote5772); 
+                    otherlv_16=(Token)match(input,Colon,FOLLOW_Colon_in_ruleNote2892); 
 
-                        	newLeafNode(otherlv_17, grammarAccess.getNoteAccess().getColonKeyword_4_0_0());
+                        	newLeafNode(otherlv_16, grammarAccess.getNoteAccess().getColonKeyword_3_0_0());
                         
-                    this_ID_18=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5782); 
+                    this_ID_17=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2902); 
                      
-                        newLeafNode(this_ID_18, grammarAccess.getNoteAccess().getIDTerminalRuleCall_4_0_1()); 
+                        newLeafNode(this_ID_17, grammarAccess.getNoteAccess().getIDTerminalRuleCall_3_0_1()); 
                         
 
                     }
@@ -5938,61 +3394,61 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2288:6: ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1211:6: ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2288:6: ( (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2288:7: (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )* this_NEWLINE_21= RULE_NEWLINE otherlv_22= End otherlv_23= Note
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1211:6: ( (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1211:7: (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )* this_NEWLINE_20= RULE_NEWLINE otherlv_21= End otherlv_22= Note
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2288:7: (this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )* )*
-                    loop35:
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1211:7: (this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )* )*
+                    loop34:
                     do {
-                        int alt35=2;
-                        int LA35_0 = input.LA(1);
+                        int alt34=2;
+                        int LA34_0 = input.LA(1);
 
-                        if ( (LA35_0==RULE_NEWLINE) ) {
-                            int LA35_1 = input.LA(2);
+                        if ( (LA34_0==RULE_NEWLINE) ) {
+                            int LA34_1 = input.LA(2);
 
-                            if ( (LA35_1==RULE_NEWLINE||LA35_1==RULE_ID) ) {
-                                alt35=1;
+                            if ( (LA34_1==RULE_NEWLINE||LA34_1==RULE_ID) ) {
+                                alt34=1;
                             }
 
 
                         }
 
 
-                        switch (alt35) {
+                        switch (alt34) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2288:8: this_NEWLINE_19= RULE_NEWLINE (this_ID_20= RULE_ID )*
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1211:8: this_NEWLINE_18= RULE_NEWLINE (this_ID_19= RULE_ID )*
                     	    {
-                    	    this_NEWLINE_19=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleNote5801); 
+                    	    this_NEWLINE_18=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleNote2921); 
                     	     
-                    	        newLeafNode(this_NEWLINE_19, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_4_1_0_0()); 
+                    	        newLeafNode(this_NEWLINE_18, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_3_1_0_0()); 
                     	        
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2292:1: (this_ID_20= RULE_ID )*
-                    	    loop34:
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1215:1: (this_ID_19= RULE_ID )*
+                    	    loop33:
                     	    do {
-                    	        int alt34=2;
-                    	        int LA34_0 = input.LA(1);
+                    	        int alt33=2;
+                    	        int LA33_0 = input.LA(1);
 
-                    	        if ( (LA34_0==RULE_ID) ) {
-                    	            alt34=1;
+                    	        if ( (LA33_0==RULE_ID) ) {
+                    	            alt33=1;
                     	        }
 
 
-                    	        switch (alt34) {
+                    	        switch (alt33) {
                     	    	case 1 :
-                    	    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2292:2: this_ID_20= RULE_ID
+                    	    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1215:2: this_ID_19= RULE_ID
                     	    	    {
-                    	    	    this_ID_20=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote5812); 
+                    	    	    this_ID_19=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNote2932); 
                     	    	     
-                    	    	        newLeafNode(this_ID_20, grammarAccess.getNoteAccess().getIDTerminalRuleCall_4_1_0_1()); 
+                    	    	        newLeafNode(this_ID_19, grammarAccess.getNoteAccess().getIDTerminalRuleCall_3_1_0_1()); 
                     	    	        
 
                     	    	    }
                     	    	    break;
 
                     	    	default :
-                    	    	    break loop34;
+                    	    	    break loop33;
                     	        }
                     	    } while (true);
 
@@ -6001,21 +3457,21 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop35;
+                    	    break loop34;
                         }
                     } while (true);
 
-                    this_NEWLINE_21=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleNote5826); 
+                    this_NEWLINE_20=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleNote2946); 
                      
-                        newLeafNode(this_NEWLINE_21, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_4_1_1()); 
+                        newLeafNode(this_NEWLINE_20, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_3_1_1()); 
                         
-                    otherlv_22=(Token)match(input,End,FOLLOW_End_in_ruleNote5838); 
+                    otherlv_21=(Token)match(input,End,FOLLOW_End_in_ruleNote2958); 
 
-                        	newLeafNode(otherlv_22, grammarAccess.getNoteAccess().getEndKeyword_4_1_2());
+                        	newLeafNode(otherlv_21, grammarAccess.getNoteAccess().getEndKeyword_3_1_2());
                         
-                    otherlv_23=(Token)match(input,Note,FOLLOW_Note_in_ruleNote5850); 
+                    otherlv_22=(Token)match(input,Note,FOLLOW_Note_in_ruleNote2970); 
 
-                        	newLeafNode(otherlv_23, grammarAccess.getNoteAccess().getNoteKeyword_4_1_3());
+                        	newLeafNode(otherlv_22, grammarAccess.getNoteAccess().getNoteKeyword_3_1_3());
                         
 
                     }
@@ -6047,7 +3503,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDivider"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2318:1: entryRuleDivider returns [String current=null] : iv_ruleDivider= ruleDivider EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1241:1: entryRuleDivider returns [String current=null] : iv_ruleDivider= ruleDivider EOF ;
     public final String entryRuleDivider() throws RecognitionException {
         String current = null;
 
@@ -6055,17 +3511,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2319:1: (iv_ruleDivider= ruleDivider EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2320:2: iv_ruleDivider= ruleDivider EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1242:1: (iv_ruleDivider= ruleDivider EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1243:2: iv_ruleDivider= ruleDivider EOF
             {
              newCompositeNode(grammarAccess.getDividerRule()); 
-            pushFollow(FOLLOW_ruleDivider_in_entryRuleDivider5887);
+            pushFollow(FOLLOW_ruleDivider_in_entryRuleDivider3007);
             iv_ruleDivider=ruleDivider();
 
             state._fsp--;
 
              current =iv_ruleDivider.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDivider5898); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDivider3018); 
 
             }
 
@@ -6083,7 +3539,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDivider"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2327:1: ruleDivider returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1250:1: ruleDivider returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign ) ;
     public final AntlrDatatypeRuleToken ruleDivider() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6093,33 +3549,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2331:6: ( (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2332:1: (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1254:6: ( (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1255:1: (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2332:1: (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2333:2: kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1255:1: (kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1256:2: kw= EqualsSignEqualsSign (this_ID_1= RULE_ID )* kw= EqualsSignEqualsSign
             {
-            kw=(Token)match(input,EqualsSignEqualsSign,FOLLOW_EqualsSignEqualsSign_in_ruleDivider5936); 
+            kw=(Token)match(input,EqualsSignEqualsSign,FOLLOW_EqualsSignEqualsSign_in_ruleDivider3056); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDividerAccess().getEqualsSignEqualsSignKeyword_0()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2338:1: (this_ID_1= RULE_ID )*
-            loop37:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1261:1: (this_ID_1= RULE_ID )*
+            loop36:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA37_0==RULE_ID) ) {
-                    alt37=1;
+                if ( (LA36_0==RULE_ID) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt36) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2338:6: this_ID_1= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1261:6: this_ID_1= RULE_ID
             	    {
-            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDivider5952); 
+            	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDivider3072); 
 
             	    		current.merge(this_ID_1);
             	        
@@ -6131,11 +3587,11 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop36;
                 }
             } while (true);
 
-            kw=(Token)match(input,EqualsSignEqualsSign,FOLLOW_EqualsSignEqualsSign_in_ruleDivider5972); 
+            kw=(Token)match(input,EqualsSignEqualsSign,FOLLOW_EqualsSignEqualsSign_in_ruleDivider3092); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDividerAccess().getEqualsSignEqualsSignKeyword_2()); 
@@ -6162,7 +3618,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReference"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2359:1: entryRuleReference returns [EObject current=null] : iv_ruleReference= ruleReference EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1282:1: entryRuleReference returns [EObject current=null] : iv_ruleReference= ruleReference EOF ;
     public final EObject entryRuleReference() throws RecognitionException {
         EObject current = null;
 
@@ -6170,17 +3626,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2360:2: (iv_ruleReference= ruleReference EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2361:2: iv_ruleReference= ruleReference EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1283:2: (iv_ruleReference= ruleReference EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1284:2: iv_ruleReference= ruleReference EOF
             {
              newCompositeNode(grammarAccess.getReferenceRule()); 
-            pushFollow(FOLLOW_ruleReference_in_entryRuleReference6011);
+            pushFollow(FOLLOW_ruleReference_in_entryRuleReference3131);
             iv_ruleReference=ruleReference();
 
             state._fsp--;
 
              current =iv_ruleReference; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReference6021); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReference3141); 
 
             }
 
@@ -6198,7 +3654,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReference"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2368:1: ruleReference returns [EObject current=null] : (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1291:1: ruleReference returns [EObject current=null] : (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) ) ;
     public final EObject ruleReference() throws RecognitionException {
         EObject current = null;
 
@@ -6217,32 +3673,32 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2371:28: ( (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2372:1: (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1294:28: ( (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1295:1: (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2372:1: (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2373:2: otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1295:1: (otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1296:2: otherlv_0= Ref otherlv_1= Over ( (otherlv_2= RULE_ID ) ) (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )* ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) )
             {
-            otherlv_0=(Token)match(input,Ref,FOLLOW_Ref_in_ruleReference6059); 
+            otherlv_0=(Token)match(input,Ref,FOLLOW_Ref_in_ruleReference3179); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getReferenceAccess().getRefKeyword_0());
                 
-            otherlv_1=(Token)match(input,Over,FOLLOW_Over_in_ruleReference6071); 
+            otherlv_1=(Token)match(input,Over,FOLLOW_Over_in_ruleReference3191); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getReferenceAccess().getOverKeyword_1());
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2382:1: ( (otherlv_2= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2383:1: (otherlv_2= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1305:1: ( (otherlv_2= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1306:1: (otherlv_2= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2383:1: (otherlv_2= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2384:3: otherlv_2= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1306:1: (otherlv_2= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1307:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getReferenceRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference6090); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference3210); 
 
             		newLeafNode(otherlv_2, grammarAccess.getReferenceAccess().getIdDefinitionCrossReference_2_0()); 
             	
@@ -6252,37 +3708,37 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2395:2: (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )*
-            loop38:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1318:2: (otherlv_3= Comma ( (otherlv_4= RULE_ID ) ) )*
+            loop37:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( (LA38_0==Comma) ) {
-                    alt38=1;
+                if ( (LA37_0==Comma) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt37) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2396:2: otherlv_3= Comma ( (otherlv_4= RULE_ID ) )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1319:2: otherlv_3= Comma ( (otherlv_4= RULE_ID ) )
             	    {
-            	    otherlv_3=(Token)match(input,Comma,FOLLOW_Comma_in_ruleReference6104); 
+            	    otherlv_3=(Token)match(input,Comma,FOLLOW_Comma_in_ruleReference3224); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getReferenceAccess().getCommaKeyword_3_0());
             	        
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2400:1: ( (otherlv_4= RULE_ID ) )
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2401:1: (otherlv_4= RULE_ID )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1323:1: ( (otherlv_4= RULE_ID ) )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1324:1: (otherlv_4= RULE_ID )
             	    {
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2401:1: (otherlv_4= RULE_ID )
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2402:3: otherlv_4= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1324:1: (otherlv_4= RULE_ID )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1325:3: otherlv_4= RULE_ID
             	    {
 
             	    			if (current==null) {
             	    	            current = createModelElement(grammarAccess.getReferenceRule());
             	    	        }
             	            
-            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference6123); 
+            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference3243); 
 
             	    		newLeafNode(otherlv_4, grammarAccess.getReferenceAccess().getIdsDefinitionCrossReference_3_1_0()); 
             	    	
@@ -6297,53 +3753,53 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop37;
                 }
             } while (true);
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2413:4: ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1336:4: ( (otherlv_5= Colon (this_ID_6= RULE_ID )* ) | ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref ) )
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA42_0==Colon) ) {
-                alt42=1;
+            if ( (LA41_0==Colon) ) {
+                alt41=1;
             }
-            else if ( (LA42_0==End||LA42_0==RULE_NEWLINE) ) {
-                alt42=2;
+            else if ( (LA41_0==End||LA41_0==RULE_NEWLINE) ) {
+                alt41=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 41, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt41) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2413:5: (otherlv_5= Colon (this_ID_6= RULE_ID )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1336:5: (otherlv_5= Colon (this_ID_6= RULE_ID )* )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2413:5: (otherlv_5= Colon (this_ID_6= RULE_ID )* )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2414:2: otherlv_5= Colon (this_ID_6= RULE_ID )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1336:5: (otherlv_5= Colon (this_ID_6= RULE_ID )* )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1337:2: otherlv_5= Colon (this_ID_6= RULE_ID )*
                     {
-                    otherlv_5=(Token)match(input,Colon,FOLLOW_Colon_in_ruleReference6140); 
+                    otherlv_5=(Token)match(input,Colon,FOLLOW_Colon_in_ruleReference3260); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getReferenceAccess().getColonKeyword_4_0_0());
                         
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2418:1: (this_ID_6= RULE_ID )*
-                    loop39:
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1341:1: (this_ID_6= RULE_ID )*
+                    loop38:
                     do {
-                        int alt39=2;
-                        int LA39_0 = input.LA(1);
+                        int alt38=2;
+                        int LA38_0 = input.LA(1);
 
-                        if ( (LA39_0==RULE_ID) ) {
-                            alt39=1;
+                        if ( (LA38_0==RULE_ID) ) {
+                            alt38=1;
                         }
 
 
-                        switch (alt39) {
+                        switch (alt38) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2418:2: this_ID_6= RULE_ID
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1341:2: this_ID_6= RULE_ID
                     	    {
-                    	    this_ID_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference6151); 
+                    	    this_ID_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference3271); 
                     	     
                     	        newLeafNode(this_ID_6, grammarAccess.getReferenceAccess().getIDTerminalRuleCall_4_0_1()); 
                     	        
@@ -6352,7 +3808,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop39;
+                    	    break loop38;
                         }
                     } while (true);
 
@@ -6363,46 +3819,46 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2423:6: ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1346:6: ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2423:6: ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2423:7: (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1346:6: ( (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1346:7: (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )* otherlv_9= End otherlv_10= Ref
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2423:7: (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )*
-                    loop41:
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1346:7: (this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )* )*
+                    loop40:
                     do {
-                        int alt41=2;
-                        int LA41_0 = input.LA(1);
+                        int alt40=2;
+                        int LA40_0 = input.LA(1);
 
-                        if ( (LA41_0==RULE_NEWLINE) ) {
-                            alt41=1;
+                        if ( (LA40_0==RULE_NEWLINE) ) {
+                            alt40=1;
                         }
 
 
-                        switch (alt41) {
+                        switch (alt40) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2423:8: this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )*
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1346:8: this_NEWLINE_7= RULE_NEWLINE (this_ID_8= RULE_ID )*
                     	    {
-                    	    this_NEWLINE_7=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleReference6172); 
+                    	    this_NEWLINE_7=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleReference3292); 
                     	     
                     	        newLeafNode(this_NEWLINE_7, grammarAccess.getReferenceAccess().getNEWLINETerminalRuleCall_4_1_0_0()); 
                     	        
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2427:1: (this_ID_8= RULE_ID )*
-                    	    loop40:
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1350:1: (this_ID_8= RULE_ID )*
+                    	    loop39:
                     	    do {
-                    	        int alt40=2;
-                    	        int LA40_0 = input.LA(1);
+                    	        int alt39=2;
+                    	        int LA39_0 = input.LA(1);
 
-                    	        if ( (LA40_0==RULE_ID) ) {
-                    	            alt40=1;
+                    	        if ( (LA39_0==RULE_ID) ) {
+                    	            alt39=1;
                     	        }
 
 
-                    	        switch (alt40) {
+                    	        switch (alt39) {
                     	    	case 1 :
-                    	    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2427:2: this_ID_8= RULE_ID
+                    	    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1350:2: this_ID_8= RULE_ID
                     	    	    {
-                    	    	    this_ID_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference6183); 
+                    	    	    this_ID_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReference3303); 
                     	    	     
                     	    	        newLeafNode(this_ID_8, grammarAccess.getReferenceAccess().getIDTerminalRuleCall_4_1_0_1()); 
                     	    	        
@@ -6411,7 +3867,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    break loop40;
+                    	    	    break loop39;
                     	        }
                     	    } while (true);
 
@@ -6420,15 +3876,15 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop41;
+                    	    break loop40;
                         }
                     } while (true);
 
-                    otherlv_9=(Token)match(input,End,FOLLOW_End_in_ruleReference6199); 
+                    otherlv_9=(Token)match(input,End,FOLLOW_End_in_ruleReference3319); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getReferenceAccess().getEndKeyword_4_1_1());
                         
-                    otherlv_10=(Token)match(input,Ref,FOLLOW_Ref_in_ruleReference6211); 
+                    otherlv_10=(Token)match(input,Ref,FOLLOW_Ref_in_ruleReference3331); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getReferenceAccess().getRefKeyword_4_1_2());
                         
@@ -6462,7 +3918,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDelay"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2449:1: entryRuleDelay returns [String current=null] : iv_ruleDelay= ruleDelay EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1372:1: entryRuleDelay returns [String current=null] : iv_ruleDelay= ruleDelay EOF ;
     public final String entryRuleDelay() throws RecognitionException {
         String current = null;
 
@@ -6470,17 +3926,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2450:1: (iv_ruleDelay= ruleDelay EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2451:2: iv_ruleDelay= ruleDelay EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1373:1: (iv_ruleDelay= ruleDelay EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1374:2: iv_ruleDelay= ruleDelay EOF
             {
              newCompositeNode(grammarAccess.getDelayRule()); 
-            pushFollow(FOLLOW_ruleDelay_in_entryRuleDelay6248);
+            pushFollow(FOLLOW_ruleDelay_in_entryRuleDelay3368);
             iv_ruleDelay=ruleDelay();
 
             state._fsp--;
 
              current =iv_ruleDelay.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDelay6259); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDelay3379); 
 
             }
 
@@ -6498,7 +3954,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDelay"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2458:1: ruleDelay returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1381:1: ruleDelay returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? ) ;
     public final AntlrDatatypeRuleToken ruleDelay() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6508,44 +3964,44 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2462:6: ( (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2463:1: (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1385:6: ( (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1386:1: (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2463:1: (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2464:2: kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1386:1: (kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1387:2: kw= FullStopFullStopFullStop ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )?
             {
-            kw=(Token)match(input,FullStopFullStopFullStop,FOLLOW_FullStopFullStopFullStop_in_ruleDelay6297); 
+            kw=(Token)match(input,FullStopFullStopFullStop,FOLLOW_FullStopFullStopFullStop_in_ruleDelay3417); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDelayAccess().getFullStopFullStopFullStopKeyword_0()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2469:1: ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1392:1: ( (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA44_0==FullStopFullStopFullStop||LA44_0==RULE_ID) ) {
-                alt44=1;
+            if ( (LA43_0==FullStopFullStopFullStop||LA43_0==RULE_ID) ) {
+                alt43=1;
             }
-            switch (alt44) {
+            switch (alt43) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2469:2: (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1392:2: (this_ID_1= RULE_ID )* kw= FullStopFullStopFullStop
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2469:2: (this_ID_1= RULE_ID )*
-                    loop43:
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1392:2: (this_ID_1= RULE_ID )*
+                    loop42:
                     do {
-                        int alt43=2;
-                        int LA43_0 = input.LA(1);
+                        int alt42=2;
+                        int LA42_0 = input.LA(1);
 
-                        if ( (LA43_0==RULE_ID) ) {
-                            alt43=1;
+                        if ( (LA42_0==RULE_ID) ) {
+                            alt42=1;
                         }
 
 
-                        switch (alt43) {
+                        switch (alt42) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2469:7: this_ID_1= RULE_ID
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1392:7: this_ID_1= RULE_ID
                     	    {
-                    	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDelay6314); 
+                    	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDelay3434); 
 
                     	    		current.merge(this_ID_1);
                     	        
@@ -6557,11 +4013,11 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop43;
+                    	    break loop42;
                         }
                     } while (true);
 
-                    kw=(Token)match(input,FullStopFullStopFullStop,FOLLOW_FullStopFullStopFullStop_in_ruleDelay6334); 
+                    kw=(Token)match(input,FullStopFullStopFullStop,FOLLOW_FullStopFullStopFullStop_in_ruleDelay3454); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDelayAccess().getFullStopFullStopFullStopKeyword_1_1()); 
@@ -6594,7 +4050,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSpace"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2490:1: entryRuleSpace returns [String current=null] : iv_ruleSpace= ruleSpace EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1413:1: entryRuleSpace returns [String current=null] : iv_ruleSpace= ruleSpace EOF ;
     public final String entryRuleSpace() throws RecognitionException {
         String current = null;
 
@@ -6602,17 +4058,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2491:1: (iv_ruleSpace= ruleSpace EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2492:2: iv_ruleSpace= ruleSpace EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1414:1: (iv_ruleSpace= ruleSpace EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1415:2: iv_ruleSpace= ruleSpace EOF
             {
              newCompositeNode(grammarAccess.getSpaceRule()); 
-            pushFollow(FOLLOW_ruleSpace_in_entryRuleSpace6376);
+            pushFollow(FOLLOW_ruleSpace_in_entryRuleSpace3496);
             iv_ruleSpace=ruleSpace();
 
             state._fsp--;
 
              current =iv_ruleSpace.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpace6387); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpace3507); 
 
             }
 
@@ -6630,7 +4086,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSpace"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2499:1: ruleSpace returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1422:1: ruleSpace returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) ) ;
     public final AntlrDatatypeRuleToken ruleSpace() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6640,30 +4096,30 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2503:6: ( (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2504:1: (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1426:6: ( (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1427:1: (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2504:1: (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) )
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1427:1: (kw= VerticalLineVerticalLineVerticalLine | (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine ) )
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA45_0==VerticalLineVerticalLineVerticalLine) ) {
-                alt45=1;
+            if ( (LA44_0==VerticalLineVerticalLineVerticalLine) ) {
+                alt44=1;
             }
-            else if ( (LA45_0==VerticalLineVerticalLine) ) {
-                alt45=2;
+            else if ( (LA44_0==VerticalLineVerticalLine) ) {
+                alt44=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 44, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+            switch (alt44) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2505:2: kw= VerticalLineVerticalLineVerticalLine
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1428:2: kw= VerticalLineVerticalLineVerticalLine
                     {
-                    kw=(Token)match(input,VerticalLineVerticalLineVerticalLine,FOLLOW_VerticalLineVerticalLineVerticalLine_in_ruleSpace6425); 
+                    kw=(Token)match(input,VerticalLineVerticalLineVerticalLine,FOLLOW_VerticalLineVerticalLineVerticalLine_in_ruleSpace3545); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSpaceAccess().getVerticalLineVerticalLineVerticalLineKeyword_0()); 
@@ -6672,24 +4128,24 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2511:6: (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1434:6: (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine )
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2511:6: (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine )
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2512:2: kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1434:6: (kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine )
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1435:2: kw= VerticalLineVerticalLine this_INT_2= RULE_INT kw= VerticalLineVerticalLine
                     {
-                    kw=(Token)match(input,VerticalLineVerticalLine,FOLLOW_VerticalLineVerticalLine_in_ruleSpace6445); 
+                    kw=(Token)match(input,VerticalLineVerticalLine,FOLLOW_VerticalLineVerticalLine_in_ruleSpace3565); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSpaceAccess().getVerticalLineVerticalLineKeyword_1_0()); 
                         
-                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpace6460); 
+                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSpace3580); 
 
                     		current.merge(this_INT_2);
                         
                      
                         newLeafNode(this_INT_2, grammarAccess.getSpaceAccess().getINTTerminalRuleCall_1_1()); 
                         
-                    kw=(Token)match(input,VerticalLineVerticalLine,FOLLOW_VerticalLineVerticalLine_in_ruleSpace6478); 
+                    kw=(Token)match(input,VerticalLineVerticalLine,FOLLOW_VerticalLineVerticalLine_in_ruleSpace3598); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSpaceAccess().getVerticalLineVerticalLineKeyword_1_2()); 
@@ -6722,7 +4178,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHidefootbox"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2538:1: entryRuleHidefootbox returns [String current=null] : iv_ruleHidefootbox= ruleHidefootbox EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1461:1: entryRuleHidefootbox returns [String current=null] : iv_ruleHidefootbox= ruleHidefootbox EOF ;
     public final String entryRuleHidefootbox() throws RecognitionException {
         String current = null;
 
@@ -6730,17 +4186,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2539:1: (iv_ruleHidefootbox= ruleHidefootbox EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2540:2: iv_ruleHidefootbox= ruleHidefootbox EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1462:1: (iv_ruleHidefootbox= ruleHidefootbox EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1463:2: iv_ruleHidefootbox= ruleHidefootbox EOF
             {
              newCompositeNode(grammarAccess.getHidefootboxRule()); 
-            pushFollow(FOLLOW_ruleHidefootbox_in_entryRuleHidefootbox6519);
+            pushFollow(FOLLOW_ruleHidefootbox_in_entryRuleHidefootbox3639);
             iv_ruleHidefootbox=ruleHidefootbox();
 
             state._fsp--;
 
              current =iv_ruleHidefootbox.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleHidefootbox6530); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHidefootbox3650); 
 
             }
 
@@ -6758,7 +4214,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHidefootbox"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2547:1: ruleHidefootbox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Hide kw= Footbox ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1470:1: ruleHidefootbox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Hide kw= Footbox ) ;
     public final AntlrDatatypeRuleToken ruleHidefootbox() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6767,18 +4223,18 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2551:6: ( (kw= Hide kw= Footbox ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2552:1: (kw= Hide kw= Footbox )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1474:6: ( (kw= Hide kw= Footbox ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1475:1: (kw= Hide kw= Footbox )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2552:1: (kw= Hide kw= Footbox )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2553:2: kw= Hide kw= Footbox
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1475:1: (kw= Hide kw= Footbox )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1476:2: kw= Hide kw= Footbox
             {
-            kw=(Token)match(input,Hide,FOLLOW_Hide_in_ruleHidefootbox6568); 
+            kw=(Token)match(input,Hide,FOLLOW_Hide_in_ruleHidefootbox3688); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getHidefootboxAccess().getHideKeyword_0()); 
                 
-            kw=(Token)match(input,Footbox,FOLLOW_Footbox_in_ruleHidefootbox6581); 
+            kw=(Token)match(input,Footbox,FOLLOW_Footbox_in_ruleHidefootbox3701); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getHidefootboxAccess().getFootboxKeyword_1()); 
@@ -6805,7 +4261,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActivate"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2572:1: entryRuleActivate returns [EObject current=null] : iv_ruleActivate= ruleActivate EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1495:1: entryRuleActivate returns [EObject current=null] : iv_ruleActivate= ruleActivate EOF ;
     public final EObject entryRuleActivate() throws RecognitionException {
         EObject current = null;
 
@@ -6813,17 +4269,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2573:2: (iv_ruleActivate= ruleActivate EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2574:2: iv_ruleActivate= ruleActivate EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1496:2: (iv_ruleActivate= ruleActivate EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1497:2: iv_ruleActivate= ruleActivate EOF
             {
              newCompositeNode(grammarAccess.getActivateRule()); 
-            pushFollow(FOLLOW_ruleActivate_in_entryRuleActivate6620);
+            pushFollow(FOLLOW_ruleActivate_in_entryRuleActivate3740);
             iv_ruleActivate=ruleActivate();
 
             state._fsp--;
 
              current =iv_ruleActivate; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActivate6630); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActivate3750); 
 
             }
 
@@ -6841,47 +4297,41 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActivate"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2581:1: ruleActivate returns [EObject current=null] : (otherlv_0= Activate ( ruleColor )? ( (lv_name_2_0= RULE_ID ) ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1504:1: ruleActivate returns [EObject current=null] : (otherlv_0= Activate (this_COLOR_1= RULE_COLOR )? ( (lv_name_2_0= RULE_ID ) ) ) ;
     public final EObject ruleActivate() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
+        Token this_COLOR_1=null;
         Token lv_name_2_0=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2584:28: ( (otherlv_0= Activate ( ruleColor )? ( (lv_name_2_0= RULE_ID ) ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2585:1: (otherlv_0= Activate ( ruleColor )? ( (lv_name_2_0= RULE_ID ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1507:28: ( (otherlv_0= Activate (this_COLOR_1= RULE_COLOR )? ( (lv_name_2_0= RULE_ID ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1508:1: (otherlv_0= Activate (this_COLOR_1= RULE_COLOR )? ( (lv_name_2_0= RULE_ID ) ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2585:1: (otherlv_0= Activate ( ruleColor )? ( (lv_name_2_0= RULE_ID ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2586:2: otherlv_0= Activate ( ruleColor )? ( (lv_name_2_0= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1508:1: (otherlv_0= Activate (this_COLOR_1= RULE_COLOR )? ( (lv_name_2_0= RULE_ID ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1509:2: otherlv_0= Activate (this_COLOR_1= RULE_COLOR )? ( (lv_name_2_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,Activate,FOLLOW_Activate_in_ruleActivate6668); 
+            otherlv_0=(Token)match(input,Activate,FOLLOW_Activate_in_ruleActivate3788); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActivateAccess().getActivateKeyword_0());
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2590:1: ( ruleColor )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1513:1: (this_COLOR_1= RULE_COLOR )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA46_0==NumberSign) ) {
-                alt46=1;
+            if ( (LA45_0==RULE_COLOR) ) {
+                alt45=1;
             }
-            switch (alt46) {
+            switch (alt45) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2591:5: ruleColor
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1513:2: this_COLOR_1= RULE_COLOR
                     {
+                    this_COLOR_1=(Token)match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_ruleActivate3799); 
                      
-                            newCompositeNode(grammarAccess.getActivateAccess().getColorParserRuleCall_1()); 
-                        
-                    pushFollow(FOLLOW_ruleColor_in_ruleActivate6684);
-                    ruleColor();
-
-                    state._fsp--;
-
-
-                            afterParserOrEnumRuleCall();
+                        newLeafNode(this_COLOR_1, grammarAccess.getActivateAccess().getCOLORTerminalRuleCall_1()); 
                         
 
                     }
@@ -6889,13 +4339,13 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2598:3: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2599:1: (lv_name_2_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1517:3: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1518:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2599:1: (lv_name_2_0= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2600:3: lv_name_2_0= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1518:1: (lv_name_2_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1519:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleActivate6702); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleActivate3817); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getActivateAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -6936,7 +4386,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDeactivate"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2624:1: entryRuleDeactivate returns [EObject current=null] : iv_ruleDeactivate= ruleDeactivate EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1543:1: entryRuleDeactivate returns [EObject current=null] : iv_ruleDeactivate= ruleDeactivate EOF ;
     public final EObject entryRuleDeactivate() throws RecognitionException {
         EObject current = null;
 
@@ -6944,17 +4394,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2625:2: (iv_ruleDeactivate= ruleDeactivate EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2626:2: iv_ruleDeactivate= ruleDeactivate EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1544:2: (iv_ruleDeactivate= ruleDeactivate EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1545:2: iv_ruleDeactivate= ruleDeactivate EOF
             {
              newCompositeNode(grammarAccess.getDeactivateRule()); 
-            pushFollow(FOLLOW_ruleDeactivate_in_entryRuleDeactivate6742);
+            pushFollow(FOLLOW_ruleDeactivate_in_entryRuleDeactivate3857);
             iv_ruleDeactivate=ruleDeactivate();
 
             state._fsp--;
 
              current =iv_ruleDeactivate; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDeactivate6752); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDeactivate3867); 
 
             }
 
@@ -6972,7 +4422,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDeactivate"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2633:1: ruleDeactivate returns [EObject current=null] : ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1552:1: ruleDeactivate returns [EObject current=null] : ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleDeactivate() throws RecognitionException {
         EObject current = null;
 
@@ -6983,33 +4433,33 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2636:28: ( ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2637:1: ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1555:28: ( ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1556:1: ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2637:1: ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2637:2: (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1556:1: ( (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1556:2: (otherlv_0= Deactivate | otherlv_1= Destroy ) ( (otherlv_2= RULE_ID ) )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2637:2: (otherlv_0= Deactivate | otherlv_1= Destroy )
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1556:2: (otherlv_0= Deactivate | otherlv_1= Destroy )
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA47_0==Deactivate) ) {
-                alt47=1;
+            if ( (LA46_0==Deactivate) ) {
+                alt46=1;
             }
-            else if ( (LA47_0==Destroy) ) {
-                alt47=2;
+            else if ( (LA46_0==Destroy) ) {
+                alt46=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt47) {
+            switch (alt46) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2638:2: otherlv_0= Deactivate
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1557:2: otherlv_0= Deactivate
                     {
-                    otherlv_0=(Token)match(input,Deactivate,FOLLOW_Deactivate_in_ruleDeactivate6791); 
+                    otherlv_0=(Token)match(input,Deactivate,FOLLOW_Deactivate_in_ruleDeactivate3906); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getDeactivateAccess().getDeactivateKeyword_0_0());
                         
@@ -7017,9 +4467,9 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2644:2: otherlv_1= Destroy
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1563:2: otherlv_1= Destroy
                     {
-                    otherlv_1=(Token)match(input,Destroy,FOLLOW_Destroy_in_ruleDeactivate6809); 
+                    otherlv_1=(Token)match(input,Destroy,FOLLOW_Destroy_in_ruleDeactivate3924); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getDeactivateAccess().getDestroyKeyword_0_1());
                         
@@ -7029,18 +4479,18 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2648:2: ( (otherlv_2= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2649:1: (otherlv_2= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1567:2: ( (otherlv_2= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1568:1: (otherlv_2= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2649:1: (otherlv_2= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2650:3: otherlv_2= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1568:1: (otherlv_2= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1569:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getDeactivateRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDeactivate6829); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDeactivate3944); 
 
             		newLeafNode(otherlv_2, grammarAccess.getDeactivateAccess().getIdActivateCrossReference_1_0()); 
             	
@@ -7071,7 +4521,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParticipantCreation"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2669:1: entryRuleParticipantCreation returns [String current=null] : iv_ruleParticipantCreation= ruleParticipantCreation EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1588:1: entryRuleParticipantCreation returns [String current=null] : iv_ruleParticipantCreation= ruleParticipantCreation EOF ;
     public final String entryRuleParticipantCreation() throws RecognitionException {
         String current = null;
 
@@ -7079,17 +4529,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2670:1: (iv_ruleParticipantCreation= ruleParticipantCreation EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2671:2: iv_ruleParticipantCreation= ruleParticipantCreation EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1589:1: (iv_ruleParticipantCreation= ruleParticipantCreation EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1590:2: iv_ruleParticipantCreation= ruleParticipantCreation EOF
             {
              newCompositeNode(grammarAccess.getParticipantCreationRule()); 
-            pushFollow(FOLLOW_ruleParticipantCreation_in_entryRuleParticipantCreation6865);
+            pushFollow(FOLLOW_ruleParticipantCreation_in_entryRuleParticipantCreation3980);
             iv_ruleParticipantCreation=ruleParticipantCreation();
 
             state._fsp--;
 
              current =iv_ruleParticipantCreation.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParticipantCreation6876); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParticipantCreation3991); 
 
             }
 
@@ -7107,7 +4557,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParticipantCreation"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2678:1: ruleParticipantCreation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Create this_ID_1= RULE_ID ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1597:1: ruleParticipantCreation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= Create this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleParticipantCreation() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7117,18 +4567,18 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2682:6: ( (kw= Create this_ID_1= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2683:1: (kw= Create this_ID_1= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1601:6: ( (kw= Create this_ID_1= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1602:1: (kw= Create this_ID_1= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2683:1: (kw= Create this_ID_1= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2684:2: kw= Create this_ID_1= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1602:1: (kw= Create this_ID_1= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1603:2: kw= Create this_ID_1= RULE_ID
             {
-            kw=(Token)match(input,Create,FOLLOW_Create_in_ruleParticipantCreation6914); 
+            kw=(Token)match(input,Create,FOLLOW_Create_in_ruleParticipantCreation4029); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getParticipantCreationAccess().getCreateKeyword_0()); 
                 
-            this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParticipantCreation6929); 
+            this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParticipantCreation4044); 
 
             		current.merge(this_ID_1);
                 
@@ -7157,7 +4607,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBox"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2704:1: entryRuleBox returns [EObject current=null] : iv_ruleBox= ruleBox EOF ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1623:1: entryRuleBox returns [EObject current=null] : iv_ruleBox= ruleBox EOF ;
     public final EObject entryRuleBox() throws RecognitionException {
         EObject current = null;
 
@@ -7165,17 +4615,17 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2705:2: (iv_ruleBox= ruleBox EOF )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2706:2: iv_ruleBox= ruleBox EOF
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1624:2: (iv_ruleBox= ruleBox EOF )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1625:2: iv_ruleBox= ruleBox EOF
             {
              newCompositeNode(grammarAccess.getBoxRule()); 
-            pushFollow(FOLLOW_ruleBox_in_entryRuleBox6973);
+            pushFollow(FOLLOW_ruleBox_in_entryRuleBox4088);
             iv_ruleBox=ruleBox();
 
             state._fsp--;
 
              current =iv_ruleBox; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBox6983); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBox4098); 
 
             }
 
@@ -7193,102 +4643,85 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBox"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2713:1: ruleBox returns [EObject current=null] : ( () otherlv_1= Box otherlv_2= QuotationMark (this_ID_3= RULE_ID )* otherlv_4= QuotationMark ( ruleColor )? this_NEWLINE_6= RULE_NEWLINE ( ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE )* otherlv_9= End otherlv_10= Box ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1632:1: ruleBox returns [EObject current=null] : (otherlv_0= Box otherlv_1= QuotationMark (this_ID_2= RULE_ID )* otherlv_3= QuotationMark (this_COLOR_4= RULE_COLOR )? this_NEWLINE_5= RULE_NEWLINE ( ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE )* otherlv_8= End otherlv_9= Box ) ;
     public final EObject ruleBox() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token this_ID_3=null;
-        Token otherlv_4=null;
-        Token this_NEWLINE_6=null;
-        Token this_NEWLINE_8=null;
+        Token this_ID_2=null;
+        Token otherlv_3=null;
+        Token this_COLOR_4=null;
+        Token this_NEWLINE_5=null;
+        Token this_NEWLINE_7=null;
+        Token otherlv_8=null;
         Token otherlv_9=null;
-        Token otherlv_10=null;
-        EObject lv_definitions_7_0 = null;
+        EObject lv_definitions_6_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2716:28: ( ( () otherlv_1= Box otherlv_2= QuotationMark (this_ID_3= RULE_ID )* otherlv_4= QuotationMark ( ruleColor )? this_NEWLINE_6= RULE_NEWLINE ( ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE )* otherlv_9= End otherlv_10= Box ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2717:1: ( () otherlv_1= Box otherlv_2= QuotationMark (this_ID_3= RULE_ID )* otherlv_4= QuotationMark ( ruleColor )? this_NEWLINE_6= RULE_NEWLINE ( ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE )* otherlv_9= End otherlv_10= Box )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1635:28: ( (otherlv_0= Box otherlv_1= QuotationMark (this_ID_2= RULE_ID )* otherlv_3= QuotationMark (this_COLOR_4= RULE_COLOR )? this_NEWLINE_5= RULE_NEWLINE ( ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE )* otherlv_8= End otherlv_9= Box ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1636:1: (otherlv_0= Box otherlv_1= QuotationMark (this_ID_2= RULE_ID )* otherlv_3= QuotationMark (this_COLOR_4= RULE_COLOR )? this_NEWLINE_5= RULE_NEWLINE ( ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE )* otherlv_8= End otherlv_9= Box )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2717:1: ( () otherlv_1= Box otherlv_2= QuotationMark (this_ID_3= RULE_ID )* otherlv_4= QuotationMark ( ruleColor )? this_NEWLINE_6= RULE_NEWLINE ( ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE )* otherlv_9= End otherlv_10= Box )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2717:2: () otherlv_1= Box otherlv_2= QuotationMark (this_ID_3= RULE_ID )* otherlv_4= QuotationMark ( ruleColor )? this_NEWLINE_6= RULE_NEWLINE ( ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE )* otherlv_9= End otherlv_10= Box
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1636:1: (otherlv_0= Box otherlv_1= QuotationMark (this_ID_2= RULE_ID )* otherlv_3= QuotationMark (this_COLOR_4= RULE_COLOR )? this_NEWLINE_5= RULE_NEWLINE ( ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE )* otherlv_8= End otherlv_9= Box )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1637:2: otherlv_0= Box otherlv_1= QuotationMark (this_ID_2= RULE_ID )* otherlv_3= QuotationMark (this_COLOR_4= RULE_COLOR )? this_NEWLINE_5= RULE_NEWLINE ( ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE )* otherlv_8= End otherlv_9= Box
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2717:2: ()
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2718:5: 
-            {
+            otherlv_0=(Token)match(input,Box,FOLLOW_Box_in_ruleBox4136); 
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getBoxAccess().getBoxAction_0(),
-                        current);
+                	newLeafNode(otherlv_0, grammarAccess.getBoxAccess().getBoxKeyword_0());
                 
+            otherlv_1=(Token)match(input,QuotationMark,FOLLOW_QuotationMark_in_ruleBox4148); 
 
-            }
-
-            otherlv_1=(Token)match(input,Box,FOLLOW_Box_in_ruleBox7030); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getBoxAccess().getBoxKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getBoxAccess().getQuotationMarkKeyword_1());
                 
-            otherlv_2=(Token)match(input,QuotationMark,FOLLOW_QuotationMark_in_ruleBox7042); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getBoxAccess().getQuotationMarkKeyword_2());
-                
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2733:1: (this_ID_3= RULE_ID )*
-            loop48:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1646:1: (this_ID_2= RULE_ID )*
+            loop47:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA48_0==RULE_ID) ) {
-                    alt48=1;
+                if ( (LA47_0==RULE_ID) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt47) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2733:2: this_ID_3= RULE_ID
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1646:2: this_ID_2= RULE_ID
             	    {
-            	    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBox7053); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBox4159); 
             	     
-            	        newLeafNode(this_ID_3, grammarAccess.getBoxAccess().getIDTerminalRuleCall_3()); 
+            	        newLeafNode(this_ID_2, grammarAccess.getBoxAccess().getIDTerminalRuleCall_2()); 
             	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop47;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,QuotationMark,FOLLOW_QuotationMark_in_ruleBox7067); 
+            otherlv_3=(Token)match(input,QuotationMark,FOLLOW_QuotationMark_in_ruleBox4173); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getBoxAccess().getQuotationMarkKeyword_4());
+                	newLeafNode(otherlv_3, grammarAccess.getBoxAccess().getQuotationMarkKeyword_3());
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2742:1: ( ruleColor )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1655:1: (this_COLOR_4= RULE_COLOR )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA49_0==NumberSign) ) {
-                alt49=1;
+            if ( (LA48_0==RULE_COLOR) ) {
+                alt48=1;
             }
-            switch (alt49) {
+            switch (alt48) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2743:5: ruleColor
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1655:2: this_COLOR_4= RULE_COLOR
                     {
+                    this_COLOR_4=(Token)match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_ruleBox4184); 
                      
-                            newCompositeNode(grammarAccess.getBoxAccess().getColorParserRuleCall_5()); 
-                        
-                    pushFollow(FOLLOW_ruleColor_in_ruleBox7083);
-                    ruleColor();
-
-                    state._fsp--;
-
-
-                            afterParserOrEnumRuleCall();
+                        newLeafNode(this_COLOR_4, grammarAccess.getBoxAccess().getCOLORTerminalRuleCall_4()); 
                         
 
                     }
@@ -7296,44 +4729,44 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_NEWLINE_6=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleBox7095); 
+            this_NEWLINE_5=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleBox4196); 
              
-                newLeafNode(this_NEWLINE_6, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6()); 
+                newLeafNode(this_NEWLINE_5, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_5()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2754:1: ( ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE )*
-            loop51:
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1663:1: ( ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE )*
+            loop50:
             do {
-                int alt51=2;
-                int LA51_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( (LA51_0==Participant||LA51_0==Boundary||LA51_0==Database||LA51_0==Control||LA51_0==Entity||LA51_0==Actor||LA51_0==RULE_NEWLINE) ) {
-                    alt51=1;
+                if ( (LA50_0==Participant||LA50_0==Boundary||(LA50_0>=Database && LA50_0<=Control)||LA50_0==Entity||LA50_0==Actor||LA50_0==RULE_NEWLINE) ) {
+                    alt50=1;
                 }
 
 
-                switch (alt51) {
+                switch (alt50) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2754:2: ( (lv_definitions_7_0= ruleDefinition ) )? this_NEWLINE_8= RULE_NEWLINE
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1663:2: ( (lv_definitions_6_0= ruleDefinition ) )? this_NEWLINE_7= RULE_NEWLINE
             	    {
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2754:2: ( (lv_definitions_7_0= ruleDefinition ) )?
-            	    int alt50=2;
-            	    int LA50_0 = input.LA(1);
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1663:2: ( (lv_definitions_6_0= ruleDefinition ) )?
+            	    int alt49=2;
+            	    int LA49_0 = input.LA(1);
 
-            	    if ( (LA50_0==Participant||LA50_0==Boundary||LA50_0==Database||LA50_0==Control||LA50_0==Entity||LA50_0==Actor) ) {
-            	        alt50=1;
+            	    if ( (LA49_0==Participant||LA49_0==Boundary||(LA49_0>=Database && LA49_0<=Control)||LA49_0==Entity||LA49_0==Actor) ) {
+            	        alt49=1;
             	    }
-            	    switch (alt50) {
+            	    switch (alt49) {
             	        case 1 :
-            	            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2755:1: (lv_definitions_7_0= ruleDefinition )
+            	            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1664:1: (lv_definitions_6_0= ruleDefinition )
             	            {
-            	            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2755:1: (lv_definitions_7_0= ruleDefinition )
-            	            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:2756:3: lv_definitions_7_0= ruleDefinition
+            	            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1664:1: (lv_definitions_6_0= ruleDefinition )
+            	            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:1665:3: lv_definitions_6_0= ruleDefinition
             	            {
             	             
-            	            	        newCompositeNode(grammarAccess.getBoxAccess().getDefinitionsDefinitionParserRuleCall_7_0_0()); 
+            	            	        newCompositeNode(grammarAccess.getBoxAccess().getDefinitionsDefinitionParserRuleCall_6_0_0()); 
             	            	    
-            	            pushFollow(FOLLOW_ruleDefinition_in_ruleBox7116);
-            	            lv_definitions_7_0=ruleDefinition();
+            	            pushFollow(FOLLOW_ruleDefinition_in_ruleBox4217);
+            	            lv_definitions_6_0=ruleDefinition();
 
             	            state._fsp--;
 
@@ -7344,7 +4777,7 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	                   		add(
             	                   			current, 
             	                   			"definitions",
-            	                    		lv_definitions_7_0, 
+            	                    		lv_definitions_6_0, 
             	                    		"Definition");
             	            	        afterParserOrEnumRuleCall();
             	            	    
@@ -7357,26 +4790,26 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    this_NEWLINE_8=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleBox7128); 
+            	    this_NEWLINE_7=(Token)match(input,RULE_NEWLINE,FOLLOW_RULE_NEWLINE_in_ruleBox4229); 
             	     
-            	        newLeafNode(this_NEWLINE_8, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_7_1()); 
+            	        newLeafNode(this_NEWLINE_7, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1()); 
             	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop51;
+            	    break loop50;
                 }
             } while (true);
 
-            otherlv_9=(Token)match(input,End,FOLLOW_End_in_ruleBox7142); 
+            otherlv_8=(Token)match(input,End,FOLLOW_End_in_ruleBox4243); 
 
-                	newLeafNode(otherlv_9, grammarAccess.getBoxAccess().getEndKeyword_8());
+                	newLeafNode(otherlv_8, grammarAccess.getBoxAccess().getEndKeyword_7());
                 
-            otherlv_10=(Token)match(input,Box,FOLLOW_Box_in_ruleBox7154); 
+            otherlv_9=(Token)match(input,Box,FOLLOW_Box_in_ruleBox4255); 
 
-                	newLeafNode(otherlv_10, grammarAccess.getBoxAccess().getBoxKeyword_9());
+                	newLeafNode(otherlv_9, grammarAccess.getBoxAccess().getBoxKeyword_8());
                 
 
             }
@@ -7400,574 +4833,207 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA8 dfa8 = new DFA8(this);
-    static final String DFA8_eotS =
-        "\u009a\uffff";
-    static final String DFA8_eofS =
-        "\u009a\uffff";
-    static final String DFA8_minS =
-        "\1\u00bf\1\u00c6\1\uffff\1\u00c1\1\u00be\1\4\u0091\u00c0\1\u00ba"+
-        "\2\uffff";
-    static final String DFA8_maxS =
-        "\2\u00c6\1\uffff\1\u00c1\1\u00be\1\u00b0\u0091\u00c0\1\u00c6\2"+
-        "\uffff";
-    static final String DFA8_acceptS =
-        "\2\uffff\1\3\u0095\uffff\1\2\1\1";
-    static final String DFA8_specialS =
-        "\u009a\uffff}>";
-    static final String[] DFA8_transitionS = {
-            "\1\1\6\uffff\1\2",
-            "\1\3",
-            "",
-            "\1\4",
-            "\1\5",
-            "\1\114\1\143\1\135\1\142\1\144\1\145\1\16\1\27\1\43\1\124"+
-            "\1\125\1\126\1\141\1\35\1\50\1\51\1\52\1\53\1\106\1\122\1\161"+
-            "\1\163\1\164\1\7\1\47\1\110\1\123\1\137\1\140\1\146\1\42\1\57"+
-            "\1\64\1\65\1\75\1\121\1\127\1\152\1\177\1\u008a\1\u0096\1\uffff"+
-            "\1\11\1\20\1\24\1\44\1\54\1\55\1\62\1\70\1\112\1\116\1\136\1"+
-            "\165\1\172\1\u0081\1\u0094\2\uffff\1\6\1\22\1\23\1\25\1\37\1"+
-            "\41\1\46\1\63\1\67\1\72\1\101\1\107\1\111\1\113\1\115\1\117"+
-            "\1\120\1\131\1\147\1\150\1\156\1\157\1\162\1\166\1\175\1\176"+
-            "\1\u0086\1\u0087\1\u0088\1\u008b\1\u0090\1\uffff\1\30\1\33\1"+
-            "\34\1\36\1\40\1\56\1\77\1\105\1\151\1\u0082\4\uffff\1\31\1\45"+
-            "\1\60\1\61\1\66\1\100\1\133\1\154\1\u0085\1\u008e\4\uffff\1"+
-            "\14\1\102\1\134\1\160\1\173\1\u0080\1\u0083\1\u0084\1\u008f"+
-            "\1\u0091\1\u0095\4\uffff\1\12\1\13\1\15\1\21\1\26\1\74\1\103"+
-            "\1\104\1\132\1\155\1\u0092\1\u0093\5\uffff\1\10\1\17\1\32\1"+
-            "\71\1\73\1\76\1\130\1\153\1\167\1\170\1\171\1\u0089\1\u008d"+
-            "\7\uffff\1\174\1\u008c",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0097",
-            "\1\u0099\13\uffff\1\u0098",
-            "",
-            ""
-    };
-
-    static final short[] DFA8_eot = DFA.unpackEncodedString(DFA8_eotS);
-    static final short[] DFA8_eof = DFA.unpackEncodedString(DFA8_eofS);
-    static final char[] DFA8_min = DFA.unpackEncodedStringToUnsignedChars(DFA8_minS);
-    static final char[] DFA8_max = DFA.unpackEncodedStringToUnsignedChars(DFA8_maxS);
-    static final short[] DFA8_accept = DFA.unpackEncodedString(DFA8_acceptS);
-    static final short[] DFA8_special = DFA.unpackEncodedString(DFA8_specialS);
-    static final short[][] DFA8_transition;
-
-    static {
-        int numStates = DFA8_transitionS.length;
-        DFA8_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA8_transition[i] = DFA.unpackEncodedString(DFA8_transitionS[i]);
-        }
-    }
-
-    class DFA8 extends DFA {
-
-        public DFA8(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 8;
-            this.eot = DFA8_eot;
-            this.eof = DFA8_eof;
-            this.min = DFA8_min;
-            this.max = DFA8_max;
-            this.accept = DFA8_accept;
-            this.special = DFA8_special;
-            this.transition = DFA8_transition;
-        }
-        public String getDescription() {
-            return "595:1: ( (otherlv_13= LeftParenthesis this_ID_14= RULE_ID otherlv_15= Comma ruleColor otherlv_17= RightParenthesis ) | (otherlv_18= LeftParenthesis this_ID_19= RULE_ID otherlv_20= Comma ruleColor otherlv_22= RightParenthesis this_ID_23= RULE_ID ) | this_ID_24= RULE_ID )";
-        }
-    }
  
 
     public static final BitSet FOLLOW_rulePlantuml_in_entryRulePlantuml67 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePlantuml77 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiagram_in_rulePlantuml122 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDiagram_in_rulePlantuml122 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_ruleDiagram_in_entryRuleDiagram157 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDiagram167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_START_in_ruleDiagram212 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleDiagram222 = new BitSet(new long[]{0x6000200000000000L,0x05801E0000000000L,0x12F65A0005C00380L,0x0000000000000068L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiagram242 = new BitSet(new long[]{0x6000200000000000L,0x05801E0000000000L,0x12F65A0005C00380L,0x0000000000000068L});
-    public static final BitSet FOLLOW_RULE_END_in_ruleDiagram254 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleDiagram265 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_RULE_START_in_ruleDiagram212 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleDiagram222 = new BitSet(new long[]{0x002A097BB57EBF70L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiagram242 = new BitSet(new long[]{0x002A097BB57EBF70L});
+    public static final BitSet FOLLOW_RULE_END_in_ruleDiagram254 = new BitSet(new long[]{0x0002000000000002L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleDiagram265 = new BitSet(new long[]{0x0002000000000002L});
     public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction301 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstruction311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrow_in_ruleInstruction359 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleDefinition_in_ruleInstruction387 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleColor_in_ruleInstruction403 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleAutoNumber_in_ruleInstruction427 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleTitle_in_ruleInstruction448 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleLegend_in_ruleInstruction469 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleNewpage_in_ruleInstruction490 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleAltElse_in_ruleInstruction517 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleGroupingMessages_in_ruleInstruction544 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleNote_in_ruleInstruction571 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleDivider_in_ruleInstruction592 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleReference_in_ruleInstruction619 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleDelay_in_ruleInstruction640 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleSpace_in_ruleInstruction661 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleHidefootbox_in_ruleInstruction682 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleActivate_in_ruleInstruction709 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleDeactivate_in_ruleInstruction736 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleParticipantCreation_in_ruleInstruction757 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleBox_in_ruleInstruction784 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleInstruction796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrow_in_entryRuleArrow830 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArrow840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleArrow882 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_RULE_SEQUENCE_in_ruleArrow898 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleArrow914 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_Colon_in_ruleArrow933 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleArrow944 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition982 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Actor_in_ruleDefinition1031 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Boundary_in_ruleDefinition1073 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Control_in_ruleDefinition1115 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Entity_in_ruleDefinition1157 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Database_in_ruleDefinition1199 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Participant_in_ruleDefinition1241 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1257 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_LessThanSignLessThanSign_in_ruleDefinition1276 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_LeftParenthesis_in_ruleDefinition1290 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1300 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_Comma_in_ruleDefinition1312 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_ruleColor_in_ruleDefinition1327 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_RightParenthesis_in_ruleDefinition1339 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_LeftParenthesis_in_ruleDefinition1359 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1369 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_Comma_in_ruleDefinition1381 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_ruleColor_in_ruleDefinition1396 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_RightParenthesis_in_ruleDefinition1408 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1418 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1435 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_GreaterThanSignGreaterThanSign_in_ruleDefinition1448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAutoNumber_in_entryRuleAutoNumber1486 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAutoNumber1497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Autonumber_in_ruleAutoNumber1535 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleAutoNumber1551 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleAutoNumber1572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColor_in_entryRuleColor1621 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleColor1632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NumberSign_in_ruleColor1670 = new BitSet(new long[]{0x9FFFDFFFFFFFFFF0L,0xF87FE1FFBFFFFFFFL,0x000180FFF83FFC3FL});
-    public static final BitSet FOLLOW_AliceBlue_in_ruleColor1684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AntiqueWhite_in_ruleColor1703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Aqua_in_ruleColor1722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Aquamarine_in_ruleColor1741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Azure_in_ruleColor1760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Beige_in_ruleColor1779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Bisque_in_ruleColor1798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Black_in_ruleColor1817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BlanchedAlmond_in_ruleColor1836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Blue_in_ruleColor1855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BlueViolet_in_ruleColor1874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Brown_in_ruleColor1893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BurlyWood_in_ruleColor1912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CadetBlue_in_ruleColor1931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Chartreuse_in_ruleColor1950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Chocolate_in_ruleColor1969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Coral_in_ruleColor1988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CornflowerBlue_in_ruleColor2007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Cornsilk_in_ruleColor2026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Crimson_in_ruleColor2045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Cyan_in_ruleColor2064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkBlue_in_ruleColor2083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkCyan_in_ruleColor2102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkGoldenRod_in_ruleColor2121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkGray_in_ruleColor2140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkGreen_in_ruleColor2159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkGrey_in_ruleColor2178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkKhaki_in_ruleColor2197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkMagenta_in_ruleColor2216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkOliveGreen_in_ruleColor2235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkOrchid_in_ruleColor2254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkRed_in_ruleColor2273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkSalmo_in_ruleColor2292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkSeaGreen_in_ruleColor2311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkSlateBlue_in_ruleColor2330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkSlateGray_in_ruleColor2349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkSlateGrey_in_ruleColor2368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkTurquoise_in_ruleColor2387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DarkViolet_in_ruleColor2406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Darkorange_in_ruleColor2425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DeepPink_in_ruleColor2444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DeepSkyBlue_in_ruleColor2463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DimGray_in_ruleColor2482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DimGrey_in_ruleColor2501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DodgerBlue_in_ruleColor2520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FireBrick_in_ruleColor2539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FloralWhite_in_ruleColor2558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ForestGreen_in_ruleColor2577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Fuchsia_in_ruleColor2596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Gainsboro_in_ruleColor2615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GhostWhite_in_ruleColor2634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Gold_in_ruleColor2653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GoldenRod_in_ruleColor2672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Gray_in_ruleColor2691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Green_in_ruleColor2710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GreenYellow_in_ruleColor2729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Grey_in_ruleColor2748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_HoneyDew_in_ruleColor2767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_HotPink_in_ruleColor2786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IndianRed_in_ruleColor2805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Indigo_in_ruleColor2824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Ivory_in_ruleColor2843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Khaki_in_ruleColor2862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Lavender_in_ruleColor2881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LavenderBlush_in_ruleColor2900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LawnGreen_in_ruleColor2919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LemonChiffon_in_ruleColor2938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightBlue_in_ruleColor2957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightCoral_in_ruleColor2976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightCyan_in_ruleColor2995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightGoldenRodYellow_in_ruleColor3014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightGray_in_ruleColor3033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightGreen_in_ruleColor3052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightGrey_in_ruleColor3071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightPink_in_ruleColor3090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightSalmon_in_ruleColor3109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightSeaGreen_in_ruleColor3128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightSkyBlue_in_ruleColor3147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightSlateGray_in_ruleColor3166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightSlateGrey_in_ruleColor3185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightSteelBlue_in_ruleColor3204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LightYellow_in_ruleColor3223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Lime_in_ruleColor3242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LimeGreen_in_ruleColor3261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Linen_in_ruleColor3280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Magenta_in_ruleColor3299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Maroon_in_ruleColor3318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumAquaMarine_in_ruleColor3337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumBlue_in_ruleColor3356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumOrchid_in_ruleColor3375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumPurple_in_ruleColor3394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumSeaGreen_in_ruleColor3413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumSlateBlue_in_ruleColor3432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumSpringGreen_in_ruleColor3451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumTurquoise_in_ruleColor3470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MediumVioletRed_in_ruleColor3489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MidnightBlue_in_ruleColor3508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MintCream_in_ruleColor3527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MistyRose_in_ruleColor3546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Moccasin_in_ruleColor3565 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NavajoWhite_in_ruleColor3584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Navy_in_ruleColor3603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OldLace_in_ruleColor3622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Olive_in_ruleColor3641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OliveDrab_in_ruleColor3660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OrangeRed_in_ruleColor3679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Orchid_in_ruleColor3698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PaleGoldenRod_in_ruleColor3717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PaleGreen_in_ruleColor3736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PaleTurquoise_in_ruleColor3755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PaleVioletRed_in_ruleColor3774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PapayaWhip_in_ruleColor3793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PeachPuff_in_ruleColor3812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Peru_in_ruleColor3831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Pink_in_ruleColor3850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Plum_in_ruleColor3869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PowderBlue_in_ruleColor3888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Purple_in_ruleColor3907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Red_in_ruleColor3926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RosyBrown_in_ruleColor3945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RoyalBlue_in_ruleColor3964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SaddleBrown_in_ruleColor3983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Salmon_in_ruleColor4002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SandyBrown_in_ruleColor4021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SeaGreen_in_ruleColor4040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Sienna_in_ruleColor4059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Silver_in_ruleColor4078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SkyBlue_in_ruleColor4097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SlateBlue_in_ruleColor4116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SlateGray_in_ruleColor4135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SlateGrey_in_ruleColor4154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Snow_in_ruleColor4173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SpringGreen_in_ruleColor4192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SteelBlue_in_ruleColor4211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Tan_in_ruleColor4230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Teal_in_ruleColor4249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Thistle_in_ruleColor4268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Tomato_in_ruleColor4287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Turquoise_in_ruleColor4306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Violet_in_ruleColor4325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Wheat_in_ruleColor4344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_White_in_ruleColor4363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WhiteSmoke_in_ruleColor4382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Yellow_in_ruleColor4401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_YellowGreen_in_ruleColor4420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTitle_in_entryRuleTitle4461 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTitle4472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Title_in_ruleTitle4510 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTitle4526 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleLegend_in_entryRuleLegend4573 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLegend4584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Legend_in_ruleLegend4622 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L,0x0000040002000040L,0x0000000000000008L});
-    public static final BitSet FOLLOW_Right_in_ruleLegend4636 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_Left_in_ruleLegend4655 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_Center_in_ruleLegend4674 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleLegend4692 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleLegend4713 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_Endlegend_in_ruleLegend4735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNewpage_in_entryRuleNewpage4775 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNewpage4786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Newpage_in_ruleNewpage4824 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNewpage4840 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleAltElse_in_entryRuleAltElse4886 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAltElse4896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Alt_in_ruleAltElse4943 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAltElse4954 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleAltElse4966 = new BitSet(new long[]{0x6000200000000000L,0x05801E0000000000L,0x12FE5B0005C00380L,0x0000000000000048L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleAltElse4986 = new BitSet(new long[]{0x6000200000000000L,0x05801E0000000000L,0x12FE5B0005C00380L,0x0000000000000048L});
-    public static final BitSet FOLLOW_ruleElse_in_ruleAltElse5008 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0008010000000000L});
-    public static final BitSet FOLLOW_End_in_ruleAltElse5022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElse_in_entryRuleElse5056 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElse5066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Else_in_ruleElse5113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElse5124 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleElse5136 = new BitSet(new long[]{0x6000200000000002L,0x05801E0000000000L,0x12F65A0005C00380L,0x0000000000000048L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleElse5156 = new BitSet(new long[]{0x6000200000000002L,0x05801E0000000000L,0x12F65A0005C00380L,0x0000000000000048L});
-    public static final BitSet FOLLOW_ruleGroupingMessages_in_entryRuleGroupingMessages5192 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGroupingMessages5202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Opt_in_ruleGroupingMessages5250 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_Loop_in_ruleGroupingMessages5268 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_Par_in_ruleGroupingMessages5286 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_Break_in_ruleGroupingMessages5304 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_Critical_in_ruleGroupingMessages5322 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_Group_in_ruleGroupingMessages5340 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGroupingMessages5352 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleGroupingMessages5364 = new BitSet(new long[]{0x6000200000000000L,0x05801E0000000000L,0x12FE5A0005C00380L,0x0000000000000048L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleGroupingMessages5384 = new BitSet(new long[]{0x6000200000000000L,0x05801E0000000000L,0x12FE5A0005C00380L,0x0000000000000048L});
-    public static final BitSet FOLLOW_End_in_ruleGroupingMessages5398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNote_in_entryRuleNote5432 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNote5442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Note_in_ruleNote5489 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000240002000000L});
-    public static final BitSet FOLLOW_Right_in_ruleNote5503 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4800000000000000L,0x000000000000000CL});
-    public static final BitSet FOLLOW_Of_in_ruleNote5516 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5535 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Comma_in_ruleNote5549 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5568 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Left_in_ruleNote5593 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4800000000000000L,0x000000000000000CL});
-    public static final BitSet FOLLOW_Of_in_ruleNote5606 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5625 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Comma_in_ruleNote5639 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5658 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Over_in_ruleNote5683 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5702 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Comma_in_ruleNote5716 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5735 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_ruleColor_in_ruleNote5756 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x000000000000000CL});
-    public static final BitSet FOLLOW_Colon_in_ruleNote5772 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleNote5801 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNote5812 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleNote5826 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_End_in_ruleNote5838 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_Note_in_ruleNote5850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDivider_in_entryRuleDivider5887 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDivider5898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EqualsSignEqualsSign_in_ruleDivider5936 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0200000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDivider5952 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0200000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_EqualsSignEqualsSign_in_ruleDivider5972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReference_in_entryRuleReference6011 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReference6021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Ref_in_ruleReference6059 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_Over_in_ruleReference6071 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReference6090 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0008000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Comma_in_ruleReference6104 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReference6123 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0008000000000000L,0x000000000000000EL});
-    public static final BitSet FOLLOW_Colon_in_ruleReference6140 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReference6151 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleReference6172 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0008000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReference6183 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0008000000000000L,0x0000000000000048L});
-    public static final BitSet FOLLOW_End_in_ruleReference6199 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_Ref_in_ruleReference6211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDelay_in_entryRuleDelay6248 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDelay6259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FullStopFullStopFullStop_in_ruleDelay6297 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000400000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDelay6314 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_FullStopFullStopFullStop_in_ruleDelay6334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpace_in_entryRuleSpace6376 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpace6387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VerticalLineVerticalLineVerticalLine_in_ruleSpace6425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VerticalLineVerticalLine_in_ruleSpace6445 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSpace6460 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_VerticalLineVerticalLine_in_ruleSpace6478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHidefootbox_in_entryRuleHidefootbox6519 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleHidefootbox6530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Hide_in_ruleHidefootbox6568 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
-    public static final BitSet FOLLOW_Footbox_in_ruleHidefootbox6581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivate_in_entryRuleActivate6620 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActivate6630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Activate_in_ruleActivate6668 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleColor_in_ruleActivate6684 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleActivate6702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeactivate_in_entryRuleDeactivate6742 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDeactivate6752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Deactivate_in_ruleDeactivate6791 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_Destroy_in_ruleDeactivate6809 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDeactivate6829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParticipantCreation_in_entryRuleParticipantCreation6865 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParticipantCreation6876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Create_in_ruleParticipantCreation6914 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParticipantCreation6929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBox_in_entryRuleBox6973 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBox6983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Box_in_ruleBox7030 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_QuotationMark_in_ruleBox7042 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x2000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBox7053 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x2000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_QuotationMark_in_ruleBox7067 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleColor_in_ruleBox7083 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleBox7095 = new BitSet(new long[]{0x0000200000000000L,0x0080140000000000L,0x0008000000400100L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ruleDefinition_in_ruleBox7116 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleBox7128 = new BitSet(new long[]{0x0000200000000000L,0x0080140000000000L,0x0008000000400100L,0x0000000000000008L});
-    public static final BitSet FOLLOW_End_in_ruleBox7142 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0004000000000000L});
-    public static final BitSet FOLLOW_Box_in_ruleBox7154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrow_in_ruleInstruction359 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleDefinition_in_ruleInstruction387 = new BitSet(new long[]{0x0602000000000000L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_ruleInstruction398 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_RULE_HEXCODE_in_ruleInstruction414 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleAutoNumber_in_ruleInstruction438 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleTitle_in_ruleInstruction459 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleLegend_in_ruleInstruction480 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleNewpage_in_ruleInstruction501 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleAltElse_in_ruleInstruction528 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleGroupingMessages_in_ruleInstruction555 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleNote_in_ruleInstruction582 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleDivider_in_ruleInstruction603 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleReference_in_ruleInstruction630 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleDelay_in_ruleInstruction651 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleSpace_in_ruleInstruction672 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleHidefootbox_in_ruleInstruction693 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleActivate_in_ruleInstruction720 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleDeactivate_in_ruleInstruction747 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleParticipantCreation_in_ruleInstruction768 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleBox_in_ruleInstruction795 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleInstruction807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrow_in_entryRuleArrow841 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArrow851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleArrow893 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_RULE_SEQUENCE_in_ruleArrow909 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleArrow925 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_Colon_in_ruleArrow944 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleArrow955 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition993 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition1003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Actor_in_ruleDefinition1042 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Boundary_in_ruleDefinition1084 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Control_in_ruleDefinition1126 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Entity_in_ruleDefinition1168 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Database_in_ruleDefinition1210 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Participant_in_ruleDefinition1252 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1268 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_LessThanSignLessThanSign_in_ruleDefinition1287 = new BitSet(new long[]{0x0020200000000000L});
+    public static final BitSet FOLLOW_LeftParenthesis_in_ruleDefinition1301 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1311 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_Comma_in_ruleDefinition1323 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_ruleDefinition1333 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_RightParenthesis_in_ruleDefinition1345 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_LeftParenthesis_in_ruleDefinition1365 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1375 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_Comma_in_ruleDefinition1387 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_ruleDefinition1397 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_RightParenthesis_in_ruleDefinition1409 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1419 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDefinition1436 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_GreaterThanSignGreaterThanSign_in_ruleDefinition1449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAutoNumber_in_entryRuleAutoNumber1487 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAutoNumber1498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Autonumber_in_ruleAutoNumber1536 = new BitSet(new long[]{0x0010000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleAutoNumber1552 = new BitSet(new long[]{0x0010000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleAutoNumber1573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTitle_in_entryRuleTitle1622 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTitle1633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Title_in_ruleTitle1671 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTitle1687 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_ruleLegend_in_entryRuleLegend1734 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLegend1745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Legend_in_ruleLegend1783 = new BitSet(new long[]{0x0002000008810080L});
+    public static final BitSet FOLLOW_Right_in_ruleLegend1797 = new BitSet(new long[]{0x0002000000000080L});
+    public static final BitSet FOLLOW_Left_in_ruleLegend1816 = new BitSet(new long[]{0x0002000000000080L});
+    public static final BitSet FOLLOW_Center_in_ruleLegend1835 = new BitSet(new long[]{0x0002000000000080L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleLegend1853 = new BitSet(new long[]{0x0022000000000080L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleLegend1874 = new BitSet(new long[]{0x0022000000000080L});
+    public static final BitSet FOLLOW_Endlegend_in_ruleLegend1896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNewpage_in_entryRuleNewpage1936 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNewpage1947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Newpage_in_ruleNewpage1985 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNewpage2001 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_ruleAltElse_in_entryRuleAltElse2047 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAltElse2057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Alt_in_ruleAltElse2095 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAltElse2106 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleAltElse2118 = new BitSet(new long[]{0x0022097FB77EBF70L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleAltElse2138 = new BitSet(new long[]{0x0022097FB77EBF70L});
+    public static final BitSet FOLLOW_ruleElse_in_ruleAltElse2160 = new BitSet(new long[]{0x0000000402000000L});
+    public static final BitSet FOLLOW_End_in_ruleAltElse2174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElse_in_entryRuleElse2208 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElse2218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Else_in_ruleElse2256 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleElse2267 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleElse2279 = new BitSet(new long[]{0x0022097BB57EBF72L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleElse2299 = new BitSet(new long[]{0x0022097BB57EBF72L});
+    public static final BitSet FOLLOW_ruleGroupingMessages_in_entryRuleGroupingMessages2335 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGroupingMessages2345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Opt_in_ruleGroupingMessages2384 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_Loop_in_ruleGroupingMessages2402 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_Par_in_ruleGroupingMessages2420 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_Break_in_ruleGroupingMessages2438 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_Critical_in_ruleGroupingMessages2456 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_Group_in_ruleGroupingMessages2474 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGroupingMessages2486 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleGroupingMessages2498 = new BitSet(new long[]{0x0022097FB57EBF70L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleGroupingMessages2518 = new BitSet(new long[]{0x0022097FB57EBF70L});
+    public static final BitSet FOLLOW_End_in_ruleGroupingMessages2532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNote_in_entryRuleNote2566 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNote2576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Note_in_ruleNote2614 = new BitSet(new long[]{0x0000000048800000L});
+    public static final BitSet FOLLOW_Right_in_ruleNote2628 = new BitSet(new long[]{0x0203040000000000L});
+    public static final BitSet FOLLOW_Of_in_ruleNote2641 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2660 = new BitSet(new long[]{0x0203800000000000L});
+    public static final BitSet FOLLOW_Comma_in_ruleNote2674 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2693 = new BitSet(new long[]{0x0203800000000000L});
+    public static final BitSet FOLLOW_Left_in_ruleNote2718 = new BitSet(new long[]{0x0203040000000000L});
+    public static final BitSet FOLLOW_Of_in_ruleNote2731 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2750 = new BitSet(new long[]{0x0203800000000000L});
+    public static final BitSet FOLLOW_Comma_in_ruleNote2764 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2783 = new BitSet(new long[]{0x0203800000000000L});
+    public static final BitSet FOLLOW_Over_in_ruleNote2808 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2827 = new BitSet(new long[]{0x0203800000000000L});
+    public static final BitSet FOLLOW_Comma_in_ruleNote2841 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2860 = new BitSet(new long[]{0x0203800000000000L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_ruleNote2876 = new BitSet(new long[]{0x0203000000000000L});
+    public static final BitSet FOLLOW_Colon_in_ruleNote2892 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleNote2921 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNote2932 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleNote2946 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_End_in_ruleNote2958 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_Note_in_ruleNote2970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDivider_in_entryRuleDivider3007 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDivider3018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EqualsSignEqualsSign_in_ruleDivider3056 = new BitSet(new long[]{0x0020010000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDivider3072 = new BitSet(new long[]{0x0020010000000000L});
+    public static final BitSet FOLLOW_EqualsSignEqualsSign_in_ruleDivider3092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReference_in_entryRuleReference3131 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReference3141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Ref_in_ruleReference3179 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_Over_in_ruleReference3191 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReference3210 = new BitSet(new long[]{0x0003800400000000L});
+    public static final BitSet FOLLOW_Comma_in_ruleReference3224 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReference3243 = new BitSet(new long[]{0x0003800400000000L});
+    public static final BitSet FOLLOW_Colon_in_ruleReference3260 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReference3271 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleReference3292 = new BitSet(new long[]{0x0022000400000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReference3303 = new BitSet(new long[]{0x0022000400000000L});
+    public static final BitSet FOLLOW_End_in_ruleReference3319 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_Ref_in_ruleReference3331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDelay_in_entryRuleDelay3368 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDelay3379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FullStopFullStopFullStop_in_ruleDelay3417 = new BitSet(new long[]{0x0020000080000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDelay3434 = new BitSet(new long[]{0x0020000080000000L});
+    public static final BitSet FOLLOW_FullStopFullStopFullStop_in_ruleDelay3454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpace_in_entryRuleSpace3496 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpace3507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VerticalLineVerticalLineVerticalLine_in_ruleSpace3545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VerticalLineVerticalLine_in_ruleSpace3565 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSpace3580 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_VerticalLineVerticalLine_in_ruleSpace3598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHidefootbox_in_entryRuleHidefootbox3639 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHidefootbox3650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Hide_in_ruleHidefootbox3688 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_Footbox_in_ruleHidefootbox3701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivate_in_entryRuleActivate3740 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActivate3750 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Activate_in_ruleActivate3788 = new BitSet(new long[]{0x0220000000000000L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_ruleActivate3799 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleActivate3817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeactivate_in_entryRuleDeactivate3857 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDeactivate3867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Deactivate_in_ruleDeactivate3906 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_Destroy_in_ruleDeactivate3924 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDeactivate3944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParticipantCreation_in_entryRuleParticipantCreation3980 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParticipantCreation3991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Create_in_ruleParticipantCreation4029 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleParticipantCreation4044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBox_in_entryRuleBox4088 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBox4098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Box_in_ruleBox4136 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_QuotationMark_in_ruleBox4148 = new BitSet(new long[]{0x0020100000000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBox4159 = new BitSet(new long[]{0x0020100000000000L});
+    public static final BitSet FOLLOW_QuotationMark_in_ruleBox4173 = new BitSet(new long[]{0x0202000000000000L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_ruleBox4184 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleBox4196 = new BitSet(new long[]{0x0002000400141A10L});
+    public static final BitSet FOLLOW_ruleDefinition_in_ruleBox4217 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_RULE_NEWLINE_in_ruleBox4229 = new BitSet(new long[]{0x0002000400141A10L});
+    public static final BitSet FOLLOW_End_in_ruleBox4243 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_Box_in_ruleBox4255 = new BitSet(new long[]{0x0000000000000002L});
 
 }

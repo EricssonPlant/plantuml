@@ -142,13 +142,13 @@ public interface PlantumlPackage extends EPackage
   int ARROW = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute list.
+   * The feature id for the '<em><b>Ids</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARROW__NAME = INSTRUCTION_FEATURE_COUNT + 0;
+  int ARROW__IDS = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Arrow</em>' class.
@@ -263,13 +263,22 @@ public interface PlantumlPackage extends EPackage
   int GROUPING_MESSAGES = 7;
 
   /**
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUPING_MESSAGES__INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Grouping Messages</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUPING_MESSAGES_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+  int GROUPING_MESSAGES_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.plantuml.impl.NoteImpl <em>Note</em>}' class.
@@ -465,34 +474,6 @@ public interface PlantumlPackage extends EPackage
    */
   int BOX_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
-  /**
-   * The meta object id for the '{@link org.xtext.plantuml.impl.GroupingMessageImpl <em>Grouping Message</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.plantuml.impl.GroupingMessageImpl
-   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getGroupingMessage()
-   * @generated
-   */
-  int GROUPING_MESSAGE = 13;
-
-  /**
-   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GROUPING_MESSAGE__INSTRUCTIONS = GROUPING_MESSAGES_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Grouping Message</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GROUPING_MESSAGE_FEATURE_COUNT = GROUPING_MESSAGES_FEATURE_COUNT + 1;
-
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Plantuml <em>Plantuml</em>}'.
@@ -557,15 +538,15 @@ public interface PlantumlPackage extends EPackage
   EClass getArrow();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Arrow#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Arrow#getIds <em>Ids</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Name</em>'.
-   * @see org.xtext.plantuml.Arrow#getName()
+   * @return the meta object for the attribute list '<em>Ids</em>'.
+   * @see org.xtext.plantuml.Arrow#getIds()
    * @see #getArrow()
    * @generated
    */
-  EAttribute getArrow_Name();
+  EAttribute getArrow_Ids();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Definition <em>Definition</em>}'.
@@ -650,6 +631,17 @@ public interface PlantumlPackage extends EPackage
    * @generated
    */
   EClass getGroupingMessages();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.GroupingMessages#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see org.xtext.plantuml.GroupingMessages#getInstructions()
+   * @see #getGroupingMessages()
+   * @generated
+   */
+  EReference getGroupingMessages_Instructions();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Note <em>Note</em>}'.
@@ -823,27 +815,6 @@ public interface PlantumlPackage extends EPackage
   EReference getBox_Definitions();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.plantuml.GroupingMessage <em>Grouping Message</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Grouping Message</em>'.
-   * @see org.xtext.plantuml.GroupingMessage
-   * @generated
-   */
-  EClass getGroupingMessage();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.plantuml.GroupingMessage#getInstructions <em>Instructions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Instructions</em>'.
-   * @see org.xtext.plantuml.GroupingMessage#getInstructions()
-   * @see #getGroupingMessage()
-   * @generated
-   */
-  EReference getGroupingMessage_Instructions();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -923,12 +894,12 @@ public interface PlantumlPackage extends EPackage
     EClass ARROW = eINSTANCE.getArrow();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Ids</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARROW__NAME = eINSTANCE.getArrow_Name();
+    EAttribute ARROW__IDS = eINSTANCE.getArrow_Ids();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -1001,6 +972,14 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EClass GROUPING_MESSAGES = eINSTANCE.getGroupingMessages();
+
+    /**
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUPING_MESSAGES__INSTRUCTIONS = eINSTANCE.getGroupingMessages_Instructions();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.NoteImpl <em>Note</em>}' class.
@@ -1139,24 +1118,6 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EReference BOX__DEFINITIONS = eINSTANCE.getBox_Definitions();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.plantuml.impl.GroupingMessageImpl <em>Grouping Message</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.plantuml.impl.GroupingMessageImpl
-     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getGroupingMessage()
-     * @generated
-     */
-    EClass GROUPING_MESSAGE = eINSTANCE.getGroupingMessage();
-
-    /**
-     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GROUPING_MESSAGE__INSTRUCTIONS = eINSTANCE.getGroupingMessage_Instructions();
 
   }
 

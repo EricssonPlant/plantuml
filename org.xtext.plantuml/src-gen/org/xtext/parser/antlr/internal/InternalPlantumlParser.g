@@ -190,13 +190,14 @@ ruleInstruction returns [EObject current=null]
         $current = $this_Definition_1.current;
         afterParserOrEnumRuleCall();
     }
-(
+(this_COLOR_2=RULE_COLOR
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getColorParserRuleCall_0_1_1()); 
+    newLeafNode(this_COLOR_2, grammarAccess.getInstructionAccess().getCOLORTerminalRuleCall_0_1_1_0()); 
     }
-ruleColor
-    {
-        afterParserOrEnumRuleCall();
+
+    |this_HEXCODE_3=RULE_HEXCODE
+    { 
+    newLeafNode(this_HEXCODE_3, grammarAccess.getInstructionAccess().getHEXCODETerminalRuleCall_0_1_1_1()); 
     }
 )?)
     |
@@ -239,9 +240,9 @@ ruleNewpage
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getAltElseParserRuleCall_0_6()); 
     }
-    this_AltElse_7=ruleAltElse
+    this_AltElse_8=ruleAltElse
     {
-        $current = $this_AltElse_7.current;
+        $current = $this_AltElse_8.current;
         afterParserOrEnumRuleCall();
     }
 
@@ -249,9 +250,9 @@ ruleNewpage
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getGroupingMessagesParserRuleCall_0_7()); 
     }
-    this_GroupingMessages_8=ruleGroupingMessages
+    this_GroupingMessages_9=ruleGroupingMessages
     {
-        $current = $this_GroupingMessages_8.current;
+        $current = $this_GroupingMessages_9.current;
         afterParserOrEnumRuleCall();
     }
 
@@ -259,9 +260,9 @@ ruleNewpage
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getNoteParserRuleCall_0_8()); 
     }
-    this_Note_9=ruleNote
+    this_Note_10=ruleNote
     {
-        $current = $this_Note_9.current;
+        $current = $this_Note_10.current;
         afterParserOrEnumRuleCall();
     }
 
@@ -278,9 +279,9 @@ ruleDivider
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getReferenceParserRuleCall_0_10()); 
     }
-    this_Reference_11=ruleReference
+    this_Reference_12=ruleReference
     {
-        $current = $this_Reference_11.current;
+        $current = $this_Reference_12.current;
         afterParserOrEnumRuleCall();
     }
 
@@ -315,9 +316,9 @@ ruleHidefootbox
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getActivateParserRuleCall_0_14()); 
     }
-    this_Activate_15=ruleActivate
+    this_Activate_16=ruleActivate
     {
-        $current = $this_Activate_15.current;
+        $current = $this_Activate_16.current;
         afterParserOrEnumRuleCall();
     }
 
@@ -325,9 +326,9 @@ ruleHidefootbox
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getDeactivateParserRuleCall_0_15()); 
     }
-    this_Deactivate_16=ruleDeactivate
+    this_Deactivate_17=ruleDeactivate
     {
-        $current = $this_Deactivate_16.current;
+        $current = $this_Deactivate_17.current;
         afterParserOrEnumRuleCall();
     }
 
@@ -344,14 +345,14 @@ ruleParticipantCreation
     { 
         newCompositeNode(grammarAccess.getInstructionAccess().getBoxParserRuleCall_0_17()); 
     }
-    this_Box_18=ruleBox
+    this_Box_19=ruleBox
     {
-        $current = $this_Box_18.current;
+        $current = $this_Box_19.current;
         afterParserOrEnumRuleCall();
     }
-)?this_NEWLINE_19=RULE_NEWLINE
+)?this_NEWLINE_20=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_19, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
+    newLeafNode(this_NEWLINE_20, grammarAccess.getInstructionAccess().getNEWLINETerminalRuleCall_1()); 
     }
 )
 ;
@@ -376,9 +377,9 @@ ruleArrow returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_name_0_0=RULE_ID
+		lv_ids_0_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_ids_0_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -386,8 +387,8 @@ ruleArrow returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"name",
-        		lv_name_0_0, 
+       			"ids",
+        		lv_ids_0_0, 
         		"ID");
 	    }
 
@@ -398,9 +399,9 @@ ruleArrow returns [EObject current=null]
     }
 (
 (
-		lv_name_2_0=RULE_ID
+		lv_ids_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_2_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_ids_2_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -408,8 +409,8 @@ ruleArrow returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"name",
-        		lv_name_2_0, 
+       			"ids",
+        		lv_ids_2_0, 
         		"ID");
 	    }
 
@@ -606,13 +607,9 @@ this_ID_14=RULE_ID
     {
     	newLeafNode(otherlv_15, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_0_2());
     }
-
+this_COLOR_16=RULE_COLOR
     { 
-        newCompositeNode(grammarAccess.getDefinitionAccess().getColorParserRuleCall_5_2_1_0_3()); 
-    }
-ruleColor
-    {
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_COLOR_16, grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_0_3()); 
     }
 
 	otherlv_17=RightParenthesis
@@ -634,13 +631,9 @@ this_ID_19=RULE_ID
     {
     	newLeafNode(otherlv_20, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_1_2());
     }
-
+this_COLOR_21=RULE_COLOR
     { 
-        newCompositeNode(grammarAccess.getDefinitionAccess().getColorParserRuleCall_5_2_1_1_3()); 
-    }
-ruleColor
-    {
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_COLOR_21, grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_1_3()); 
     }
 
 	otherlv_22=RightParenthesis
@@ -704,1048 +697,6 @@ ruleAutoNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
     newLeafNode(this_INT_2, grammarAccess.getAutoNumberAccess().getINTTerminalRuleCall_1_1()); 
     }
 )?)?)
-    ;
-
-
-
-
-
-// Entry rule entryRuleColor
-entryRuleColor returns [String current=null] 
-:
-	{ newCompositeNode(grammarAccess.getColorRule()); } 
-	 iv_ruleColor=ruleColor 
-	 { $current=$iv_ruleColor.current.getText(); }  
-	 EOF 
-;
-
-// Rule Color
-ruleColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule();
-    }:
-(
-	kw=NumberSign 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getNumberSignKeyword_0()); 
-    }
-(
-	kw=AliceBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getAliceBlueKeyword_1_0()); 
-    }
-
-    |
-	kw=AntiqueWhite 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1_1()); 
-    }
-
-    |
-	kw=Aqua 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getAquaKeyword_1_2()); 
-    }
-
-    |
-	kw=Aquamarine 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getAquamarineKeyword_1_3()); 
-    }
-
-    |
-	kw=Azure 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getAzureKeyword_1_4()); 
-    }
-
-    |
-	kw=Beige 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBeigeKeyword_1_5()); 
-    }
-
-    |
-	kw=Bisque 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBisqueKeyword_1_6()); 
-    }
-
-    |
-	kw=Black 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBlackKeyword_1_7()); 
-    }
-
-    |
-	kw=BlanchedAlmond 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBlanchedAlmondKeyword_1_8()); 
-    }
-
-    |
-	kw=Blue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBlueKeyword_1_9()); 
-    }
-
-    |
-	kw=BlueViolet 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBlueVioletKeyword_1_10()); 
-    }
-
-    |
-	kw=Brown 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBrownKeyword_1_11()); 
-    }
-
-    |
-	kw=BurlyWood 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getBurlyWoodKeyword_1_12()); 
-    }
-
-    |
-	kw=CadetBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getCadetBlueKeyword_1_13()); 
-    }
-
-    |
-	kw=Chartreuse 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getChartreuseKeyword_1_14()); 
-    }
-
-    |
-	kw=Chocolate 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getChocolateKeyword_1_15()); 
-    }
-
-    |
-	kw=Coral 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getCoralKeyword_1_16()); 
-    }
-
-    |
-	kw=CornflowerBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getCornflowerBlueKeyword_1_17()); 
-    }
-
-    |
-	kw=Cornsilk 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getCornsilkKeyword_1_18()); 
-    }
-
-    |
-	kw=Crimson 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getCrimsonKeyword_1_19()); 
-    }
-
-    |
-	kw=Cyan 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getCyanKeyword_1_20()); 
-    }
-
-    |
-	kw=DarkBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkBlueKeyword_1_21()); 
-    }
-
-    |
-	kw=DarkCyan 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkCyanKeyword_1_22()); 
-    }
-
-    |
-	kw=DarkGoldenRod 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGoldenRodKeyword_1_23()); 
-    }
-
-    |
-	kw=DarkGray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGrayKeyword_1_24()); 
-    }
-
-    |
-	kw=DarkGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGreenKeyword_1_25()); 
-    }
-
-    |
-	kw=DarkGrey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkGreyKeyword_1_26()); 
-    }
-
-    |
-	kw=DarkKhaki 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkKhakiKeyword_1_27()); 
-    }
-
-    |
-	kw=DarkMagenta 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkMagentaKeyword_1_28()); 
-    }
-
-    |
-	kw=DarkOliveGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkOliveGreenKeyword_1_29()); 
-    }
-
-    |
-	kw=DarkOrchid 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkOrchidKeyword_1_30()); 
-    }
-
-    |
-	kw=DarkRed 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkRedKeyword_1_31()); 
-    }
-
-    |
-	kw=DarkSalmo 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSalmoKeyword_1_32()); 
-    }
-
-    |
-	kw=DarkSeaGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSeaGreenKeyword_1_33()); 
-    }
-
-    |
-	kw=DarkSlateBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateBlueKeyword_1_34()); 
-    }
-
-    |
-	kw=DarkSlateGray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateGrayKeyword_1_35()); 
-    }
-
-    |
-	kw=DarkSlateGrey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkSlateGreyKeyword_1_36()); 
-    }
-
-    |
-	kw=DarkTurquoise 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkTurquoiseKeyword_1_37()); 
-    }
-
-    |
-	kw=DarkViolet 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkVioletKeyword_1_38()); 
-    }
-
-    |
-	kw=Darkorange 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDarkorangeKeyword_1_39()); 
-    }
-
-    |
-	kw=DeepPink 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDeepPinkKeyword_1_40()); 
-    }
-
-    |
-	kw=DeepSkyBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDeepSkyBlueKeyword_1_41()); 
-    }
-
-    |
-	kw=DimGray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDimGrayKeyword_1_42()); 
-    }
-
-    |
-	kw=DimGrey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDimGreyKeyword_1_43()); 
-    }
-
-    |
-	kw=DodgerBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getDodgerBlueKeyword_1_44()); 
-    }
-
-    |
-	kw=FireBrick 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getFireBrickKeyword_1_45()); 
-    }
-
-    |
-	kw=FloralWhite 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getFloralWhiteKeyword_1_46()); 
-    }
-
-    |
-	kw=ForestGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getForestGreenKeyword_1_47()); 
-    }
-
-    |
-	kw=Fuchsia 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getFuchsiaKeyword_1_48()); 
-    }
-
-    |
-	kw=Gainsboro 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGainsboroKeyword_1_49()); 
-    }
-
-    |
-	kw=GhostWhite 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGhostWhiteKeyword_1_50()); 
-    }
-
-    |
-	kw=Gold 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGoldKeyword_1_51()); 
-    }
-
-    |
-	kw=GoldenRod 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGoldenRodKeyword_1_52()); 
-    }
-
-    |
-	kw=Gray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGrayKeyword_1_53()); 
-    }
-
-    |
-	kw=Green 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGreenKeyword_1_54()); 
-    }
-
-    |
-	kw=GreenYellow 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGreenYellowKeyword_1_55()); 
-    }
-
-    |
-	kw=Grey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getGreyKeyword_1_56()); 
-    }
-
-    |
-	kw=HoneyDew 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getHoneyDewKeyword_1_57()); 
-    }
-
-    |
-	kw=HotPink 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getHotPinkKeyword_1_58()); 
-    }
-
-    |
-	kw=IndianRed 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getIndianRedKeyword_1_59()); 
-    }
-
-    |
-	kw=Indigo 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getIndigoKeyword_1_60()); 
-    }
-
-    |
-	kw=Ivory 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getIvoryKeyword_1_61()); 
-    }
-
-    |
-	kw=Khaki 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getKhakiKeyword_1_62()); 
-    }
-
-    |
-	kw=Lavender 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLavenderKeyword_1_63()); 
-    }
-
-    |
-	kw=LavenderBlush 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLavenderBlushKeyword_1_64()); 
-    }
-
-    |
-	kw=LawnGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLawnGreenKeyword_1_65()); 
-    }
-
-    |
-	kw=LemonChiffon 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLemonChiffonKeyword_1_66()); 
-    }
-
-    |
-	kw=LightBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightBlueKeyword_1_67()); 
-    }
-
-    |
-	kw=LightCoral 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightCoralKeyword_1_68()); 
-    }
-
-    |
-	kw=LightCyan 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightCyanKeyword_1_69()); 
-    }
-
-    |
-	kw=LightGoldenRodYellow 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_1_70()); 
-    }
-
-    |
-	kw=LightGray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightGrayKeyword_1_71()); 
-    }
-
-    |
-	kw=LightGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightGreenKeyword_1_72()); 
-    }
-
-    |
-	kw=LightGrey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightGreyKeyword_1_73()); 
-    }
-
-    |
-	kw=LightPink 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightPinkKeyword_1_74()); 
-    }
-
-    |
-	kw=LightSalmon 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightSalmonKeyword_1_75()); 
-    }
-
-    |
-	kw=LightSeaGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightSeaGreenKeyword_1_76()); 
-    }
-
-    |
-	kw=LightSkyBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightSkyBlueKeyword_1_77()); 
-    }
-
-    |
-	kw=LightSlateGray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightSlateGrayKeyword_1_78()); 
-    }
-
-    |
-	kw=LightSlateGrey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightSlateGreyKeyword_1_79()); 
-    }
-
-    |
-	kw=LightSteelBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightSteelBlueKeyword_1_80()); 
-    }
-
-    |
-	kw=LightYellow 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLightYellowKeyword_1_81()); 
-    }
-
-    |
-	kw=Lime 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLimeKeyword_1_82()); 
-    }
-
-    |
-	kw=LimeGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLimeGreenKeyword_1_83()); 
-    }
-
-    |
-	kw=Linen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getLinenKeyword_1_84()); 
-    }
-
-    |
-	kw=Magenta 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMagentaKeyword_1_85()); 
-    }
-
-    |
-	kw=Maroon 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMaroonKeyword_1_86()); 
-    }
-
-    |
-	kw=MediumAquaMarine 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumAquaMarineKeyword_1_87()); 
-    }
-
-    |
-	kw=MediumBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumBlueKeyword_1_88()); 
-    }
-
-    |
-	kw=MediumOrchid 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumOrchidKeyword_1_89()); 
-    }
-
-    |
-	kw=MediumPurple 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumPurpleKeyword_1_90()); 
-    }
-
-    |
-	kw=MediumSeaGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumSeaGreenKeyword_1_91()); 
-    }
-
-    |
-	kw=MediumSlateBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumSlateBlueKeyword_1_92()); 
-    }
-
-    |
-	kw=MediumSpringGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumSpringGreenKeyword_1_93()); 
-    }
-
-    |
-	kw=MediumTurquoise 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumTurquoiseKeyword_1_94()); 
-    }
-
-    |
-	kw=MediumVioletRed 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMediumVioletRedKeyword_1_95()); 
-    }
-
-    |
-	kw=MidnightBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMidnightBlueKeyword_1_96()); 
-    }
-
-    |
-	kw=MintCream 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMintCreamKeyword_1_97()); 
-    }
-
-    |
-	kw=MistyRose 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMistyRoseKeyword_1_98()); 
-    }
-
-    |
-	kw=Moccasin 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getMoccasinKeyword_1_99()); 
-    }
-
-    |
-	kw=NavajoWhite 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getNavajoWhiteKeyword_1_100()); 
-    }
-
-    |
-	kw=Navy 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getNavyKeyword_1_101()); 
-    }
-
-    |
-	kw=OldLace 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getOldLaceKeyword_1_102()); 
-    }
-
-    |
-	kw=Olive 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getOliveKeyword_1_103()); 
-    }
-
-    |
-	kw=OliveDrab 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getOliveDrabKeyword_1_104()); 
-    }
-
-    |
-	kw=OrangeRed 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getOrangeRedKeyword_1_105()); 
-    }
-
-    |
-	kw=Orchid 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getOrchidKeyword_1_106()); 
-    }
-
-    |
-	kw=PaleGoldenRod 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPaleGoldenRodKeyword_1_107()); 
-    }
-
-    |
-	kw=PaleGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPaleGreenKeyword_1_108()); 
-    }
-
-    |
-	kw=PaleTurquoise 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPaleTurquoiseKeyword_1_109()); 
-    }
-
-    |
-	kw=PaleVioletRed 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPaleVioletRedKeyword_1_110()); 
-    }
-
-    |
-	kw=PapayaWhip 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPapayaWhipKeyword_1_111()); 
-    }
-
-    |
-	kw=PeachPuff 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPeachPuffKeyword_1_112()); 
-    }
-
-    |
-	kw=Peru 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPeruKeyword_1_113()); 
-    }
-
-    |
-	kw=Pink 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPinkKeyword_1_114()); 
-    }
-
-    |
-	kw=Plum 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPlumKeyword_1_115()); 
-    }
-
-    |
-	kw=PowderBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPowderBlueKeyword_1_116()); 
-    }
-
-    |
-	kw=Purple 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getPurpleKeyword_1_117()); 
-    }
-
-    |
-	kw=Red 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getRedKeyword_1_118()); 
-    }
-
-    |
-	kw=RosyBrown 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getRosyBrownKeyword_1_119()); 
-    }
-
-    |
-	kw=RoyalBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getRoyalBlueKeyword_1_120()); 
-    }
-
-    |
-	kw=SaddleBrown 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSaddleBrownKeyword_1_121()); 
-    }
-
-    |
-	kw=Salmon 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSalmonKeyword_1_122()); 
-    }
-
-    |
-	kw=SandyBrown 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSandyBrownKeyword_1_123()); 
-    }
-
-    |
-	kw=SeaGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSeaGreenKeyword_1_124()); 
-    }
-
-    |
-	kw=Sienna 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSiennaKeyword_1_125()); 
-    }
-
-    |
-	kw=Silver 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSilverKeyword_1_126()); 
-    }
-
-    |
-	kw=SkyBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSkyBlueKeyword_1_127()); 
-    }
-
-    |
-	kw=SlateBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSlateBlueKeyword_1_128()); 
-    }
-
-    |
-	kw=SlateGray 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSlateGrayKeyword_1_129()); 
-    }
-
-    |
-	kw=SlateGrey 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSlateGreyKeyword_1_130()); 
-    }
-
-    |
-	kw=Snow 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSnowKeyword_1_131()); 
-    }
-
-    |
-	kw=SpringGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSpringGreenKeyword_1_132()); 
-    }
-
-    |
-	kw=SteelBlue 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getSteelBlueKeyword_1_133()); 
-    }
-
-    |
-	kw=Tan 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getTanKeyword_1_134()); 
-    }
-
-    |
-	kw=Teal 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getTealKeyword_1_135()); 
-    }
-
-    |
-	kw=Thistle 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getThistleKeyword_1_136()); 
-    }
-
-    |
-	kw=Tomato 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getTomatoKeyword_1_137()); 
-    }
-
-    |
-	kw=Turquoise 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getTurquoiseKeyword_1_138()); 
-    }
-
-    |
-	kw=Violet 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getVioletKeyword_1_139()); 
-    }
-
-    |
-	kw=Wheat 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getWheatKeyword_1_140()); 
-    }
-
-    |
-	kw=White 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getWhiteKeyword_1_141()); 
-    }
-
-    |
-	kw=WhiteSmoke 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getWhiteSmokeKeyword_1_142()); 
-    }
-
-    |
-	kw=Yellow 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getYellowKeyword_1_143()); 
-    }
-
-    |
-	kw=YellowGreen 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getColorAccess().getYellowGreenKeyword_1_144()); 
-    }
-))
     ;
 
 
@@ -1904,38 +855,32 @@ ruleAltElse returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
+	otherlv_0=Alt
     {
-        $current = forceCreateModelElement(
-            grammarAccess.getAltElseAccess().getAltElseAction_0(),
-            $current);
+    	newLeafNode(otherlv_0, grammarAccess.getAltElseAccess().getAltKeyword_0());
     }
-)
-	otherlv_1=Alt
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getAltElseAccess().getAltKeyword_1());
-    }
-(this_ID_2=RULE_ID
+(this_ID_1=RULE_ID
     { 
-    newLeafNode(this_ID_2, grammarAccess.getAltElseAccess().getIDTerminalRuleCall_2()); 
+    newLeafNode(this_ID_1, grammarAccess.getAltElseAccess().getIDTerminalRuleCall_1()); 
     }
-)*this_NEWLINE_3=RULE_NEWLINE
+)*this_NEWLINE_2=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_3, grammarAccess.getAltElseAccess().getNEWLINETerminalRuleCall_3()); 
+    newLeafNode(this_NEWLINE_2, grammarAccess.getAltElseAccess().getNEWLINETerminalRuleCall_2()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAltElseAccess().getInstructionsInstructionParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getAltElseAccess().getInstructionsInstructionParserRuleCall_3_0()); 
 	    }
-		lv_instructions_4_0=ruleInstruction		{
+		lv_instructions_3_0=ruleInstruction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAltElseRule());
 	        }
        		add(
        			$current, 
        			"instructions",
-        		lv_instructions_4_0, 
+        		lv_instructions_3_0, 
         		"Instruction");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1944,25 +889,25 @@ ruleAltElse returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAltElseAccess().getElsesElseParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getAltElseAccess().getElsesElseParserRuleCall_4_0()); 
 	    }
-		lv_elses_5_0=ruleElse		{
+		lv_elses_4_0=ruleElse		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAltElseRule());
 	        }
        		add(
        			$current, 
        			"elses",
-        		lv_elses_5_0, 
+        		lv_elses_4_0, 
         		"Else");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*
-	otherlv_6=End
+	otherlv_5=End
     {
-    	newLeafNode(otherlv_6, grammarAccess.getAltElseAccess().getEndKeyword_6());
+    	newLeafNode(otherlv_5, grammarAccess.getAltElseAccess().getEndKeyword_5());
     }
 )
 ;
@@ -1985,38 +930,32 @@ ruleElse returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
+	otherlv_0=Else
     {
-        $current = forceCreateModelElement(
-            grammarAccess.getElseAccess().getElseAction_0(),
-            $current);
+    	newLeafNode(otherlv_0, grammarAccess.getElseAccess().getElseKeyword_0());
     }
-)
-	otherlv_1=Else
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getElseAccess().getElseKeyword_1());
-    }
-(this_ID_2=RULE_ID
+(this_ID_1=RULE_ID
     { 
-    newLeafNode(this_ID_2, grammarAccess.getElseAccess().getIDTerminalRuleCall_2()); 
+    newLeafNode(this_ID_1, grammarAccess.getElseAccess().getIDTerminalRuleCall_1()); 
     }
-)*this_NEWLINE_3=RULE_NEWLINE
+)*this_NEWLINE_2=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_3, grammarAccess.getElseAccess().getNEWLINETerminalRuleCall_3()); 
+    newLeafNode(this_NEWLINE_2, grammarAccess.getElseAccess().getNEWLINETerminalRuleCall_2()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElseAccess().getInstructionsInstructionParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getElseAccess().getInstructionsInstructionParserRuleCall_3_0()); 
 	    }
-		lv_instructions_4_0=ruleInstruction		{
+		lv_instructions_3_0=ruleInstruction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElseRule());
 	        }
        		add(
        			$current, 
        			"instructions",
-        		lv_instructions_4_0, 
+        		lv_instructions_3_0, 
         		"Instruction");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2044,76 +983,70 @@ ruleGroupingMessages returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+	otherlv_0=Opt
     {
-        $current = forceCreateModelElement(
-            grammarAccess.getGroupingMessagesAccess().getGroupingMessageAction_0(),
-            $current);
-    }
-)(
-	otherlv_1=Opt
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getGroupingMessagesAccess().getOptKeyword_1_0());
+    	newLeafNode(otherlv_0, grammarAccess.getGroupingMessagesAccess().getOptKeyword_0_0());
     }
 
     |
-	otherlv_2=Loop
+	otherlv_1=Loop
     {
-    	newLeafNode(otherlv_2, grammarAccess.getGroupingMessagesAccess().getLoopKeyword_1_1());
+    	newLeafNode(otherlv_1, grammarAccess.getGroupingMessagesAccess().getLoopKeyword_0_1());
     }
 
     |
-	otherlv_3=Par
+	otherlv_2=Par
     {
-    	newLeafNode(otherlv_3, grammarAccess.getGroupingMessagesAccess().getParKeyword_1_2());
+    	newLeafNode(otherlv_2, grammarAccess.getGroupingMessagesAccess().getParKeyword_0_2());
     }
 
     |
-	otherlv_4=Break
+	otherlv_3=Break
     {
-    	newLeafNode(otherlv_4, grammarAccess.getGroupingMessagesAccess().getBreakKeyword_1_3());
+    	newLeafNode(otherlv_3, grammarAccess.getGroupingMessagesAccess().getBreakKeyword_0_3());
     }
 
     |
-	otherlv_5=Critical
+	otherlv_4=Critical
     {
-    	newLeafNode(otherlv_5, grammarAccess.getGroupingMessagesAccess().getCriticalKeyword_1_4());
+    	newLeafNode(otherlv_4, grammarAccess.getGroupingMessagesAccess().getCriticalKeyword_0_4());
     }
 
     |
-	otherlv_6=Group
+	otherlv_5=Group
     {
-    	newLeafNode(otherlv_6, grammarAccess.getGroupingMessagesAccess().getGroupKeyword_1_5());
+    	newLeafNode(otherlv_5, grammarAccess.getGroupingMessagesAccess().getGroupKeyword_0_5());
     }
-)(this_ID_7=RULE_ID
+)(this_ID_6=RULE_ID
     { 
-    newLeafNode(this_ID_7, grammarAccess.getGroupingMessagesAccess().getIDTerminalRuleCall_2()); 
+    newLeafNode(this_ID_6, grammarAccess.getGroupingMessagesAccess().getIDTerminalRuleCall_1()); 
     }
-)*this_NEWLINE_8=RULE_NEWLINE
+)*this_NEWLINE_7=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_8, grammarAccess.getGroupingMessagesAccess().getNEWLINETerminalRuleCall_3()); 
+    newLeafNode(this_NEWLINE_7, grammarAccess.getGroupingMessagesAccess().getNEWLINETerminalRuleCall_2()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGroupingMessagesAccess().getInstructionsInstructionParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getGroupingMessagesAccess().getInstructionsInstructionParserRuleCall_3_0()); 
 	    }
-		lv_instructions_9_0=ruleInstruction		{
+		lv_instructions_8_0=ruleInstruction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGroupingMessagesRule());
 	        }
        		add(
        			$current, 
        			"instructions",
-        		lv_instructions_9_0, 
+        		lv_instructions_8_0, 
         		"Instruction");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*
-	otherlv_10=End
+	otherlv_9=End
     {
-    	newLeafNode(otherlv_10, grammarAccess.getGroupingMessagesAccess().getEndKeyword_5());
+    	newLeafNode(otherlv_9, grammarAccess.getGroupingMessagesAccess().getEndKeyword_4());
     }
 )
 ;
@@ -2136,26 +1069,20 @@ ruleNote returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
+	otherlv_0=Note
     {
-        $current = forceCreateModelElement(
-            grammarAccess.getNoteAccess().getNoteAction_0(),
-            $current);
-    }
-)
-	otherlv_1=Note
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getNoteAccess().getNoteKeyword_1());
+    	newLeafNode(otherlv_0, grammarAccess.getNoteAccess().getNoteKeyword_0());
     }
 ((
-	otherlv_2=Right
+	otherlv_1=Right
     {
-    	newLeafNode(otherlv_2, grammarAccess.getNoteAccess().getRightKeyword_2_0_0());
+    	newLeafNode(otherlv_1, grammarAccess.getNoteAccess().getRightKeyword_1_0_0());
     }
 (
-	otherlv_3=Of
+	otherlv_2=Of
     {
-    	newLeafNode(otherlv_3, grammarAccess.getNoteAccess().getOfKeyword_2_0_1_0());
+    	newLeafNode(otherlv_2, grammarAccess.getNoteAccess().getOfKeyword_1_0_1_0());
     }
 (
 (
@@ -2164,16 +1091,16 @@ ruleNote returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getNoteRule());
 	        }
         }
-	otherlv_4=RULE_ID
+	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_4, grammarAccess.getNoteAccess().getRidDefinitionCrossReference_2_0_1_1_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getNoteAccess().getRidDefinitionCrossReference_1_0_1_1_0()); 
 	}
 
 )
 )(
-	otherlv_5=Comma
+	otherlv_4=Comma
     {
-    	newLeafNode(otherlv_5, grammarAccess.getNoteAccess().getCommaKeyword_2_0_1_2_0());
+    	newLeafNode(otherlv_4, grammarAccess.getNoteAccess().getCommaKeyword_1_0_1_2_0());
     }
 (
 (
@@ -2182,22 +1109,22 @@ ruleNote returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getNoteRule());
 	        }
         }
-	otherlv_6=RULE_ID
+	otherlv_5=RULE_ID
 	{
-		newLeafNode(otherlv_6, grammarAccess.getNoteAccess().getRidsDefinitionCrossReference_2_0_1_2_1_0()); 
+		newLeafNode(otherlv_5, grammarAccess.getNoteAccess().getRidsDefinitionCrossReference_1_0_1_2_1_0()); 
 	}
 
 )
 ))*)?)
     |(
-	otherlv_7=Left
+	otherlv_6=Left
     {
-    	newLeafNode(otherlv_7, grammarAccess.getNoteAccess().getLeftKeyword_2_1_0());
+    	newLeafNode(otherlv_6, grammarAccess.getNoteAccess().getLeftKeyword_1_1_0());
     }
 (
-	otherlv_8=Of
+	otherlv_7=Of
     {
-    	newLeafNode(otherlv_8, grammarAccess.getNoteAccess().getOfKeyword_2_1_1_0());
+    	newLeafNode(otherlv_7, grammarAccess.getNoteAccess().getOfKeyword_1_1_1_0());
     }
 (
 (
@@ -2206,16 +1133,16 @@ ruleNote returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getNoteRule());
 	        }
         }
-	otherlv_9=RULE_ID
+	otherlv_8=RULE_ID
 	{
-		newLeafNode(otherlv_9, grammarAccess.getNoteAccess().getLidDefinitionCrossReference_2_1_1_1_0()); 
+		newLeafNode(otherlv_8, grammarAccess.getNoteAccess().getLidDefinitionCrossReference_1_1_1_1_0()); 
 	}
 
 )
 )(
-	otherlv_10=Comma
+	otherlv_9=Comma
     {
-    	newLeafNode(otherlv_10, grammarAccess.getNoteAccess().getCommaKeyword_2_1_1_2_0());
+    	newLeafNode(otherlv_9, grammarAccess.getNoteAccess().getCommaKeyword_1_1_1_2_0());
     }
 (
 (
@@ -2224,17 +1151,17 @@ ruleNote returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getNoteRule());
 	        }
         }
-	otherlv_11=RULE_ID
+	otherlv_10=RULE_ID
 	{
-		newLeafNode(otherlv_11, grammarAccess.getNoteAccess().getLidsDefinitionCrossReference_2_1_1_2_1_0()); 
+		newLeafNode(otherlv_10, grammarAccess.getNoteAccess().getLidsDefinitionCrossReference_1_1_1_2_1_0()); 
 	}
 
 )
 ))*)?)
     |(
-	otherlv_12=Over
+	otherlv_11=Over
     {
-    	newLeafNode(otherlv_12, grammarAccess.getNoteAccess().getOverKeyword_2_2_0());
+    	newLeafNode(otherlv_11, grammarAccess.getNoteAccess().getOverKeyword_1_2_0());
     }
 (
 (
@@ -2243,16 +1170,16 @@ ruleNote returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getNoteRule());
 	        }
         }
-	otherlv_13=RULE_ID
+	otherlv_12=RULE_ID
 	{
-		newLeafNode(otherlv_13, grammarAccess.getNoteAccess().getOidDefinitionCrossReference_2_2_1_0()); 
+		newLeafNode(otherlv_12, grammarAccess.getNoteAccess().getOidDefinitionCrossReference_1_2_1_0()); 
 	}
 
 )
 )(
-	otherlv_14=Comma
+	otherlv_13=Comma
     {
-    	newLeafNode(otherlv_14, grammarAccess.getNoteAccess().getCommaKeyword_2_2_2_0());
+    	newLeafNode(otherlv_13, grammarAccess.getNoteAccess().getCommaKeyword_1_2_2_0());
     }
 (
 (
@@ -2261,51 +1188,47 @@ ruleNote returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getNoteRule());
 	        }
         }
-	otherlv_15=RULE_ID
+	otherlv_14=RULE_ID
 	{
-		newLeafNode(otherlv_15, grammarAccess.getNoteAccess().getOidsDefinitionCrossReference_2_2_2_1_0()); 
+		newLeafNode(otherlv_14, grammarAccess.getNoteAccess().getOidsDefinitionCrossReference_1_2_2_1_0()); 
 	}
 
 )
-))*))(
+))*))(this_COLOR_15=RULE_COLOR
     { 
-        newCompositeNode(grammarAccess.getNoteAccess().getColorParserRuleCall_3()); 
-    }
-ruleColor
-    {
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_COLOR_15, grammarAccess.getNoteAccess().getCOLORTerminalRuleCall_2()); 
     }
 )*((
-	otherlv_17=Colon
+	otherlv_16=Colon
     {
-    	newLeafNode(otherlv_17, grammarAccess.getNoteAccess().getColonKeyword_4_0_0());
+    	newLeafNode(otherlv_16, grammarAccess.getNoteAccess().getColonKeyword_3_0_0());
     }
-this_ID_18=RULE_ID
+this_ID_17=RULE_ID
     { 
-    newLeafNode(this_ID_18, grammarAccess.getNoteAccess().getIDTerminalRuleCall_4_0_1()); 
+    newLeafNode(this_ID_17, grammarAccess.getNoteAccess().getIDTerminalRuleCall_3_0_1()); 
     }
 )
-    |((this_NEWLINE_19=RULE_NEWLINE
+    |((this_NEWLINE_18=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_19, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_4_1_0_0()); 
+    newLeafNode(this_NEWLINE_18, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_3_1_0_0()); 
     }
-(this_ID_20=RULE_ID
+(this_ID_19=RULE_ID
     { 
-    newLeafNode(this_ID_20, grammarAccess.getNoteAccess().getIDTerminalRuleCall_4_1_0_1()); 
+    newLeafNode(this_ID_19, grammarAccess.getNoteAccess().getIDTerminalRuleCall_3_1_0_1()); 
     }
-)*)*this_NEWLINE_21=RULE_NEWLINE
+)*)*this_NEWLINE_20=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_21, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_4_1_1()); 
+    newLeafNode(this_NEWLINE_20, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_3_1_1()); 
     }
 
-	otherlv_22=End
+	otherlv_21=End
     {
-    	newLeafNode(otherlv_22, grammarAccess.getNoteAccess().getEndKeyword_4_1_2());
+    	newLeafNode(otherlv_21, grammarAccess.getNoteAccess().getEndKeyword_3_1_2());
     }
 
-	otherlv_23=Note
+	otherlv_22=Note
     {
-    	newLeafNode(otherlv_23, grammarAccess.getNoteAccess().getNoteKeyword_4_1_3());
+    	newLeafNode(otherlv_22, grammarAccess.getNoteAccess().getNoteKeyword_3_1_3());
     }
 )))
 ;
@@ -2587,13 +1510,9 @@ ruleActivate returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getActivateAccess().getActivateKeyword_0());
     }
-(
+(this_COLOR_1=RULE_COLOR
     { 
-        newCompositeNode(grammarAccess.getActivateAccess().getColorParserRuleCall_1()); 
-    }
-ruleColor
-    {
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_COLOR_1, grammarAccess.getActivateAccess().getCOLORTerminalRuleCall_1()); 
     }
 )?(
 (
@@ -2714,74 +1633,64 @@ ruleBox returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
+	otherlv_0=Box
     {
-        $current = forceCreateModelElement(
-            grammarAccess.getBoxAccess().getBoxAction_0(),
-            $current);
-    }
-)
-	otherlv_1=Box
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getBoxAccess().getBoxKeyword_1());
+    	newLeafNode(otherlv_0, grammarAccess.getBoxAccess().getBoxKeyword_0());
     }
 
-	otherlv_2=QuotationMark
+	otherlv_1=QuotationMark
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBoxAccess().getQuotationMarkKeyword_2());
+    	newLeafNode(otherlv_1, grammarAccess.getBoxAccess().getQuotationMarkKeyword_1());
     }
-(this_ID_3=RULE_ID
+(this_ID_2=RULE_ID
     { 
-    newLeafNode(this_ID_3, grammarAccess.getBoxAccess().getIDTerminalRuleCall_3()); 
+    newLeafNode(this_ID_2, grammarAccess.getBoxAccess().getIDTerminalRuleCall_2()); 
     }
 )*
-	otherlv_4=QuotationMark
+	otherlv_3=QuotationMark
     {
-    	newLeafNode(otherlv_4, grammarAccess.getBoxAccess().getQuotationMarkKeyword_4());
+    	newLeafNode(otherlv_3, grammarAccess.getBoxAccess().getQuotationMarkKeyword_3());
     }
-(
+(this_COLOR_4=RULE_COLOR
     { 
-        newCompositeNode(grammarAccess.getBoxAccess().getColorParserRuleCall_5()); 
+    newLeafNode(this_COLOR_4, grammarAccess.getBoxAccess().getCOLORTerminalRuleCall_4()); 
     }
-ruleColor
-    {
-        afterParserOrEnumRuleCall();
-    }
-)?this_NEWLINE_6=RULE_NEWLINE
+)?this_NEWLINE_5=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_6, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6()); 
+    newLeafNode(this_NEWLINE_5, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_5()); 
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBoxAccess().getDefinitionsDefinitionParserRuleCall_7_0_0()); 
+	        newCompositeNode(grammarAccess.getBoxAccess().getDefinitionsDefinitionParserRuleCall_6_0_0()); 
 	    }
-		lv_definitions_7_0=ruleDefinition		{
+		lv_definitions_6_0=ruleDefinition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBoxRule());
 	        }
        		add(
        			$current, 
        			"definitions",
-        		lv_definitions_7_0, 
+        		lv_definitions_6_0, 
         		"Definition");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?this_NEWLINE_8=RULE_NEWLINE
+)?this_NEWLINE_7=RULE_NEWLINE
     { 
-    newLeafNode(this_NEWLINE_8, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_7_1()); 
+    newLeafNode(this_NEWLINE_7, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1()); 
     }
 )*
-	otherlv_9=End
+	otherlv_8=End
     {
-    	newLeafNode(otherlv_9, grammarAccess.getBoxAccess().getEndKeyword_8());
+    	newLeafNode(otherlv_8, grammarAccess.getBoxAccess().getEndKeyword_7());
     }
 
-	otherlv_10=Box
+	otherlv_9=Box
     {
-    	newLeafNode(otherlv_10, grammarAccess.getBoxAccess().getBoxKeyword_9());
+    	newLeafNode(otherlv_9, grammarAccess.getBoxAccess().getBoxKeyword_8());
     }
 )
 ;

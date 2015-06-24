@@ -77,7 +77,6 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
       case PlantumlPackage.ACTIVATE: return createActivate();
       case PlantumlPackage.DEACTIVATE: return createDeactivate();
       case PlantumlPackage.BOX: return createBox();
-      case PlantumlPackage.GROUPING_MESSAGE: return createGroupingMessage();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -224,17 +223,6 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     BoxImpl box = new BoxImpl();
     return box;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public GroupingMessage createGroupingMessage()
-  {
-    GroupingMessageImpl groupingMessage = new GroupingMessageImpl();
-    return groupingMessage;
   }
 
   /**

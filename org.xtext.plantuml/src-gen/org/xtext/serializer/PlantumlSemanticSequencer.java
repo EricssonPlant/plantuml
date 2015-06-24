@@ -24,7 +24,7 @@ import org.xtext.plantuml.Deactivate;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Else;
-import org.xtext.plantuml.GroupingMessage;
+import org.xtext.plantuml.GroupingMessages;
 import org.xtext.plantuml.Note;
 import org.xtext.plantuml.Plantuml;
 import org.xtext.plantuml.PlantumlPackage;
@@ -64,8 +64,8 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PlantumlPackage.ELSE:
 				sequence_Else(context, (Else) semanticObject); 
 				return; 
-			case PlantumlPackage.GROUPING_MESSAGE:
-				sequence_GroupingMessages(context, (GroupingMessage) semanticObject); 
+			case PlantumlPackage.GROUPING_MESSAGES:
+				sequence_GroupingMessages(context, (GroupingMessages) semanticObject); 
 				return; 
 			case PlantumlPackage.NOTE:
 				sequence_Note(context, (Note) semanticObject); 
@@ -107,7 +107,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name+=ID name+=ID)
+	 *     (ids+=ID ids+=ID)
 	 */
 	protected void sequence_Arrow(EObject context, Arrow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -116,7 +116,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (definitions+=Definition*)
+	 *     definitions+=Definition+
 	 */
 	protected void sequence_Box(EObject context, Box semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -166,7 +166,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (instructions+=Instruction*)
+	 *     instructions+=Instruction*
 	 */
 	protected void sequence_Else(EObject context, Else semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -175,9 +175,9 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (instructions+=Instruction*)
+	 *     instructions+=Instruction+
 	 */
-	protected void sequence_GroupingMessages(EObject context, GroupingMessage semanticObject) {
+	protected void sequence_GroupingMessages(EObject context, GroupingMessages semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

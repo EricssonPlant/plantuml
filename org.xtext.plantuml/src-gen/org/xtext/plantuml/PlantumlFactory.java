@@ -140,15 +140,6 @@ public interface PlantumlFactory extends EFactory
   Box createBox();
 
   /**
-   * Returns a new object of class '<em>Grouping Message</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Grouping Message</em>'.
-   * @generated
-   */
-  GroupingMessage createGroupingMessage();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

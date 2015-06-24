@@ -17,7 +17,6 @@ import org.xtext.plantuml.Deactivate;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Else;
-import org.xtext.plantuml.GroupingMessage;
 import org.xtext.plantuml.GroupingMessages;
 import org.xtext.plantuml.Instruction;
 import org.xtext.plantuml.Note;
@@ -124,13 +123,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * @generated
    */
   private EClass boxEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass groupingMessageEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -260,7 +252,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getArrow_Name()
+  public EAttribute getArrow_Ids()
   {
     return (EAttribute)arrowEClass.getEStructuralFeatures().get(0);
   }
@@ -343,6 +335,16 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
   public EClass getGroupingMessages()
   {
     return groupingMessagesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGroupingMessages_Instructions()
+  {
+    return (EReference)groupingMessagesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -510,26 +512,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupingMessage()
-  {
-    return groupingMessageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGroupingMessage_Instructions()
-  {
-    return (EReference)groupingMessageEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public PlantumlFactory getPlantumlFactory()
   {
     return (PlantumlFactory)getEFactoryInstance();
@@ -564,7 +546,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     instructionEClass = createEClass(INSTRUCTION);
 
     arrowEClass = createEClass(ARROW);
-    createEAttribute(arrowEClass, ARROW__NAME);
+    createEAttribute(arrowEClass, ARROW__IDS);
 
     definitionEClass = createEClass(DEFINITION);
     createEAttribute(definitionEClass, DEFINITION__NAME);
@@ -577,6 +559,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     createEReference(elseEClass, ELSE__INSTRUCTIONS);
 
     groupingMessagesEClass = createEClass(GROUPING_MESSAGES);
+    createEReference(groupingMessagesEClass, GROUPING_MESSAGES__INSTRUCTIONS);
 
     noteEClass = createEClass(NOTE);
     createEReference(noteEClass, NOTE__RID);
@@ -598,9 +581,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     boxEClass = createEClass(BOX);
     createEReference(boxEClass, BOX__DEFINITIONS);
-
-    groupingMessageEClass = createEClass(GROUPING_MESSAGE);
-    createEReference(groupingMessageEClass, GROUPING_MESSAGE__INSTRUCTIONS);
   }
 
   /**
@@ -641,7 +621,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     activateEClass.getESuperTypes().add(this.getInstruction());
     deactivateEClass.getESuperTypes().add(this.getInstruction());
     boxEClass.getESuperTypes().add(this.getInstruction());
-    groupingMessageEClass.getESuperTypes().add(this.getGroupingMessages());
 
     // Initialize classes and features; add operations and parameters
     initEClass(plantumlEClass, Plantuml.class, "Plantuml", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -653,7 +632,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(arrowEClass, Arrow.class, "Arrow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getArrow_Name(), ecorePackage.getEString(), "name", null, 0, -1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getArrow_Ids(), ecorePackage.getEString(), "ids", null, 0, -1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -666,6 +645,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     initEReference(getElse_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Else.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(groupingMessagesEClass, GroupingMessages.class, "GroupingMessages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGroupingMessages_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, GroupingMessages.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNote_Rid(), this.getDefinition(), null, "rid", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -687,9 +667,6 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     initEClass(boxEClass, Box.class, "Box", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBox_Definitions(), this.getDefinition(), null, "definitions", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(groupingMessageEClass, GroupingMessage.class, "GroupingMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGroupingMessage_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, GroupingMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

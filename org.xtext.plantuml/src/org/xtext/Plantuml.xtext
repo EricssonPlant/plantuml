@@ -10,8 +10,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 Plantuml:
 	(diagrams+=Diagram)*;
 	
-// A diagram starts with @Startuml and ends with @enduml, 
-// with some number of instructions in between
+// A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
 	{Diagram}START NEWLINE (instructions+=Instruction)* END NEWLINE*
 ;
@@ -20,7 +19,7 @@ Diagram:
 Instruction: 
 	//((name1+=ID SEQUENCE name1+=ID (':' (ID)*)?), changed to Rule Arrow.
 	(Arrow
-	|Definition (Color)?
+	|Definition (COLOR|HEXCODE)?
 	| AutoNumber
 	| Title
 	| Legend
@@ -41,7 +40,7 @@ Instruction:
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	name+=ID SEQUENCE name+=ID (':' (ID)*)?
+	ids+=ID SEQUENCE ids+=ID (':' (ID)*)?
 ;
 
 // Rule for defining objects in PlantUML, such as
@@ -53,37 +52,12 @@ Definition:
 	| 'entity' name=ID
 	| 'database' name=ID
 	// Change second ID in participant to Single-Line String.
-	| 'participant' name=ID ('<<' (('(' ID ',' Color ')')|('(' ID ',' Color ')' ID)| ID) '>>')?
+	| 'participant' name=ID ('<<' (('(' ID ',' COLOR ')')|('(' ID ',' COLOR ')' ID)| ID) '>>')?
 ;
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
 	'autonumber' (INT (INT)?)?
-;
-
-// Rule for all the color. Color begins with # followed by the name of the color.
-Color:
-	'#' ('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
-	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
-	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
-	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
-	|'DarkSalmo'|'DarkSeaGreen'|'DarkSlateBlue'|'DarkSlateGray'|'DarkSlateGrey'|'DarkTurquoise'
-	|'DarkViolet'|'Darkorange'|'DeepPink'|'DeepSkyBlue'|'DimGray'|'DimGrey'|'DodgerBlue'
-	|'FireBrick'|'FloralWhite'|'ForestGreen'|'Fuchsia'|'Gainsboro'|'GhostWhite'|'Gold'
-	|'GoldenRod'|'Gray'|'Green'|'GreenYellow'|'Grey'|'HoneyDew'|'HotPink'|'IndianRed'
-	|'Indigo'|'Ivory'|'Khaki'|'Lavender'|'LavenderBlush'|'LawnGreen'|'LemonChiffon'
-	|'LightBlue'|'LightCoral'|'LightCyan'|'LightGoldenRodYellow'|'LightGray'|'LightGreen'
-	|'LightGrey'|'LightPink'|'LightSalmon'|'LightSeaGreen'|'LightSkyBlue'|'LightSlateGray'
-	|'LightSlateGrey'|'LightSteelBlue'|'LightYellow'|'Lime'|'LimeGreen'|'Linen'|'Magenta'
-	|'Maroon'|'MediumAquaMarine'|'MediumBlue'|'MediumOrchid'|'MediumPurple'|'MediumSeaGreen'
-	|'MediumSlateBlue'|'MediumSpringGreen'|'MediumTurquoise'|'MediumVioletRed'
-	|'MidnightBlue'|'MintCream'|'MistyRose'|'Moccasin'|'NavajoWhite'|'Navy'|'OldLace'
-	|'Olive'|'OliveDrab'|'OrangeRed'|'Orchid'|'PaleGoldenRod'|'PaleGreen'
-	|'PaleTurquoise'|'PaleVioletRed'|'PapayaWhip'|'PeachPuff'|'Peru'|'Pink'|'Plum'
-	|'PowderBlue'|'Purple'|'Red'|'RosyBrown'|'RoyalBlue'|'SaddleBrown'
-	|'Salmon'|'SandyBrown'|'SeaGreen'|'Sienna'|'Silver'|'SkyBlue'|'SlateBlue'
-	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
-	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
 ;
 
 // Rule for the title of the diagram
@@ -103,24 +77,24 @@ Newpage:
 
 // Rules for Alt-Else clauses.
 AltElse:
-	{AltElse}'alt' ID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end' //NEWLINE 'end'
+	'alt' ID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end' //NEWLINE 'end'
 ;
 
 Else:
-	{Else}'else' ID* NEWLINE (instructions+=Instruction)*
+	'else' ID* NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	{GroupingMessage}('opt'|'loop'|'par'|'break'|'critical'|'group') ID* NEWLINE (instructions+=Instruction)* 'end'
+	('opt'|'loop'|'par'|'break'|'critical'|'group') ID* NEWLINE (instructions+=Instruction)* 'end'
 ;
 
 // Rule for notes
 Note:
-	{Note}'note' (('right' ('of' rid=[Definition] (',' rids+=[Definition])*)?)
+	'note' (('right' ('of' rid=[Definition] (',' rids+=[Definition])*)?)
 		   		 |('left'  ('of' lid=[Definition] (',' lids+=[Definition])*)?)
 		  		 |('over' oid=[Definition](',' oids+=[Definition])*)) 
-		 		  (Color)* ((':' ID)| ((NEWLINE ID*)* NEWLINE 'end' 'note'))
+		 		  (COLOR)* ((':' ID)| ((NEWLINE ID*)* NEWLINE 'end' 'note'))
 ;
 
 // Rule for Dividers.
@@ -151,7 +125,7 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' Color? name=ID
+	'activate' COLOR? name=ID
 ;
 
 Deactivate:
@@ -166,7 +140,7 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	{Box} 'box' '\"' ID* '\"' Color? NEWLINE
+	'box' '\"' ID* '\"' COLOR? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end' 'box'
 ;
@@ -180,18 +154,17 @@ terminal START		: '\u0040' 'startuml';
 
 terminal END		: '\u0040' 'enduml';
 
+// INT is a sequence of numbers 0-9.
+terminal INT returns ecore::EInt: ('0'..'9')+;
+
 // ID can be any following sequence of letters and numbers, without spaces between them.
-terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*; //Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 // Multiline comment begins with /', and ends with '/
 terminal ML_COMMENT : '/\'' -> '\'/';
 
 // Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
-
-// INT is a sequence of numbers 0-9.
-terminal INT returns ecore::EInt: ('0'..'9')+;
-
 
 // Sequences are arrows connecting two actors. Has to be defined in unicode.
 terminal SEQUENCE:
@@ -215,6 +188,35 @@ terminal SEQUENCE:
 	| '\u002D' '\u002D' '\u007C' '\u003E' 					// - = u002D | | = u007C | > = u003E
 	| '\u002E' '\u002E' 									// . = u002E
 	| '\u002E'												// . = u002E	
+;
+
+terminal COLOR:
+	'#' ('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
+	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
+	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
+	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
+	|'DarkSalmo'|'DarkSeaGreen'|'DarkSlateBlue'|'DarkSlateGray'|'DarkSlateGrey'|'DarkTurquoise'
+	|'DarkViolet'|'Darkorange'|'DeepPink'|'DeepSkyBlue'|'DimGray'|'DimGrey'|'DodgerBlue'
+	|'FireBrick'|'FloralWhite'|'ForestGreen'|'Fuchsia'|'Gainsboro'|'GhostWhite'|'Gold'
+	|'GoldenRod'|'Gray'|'Green'|'GreenYellow'|'Grey'|'HoneyDew'|'HotPink'|'IndianRed'
+	|'Indigo'|'Ivory'|'Khaki'|'Lavender'|'LavenderBlush'|'LawnGreen'|'LemonChiffon'
+	|'LightBlue'|'LightCoral'|'LightCyan'|'LightGoldenRodYellow'|'LightGray'|'LightGreen'
+	|'LightGrey'|'LightPink'|'LightSalmon'|'LightSeaGreen'|'LightSkyBlue'|'LightSlateGray'
+	|'LightSlateGrey'|'LightSteelBlue'|'LightYellow'|'Lime'|'LimeGreen'|'Linen'|'Magenta'
+	|'Maroon'|'MediumAquaMarine'|'MediumBlue'|'MediumOrchid'|'MediumPurple'|'MediumSeaGreen'
+	|'MediumSlateBlue'|'MediumSpringGreen'|'MediumTurquoise'|'MediumVioletRed'
+	|'MidnightBlue'|'MintCream'|'MistyRose'|'Moccasin'|'NavajoWhite'|'Navy'|'OldLace'
+	|'Olive'|'OliveDrab'|'OrangeRed'|'Orchid'|'PaleGoldenRod'|'PaleGreen'
+	|'PaleTurquoise'|'PaleVioletRed'|'PapayaWhip'|'PeachPuff'|'Peru'|'Pink'|'Plum'
+	|'PowderBlue'|'Purple'|'Red'|'RosyBrown'|'RoyalBlue'|'SaddleBrown'
+	|'Salmon'|'SandyBrown'|'SeaGreen'|'Sienna'|'Silver'|'SkyBlue'|'SlateBlue'
+	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
+	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
+;
+
+terminal HEXCODE:
+        '#' ('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')
+            ('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')
 ;
 
 terminal WS			: (' '|'\t')+;

@@ -21,7 +21,7 @@ import org.xtext.plantuml.PlantumlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.plantuml.impl.ArrowImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.plantuml.impl.ArrowImpl#getIds <em>Ids</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,14 +29,14 @@ import org.xtext.plantuml.PlantumlPackage;
 public class ArrowImpl extends InstructionImpl implements Arrow
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
+   * The cached value of the '{@link #getIds() <em>Ids</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getIds()
    * @generated
    * @ordered
    */
-  protected EList<String> name;
+  protected EList<String> ids;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,13 +64,13 @@ public class ArrowImpl extends InstructionImpl implements Arrow
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getName()
+  public EList<String> getIds()
   {
-    if (name == null)
+    if (ids == null)
     {
-      name = new EDataTypeEList<String>(String.class, this, PlantumlPackage.ARROW__NAME);
+      ids = new EDataTypeEList<String>(String.class, this, PlantumlPackage.ARROW__IDS);
     }
-    return name;
+    return ids;
   }
 
   /**
@@ -83,8 +83,8 @@ public class ArrowImpl extends InstructionImpl implements Arrow
   {
     switch (featureID)
     {
-      case PlantumlPackage.ARROW__NAME:
-        return getName();
+      case PlantumlPackage.ARROW__IDS:
+        return getIds();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -100,9 +100,9 @@ public class ArrowImpl extends InstructionImpl implements Arrow
   {
     switch (featureID)
     {
-      case PlantumlPackage.ARROW__NAME:
-        getName().clear();
-        getName().addAll((Collection<? extends String>)newValue);
+      case PlantumlPackage.ARROW__IDS:
+        getIds().clear();
+        getIds().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -118,8 +118,8 @@ public class ArrowImpl extends InstructionImpl implements Arrow
   {
     switch (featureID)
     {
-      case PlantumlPackage.ARROW__NAME:
-        getName().clear();
+      case PlantumlPackage.ARROW__IDS:
+        getIds().clear();
         return;
     }
     super.eUnset(featureID);
@@ -135,8 +135,8 @@ public class ArrowImpl extends InstructionImpl implements Arrow
   {
     switch (featureID)
     {
-      case PlantumlPackage.ARROW__NAME:
-        return name != null && !name.isEmpty();
+      case PlantumlPackage.ARROW__IDS:
+        return ids != null && !ids.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -152,8 +152,8 @@ public class ArrowImpl extends InstructionImpl implements Arrow
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (ids: ");
+    result.append(ids);
     result.append(')');
     return result.toString();
   }

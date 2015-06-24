@@ -252,7 +252,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getArrow_Ids()
+  public EAttribute getArrow_Name()
   {
     return (EAttribute)arrowEClass.getEStructuralFeatures().get(0);
   }
@@ -546,7 +546,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     instructionEClass = createEClass(INSTRUCTION);
 
     arrowEClass = createEClass(ARROW);
-    createEAttribute(arrowEClass, ARROW__IDS);
+    createEAttribute(arrowEClass, ARROW__NAME);
 
     definitionEClass = createEClass(DEFINITION);
     createEAttribute(definitionEClass, DEFINITION__NAME);
@@ -632,7 +632,7 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(arrowEClass, Arrow.class, "Arrow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getArrow_Ids(), ecorePackage.getEString(), "ids", null, 0, -1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getArrow_Name(), ecorePackage.getEString(), "name", null, 0, -1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -12,12 +12,11 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	{Diagram}START NEWLINE (instructions+=Instruction)* END NEWLINE*
+	{Diagram} START NEWLINE (instructions+=Instruction)* END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
-	//((name1+=ID SEQUENCE name1+=ID (':' (ID)*)?), changed to Rule Arrow.
 	(Arrow
 	|Definition (COLOR|HEXCODE)?
 	| AutoNumber
@@ -40,8 +39,9 @@ Instruction:
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	ids+=ID SEQUENCE ids+=ID (':' (ID)*)?
+	name+=ID SEQUENCE name+=ID (':' (ID)*)?
 ;
+
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases

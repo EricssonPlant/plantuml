@@ -142,13 +142,13 @@ public interface PlantumlPackage extends EPackage
   int ARROW = 3;
 
   /**
-   * The feature id for the '<em><b>Ids</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARROW__IDS = INSTRUCTION_FEATURE_COUNT + 0;
+  int ARROW__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Arrow</em>' class.
@@ -538,15 +538,15 @@ public interface PlantumlPackage extends EPackage
   EClass getArrow();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Arrow#getIds <em>Ids</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Arrow#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Ids</em>'.
-   * @see org.xtext.plantuml.Arrow#getIds()
+   * @return the meta object for the attribute list '<em>Name</em>'.
+   * @see org.xtext.plantuml.Arrow#getName()
    * @see #getArrow()
    * @generated
    */
-  EAttribute getArrow_Ids();
+  EAttribute getArrow_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Definition <em>Definition</em>}'.
@@ -894,12 +894,12 @@ public interface PlantumlPackage extends EPackage
     EClass ARROW = eINSTANCE.getArrow();
 
     /**
-     * The meta object literal for the '<em><b>Ids</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARROW__IDS = eINSTANCE.getArrow_Ids();
+    EAttribute ARROW__NAME = eINSTANCE.getArrow_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.

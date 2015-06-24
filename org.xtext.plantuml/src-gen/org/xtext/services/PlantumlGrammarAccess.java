@@ -105,19 +105,16 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
-		//	(Arrow //((name1+=ID SEQUENCE name1+=ID (':' (ID)*)?), changed to Rule Arrow.
-		//	| Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
-		//	Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
+		//	(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
+		//	Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(Arrow //((name1+=ID SEQUENCE name1+=ID (':' (ID)*)?), changed to Rule Arrow.
-		//| Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
-		//Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE
+		//(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
+		//Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE
 		public Group getGroup() { return cGroup; }
 
-		//(Arrow //((name1+=ID SEQUENCE name1+=ID (':' (ID)*)?), changed to Rule Arrow.
-		//| Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
-		//Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)?
+		//(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
+		//Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//Arrow
@@ -193,37 +190,37 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	public class ArrowElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Arrow");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cIdsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cIdsIDTerminalRuleCall_0_0 = (RuleCall)cIdsAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final RuleCall cSEQUENCETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cIdsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIdsIDTerminalRuleCall_2_0 = (RuleCall)cIdsAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		
 		//// Rule for creating sequences between actors (Not necessarily previously defined)
 		//Arrow:
-		//	ids+=ID SEQUENCE ids+=ID (":" ID*)?;
+		//	name+=ID SEQUENCE name+=ID (":" ID*)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//ids+=ID SEQUENCE ids+=ID (":" ID*)?
+		//name+=ID SEQUENCE name+=ID (":" ID*)?
 		public Group getGroup() { return cGroup; }
 
-		//ids+=ID
-		public Assignment getIdsAssignment_0() { return cIdsAssignment_0; }
+		//name+=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
 		//ID
-		public RuleCall getIdsIDTerminalRuleCall_0_0() { return cIdsIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
 		//SEQUENCE
 		public RuleCall getSEQUENCETerminalRuleCall_1() { return cSEQUENCETerminalRuleCall_1; }
 
-		//ids+=ID
-		public Assignment getIdsAssignment_2() { return cIdsAssignment_2; }
+		//name+=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getIdsIDTerminalRuleCall_2_0() { return cIdsIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
 		//(":" ID*)?
 		public Group getGroup_3() { return cGroup_3; }
@@ -1366,9 +1363,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
-	//	(Arrow //((name1+=ID SEQUENCE name1+=ID (':' (ID)*)?), changed to Rule Arrow.
-	//	| Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
-	//	Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
+	//	(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
+	//	Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1379,7 +1375,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rule for creating sequences between actors (Not necessarily previously defined)
 	//Arrow:
-	//	ids+=ID SEQUENCE ids+=ID (":" ID*)?;
+	//	name+=ID SEQUENCE name+=ID (":" ID*)?;
 	public ArrowElements getArrowAccess() {
 		return pArrow;
 	}

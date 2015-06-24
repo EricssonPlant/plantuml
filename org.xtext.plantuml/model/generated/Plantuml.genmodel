@@ -15,7 +15,7 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Instruction"/>
     <genClasses ecoreClass="Plantuml.ecore#//Arrow">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/ids"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>

@@ -1013,34 +1013,34 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrow"
-    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:374:1: ruleArrow returns [EObject current=null] : ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) ;
+    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:374:1: ruleArrow returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) ;
     public final EObject ruleArrow() throws RecognitionException {
         EObject current = null;
 
-        Token lv_ids_0_0=null;
+        Token lv_name_0_0=null;
         Token this_SEQUENCE_1=null;
-        Token lv_ids_2_0=null;
+        Token lv_name_2_0=null;
         Token otherlv_3=null;
         Token this_ID_4=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:28: ( ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:377:28: ( ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: ( ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:2: ( (lv_ids_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_ids_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:1: ( ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:2: ( (lv_name_0_0= RULE_ID ) ) this_SEQUENCE_1= RULE_SEQUENCE ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= Colon (this_ID_4= RULE_ID )* )?
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:2: ( (lv_ids_0_0= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:1: (lv_ids_0_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:378:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:1: (lv_name_0_0= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:1: (lv_ids_0_0= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:380:3: lv_ids_0_0= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:379:1: (lv_name_0_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:380:3: lv_name_0_0= RULE_ID
             {
-            lv_ids_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow893); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow893); 
 
-            			newLeafNode(lv_ids_0_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_0_0()); 
+            			newLeafNode(lv_name_0_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_0_0()); 
             		
 
             	        if (current==null) {
@@ -1048,8 +1048,8 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	        }
                    		addWithLastConsumed(
                    			current, 
-                   			"ids",
-                    		lv_ids_0_0, 
+                   			"name",
+                    		lv_name_0_0, 
                     		"ID");
             	    
 
@@ -1062,15 +1062,15 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
              
                 newLeafNode(this_SEQUENCE_1, grammarAccess.getArrowAccess().getSEQUENCETerminalRuleCall_1()); 
                 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:400:1: ( (lv_ids_2_0= RULE_ID ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:1: (lv_ids_2_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:400:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:1: (lv_ids_2_0= RULE_ID )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:402:3: lv_ids_2_0= RULE_ID
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:401:1: (lv_name_2_0= RULE_ID )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/internal/InternalPlantumlParser.g:402:3: lv_name_2_0= RULE_ID
             {
-            lv_ids_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow925); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArrow925); 
 
-            			newLeafNode(lv_ids_2_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_2_0()); 
+            			newLeafNode(lv_name_2_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_2_0()); 
             		
 
             	        if (current==null) {
@@ -1078,8 +1078,8 @@ public class InternalPlantumlParser extends AbstractInternalAntlrParser {
             	        }
                    		addWithLastConsumed(
                    			current, 
-                   			"ids",
-                    		lv_ids_2_0, 
+                   			"name",
+                    		lv_name_2_0, 
                     		"ID");
             	    
 

@@ -100,8 +100,8 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBoxAccess().getGroup_6(), "rule__Box__Group_6__0");
 					put(grammarAccess.getPlantumlAccess().getDiagramsAssignment(), "rule__Plantuml__DiagramsAssignment");
 					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_3(), "rule__Diagram__InstructionsAssignment_3");
-					put(grammarAccess.getArrowAccess().getIdsAssignment_0(), "rule__Arrow__IdsAssignment_0");
-					put(grammarAccess.getArrowAccess().getIdsAssignment_2(), "rule__Arrow__IdsAssignment_2");
+					put(grammarAccess.getArrowAccess().getNameAssignment_0(), "rule__Arrow__NameAssignment_0");
+					put(grammarAccess.getArrowAccess().getNameAssignment_2(), "rule__Arrow__NameAssignment_2");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_0_1(), "rule__Definition__NameAssignment_0_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_1_1(), "rule__Definition__NameAssignment_1_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_2_1(), "rule__Definition__NameAssignment_2_1");

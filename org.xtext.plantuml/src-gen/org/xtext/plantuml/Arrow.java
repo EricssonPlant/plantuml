@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.plantuml.Arrow#getIds <em>Ids</em>}</li>
+ *   <li>{@link org.xtext.plantuml.Arrow#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getArrow()
@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface Arrow extends Instruction
 {
   /**
-   * Returns the value of the '<em><b>Ids</b></em>' attribute list.
+   * Returns the value of the '<em><b>Name</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ids</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ids</em>' attribute list.
-   * @see org.xtext.plantuml.PlantumlPackage#getArrow_Ids()
+   * @return the value of the '<em>Name</em>' attribute list.
+   * @see org.xtext.plantuml.PlantumlPackage#getArrow_Name()
    * @model unique="false"
    * @generated
    */
-  EList<String> getIds();
+  EList<String> getName();
 
 } // Arrow

@@ -377,9 +377,9 @@ ruleArrow returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_ids_0_0=RULE_ID
+		lv_name_0_0=RULE_ID
 		{
-			newLeafNode(lv_ids_0_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -387,8 +387,8 @@ ruleArrow returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"ids",
-        		lv_ids_0_0, 
+       			"name",
+        		lv_name_0_0, 
         		"ID");
 	    }
 
@@ -399,9 +399,9 @@ ruleArrow returns [EObject current=null]
     }
 (
 (
-		lv_ids_2_0=RULE_ID
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_ids_2_0, grammarAccess.getArrowAccess().getIdsIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getArrowAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -409,8 +409,8 @@ ruleArrow returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"ids",
-        		lv_ids_2_0, 
+       			"name",
+        		lv_name_2_0, 
         		"ID");
 	    }
 

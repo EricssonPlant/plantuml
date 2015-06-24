@@ -368,8 +368,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (':' ID*)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     ids+=ID (ambiguity) (rule end)
-	 *     ids+=ID (ambiguity) NEWLINE (rule end)
+	 *     name+=ID (ambiguity) (rule end)
+	 *     name+=ID (ambiguity) NEWLINE (rule end)
 	 */
 	protected void emit_Arrow___ColonKeyword_3_0_IDTerminalRuleCall_3_1_a__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

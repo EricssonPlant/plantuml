@@ -107,7 +107,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (ids+=ID ids+=ID)
+	 *     (name+=ID name+=ID)
 	 */
 	protected void sequence_Arrow(EObject context, Arrow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

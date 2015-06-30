@@ -39,6 +39,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getInstructionAccess().getAlternatives_0(), "rule__Instruction__Alternatives_0");
 					put(grammarAccess.getDefinitionAccess().getAlternatives(), "rule__Definition__Alternatives");
+					put(grammarAccess.getDefinitionAccess().getAlternatives_5_1(), "rule__Definition__Alternatives_5_1");
 					put(grammarAccess.getDeclarationsAccess().getAlternatives(), "rule__Declarations__Alternatives");
 					put(grammarAccess.getEndIDAccess().getAlternatives(), "rule__EndID__Alternatives");
 					put(grammarAccess.getMyIDAccess().getAlternatives(), "rule__MyID__Alternatives");
@@ -62,6 +63,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefinitionAccess().getGroup_3(), "rule__Definition__Group_3__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_4(), "rule__Definition__Group_4__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_5(), "rule__Definition__Group_5__0");
+					put(grammarAccess.getDefinitionAccess().getGroup_5_1_1(), "rule__Definition__Group_5_1_1__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_5_2(), "rule__Definition__Group_5_2__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_5_2_1(), "rule__Definition__Group_5_2_1__0");
 					put(grammarAccess.getAutoNumberAccess().getGroup(), "rule__AutoNumber__Group__0");
@@ -110,7 +112,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_2_1(), "rule__Definition__NameAssignment_2_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_3_1(), "rule__Definition__NameAssignment_3_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_4_1(), "rule__Definition__NameAssignment_4_1");
-					put(grammarAccess.getDefinitionAccess().getNameAssignment_5_1(), "rule__Definition__NameAssignment_5_1");
+					put(grammarAccess.getDefinitionAccess().getNameAssignment_5_1_0(), "rule__Definition__NameAssignment_5_1_0");
 					put(grammarAccess.getAltElseAccess().getInstructionsAssignment_3(), "rule__AltElse__InstructionsAssignment_3");
 					put(grammarAccess.getAltElseAccess().getElsesAssignment_4(), "rule__AltElse__ElsesAssignment_4");
 					put(grammarAccess.getElseAccess().getInstructionsAssignment_3(), "rule__Else__InstructionsAssignment_3");

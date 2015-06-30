@@ -30,6 +30,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Box_NEWLINETerminalRuleCall_6_1_a;
 	protected AbstractElementAlias match_Box_NEWLINETerminalRuleCall_6_1_p;
 	protected AbstractElementAlias match_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1;
+	protected AbstractElementAlias match_Definition_EndIDParserRuleCall_5_1_1_1_a;
 	protected AbstractElementAlias match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q;
 	protected AbstractElementAlias match_Diagram_NEWLINETerminalRuleCall_4_a;
 	protected AbstractElementAlias match_Else_MyIDParserRuleCall_1_a;
@@ -53,6 +54,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Box_NEWLINETerminalRuleCall_6_1_a = new TokenAlias(true, true, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1());
 		match_Box_NEWLINETerminalRuleCall_6_1_p = new TokenAlias(true, false, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1());
 		match_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeactivateAccess().getDeactivateKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getDeactivateAccess().getDestroyKeyword_0_1()));
+		match_Definition_EndIDParserRuleCall_5_1_1_1_a = new TokenAlias(true, true, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_1_1_1());
 		match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getLessThanSignLessThanSignKeyword_5_2_0()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_2_1_1()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_2()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getNumberSignKeyword_5_2_1_3()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_4()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_5())), new TokenAlias(true, true, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_2_2()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getGreaterThanSignGreaterThanSignKeyword_5_2_3()));
 		match_Diagram_NEWLINETerminalRuleCall_4_a = new TokenAlias(true, true, grammarAccess.getDiagramAccess().getNEWLINETerminalRuleCall_4());
 		match_Else_MyIDParserRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getElseAccess().getMyIDParserRuleCall_1());
@@ -310,7 +312,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Space:
-	 * 	('|||'|('||' INT '||'))
+	 * 	('|||'|('||' INT+ '||'))
 	 * ;
 	 */
 	protected String getSpaceToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -352,6 +354,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Box_NEWLINETerminalRuleCall_6_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1.equals(syntax))
 				emit_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Definition_EndIDParserRuleCall_5_1_1_1_a.equals(syntax))
+				emit_Definition_EndIDParserRuleCall_5_1_1_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q.equals(syntax))
 				emit_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Diagram_NEWLINETerminalRuleCall_4_a.equals(syntax))
@@ -482,6 +486,17 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     EndID*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'participant' '"' (ambiguity) '"' 'as' ID ('<<' ('(' EndID ',' '#' HEXCODE ')')? EndID* '>>')? (rule start)
+	 */
+	protected void emit_Definition_EndIDParserRuleCall_5_1_1_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     (
 	  *         '<<' 
 	  *         (
@@ -497,6 +512,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	  *     )?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'participant' '"' EndID* '"' 'as' ID (ambiguity) (rule start)
 	 *     name=MyID (ambiguity) (rule end)
 	 *     name=MyID (ambiguity) Colors? NEWLINE (rule end)
 	 */

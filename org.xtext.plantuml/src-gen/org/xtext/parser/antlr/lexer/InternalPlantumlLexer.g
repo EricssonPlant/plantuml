@@ -382,6 +382,8 @@ EqualsSignEqualsSign : '=''=';
 
 GreaterThanSignGreaterThanSign : '>''>';
 
+As : ('A'|'a')('S'|'s');
+
 Of : ('O'|'o')('F'|'f');
 
 VerticalLineVerticalLine : '|''|';

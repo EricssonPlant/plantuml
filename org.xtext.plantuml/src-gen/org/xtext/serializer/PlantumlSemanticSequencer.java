@@ -147,7 +147,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         name=MyID | 
 	 *         name=MyID | 
 	 *         name=MyID | 
-	 *         name=MyID
+	 *         name=MyID?
 	 *     )
 	 */
 	protected void sequence_Definition(EObject context, Definition semanticObject) {

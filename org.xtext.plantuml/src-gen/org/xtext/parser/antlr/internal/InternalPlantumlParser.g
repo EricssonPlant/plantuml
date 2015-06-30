@@ -567,10 +567,10 @@ ruleDefinition returns [EObject current=null]
     {
     	newLeafNode(otherlv_10, grammarAccess.getDefinitionAccess().getParticipantKeyword_5_0());
     }
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDefinitionAccess().getNameMyIDParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getDefinitionAccess().getNameMyIDParserRuleCall_5_1_0_0()); 
 	    }
 		lv_name_11_0=ruleMyID		{
 	        if ($current==null) {
@@ -585,15 +585,43 @@ ruleDefinition returns [EObject current=null]
 	    }
 
 )
-)(
-	otherlv_12=LessThanSignLessThanSign
+)
+    |(
+	otherlv_12=QuotationMark
     {
-    	newLeafNode(otherlv_12, grammarAccess.getDefinitionAccess().getLessThanSignLessThanSignKeyword_5_2_0());
+    	newLeafNode(otherlv_12, grammarAccess.getDefinitionAccess().getQuotationMarkKeyword_5_1_1_0());
     }
 (
-	otherlv_13=LeftParenthesis
+    { 
+        newCompositeNode(grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_1_1_1()); 
+    }
+ruleEndID
     {
-    	newLeafNode(otherlv_13, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_0());
+        afterParserOrEnumRuleCall();
+    }
+)*
+	otherlv_14=QuotationMark
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getDefinitionAccess().getQuotationMarkKeyword_5_1_1_2());
+    }
+
+	otherlv_15=As
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getDefinitionAccess().getAsKeyword_5_1_1_3());
+    }
+this_ID_16=RULE_ID
+    { 
+    newLeafNode(this_ID_16, grammarAccess.getDefinitionAccess().getIDTerminalRuleCall_5_1_1_4()); 
+    }
+))(
+	otherlv_17=LessThanSignLessThanSign
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getDefinitionAccess().getLessThanSignLessThanSignKeyword_5_2_0());
+    }
+(
+	otherlv_18=LeftParenthesis
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_0());
     }
 
     { 
@@ -604,23 +632,23 @@ ruleEndID
         afterParserOrEnumRuleCall();
     }
 
-	otherlv_15=Comma
+	otherlv_20=Comma
     {
-    	newLeafNode(otherlv_15, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_2());
+    	newLeafNode(otherlv_20, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_2());
     }
 
-	otherlv_16=NumberSign
+	otherlv_21=NumberSign
     {
-    	newLeafNode(otherlv_16, grammarAccess.getDefinitionAccess().getNumberSignKeyword_5_2_1_3());
+    	newLeafNode(otherlv_21, grammarAccess.getDefinitionAccess().getNumberSignKeyword_5_2_1_3());
     }
-this_HEXCODE_17=RULE_HEXCODE
+this_HEXCODE_22=RULE_HEXCODE
     { 
-    newLeafNode(this_HEXCODE_17, grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_4()); 
+    newLeafNode(this_HEXCODE_22, grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_4()); 
     }
 
-	otherlv_18=RightParenthesis
+	otherlv_23=RightParenthesis
     {
-    	newLeafNode(otherlv_18, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_5());
+    	newLeafNode(otherlv_23, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_5());
     }
 )?(
     { 
@@ -631,9 +659,9 @@ ruleEndID
         afterParserOrEnumRuleCall();
     }
 )*
-	otherlv_20=GreaterThanSignGreaterThanSign
+	otherlv_25=GreaterThanSignGreaterThanSign
     {
-    	newLeafNode(otherlv_20, grammarAccess.getDefinitionAccess().getGreaterThanSignGreaterThanSignKeyword_5_2_3());
+    	newLeafNode(otherlv_25, grammarAccess.getDefinitionAccess().getGreaterThanSignGreaterThanSignKeyword_5_2_3());
     }
 )?))
 ;
@@ -1780,14 +1808,14 @@ ruleSpace returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getSpaceAccess().getVerticalLineVerticalLineKeyword_1_0()); 
     }
-    this_INT_2=RULE_INT    {
+(    this_INT_2=RULE_INT    {
 		$current.merge(this_INT_2);
     }
 
     { 
     newLeafNode(this_INT_2, grammarAccess.getSpaceAccess().getINTTerminalRuleCall_1_1()); 
     }
-
+)+
 	kw=VerticalLineVerticalLine 
     {
         $current.merge(kw);

@@ -50,7 +50,7 @@ Definition:
 	| 'control' name=MyID
 	| 'entity' name=MyID
 	| 'database' name=MyID
-	| 'participant' name=MyID ('<<' ('(' EndID ',' '#' (HEXCODE)')')? EndID* '>>')?
+	| 'participant' (name=MyID|('\"' EndID* '\"' 'as' ID)) ('<<' ('(' EndID ',' '#' (HEXCODE)')')? EndID* '>>')?
 ;
 
 // Lists what rules can declare variables
@@ -130,7 +130,7 @@ Delay:
 // Rule for Spaces
 // TODO: Make it possible to "see" the hidden whitespaces.
 Space:
-	('|||'|('||' INT '||'))
+	('|||'|('||' INT+ '||'))
 ;
 
 // Rule for hiding the footbox

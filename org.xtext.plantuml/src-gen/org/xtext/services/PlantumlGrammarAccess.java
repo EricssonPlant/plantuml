@@ -245,8 +245,15 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameMyIDParserRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
 		private final Keyword cParticipantKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNameAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNameMyIDParserRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
+		private final Alternatives cAlternatives_5_1 = (Alternatives)cGroup_5.eContents().get(1);
+		private final Assignment cNameAssignment_5_1_0 = (Assignment)cAlternatives_5_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_5_1_0_0 = (RuleCall)cNameAssignment_5_1_0.eContents().get(0);
+		private final Group cGroup_5_1_1 = (Group)cAlternatives_5_1.eContents().get(1);
+		private final Keyword cQuotationMarkKeyword_5_1_1_0 = (Keyword)cGroup_5_1_1.eContents().get(0);
+		private final RuleCall cEndIDParserRuleCall_5_1_1_1 = (RuleCall)cGroup_5_1_1.eContents().get(1);
+		private final Keyword cQuotationMarkKeyword_5_1_1_2 = (Keyword)cGroup_5_1_1.eContents().get(2);
+		private final Keyword cAsKeyword_5_1_1_3 = (Keyword)cGroup_5_1_1.eContents().get(3);
+		private final RuleCall cIDTerminalRuleCall_5_1_1_4 = (RuleCall)cGroup_5_1_1.eContents().get(4);
 		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
 		private final Keyword cLessThanSignLessThanSignKeyword_5_2_0 = (Keyword)cGroup_5_2.eContents().get(0);
 		private final Group cGroup_5_2_1 = (Group)cGroup_5_2.eContents().get(1);
@@ -263,11 +270,11 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//// actors, boundaries, controls, entities and databases
 		//Definition:
 		//	"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
-		//	"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?;
+		//	"participant" (name=MyID | "\"" EndID* "\"" "as" ID) ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?;
 		@Override public ParserRule getRule() { return rule; }
 
 		//"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
-		//"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
+		//"participant" (name=MyID | "\"" EndID* "\"" "as" ID) ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"actor" name=MyID
@@ -330,17 +337,38 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//MyID
 		public RuleCall getNameMyIDParserRuleCall_4_1_0() { return cNameMyIDParserRuleCall_4_1_0; }
 
-		//"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
+		//"participant" (name=MyID | "\"" EndID* "\"" "as" ID) ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"participant"
 		public Keyword getParticipantKeyword_5_0() { return cParticipantKeyword_5_0; }
 
+		//name=MyID | "\"" EndID* "\"" "as" ID
+		public Alternatives getAlternatives_5_1() { return cAlternatives_5_1; }
+
 		//name=MyID
-		public Assignment getNameAssignment_5_1() { return cNameAssignment_5_1; }
+		public Assignment getNameAssignment_5_1_0() { return cNameAssignment_5_1_0; }
 
 		//MyID
-		public RuleCall getNameMyIDParserRuleCall_5_1_0() { return cNameMyIDParserRuleCall_5_1_0; }
+		public RuleCall getNameMyIDParserRuleCall_5_1_0_0() { return cNameMyIDParserRuleCall_5_1_0_0; }
+
+		//"\"" EndID* "\"" "as" ID
+		public Group getGroup_5_1_1() { return cGroup_5_1_1; }
+
+		//"\""
+		public Keyword getQuotationMarkKeyword_5_1_1_0() { return cQuotationMarkKeyword_5_1_1_0; }
+
+		//EndID*
+		public RuleCall getEndIDParserRuleCall_5_1_1_1() { return cEndIDParserRuleCall_5_1_1_1; }
+
+		//"\""
+		public Keyword getQuotationMarkKeyword_5_1_1_2() { return cQuotationMarkKeyword_5_1_1_2; }
+
+		//"as"
+		public Keyword getAsKeyword_5_1_1_3() { return cAsKeyword_5_1_1_3; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_5_1_1_4() { return cIDTerminalRuleCall_5_1_1_4; }
 
 		//("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
 		public Group getGroup_5_2() { return cGroup_5_2; }
@@ -1215,22 +1243,22 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//// Rule for Spaces
 		//// TODO: Make it possible to "see" the hidden whitespaces.
 		//Space:
-		//	"|||" | "||" INT "||";
+		//	"|||" | "||" INT+ "||";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"|||" | "||" INT "||"
+		//"|||" | "||" INT+ "||"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"|||"
 		public Keyword getVerticalLineVerticalLineVerticalLineKeyword_0() { return cVerticalLineVerticalLineVerticalLineKeyword_0; }
 
-		//"||" INT "||"
+		//"||" INT+ "||"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"||"
 		public Keyword getVerticalLineVerticalLineKeyword_1_0() { return cVerticalLineVerticalLineKeyword_1_0; }
 
-		//INT
+		//INT+
 		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
 
 		//"||"
@@ -2217,7 +2245,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// actors, boundaries, controls, entities and databases
 	//Definition:
 	//	"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
-	//	"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?;
+	//	"participant" (name=MyID | "\"" EndID* "\"" "as" ID) ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
 	}
@@ -2386,7 +2414,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// Rule for Spaces
 	//// TODO: Make it possible to "see" the hidden whitespaces.
 	//Space:
-	//	"|||" | "||" INT "||";
+	//	"|||" | "||" INT+ "||";
 	public SpaceElements getSpaceAccess() {
 		return pSpace;
 	}

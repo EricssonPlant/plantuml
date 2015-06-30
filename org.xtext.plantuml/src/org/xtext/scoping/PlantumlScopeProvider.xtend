@@ -10,6 +10,6 @@ package org.xtext.scoping
  * on how and when to use it.
  *
  */
-class PlantumlScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+//class PlantumlScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
 
-}
+//}

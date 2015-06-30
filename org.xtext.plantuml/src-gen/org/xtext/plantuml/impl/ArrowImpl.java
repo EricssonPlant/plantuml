@@ -4,9 +4,13 @@ package org.xtext.plantuml.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -21,6 +25,7 @@ import org.xtext.plantuml.PlantumlPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.plantuml.impl.ArrowImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.plantuml.impl.ArrowImpl#getNames <em>Names</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,14 +34,34 @@ import org.xtext.plantuml.PlantumlPackage;
 public class ArrowImpl extends InstructionImpl implements Arrow
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<String> name;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getNames() <em>Names</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNames()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> names;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,13 +89,36 @@ public class ArrowImpl extends InstructionImpl implements Arrow
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getName()
+  public String getName()
   {
-    if (name == null)
-    {
-      name = new EDataTypeEList<String>(String.class, this, PlantumlPackage.ARROW__NAME);
-    }
     return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlantumlPackage.ARROW__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getNames()
+  {
+    if (names == null)
+    {
+      names = new EDataTypeEList<String>(String.class, this, PlantumlPackage.ARROW__NAMES);
+    }
+    return names;
   }
 
   /**
@@ -85,6 +133,8 @@ public class ArrowImpl extends InstructionImpl implements Arrow
     {
       case PlantumlPackage.ARROW__NAME:
         return getName();
+      case PlantumlPackage.ARROW__NAMES:
+        return getNames();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -101,8 +151,11 @@ public class ArrowImpl extends InstructionImpl implements Arrow
     switch (featureID)
     {
       case PlantumlPackage.ARROW__NAME:
-        getName().clear();
-        getName().addAll((Collection<? extends String>)newValue);
+        setName((String)newValue);
+        return;
+      case PlantumlPackage.ARROW__NAMES:
+        getNames().clear();
+        getNames().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -119,7 +172,10 @@ public class ArrowImpl extends InstructionImpl implements Arrow
     switch (featureID)
     {
       case PlantumlPackage.ARROW__NAME:
-        getName().clear();
+        setName(NAME_EDEFAULT);
+        return;
+      case PlantumlPackage.ARROW__NAMES:
+        getNames().clear();
         return;
     }
     super.eUnset(featureID);
@@ -136,7 +192,9 @@ public class ArrowImpl extends InstructionImpl implements Arrow
     switch (featureID)
     {
       case PlantumlPackage.ARROW__NAME:
-        return name != null && !name.isEmpty();
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PlantumlPackage.ARROW__NAMES:
+        return names != null && !names.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -154,6 +212,8 @@ public class ArrowImpl extends InstructionImpl implements Arrow
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", names: ");
+    result.append(names);
     result.append(')');
     return result.toString();
   }

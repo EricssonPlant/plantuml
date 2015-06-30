@@ -142,6 +142,9 @@ Workflow {
     
     		// provides a compare view
     		fragment = compare.CompareFragment auto-inject {}
+    		
+    		// TEST BELOW
+    		fragment = scoping.ImportNamespacesScopingFragment {ignoreCase=true}
     	}
     }
 }

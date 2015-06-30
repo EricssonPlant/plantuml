@@ -14,6 +14,7 @@ import org.xtext.plantuml.AltElse;
 import org.xtext.plantuml.Arrow;
 import org.xtext.plantuml.Box;
 import org.xtext.plantuml.Deactivate;
+import org.xtext.plantuml.Declarations;
 import org.xtext.plantuml.Definition;
 import org.xtext.plantuml.Diagram;
 import org.xtext.plantuml.Else;
@@ -67,6 +68,13 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * @generated
    */
   private EClass definitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -262,6 +270,16 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getArrow_Names()
+  {
+    return (EAttribute)arrowEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDefinition()
   {
     return definitionEClass;
@@ -275,6 +293,16 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
   public EAttribute getDefinition_Name()
   {
     return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarations()
+  {
+    return declarationsEClass;
   }
 
   /**
@@ -547,9 +575,12 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     arrowEClass = createEClass(ARROW);
     createEAttribute(arrowEClass, ARROW__NAME);
+    createEAttribute(arrowEClass, ARROW__NAMES);
 
     definitionEClass = createEClass(DEFINITION);
     createEAttribute(definitionEClass, DEFINITION__NAME);
+
+    declarationsEClass = createEClass(DECLARATIONS);
 
     altElseEClass = createEClass(ALT_ELSE);
     createEReference(altElseEClass, ALT_ELSE__INSTRUCTIONS);
@@ -613,7 +644,9 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
 
     // Add supertypes to classes
     arrowEClass.getESuperTypes().add(this.getInstruction());
+    arrowEClass.getESuperTypes().add(this.getDeclarations());
     definitionEClass.getESuperTypes().add(this.getInstruction());
+    definitionEClass.getESuperTypes().add(this.getDeclarations());
     altElseEClass.getESuperTypes().add(this.getInstruction());
     groupingMessagesEClass.getESuperTypes().add(this.getInstruction());
     noteEClass.getESuperTypes().add(this.getInstruction());
@@ -632,10 +665,13 @@ public class PlantumlPackageImpl extends EPackageImpl implements PlantumlPackage
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(arrowEClass, Arrow.class, "Arrow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getArrow_Name(), ecorePackage.getEString(), "name", null, 0, -1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getArrow_Name(), ecorePackage.getEString(), "name", null, 0, 1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getArrow_Names(), ecorePackage.getEString(), "names", null, 0, -1, Arrow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationsEClass, Declarations.class, "Declarations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(altElseEClass, AltElse.class, "AltElse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAltElse_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, AltElse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

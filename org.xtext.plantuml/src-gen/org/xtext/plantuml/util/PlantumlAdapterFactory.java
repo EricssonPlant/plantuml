@@ -100,6 +100,11 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
         return createDefinitionAdapter();
       }
       @Override
+      public Adapter caseDeclarations(Declarations object)
+      {
+        return createDeclarationsAdapter();
+      }
+      @Override
       public Adapter caseAltElse(AltElse object)
       {
         return createAltElseAdapter();
@@ -232,6 +237,21 @@ public class PlantumlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.plantuml.Declarations <em>Declarations</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.plantuml.Declarations
+   * @generated
+   */
+  public Adapter createDeclarationsAdapter()
   {
     return null;
   }

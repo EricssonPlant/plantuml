@@ -12,13 +12,13 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	{Diagram} START NEWLINE (instructions+=Instruction)* END NEWLINE*
+	START NEWLINE (instructions+=Instruction)* END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
 	(Arrow
-	|Definition (COLOR|HEXCODE)?
+	|Definition (Colors)?
 	| AutoNumber
 	| Title
 	| Legend
@@ -39,20 +39,35 @@ Instruction:
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	name+=ID SEQUENCE name+=ID (':' (ID)*)?
+	name=MyID SEQUENCE names+=MyID (':' (MyID)*)?
 ;
-
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	'actor' name=ID 
-	| 'boundary' name=ID
-	| 'control' name=ID
-	| 'entity' name=ID
-	| 'database' name=ID
-	// Change second ID in participant to Single-Line String.
-	| 'participant' name=ID ('<<' (('(' ID ',' COLOR ')')|('(' ID ',' COLOR ')' ID)| ID) '>>')?
+	'actor' name=MyID 
+	| 'boundary' name=MyID
+	| 'control' name=MyID
+	| 'entity' name=MyID
+	| 'database' name=MyID
+	| 'participant' (name=MyID|('\"' EndID* '\"' 'as' ID)) ('<<' ('(' EndID ',' '#' (HEXCODE)')')? EndID* '>>')?
+;
+
+// Lists what rules can declare variables
+declarations returns Declarations:
+	Definition | Arrow
+;
+
+// Using this instead of ID, so that you can use keywords in regular text.
+EndID:
+	ID | 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
+	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'
+	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
+	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'
+;
+
+MyID:
+	EndID|'end'
 ;
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
@@ -77,11 +92,11 @@ Newpage:
 
 // Rules for Alt-Else clauses.
 AltElse:
-	'alt' ID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end' //NEWLINE 'end'
+	'alt' MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
 Else:
-	'else' ID* NEWLINE (instructions+=Instruction)*
+	'else' MyID* NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
@@ -94,7 +109,7 @@ Note:
 	'note' (('right' ('of' rid=[Definition] (',' rids+=[Definition])*)?)
 		   		 |('left'  ('of' lid=[Definition] (',' lids+=[Definition])*)?)
 		  		 |('over' oid=[Definition](',' oids+=[Definition])*)) 
-		 		  (COLOR)* ((':' ID)| ((NEWLINE ID*)* NEWLINE 'end' 'note'))
+		 		  (Color)* ((':' MyID*)| ((NEWLINE EndID*)* 'end' 'note'))
 ;
 
 // Rule for Dividers.
@@ -104,7 +119,7 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' ID*)|((NEWLINE ID*)* 'end' 'ref'))
+	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
 ;
 
 // Rule for delays
@@ -115,7 +130,7 @@ Delay:
 // Rule for Spaces
 // TODO: Make it possible to "see" the hidden whitespaces.
 Space:
-	('|||'|('||' INT '||'))
+	('|||'|('||' INT+ '||'))
 ;
 
 // Rule for hiding the footbox
@@ -125,7 +140,7 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' COLOR? name=ID
+	'activate' Color? name=ID
 ;
 
 Deactivate:
@@ -140,9 +155,36 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	'box' '\"' ID* '\"' COLOR? NEWLINE
+	'box' '\"' ID* '\"' Color? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end' 'box'
+;
+
+Colors: '#' (Color|HEXCODE);
+
+
+Color:
+	('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
+	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
+	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
+	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
+	|'DarkSalmo'|'DarkSeaGreen'|'DarkSlateBlue'|'DarkSlateGray'|'DarkSlateGrey'|'DarkTurquoise'
+	|'DarkViolet'|'Darkorange'|'DeepPink'|'DeepSkyBlue'|'DimGray'|'DimGrey'|'DodgerBlue'
+	|'FireBrick'|'FloralWhite'|'ForestGreen'|'Fuchsia'|'Gainsboro'|'GhostWhite'|'Gold'
+	|'GoldenRod'|'Gray'|'Green'|'GreenYellow'|'Grey'|'HoneyDew'|'HotPink'|'IndianRed'
+	|'Indigo'|'Ivory'|'Khaki'|'Lavender'|'LavenderBlush'|'LawnGreen'|'LemonChiffon'
+	|'LightBlue'|'LightCoral'|'LightCyan'|'LightGoldenRodYellow'|'LightGray'|'LightGreen'
+	|'LightGrey'|'LightPink'|'LightSalmon'|'LightSeaGreen'|'LightSkyBlue'|'LightSlateGray'
+	|'LightSlateGrey'|'LightSteelBlue'|'LightYellow'|'Lime'|'LimeGreen'|'Linen'|'Magenta'
+	|'Maroon'|'MediumAquaMarine'|'MediumBlue'|'MediumOrchid'|'MediumPurple'|'MediumSeaGreen'
+	|'MediumSlateBlue'|'MediumSpringGreen'|'MediumTurquoise'|'MediumVioletRed'
+	|'MidnightBlue'|'MintCream'|'MistyRose'|'Moccasin'|'NavajoWhite'|'Navy'|'OldLace'
+	|'Olive'|'OliveDrab'|'OrangeRed'|'Orchid'|'PaleGoldenRod'|'PaleGreen'
+	|'PaleTurquoise'|'PaleVioletRed'|'PapayaWhip'|'PeachPuff'|'Peru'|'Pink'|'Plum'
+	|'PowderBlue'|'Purple'|'Red'|'RosyBrown'|'RoyalBlue'|'SaddleBrown'
+	|'Salmon'|'SandyBrown'|'SeaGreen'|'Sienna'|'Silver'|'SkyBlue'|'SlateBlue'
+	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
+	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
 ;
 
 
@@ -153,12 +195,6 @@ terminal NEWLINE 	: ('\r'? '\n');
 terminal START		: '\u0040' 'startuml';
 
 terminal END		: '\u0040' 'enduml';
-
-// INT is a sequence of numbers 0-9.
-terminal INT returns ecore::EInt: ('0'..'9')+;
-
-// ID can be any following sequence of letters and numbers, without spaces between them.
-terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*; //Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 // Multiline comment begins with /', and ends with '/
 terminal ML_COMMENT : '/\'' -> '\'/';
@@ -190,34 +226,15 @@ terminal SEQUENCE:
 	| '\u002E'												// . = u002E	
 ;
 
-terminal COLOR:
-	'#' ('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
-	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
-	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
-	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
-	|'DarkSalmo'|'DarkSeaGreen'|'DarkSlateBlue'|'DarkSlateGray'|'DarkSlateGrey'|'DarkTurquoise'
-	|'DarkViolet'|'Darkorange'|'DeepPink'|'DeepSkyBlue'|'DimGray'|'DimGrey'|'DodgerBlue'
-	|'FireBrick'|'FloralWhite'|'ForestGreen'|'Fuchsia'|'Gainsboro'|'GhostWhite'|'Gold'
-	|'GoldenRod'|'Gray'|'Green'|'GreenYellow'|'Grey'|'HoneyDew'|'HotPink'|'IndianRed'
-	|'Indigo'|'Ivory'|'Khaki'|'Lavender'|'LavenderBlush'|'LawnGreen'|'LemonChiffon'
-	|'LightBlue'|'LightCoral'|'LightCyan'|'LightGoldenRodYellow'|'LightGray'|'LightGreen'
-	|'LightGrey'|'LightPink'|'LightSalmon'|'LightSeaGreen'|'LightSkyBlue'|'LightSlateGray'
-	|'LightSlateGrey'|'LightSteelBlue'|'LightYellow'|'Lime'|'LimeGreen'|'Linen'|'Magenta'
-	|'Maroon'|'MediumAquaMarine'|'MediumBlue'|'MediumOrchid'|'MediumPurple'|'MediumSeaGreen'
-	|'MediumSlateBlue'|'MediumSpringGreen'|'MediumTurquoise'|'MediumVioletRed'
-	|'MidnightBlue'|'MintCream'|'MistyRose'|'Moccasin'|'NavajoWhite'|'Navy'|'OldLace'
-	|'Olive'|'OliveDrab'|'OrangeRed'|'Orchid'|'PaleGoldenRod'|'PaleGreen'
-	|'PaleTurquoise'|'PaleVioletRed'|'PapayaWhip'|'PeachPuff'|'Peru'|'Pink'|'Plum'
-	|'PowderBlue'|'Purple'|'Red'|'RosyBrown'|'RoyalBlue'|'SaddleBrown'
-	|'Salmon'|'SandyBrown'|'SeaGreen'|'Sienna'|'Silver'|'SkyBlue'|'SlateBlue'
-	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
-	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
+terminal HEXCODE:
+        ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
 ;
 
-terminal HEXCODE:
-        '#' ('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')
-            ('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')
-;
+// INT is a sequence of numbers 0-9.
+terminal INT returns ecore::EInt: ('0'..'9')+;
+
+// ID can be any following sequence of letters and numbers, without spaces between them.
+terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*; //Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 terminal WS			: (' '|'\t')+;
 

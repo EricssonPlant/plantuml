@@ -68,6 +68,15 @@ public interface PlantumlFactory extends EFactory
   Definition createDefinition();
 
   /**
+   * Returns a new object of class '<em>Declarations</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declarations</em>'.
+   * @generated
+   */
+  Declarations createDeclarations();
+
+  /**
    * Returns a new object of class '<em>Alt Else</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

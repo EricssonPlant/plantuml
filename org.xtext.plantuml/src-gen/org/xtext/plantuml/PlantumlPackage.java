@@ -142,7 +142,7 @@ public interface PlantumlPackage extends EPackage
   int ARROW = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -151,13 +151,22 @@ public interface PlantumlPackage extends EPackage
   int ARROW__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Names</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARROW__NAMES = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Arrow</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARROW_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+  int ARROW_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -188,6 +197,25 @@ public interface PlantumlPackage extends EPackage
   int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.plantuml.impl.DeclarationsImpl <em>Declarations</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.plantuml.impl.DeclarationsImpl
+   * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getDeclarations()
+   * @generated
+   */
+  int DECLARATIONS = 5;
+
+  /**
+   * The number of structural features of the '<em>Declarations</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATIONS_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.plantuml.impl.AltElseImpl <em>Alt Else</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -195,7 +223,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getAltElse()
    * @generated
    */
-  int ALT_ELSE = 5;
+  int ALT_ELSE = 6;
 
   /**
    * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -232,7 +260,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getElse()
    * @generated
    */
-  int ELSE = 6;
+  int ELSE = 7;
 
   /**
    * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -260,7 +288,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getGroupingMessages()
    * @generated
    */
-  int GROUPING_MESSAGES = 7;
+  int GROUPING_MESSAGES = 8;
 
   /**
    * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -288,7 +316,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getNote()
    * @generated
    */
-  int NOTE = 8;
+  int NOTE = 9;
 
   /**
    * The feature id for the '<em><b>Rid</b></em>' reference.
@@ -361,7 +389,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getReference()
    * @generated
    */
-  int REFERENCE = 9;
+  int REFERENCE = 10;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -398,7 +426,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getActivate()
    * @generated
    */
-  int ACTIVATE = 10;
+  int ACTIVATE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -426,7 +454,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getDeactivate()
    * @generated
    */
-  int DEACTIVATE = 11;
+  int DEACTIVATE = 12;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -454,7 +482,7 @@ public interface PlantumlPackage extends EPackage
    * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getBox()
    * @generated
    */
-  int BOX = 12;
+  int BOX = 13;
 
   /**
    * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
@@ -538,15 +566,26 @@ public interface PlantumlPackage extends EPackage
   EClass getArrow();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Arrow#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.plantuml.Arrow#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Name</em>'.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see org.xtext.plantuml.Arrow#getName()
    * @see #getArrow()
    * @generated
    */
   EAttribute getArrow_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.plantuml.Arrow#getNames <em>Names</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Names</em>'.
+   * @see org.xtext.plantuml.Arrow#getNames()
+   * @see #getArrow()
+   * @generated
+   */
+  EAttribute getArrow_Names();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.Definition <em>Definition</em>}'.
@@ -568,6 +607,16 @@ public interface PlantumlPackage extends EPackage
    * @generated
    */
   EAttribute getDefinition_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.plantuml.Declarations <em>Declarations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declarations</em>'.
+   * @see org.xtext.plantuml.Declarations
+   * @generated
+   */
+  EClass getDeclarations();
 
   /**
    * Returns the meta object for class '{@link org.xtext.plantuml.AltElse <em>Alt Else</em>}'.
@@ -894,12 +943,20 @@ public interface PlantumlPackage extends EPackage
     EClass ARROW = eINSTANCE.getArrow();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute ARROW__NAME = eINSTANCE.getArrow_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARROW__NAMES = eINSTANCE.getArrow_Names();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -918,6 +975,16 @@ public interface PlantumlPackage extends EPackage
      * @generated
      */
     EAttribute DEFINITION__NAME = eINSTANCE.getDefinition_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.plantuml.impl.DeclarationsImpl <em>Declarations</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.plantuml.impl.DeclarationsImpl
+     * @see org.xtext.plantuml.impl.PlantumlPackageImpl#getDeclarations()
+     * @generated
+     */
+    EClass DECLARATIONS = eINSTANCE.getDeclarations();
 
     /**
      * The meta object literal for the '{@link org.xtext.plantuml.impl.AltElseImpl <em>Alt Else</em>}' class.

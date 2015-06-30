@@ -18,7 +18,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 		INode root = resource.getParseResult().getRootNode();
 		BidiTreeIterator<INode> it = root.getAsTreeIterable().iterator();
 		
-		// This loop will check the type of grammar for each node 
+		// This loop will check the type of grammar for each node
 		// and apply a specific colour to that node.
 		while( it.hasNext())
 		{
@@ -30,28 +30,24 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 				RuleCall rc = (RuleCall) node.getGrammarElement();		
 				AbstractRule r = rc.getRule();
 				
-				// For example if the called rule is of the type START or END the specific 
+				
+				// For example if the called rule is of the type START or END the specific
 				// node will be coloured according the style STND.
 				if(r.getName().equals("START") || r.getName().equals("END")){
-					acceptor.addPosition( node.getOffset(), node.getLength(), STND );
+					acceptor.addPosition(node.getOffset(), node.getLength(), STND);
 				}
 				else if(r.getName().equals("SEQUENCE")){
-					acceptor.addPosition( node.getOffset(), node.getLength(), SEQ_ARR);
+					acceptor.addPosition(node.getOffset(), node.getLength(), SEQ_ARR);
 				}
 				else if(r.getName().equals("Definition")){
-					it.next();
+					int previousLength = node.getLength();
+					int previousOffset = node.getOffset();
+					node = it.next();
 					
-					/*
-					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
-					System.out.println(node.getLength()+" ");
-					System.out.println(node.getOffset()+" ");
-					System.out.println(node.getGrammarElement());
-					System.out.println(node.getText());
-					*/
-					
-					acceptor.addPosition( node.getOffset(), node.getLength(), DEFINITION);
-					it.previous();
-					
+					if(node.getText().contains(" ")){
+						node = it.next();
+					}
+					acceptor.addPosition(previousOffset, node.getLength(), DEFINITION);
 				}
 			}
 			

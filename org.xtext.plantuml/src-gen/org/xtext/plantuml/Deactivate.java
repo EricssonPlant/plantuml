@@ -10,10 +10,10 @@ package org.xtext.plantuml;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.Deactivate#getId <em>Id</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getDeactivate()
  * @model

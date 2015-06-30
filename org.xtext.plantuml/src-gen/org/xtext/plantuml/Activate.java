@@ -10,10 +10,10 @@ package org.xtext.plantuml;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.Activate#getName <em>Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getActivate()
  * @model

@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.Reference#getId <em>Id</em>}</li>
  *   <li>{@link org.xtext.plantuml.Reference#getIds <em>Ids</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getReference()
  * @model

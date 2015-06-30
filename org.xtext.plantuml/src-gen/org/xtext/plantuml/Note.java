@@ -11,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.Note#getRid <em>Rid</em>}</li>
  *   <li>{@link org.xtext.plantuml.Note#getRids <em>Rids</em>}</li>
@@ -20,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.xtext.plantuml.Note#getOid <em>Oid</em>}</li>
  *   <li>{@link org.xtext.plantuml.Note#getOids <em>Oids</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.xtext.plantuml.PlantumlPackage#getNote()
  * @model

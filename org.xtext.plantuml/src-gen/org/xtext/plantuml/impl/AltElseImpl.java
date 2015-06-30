@@ -25,11 +25,11 @@ import org.xtext.plantuml.PlantumlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.impl.AltElseImpl#getInstructions <em>Instructions</em>}</li>
  *   <li>{@link org.xtext.plantuml.impl.AltElseImpl#getElses <em>Elses</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

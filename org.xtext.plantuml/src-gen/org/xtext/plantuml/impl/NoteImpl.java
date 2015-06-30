@@ -25,7 +25,6 @@ import org.xtext.plantuml.PlantumlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.impl.NoteImpl#getRid <em>Rid</em>}</li>
  *   <li>{@link org.xtext.plantuml.impl.NoteImpl#getRids <em>Rids</em>}</li>
@@ -34,6 +33,7 @@ import org.xtext.plantuml.PlantumlPackage;
  *   <li>{@link org.xtext.plantuml.impl.NoteImpl#getOid <em>Oid</em>}</li>
  *   <li>{@link org.xtext.plantuml.impl.NoteImpl#getOids <em>Oids</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

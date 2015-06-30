@@ -25,11 +25,11 @@ import org.xtext.plantuml.Reference;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.impl.ReferenceImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.xtext.plantuml.impl.ReferenceImpl#getIds <em>Ids</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -25,7 +25,7 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		addType( acceptor, STND, 153, 0, 200, NORMAL);
 		addType( acceptor, SEQ_ARR, 200, 0, 0, NORMAL);
 		addType( acceptor, COMMENT, 0, 102, 0, NORMAL);
-		addType( acceptor, DEFINITION, 50, 200, 0, NORMAL);
+		addType( acceptor, DEFINITION, 0, 0, 200, NORMAL);
 	}
 	
 	

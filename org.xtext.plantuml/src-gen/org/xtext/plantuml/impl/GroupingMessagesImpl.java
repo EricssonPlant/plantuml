@@ -24,10 +24,10 @@ import org.xtext.plantuml.PlantumlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.plantuml.impl.GroupingMessagesImpl#getInstructions <em>Instructions</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -98,13 +98,25 @@ VerticalLineVerticalLine : '|''|';
 
 QuotationMark : '"';
 
+NumberSign : '#';
+
 LeftParenthesis : '(';
 
 RightParenthesis : ')';
 
 Comma : ',';
 
+HyphenMinus : '-';
+
+FullStop : '.';
+
 Colon : ':';
+
+LessThanSign : '<';
+
+EqualsSign : '=';
+
+GreaterThanSign : '>';
 
 
 

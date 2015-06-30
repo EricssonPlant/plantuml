@@ -69,6 +69,7 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
       case PlantumlPackage.INSTRUCTION: return createInstruction();
       case PlantumlPackage.ARROW: return createArrow();
       case PlantumlPackage.DEFINITION: return createDefinition();
+      case PlantumlPackage.DECLARATIONS: return createDeclarations();
       case PlantumlPackage.ALT_ELSE: return createAltElse();
       case PlantumlPackage.ELSE: return createElse();
       case PlantumlPackage.GROUPING_MESSAGES: return createGroupingMessages();
@@ -135,6 +136,17 @@ public class PlantumlFactoryImpl extends EFactoryImpl implements PlantumlFactory
   {
     DefinitionImpl definition = new DefinitionImpl();
     return definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Declarations createDeclarations()
+  {
+    DeclarationsImpl declarations = new DeclarationsImpl();
+    return declarations;
   }
 
   /**

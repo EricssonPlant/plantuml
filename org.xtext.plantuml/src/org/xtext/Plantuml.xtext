@@ -12,7 +12,7 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	{Diagram} START NEWLINE (instructions+=Instruction)* END NEWLINE*
+	START NEWLINE (instructions+=Instruction)* END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -39,20 +39,35 @@ Instruction:
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	name+=ID SEQUENCE name+=ID (':' (ID)*)?
+	name=MyID SEQUENCE names+=MyID (':' (MyID)*)?
 ;
-
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	'actor' name=ID 
-	| 'boundary' name=ID
-	| 'control' name=ID
-	| 'entity' name=ID
-	| 'database' name=ID
-	// Change second ID in participant to Single-Line String.
-	| 'participant' name=ID ('<<' (('(' ID ',' COLOR ')')|('(' ID ',' COLOR ')' ID)| ID) '>>')?
+	'actor' name=MyID 
+	| 'boundary' name=MyID
+	| 'control' name=MyID
+	| 'entity' name=MyID
+	| 'database' name=MyID
+	| 'participant' name=MyID ('<<' ('(' EndID ',' (HEXCODE)')')? EndID* '>>')?
+;
+
+// Lists what rules can declare variables
+declarations returns Declarations:
+	Definition | Arrow
+;
+
+// Using this instead of ID, so that you can use keywords in regular text.
+EndID:
+	ID | 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
+	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'
+	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
+	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'
+;
+
+MyID:
+	EndID|'end'
 ;
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
@@ -77,11 +92,11 @@ Newpage:
 
 // Rules for Alt-Else clauses.
 AltElse:
-	'alt' ID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end' //NEWLINE 'end'
+	'alt' MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
 Else:
-	'else' ID* NEWLINE (instructions+=Instruction)*
+	'else' MyID* NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
@@ -94,7 +109,7 @@ Note:
 	'note' (('right' ('of' rid=[Definition] (',' rids+=[Definition])*)?)
 		   		 |('left'  ('of' lid=[Definition] (',' lids+=[Definition])*)?)
 		  		 |('over' oid=[Definition](',' oids+=[Definition])*)) 
-		 		  (COLOR)* ((':' ID)| ((NEWLINE ID*)* NEWLINE 'end' 'note'))
+		 		  (COLOR)* ((':' MyID*)| ((NEWLINE EndID*)* 'end' 'note'))
 ;
 
 // Rule for Dividers.
@@ -104,7 +119,7 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' ID*)|((NEWLINE ID*)* 'end' 'ref'))
+	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
 ;
 
 // Rule for delays

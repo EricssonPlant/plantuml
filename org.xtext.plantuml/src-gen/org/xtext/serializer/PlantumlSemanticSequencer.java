@@ -107,7 +107,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name+=ID name+=ID)
+	 *     (name=MyID names+=MyID)
 	 */
 	protected void sequence_Arrow(EObject context, Arrow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -142,12 +142,12 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Constraint:
 	 *     (
-	 *         name=ID | 
-	 *         name=ID | 
-	 *         name=ID | 
-	 *         name=ID | 
-	 *         name=ID | 
-	 *         name=ID
+	 *         name=MyID | 
+	 *         name=MyID | 
+	 *         name=MyID | 
+	 *         name=MyID | 
+	 *         name=MyID | 
+	 *         name=MyID
 	 *     )
 	 */
 	protected void sequence_Definition(EObject context, Definition semanticObject) {
@@ -157,7 +157,7 @@ public class PlantumlSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (instructions+=Instruction*)
+	 *     instructions+=Instruction*
 	 */
 	protected void sequence_Diagram(EObject context, Diagram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

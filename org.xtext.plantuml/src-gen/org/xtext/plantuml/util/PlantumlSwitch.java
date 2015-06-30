@@ -98,6 +98,7 @@ public class PlantumlSwitch<T> extends Switch<T>
         Arrow arrow = (Arrow)theEObject;
         T result = caseArrow(arrow);
         if (result == null) result = caseInstruction(arrow);
+        if (result == null) result = caseDeclarations(arrow);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -106,6 +107,14 @@ public class PlantumlSwitch<T> extends Switch<T>
         Definition definition = (Definition)theEObject;
         T result = caseDefinition(definition);
         if (result == null) result = caseInstruction(definition);
+        if (result == null) result = caseDeclarations(definition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlantumlPackage.DECLARATIONS:
+      {
+        Declarations declarations = (Declarations)theEObject;
+        T result = caseDeclarations(declarations);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -252,6 +261,22 @@ public class PlantumlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDefinition(Definition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declarations</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declarations</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarations(Declarations object)
   {
     return null;
   }

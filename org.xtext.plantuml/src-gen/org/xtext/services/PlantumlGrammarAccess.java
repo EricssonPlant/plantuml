@@ -37,42 +37,38 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	public class DiagramElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Diagram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cDiagramAction_0 = (Action)cGroup.eContents().get(0);
-		private final RuleCall cSTARTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cNEWLINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cNEWLINETerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final RuleCall cSTARTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cNEWLINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cInstructionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInstructionsInstructionParserRuleCall_2_0 = (RuleCall)cInstructionsAssignment_2.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cNEWLINETerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//// A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 		//Diagram:
-		//	{Diagram} START NEWLINE instructions+=Instruction* END NEWLINE*;
+		//	START NEWLINE instructions+=Instruction* END NEWLINE*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Diagram} START NEWLINE instructions+=Instruction* END NEWLINE*
+		//START NEWLINE instructions+=Instruction* END NEWLINE*
 		public Group getGroup() { return cGroup; }
 
-		//{Diagram}
-		public Action getDiagramAction_0() { return cDiagramAction_0; }
-
 		//START
-		public RuleCall getSTARTTerminalRuleCall_1() { return cSTARTTerminalRuleCall_1; }
+		public RuleCall getSTARTTerminalRuleCall_0() { return cSTARTTerminalRuleCall_0; }
 
 		//NEWLINE
-		public RuleCall getNEWLINETerminalRuleCall_2() { return cNEWLINETerminalRuleCall_2; }
+		public RuleCall getNEWLINETerminalRuleCall_1() { return cNEWLINETerminalRuleCall_1; }
 
 		//instructions+=Instruction*
-		public Assignment getInstructionsAssignment_3() { return cInstructionsAssignment_3; }
+		public Assignment getInstructionsAssignment_2() { return cInstructionsAssignment_2; }
 
 		//Instruction
-		public RuleCall getInstructionsInstructionParserRuleCall_3_0() { return cInstructionsInstructionParserRuleCall_3_0; }
+		public RuleCall getInstructionsInstructionParserRuleCall_2_0() { return cInstructionsInstructionParserRuleCall_2_0; }
 
 		//END
-		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
+		public RuleCall getENDTerminalRuleCall_3() { return cENDTerminalRuleCall_3; }
 
 		//NEWLINE*
-		public RuleCall getNEWLINETerminalRuleCall_5() { return cNEWLINETerminalRuleCall_5; }
+		public RuleCall getNEWLINETerminalRuleCall_4() { return cNEWLINETerminalRuleCall_4; }
 	}
 
 	public class InstructionElements extends AbstractParserRuleElementFinder {
@@ -191,45 +187,45 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Arrow");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final RuleCall cSEQUENCETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNamesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNamesMyIDParserRuleCall_2_0 = (RuleCall)cNamesAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final RuleCall cMyIDParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		
 		//// Rule for creating sequences between actors (Not necessarily previously defined)
 		//Arrow:
-		//	name+=ID SEQUENCE name+=ID (":" ID*)?;
+		//	name=MyID SEQUENCE names+=MyID (":" MyID*)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//name+=ID SEQUENCE name+=ID (":" ID*)?
+		//name=MyID SEQUENCE names+=MyID (":" MyID*)?
 		public Group getGroup() { return cGroup; }
 
-		//name+=ID
+		//name=MyID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_0_0() { return cNameMyIDParserRuleCall_0_0; }
 
 		//SEQUENCE
 		public RuleCall getSEQUENCETerminalRuleCall_1() { return cSEQUENCETerminalRuleCall_1; }
 
-		//name+=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//names+=MyID
+		public Assignment getNamesAssignment_2() { return cNamesAssignment_2; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		//MyID
+		public RuleCall getNamesMyIDParserRuleCall_2_0() { return cNamesMyIDParserRuleCall_2_0; }
 
-		//(":" ID*)?
+		//(":" MyID*)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//":"
 		public Keyword getColonKeyword_3_0() { return cColonKeyword_3_0; }
 
-		//ID*
-		public RuleCall getIDTerminalRuleCall_3_1() { return cIDTerminalRuleCall_3_1; }
+		//MyID*
+		public RuleCall getMyIDParserRuleCall_3_1() { return cMyIDParserRuleCall_3_1; }
 	}
 
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
@@ -238,184 +234,374 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cActorKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cBoundaryKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Keyword cControlKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Keyword cEntityKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Keyword cDatabaseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
 		private final Keyword cParticipantKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cNameAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
+		private final RuleCall cNameMyIDParserRuleCall_5_1_0 = (RuleCall)cNameAssignment_5_1.eContents().get(0);
 		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
 		private final Keyword cLessThanSignLessThanSignKeyword_5_2_0 = (Keyword)cGroup_5_2.eContents().get(0);
-		private final Alternatives cAlternatives_5_2_1 = (Alternatives)cGroup_5_2.eContents().get(1);
-		private final Group cGroup_5_2_1_0 = (Group)cAlternatives_5_2_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_5_2_1_0_0 = (Keyword)cGroup_5_2_1_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_5_2_1_0_1 = (RuleCall)cGroup_5_2_1_0.eContents().get(1);
-		private final Keyword cCommaKeyword_5_2_1_0_2 = (Keyword)cGroup_5_2_1_0.eContents().get(2);
-		private final RuleCall cCOLORTerminalRuleCall_5_2_1_0_3 = (RuleCall)cGroup_5_2_1_0.eContents().get(3);
-		private final Keyword cRightParenthesisKeyword_5_2_1_0_4 = (Keyword)cGroup_5_2_1_0.eContents().get(4);
-		private final Group cGroup_5_2_1_1 = (Group)cAlternatives_5_2_1.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_5_2_1_1_0 = (Keyword)cGroup_5_2_1_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_5_2_1_1_1 = (RuleCall)cGroup_5_2_1_1.eContents().get(1);
-		private final Keyword cCommaKeyword_5_2_1_1_2 = (Keyword)cGroup_5_2_1_1.eContents().get(2);
-		private final RuleCall cCOLORTerminalRuleCall_5_2_1_1_3 = (RuleCall)cGroup_5_2_1_1.eContents().get(3);
-		private final Keyword cRightParenthesisKeyword_5_2_1_1_4 = (Keyword)cGroup_5_2_1_1.eContents().get(4);
-		private final RuleCall cIDTerminalRuleCall_5_2_1_1_5 = (RuleCall)cGroup_5_2_1_1.eContents().get(5);
-		private final RuleCall cIDTerminalRuleCall_5_2_1_2 = (RuleCall)cAlternatives_5_2_1.eContents().get(2);
-		private final Keyword cGreaterThanSignGreaterThanSignKeyword_5_2_2 = (Keyword)cGroup_5_2.eContents().get(2);
+		private final Group cGroup_5_2_1 = (Group)cGroup_5_2.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_5_2_1_0 = (Keyword)cGroup_5_2_1.eContents().get(0);
+		private final RuleCall cEndIDParserRuleCall_5_2_1_1 = (RuleCall)cGroup_5_2_1.eContents().get(1);
+		private final Keyword cCommaKeyword_5_2_1_2 = (Keyword)cGroup_5_2_1.eContents().get(2);
+		private final Alternatives cAlternatives_5_2_1_3 = (Alternatives)cGroup_5_2_1.eContents().get(3);
+		private final RuleCall cCOLORTerminalRuleCall_5_2_1_3_0 = (RuleCall)cAlternatives_5_2_1_3.eContents().get(0);
+		private final RuleCall cHEXCODETerminalRuleCall_5_2_1_3_1 = (RuleCall)cAlternatives_5_2_1_3.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5_2_1_4 = (Keyword)cGroup_5_2_1.eContents().get(4);
+		private final RuleCall cEndIDParserRuleCall_5_2_2 = (RuleCall)cGroup_5_2.eContents().get(2);
+		private final Keyword cGreaterThanSignGreaterThanSignKeyword_5_2_3 = (Keyword)cGroup_5_2.eContents().get(3);
 		
 		//// Rule for defining objects in PlantUML, such as
 		//// actors, boundaries, controls, entities and databases
 		//Definition:
-		//	"actor" name=ID // Change second ID in participant to Single-Line String.
-		//	| "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID | "participant" name=ID ("<<" ("(" ID
-		//	"," COLOR ")" | "(" ID "," COLOR ")" ID | ID) ">>")?;
+		//	"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
+		//	"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"actor" name=ID // Change second ID in participant to Single-Line String.
-		//| "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID | "participant" name=ID ("<<" ("(" ID
-		//"," COLOR ")" | "(" ID "," COLOR ")" ID | ID) ">>")?
+		//"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
+		//"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"actor" name=ID
+		//"actor" name=MyID
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"actor"
 		public Keyword getActorKeyword_0_0() { return cActorKeyword_0_0; }
 
-		//name=ID
+		//name=MyID
 		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_0_1_0() { return cNameMyIDParserRuleCall_0_1_0; }
 
-		//"boundary" name=ID
+		//"boundary" name=MyID
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"boundary"
 		public Keyword getBoundaryKeyword_1_0() { return cBoundaryKeyword_1_0; }
 
-		//name=ID
+		//name=MyID
 		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_1_1_0() { return cNameMyIDParserRuleCall_1_1_0; }
 
-		//"control" name=ID
+		//"control" name=MyID
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"control"
 		public Keyword getControlKeyword_2_0() { return cControlKeyword_2_0; }
 
-		//name=ID
+		//name=MyID
 		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_2_1_0() { return cNameMyIDParserRuleCall_2_1_0; }
 
-		//"entity" name=ID
+		//"entity" name=MyID
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"entity"
 		public Keyword getEntityKeyword_3_0() { return cEntityKeyword_3_0; }
 
-		//name=ID
+		//name=MyID
 		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_1_0() { return cNameIDTerminalRuleCall_3_1_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_3_1_0() { return cNameMyIDParserRuleCall_3_1_0; }
 
-		//"database" name=ID
+		//"database" name=MyID
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"database"
 		public Keyword getDatabaseKeyword_4_0() { return cDatabaseKeyword_4_0; }
 
-		//name=ID
+		//name=MyID
 		public Assignment getNameAssignment_4_1() { return cNameAssignment_4_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_4_1_0() { return cNameMyIDParserRuleCall_4_1_0; }
 
-		//"participant" name=ID ("<<" ("(" ID "," COLOR ")" | "(" ID "," COLOR ")" ID | ID) ">>")?
+		//"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"participant"
 		public Keyword getParticipantKeyword_5_0() { return cParticipantKeyword_5_0; }
 
-		//name=ID
+		//name=MyID
 		public Assignment getNameAssignment_5_1() { return cNameAssignment_5_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_5_1_0() { return cNameIDTerminalRuleCall_5_1_0; }
+		//MyID
+		public RuleCall getNameMyIDParserRuleCall_5_1_0() { return cNameMyIDParserRuleCall_5_1_0; }
 
-		//("<<" ("(" ID "," COLOR ")" | "(" ID "," COLOR ")" ID | ID) ">>")?
+		//("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?
 		public Group getGroup_5_2() { return cGroup_5_2; }
 
 		//"<<"
 		public Keyword getLessThanSignLessThanSignKeyword_5_2_0() { return cLessThanSignLessThanSignKeyword_5_2_0; }
 
-		//"(" ID "," COLOR ")" | "(" ID "," COLOR ")" ID | ID
-		public Alternatives getAlternatives_5_2_1() { return cAlternatives_5_2_1; }
-
-		//"(" ID "," COLOR ")"
-		public Group getGroup_5_2_1_0() { return cGroup_5_2_1_0; }
+		//("(" EndID "," (COLOR | HEXCODE) ")")?
+		public Group getGroup_5_2_1() { return cGroup_5_2_1; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_5_2_1_0_0() { return cLeftParenthesisKeyword_5_2_1_0_0; }
+		public Keyword getLeftParenthesisKeyword_5_2_1_0() { return cLeftParenthesisKeyword_5_2_1_0; }
 
-		//ID
-		public RuleCall getIDTerminalRuleCall_5_2_1_0_1() { return cIDTerminalRuleCall_5_2_1_0_1; }
-
-		//","
-		public Keyword getCommaKeyword_5_2_1_0_2() { return cCommaKeyword_5_2_1_0_2; }
-
-		//COLOR
-		public RuleCall getCOLORTerminalRuleCall_5_2_1_0_3() { return cCOLORTerminalRuleCall_5_2_1_0_3; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_5_2_1_0_4() { return cRightParenthesisKeyword_5_2_1_0_4; }
-
-		//"(" ID "," COLOR ")" ID
-		public Group getGroup_5_2_1_1() { return cGroup_5_2_1_1; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_5_2_1_1_0() { return cLeftParenthesisKeyword_5_2_1_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_5_2_1_1_1() { return cIDTerminalRuleCall_5_2_1_1_1; }
+		//EndID
+		public RuleCall getEndIDParserRuleCall_5_2_1_1() { return cEndIDParserRuleCall_5_2_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_5_2_1_1_2() { return cCommaKeyword_5_2_1_1_2; }
+		public Keyword getCommaKeyword_5_2_1_2() { return cCommaKeyword_5_2_1_2; }
+
+		//COLOR | HEXCODE
+		public Alternatives getAlternatives_5_2_1_3() { return cAlternatives_5_2_1_3; }
 
 		//COLOR
-		public RuleCall getCOLORTerminalRuleCall_5_2_1_1_3() { return cCOLORTerminalRuleCall_5_2_1_1_3; }
+		public RuleCall getCOLORTerminalRuleCall_5_2_1_3_0() { return cCOLORTerminalRuleCall_5_2_1_3_0; }
+
+		//HEXCODE
+		public RuleCall getHEXCODETerminalRuleCall_5_2_1_3_1() { return cHEXCODETerminalRuleCall_5_2_1_3_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_5_2_1_1_4() { return cRightParenthesisKeyword_5_2_1_1_4; }
+		public Keyword getRightParenthesisKeyword_5_2_1_4() { return cRightParenthesisKeyword_5_2_1_4; }
 
-		//ID
-		public RuleCall getIDTerminalRuleCall_5_2_1_1_5() { return cIDTerminalRuleCall_5_2_1_1_5; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_5_2_1_2() { return cIDTerminalRuleCall_5_2_1_2; }
+		//EndID*
+		public RuleCall getEndIDParserRuleCall_5_2_2() { return cEndIDParserRuleCall_5_2_2; }
 
 		//">>"
-		public Keyword getGreaterThanSignGreaterThanSignKeyword_5_2_2() { return cGreaterThanSignGreaterThanSignKeyword_5_2_2; }
+		public Keyword getGreaterThanSignGreaterThanSignKeyword_5_2_3() { return cGreaterThanSignGreaterThanSignKeyword_5_2_3; }
+	}
+
+	public class DeclarationsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "declarations");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDefinitionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cArrowParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//// Lists what rules can declare variables
+		//declarations returns Declarations:
+		//	Definition | Arrow;
+		@Override public ParserRule getRule() { return rule; }
+
+		//Definition | Arrow
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Definition
+		public RuleCall getDefinitionParserRuleCall_0() { return cDefinitionParserRuleCall_0; }
+
+		//Arrow
+		public RuleCall getArrowParserRuleCall_1() { return cArrowParserRuleCall_1; }
+	}
+
+	public class EndIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EndID");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Keyword cCreateKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAutonumberKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cTitleKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cLegendKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cRightKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cLeftKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cCenterKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cEndlegendKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cAltKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cElseKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cNewpageKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cOptKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cLoopKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cParKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cBreakKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cCriticalKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cGroupKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cNoteKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cOverKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cOfKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cRefKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cHideKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cFootboxKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cActivateKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cDeactivateKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cDestroyKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cBoxKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cNumberSignKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cCommaKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cLeftParenthesisKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cRightParenthesisKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cEqualsSignKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final RuleCall cINTTerminalRuleCall_33 = (RuleCall)cAlternatives.eContents().get(33);
+		private final Keyword cHyphenMinusKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cFullStopKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cColonKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cGreaterThanSignKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cLessThanSignKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		
+		//// Using this instead of ID, so that you can use keywords in regular text.
+		//EndID:
+		//	ID | "create" | "autonumber" | "title" | "legend" | "right" | "left" | "center" | "endlegend" | "alt" | "else" |
+		//	"newpage" | "opt" | "loop" | "par" | "break" | "critical" | "group" | "note" | "over" | "of" | "ref" | "hide" |
+		//	"footbox" | "activate" | "deactivate" | "destroy" | "box" | "#" | "," | "(" | ")" | "=" | INT | "-" | "." | ":" | ">"
+		//	| "<";
+		@Override public ParserRule getRule() { return rule; }
+
+		//ID | "create" | "autonumber" | "title" | "legend" | "right" | "left" | "center" | "endlegend" | "alt" | "else" |
+		//"newpage" | "opt" | "loop" | "par" | "break" | "critical" | "group" | "note" | "over" | "of" | "ref" | "hide" |
+		//"footbox" | "activate" | "deactivate" | "destroy" | "box" | "#" | "," | "(" | ")" | "=" | INT | "-" | "." | ":" | ">"
+		//| "<"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//"create"
+		public Keyword getCreateKeyword_1() { return cCreateKeyword_1; }
+
+		//"autonumber"
+		public Keyword getAutonumberKeyword_2() { return cAutonumberKeyword_2; }
+
+		//"title"
+		public Keyword getTitleKeyword_3() { return cTitleKeyword_3; }
+
+		//"legend"
+		public Keyword getLegendKeyword_4() { return cLegendKeyword_4; }
+
+		//"right"
+		public Keyword getRightKeyword_5() { return cRightKeyword_5; }
+
+		//"left"
+		public Keyword getLeftKeyword_6() { return cLeftKeyword_6; }
+
+		//"center"
+		public Keyword getCenterKeyword_7() { return cCenterKeyword_7; }
+
+		//"endlegend"
+		public Keyword getEndlegendKeyword_8() { return cEndlegendKeyword_8; }
+
+		//"alt"
+		public Keyword getAltKeyword_9() { return cAltKeyword_9; }
+
+		//"else"
+		public Keyword getElseKeyword_10() { return cElseKeyword_10; }
+
+		//"newpage"
+		public Keyword getNewpageKeyword_11() { return cNewpageKeyword_11; }
+
+		//"opt"
+		public Keyword getOptKeyword_12() { return cOptKeyword_12; }
+
+		//"loop"
+		public Keyword getLoopKeyword_13() { return cLoopKeyword_13; }
+
+		//"par"
+		public Keyword getParKeyword_14() { return cParKeyword_14; }
+
+		//"break"
+		public Keyword getBreakKeyword_15() { return cBreakKeyword_15; }
+
+		//"critical"
+		public Keyword getCriticalKeyword_16() { return cCriticalKeyword_16; }
+
+		//"group"
+		public Keyword getGroupKeyword_17() { return cGroupKeyword_17; }
+
+		//"note"
+		public Keyword getNoteKeyword_18() { return cNoteKeyword_18; }
+
+		//"over"
+		public Keyword getOverKeyword_19() { return cOverKeyword_19; }
+
+		//"of"
+		public Keyword getOfKeyword_20() { return cOfKeyword_20; }
+
+		//"ref"
+		public Keyword getRefKeyword_21() { return cRefKeyword_21; }
+
+		//"hide"
+		public Keyword getHideKeyword_22() { return cHideKeyword_22; }
+
+		//"footbox"
+		public Keyword getFootboxKeyword_23() { return cFootboxKeyword_23; }
+
+		//"activate"
+		public Keyword getActivateKeyword_24() { return cActivateKeyword_24; }
+
+		//"deactivate"
+		public Keyword getDeactivateKeyword_25() { return cDeactivateKeyword_25; }
+
+		//"destroy"
+		public Keyword getDestroyKeyword_26() { return cDestroyKeyword_26; }
+
+		//"box"
+		public Keyword getBoxKeyword_27() { return cBoxKeyword_27; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_28() { return cNumberSignKeyword_28; }
+
+		//","
+		public Keyword getCommaKeyword_29() { return cCommaKeyword_29; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_30() { return cLeftParenthesisKeyword_30; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_31() { return cRightParenthesisKeyword_31; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_32() { return cEqualsSignKeyword_32; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_33() { return cINTTerminalRuleCall_33; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_34() { return cHyphenMinusKeyword_34; }
+
+		//"."
+		public Keyword getFullStopKeyword_35() { return cFullStopKeyword_35; }
+
+		//":"
+		public Keyword getColonKeyword_36() { return cColonKeyword_36; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_37() { return cGreaterThanSignKeyword_37; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_38() { return cLessThanSignKeyword_38; }
+	}
+
+	public class MyIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MyID");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cEndIDParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Keyword cEndKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//MyID:
+		//	EndID | "end";
+		@Override public ParserRule getRule() { return rule; }
+
+		//EndID | "end"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//EndID
+		public RuleCall getEndIDParserRuleCall_0() { return cEndIDParserRuleCall_0; }
+
+		//"end"
+		public Keyword getEndKeyword_1() { return cEndKeyword_1; }
 	}
 
 	public class AutoNumberElements extends AbstractParserRuleElementFinder {
@@ -542,7 +728,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AltElse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAltKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cMyIDParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cNEWLINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
@@ -552,19 +738,17 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// Rules for Alt-Else clauses.
 		//AltElse:
-		//	"alt" ID* NEWLINE instructions+=Instruction* elses+=Else* //NEWLINE 'end'
-		//	"end";
+		//	"alt" MyID* NEWLINE instructions+=Instruction* elses+=Else* "end";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"alt" ID* NEWLINE instructions+=Instruction* elses+=Else* //NEWLINE 'end'
-		//"end"
+		//"alt" MyID* NEWLINE instructions+=Instruction* elses+=Else* "end"
 		public Group getGroup() { return cGroup; }
 
 		//"alt"
 		public Keyword getAltKeyword_0() { return cAltKeyword_0; }
 
-		//ID*
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		//MyID*
+		public RuleCall getMyIDParserRuleCall_1() { return cMyIDParserRuleCall_1; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_2() { return cNEWLINETerminalRuleCall_2; }
@@ -581,7 +765,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//Else
 		public RuleCall getElsesElseParserRuleCall_4_0() { return cElsesElseParserRuleCall_4_0; }
 
-		////NEWLINE 'end'
 		//"end"
 		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 	}
@@ -590,23 +773,23 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Else");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cElseKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cMyIDParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cNEWLINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
 		
 		//Else:
-		//	"else" ID* NEWLINE instructions+=Instruction*;
+		//	"else" MyID* NEWLINE instructions+=Instruction*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"else" ID* NEWLINE instructions+=Instruction*
+		//"else" MyID* NEWLINE instructions+=Instruction*
 		public Group getGroup() { return cGroup; }
 
 		//"else"
 		public Keyword getElseKeyword_0() { return cElseKeyword_0; }
 
-		//ID*
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		//MyID*
+		public RuleCall getMyIDParserRuleCall_1() { return cMyIDParserRuleCall_1; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_2() { return cNEWLINETerminalRuleCall_2; }
@@ -722,24 +905,23 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
 		private final Keyword cColonKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final RuleCall cMyIDParserRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
 		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
 		private final Group cGroup_3_1_0 = (Group)cGroup_3_1.eContents().get(0);
 		private final RuleCall cNEWLINETerminalRuleCall_3_1_0_0 = (RuleCall)cGroup_3_1_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_3_1_0_1 = (RuleCall)cGroup_3_1_0.eContents().get(1);
-		private final RuleCall cNEWLINETerminalRuleCall_3_1_1 = (RuleCall)cGroup_3_1.eContents().get(1);
-		private final Keyword cEndKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
-		private final Keyword cNoteKeyword_3_1_3 = (Keyword)cGroup_3_1.eContents().get(3);
+		private final RuleCall cEndIDParserRuleCall_3_1_0_1 = (RuleCall)cGroup_3_1_0.eContents().get(1);
+		private final Keyword cEndKeyword_3_1_1 = (Keyword)cGroup_3_1.eContents().get(1);
+		private final Keyword cNoteKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
 		
 		//// Rule for notes
 		//Note:
 		//	"note" ("right" ("of" rid=[Definition] ("," rids+=[Definition])*)? | "left" ("of" lid=[Definition] (","
-		//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" ID | (NEWLINE ID*)* NEWLINE
+		//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" MyID* | (NEWLINE EndID*)*
 		//	"end" "note");
 		@Override public ParserRule getRule() { return rule; }
 
 		//"note" ("right" ("of" rid=[Definition] ("," rids+=[Definition])*)? | "left" ("of" lid=[Definition] (","
-		//lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" ID | (NEWLINE ID*)* NEWLINE
+		//lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" MyID* | (NEWLINE EndID*)*
 		//"end" "note")
 		public Group getGroup() { return cGroup; }
 
@@ -855,38 +1037,35 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//COLOR*
 		public RuleCall getCOLORTerminalRuleCall_2() { return cCOLORTerminalRuleCall_2; }
 
-		//":" ID | (NEWLINE ID*)* NEWLINE "end" "note"
+		//":" MyID* | (NEWLINE EndID*)* "end" "note"
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//":" ID
+		//":" MyID*
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
 		//":"
 		public Keyword getColonKeyword_3_0_0() { return cColonKeyword_3_0_0; }
 
-		//ID
-		public RuleCall getIDTerminalRuleCall_3_0_1() { return cIDTerminalRuleCall_3_0_1; }
+		//MyID*
+		public RuleCall getMyIDParserRuleCall_3_0_1() { return cMyIDParserRuleCall_3_0_1; }
 
-		//(NEWLINE ID*)* NEWLINE "end" "note"
+		//(NEWLINE EndID*)* "end" "note"
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
-		//(NEWLINE ID*)*
+		//(NEWLINE EndID*)*
 		public Group getGroup_3_1_0() { return cGroup_3_1_0; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_3_1_0_0() { return cNEWLINETerminalRuleCall_3_1_0_0; }
 
-		//ID*
-		public RuleCall getIDTerminalRuleCall_3_1_0_1() { return cIDTerminalRuleCall_3_1_0_1; }
-
-		//NEWLINE
-		public RuleCall getNEWLINETerminalRuleCall_3_1_1() { return cNEWLINETerminalRuleCall_3_1_1; }
+		//EndID*
+		public RuleCall getEndIDParserRuleCall_3_1_0_1() { return cEndIDParserRuleCall_3_1_0_1; }
 
 		//"end"
-		public Keyword getEndKeyword_3_1_2() { return cEndKeyword_3_1_2; }
+		public Keyword getEndKeyword_3_1_1() { return cEndKeyword_3_1_1; }
 
 		//"note"
-		public Keyword getNoteKeyword_3_1_3() { return cNoteKeyword_3_1_3; }
+		public Keyword getNoteKeyword_3_1_2() { return cNoteKeyword_3_1_2; }
 	}
 
 	public class DividerElements extends AbstractParserRuleElementFinder {
@@ -930,20 +1109,20 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
+		private final RuleCall cMyIDParserRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
 		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
 		private final Group cGroup_4_1_0 = (Group)cGroup_4_1.eContents().get(0);
 		private final RuleCall cNEWLINETerminalRuleCall_4_1_0_0 = (RuleCall)cGroup_4_1_0.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_4_1_0_1 = (RuleCall)cGroup_4_1_0.eContents().get(1);
+		private final RuleCall cEndIDParserRuleCall_4_1_0_1 = (RuleCall)cGroup_4_1_0.eContents().get(1);
 		private final Keyword cEndKeyword_4_1_1 = (Keyword)cGroup_4_1.eContents().get(1);
 		private final Keyword cRefKeyword_4_1_2 = (Keyword)cGroup_4_1.eContents().get(2);
 		
 		//// Rule for References
 		//Reference:
-		//	"ref" "over" id=[Definition] ("," ids+=[Definition])* (":" ID* | (NEWLINE ID*)* "end" "ref");
+		//	"ref" "over" id=[Definition] ("," ids+=[Definition])* (":" MyID* | (NEWLINE EndID*)* "end" "ref");
 		@Override public ParserRule getRule() { return rule; }
 
-		//"ref" "over" id=[Definition] ("," ids+=[Definition])* (":" ID* | (NEWLINE ID*)* "end" "ref")
+		//"ref" "over" id=[Definition] ("," ids+=[Definition])* (":" MyID* | (NEWLINE EndID*)* "end" "ref")
 		public Group getGroup() { return cGroup; }
 
 		//"ref"
@@ -976,29 +1155,29 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdsDefinitionIDTerminalRuleCall_3_1_0_1() { return cIdsDefinitionIDTerminalRuleCall_3_1_0_1; }
 
-		//":" ID* | (NEWLINE ID*)* "end" "ref"
+		//":" MyID* | (NEWLINE EndID*)* "end" "ref"
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
-		//":" ID*
+		//":" MyID*
 		public Group getGroup_4_0() { return cGroup_4_0; }
 
 		//":"
 		public Keyword getColonKeyword_4_0_0() { return cColonKeyword_4_0_0; }
 
-		//ID*
-		public RuleCall getIDTerminalRuleCall_4_0_1() { return cIDTerminalRuleCall_4_0_1; }
+		//MyID*
+		public RuleCall getMyIDParserRuleCall_4_0_1() { return cMyIDParserRuleCall_4_0_1; }
 
-		//(NEWLINE ID*)* "end" "ref"
+		//(NEWLINE EndID*)* "end" "ref"
 		public Group getGroup_4_1() { return cGroup_4_1; }
 
-		//(NEWLINE ID*)*
+		//(NEWLINE EndID*)*
 		public Group getGroup_4_1_0() { return cGroup_4_1_0; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_4_1_0_0() { return cNEWLINETerminalRuleCall_4_1_0_0; }
 
-		//ID*
-		public RuleCall getIDTerminalRuleCall_4_1_0_1() { return cIDTerminalRuleCall_4_1_0_1; }
+		//EndID*
+		public RuleCall getEndIDParserRuleCall_4_1_0_1() { return cEndIDParserRuleCall_4_1_0_1; }
 
 		//"end"
 		public Keyword getEndKeyword_4_1_1() { return cEndKeyword_4_1_1; }
@@ -1245,6 +1424,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final InstructionElements pInstruction;
 	private final ArrowElements pArrow;
 	private final DefinitionElements pDefinition;
+	private final DeclarationsElements pDeclarations;
+	private final EndIDElements pEndID;
+	private final MyIDElements pMyID;
 	private final AutoNumberElements pAutoNumber;
 	private final TitleElements pTitle;
 	private final LegendElements pLegend;
@@ -1285,6 +1467,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pInstruction = new InstructionElements();
 		this.pArrow = new ArrowElements();
 		this.pDefinition = new DefinitionElements();
+		this.pDeclarations = new DeclarationsElements();
+		this.pEndID = new EndIDElements();
+		this.pMyID = new MyIDElements();
 		this.pAutoNumber = new AutoNumberElements();
 		this.pTitle = new TitleElements();
 		this.pLegend = new LegendElements();
@@ -1352,7 +1537,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 	//Diagram:
-	//	{Diagram} START NEWLINE instructions+=Instruction* END NEWLINE*;
+	//	START NEWLINE instructions+=Instruction* END NEWLINE*;
 	public DiagramElements getDiagramAccess() {
 		return pDiagram;
 	}
@@ -1375,7 +1560,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rule for creating sequences between actors (Not necessarily previously defined)
 	//Arrow:
-	//	name+=ID SEQUENCE name+=ID (":" ID*)?;
+	//	name=MyID SEQUENCE names+=MyID (":" MyID*)?;
 	public ArrowElements getArrowAccess() {
 		return pArrow;
 	}
@@ -1387,15 +1572,49 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// Rule for defining objects in PlantUML, such as
 	//// actors, boundaries, controls, entities and databases
 	//Definition:
-	//	"actor" name=ID // Change second ID in participant to Single-Line String.
-	//	| "boundary" name=ID | "control" name=ID | "entity" name=ID | "database" name=ID | "participant" name=ID ("<<" ("(" ID
-	//	"," COLOR ")" | "(" ID "," COLOR ")" ID | ID) ">>")?;
+	//	"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
+	//	"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
 	}
 	
 	public ParserRule getDefinitionRule() {
 		return getDefinitionAccess().getRule();
+	}
+
+	//// Lists what rules can declare variables
+	//declarations returns Declarations:
+	//	Definition | Arrow;
+	public DeclarationsElements getDeclarationsAccess() {
+		return pDeclarations;
+	}
+	
+	public ParserRule getDeclarationsRule() {
+		return getDeclarationsAccess().getRule();
+	}
+
+	//// Using this instead of ID, so that you can use keywords in regular text.
+	//EndID:
+	//	ID | "create" | "autonumber" | "title" | "legend" | "right" | "left" | "center" | "endlegend" | "alt" | "else" |
+	//	"newpage" | "opt" | "loop" | "par" | "break" | "critical" | "group" | "note" | "over" | "of" | "ref" | "hide" |
+	//	"footbox" | "activate" | "deactivate" | "destroy" | "box" | "#" | "," | "(" | ")" | "=" | INT | "-" | "." | ":" | ">"
+	//	| "<";
+	public EndIDElements getEndIDAccess() {
+		return pEndID;
+	}
+	
+	public ParserRule getEndIDRule() {
+		return getEndIDAccess().getRule();
+	}
+
+	//MyID:
+	//	EndID | "end";
+	public MyIDElements getMyIDAccess() {
+		return pMyID;
+	}
+	
+	public ParserRule getMyIDRule() {
+		return getMyIDAccess().getRule();
 	}
 
 	//// Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
@@ -1444,8 +1663,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rules for Alt-Else clauses.
 	//AltElse:
-	//	"alt" ID* NEWLINE instructions+=Instruction* elses+=Else* //NEWLINE 'end'
-	//	"end";
+	//	"alt" MyID* NEWLINE instructions+=Instruction* elses+=Else* "end";
 	public AltElseElements getAltElseAccess() {
 		return pAltElse;
 	}
@@ -1455,7 +1673,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Else:
-	//	"else" ID* NEWLINE instructions+=Instruction*;
+	//	"else" MyID* NEWLINE instructions+=Instruction*;
 	public ElseElements getElseAccess() {
 		return pElse;
 	}
@@ -1478,7 +1696,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// Rule for notes
 	//Note:
 	//	"note" ("right" ("of" rid=[Definition] ("," rids+=[Definition])*)? | "left" ("of" lid=[Definition] (","
-	//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" ID | (NEWLINE ID*)* NEWLINE
+	//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" MyID* | (NEWLINE EndID*)*
 	//	"end" "note");
 	public NoteElements getNoteAccess() {
 		return pNote;
@@ -1501,7 +1719,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rule for References
 	//Reference:
-	//	"ref" "over" id=[Definition] ("," ids+=[Definition])* (":" ID* | (NEWLINE ID*)* "end" "ref");
+	//	"ref" "over" id=[Definition] ("," ids+=[Definition])* (":" MyID* | (NEWLINE EndID*)* "end" "ref");
 	public ReferenceElements getReferenceAccess() {
 		return pReference;
 	}

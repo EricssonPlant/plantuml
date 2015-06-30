@@ -19,7 +19,7 @@ package org.xtext.plantuml;
  * @model
  * @generated
  */
-public interface Definition extends Instruction
+public interface Definition extends Instruction, Declarations
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

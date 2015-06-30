@@ -40,7 +40,10 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getAlternatives_0(), "rule__Instruction__Alternatives_0");
 					put(grammarAccess.getInstructionAccess().getAlternatives_0_1_1(), "rule__Instruction__Alternatives_0_1_1");
 					put(grammarAccess.getDefinitionAccess().getAlternatives(), "rule__Definition__Alternatives");
-					put(grammarAccess.getDefinitionAccess().getAlternatives_5_2_1(), "rule__Definition__Alternatives_5_2_1");
+					put(grammarAccess.getDefinitionAccess().getAlternatives_5_2_1_3(), "rule__Definition__Alternatives_5_2_1_3");
+					put(grammarAccess.getDeclarationsAccess().getAlternatives(), "rule__Declarations__Alternatives");
+					put(grammarAccess.getEndIDAccess().getAlternatives(), "rule__EndID__Alternatives");
+					put(grammarAccess.getMyIDAccess().getAlternatives(), "rule__MyID__Alternatives");
 					put(grammarAccess.getLegendAccess().getAlternatives_1(), "rule__Legend__Alternatives_1");
 					put(grammarAccess.getGroupingMessagesAccess().getAlternatives_0(), "rule__GroupingMessages__Alternatives_0");
 					put(grammarAccess.getNoteAccess().getAlternatives_1(), "rule__Note__Alternatives_1");
@@ -60,8 +63,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefinitionAccess().getGroup_4(), "rule__Definition__Group_4__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_5(), "rule__Definition__Group_5__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_5_2(), "rule__Definition__Group_5_2__0");
-					put(grammarAccess.getDefinitionAccess().getGroup_5_2_1_0(), "rule__Definition__Group_5_2_1_0__0");
-					put(grammarAccess.getDefinitionAccess().getGroup_5_2_1_1(), "rule__Definition__Group_5_2_1_1__0");
+					put(grammarAccess.getDefinitionAccess().getGroup_5_2_1(), "rule__Definition__Group_5_2_1__0");
 					put(grammarAccess.getAutoNumberAccess().getGroup(), "rule__AutoNumber__Group__0");
 					put(grammarAccess.getAutoNumberAccess().getGroup_1(), "rule__AutoNumber__Group_1__0");
 					put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
@@ -99,9 +101,9 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBoxAccess().getGroup(), "rule__Box__Group__0");
 					put(grammarAccess.getBoxAccess().getGroup_6(), "rule__Box__Group_6__0");
 					put(grammarAccess.getPlantumlAccess().getDiagramsAssignment(), "rule__Plantuml__DiagramsAssignment");
-					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_3(), "rule__Diagram__InstructionsAssignment_3");
+					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_2(), "rule__Diagram__InstructionsAssignment_2");
 					put(grammarAccess.getArrowAccess().getNameAssignment_0(), "rule__Arrow__NameAssignment_0");
-					put(grammarAccess.getArrowAccess().getNameAssignment_2(), "rule__Arrow__NameAssignment_2");
+					put(grammarAccess.getArrowAccess().getNamesAssignment_2(), "rule__Arrow__NamesAssignment_2");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_0_1(), "rule__Definition__NameAssignment_0_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_1_1(), "rule__Definition__NameAssignment_1_1");
 					put(grammarAccess.getDefinitionAccess().getNameAssignment_2_1(), "rule__Definition__NameAssignment_2_1");

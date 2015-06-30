@@ -15,56 +15,62 @@ public class InternalPlantumlLexer extends Lexer {
     public static final int Par=36;
     public static final int Entity=18;
     public static final int Left=27;
-    public static final int RULE_SEQUENCE=56;
+    public static final int RULE_SEQUENCE=62;
     public static final int Break=21;
     public static final int Alt=32;
     public static final int Critical=10;
     public static final int FullStopFullStopFullStop=31;
+    public static final int LessThanSign=52;
     public static final int Boundary=9;
     public static final int Opt=35;
-    public static final int LeftParenthesis=45;
+    public static final int LeftParenthesis=46;
     public static final int Actor=20;
     public static final int VerticalLineVerticalLineVerticalLine=38;
     public static final int Database=11;
-    public static final int RULE_ID=53;
+    public static final int GreaterThanSign=54;
+    public static final int RULE_ID=59;
     public static final int Endlegend=7;
-    public static final int RightParenthesis=46;
+    public static final int RightParenthesis=47;
     public static final int Box=33;
     public static final int EqualsSignEqualsSign=40;
     public static final int Participant=4;
     public static final int Activate=8;
-    public static final int RULE_INT=52;
+    public static final int RULE_INT=58;
     public static final int Note=29;
-    public static final int RULE_ML_COMMENT=54;
-    public static final int RULE_HEXCODE=58;
+    public static final int NumberSign=45;
+    public static final int RULE_ML_COMMENT=60;
+    public static final int RULE_HEXCODE=64;
     public static final int End=34;
     public static final int LessThanSignLessThanSign=39;
     public static final int Hide=26;
     public static final int Group=22;
     public static final int Legend=19;
-    public static final int RULE_END=51;
-    public static final int RULE_START=50;
+    public static final int RULE_END=57;
+    public static final int RULE_START=56;
     public static final int VerticalLineVerticalLine=43;
-    public static final int RULE_NEWLINE=49;
+    public static final int RULE_NEWLINE=55;
     public static final int Right=23;
     public static final int Footbox=14;
     public static final int QuotationMark=44;
     public static final int Newpage=15;
-    public static final int RULE_SL_COMMENT=55;
+    public static final int RULE_SL_COMMENT=61;
     public static final int Over=30;
-    public static final int Comma=47;
+    public static final int Comma=48;
+    public static final int EqualsSign=53;
     public static final int Control=12;
+    public static final int HyphenMinus=49;
     public static final int Destroy=13;
     public static final int Create=17;
-    public static final int RULE_COLOR=57;
+    public static final int RULE_COLOR=63;
     public static final int Deactivate=6;
-    public static final int Colon=48;
+    public static final int Colon=51;
     public static final int EOF=-1;
     public static final int Loop=28;
+    public static final int FullStop=50;
     public static final int Center=16;
-    public static final int RULE_WS=59;
+    public static final int RULE_WS=65;
     public static final int Title=24;
-    public static final int RULE_ANY_OTHER=60;
+    public static final int RULE_ANY_OTHER=66;
     public static final int GreaterThanSignGreaterThanSign=41;
     public static final int Ref=37;
     public static final int Of=42;
@@ -2615,13 +2621,33 @@ public class InternalPlantumlLexer extends Lexer {
     }
     // $ANTLR end "QuotationMark"
 
+    // $ANTLR start "NumberSign"
+    public final void mNumberSign() throws RecognitionException {
+        try {
+            int _type = NumberSign;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:101:12: ( '#' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:101:14: '#'
+            {
+            match('#'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NumberSign"
+
     // $ANTLR start "LeftParenthesis"
     public final void mLeftParenthesis() throws RecognitionException {
         try {
             int _type = LeftParenthesis;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:101:17: ( '(' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:101:19: '('
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:103:17: ( '(' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:103:19: '('
             {
             match('('); 
 
@@ -2640,8 +2666,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RightParenthesis;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:103:18: ( ')' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:103:20: ')'
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:105:18: ( ')' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:105:20: ')'
             {
             match(')'); 
 
@@ -2660,8 +2686,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = Comma;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:105:7: ( ',' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:105:9: ','
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:107:7: ( ',' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:107:9: ','
             {
             match(','); 
 
@@ -2675,13 +2701,53 @@ public class InternalPlantumlLexer extends Lexer {
     }
     // $ANTLR end "Comma"
 
+    // $ANTLR start "HyphenMinus"
+    public final void mHyphenMinus() throws RecognitionException {
+        try {
+            int _type = HyphenMinus;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:109:13: ( '-' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:109:15: '-'
+            {
+            match('-'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "HyphenMinus"
+
+    // $ANTLR start "FullStop"
+    public final void mFullStop() throws RecognitionException {
+        try {
+            int _type = FullStop;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:111:10: ( '.' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:111:12: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FullStop"
+
     // $ANTLR start "Colon"
     public final void mColon() throws RecognitionException {
         try {
             int _type = Colon;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:107:7: ( ':' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:107:9: ':'
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:113:7: ( ':' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:113:9: ':'
             {
             match(':'); 
 
@@ -2695,15 +2761,75 @@ public class InternalPlantumlLexer extends Lexer {
     }
     // $ANTLR end "Colon"
 
+    // $ANTLR start "LessThanSign"
+    public final void mLessThanSign() throws RecognitionException {
+        try {
+            int _type = LessThanSign;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:115:14: ( '<' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:115:16: '<'
+            {
+            match('<'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "LessThanSign"
+
+    // $ANTLR start "EqualsSign"
+    public final void mEqualsSign() throws RecognitionException {
+        try {
+            int _type = EqualsSign;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:117:12: ( '=' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:117:14: '='
+            {
+            match('='); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "EqualsSign"
+
+    // $ANTLR start "GreaterThanSign"
+    public final void mGreaterThanSign() throws RecognitionException {
+        try {
+            int _type = GreaterThanSign;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:119:17: ( '>' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:119:19: '>'
+            {
+            match('>'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "GreaterThanSign"
+
     // $ANTLR start "RULE_NEWLINE"
     public final void mRULE_NEWLINE() throws RecognitionException {
         try {
             int _type = RULE_NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:111:14: ( ( '\\r' )? '\\n' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:111:16: ( '\\r' )? '\\n'
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:14: ( ( '\\r' )? '\\n' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:16: ( '\\r' )? '\\n'
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:111:16: ( '\\r' )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:16: ( '\\r' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2712,7 +2838,7 @@ public class InternalPlantumlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:111:16: '\\r'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:16: '\\r'
                     {
                     match('\r'); 
 
@@ -2738,8 +2864,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_START;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:113:12: ( '@' 'startuml' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:113:14: '@' 'startuml'
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:12: ( '@' 'startuml' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:14: '@' 'startuml'
             {
             match('@'); 
             match("startuml"); 
@@ -2760,8 +2886,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_END;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:115:10: ( '@' 'enduml' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:115:12: '@' 'enduml'
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:10: ( '@' 'enduml' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:12: '@' 'enduml'
             {
             match('@'); 
             match("enduml"); 
@@ -2782,10 +2908,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:117:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:117:12: ( '0' .. '9' )+
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:129:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:129:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:117:12: ( '0' .. '9' )+
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:129:12: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -2799,7 +2925,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:117:13: '0' .. '9'
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:129:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2831,10 +2957,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:119:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )* )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:119:11: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:131:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )* )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:131:11: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:119:11: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:131:11: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '\\u00E5' | '\\u00E4' | '\\u00F6' )*
             loop3:
             do {
                 int alt3=2;
@@ -2883,12 +3009,12 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:121:17: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:121:19: '/\\'' ( options {greedy=false; } : . )* '\\'/'
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:133:17: ( '/\\'' ( options {greedy=false; } : . )* '\\'/' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:133:19: '/\\'' ( options {greedy=false; } : . )* '\\'/'
             {
             match("/'"); 
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:121:25: ( options {greedy=false; } : . )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:133:25: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -2913,7 +3039,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:121:53: .
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:133:53: .
             	    {
             	    matchAny(); 
 
@@ -2943,11 +3069,11 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:17: ( '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:19: '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:17: ( '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:19: '\\'' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('\''); 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop5:
             do {
                 int alt5=2;
@@ -2960,7 +3086,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2980,7 +3106,7 @@ public class InternalPlantumlLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:40: ( ( '\\r' )? '\\n' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2989,9 +3115,9 @@ public class InternalPlantumlLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:41: ( '\\r' )?
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:41: ( '\\r' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -3000,7 +3126,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:123:41: '\\r'
+                            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:135:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3032,17 +3158,17 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_SEQUENCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:15: ( ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:17: ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:15: ( ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:17: ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' )
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:17: ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:17: ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' )
             int alt19=20;
             alt19 = dfa19.predict(input);
             switch (alt19) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:18: ( '-' )* '-' '>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:18: ( '-' )* '-' '>'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:18: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:18: ( '-' )*
                     loop8:
                     do {
                         int alt8=2;
@@ -3061,7 +3187,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:18: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:18: '-'
                     	    {
                     	    match('-'); 
 
@@ -3079,11 +3205,11 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:31: '<' '-' ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:31: '<' '-' ( '-' )*
                     {
                     match('<'); 
                     match('-'); 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:39: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:39: ( '-' )*
                     loop9:
                     do {
                         int alt9=2;
@@ -3096,7 +3222,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:39: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:39: '-'
                     	    {
                     	    match('-'); 
 
@@ -3112,7 +3238,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:44: '-' '>' 'x'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:44: '-' '>' 'x'
                     {
                     match('-'); 
                     match('>'); 
@@ -3121,7 +3247,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:56: 'x' '<' '-'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:56: 'x' '<' '-'
                     {
                     match('x'); 
                     match('<'); 
@@ -3130,9 +3256,9 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:68: ( '-' )* '-' '>' '>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:68: ( '-' )* '-' '>' '>'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:68: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:68: ( '-' )*
                     loop10:
                     do {
                         int alt10=2;
@@ -3151,7 +3277,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:68: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:68: '-'
                     	    {
                     	    match('-'); 
 
@@ -3170,12 +3296,12 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:85: '<' '<' '-' ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:85: '<' '<' '-' ( '-' )*
                     {
                     match('<'); 
                     match('<'); 
                     match('-'); 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:97: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:97: ( '-' )*
                     loop11:
                     do {
                         int alt11=2;
@@ -3188,7 +3314,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:97: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:97: '-'
                     	    {
                     	    match('-'); 
 
@@ -3204,9 +3330,9 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:102: ( '-' )* '-' '\\\\' '\\\\'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:102: ( '-' )* '-' '\\\\' '\\\\'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:102: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:102: ( '-' )*
                     loop12:
                     do {
                         int alt12=2;
@@ -3225,7 +3351,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:102: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:102: '-'
                     	    {
                     	    match('-'); 
 
@@ -3244,11 +3370,11 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:121: '/' '-' ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:121: '/' '-' ( '-' )*
                     {
                     match('/'); 
                     match('-'); 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:129: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:129: ( '-' )*
                     loop13:
                     do {
                         int alt13=2;
@@ -3261,7 +3387,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:129: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:129: '-'
                     	    {
                     	    match('-'); 
 
@@ -3277,12 +3403,12 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:134: '/' '/' '-' ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:134: '/' '/' '-' ( '-' )*
                     {
                     match('/'); 
                     match('/'); 
                     match('-'); 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:146: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:146: ( '-' )*
                     loop14:
                     do {
                         int alt14=2;
@@ -3295,7 +3421,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:146: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:146: '-'
                     	    {
                     	    match('-'); 
 
@@ -3311,9 +3437,9 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:151: ( '-' )* '-' '>' 'o'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:151: ( '-' )* '-' '>' 'o'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:151: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:151: ( '-' )*
                     loop15:
                     do {
                         int alt15=2;
@@ -3332,7 +3458,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:151: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:151: '-'
                     	    {
                     	    match('-'); 
 
@@ -3351,12 +3477,12 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:168: 'o' '<' '-' ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:168: 'o' '<' '-' ( '-' )*
                     {
                     match('o'); 
                     match('<'); 
                     match('-'); 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:180: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:180: ( '-' )*
                     loop16:
                     do {
                         int alt16=2;
@@ -3369,7 +3495,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:180: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:180: '-'
                     	    {
                     	    match('-'); 
 
@@ -3385,9 +3511,9 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:185: ( '-' )* '-' '-' '/' '/' 'o'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:185: ( '-' )* '-' '-' '/' '/' 'o'
                     {
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:185: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:185: ( '-' )*
                     loop17:
                     do {
                         int alt17=2;
@@ -3412,7 +3538,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:185: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:185: '-'
                     	    {
                     	    match('-'); 
 
@@ -3433,14 +3559,14 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:210: 'o' '\\\\\\\\' '-' '-' ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:210: 'o' '\\\\\\\\' '-' '-' ( '-' )*
                     {
                     match('o'); 
                     match("\\\\"); 
 
                     match('-'); 
                     match('-'); 
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:229: ( '-' )*
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:229: ( '-' )*
                     loop18:
                     do {
                         int alt18=2;
@@ -3453,7 +3579,7 @@ public class InternalPlantumlLexer extends Lexer {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:229: '-'
+                    	    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:229: '-'
                     	    {
                     	    match('-'); 
 
@@ -3469,7 +3595,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:234: '<' '-' '>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:234: '<' '-' '>'
                     {
                     match('<'); 
                     match('-'); 
@@ -3478,7 +3604,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:246: '<' '-' '>' 'o'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:246: '<' '-' '>' 'o'
                     {
                     match('<'); 
                     match('-'); 
@@ -3488,7 +3614,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 16 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:262: 'o' '<' '-' '>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:262: 'o' '<' '-' '>'
                     {
                     match('o'); 
                     match('<'); 
@@ -3498,7 +3624,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 17 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:278: '<' '|' '-' '-'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:278: '<' '|' '-' '-'
                     {
                     match('<'); 
                     match('|'); 
@@ -3508,7 +3634,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 18 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:294: '-' '-' '|' '>'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:294: '-' '-' '|' '>'
                     {
                     match('-'); 
                     match('-'); 
@@ -3518,7 +3644,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 19 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:310: '.' '.'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:310: '.' '.'
                     {
                     match('.'); 
                     match('.'); 
@@ -3526,7 +3652,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 20 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:125:318: '.'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:137:318: '.'
                     {
                     match('.'); 
 
@@ -3551,16 +3677,16 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_COLOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:12: ( '#' ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:14: '#' ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:12: ( '#' ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:14: '#' ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' )
             {
             match('#'); 
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:18: ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:18: ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' )
             int alt20=145;
             alt20 = dfa20.predict(input);
             switch (alt20) {
                 case 1 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:19: 'AliceBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:19: 'AliceBlue'
                     {
                     match("AliceBlue"); 
 
@@ -3568,7 +3694,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:31: 'AntiqueWhite'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:31: 'AntiqueWhite'
                     {
                     match("AntiqueWhite"); 
 
@@ -3576,7 +3702,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:46: 'Aqua'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:46: 'Aqua'
                     {
                     match("Aqua"); 
 
@@ -3584,7 +3710,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:53: 'Aquamarine'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:53: 'Aquamarine'
                     {
                     match("Aquamarine"); 
 
@@ -3592,7 +3718,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:66: 'Azure'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:66: 'Azure'
                     {
                     match("Azure"); 
 
@@ -3600,7 +3726,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:74: 'Beige'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:74: 'Beige'
                     {
                     match("Beige"); 
 
@@ -3608,7 +3734,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:82: 'Bisque'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:82: 'Bisque'
                     {
                     match("Bisque"); 
 
@@ -3616,7 +3742,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:91: 'Black'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:91: 'Black'
                     {
                     match("Black"); 
 
@@ -3624,7 +3750,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:99: 'BlanchedAlmond'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:99: 'BlanchedAlmond'
                     {
                     match("BlanchedAlmond"); 
 
@@ -3632,7 +3758,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:116: 'Blue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:116: 'Blue'
                     {
                     match("Blue"); 
 
@@ -3640,7 +3766,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:123: 'BlueViolet'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:123: 'BlueViolet'
                     {
                     match("BlueViolet"); 
 
@@ -3648,7 +3774,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:136: 'Brown'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:136: 'Brown'
                     {
                     match("Brown"); 
 
@@ -3656,7 +3782,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:144: 'BurlyWood'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:144: 'BurlyWood'
                     {
                     match("BurlyWood"); 
 
@@ -3664,7 +3790,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:156: 'CadetBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:156: 'CadetBlue'
                     {
                     match("CadetBlue"); 
 
@@ -3672,7 +3798,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:168: 'Chartreuse'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:168: 'Chartreuse'
                     {
                     match("Chartreuse"); 
 
@@ -3680,7 +3806,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 16 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:181: 'Chocolate'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:181: 'Chocolate'
                     {
                     match("Chocolate"); 
 
@@ -3688,7 +3814,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 17 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:193: 'Coral'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:193: 'Coral'
                     {
                     match("Coral"); 
 
@@ -3696,7 +3822,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 18 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:201: 'CornflowerBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:201: 'CornflowerBlue'
                     {
                     match("CornflowerBlue"); 
 
@@ -3704,7 +3830,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 19 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:218: 'Cornsilk'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:218: 'Cornsilk'
                     {
                     match("Cornsilk"); 
 
@@ -3712,7 +3838,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 20 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:229: 'Crimson'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:229: 'Crimson'
                     {
                     match("Crimson"); 
 
@@ -3720,7 +3846,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 21 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:239: 'Cyan'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:239: 'Cyan'
                     {
                     match("Cyan"); 
 
@@ -3728,7 +3854,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 22 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:246: 'DarkBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:246: 'DarkBlue'
                     {
                     match("DarkBlue"); 
 
@@ -3736,7 +3862,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 23 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:257: 'DarkCyan'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:257: 'DarkCyan'
                     {
                     match("DarkCyan"); 
 
@@ -3744,7 +3870,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 24 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:268: 'DarkGoldenRod'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:268: 'DarkGoldenRod'
                     {
                     match("DarkGoldenRod"); 
 
@@ -3752,7 +3878,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 25 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:284: 'DarkGray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:284: 'DarkGray'
                     {
                     match("DarkGray"); 
 
@@ -3760,7 +3886,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 26 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:295: 'DarkGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:295: 'DarkGreen'
                     {
                     match("DarkGreen"); 
 
@@ -3768,7 +3894,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 27 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:307: 'DarkGrey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:307: 'DarkGrey'
                     {
                     match("DarkGrey"); 
 
@@ -3776,7 +3902,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 28 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:318: 'DarkKhaki'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:318: 'DarkKhaki'
                     {
                     match("DarkKhaki"); 
 
@@ -3784,7 +3910,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 29 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:330: 'DarkMagenta'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:330: 'DarkMagenta'
                     {
                     match("DarkMagenta"); 
 
@@ -3792,7 +3918,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 30 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:344: 'DarkOliveGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:344: 'DarkOliveGreen'
                     {
                     match("DarkOliveGreen"); 
 
@@ -3800,7 +3926,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 31 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:361: 'DarkOrchid'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:361: 'DarkOrchid'
                     {
                     match("DarkOrchid"); 
 
@@ -3808,7 +3934,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 32 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:374: 'DarkRed'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:374: 'DarkRed'
                     {
                     match("DarkRed"); 
 
@@ -3816,7 +3942,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 33 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:384: 'DarkSalmo'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:384: 'DarkSalmo'
                     {
                     match("DarkSalmo"); 
 
@@ -3824,7 +3950,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 34 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:396: 'DarkSeaGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:396: 'DarkSeaGreen'
                     {
                     match("DarkSeaGreen"); 
 
@@ -3832,7 +3958,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 35 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:411: 'DarkSlateBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:411: 'DarkSlateBlue'
                     {
                     match("DarkSlateBlue"); 
 
@@ -3840,7 +3966,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 36 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:427: 'DarkSlateGray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:427: 'DarkSlateGray'
                     {
                     match("DarkSlateGray"); 
 
@@ -3848,7 +3974,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 37 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:443: 'DarkSlateGrey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:443: 'DarkSlateGrey'
                     {
                     match("DarkSlateGrey"); 
 
@@ -3856,7 +3982,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 38 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:459: 'DarkTurquoise'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:459: 'DarkTurquoise'
                     {
                     match("DarkTurquoise"); 
 
@@ -3864,7 +3990,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 39 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:475: 'DarkViolet'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:475: 'DarkViolet'
                     {
                     match("DarkViolet"); 
 
@@ -3872,7 +3998,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 40 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:488: 'Darkorange'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:488: 'Darkorange'
                     {
                     match("Darkorange"); 
 
@@ -3880,7 +4006,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 41 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:501: 'DeepPink'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:501: 'DeepPink'
                     {
                     match("DeepPink"); 
 
@@ -3888,7 +4014,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 42 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:512: 'DeepSkyBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:512: 'DeepSkyBlue'
                     {
                     match("DeepSkyBlue"); 
 
@@ -3896,7 +4022,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 43 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:526: 'DimGray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:526: 'DimGray'
                     {
                     match("DimGray"); 
 
@@ -3904,7 +4030,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 44 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:536: 'DimGrey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:536: 'DimGrey'
                     {
                     match("DimGrey"); 
 
@@ -3912,7 +4038,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 45 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:546: 'DodgerBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:546: 'DodgerBlue'
                     {
                     match("DodgerBlue"); 
 
@@ -3920,7 +4046,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 46 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:559: 'FireBrick'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:559: 'FireBrick'
                     {
                     match("FireBrick"); 
 
@@ -3928,7 +4054,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 47 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:571: 'FloralWhite'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:571: 'FloralWhite'
                     {
                     match("FloralWhite"); 
 
@@ -3936,7 +4062,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 48 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:585: 'ForestGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:585: 'ForestGreen'
                     {
                     match("ForestGreen"); 
 
@@ -3944,7 +4070,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 49 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:599: 'Fuchsia'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:599: 'Fuchsia'
                     {
                     match("Fuchsia"); 
 
@@ -3952,7 +4078,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 50 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:609: 'Gainsboro'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:609: 'Gainsboro'
                     {
                     match("Gainsboro"); 
 
@@ -3960,7 +4086,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 51 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:621: 'GhostWhite'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:621: 'GhostWhite'
                     {
                     match("GhostWhite"); 
 
@@ -3968,7 +4094,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 52 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:634: 'Gold'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:634: 'Gold'
                     {
                     match("Gold"); 
 
@@ -3976,7 +4102,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 53 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:641: 'GoldenRod'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:641: 'GoldenRod'
                     {
                     match("GoldenRod"); 
 
@@ -3984,7 +4110,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 54 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:653: 'Gray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:653: 'Gray'
                     {
                     match("Gray"); 
 
@@ -3992,7 +4118,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 55 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:660: 'Green'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:660: 'Green'
                     {
                     match("Green"); 
 
@@ -4000,7 +4126,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 56 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:668: 'GreenYellow'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:668: 'GreenYellow'
                     {
                     match("GreenYellow"); 
 
@@ -4008,7 +4134,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 57 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:682: 'Grey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:682: 'Grey'
                     {
                     match("Grey"); 
 
@@ -4016,7 +4142,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 58 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:689: 'HoneyDew'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:689: 'HoneyDew'
                     {
                     match("HoneyDew"); 
 
@@ -4024,7 +4150,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 59 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:700: 'HotPink'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:700: 'HotPink'
                     {
                     match("HotPink"); 
 
@@ -4032,7 +4158,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 60 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:710: 'IndianRed'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:710: 'IndianRed'
                     {
                     match("IndianRed"); 
 
@@ -4040,7 +4166,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 61 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:722: 'Indigo'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:722: 'Indigo'
                     {
                     match("Indigo"); 
 
@@ -4048,7 +4174,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 62 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:731: 'Ivory'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:731: 'Ivory'
                     {
                     match("Ivory"); 
 
@@ -4056,7 +4182,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 63 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:739: 'Khaki'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:739: 'Khaki'
                     {
                     match("Khaki"); 
 
@@ -4064,7 +4190,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 64 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:747: 'Lavender'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:747: 'Lavender'
                     {
                     match("Lavender"); 
 
@@ -4072,7 +4198,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 65 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:758: 'LavenderBlush'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:758: 'LavenderBlush'
                     {
                     match("LavenderBlush"); 
 
@@ -4080,7 +4206,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 66 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:774: 'LawnGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:774: 'LawnGreen'
                     {
                     match("LawnGreen"); 
 
@@ -4088,7 +4214,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 67 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:786: 'LemonChiffon'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:786: 'LemonChiffon'
                     {
                     match("LemonChiffon"); 
 
@@ -4096,7 +4222,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 68 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:801: 'LightBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:801: 'LightBlue'
                     {
                     match("LightBlue"); 
 
@@ -4104,7 +4230,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 69 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:813: 'LightCoral'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:813: 'LightCoral'
                     {
                     match("LightCoral"); 
 
@@ -4112,7 +4238,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 70 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:826: 'LightCyan'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:826: 'LightCyan'
                     {
                     match("LightCyan"); 
 
@@ -4120,7 +4246,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 71 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:838: 'LightGoldenRodYellow'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:838: 'LightGoldenRodYellow'
                     {
                     match("LightGoldenRodYellow"); 
 
@@ -4128,7 +4254,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 72 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:861: 'LightGray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:861: 'LightGray'
                     {
                     match("LightGray"); 
 
@@ -4136,7 +4262,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 73 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:873: 'LightGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:873: 'LightGreen'
                     {
                     match("LightGreen"); 
 
@@ -4144,7 +4270,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 74 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:886: 'LightGrey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:886: 'LightGrey'
                     {
                     match("LightGrey"); 
 
@@ -4152,7 +4278,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 75 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:898: 'LightPink'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:898: 'LightPink'
                     {
                     match("LightPink"); 
 
@@ -4160,7 +4286,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 76 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:910: 'LightSalmon'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:910: 'LightSalmon'
                     {
                     match("LightSalmon"); 
 
@@ -4168,7 +4294,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 77 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:924: 'LightSeaGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:924: 'LightSeaGreen'
                     {
                     match("LightSeaGreen"); 
 
@@ -4176,7 +4302,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 78 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:940: 'LightSkyBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:940: 'LightSkyBlue'
                     {
                     match("LightSkyBlue"); 
 
@@ -4184,7 +4310,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 79 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:955: 'LightSlateGray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:955: 'LightSlateGray'
                     {
                     match("LightSlateGray"); 
 
@@ -4192,7 +4318,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 80 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:972: 'LightSlateGrey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:972: 'LightSlateGrey'
                     {
                     match("LightSlateGrey"); 
 
@@ -4200,7 +4326,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 81 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:989: 'LightSteelBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:989: 'LightSteelBlue'
                     {
                     match("LightSteelBlue"); 
 
@@ -4208,7 +4334,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 82 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1006: 'LightYellow'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1006: 'LightYellow'
                     {
                     match("LightYellow"); 
 
@@ -4216,7 +4342,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 83 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1020: 'Lime'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1020: 'Lime'
                     {
                     match("Lime"); 
 
@@ -4224,7 +4350,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 84 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1027: 'LimeGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1027: 'LimeGreen'
                     {
                     match("LimeGreen"); 
 
@@ -4232,7 +4358,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 85 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1039: 'Linen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1039: 'Linen'
                     {
                     match("Linen"); 
 
@@ -4240,7 +4366,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 86 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1047: 'Magenta'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1047: 'Magenta'
                     {
                     match("Magenta"); 
 
@@ -4248,7 +4374,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 87 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1057: 'Maroon'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1057: 'Maroon'
                     {
                     match("Maroon"); 
 
@@ -4256,7 +4382,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 88 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1066: 'MediumAquaMarine'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1066: 'MediumAquaMarine'
                     {
                     match("MediumAquaMarine"); 
 
@@ -4264,7 +4390,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 89 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1085: 'MediumBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1085: 'MediumBlue'
                     {
                     match("MediumBlue"); 
 
@@ -4272,7 +4398,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 90 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1098: 'MediumOrchid'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1098: 'MediumOrchid'
                     {
                     match("MediumOrchid"); 
 
@@ -4280,7 +4406,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 91 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1113: 'MediumPurple'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1113: 'MediumPurple'
                     {
                     match("MediumPurple"); 
 
@@ -4288,7 +4414,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 92 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1128: 'MediumSeaGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1128: 'MediumSeaGreen'
                     {
                     match("MediumSeaGreen"); 
 
@@ -4296,7 +4422,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 93 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1145: 'MediumSlateBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1145: 'MediumSlateBlue'
                     {
                     match("MediumSlateBlue"); 
 
@@ -4304,7 +4430,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 94 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1163: 'MediumSpringGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1163: 'MediumSpringGreen'
                     {
                     match("MediumSpringGreen"); 
 
@@ -4312,7 +4438,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 95 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1183: 'MediumTurquoise'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1183: 'MediumTurquoise'
                     {
                     match("MediumTurquoise"); 
 
@@ -4320,7 +4446,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 96 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1201: 'MediumVioletRed'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1201: 'MediumVioletRed'
                     {
                     match("MediumVioletRed"); 
 
@@ -4328,7 +4454,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 97 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1219: 'MidnightBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1219: 'MidnightBlue'
                     {
                     match("MidnightBlue"); 
 
@@ -4336,7 +4462,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 98 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1234: 'MintCream'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1234: 'MintCream'
                     {
                     match("MintCream"); 
 
@@ -4344,7 +4470,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 99 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1246: 'MistyRose'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1246: 'MistyRose'
                     {
                     match("MistyRose"); 
 
@@ -4352,7 +4478,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 100 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1258: 'Moccasin'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1258: 'Moccasin'
                     {
                     match("Moccasin"); 
 
@@ -4360,7 +4486,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 101 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1269: 'NavajoWhite'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1269: 'NavajoWhite'
                     {
                     match("NavajoWhite"); 
 
@@ -4368,7 +4494,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 102 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1283: 'Navy'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1283: 'Navy'
                     {
                     match("Navy"); 
 
@@ -4376,7 +4502,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 103 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1290: 'OldLace'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1290: 'OldLace'
                     {
                     match("OldLace"); 
 
@@ -4384,7 +4510,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 104 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1300: 'Olive'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1300: 'Olive'
                     {
                     match("Olive"); 
 
@@ -4392,7 +4518,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 105 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1308: 'OliveDrab'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1308: 'OliveDrab'
                     {
                     match("OliveDrab"); 
 
@@ -4400,7 +4526,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 106 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1320: 'OrangeRed'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1320: 'OrangeRed'
                     {
                     match("OrangeRed"); 
 
@@ -4408,7 +4534,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 107 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1332: 'Orchid'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1332: 'Orchid'
                     {
                     match("Orchid"); 
 
@@ -4416,7 +4542,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 108 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1341: 'PaleGoldenRod'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1341: 'PaleGoldenRod'
                     {
                     match("PaleGoldenRod"); 
 
@@ -4424,7 +4550,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 109 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1357: 'PaleGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1357: 'PaleGreen'
                     {
                     match("PaleGreen"); 
 
@@ -4432,7 +4558,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 110 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1369: 'PaleTurquoise'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1369: 'PaleTurquoise'
                     {
                     match("PaleTurquoise"); 
 
@@ -4440,7 +4566,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 111 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1385: 'PaleVioletRed'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1385: 'PaleVioletRed'
                     {
                     match("PaleVioletRed"); 
 
@@ -4448,7 +4574,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 112 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1401: 'PapayaWhip'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1401: 'PapayaWhip'
                     {
                     match("PapayaWhip"); 
 
@@ -4456,7 +4582,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 113 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1414: 'PeachPuff'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1414: 'PeachPuff'
                     {
                     match("PeachPuff"); 
 
@@ -4464,7 +4590,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 114 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1426: 'Peru'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1426: 'Peru'
                     {
                     match("Peru"); 
 
@@ -4472,7 +4598,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 115 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1433: 'Pink'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1433: 'Pink'
                     {
                     match("Pink"); 
 
@@ -4480,7 +4606,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 116 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1440: 'Plum'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1440: 'Plum'
                     {
                     match("Plum"); 
 
@@ -4488,7 +4614,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 117 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1447: 'PowderBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1447: 'PowderBlue'
                     {
                     match("PowderBlue"); 
 
@@ -4496,7 +4622,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 118 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1460: 'Purple'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1460: 'Purple'
                     {
                     match("Purple"); 
 
@@ -4504,7 +4630,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 119 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1469: 'Red'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1469: 'Red'
                     {
                     match("Red"); 
 
@@ -4512,7 +4638,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 120 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1475: 'RosyBrown'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1475: 'RosyBrown'
                     {
                     match("RosyBrown"); 
 
@@ -4520,7 +4646,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 121 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1487: 'RoyalBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1487: 'RoyalBlue'
                     {
                     match("RoyalBlue"); 
 
@@ -4528,7 +4654,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 122 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1499: 'SaddleBrown'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1499: 'SaddleBrown'
                     {
                     match("SaddleBrown"); 
 
@@ -4536,7 +4662,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 123 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1513: 'Salmon'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1513: 'Salmon'
                     {
                     match("Salmon"); 
 
@@ -4544,7 +4670,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 124 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1522: 'SandyBrown'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1522: 'SandyBrown'
                     {
                     match("SandyBrown"); 
 
@@ -4552,7 +4678,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 125 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1535: 'SeaGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1535: 'SeaGreen'
                     {
                     match("SeaGreen"); 
 
@@ -4560,7 +4686,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 126 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1546: 'Sienna'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1546: 'Sienna'
                     {
                     match("Sienna"); 
 
@@ -4568,7 +4694,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 127 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1555: 'Silver'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1555: 'Silver'
                     {
                     match("Silver"); 
 
@@ -4576,7 +4702,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 128 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1564: 'SkyBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1564: 'SkyBlue'
                     {
                     match("SkyBlue"); 
 
@@ -4584,7 +4710,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 129 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1574: 'SlateBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1574: 'SlateBlue'
                     {
                     match("SlateBlue"); 
 
@@ -4592,7 +4718,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 130 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1586: 'SlateGray'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1586: 'SlateGray'
                     {
                     match("SlateGray"); 
 
@@ -4600,7 +4726,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 131 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1598: 'SlateGrey'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1598: 'SlateGrey'
                     {
                     match("SlateGrey"); 
 
@@ -4608,7 +4734,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 132 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1610: 'Snow'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1610: 'Snow'
                     {
                     match("Snow"); 
 
@@ -4616,7 +4742,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 133 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1617: 'SpringGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1617: 'SpringGreen'
                     {
                     match("SpringGreen"); 
 
@@ -4624,7 +4750,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 134 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1631: 'SteelBlue'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1631: 'SteelBlue'
                     {
                     match("SteelBlue"); 
 
@@ -4632,7 +4758,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 135 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1643: 'Tan'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1643: 'Tan'
                     {
                     match("Tan"); 
 
@@ -4640,7 +4766,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 136 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1649: 'Teal'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1649: 'Teal'
                     {
                     match("Teal"); 
 
@@ -4648,7 +4774,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 137 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1656: 'Thistle'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1656: 'Thistle'
                     {
                     match("Thistle"); 
 
@@ -4656,7 +4782,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 138 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1666: 'Tomato'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1666: 'Tomato'
                     {
                     match("Tomato"); 
 
@@ -4664,7 +4790,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 139 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1675: 'Turquoise'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1675: 'Turquoise'
                     {
                     match("Turquoise"); 
 
@@ -4672,7 +4798,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 140 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1687: 'Violet'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1687: 'Violet'
                     {
                     match("Violet"); 
 
@@ -4680,7 +4806,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 141 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1696: 'Wheat'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1696: 'Wheat'
                     {
                     match("Wheat"); 
 
@@ -4688,7 +4814,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 142 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1704: 'White'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1704: 'White'
                     {
                     match("White"); 
 
@@ -4696,7 +4822,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 143 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1712: 'WhiteSmoke'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1712: 'WhiteSmoke'
                     {
                     match("WhiteSmoke"); 
 
@@ -4704,7 +4830,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 144 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1725: 'Yellow'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1725: 'Yellow'
                     {
                     match("Yellow"); 
 
@@ -4712,7 +4838,7 @@ public class InternalPlantumlLexer extends Lexer {
                     }
                     break;
                 case 145 :
-                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:127:1734: 'YellowGreen'
+                    // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:139:1734: 'YellowGreen'
                     {
                     match("YellowGreen"); 
 
@@ -4738,8 +4864,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_HEXCODE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:129:14: ( '#' ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:129:16: '#' ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:141:14: ( '#' ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:141:16: '#' ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' ) ( 'A' .. 'F' | '0' .. '9' )
             {
             match('#'); 
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F') ) {
@@ -4812,10 +4938,10 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:131:9: ( ( ' ' | '\\t' )+ )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:131:11: ( ' ' | '\\t' )+
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:143:9: ( ( ' ' | '\\t' )+ )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:143:11: ( ' ' | '\\t' )+
             {
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:131:11: ( ' ' | '\\t' )+
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:143:11: ( ' ' | '\\t' )+
             int cnt21=0;
             loop21:
             do {
@@ -4869,8 +4995,8 @@ public class InternalPlantumlLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:133:16: ( . )
-            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:133:18: .
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:145:16: ( . )
+            // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:145:18: .
             {
             matchAny(); 
 
@@ -4885,8 +5011,8 @@ public class InternalPlantumlLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:8: ( Participant | Autonumber | Deactivate | Endlegend | Activate | Boundary | Critical | Database | Control | Destroy | Footbox | Newpage | Center | Create | Entity | Legend | Actor | Break | Group | Right | Title | Else | Hide | Left | Loop | Note | Over | FullStopFullStopFullStop | Alt | Box | End | Opt | Par | Ref | VerticalLineVerticalLineVerticalLine | LessThanSignLessThanSign | EqualsSignEqualsSign | GreaterThanSignGreaterThanSign | Of | VerticalLineVerticalLine | QuotationMark | LeftParenthesis | RightParenthesis | Comma | Colon | RULE_NEWLINE | RULE_START | RULE_END | RULE_INT | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_SEQUENCE | RULE_COLOR | RULE_HEXCODE | RULE_WS | RULE_ANY_OTHER )
-        int alt22=57;
+        // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:8: ( Participant | Autonumber | Deactivate | Endlegend | Activate | Boundary | Critical | Database | Control | Destroy | Footbox | Newpage | Center | Create | Entity | Legend | Actor | Break | Group | Right | Title | Else | Hide | Left | Loop | Note | Over | FullStopFullStopFullStop | Alt | Box | End | Opt | Par | Ref | VerticalLineVerticalLineVerticalLine | LessThanSignLessThanSign | EqualsSignEqualsSign | GreaterThanSignGreaterThanSign | Of | VerticalLineVerticalLine | QuotationMark | NumberSign | LeftParenthesis | RightParenthesis | Comma | HyphenMinus | FullStop | Colon | LessThanSign | EqualsSign | GreaterThanSign | RULE_NEWLINE | RULE_START | RULE_END | RULE_INT | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_SEQUENCE | RULE_COLOR | RULE_HEXCODE | RULE_WS | RULE_ANY_OTHER )
+        int alt22=63;
         alt22 = dfa22.predict(input);
         switch (alt22) {
             case 1 :
@@ -5177,112 +5303,154 @@ public class InternalPlantumlLexer extends Lexer {
                 }
                 break;
             case 42 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:415: LeftParenthesis
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:415: NumberSign
+                {
+                mNumberSign(); 
+
+                }
+                break;
+            case 43 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:426: LeftParenthesis
                 {
                 mLeftParenthesis(); 
 
                 }
                 break;
-            case 43 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:431: RightParenthesis
+            case 44 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:442: RightParenthesis
                 {
                 mRightParenthesis(); 
 
                 }
                 break;
-            case 44 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:448: Comma
+            case 45 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:459: Comma
                 {
                 mComma(); 
 
                 }
                 break;
-            case 45 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:454: Colon
+            case 46 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:465: HyphenMinus
+                {
+                mHyphenMinus(); 
+
+                }
+                break;
+            case 47 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:477: FullStop
+                {
+                mFullStop(); 
+
+                }
+                break;
+            case 48 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:486: Colon
                 {
                 mColon(); 
 
                 }
                 break;
-            case 46 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:460: RULE_NEWLINE
+            case 49 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:492: LessThanSign
+                {
+                mLessThanSign(); 
+
+                }
+                break;
+            case 50 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:505: EqualsSign
+                {
+                mEqualsSign(); 
+
+                }
+                break;
+            case 51 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:516: GreaterThanSign
+                {
+                mGreaterThanSign(); 
+
+                }
+                break;
+            case 52 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:532: RULE_NEWLINE
                 {
                 mRULE_NEWLINE(); 
 
                 }
                 break;
-            case 47 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:473: RULE_START
+            case 53 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:545: RULE_START
                 {
                 mRULE_START(); 
 
                 }
                 break;
-            case 48 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:484: RULE_END
+            case 54 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:556: RULE_END
                 {
                 mRULE_END(); 
 
                 }
                 break;
-            case 49 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:493: RULE_INT
+            case 55 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:565: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 50 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:502: RULE_ID
+            case 56 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:574: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 51 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:510: RULE_ML_COMMENT
+            case 57 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:582: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 52 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:526: RULE_SL_COMMENT
+            case 58 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:598: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 53 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:542: RULE_SEQUENCE
+            case 59 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:614: RULE_SEQUENCE
                 {
                 mRULE_SEQUENCE(); 
 
                 }
                 break;
-            case 54 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:556: RULE_COLOR
+            case 60 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:628: RULE_COLOR
                 {
                 mRULE_COLOR(); 
 
                 }
                 break;
-            case 55 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:567: RULE_HEXCODE
+            case 61 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:639: RULE_HEXCODE
                 {
                 mRULE_HEXCODE(); 
 
                 }
                 break;
-            case 56 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:580: RULE_WS
+            case 62 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:652: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 57 :
-                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:588: RULE_ANY_OTHER
+            case 63 :
+                // ../org.xtext.plantuml/src-gen/org/xtext/parser/antlr/lexer/InternalPlantumlLexer.g:1:660: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -5382,7 +5550,7 @@ public class InternalPlantumlLexer extends Lexer {
             this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "125:17: ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' )";
+            return "137:17: ( ( '-' )* '-' '>' | '<' '-' ( '-' )* | '-' '>' 'x' | 'x' '<' '-' | ( '-' )* '-' '>' '>' | '<' '<' '-' ( '-' )* | ( '-' )* '-' '\\\\' '\\\\' | '/' '-' ( '-' )* | '/' '/' '-' ( '-' )* | ( '-' )* '-' '>' 'o' | 'o' '<' '-' ( '-' )* | ( '-' )* '-' '-' '/' '/' 'o' | 'o' '\\\\\\\\' '-' '-' ( '-' )* | '<' '-' '>' | '<' '-' '>' 'o' | 'o' '<' '-' '>' | '<' '|' '-' '-' | '-' '-' '|' '>' | '.' '.' | '.' )";
         }
     }
     static final String DFA20_eotS =
@@ -5765,88 +5933,90 @@ public class InternalPlantumlLexer extends Lexer {
             this.transition = DFA20_transition;
         }
         public String getDescription() {
-            return "127:18: ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' )";
+            return "139:18: ( 'AliceBlue' | 'AntiqueWhite' | 'Aqua' | 'Aquamarine' | 'Azure' | 'Beige' | 'Bisque' | 'Black' | 'BlanchedAlmond' | 'Blue' | 'BlueViolet' | 'Brown' | 'BurlyWood' | 'CadetBlue' | 'Chartreuse' | 'Chocolate' | 'Coral' | 'CornflowerBlue' | 'Cornsilk' | 'Crimson' | 'Cyan' | 'DarkBlue' | 'DarkCyan' | 'DarkGoldenRod' | 'DarkGray' | 'DarkGreen' | 'DarkGrey' | 'DarkKhaki' | 'DarkMagenta' | 'DarkOliveGreen' | 'DarkOrchid' | 'DarkRed' | 'DarkSalmo' | 'DarkSeaGreen' | 'DarkSlateBlue' | 'DarkSlateGray' | 'DarkSlateGrey' | 'DarkTurquoise' | 'DarkViolet' | 'Darkorange' | 'DeepPink' | 'DeepSkyBlue' | 'DimGray' | 'DimGrey' | 'DodgerBlue' | 'FireBrick' | 'FloralWhite' | 'ForestGreen' | 'Fuchsia' | 'Gainsboro' | 'GhostWhite' | 'Gold' | 'GoldenRod' | 'Gray' | 'Green' | 'GreenYellow' | 'Grey' | 'HoneyDew' | 'HotPink' | 'IndianRed' | 'Indigo' | 'Ivory' | 'Khaki' | 'Lavender' | 'LavenderBlush' | 'LawnGreen' | 'LemonChiffon' | 'LightBlue' | 'LightCoral' | 'LightCyan' | 'LightGoldenRodYellow' | 'LightGray' | 'LightGreen' | 'LightGrey' | 'LightPink' | 'LightSalmon' | 'LightSeaGreen' | 'LightSkyBlue' | 'LightSlateGray' | 'LightSlateGrey' | 'LightSteelBlue' | 'LightYellow' | 'Lime' | 'LimeGreen' | 'Linen' | 'Magenta' | 'Maroon' | 'MediumAquaMarine' | 'MediumBlue' | 'MediumOrchid' | 'MediumPurple' | 'MediumSeaGreen' | 'MediumSlateBlue' | 'MediumSpringGreen' | 'MediumTurquoise' | 'MediumVioletRed' | 'MidnightBlue' | 'MintCream' | 'MistyRose' | 'Moccasin' | 'NavajoWhite' | 'Navy' | 'OldLace' | 'Olive' | 'OliveDrab' | 'OrangeRed' | 'Orchid' | 'PaleGoldenRod' | 'PaleGreen' | 'PaleTurquoise' | 'PaleVioletRed' | 'PapayaWhip' | 'PeachPuff' | 'Peru' | 'Pink' | 'Plum' | 'PowderBlue' | 'Purple' | 'Red' | 'RosyBrown' | 'RoyalBlue' | 'SaddleBrown' | 'Salmon' | 'SandyBrown' | 'SeaGreen' | 'Sienna' | 'Silver' | 'SkyBlue' | 'SlateBlue' | 'SlateGray' | 'SlateGrey' | 'Snow' | 'SpringGreen' | 'SteelBlue' | 'Tan' | 'Teal' | 'Thistle' | 'Tomato' | 'Turquoise' | 'Violet' | 'Wheat' | 'White' | 'WhiteSmoke' | 'Yellow' | 'YellowGreen' )";
         }
     }
     static final String DFA22_eotS =
-        "\17\36\1\101\4\46\5\uffff\1\46\1\uffff\1\46\1\117\1\36\1\uffff"+
-        "\1\46\1\uffff\1\46\1\uffff\1\36\1\46\2\uffff\31\36\1\171\1\uffff"+
-        "\1\101\1\174\1\175\13\uffff\1\117\12\uffff\1\177\2\36\1\u0083\3"+
-        "\36\1\u0088\3\36\1\u008c\15\36\1\u009a\3\36\1\u009e\5\uffff\1\36"+
-        "\1\uffff\3\36\1\uffff\4\36\1\uffff\1\36\1\u00a8\1\36\1\uffff\7\36"+
-        "\1\u00b1\1\36\1\u00b3\1\u00b4\2\36\1\uffff\1\36\1\u00b8\1\u00b9"+
-        "\1\uffff\3\36\1\u00bd\5\36\1\uffff\1\36\1\u00c4\6\36\1\uffff\1\36"+
-        "\2\uffff\1\u00cc\1\u00cd\1\u00ce\2\uffff\3\36\1\uffff\4\36\1\u00d6"+
-        "\1\36\1\uffff\1\36\1\u00d9\1\36\1\u00db\2\36\1\u00de\3\uffff\4\36"+
-        "\1\u00e3\2\36\1\uffff\2\36\1\uffff\1\u00e8\1\uffff\1\u00e9\1\u00ea"+
-        "\1\uffff\2\36\1\u00ed\1\36\1\uffff\1\u00ef\1\36\1\u00f1\1\u00f2"+
-        "\3\uffff\2\36\1\uffff\1\36\1\uffff\1\u00f6\2\uffff\1\36\1\u00f8"+
-        "\1\u00f9\1\uffff\1\u00fa\3\uffff";
+        "\17\40\1\103\1\46\1\106\1\110\1\112\1\uffff\1\123\3\uffff\1\127"+
+        "\1\uffff\1\46\1\uffff\1\46\1\134\1\40\1\uffff\1\46\2\uffff\1\40"+
+        "\2\uffff\31\40\1\177\1\uffff\1\101\1\uffff\1\u0082\1\u0083\27\uffff"+
+        "\1\134\3\uffff\1\u0085\2\40\1\u0089\3\40\1\u008e\3\40\1\u0092\15"+
+        "\40\1\u00a0\3\40\1\u00a4\5\uffff\1\40\1\uffff\3\40\1\uffff\4\40"+
+        "\1\uffff\1\40\1\u00ae\1\40\1\uffff\7\40\1\u00b7\1\40\1\u00b9\1\u00ba"+
+        "\2\40\1\uffff\1\40\1\u00be\1\u00bf\1\uffff\3\40\1\u00c3\5\40\1\uffff"+
+        "\1\40\1\u00ca\6\40\1\uffff\1\40\2\uffff\1\u00d2\1\u00d3\1\u00d4"+
+        "\2\uffff\3\40\1\uffff\4\40\1\u00dc\1\40\1\uffff\1\40\1\u00df\1\40"+
+        "\1\u00e1\2\40\1\u00e4\3\uffff\4\40\1\u00e9\2\40\1\uffff\2\40\1\uffff"+
+        "\1\u00ee\1\uffff\1\u00ef\1\u00f0\1\uffff\2\40\1\u00f3\1\40\1\uffff"+
+        "\1\u00f5\1\40\1\u00f7\1\u00f8\3\uffff\2\40\1\uffff\1\40\1\uffff"+
+        "\1\u00fc\2\uffff\1\40\1\u00fe\1\u00ff\1\uffff\1\u0100\3\uffff";
     static final String DFA22_eofS =
-        "\u00fb\uffff";
+        "\u0101\uffff";
     static final String DFA22_minS =
         "\1\0\1\101\1\103\1\101\1\114\1\117\1\105\1\117\2\105\1\122\1\105"+
-        "\2\111\1\74\1\56\1\174\1\55\1\75\1\76\5\uffff\1\12\1\uffff\1\145"+
-        "\1\60\1\74\1\uffff\1\47\1\uffff\1\55\1\uffff\1\106\1\60\2\uffff"+
-        "\1\122\3\124\1\101\1\124\1\104\1\123\1\125\2\105\2\116\1\117\1\127"+
-        "\1\124\1\106\2\117\1\107\1\106\1\124\1\104\1\105\1\124\1\60\1\uffff"+
-        "\1\56\1\174\1\55\13\uffff\1\60\2\uffff\5\60\3\uffff\1\60\1\117\1"+
-        "\111\1\60\1\103\1\124\1\101\1\60\1\111\1\105\1\116\1\60\1\101\1"+
-        "\124\1\101\3\124\1\120\2\105\1\124\1\120\1\125\1\110\1\60\1\114"+
-        "\1\105\1\122\1\60\5\uffff\1\111\1\uffff\1\116\1\126\1\122\1\uffff"+
-        "\1\124\1\122\1\102\1\105\1\uffff\1\124\1\60\1\104\1\uffff\1\113"+
-        "\1\111\1\124\1\122\1\105\1\102\1\101\1\60\1\116\2\60\1\120\1\124"+
-        "\1\uffff\1\105\2\60\1\uffff\1\103\1\125\1\101\1\60\1\111\1\117\1"+
-        "\101\1\107\1\131\1\uffff\1\101\1\60\1\103\1\105\1\117\1\122\1\117"+
-        "\1\107\1\uffff\1\104\2\uffff\3\60\2\uffff\1\111\1\115\1\124\1\uffff"+
-        "\1\126\1\131\1\123\1\105\1\60\1\122\1\uffff\1\101\1\60\1\114\1\60"+
-        "\1\130\1\105\1\60\3\uffff\1\120\1\102\1\105\1\101\1\60\1\105\1\116"+
-        "\1\uffff\1\131\1\114\1\uffff\1\60\1\uffff\2\60\1\uffff\1\101\1\105"+
-        "\1\60\1\124\1\uffff\1\60\1\104\2\60\3\uffff\1\116\1\122\1\uffff"+
-        "\1\105\1\uffff\1\60\2\uffff\1\124\2\60\1\uffff\1\60\3\uffff";
+        "\2\111\1\74\1\56\1\174\1\55\1\75\1\76\1\uffff\1\60\3\uffff\1\55"+
+        "\1\uffff\1\12\1\uffff\1\145\1\60\1\74\1\uffff\1\47\2\uffff\1\106"+
+        "\2\uffff\1\122\3\124\1\101\1\124\1\104\1\123\1\125\2\105\2\116\1"+
+        "\117\1\127\1\124\1\106\2\117\1\107\1\106\1\124\1\104\1\105\1\124"+
+        "\1\60\1\uffff\1\56\1\uffff\1\174\1\55\6\uffff\5\60\14\uffff\1\60"+
+        "\3\uffff\1\60\1\117\1\111\1\60\1\103\1\124\1\101\1\60\1\111\1\105"+
+        "\1\116\1\60\1\101\1\124\1\101\3\124\1\120\2\105\1\124\1\120\1\125"+
+        "\1\110\1\60\1\114\1\105\1\122\1\60\5\uffff\1\111\1\uffff\1\116\1"+
+        "\126\1\122\1\uffff\1\124\1\122\1\102\1\105\1\uffff\1\124\1\60\1"+
+        "\104\1\uffff\1\113\1\111\1\124\1\122\1\105\1\102\1\101\1\60\1\116"+
+        "\2\60\1\120\1\124\1\uffff\1\105\2\60\1\uffff\1\103\1\125\1\101\1"+
+        "\60\1\111\1\117\1\101\1\107\1\131\1\uffff\1\101\1\60\1\103\1\105"+
+        "\1\117\1\122\1\117\1\107\1\uffff\1\104\2\uffff\3\60\2\uffff\1\111"+
+        "\1\115\1\124\1\uffff\1\126\1\131\1\123\1\105\1\60\1\122\1\uffff"+
+        "\1\101\1\60\1\114\1\60\1\130\1\105\1\60\3\uffff\1\120\1\102\1\105"+
+        "\1\101\1\60\1\105\1\116\1\uffff\1\131\1\114\1\uffff\1\60\1\uffff"+
+        "\2\60\1\uffff\1\101\1\105\1\60\1\124\1\uffff\1\60\1\104\2\60\3\uffff"+
+        "\1\116\1\122\1\uffff\1\105\1\uffff\1\60\2\uffff\1\124\2\60\1\uffff"+
+        "\1\60\3\uffff";
     static final String DFA22_maxS =
         "\1\uffff\1\141\1\165\1\145\1\156\2\162\3\157\1\162\3\151\1\166"+
-        "\1\56\2\174\1\75\1\76\5\uffff\1\12\1\uffff\1\163\1\u00f6\1\74\1"+
-        "\uffff\1\57\1\uffff\1\134\1\uffff\1\166\1\131\2\uffff\1\162\3\164"+
-        "\1\163\2\164\1\163\1\170\1\145\1\151\2\156\1\157\1\167\1\164\1\147"+
-        "\2\157\1\147\1\146\1\164\1\144\1\145\1\164\1\u00f6\1\uffff\1\56"+
-        "\1\174\1\55\13\uffff\1\u00f6\2\uffff\1\172\1\165\1\171\1\157\1\165"+
-        "\3\uffff\1\u00f6\2\157\1\u00f6\1\143\1\164\1\141\1\u00f6\1\151\1"+
-        "\145\1\156\1\u00f6\1\141\1\164\1\141\3\164\1\160\2\145\1\164\1\160"+
-        "\1\165\1\150\1\u00f6\1\154\1\145\1\162\1\u00f6\5\uffff\1\151\1\uffff"+
-        "\1\156\1\166\1\162\1\uffff\1\164\1\162\1\142\1\145\1\uffff\1\164"+
-        "\1\u00f6\1\144\1\uffff\1\153\1\151\1\164\1\162\1\145\1\142\1\141"+
-        "\1\u00f6\1\156\2\u00f6\1\160\1\164\1\uffff\1\145\2\u00f6\1\uffff"+
-        "\1\143\1\165\1\141\1\u00f6\1\151\1\157\1\141\1\147\1\171\1\uffff"+
-        "\1\141\1\u00f6\1\143\1\145\1\157\1\162\1\157\1\147\1\uffff\1\144"+
-        "\2\uffff\3\u00f6\2\uffff\1\151\1\155\1\164\1\uffff\1\166\1\171\1"+
-        "\163\1\145\1\u00f6\1\162\1\uffff\1\141\1\u00f6\1\154\1\u00f6\1\170"+
-        "\1\145\1\u00f6\3\uffff\1\160\1\142\1\145\1\141\1\u00f6\1\145\1\156"+
-        "\1\uffff\1\171\1\154\1\uffff\1\u00f6\1\uffff\2\u00f6\1\uffff\1\141"+
-        "\1\145\1\u00f6\1\164\1\uffff\1\u00f6\1\144\2\u00f6\3\uffff\1\156"+
-        "\1\162\1\uffff\1\145\1\uffff\1\u00f6\2\uffff\1\164\2\u00f6\1\uffff"+
-        "\1\u00f6\3\uffff";
+        "\1\56\2\174\1\75\1\76\1\uffff\1\131\3\uffff\1\134\1\uffff\1\12\1"+
+        "\uffff\1\163\1\u00f6\1\74\1\uffff\1\57\2\uffff\1\166\2\uffff\1\162"+
+        "\3\164\1\163\2\164\1\163\1\170\1\145\1\151\2\156\1\157\1\167\1\164"+
+        "\1\147\2\157\1\147\1\146\1\164\1\144\1\145\1\164\1\u00f6\1\uffff"+
+        "\1\56\1\uffff\1\174\1\55\6\uffff\1\172\1\165\1\171\1\157\1\165\14"+
+        "\uffff\1\u00f6\3\uffff\1\u00f6\2\157\1\u00f6\1\143\1\164\1\141\1"+
+        "\u00f6\1\151\1\145\1\156\1\u00f6\1\141\1\164\1\141\3\164\1\160\2"+
+        "\145\1\164\1\160\1\165\1\150\1\u00f6\1\154\1\145\1\162\1\u00f6\5"+
+        "\uffff\1\151\1\uffff\1\156\1\166\1\162\1\uffff\1\164\1\162\1\142"+
+        "\1\145\1\uffff\1\164\1\u00f6\1\144\1\uffff\1\153\1\151\1\164\1\162"+
+        "\1\145\1\142\1\141\1\u00f6\1\156\2\u00f6\1\160\1\164\1\uffff\1\145"+
+        "\2\u00f6\1\uffff\1\143\1\165\1\141\1\u00f6\1\151\1\157\1\141\1\147"+
+        "\1\171\1\uffff\1\141\1\u00f6\1\143\1\145\1\157\1\162\1\157\1\147"+
+        "\1\uffff\1\144\2\uffff\3\u00f6\2\uffff\1\151\1\155\1\164\1\uffff"+
+        "\1\166\1\171\1\163\1\145\1\u00f6\1\162\1\uffff\1\141\1\u00f6\1\154"+
+        "\1\u00f6\1\170\1\145\1\u00f6\3\uffff\1\160\1\142\1\145\1\141\1\u00f6"+
+        "\1\145\1\156\1\uffff\1\171\1\154\1\uffff\1\u00f6\1\uffff\2\u00f6"+
+        "\1\uffff\1\141\1\145\1\u00f6\1\164\1\uffff\1\u00f6\1\144\2\u00f6"+
+        "\3\uffff\1\156\1\162\1\uffff\1\145\1\uffff\1\u00f6\2\uffff\1\164"+
+        "\2\u00f6\1\uffff\1\u00f6\3\uffff";
     static final String DFA22_acceptS =
-        "\24\uffff\1\51\1\52\1\53\1\54\1\55\1\uffff\1\56\3\uffff\1\62\1"+
-        "\uffff\1\64\1\uffff\1\62\2\uffff\1\70\1\71\32\uffff\1\65\3\uffff"+
-        "\1\45\1\46\1\51\1\52\1\53\1\54\1\55\1\56\1\57\1\60\1\61\1\uffff"+
-        "\1\63\1\64\5\uffff\1\67\1\66\1\70\36\uffff\1\47\1\34\1\43\1\50\1"+
-        "\44\1\uffff\1\41\3\uffff\1\35\4\uffff\1\37\3\uffff\1\36\15\uffff"+
-        "\1\42\3\uffff\1\40\11\uffff\1\26\10\uffff\1\32\1\uffff\1\30\1\31"+
-        "\3\uffff\1\27\1\33\3\uffff\1\21\6\uffff\1\22\7\uffff\1\23\1\24\1"+
-        "\25\7\uffff\1\17\2\uffff\1\16\1\uffff\1\15\2\uffff\1\20\4\uffff"+
-        "\1\12\4\uffff\1\11\1\13\1\14\2\uffff\1\5\1\uffff\1\10\1\uffff\1"+
-        "\6\1\7\3\uffff\1\4\1\uffff\1\2\1\3\1\1";
+        "\24\uffff\1\51\1\uffff\1\53\1\54\1\55\1\uffff\1\60\1\uffff\1\64"+
+        "\3\uffff\1\70\1\uffff\1\72\1\70\1\uffff\1\76\1\77\32\uffff\1\73"+
+        "\1\uffff\1\57\2\uffff\1\61\1\45\1\62\1\46\1\63\1\51\5\uffff\1\75"+
+        "\1\74\1\52\1\53\1\54\1\55\1\56\1\60\1\64\1\65\1\66\1\67\1\uffff"+
+        "\1\71\1\72\1\76\36\uffff\1\47\1\34\1\43\1\50\1\44\1\uffff\1\41\3"+
+        "\uffff\1\35\4\uffff\1\37\3\uffff\1\36\15\uffff\1\42\3\uffff\1\40"+
+        "\11\uffff\1\26\10\uffff\1\32\1\uffff\1\30\1\31\3\uffff\1\27\1\33"+
+        "\3\uffff\1\21\6\uffff\1\22\7\uffff\1\23\1\24\1\25\7\uffff\1\17\2"+
+        "\uffff\1\16\1\uffff\1\15\2\uffff\1\20\4\uffff\1\12\4\uffff\1\11"+
+        "\1\13\1\14\2\uffff\1\5\1\uffff\1\10\1\uffff\1\6\1\7\3\uffff\1\4"+
+        "\1\uffff\1\2\1\3\1\1";
     static final String DFA22_specialS =
-        "\1\0\u00fa\uffff}>";
+        "\1\0\u0100\uffff}>";
     static final String[] DFA22_transitionS = {
-            "\11\46\1\45\1\32\2\46\1\31\22\46\1\45\1\46\1\24\1\44\3\46\1"+
-            "\40\1\25\1\26\2\46\1\27\1\41\1\17\1\37\12\34\1\30\1\46\1\21"+
-            "\1\22\1\23\1\46\1\33\1\2\1\5\1\6\1\3\1\4\1\7\1\12\1\15\3\42"+
-            "\1\11\1\42\1\10\1\43\1\1\1\42\1\13\1\42\1\14\6\42\6\46\1\2\1"+
-            "\5\1\6\1\3\1\4\1\7\1\12\1\15\3\42\1\11\1\42\1\10\1\16\1\1\1"+
-            "\42\1\13\1\42\1\14\3\42\1\35\2\42\1\46\1\20\147\46\2\42\20\46"+
-            "\1\42\uff09\46",
+            "\11\46\1\45\1\34\2\46\1\33\22\46\1\45\1\46\1\24\1\25\3\46\1"+
+            "\42\1\26\1\27\2\46\1\30\1\31\1\17\1\41\12\36\1\32\1\46\1\21"+
+            "\1\22\1\23\1\46\1\35\1\2\1\5\1\6\1\3\1\4\1\7\1\12\1\15\3\43"+
+            "\1\11\1\43\1\10\1\44\1\1\1\43\1\13\1\43\1\14\6\43\6\46\1\2\1"+
+            "\5\1\6\1\3\1\4\1\7\1\12\1\15\3\43\1\11\1\43\1\10\1\16\1\1\1"+
+            "\43\1\13\1\43\1\14\3\43\1\37\2\43\1\46\1\20\147\46\2\43\20\46"+
+            "\1\43\uff09\46",
             "\1\47\37\uffff\1\47",
             "\1\51\10\uffff\1\52\10\uffff\1\50\15\uffff\1\51\10\uffff\1"+
             "\52\10\uffff\1\50",
@@ -5865,62 +6035,63 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\101\11\uffff\1\100\11\uffff\1\77\5\uffff\1\76\5\uffff\1"+
             "\101\11\uffff\1\100\11\uffff\1\77\5\uffff\1\76",
             "\1\102",
-            "\1\103",
-            "\1\101\16\uffff\1\104\77\uffff\1\101",
-            "\1\105",
-            "\1\106",
+            "\1\104",
+            "\1\101\16\uffff\1\105\77\uffff\1\101",
+            "\1\107",
+            "\1\111",
+            "",
+            "\12\121\7\uffff\1\114\1\115\1\116\1\117\1\121\1\120\3\122"+
+            "\1\uffff\6\122\1\uffff\3\122\1\uffff\2\122\1\uffff\1\122",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\114",
-            "",
-            "\1\116\15\uffff\1\115",
-            "\12\120\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\101",
-            "",
-            "\1\121\5\uffff\1\101\1\uffff\1\101",
             "",
             "\1\101\20\uffff\1\101\35\uffff\1\101",
             "",
+            "\1\131",
+            "",
+            "\1\133\15\uffff\1\132",
+            "\12\135\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\1\101",
+            "",
+            "\1\136\5\uffff\1\101\1\uffff\1\101",
+            "",
+            "",
             "\1\100\11\uffff\1\77\5\uffff\1\76\17\uffff\1\100\11\uffff"+
             "\1\77\5\uffff\1\76",
-            "\12\130\7\uffff\1\123\1\124\1\125\1\126\1\130\1\127\3\131"+
-            "\1\uffff\6\131\1\uffff\3\131\1\uffff\2\131\1\uffff\1\131",
             "",
             "",
-            "\1\133\37\uffff\1\133",
-            "\1\134\37\uffff\1\134",
-            "\1\135\37\uffff\1\135",
-            "\1\136\37\uffff\1\136",
-            "\1\137\21\uffff\1\140\15\uffff\1\137\21\uffff\1\140",
             "\1\141\37\uffff\1\141",
-            "\1\142\17\uffff\1\143\17\uffff\1\142\17\uffff\1\143",
+            "\1\142\37\uffff\1\142",
+            "\1\143\37\uffff\1\143",
             "\1\144\37\uffff\1\144",
-            "\1\145\2\uffff\1\146\34\uffff\1\145\2\uffff\1\146",
+            "\1\145\21\uffff\1\146\15\uffff\1\145\21\uffff\1\146",
             "\1\147\37\uffff\1\147",
-            "\1\151\3\uffff\1\150\33\uffff\1\151\3\uffff\1\150",
+            "\1\150\17\uffff\1\151\17\uffff\1\150\17\uffff\1\151",
             "\1\152\37\uffff\1\152",
-            "\1\153\37\uffff\1\153",
-            "\1\154\37\uffff\1\154",
+            "\1\153\2\uffff\1\154\34\uffff\1\153\2\uffff\1\154",
             "\1\155\37\uffff\1\155",
-            "\1\156\37\uffff\1\156",
-            "\1\160\1\157\36\uffff\1\160\1\157",
+            "\1\157\3\uffff\1\156\33\uffff\1\157\3\uffff\1\156",
+            "\1\160\37\uffff\1\160",
             "\1\161\37\uffff\1\161",
             "\1\162\37\uffff\1\162",
             "\1\163\37\uffff\1\163",
             "\1\164\37\uffff\1\164",
-            "\1\165\37\uffff\1\165",
-            "\1\166\37\uffff\1\166",
+            "\1\166\1\165\36\uffff\1\166\1\165",
             "\1\167\37\uffff\1\167",
             "\1\170\37\uffff\1\170",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\171\37\uffff\1\171",
+            "\1\172\37\uffff\1\172",
+            "\1\173\37\uffff\1\173",
+            "\1\174\37\uffff\1\174",
+            "\1\175\37\uffff\1\175",
+            "\1\176\37\uffff\1\176",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "",
-            "\1\172",
-            "\1\173",
+            "\1\u0080",
+            "",
+            "\1\u0081",
             "\1\101",
             "",
             "",
@@ -5928,50 +6099,49 @@ public class InternalPlantumlLexer extends Lexer {
             "",
             "",
             "",
+            "\12\121\7\uffff\6\121\45\uffff\1\122\1\uffff\1\122\2\uffff"+
+            "\1\122\10\uffff\1\122",
+            "\12\121\7\uffff\6\121\36\uffff\1\122\3\uffff\1\122\2\uffff"+
+            "\1\122\5\uffff\1\122\2\uffff\1\122",
+            "\12\121\7\uffff\6\121\32\uffff\1\122\6\uffff\1\122\6\uffff"+
+            "\1\122\2\uffff\1\122\6\uffff\1\122",
+            "\12\121\7\uffff\6\121\32\uffff\1\122\3\uffff\1\122\3\uffff"+
+            "\1\122\5\uffff\1\122",
+            "\12\121\7\uffff\6\121\42\uffff\1\122\2\uffff\1\122\2\uffff"+
+            "\1\122\5\uffff\1\122",
             "",
             "",
             "",
             "",
             "",
-            "\12\120\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "",
-            "",
-            "\12\130\7\uffff\6\130\45\uffff\1\131\1\uffff\1\131\2\uffff"+
-            "\1\131\10\uffff\1\131",
-            "\12\130\7\uffff\6\130\36\uffff\1\131\3\uffff\1\131\2\uffff"+
-            "\1\131\5\uffff\1\131\2\uffff\1\131",
-            "\12\130\7\uffff\6\130\32\uffff\1\131\6\uffff\1\131\6\uffff"+
-            "\1\131\2\uffff\1\131\6\uffff\1\131",
-            "\12\130\7\uffff\6\130\32\uffff\1\131\3\uffff\1\131\3\uffff"+
-            "\1\131\5\uffff\1\131",
-            "\12\130\7\uffff\6\130\42\uffff\1\131\2\uffff\1\131\2\uffff"+
-            "\1\131\5\uffff\1\131",
             "",
             "",
             "",
-            "\12\36\7\uffff\23\36\1\176\6\36\6\uffff\23\36\1\176\6\36\151"+
-            "\uffff\2\36\20\uffff\1\36",
-            "\1\u0080\37\uffff\1\u0080",
-            "\1\u0081\5\uffff\1\u0082\31\uffff\1\u0081\5\uffff\1\u0082",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u0084\37\uffff\1\u0084",
-            "\1\u0085\37\uffff\1\u0085",
+            "",
+            "",
+            "",
+            "",
+            "\12\135\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "",
+            "",
+            "",
+            "\12\40\7\uffff\23\40\1\u0084\6\40\6\uffff\23\40\1\u0084\6"+
+            "\40\151\uffff\2\40\20\uffff\1\40",
             "\1\u0086\37\uffff\1\u0086",
-            "\12\36\7\uffff\13\36\1\u0087\16\36\6\uffff\13\36\1\u0087\16"+
-            "\36\151\uffff\2\36\20\uffff\1\36",
-            "\1\u0089\37\uffff\1\u0089",
+            "\1\u0087\5\uffff\1\u0088\31\uffff\1\u0087\5\uffff\1\u0088",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u008a\37\uffff\1\u008a",
             "\1\u008b\37\uffff\1\u008b",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u008d\37\uffff\1\u008d",
-            "\1\u008e\37\uffff\1\u008e",
+            "\1\u008c\37\uffff\1\u008c",
+            "\12\40\7\uffff\13\40\1\u008d\16\40\6\uffff\13\40\1\u008d\16"+
+            "\40\151\uffff\2\40\20\uffff\1\40",
             "\1\u008f\37\uffff\1\u008f",
             "\1\u0090\37\uffff\1\u0090",
             "\1\u0091\37\uffff\1\u0091",
-            "\1\u0092\37\uffff\1\u0092",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u0093\37\uffff\1\u0093",
             "\1\u0094\37\uffff\1\u0094",
             "\1\u0095\37\uffff\1\u0095",
@@ -5979,167 +6149,173 @@ public class InternalPlantumlLexer extends Lexer {
             "\1\u0097\37\uffff\1\u0097",
             "\1\u0098\37\uffff\1\u0098",
             "\1\u0099\37\uffff\1\u0099",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u009a\37\uffff\1\u009a",
             "\1\u009b\37\uffff\1\u009b",
             "\1\u009c\37\uffff\1\u009c",
             "\1\u009d\37\uffff\1\u009d",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u009e\37\uffff\1\u009e",
             "\1\u009f\37\uffff\1\u009f",
-            "",
-            "\1\u00a0\37\uffff\1\u00a0",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00a1\37\uffff\1\u00a1",
             "\1\u00a2\37\uffff\1\u00a2",
-            "",
             "\1\u00a3\37\uffff\1\u00a3",
-            "\1\u00a4\37\uffff\1\u00a4",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00a5\37\uffff\1\u00a5",
+            "",
             "\1\u00a6\37\uffff\1\u00a6",
-            "",
             "\1\u00a7\37\uffff\1\u00a7",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u00a9\37\uffff\1\u00a9",
+            "\1\u00a8\37\uffff\1\u00a8",
             "",
+            "\1\u00a9\37\uffff\1\u00a9",
             "\1\u00aa\37\uffff\1\u00aa",
             "\1\u00ab\37\uffff\1\u00ab",
             "\1\u00ac\37\uffff\1\u00ac",
+            "",
             "\1\u00ad\37\uffff\1\u00ad",
-            "\1\u00ae\37\uffff\1\u00ae",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00af\37\uffff\1\u00af",
+            "",
             "\1\u00b0\37\uffff\1\u00b0",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u00b1\37\uffff\1\u00b1",
             "\1\u00b2\37\uffff\1\u00b2",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u00b3\37\uffff\1\u00b3",
+            "\1\u00b4\37\uffff\1\u00b4",
             "\1\u00b5\37\uffff\1\u00b5",
             "\1\u00b6\37\uffff\1\u00b6",
-            "",
-            "\1\u00b7\37\uffff\1\u00b7",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "",
-            "\1\u00ba\37\uffff\1\u00ba",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\1\u00b8\37\uffff\1\u00b8",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00bb\37\uffff\1\u00bb",
             "\1\u00bc\37\uffff\1\u00bc",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u00be\37\uffff\1\u00be",
-            "\1\u00bf\37\uffff\1\u00bf",
+            "",
+            "\1\u00bd\37\uffff\1\u00bd",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "",
             "\1\u00c0\37\uffff\1\u00c0",
             "\1\u00c1\37\uffff\1\u00c1",
             "\1\u00c2\37\uffff\1\u00c2",
-            "",
-            "\1\u00c3\37\uffff\1\u00c3",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\1\u00c4\37\uffff\1\u00c4",
             "\1\u00c5\37\uffff\1\u00c5",
             "\1\u00c6\37\uffff\1\u00c6",
             "\1\u00c7\37\uffff\1\u00c7",
             "\1\u00c8\37\uffff\1\u00c8",
+            "",
             "\1\u00c9\37\uffff\1\u00c9",
-            "\1\u00ca\37\uffff\1\u00ca",
-            "",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00cb\37\uffff\1\u00cb",
-            "",
-            "",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "",
-            "",
+            "\1\u00cc\37\uffff\1\u00cc",
+            "\1\u00cd\37\uffff\1\u00cd",
+            "\1\u00ce\37\uffff\1\u00ce",
             "\1\u00cf\37\uffff\1\u00cf",
             "\1\u00d0\37\uffff\1\u00d0",
+            "",
             "\1\u00d1\37\uffff\1\u00d1",
             "",
-            "\1\u00d2\37\uffff\1\u00d2",
-            "\1\u00d3\37\uffff\1\u00d3",
-            "\1\u00d4\37\uffff\1\u00d4",
+            "",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "",
+            "",
             "\1\u00d5\37\uffff\1\u00d5",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u00d6\37\uffff\1\u00d6",
             "\1\u00d7\37\uffff\1\u00d7",
             "",
             "\1\u00d8\37\uffff\1\u00d8",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u00d9\37\uffff\1\u00d9",
             "\1\u00da\37\uffff\1\u00da",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u00dc\37\uffff\1\u00dc",
+            "\1\u00db\37\uffff\1\u00db",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00dd\37\uffff\1\u00dd",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
             "",
-            "",
-            "",
-            "\1\u00df\37\uffff\1\u00df",
+            "\1\u00de\37\uffff\1\u00de",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00e0\37\uffff\1\u00e0",
-            "\1\u00e1\37\uffff\1\u00e1",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00e2\37\uffff\1\u00e2",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u00e4\37\uffff\1\u00e4",
-            "\1\u00e5\37\uffff\1\u00e5",
+            "\1\u00e3\37\uffff\1\u00e3",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "",
+            "",
+            "",
+            "\1\u00e5\37\uffff\1\u00e5",
             "\1\u00e6\37\uffff\1\u00e6",
             "\1\u00e7\37\uffff\1\u00e7",
-            "",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "",
+            "\1\u00e8\37\uffff\1\u00e8",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\1\u00ea\37\uffff\1\u00ea",
             "\1\u00eb\37\uffff\1\u00eb",
+            "",
             "\1\u00ec\37\uffff\1\u00ec",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u00ee\37\uffff\1\u00ee",
+            "\1\u00ed\37\uffff\1\u00ed",
             "",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\1\u00f0\37\uffff\1\u00f0",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "",
-            "",
-            "\1\u00f3\37\uffff\1\u00f3",
+            "\1\u00f1\37\uffff\1\u00f1",
+            "\1\u00f2\37\uffff\1\u00f2",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "\1\u00f4\37\uffff\1\u00f4",
             "",
-            "\1\u00f5\37\uffff\1\u00f5",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\1\u00f6\37\uffff\1\u00f6",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
             "",
             "",
-            "\1\u00f7\37\uffff\1\u00f7",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u00f9\37\uffff\1\u00f9",
+            "\1\u00fa\37\uffff\1\u00fa",
             "",
-            "\12\36\7\uffff\32\36\6\uffff\32\36\151\uffff\2\36\20\uffff"+
-            "\1\36",
+            "\1\u00fb\37\uffff\1\u00fb",
+            "",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "",
+            "",
+            "\1\u00fd\37\uffff\1\u00fd",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
+            "",
+            "\12\40\7\uffff\32\40\6\uffff\32\40\151\uffff\2\40\20\uffff"+
+            "\1\40",
             "",
             "",
             ""
@@ -6175,7 +6351,7 @@ public class InternalPlantumlLexer extends Lexer {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( Participant | Autonumber | Deactivate | Endlegend | Activate | Boundary | Critical | Database | Control | Destroy | Footbox | Newpage | Center | Create | Entity | Legend | Actor | Break | Group | Right | Title | Else | Hide | Left | Loop | Note | Over | FullStopFullStopFullStop | Alt | Box | End | Opt | Par | Ref | VerticalLineVerticalLineVerticalLine | LessThanSignLessThanSign | EqualsSignEqualsSign | GreaterThanSignGreaterThanSign | Of | VerticalLineVerticalLine | QuotationMark | LeftParenthesis | RightParenthesis | Comma | Colon | RULE_NEWLINE | RULE_START | RULE_END | RULE_INT | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_SEQUENCE | RULE_COLOR | RULE_HEXCODE | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( Participant | Autonumber | Deactivate | Endlegend | Activate | Boundary | Critical | Database | Control | Destroy | Footbox | Newpage | Center | Create | Entity | Legend | Actor | Break | Group | Right | Title | Else | Hide | Left | Loop | Note | Over | FullStopFullStopFullStop | Alt | Box | End | Opt | Par | Ref | VerticalLineVerticalLineVerticalLine | LessThanSignLessThanSign | EqualsSignEqualsSign | GreaterThanSignGreaterThanSign | Of | VerticalLineVerticalLine | QuotationMark | NumberSign | LeftParenthesis | RightParenthesis | Comma | HyphenMinus | FullStop | Colon | LessThanSign | EqualsSign | GreaterThanSign | RULE_NEWLINE | RULE_START | RULE_END | RULE_INT | RULE_ID | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_SEQUENCE | RULE_COLOR | RULE_HEXCODE | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -6225,41 +6401,41 @@ public class InternalPlantumlLexer extends Lexer {
 
                         else if ( (LA22_0=='\"') ) {s = 20;}
 
-                        else if ( (LA22_0=='(') ) {s = 21;}
+                        else if ( (LA22_0=='#') ) {s = 21;}
 
-                        else if ( (LA22_0==')') ) {s = 22;}
+                        else if ( (LA22_0=='(') ) {s = 22;}
 
-                        else if ( (LA22_0==',') ) {s = 23;}
+                        else if ( (LA22_0==')') ) {s = 23;}
 
-                        else if ( (LA22_0==':') ) {s = 24;}
+                        else if ( (LA22_0==',') ) {s = 24;}
 
-                        else if ( (LA22_0=='\r') ) {s = 25;}
+                        else if ( (LA22_0=='-') ) {s = 25;}
 
-                        else if ( (LA22_0=='\n') ) {s = 26;}
+                        else if ( (LA22_0==':') ) {s = 26;}
 
-                        else if ( (LA22_0=='@') ) {s = 27;}
+                        else if ( (LA22_0=='\r') ) {s = 27;}
 
-                        else if ( ((LA22_0>='0' && LA22_0<='9')) ) {s = 28;}
+                        else if ( (LA22_0=='\n') ) {s = 28;}
 
-                        else if ( (LA22_0=='x') ) {s = 29;}
+                        else if ( (LA22_0=='@') ) {s = 29;}
 
-                        else if ( (LA22_0=='/') ) {s = 31;}
+                        else if ( ((LA22_0>='0' && LA22_0<='9')) ) {s = 30;}
 
-                        else if ( (LA22_0=='\'') ) {s = 32;}
+                        else if ( (LA22_0=='x') ) {s = 31;}
 
-                        else if ( (LA22_0=='-') ) {s = 33;}
+                        else if ( (LA22_0=='/') ) {s = 33;}
 
-                        else if ( ((LA22_0>='I' && LA22_0<='K')||LA22_0=='M'||LA22_0=='Q'||LA22_0=='S'||(LA22_0>='U' && LA22_0<='Z')||(LA22_0>='i' && LA22_0<='k')||LA22_0=='m'||LA22_0=='q'||LA22_0=='s'||(LA22_0>='u' && LA22_0<='w')||(LA22_0>='y' && LA22_0<='z')||(LA22_0>='\u00E4' && LA22_0<='\u00E5')||LA22_0=='\u00F6') ) {s = 34;}
+                        else if ( (LA22_0=='\'') ) {s = 34;}
 
-                        else if ( (LA22_0=='O') ) {s = 35;}
+                        else if ( ((LA22_0>='I' && LA22_0<='K')||LA22_0=='M'||LA22_0=='Q'||LA22_0=='S'||(LA22_0>='U' && LA22_0<='Z')||(LA22_0>='i' && LA22_0<='k')||LA22_0=='m'||LA22_0=='q'||LA22_0=='s'||(LA22_0>='u' && LA22_0<='w')||(LA22_0>='y' && LA22_0<='z')||(LA22_0>='\u00E4' && LA22_0<='\u00E5')||LA22_0=='\u00F6') ) {s = 35;}
 
-                        else if ( (LA22_0=='#') ) {s = 36;}
+                        else if ( (LA22_0=='O') ) {s = 36;}
 
                         else if ( (LA22_0=='\t'||LA22_0==' ') ) {s = 37;}
 
                         else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='!'||(LA22_0>='$' && LA22_0<='&')||(LA22_0>='*' && LA22_0<='+')||LA22_0==';'||LA22_0=='?'||(LA22_0>='[' && LA22_0<='`')||LA22_0=='{'||(LA22_0>='}' && LA22_0<='\u00E3')||(LA22_0>='\u00E6' && LA22_0<='\u00F5')||(LA22_0>='\u00F7' && LA22_0<='\uFFFF')) ) {s = 38;}
 
-                        else s = 30;
+                        else s = 32;
 
                         if ( s>=0 ) return s;
                         break;

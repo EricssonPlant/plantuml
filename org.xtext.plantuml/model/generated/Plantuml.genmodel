@@ -16,10 +16,12 @@
     <genClasses ecoreClass="Plantuml.ecore#//Instruction"/>
     <genClasses ecoreClass="Plantuml.ecore#//Arrow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/names"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Declarations"/>
     <genClasses ecoreClass="Plantuml.ecore#//AltElse">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//AltElse/instructions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//AltElse/elses"/>

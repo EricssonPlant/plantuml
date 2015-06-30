@@ -22,22 +22,22 @@ import org.xtext.services.PlantumlGrammarAccess;
 public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PlantumlGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Activate_COLORTerminalRuleCall_1_q;
+	protected AbstractElementAlias match_Activate_ColorParserRuleCall_1_q;
 	protected AbstractElementAlias match_AltElse_MyIDParserRuleCall_1_a;
 	protected AbstractElementAlias match_Arrow___ColonKeyword_3_0_MyIDParserRuleCall_3_1_a__q;
-	protected AbstractElementAlias match_Box_COLORTerminalRuleCall_4_q;
+	protected AbstractElementAlias match_Box_ColorParserRuleCall_4_q;
 	protected AbstractElementAlias match_Box_IDTerminalRuleCall_2_a;
 	protected AbstractElementAlias match_Box_NEWLINETerminalRuleCall_6_1_a;
 	protected AbstractElementAlias match_Box_NEWLINETerminalRuleCall_6_1_p;
 	protected AbstractElementAlias match_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1;
-	protected AbstractElementAlias match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2___COLORTerminalRuleCall_5_2_1_3_0_or_HEXCODETerminalRuleCall_5_2_1_3_1___RightParenthesisKeyword_5_2_1_4__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q;
+	protected AbstractElementAlias match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q;
 	protected AbstractElementAlias match_Diagram_NEWLINETerminalRuleCall_4_a;
 	protected AbstractElementAlias match_Else_MyIDParserRuleCall_1_a;
 	protected AbstractElementAlias match_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_GroupKeyword_0_5_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2;
 	protected AbstractElementAlias match_GroupingMessages_IDTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_Instruction_ColorsParserRuleCall_0_1_1_q;
 	protected AbstractElementAlias match_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_HidefootboxParserRuleCall_0_13_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_ParticipantCreationParserRuleCall_0_16_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q;
-	protected AbstractElementAlias match_Instruction___COLORTerminalRuleCall_0_1_1_0_or_HEXCODETerminalRuleCall_0_1_1_1__q;
-	protected AbstractElementAlias match_Note_COLORTerminalRuleCall_2_a;
+	protected AbstractElementAlias match_Note_ColorParserRuleCall_2_a;
 	protected AbstractElementAlias match_Note_LeftKeyword_1_1_0_or_RightKeyword_1_0_0;
 	protected AbstractElementAlias match_Note___ColonKeyword_3_0_0_MyIDParserRuleCall_3_0_1_a___or_____NEWLINETerminalRuleCall_3_1_0_0_EndIDParserRuleCall_3_1_0_1_a__a_EndKeyword_3_1_1_NoteKeyword_3_1_2__;
 	protected AbstractElementAlias match_Reference___ColonKeyword_4_0_0_MyIDParserRuleCall_4_0_1_a___or_____NEWLINETerminalRuleCall_4_1_0_0_EndIDParserRuleCall_4_1_0_1_a__a_EndKeyword_4_1_1_RefKeyword_4_1_2__;
@@ -45,22 +45,22 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PlantumlGrammarAccess) access;
-		match_Activate_COLORTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getActivateAccess().getCOLORTerminalRuleCall_1());
+		match_Activate_ColorParserRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getActivateAccess().getColorParserRuleCall_1());
 		match_AltElse_MyIDParserRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getAltElseAccess().getMyIDParserRuleCall_1());
 		match_Arrow___ColonKeyword_3_0_MyIDParserRuleCall_3_1_a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getArrowAccess().getColonKeyword_3_0()), new TokenAlias(true, true, grammarAccess.getArrowAccess().getMyIDParserRuleCall_3_1()));
-		match_Box_COLORTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getBoxAccess().getCOLORTerminalRuleCall_4());
+		match_Box_ColorParserRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getBoxAccess().getColorParserRuleCall_4());
 		match_Box_IDTerminalRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getBoxAccess().getIDTerminalRuleCall_2());
 		match_Box_NEWLINETerminalRuleCall_6_1_a = new TokenAlias(true, true, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1());
 		match_Box_NEWLINETerminalRuleCall_6_1_p = new TokenAlias(true, false, grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1());
 		match_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeactivateAccess().getDeactivateKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getDeactivateAccess().getDestroyKeyword_0_1()));
-		match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2___COLORTerminalRuleCall_5_2_1_3_0_or_HEXCODETerminalRuleCall_5_2_1_3_1___RightParenthesisKeyword_5_2_1_4__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getLessThanSignLessThanSignKeyword_5_2_0()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_2_1_1()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_2()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_3_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_3_1())), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_4())), new TokenAlias(true, true, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_2_2()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getGreaterThanSignGreaterThanSignKeyword_5_2_3()));
+		match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getLessThanSignLessThanSignKeyword_5_2_0()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getLeftParenthesisKeyword_5_2_1_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_2_1_1()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getCommaKeyword_5_2_1_2()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getNumberSignKeyword_5_2_1_3()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_4()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_5())), new TokenAlias(true, true, grammarAccess.getDefinitionAccess().getEndIDParserRuleCall_5_2_2()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getGreaterThanSignGreaterThanSignKeyword_5_2_3()));
 		match_Diagram_NEWLINETerminalRuleCall_4_a = new TokenAlias(true, true, grammarAccess.getDiagramAccess().getNEWLINETerminalRuleCall_4());
 		match_Else_MyIDParserRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getElseAccess().getMyIDParserRuleCall_1());
 		match_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_GroupKeyword_0_5_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getBreakKeyword_0_3()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getCriticalKeyword_0_4()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getGroupKeyword_0_5()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getLoopKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getOptKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getGroupingMessagesAccess().getParKeyword_0_2()));
 		match_GroupingMessages_IDTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getGroupingMessagesAccess().getIDTerminalRuleCall_1());
+		match_Instruction_ColorsParserRuleCall_0_1_1_q = new TokenAlias(false, true, grammarAccess.getInstructionAccess().getColorsParserRuleCall_0_1_1());
 		match_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_HidefootboxParserRuleCall_0_13_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_ParticipantCreationParserRuleCall_0_16_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getAutoNumberParserRuleCall_0_2()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getDelayParserRuleCall_0_11()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getDividerParserRuleCall_0_9()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getHidefootboxParserRuleCall_0_13()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getLegendParserRuleCall_0_4()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getNewpageParserRuleCall_0_5()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getParticipantCreationParserRuleCall_0_16()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getSpaceParserRuleCall_0_12()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getTitleParserRuleCall_0_3()));
-		match_Instruction___COLORTerminalRuleCall_0_1_1_0_or_HEXCODETerminalRuleCall_0_1_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstructionAccess().getCOLORTerminalRuleCall_0_1_1_0()), new TokenAlias(false, false, grammarAccess.getInstructionAccess().getHEXCODETerminalRuleCall_0_1_1_1()));
-		match_Note_COLORTerminalRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getNoteAccess().getCOLORTerminalRuleCall_2());
+		match_Note_ColorParserRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getNoteAccess().getColorParserRuleCall_2());
 		match_Note_LeftKeyword_1_1_0_or_RightKeyword_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNoteAccess().getLeftKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getNoteAccess().getRightKeyword_1_0_0()));
 		match_Note___ColonKeyword_3_0_0_MyIDParserRuleCall_3_0_1_a___or_____NEWLINETerminalRuleCall_3_1_0_0_EndIDParserRuleCall_3_1_0_1_a__a_EndKeyword_3_1_1_NoteKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNoteAccess().getNEWLINETerminalRuleCall_3_1_0_0()), new TokenAlias(true, true, grammarAccess.getNoteAccess().getEndIDParserRuleCall_3_1_0_1())), new TokenAlias(false, false, grammarAccess.getNoteAccess().getEndKeyword_3_1_1()), new TokenAlias(false, false, grammarAccess.getNoteAccess().getNoteKeyword_3_1_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNoteAccess().getColonKeyword_3_0_0()), new TokenAlias(true, true, grammarAccess.getNoteAccess().getMyIDParserRuleCall_3_0_1())));
 		match_Reference___ColonKeyword_4_0_0_MyIDParserRuleCall_4_0_1_a___or_____NEWLINETerminalRuleCall_4_1_0_0_EndIDParserRuleCall_4_1_0_1_a__a_EndKeyword_4_1_1_RefKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getReferenceAccess().getNEWLINETerminalRuleCall_4_1_0_0()), new TokenAlias(true, true, grammarAccess.getReferenceAccess().getEndIDParserRuleCall_4_1_0_1())), new TokenAlias(false, false, grammarAccess.getReferenceAccess().getEndKeyword_4_1_1()), new TokenAlias(false, false, grammarAccess.getReferenceAccess().getRefKeyword_4_1_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getReferenceAccess().getColonKeyword_4_0_0()), new TokenAlias(true, true, grammarAccess.getReferenceAccess().getMyIDParserRuleCall_4_0_1())));
@@ -70,8 +70,10 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getAutoNumberRule())
 			return getAutoNumberToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getCOLORRule())
-			return getCOLORToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getColorRule())
+			return getColorToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getColorsRule())
+			return getColorsToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getDelayRule())
 			return getDelayToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getDividerRule())
@@ -119,8 +121,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal COLOR:
-	 * 	'#' ('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
+	 * Color:
+	 * 	('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
 	 * 	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
 	 * 	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
 	 * 	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
@@ -143,7 +145,16 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * 	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
 	 * ;
 	 */
-	protected String getCOLORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getColorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "AliceBlue";
+	}
+	
+	/**
+	 * Colors: '#' (Color|HEXCODE);
+	 */
+	protected String getColorsToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "#AliceBlue";
@@ -196,14 +207,13 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * terminal HEXCODE:
-	 *         '#' ('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')
-	 *             ('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')('A' .. 'F'|'0' .. '9')
+	 *         ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
 	 * ;
 	 */
 	protected String getHEXCODEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "#";
+		return "";
 	}
 	
 	/**
@@ -326,14 +336,14 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Activate_COLORTerminalRuleCall_1_q.equals(syntax))
-				emit_Activate_COLORTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Activate_ColorParserRuleCall_1_q.equals(syntax))
+				emit_Activate_ColorParserRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_AltElse_MyIDParserRuleCall_1_a.equals(syntax))
 				emit_AltElse_MyIDParserRuleCall_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Arrow___ColonKeyword_3_0_MyIDParserRuleCall_3_1_a__q.equals(syntax))
 				emit_Arrow___ColonKeyword_3_0_MyIDParserRuleCall_3_1_a__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Box_COLORTerminalRuleCall_4_q.equals(syntax))
-				emit_Box_COLORTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Box_ColorParserRuleCall_4_q.equals(syntax))
+				emit_Box_ColorParserRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Box_IDTerminalRuleCall_2_a.equals(syntax))
 				emit_Box_IDTerminalRuleCall_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Box_NEWLINETerminalRuleCall_6_1_a.equals(syntax))
@@ -342,8 +352,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Box_NEWLINETerminalRuleCall_6_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1.equals(syntax))
 				emit_Deactivate_DeactivateKeyword_0_0_or_DestroyKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2___COLORTerminalRuleCall_5_2_1_3_0_or_HEXCODETerminalRuleCall_5_2_1_3_1___RightParenthesisKeyword_5_2_1_4__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q.equals(syntax))
-				emit_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2___COLORTerminalRuleCall_5_2_1_3_0_or_HEXCODETerminalRuleCall_5_2_1_3_1___RightParenthesisKeyword_5_2_1_4__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q.equals(syntax))
+				emit_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Diagram_NEWLINETerminalRuleCall_4_a.equals(syntax))
 				emit_Diagram_NEWLINETerminalRuleCall_4_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Else_MyIDParserRuleCall_1_a.equals(syntax))
@@ -352,12 +362,12 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_GroupingMessages_BreakKeyword_0_3_or_CriticalKeyword_0_4_or_GroupKeyword_0_5_or_LoopKeyword_0_1_or_OptKeyword_0_0_or_ParKeyword_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_GroupingMessages_IDTerminalRuleCall_1_a.equals(syntax))
 				emit_GroupingMessages_IDTerminalRuleCall_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Instruction_ColorsParserRuleCall_0_1_1_q.equals(syntax))
+				emit_Instruction_ColorsParserRuleCall_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_HidefootboxParserRuleCall_0_13_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_ParticipantCreationParserRuleCall_0_16_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q.equals(syntax))
 				emit_Instruction___AutoNumberParserRuleCall_0_2_or_DelayParserRuleCall_0_11_or_DividerParserRuleCall_0_9_or_HidefootboxParserRuleCall_0_13_or_LegendParserRuleCall_0_4_or_NewpageParserRuleCall_0_5_or_ParticipantCreationParserRuleCall_0_16_or_SpaceParserRuleCall_0_12_or_TitleParserRuleCall_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Instruction___COLORTerminalRuleCall_0_1_1_0_or_HEXCODETerminalRuleCall_0_1_1_1__q.equals(syntax))
-				emit_Instruction___COLORTerminalRuleCall_0_1_1_0_or_HEXCODETerminalRuleCall_0_1_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Note_COLORTerminalRuleCall_2_a.equals(syntax))
-				emit_Note_COLORTerminalRuleCall_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Note_ColorParserRuleCall_2_a.equals(syntax))
+				emit_Note_ColorParserRuleCall_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Note_LeftKeyword_1_1_0_or_RightKeyword_1_0_0.equals(syntax))
 				emit_Note_LeftKeyword_1_1_0_or_RightKeyword_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Note___ColonKeyword_3_0_0_MyIDParserRuleCall_3_0_1_a___or_____NEWLINETerminalRuleCall_3_1_0_0_EndIDParserRuleCall_3_1_0_1_a__a_EndKeyword_3_1_1_NoteKeyword_3_1_2__.equals(syntax))
@@ -370,12 +380,12 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Ambiguous syntax:
-	 *     COLOR?
+	 *     Color?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'activate' (ambiguity) name=ID
 	 */
-	protected void emit_Activate_COLORTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Activate_ColorParserRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -406,7 +416,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     COLOR?
+	 *     Color?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'box' '"' ID* '"' (ambiguity) NEWLINE NEWLINE* 'end' 'box' (rule start)
@@ -414,7 +424,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'box' '"' ID* '"' (ambiguity) NEWLINE NEWLINE+ 'end' 'box' (rule start)
 	 *     (rule start) 'box' '"' ID* '"' (ambiguity) NEWLINE NEWLINE+ 'end' 'box' NEWLINE (rule start)
 	 */
-	protected void emit_Box_COLORTerminalRuleCall_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Box_ColorParserRuleCall_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -423,10 +433,10 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ID*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'box' '"' (ambiguity) '"' COLOR? NEWLINE NEWLINE* 'end' 'box' (rule start)
-	 *     (rule start) 'box' '"' (ambiguity) '"' COLOR? NEWLINE NEWLINE* definitions+=Definition
-	 *     (rule start) 'box' '"' (ambiguity) '"' COLOR? NEWLINE NEWLINE+ 'end' 'box' (rule start)
-	 *     (rule start) 'box' '"' (ambiguity) '"' COLOR? NEWLINE NEWLINE+ 'end' 'box' NEWLINE (rule start)
+	 *     (rule start) 'box' '"' (ambiguity) '"' Color? NEWLINE NEWLINE* 'end' 'box' (rule start)
+	 *     (rule start) 'box' '"' (ambiguity) '"' Color? NEWLINE NEWLINE* definitions+=Definition
+	 *     (rule start) 'box' '"' (ambiguity) '"' Color? NEWLINE NEWLINE+ 'end' 'box' (rule start)
+	 *     (rule start) 'box' '"' (ambiguity) '"' Color? NEWLINE NEWLINE+ 'end' 'box' NEWLINE (rule start)
 	 */
 	protected void emit_Box_IDTerminalRuleCall_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -437,8 +447,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     NEWLINE*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'box' '"' ID* '"' COLOR? NEWLINE (ambiguity) 'end' 'box' (rule start)
-	 *     (rule start) 'box' '"' ID* '"' COLOR? NEWLINE (ambiguity) definitions+=Definition
+	 *     (rule start) 'box' '"' ID* '"' Color? NEWLINE (ambiguity) 'end' 'box' (rule start)
+	 *     (rule start) 'box' '"' ID* '"' Color? NEWLINE (ambiguity) definitions+=Definition
 	 */
 	protected void emit_Box_NEWLINETerminalRuleCall_6_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -449,8 +459,8 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     NEWLINE+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'box' '"' ID* '"' COLOR? NEWLINE (ambiguity) 'end' 'box' (rule start)
-	 *     (rule start) 'box' '"' ID* '"' COLOR? NEWLINE (ambiguity) 'end' 'box' NEWLINE (rule start)
+	 *     (rule start) 'box' '"' ID* '"' Color? NEWLINE (ambiguity) 'end' 'box' (rule start)
+	 *     (rule start) 'box' '"' ID* '"' Color? NEWLINE (ambiguity) 'end' 'box' NEWLINE (rule start)
 	 *     definitions+=Definition (ambiguity) 'end' 'box' (rule end)
 	 *     definitions+=Definition (ambiguity) 'end' 'box' NEWLINE (rule end)
 	 *     definitions+=Definition (ambiguity) definitions+=Definition
@@ -472,13 +482,25 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('<<' ('(' EndID ',' (COLOR | HEXCODE) ')')? EndID* '>>')?
+	 *     (
+	  *         '<<' 
+	  *         (
+	  *             '(' 
+	  *             EndID 
+	  *             ',' 
+	  *             '#' 
+	  *             HEXCODE 
+	  *             ')'
+	  *         )? 
+	  *         EndID* 
+	  *         '>>'
+	  *     )?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=MyID (ambiguity) (COLOR | HEXCODE)? NEWLINE (rule end)
 	 *     name=MyID (ambiguity) (rule end)
+	 *     name=MyID (ambiguity) Colors? NEWLINE (rule end)
 	 */
-	protected void emit_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2___COLORTerminalRuleCall_5_2_1_3_0_or_HEXCODETerminalRuleCall_5_2_1_3_1___RightParenthesisKeyword_5_2_1_4__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Definition___LessThanSignLessThanSignKeyword_5_2_0___LeftParenthesisKeyword_5_2_1_0_EndIDParserRuleCall_5_2_1_1_CommaKeyword_5_2_1_2_NumberSignKeyword_5_2_1_3_HEXCODETerminalRuleCall_5_2_1_4_RightParenthesisKeyword_5_2_1_5__q_EndIDParserRuleCall_5_2_2_a_GreaterThanSignGreaterThanSignKeyword_5_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -539,6 +561,18 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     Colors?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=MyID ('<<' ('(' EndID ',' '#' HEXCODE ')')? EndID* '>>')? (ambiguity) NEWLINE (rule end)
+	 *     name=MyID (ambiguity) NEWLINE (rule end)
+	 */
+	protected void emit_Instruction_ColorsParserRuleCall_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     (
 	  *         AutoNumber | 
 	  *         Title | 
@@ -560,19 +594,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (COLOR | HEXCODE)?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=MyID ('<<' ('(' EndID ',' (COLOR | HEXCODE) ')')? EndID* '>>')? (ambiguity) NEWLINE (rule end)
-	 *     name=MyID (ambiguity) NEWLINE (rule end)
-	 */
-	protected void emit_Instruction___COLORTerminalRuleCall_0_1_1_0_or_HEXCODETerminalRuleCall_0_1_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     COLOR*
+	 *     Color*
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'note' ('right' | 'left') (ambiguity) ((':' MyID*) | ((NEWLINE EndID*)* 'end' 'note')) (rule start)
@@ -589,7 +611,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     rids+=[Definition|ID] (ambiguity) ((':' MyID*) | ((NEWLINE EndID*)* 'end' 'note')) (rule end)
 	 *     rids+=[Definition|ID] (ambiguity) ((':' MyID*) | ((NEWLINE EndID*)* 'end' 'note')) NEWLINE (rule end)
 	 */
-	protected void emit_Note_COLORTerminalRuleCall_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Note_ColorParserRuleCall_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -598,7 +620,7 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'right' | 'left'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'note' (ambiguity) COLOR* ((':' MyID*) | ((NEWLINE EndID*)* 'end' 'note')) (rule start)
+	 *     (rule start) 'note' (ambiguity) Color* ((':' MyID*) | ((NEWLINE EndID*)* 'end' 'note')) (rule start)
 	 */
 	protected void emit_Note_LeftKeyword_1_1_0_or_RightKeyword_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -609,19 +631,19 @@ public class PlantumlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (':' MyID*) | ((NEWLINE EndID*)* 'end' 'note')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'note' ('right' | 'left') COLOR* (ambiguity) (rule start)
-	 *     lid=[Definition|ID] COLOR* (ambiguity) (rule end)
-	 *     lid=[Definition|ID] COLOR* (ambiguity) NEWLINE (rule end)
-	 *     lids+=[Definition|ID] COLOR* (ambiguity) (rule end)
-	 *     lids+=[Definition|ID] COLOR* (ambiguity) NEWLINE (rule end)
-	 *     oid=[Definition|ID] COLOR* (ambiguity) (rule end)
-	 *     oid=[Definition|ID] COLOR* (ambiguity) NEWLINE (rule end)
-	 *     oids+=[Definition|ID] COLOR* (ambiguity) (rule end)
-	 *     oids+=[Definition|ID] COLOR* (ambiguity) NEWLINE (rule end)
-	 *     rid=[Definition|ID] COLOR* (ambiguity) (rule end)
-	 *     rid=[Definition|ID] COLOR* (ambiguity) NEWLINE (rule end)
-	 *     rids+=[Definition|ID] COLOR* (ambiguity) (rule end)
-	 *     rids+=[Definition|ID] COLOR* (ambiguity) NEWLINE (rule end)
+	 *     (rule start) 'note' ('right' | 'left') Color* (ambiguity) (rule start)
+	 *     lid=[Definition|ID] Color* (ambiguity) (rule end)
+	 *     lid=[Definition|ID] Color* (ambiguity) NEWLINE (rule end)
+	 *     lids+=[Definition|ID] Color* (ambiguity) (rule end)
+	 *     lids+=[Definition|ID] Color* (ambiguity) NEWLINE (rule end)
+	 *     oid=[Definition|ID] Color* (ambiguity) (rule end)
+	 *     oid=[Definition|ID] Color* (ambiguity) NEWLINE (rule end)
+	 *     oids+=[Definition|ID] Color* (ambiguity) (rule end)
+	 *     oids+=[Definition|ID] Color* (ambiguity) NEWLINE (rule end)
+	 *     rid=[Definition|ID] Color* (ambiguity) (rule end)
+	 *     rid=[Definition|ID] Color* (ambiguity) NEWLINE (rule end)
+	 *     rids+=[Definition|ID] Color* (ambiguity) (rule end)
+	 *     rids+=[Definition|ID] Color* (ambiguity) NEWLINE (rule end)
 	 */
 	protected void emit_Note___ColonKeyword_3_0_0_MyIDParserRuleCall_3_0_1_a___or_____NEWLINETerminalRuleCall_3_1_0_0_EndIDParserRuleCall_3_1_0_1_a__a_EndKeyword_3_1_1_NoteKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

@@ -53,6 +53,8 @@ import org.xtext.services.PlantumlGrammarAccess;
 		tokenNameToValue.put("Of", "'of'");
 		tokenNameToValue.put("VerticalLineVerticalLine", "'||'");
 		tokenNameToValue.put("FullStopFullStopFullStop", "'...'");
+		tokenNameToValue.put("Red", "'Red'");
+		tokenNameToValue.put("Tan", "'Tan'");
 		tokenNameToValue.put("Alt", "'alt'");
 		tokenNameToValue.put("Box", "'box'");
 		tokenNameToValue.put("End", "'end'");
@@ -60,33 +62,176 @@ import org.xtext.services.PlantumlGrammarAccess;
 		tokenNameToValue.put("Par", "'par'");
 		tokenNameToValue.put("Ref", "'ref'");
 		tokenNameToValue.put("VerticalLineVerticalLineVerticalLine", "'|||'");
+		tokenNameToValue.put("Aqua", "'Aqua'");
+		tokenNameToValue.put("Blue", "'Blue'");
+		tokenNameToValue.put("Cyan", "'Cyan'");
+		tokenNameToValue.put("Gold", "'Gold'");
+		tokenNameToValue.put("Gray", "'Gray'");
+		tokenNameToValue.put("Grey", "'Grey'");
+		tokenNameToValue.put("Lime", "'Lime'");
+		tokenNameToValue.put("Navy", "'Navy'");
+		tokenNameToValue.put("Peru", "'Peru'");
+		tokenNameToValue.put("Pink", "'Pink'");
+		tokenNameToValue.put("Plum", "'Plum'");
+		tokenNameToValue.put("Snow", "'Snow'");
+		tokenNameToValue.put("Teal", "'Teal'");
 		tokenNameToValue.put("Else", "'else'");
 		tokenNameToValue.put("Hide", "'hide'");
 		tokenNameToValue.put("Left", "'left'");
 		tokenNameToValue.put("Loop", "'loop'");
 		tokenNameToValue.put("Note", "'note'");
 		tokenNameToValue.put("Over", "'over'");
+		tokenNameToValue.put("Azure", "'Azure'");
+		tokenNameToValue.put("Beige", "'Beige'");
+		tokenNameToValue.put("Black", "'Black'");
+		tokenNameToValue.put("Brown", "'Brown'");
+		tokenNameToValue.put("Coral", "'Coral'");
+		tokenNameToValue.put("Green", "'Green'");
+		tokenNameToValue.put("Ivory", "'Ivory'");
+		tokenNameToValue.put("Khaki", "'Khaki'");
+		tokenNameToValue.put("Linen", "'Linen'");
+		tokenNameToValue.put("Olive", "'Olive'");
+		tokenNameToValue.put("Wheat", "'Wheat'");
+		tokenNameToValue.put("White", "'White'");
 		tokenNameToValue.put("Actor", "'actor'");
 		tokenNameToValue.put("Break", "'break'");
 		tokenNameToValue.put("Group", "'group'");
 		tokenNameToValue.put("Right", "'right'");
 		tokenNameToValue.put("Title", "'title'");
+		tokenNameToValue.put("Bisque", "'Bisque'");
+		tokenNameToValue.put("Indigo", "'Indigo'");
+		tokenNameToValue.put("Maroon", "'Maroon'");
+		tokenNameToValue.put("Orchid", "'Orchid'");
+		tokenNameToValue.put("Purple", "'Purple'");
+		tokenNameToValue.put("Salmon", "'Salmon'");
+		tokenNameToValue.put("Sienna", "'Sienna'");
+		tokenNameToValue.put("Silver", "'Silver'");
+		tokenNameToValue.put("Tomato", "'Tomato'");
+		tokenNameToValue.put("Violet", "'Violet'");
+		tokenNameToValue.put("Yellow", "'Yellow'");
 		tokenNameToValue.put("Center", "'center'");
 		tokenNameToValue.put("Create", "'create'");
 		tokenNameToValue.put("Entity", "'entity'");
 		tokenNameToValue.put("Legend", "'legend'");
+		tokenNameToValue.put("Crimson", "'Crimson'");
+		tokenNameToValue.put("DarkRed", "'DarkRed'");
+		tokenNameToValue.put("DimGray", "'DimGray'");
+		tokenNameToValue.put("DimGrey", "'DimGrey'");
+		tokenNameToValue.put("Fuchsia", "'Fuchsia'");
+		tokenNameToValue.put("HotPink", "'HotPink'");
+		tokenNameToValue.put("Magenta", "'Magenta'");
+		tokenNameToValue.put("OldLace", "'OldLace'");
+		tokenNameToValue.put("SkyBlue", "'SkyBlue'");
+		tokenNameToValue.put("Thistle", "'Thistle'");
 		tokenNameToValue.put("Control", "'control'");
 		tokenNameToValue.put("Destroy", "'destroy'");
 		tokenNameToValue.put("Footbox", "'footbox'");
 		tokenNameToValue.put("Newpage", "'newpage'");
+		tokenNameToValue.put("Cornsilk", "'Cornsilk'");
+		tokenNameToValue.put("DarkBlue", "'DarkBlue'");
+		tokenNameToValue.put("DarkCyan", "'DarkCyan'");
+		tokenNameToValue.put("DarkGray", "'DarkGray'");
+		tokenNameToValue.put("DarkGrey", "'DarkGrey'");
+		tokenNameToValue.put("DeepPink", "'DeepPink'");
+		tokenNameToValue.put("HoneyDew", "'HoneyDew'");
+		tokenNameToValue.put("Lavender", "'Lavender'");
+		tokenNameToValue.put("Moccasin", "'Moccasin'");
+		tokenNameToValue.put("SeaGreen", "'SeaGreen'");
 		tokenNameToValue.put("Activate", "'activate'");
 		tokenNameToValue.put("Boundary", "'boundary'");
 		tokenNameToValue.put("Critical", "'critical'");
 		tokenNameToValue.put("Database", "'database'");
+		tokenNameToValue.put("AliceBlue", "'AliceBlue'");
+		tokenNameToValue.put("BurlyWood", "'BurlyWood'");
+		tokenNameToValue.put("CadetBlue", "'CadetBlue'");
+		tokenNameToValue.put("Chocolate", "'Chocolate'");
+		tokenNameToValue.put("DarkGreen", "'DarkGreen'");
+		tokenNameToValue.put("DarkKhaki", "'DarkKhaki'");
+		tokenNameToValue.put("DarkSalmo", "'DarkSalmo'");
+		tokenNameToValue.put("FireBrick", "'FireBrick'");
+		tokenNameToValue.put("Gainsboro", "'Gainsboro'");
+		tokenNameToValue.put("GoldenRod", "'GoldenRod'");
+		tokenNameToValue.put("IndianRed", "'IndianRed'");
+		tokenNameToValue.put("LawnGreen", "'LawnGreen'");
+		tokenNameToValue.put("LightBlue", "'LightBlue'");
+		tokenNameToValue.put("LightCyan", "'LightCyan'");
+		tokenNameToValue.put("LightGray", "'LightGray'");
+		tokenNameToValue.put("LightGrey", "'LightGrey'");
+		tokenNameToValue.put("LightPink", "'LightPink'");
+		tokenNameToValue.put("LimeGreen", "'LimeGreen'");
+		tokenNameToValue.put("MintCream", "'MintCream'");
+		tokenNameToValue.put("MistyRose", "'MistyRose'");
+		tokenNameToValue.put("OliveDrab", "'OliveDrab'");
+		tokenNameToValue.put("OrangeRed", "'OrangeRed'");
+		tokenNameToValue.put("PaleGreen", "'PaleGreen'");
+		tokenNameToValue.put("PeachPuff", "'PeachPuff'");
+		tokenNameToValue.put("RosyBrown", "'RosyBrown'");
+		tokenNameToValue.put("RoyalBlue", "'RoyalBlue'");
+		tokenNameToValue.put("SlateBlue", "'SlateBlue'");
+		tokenNameToValue.put("SlateGray", "'SlateGray'");
+		tokenNameToValue.put("SlateGrey", "'SlateGrey'");
+		tokenNameToValue.put("SteelBlue", "'SteelBlue'");
+		tokenNameToValue.put("Turquoise", "'Turquoise'");
 		tokenNameToValue.put("Endlegend", "'endlegend'");
+		tokenNameToValue.put("Aquamarine", "'Aquamarine'");
+		tokenNameToValue.put("BlueViolet", "'BlueViolet'");
+		tokenNameToValue.put("Chartreuse", "'Chartreuse'");
+		tokenNameToValue.put("DarkOrchid", "'DarkOrchid'");
+		tokenNameToValue.put("DarkViolet", "'DarkViolet'");
+		tokenNameToValue.put("Darkorange", "'Darkorange'");
+		tokenNameToValue.put("DodgerBlue", "'DodgerBlue'");
+		tokenNameToValue.put("GhostWhite", "'GhostWhite'");
+		tokenNameToValue.put("LightCoral", "'LightCoral'");
+		tokenNameToValue.put("LightGreen", "'LightGreen'");
+		tokenNameToValue.put("MediumBlue", "'MediumBlue'");
+		tokenNameToValue.put("PapayaWhip", "'PapayaWhip'");
+		tokenNameToValue.put("PowderBlue", "'PowderBlue'");
+		tokenNameToValue.put("SandyBrown", "'SandyBrown'");
+		tokenNameToValue.put("WhiteSmoke", "'WhiteSmoke'");
 		tokenNameToValue.put("Autonumber", "'autonumber'");
 		tokenNameToValue.put("Deactivate", "'deactivate'");
+		tokenNameToValue.put("DarkMagenta", "'DarkMagenta'");
+		tokenNameToValue.put("DeepSkyBlue", "'DeepSkyBlue'");
+		tokenNameToValue.put("FloralWhite", "'FloralWhite'");
+		tokenNameToValue.put("ForestGreen", "'ForestGreen'");
+		tokenNameToValue.put("GreenYellow", "'GreenYellow'");
+		tokenNameToValue.put("LightSalmon", "'LightSalmon'");
+		tokenNameToValue.put("LightYellow", "'LightYellow'");
+		tokenNameToValue.put("NavajoWhite", "'NavajoWhite'");
+		tokenNameToValue.put("SaddleBrown", "'SaddleBrown'");
+		tokenNameToValue.put("SpringGreen", "'SpringGreen'");
+		tokenNameToValue.put("YellowGreen", "'YellowGreen'");
 		tokenNameToValue.put("Participant", "'participant'");
+		tokenNameToValue.put("AntiqueWhite", "'AntiqueWhite'");
+		tokenNameToValue.put("DarkSeaGreen", "'DarkSeaGreen'");
+		tokenNameToValue.put("LemonChiffon", "'LemonChiffon'");
+		tokenNameToValue.put("LightSkyBlue", "'LightSkyBlue'");
+		tokenNameToValue.put("MediumOrchid", "'MediumOrchid'");
+		tokenNameToValue.put("MediumPurple", "'MediumPurple'");
+		tokenNameToValue.put("MidnightBlue", "'MidnightBlue'");
+		tokenNameToValue.put("DarkGoldenRod", "'DarkGoldenRod'");
+		tokenNameToValue.put("DarkSlateBlue", "'DarkSlateBlue'");
+		tokenNameToValue.put("DarkSlateGray", "'DarkSlateGray'");
+		tokenNameToValue.put("DarkSlateGrey", "'DarkSlateGrey'");
+		tokenNameToValue.put("DarkTurquoise", "'DarkTurquoise'");
+		tokenNameToValue.put("LavenderBlush", "'LavenderBlush'");
+		tokenNameToValue.put("LightSeaGreen", "'LightSeaGreen'");
+		tokenNameToValue.put("PaleGoldenRod", "'PaleGoldenRod'");
+		tokenNameToValue.put("PaleTurquoise", "'PaleTurquoise'");
+		tokenNameToValue.put("PaleVioletRed", "'PaleVioletRed'");
+		tokenNameToValue.put("BlanchedAlmond", "'BlanchedAlmond'");
+		tokenNameToValue.put("CornflowerBlue", "'CornflowerBlue'");
+		tokenNameToValue.put("DarkOliveGreen", "'DarkOliveGreen'");
+		tokenNameToValue.put("LightSlateGray", "'LightSlateGray'");
+		tokenNameToValue.put("LightSlateGrey", "'LightSlateGrey'");
+		tokenNameToValue.put("LightSteelBlue", "'LightSteelBlue'");
+		tokenNameToValue.put("MediumSeaGreen", "'MediumSeaGreen'");
+		tokenNameToValue.put("MediumSlateBlue", "'MediumSlateBlue'");
+		tokenNameToValue.put("MediumTurquoise", "'MediumTurquoise'");
+		tokenNameToValue.put("MediumVioletRed", "'MediumVioletRed'");
+		tokenNameToValue.put("MediumAquaMarine", "'MediumAquaMarine'");
+		tokenNameToValue.put("MediumSpringGreen", "'MediumSpringGreen'");
+		tokenNameToValue.put("LightGoldenRodYellow", "'LightGoldenRodYellow'");
  	}
  	
     public void setGrammarAccess(PlantumlGrammarAccess grammarAccess) {
@@ -784,6 +929,62 @@ finally {
 
 
 
+// Entry rule entryRuleColors
+entryRuleColors 
+:
+{ before(grammarAccess.getColorsRule()); }
+	 ruleColors
+{ after(grammarAccess.getColorsRule()); } 
+	 EOF 
+;
+
+// Rule Colors
+ruleColors 
+    @init {
+		int stackSize = keepStackSize();
+    }
+    :
+(
+{ before(grammarAccess.getColorsAccess().getGroup()); }
+(rule__Colors__Group__0)
+{ after(grammarAccess.getColorsAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleColor
+entryRuleColor 
+:
+{ before(grammarAccess.getColorRule()); }
+	 ruleColor
+{ after(grammarAccess.getColorRule()); } 
+	 EOF 
+;
+
+// Rule Color
+ruleColor 
+    @init {
+		int stackSize = keepStackSize();
+    }
+    :
+(
+{ before(grammarAccess.getColorAccess().getAlternatives()); }
+(rule__Color__Alternatives)
+{ after(grammarAccess.getColorAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 
 rule__Instruction__Alternatives_0
     @init {
@@ -903,28 +1104,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Instruction__Alternatives_0_1_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInstructionAccess().getCOLORTerminalRuleCall_0_1_1_0()); }
-	RULE_COLOR
-{ after(grammarAccess.getInstructionAccess().getCOLORTerminalRuleCall_0_1_1_0()); }
-)
-
-    |(
-{ before(grammarAccess.getInstructionAccess().getHEXCODETerminalRuleCall_0_1_1_1()); }
-	RULE_HEXCODE
-{ after(grammarAccess.getInstructionAccess().getHEXCODETerminalRuleCall_0_1_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__Definition__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -964,28 +1143,6 @@ rule__Definition__Alternatives
 { before(grammarAccess.getDefinitionAccess().getGroup_5()); }
 (rule__Definition__Group_5__0)
 { after(grammarAccess.getDefinitionAccess().getGroup_5()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Definition__Alternatives_5_2_1_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_3_0()); }
-	RULE_COLOR
-{ after(grammarAccess.getDefinitionAccess().getCOLORTerminalRuleCall_5_2_1_3_0()); }
-)
-
-    |(
-{ before(grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_3_1()); }
-	RULE_HEXCODE
-{ after(grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_3_1()); }
 )
 
 ;
@@ -1550,6 +1707,1198 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Colors__Alternatives_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getColorsAccess().getColorParserRuleCall_1_0()); }
+	ruleColor
+{ after(grammarAccess.getColorsAccess().getColorParserRuleCall_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getColorsAccess().getHEXCODETerminalRuleCall_1_1()); }
+	RULE_HEXCODE
+{ after(grammarAccess.getColorsAccess().getHEXCODETerminalRuleCall_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Color__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getColorAccess().getAliceBlueKeyword_0()); }
+
+	AliceBlue 
+
+{ after(grammarAccess.getColorAccess().getAliceBlueKeyword_0()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1()); }
+
+	AntiqueWhite 
+
+{ after(grammarAccess.getColorAccess().getAntiqueWhiteKeyword_1()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getAquaKeyword_2()); }
+
+	Aqua 
+
+{ after(grammarAccess.getColorAccess().getAquaKeyword_2()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getAquamarineKeyword_3()); }
+
+	Aquamarine 
+
+{ after(grammarAccess.getColorAccess().getAquamarineKeyword_3()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getAzureKeyword_4()); }
+
+	Azure 
+
+{ after(grammarAccess.getColorAccess().getAzureKeyword_4()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBeigeKeyword_5()); }
+
+	Beige 
+
+{ after(grammarAccess.getColorAccess().getBeigeKeyword_5()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBisqueKeyword_6()); }
+
+	Bisque 
+
+{ after(grammarAccess.getColorAccess().getBisqueKeyword_6()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBlackKeyword_7()); }
+
+	Black 
+
+{ after(grammarAccess.getColorAccess().getBlackKeyword_7()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBlanchedAlmondKeyword_8()); }
+
+	BlanchedAlmond 
+
+{ after(grammarAccess.getColorAccess().getBlanchedAlmondKeyword_8()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBlueKeyword_9()); }
+
+	Blue 
+
+{ after(grammarAccess.getColorAccess().getBlueKeyword_9()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBlueVioletKeyword_10()); }
+
+	BlueViolet 
+
+{ after(grammarAccess.getColorAccess().getBlueVioletKeyword_10()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBrownKeyword_11()); }
+
+	Brown 
+
+{ after(grammarAccess.getColorAccess().getBrownKeyword_11()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getBurlyWoodKeyword_12()); }
+
+	BurlyWood 
+
+{ after(grammarAccess.getColorAccess().getBurlyWoodKeyword_12()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getCadetBlueKeyword_13()); }
+
+	CadetBlue 
+
+{ after(grammarAccess.getColorAccess().getCadetBlueKeyword_13()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getChartreuseKeyword_14()); }
+
+	Chartreuse 
+
+{ after(grammarAccess.getColorAccess().getChartreuseKeyword_14()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getChocolateKeyword_15()); }
+
+	Chocolate 
+
+{ after(grammarAccess.getColorAccess().getChocolateKeyword_15()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getCoralKeyword_16()); }
+
+	Coral 
+
+{ after(grammarAccess.getColorAccess().getCoralKeyword_16()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getCornflowerBlueKeyword_17()); }
+
+	CornflowerBlue 
+
+{ after(grammarAccess.getColorAccess().getCornflowerBlueKeyword_17()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getCornsilkKeyword_18()); }
+
+	Cornsilk 
+
+{ after(grammarAccess.getColorAccess().getCornsilkKeyword_18()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getCrimsonKeyword_19()); }
+
+	Crimson 
+
+{ after(grammarAccess.getColorAccess().getCrimsonKeyword_19()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getCyanKeyword_20()); }
+
+	Cyan 
+
+{ after(grammarAccess.getColorAccess().getCyanKeyword_20()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkBlueKeyword_21()); }
+
+	DarkBlue 
+
+{ after(grammarAccess.getColorAccess().getDarkBlueKeyword_21()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkCyanKeyword_22()); }
+
+	DarkCyan 
+
+{ after(grammarAccess.getColorAccess().getDarkCyanKeyword_22()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkGoldenRodKeyword_23()); }
+
+	DarkGoldenRod 
+
+{ after(grammarAccess.getColorAccess().getDarkGoldenRodKeyword_23()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkGrayKeyword_24()); }
+
+	DarkGray 
+
+{ after(grammarAccess.getColorAccess().getDarkGrayKeyword_24()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkGreenKeyword_25()); }
+
+	DarkGreen 
+
+{ after(grammarAccess.getColorAccess().getDarkGreenKeyword_25()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkGreyKeyword_26()); }
+
+	DarkGrey 
+
+{ after(grammarAccess.getColorAccess().getDarkGreyKeyword_26()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkKhakiKeyword_27()); }
+
+	DarkKhaki 
+
+{ after(grammarAccess.getColorAccess().getDarkKhakiKeyword_27()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkMagentaKeyword_28()); }
+
+	DarkMagenta 
+
+{ after(grammarAccess.getColorAccess().getDarkMagentaKeyword_28()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkOliveGreenKeyword_29()); }
+
+	DarkOliveGreen 
+
+{ after(grammarAccess.getColorAccess().getDarkOliveGreenKeyword_29()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkOrchidKeyword_30()); }
+
+	DarkOrchid 
+
+{ after(grammarAccess.getColorAccess().getDarkOrchidKeyword_30()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkRedKeyword_31()); }
+
+	DarkRed 
+
+{ after(grammarAccess.getColorAccess().getDarkRedKeyword_31()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkSalmoKeyword_32()); }
+
+	DarkSalmo 
+
+{ after(grammarAccess.getColorAccess().getDarkSalmoKeyword_32()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkSeaGreenKeyword_33()); }
+
+	DarkSeaGreen 
+
+{ after(grammarAccess.getColorAccess().getDarkSeaGreenKeyword_33()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkSlateBlueKeyword_34()); }
+
+	DarkSlateBlue 
+
+{ after(grammarAccess.getColorAccess().getDarkSlateBlueKeyword_34()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkSlateGrayKeyword_35()); }
+
+	DarkSlateGray 
+
+{ after(grammarAccess.getColorAccess().getDarkSlateGrayKeyword_35()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkSlateGreyKeyword_36()); }
+
+	DarkSlateGrey 
+
+{ after(grammarAccess.getColorAccess().getDarkSlateGreyKeyword_36()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkTurquoiseKeyword_37()); }
+
+	DarkTurquoise 
+
+{ after(grammarAccess.getColorAccess().getDarkTurquoiseKeyword_37()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkVioletKeyword_38()); }
+
+	DarkViolet 
+
+{ after(grammarAccess.getColorAccess().getDarkVioletKeyword_38()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDarkorangeKeyword_39()); }
+
+	Darkorange 
+
+{ after(grammarAccess.getColorAccess().getDarkorangeKeyword_39()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDeepPinkKeyword_40()); }
+
+	DeepPink 
+
+{ after(grammarAccess.getColorAccess().getDeepPinkKeyword_40()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDeepSkyBlueKeyword_41()); }
+
+	DeepSkyBlue 
+
+{ after(grammarAccess.getColorAccess().getDeepSkyBlueKeyword_41()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDimGrayKeyword_42()); }
+
+	DimGray 
+
+{ after(grammarAccess.getColorAccess().getDimGrayKeyword_42()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDimGreyKeyword_43()); }
+
+	DimGrey 
+
+{ after(grammarAccess.getColorAccess().getDimGreyKeyword_43()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getDodgerBlueKeyword_44()); }
+
+	DodgerBlue 
+
+{ after(grammarAccess.getColorAccess().getDodgerBlueKeyword_44()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getFireBrickKeyword_45()); }
+
+	FireBrick 
+
+{ after(grammarAccess.getColorAccess().getFireBrickKeyword_45()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getFloralWhiteKeyword_46()); }
+
+	FloralWhite 
+
+{ after(grammarAccess.getColorAccess().getFloralWhiteKeyword_46()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getForestGreenKeyword_47()); }
+
+	ForestGreen 
+
+{ after(grammarAccess.getColorAccess().getForestGreenKeyword_47()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getFuchsiaKeyword_48()); }
+
+	Fuchsia 
+
+{ after(grammarAccess.getColorAccess().getFuchsiaKeyword_48()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGainsboroKeyword_49()); }
+
+	Gainsboro 
+
+{ after(grammarAccess.getColorAccess().getGainsboroKeyword_49()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGhostWhiteKeyword_50()); }
+
+	GhostWhite 
+
+{ after(grammarAccess.getColorAccess().getGhostWhiteKeyword_50()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGoldKeyword_51()); }
+
+	Gold 
+
+{ after(grammarAccess.getColorAccess().getGoldKeyword_51()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGoldenRodKeyword_52()); }
+
+	GoldenRod 
+
+{ after(grammarAccess.getColorAccess().getGoldenRodKeyword_52()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGrayKeyword_53()); }
+
+	Gray 
+
+{ after(grammarAccess.getColorAccess().getGrayKeyword_53()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGreenKeyword_54()); }
+
+	Green 
+
+{ after(grammarAccess.getColorAccess().getGreenKeyword_54()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGreenYellowKeyword_55()); }
+
+	GreenYellow 
+
+{ after(grammarAccess.getColorAccess().getGreenYellowKeyword_55()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getGreyKeyword_56()); }
+
+	Grey 
+
+{ after(grammarAccess.getColorAccess().getGreyKeyword_56()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getHoneyDewKeyword_57()); }
+
+	HoneyDew 
+
+{ after(grammarAccess.getColorAccess().getHoneyDewKeyword_57()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getHotPinkKeyword_58()); }
+
+	HotPink 
+
+{ after(grammarAccess.getColorAccess().getHotPinkKeyword_58()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getIndianRedKeyword_59()); }
+
+	IndianRed 
+
+{ after(grammarAccess.getColorAccess().getIndianRedKeyword_59()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getIndigoKeyword_60()); }
+
+	Indigo 
+
+{ after(grammarAccess.getColorAccess().getIndigoKeyword_60()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getIvoryKeyword_61()); }
+
+	Ivory 
+
+{ after(grammarAccess.getColorAccess().getIvoryKeyword_61()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getKhakiKeyword_62()); }
+
+	Khaki 
+
+{ after(grammarAccess.getColorAccess().getKhakiKeyword_62()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLavenderKeyword_63()); }
+
+	Lavender 
+
+{ after(grammarAccess.getColorAccess().getLavenderKeyword_63()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLavenderBlushKeyword_64()); }
+
+	LavenderBlush 
+
+{ after(grammarAccess.getColorAccess().getLavenderBlushKeyword_64()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLawnGreenKeyword_65()); }
+
+	LawnGreen 
+
+{ after(grammarAccess.getColorAccess().getLawnGreenKeyword_65()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLemonChiffonKeyword_66()); }
+
+	LemonChiffon 
+
+{ after(grammarAccess.getColorAccess().getLemonChiffonKeyword_66()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightBlueKeyword_67()); }
+
+	LightBlue 
+
+{ after(grammarAccess.getColorAccess().getLightBlueKeyword_67()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightCoralKeyword_68()); }
+
+	LightCoral 
+
+{ after(grammarAccess.getColorAccess().getLightCoralKeyword_68()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightCyanKeyword_69()); }
+
+	LightCyan 
+
+{ after(grammarAccess.getColorAccess().getLightCyanKeyword_69()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_70()); }
+
+	LightGoldenRodYellow 
+
+{ after(grammarAccess.getColorAccess().getLightGoldenRodYellowKeyword_70()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightGrayKeyword_71()); }
+
+	LightGray 
+
+{ after(grammarAccess.getColorAccess().getLightGrayKeyword_71()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightGreenKeyword_72()); }
+
+	LightGreen 
+
+{ after(grammarAccess.getColorAccess().getLightGreenKeyword_72()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightGreyKeyword_73()); }
+
+	LightGrey 
+
+{ after(grammarAccess.getColorAccess().getLightGreyKeyword_73()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightPinkKeyword_74()); }
+
+	LightPink 
+
+{ after(grammarAccess.getColorAccess().getLightPinkKeyword_74()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightSalmonKeyword_75()); }
+
+	LightSalmon 
+
+{ after(grammarAccess.getColorAccess().getLightSalmonKeyword_75()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightSeaGreenKeyword_76()); }
+
+	LightSeaGreen 
+
+{ after(grammarAccess.getColorAccess().getLightSeaGreenKeyword_76()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightSkyBlueKeyword_77()); }
+
+	LightSkyBlue 
+
+{ after(grammarAccess.getColorAccess().getLightSkyBlueKeyword_77()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightSlateGrayKeyword_78()); }
+
+	LightSlateGray 
+
+{ after(grammarAccess.getColorAccess().getLightSlateGrayKeyword_78()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightSlateGreyKeyword_79()); }
+
+	LightSlateGrey 
+
+{ after(grammarAccess.getColorAccess().getLightSlateGreyKeyword_79()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightSteelBlueKeyword_80()); }
+
+	LightSteelBlue 
+
+{ after(grammarAccess.getColorAccess().getLightSteelBlueKeyword_80()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLightYellowKeyword_81()); }
+
+	LightYellow 
+
+{ after(grammarAccess.getColorAccess().getLightYellowKeyword_81()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLimeKeyword_82()); }
+
+	Lime 
+
+{ after(grammarAccess.getColorAccess().getLimeKeyword_82()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLimeGreenKeyword_83()); }
+
+	LimeGreen 
+
+{ after(grammarAccess.getColorAccess().getLimeGreenKeyword_83()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getLinenKeyword_84()); }
+
+	Linen 
+
+{ after(grammarAccess.getColorAccess().getLinenKeyword_84()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMagentaKeyword_85()); }
+
+	Magenta 
+
+{ after(grammarAccess.getColorAccess().getMagentaKeyword_85()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMaroonKeyword_86()); }
+
+	Maroon 
+
+{ after(grammarAccess.getColorAccess().getMaroonKeyword_86()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumAquaMarineKeyword_87()); }
+
+	MediumAquaMarine 
+
+{ after(grammarAccess.getColorAccess().getMediumAquaMarineKeyword_87()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumBlueKeyword_88()); }
+
+	MediumBlue 
+
+{ after(grammarAccess.getColorAccess().getMediumBlueKeyword_88()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumOrchidKeyword_89()); }
+
+	MediumOrchid 
+
+{ after(grammarAccess.getColorAccess().getMediumOrchidKeyword_89()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumPurpleKeyword_90()); }
+
+	MediumPurple 
+
+{ after(grammarAccess.getColorAccess().getMediumPurpleKeyword_90()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumSeaGreenKeyword_91()); }
+
+	MediumSeaGreen 
+
+{ after(grammarAccess.getColorAccess().getMediumSeaGreenKeyword_91()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumSlateBlueKeyword_92()); }
+
+	MediumSlateBlue 
+
+{ after(grammarAccess.getColorAccess().getMediumSlateBlueKeyword_92()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumSpringGreenKeyword_93()); }
+
+	MediumSpringGreen 
+
+{ after(grammarAccess.getColorAccess().getMediumSpringGreenKeyword_93()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumTurquoiseKeyword_94()); }
+
+	MediumTurquoise 
+
+{ after(grammarAccess.getColorAccess().getMediumTurquoiseKeyword_94()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMediumVioletRedKeyword_95()); }
+
+	MediumVioletRed 
+
+{ after(grammarAccess.getColorAccess().getMediumVioletRedKeyword_95()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMidnightBlueKeyword_96()); }
+
+	MidnightBlue 
+
+{ after(grammarAccess.getColorAccess().getMidnightBlueKeyword_96()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMintCreamKeyword_97()); }
+
+	MintCream 
+
+{ after(grammarAccess.getColorAccess().getMintCreamKeyword_97()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMistyRoseKeyword_98()); }
+
+	MistyRose 
+
+{ after(grammarAccess.getColorAccess().getMistyRoseKeyword_98()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getMoccasinKeyword_99()); }
+
+	Moccasin 
+
+{ after(grammarAccess.getColorAccess().getMoccasinKeyword_99()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getNavajoWhiteKeyword_100()); }
+
+	NavajoWhite 
+
+{ after(grammarAccess.getColorAccess().getNavajoWhiteKeyword_100()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getNavyKeyword_101()); }
+
+	Navy 
+
+{ after(grammarAccess.getColorAccess().getNavyKeyword_101()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getOldLaceKeyword_102()); }
+
+	OldLace 
+
+{ after(grammarAccess.getColorAccess().getOldLaceKeyword_102()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getOliveKeyword_103()); }
+
+	Olive 
+
+{ after(grammarAccess.getColorAccess().getOliveKeyword_103()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getOliveDrabKeyword_104()); }
+
+	OliveDrab 
+
+{ after(grammarAccess.getColorAccess().getOliveDrabKeyword_104()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getOrangeRedKeyword_105()); }
+
+	OrangeRed 
+
+{ after(grammarAccess.getColorAccess().getOrangeRedKeyword_105()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getOrchidKeyword_106()); }
+
+	Orchid 
+
+{ after(grammarAccess.getColorAccess().getOrchidKeyword_106()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPaleGoldenRodKeyword_107()); }
+
+	PaleGoldenRod 
+
+{ after(grammarAccess.getColorAccess().getPaleGoldenRodKeyword_107()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPaleGreenKeyword_108()); }
+
+	PaleGreen 
+
+{ after(grammarAccess.getColorAccess().getPaleGreenKeyword_108()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPaleTurquoiseKeyword_109()); }
+
+	PaleTurquoise 
+
+{ after(grammarAccess.getColorAccess().getPaleTurquoiseKeyword_109()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPaleVioletRedKeyword_110()); }
+
+	PaleVioletRed 
+
+{ after(grammarAccess.getColorAccess().getPaleVioletRedKeyword_110()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPapayaWhipKeyword_111()); }
+
+	PapayaWhip 
+
+{ after(grammarAccess.getColorAccess().getPapayaWhipKeyword_111()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPeachPuffKeyword_112()); }
+
+	PeachPuff 
+
+{ after(grammarAccess.getColorAccess().getPeachPuffKeyword_112()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPeruKeyword_113()); }
+
+	Peru 
+
+{ after(grammarAccess.getColorAccess().getPeruKeyword_113()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPinkKeyword_114()); }
+
+	Pink 
+
+{ after(grammarAccess.getColorAccess().getPinkKeyword_114()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPlumKeyword_115()); }
+
+	Plum 
+
+{ after(grammarAccess.getColorAccess().getPlumKeyword_115()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPowderBlueKeyword_116()); }
+
+	PowderBlue 
+
+{ after(grammarAccess.getColorAccess().getPowderBlueKeyword_116()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getPurpleKeyword_117()); }
+
+	Purple 
+
+{ after(grammarAccess.getColorAccess().getPurpleKeyword_117()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getRedKeyword_118()); }
+
+	Red 
+
+{ after(grammarAccess.getColorAccess().getRedKeyword_118()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getRosyBrownKeyword_119()); }
+
+	RosyBrown 
+
+{ after(grammarAccess.getColorAccess().getRosyBrownKeyword_119()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getRoyalBlueKeyword_120()); }
+
+	RoyalBlue 
+
+{ after(grammarAccess.getColorAccess().getRoyalBlueKeyword_120()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSaddleBrownKeyword_121()); }
+
+	SaddleBrown 
+
+{ after(grammarAccess.getColorAccess().getSaddleBrownKeyword_121()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSalmonKeyword_122()); }
+
+	Salmon 
+
+{ after(grammarAccess.getColorAccess().getSalmonKeyword_122()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSandyBrownKeyword_123()); }
+
+	SandyBrown 
+
+{ after(grammarAccess.getColorAccess().getSandyBrownKeyword_123()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSeaGreenKeyword_124()); }
+
+	SeaGreen 
+
+{ after(grammarAccess.getColorAccess().getSeaGreenKeyword_124()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSiennaKeyword_125()); }
+
+	Sienna 
+
+{ after(grammarAccess.getColorAccess().getSiennaKeyword_125()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSilverKeyword_126()); }
+
+	Silver 
+
+{ after(grammarAccess.getColorAccess().getSilverKeyword_126()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSkyBlueKeyword_127()); }
+
+	SkyBlue 
+
+{ after(grammarAccess.getColorAccess().getSkyBlueKeyword_127()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSlateBlueKeyword_128()); }
+
+	SlateBlue 
+
+{ after(grammarAccess.getColorAccess().getSlateBlueKeyword_128()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSlateGrayKeyword_129()); }
+
+	SlateGray 
+
+{ after(grammarAccess.getColorAccess().getSlateGrayKeyword_129()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSlateGreyKeyword_130()); }
+
+	SlateGrey 
+
+{ after(grammarAccess.getColorAccess().getSlateGreyKeyword_130()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSnowKeyword_131()); }
+
+	Snow 
+
+{ after(grammarAccess.getColorAccess().getSnowKeyword_131()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSpringGreenKeyword_132()); }
+
+	SpringGreen 
+
+{ after(grammarAccess.getColorAccess().getSpringGreenKeyword_132()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getSteelBlueKeyword_133()); }
+
+	SteelBlue 
+
+{ after(grammarAccess.getColorAccess().getSteelBlueKeyword_133()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getTanKeyword_134()); }
+
+	Tan 
+
+{ after(grammarAccess.getColorAccess().getTanKeyword_134()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getTealKeyword_135()); }
+
+	Teal 
+
+{ after(grammarAccess.getColorAccess().getTealKeyword_135()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getThistleKeyword_136()); }
+
+	Thistle 
+
+{ after(grammarAccess.getColorAccess().getThistleKeyword_136()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getTomatoKeyword_137()); }
+
+	Tomato 
+
+{ after(grammarAccess.getColorAccess().getTomatoKeyword_137()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getTurquoiseKeyword_138()); }
+
+	Turquoise 
+
+{ after(grammarAccess.getColorAccess().getTurquoiseKeyword_138()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getVioletKeyword_139()); }
+
+	Violet 
+
+{ after(grammarAccess.getColorAccess().getVioletKeyword_139()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getWheatKeyword_140()); }
+
+	Wheat 
+
+{ after(grammarAccess.getColorAccess().getWheatKeyword_140()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getWhiteKeyword_141()); }
+
+	White 
+
+{ after(grammarAccess.getColorAccess().getWhiteKeyword_141()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getWhiteSmokeKeyword_142()); }
+
+	WhiteSmoke 
+
+{ after(grammarAccess.getColorAccess().getWhiteSmokeKeyword_142()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getYellowKeyword_143()); }
+
+	Yellow 
+
+{ after(grammarAccess.getColorAccess().getYellowKeyword_143()); }
+)
+
+    |(
+{ before(grammarAccess.getColorAccess().getYellowGreenKeyword_144()); }
+
+	YellowGreen 
+
+{ after(grammarAccess.getColorAccess().getYellowGreenKeyword_144()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 
 
 rule__Diagram__Group__0
@@ -1813,9 +3162,9 @@ rule__Instruction__Group_0_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getInstructionAccess().getAlternatives_0_1_1()); }
-(rule__Instruction__Alternatives_0_1_1)?
-{ after(grammarAccess.getInstructionAccess().getAlternatives_0_1_1()); }
+{ before(grammarAccess.getInstructionAccess().getColorsParserRuleCall_0_1_1()); }
+(	ruleColors)?
+{ after(grammarAccess.getInstructionAccess().getColorsParserRuleCall_0_1_1()); }
 )
 
 ;
@@ -2659,9 +4008,11 @@ rule__Definition__Group_5_2_1__3__Impl
     }
 :
 (
-{ before(grammarAccess.getDefinitionAccess().getAlternatives_5_2_1_3()); }
-(rule__Definition__Alternatives_5_2_1_3)
-{ after(grammarAccess.getDefinitionAccess().getAlternatives_5_2_1_3()); }
+{ before(grammarAccess.getDefinitionAccess().getNumberSignKeyword_5_2_1_3()); }
+
+	NumberSign 
+
+{ after(grammarAccess.getDefinitionAccess().getNumberSignKeyword_5_2_1_3()); }
 )
 
 ;
@@ -2676,6 +4027,7 @@ rule__Definition__Group_5_2_1__4
     }
 :
 	rule__Definition__Group_5_2_1__4__Impl
+	rule__Definition__Group_5_2_1__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2687,17 +4039,47 @@ rule__Definition__Group_5_2_1__4__Impl
     }
 :
 (
-{ before(grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_4()); }
-
-	RightParenthesis 
-
-{ after(grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_4()); }
+{ before(grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_4()); }
+	RULE_HEXCODE
+{ after(grammarAccess.getDefinitionAccess().getHEXCODETerminalRuleCall_5_2_1_4()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__Definition__Group_5_2_1__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Definition__Group_5_2_1__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Definition__Group_5_2_1__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_5()); }
+
+	RightParenthesis 
+
+{ after(grammarAccess.getDefinitionAccess().getRightParenthesisKeyword_5_2_1_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -3696,9 +5078,9 @@ rule__Note__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getNoteAccess().getCOLORTerminalRuleCall_2()); }
-(	RULE_COLOR)*
-{ after(grammarAccess.getNoteAccess().getCOLORTerminalRuleCall_2()); }
+{ before(grammarAccess.getNoteAccess().getColorParserRuleCall_2()); }
+(	ruleColor)*
+{ after(grammarAccess.getNoteAccess().getColorParserRuleCall_2()); }
 )
 
 ;
@@ -5433,9 +6815,9 @@ rule__Activate__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getActivateAccess().getCOLORTerminalRuleCall_1()); }
-(	RULE_COLOR)?
-{ after(grammarAccess.getActivateAccess().getCOLORTerminalRuleCall_1()); }
+{ before(grammarAccess.getActivateAccess().getColorParserRuleCall_1()); }
+(	ruleColor)?
+{ after(grammarAccess.getActivateAccess().getColorParserRuleCall_1()); }
 )
 
 ;
@@ -5742,9 +7124,9 @@ rule__Box__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getBoxAccess().getCOLORTerminalRuleCall_4()); }
-(	RULE_COLOR)?
-{ after(grammarAccess.getBoxAccess().getCOLORTerminalRuleCall_4()); }
+{ before(grammarAccess.getBoxAccess().getColorParserRuleCall_4()); }
+(	ruleColor)?
+{ after(grammarAccess.getBoxAccess().getColorParserRuleCall_4()); }
 )
 
 ;
@@ -5939,6 +7321,69 @@ rule__Box__Group_6__1__Impl
 { before(grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1()); }
 	RULE_NEWLINE
 { after(grammarAccess.getBoxAccess().getNEWLINETerminalRuleCall_6_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__Colors__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Colors__Group__0__Impl
+	rule__Colors__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Colors__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getColorsAccess().getNumberSignKeyword_0()); }
+
+	NumberSign 
+
+{ after(grammarAccess.getColorsAccess().getNumberSignKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Colors__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Colors__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Colors__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getColorsAccess().getAlternatives_1()); }
+(rule__Colors__Alternatives_1)
+{ after(grammarAccess.getColorsAccess().getAlternatives_1()); }
 )
 
 ;

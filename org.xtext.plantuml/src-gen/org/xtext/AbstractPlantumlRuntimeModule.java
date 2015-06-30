@@ -108,21 +108,6 @@ public abstract class AbstractPlantumlRuntimeModule extends org.eclipse.xtext.co
 		return org.xtext.validation.PlantumlValidator.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
-	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
-		return org.xtext.scoping.PlantumlScopeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
-	public void configureIScopeProviderDelegate(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider.class);
-	}
-
-	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
-	public void configureIgnoreCaseLinking(com.google.inject.Binder binder) {
-		binder.bindConstant().annotatedWith(org.eclipse.xtext.scoping.IgnoreCaseLinking.class).to(true);
-	}
-
 	// contributed by org.eclipse.xtext.generator.exporting.QualifiedNamesFragment
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider.class;
@@ -158,9 +143,24 @@ public abstract class AbstractPlantumlRuntimeModule extends org.eclipse.xtext.co
 		return org.xtext.formatting.PlantumlFormatter.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
+		return org.xtext.scoping.PlantumlScopeProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	public void configureIScopeProviderDelegate(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider.class);
+	}
+
+	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
-		return org.eclipse.xtext.common.types.xtext.TypesAwareDefaultGlobalScopeProvider.class;
+		return org.eclipse.xtext.scoping.impl.DefaultGlobalScopeProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	public void configureIgnoreCaseLinking(com.google.inject.Binder binder) {
+		binder.bindConstant().annotatedWith(org.eclipse.xtext.scoping.IgnoreCaseLinking.class).to(true);
 	}
 
 }

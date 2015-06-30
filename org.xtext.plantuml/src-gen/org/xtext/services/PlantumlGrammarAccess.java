@@ -78,9 +78,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArrowParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
 		private final RuleCall cDefinitionParserRuleCall_0_1_0 = (RuleCall)cGroup_0_1.eContents().get(0);
-		private final Alternatives cAlternatives_0_1_1 = (Alternatives)cGroup_0_1.eContents().get(1);
-		private final RuleCall cCOLORTerminalRuleCall_0_1_1_0 = (RuleCall)cAlternatives_0_1_1.eContents().get(0);
-		private final RuleCall cHEXCODETerminalRuleCall_0_1_1_1 = (RuleCall)cAlternatives_0_1_1.eContents().get(1);
+		private final RuleCall cColorsParserRuleCall_0_1_1 = (RuleCall)cGroup_0_1.eContents().get(1);
 		private final RuleCall cAutoNumberParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final RuleCall cTitleParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
 		private final RuleCall cLegendParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
@@ -101,35 +99,29 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// An instruction can be any of the rules for single- and multiline commands.
 		//Instruction:
-		//	(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
-		//	Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
+		//	(Arrow | Definition Colors? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
+		//	Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
-		//Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE
+		//(Arrow | Definition Colors? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
+		//Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE
 		public Group getGroup() { return cGroup; }
 
-		//(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
-		//Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)?
+		//(Arrow | Definition Colors? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
+		//Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//Arrow
 		public RuleCall getArrowParserRuleCall_0_0() { return cArrowParserRuleCall_0_0; }
 
-		//Definition (COLOR | HEXCODE)?
+		//Definition Colors?
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
 		//Definition
 		public RuleCall getDefinitionParserRuleCall_0_1_0() { return cDefinitionParserRuleCall_0_1_0; }
 
-		//(COLOR | HEXCODE)?
-		public Alternatives getAlternatives_0_1_1() { return cAlternatives_0_1_1; }
-
-		//COLOR
-		public RuleCall getCOLORTerminalRuleCall_0_1_1_0() { return cCOLORTerminalRuleCall_0_1_1_0; }
-
-		//HEXCODE
-		public RuleCall getHEXCODETerminalRuleCall_0_1_1_1() { return cHEXCODETerminalRuleCall_0_1_1_1; }
+		//Colors?
+		public RuleCall getColorsParserRuleCall_0_1_1() { return cColorsParserRuleCall_0_1_1; }
 
 		//AutoNumber
 		public RuleCall getAutoNumberParserRuleCall_0_2() { return cAutoNumberParserRuleCall_0_2; }
@@ -261,10 +253,9 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_5_2_1_0 = (Keyword)cGroup_5_2_1.eContents().get(0);
 		private final RuleCall cEndIDParserRuleCall_5_2_1_1 = (RuleCall)cGroup_5_2_1.eContents().get(1);
 		private final Keyword cCommaKeyword_5_2_1_2 = (Keyword)cGroup_5_2_1.eContents().get(2);
-		private final Alternatives cAlternatives_5_2_1_3 = (Alternatives)cGroup_5_2_1.eContents().get(3);
-		private final RuleCall cCOLORTerminalRuleCall_5_2_1_3_0 = (RuleCall)cAlternatives_5_2_1_3.eContents().get(0);
-		private final RuleCall cHEXCODETerminalRuleCall_5_2_1_3_1 = (RuleCall)cAlternatives_5_2_1_3.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_5_2_1_4 = (Keyword)cGroup_5_2_1.eContents().get(4);
+		private final Keyword cNumberSignKeyword_5_2_1_3 = (Keyword)cGroup_5_2_1.eContents().get(3);
+		private final RuleCall cHEXCODETerminalRuleCall_5_2_1_4 = (RuleCall)cGroup_5_2_1.eContents().get(4);
+		private final Keyword cRightParenthesisKeyword_5_2_1_5 = (Keyword)cGroup_5_2_1.eContents().get(5);
 		private final RuleCall cEndIDParserRuleCall_5_2_2 = (RuleCall)cGroup_5_2.eContents().get(2);
 		private final Keyword cGreaterThanSignGreaterThanSignKeyword_5_2_3 = (Keyword)cGroup_5_2.eContents().get(3);
 		
@@ -272,11 +263,11 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//// actors, boundaries, controls, entities and databases
 		//Definition:
 		//	"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
-		//	"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?;
+		//	"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?;
 		@Override public ParserRule getRule() { return rule; }
 
 		//"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
-		//"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?
+		//"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"actor" name=MyID
@@ -339,7 +330,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//MyID
 		public RuleCall getNameMyIDParserRuleCall_4_1_0() { return cNameMyIDParserRuleCall_4_1_0; }
 
-		//"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?
+		//"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"participant"
@@ -351,13 +342,13 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//MyID
 		public RuleCall getNameMyIDParserRuleCall_5_1_0() { return cNameMyIDParserRuleCall_5_1_0; }
 
-		//("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?
+		//("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?
 		public Group getGroup_5_2() { return cGroup_5_2; }
 
 		//"<<"
 		public Keyword getLessThanSignLessThanSignKeyword_5_2_0() { return cLessThanSignLessThanSignKeyword_5_2_0; }
 
-		//("(" EndID "," (COLOR | HEXCODE) ")")?
+		//("(" EndID "," "#" HEXCODE ")")?
 		public Group getGroup_5_2_1() { return cGroup_5_2_1; }
 
 		//"("
@@ -369,17 +360,14 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_5_2_1_2() { return cCommaKeyword_5_2_1_2; }
 
-		//COLOR | HEXCODE
-		public Alternatives getAlternatives_5_2_1_3() { return cAlternatives_5_2_1_3; }
-
-		//COLOR
-		public RuleCall getCOLORTerminalRuleCall_5_2_1_3_0() { return cCOLORTerminalRuleCall_5_2_1_3_0; }
+		//"#"
+		public Keyword getNumberSignKeyword_5_2_1_3() { return cNumberSignKeyword_5_2_1_3; }
 
 		//HEXCODE
-		public RuleCall getHEXCODETerminalRuleCall_5_2_1_3_1() { return cHEXCODETerminalRuleCall_5_2_1_3_1; }
+		public RuleCall getHEXCODETerminalRuleCall_5_2_1_4() { return cHEXCODETerminalRuleCall_5_2_1_4; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_5_2_1_4() { return cRightParenthesisKeyword_5_2_1_4; }
+		public Keyword getRightParenthesisKeyword_5_2_1_5() { return cRightParenthesisKeyword_5_2_1_5; }
 
 		//EndID*
 		public RuleCall getEndIDParserRuleCall_5_2_2() { return cEndIDParserRuleCall_5_2_2; }
@@ -901,7 +889,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOidsAssignment_1_2_2_1 = (Assignment)cGroup_1_2_2.eContents().get(1);
 		private final CrossReference cOidsDefinitionCrossReference_1_2_2_1_0 = (CrossReference)cOidsAssignment_1_2_2_1.eContents().get(0);
 		private final RuleCall cOidsDefinitionIDTerminalRuleCall_1_2_2_1_0_1 = (RuleCall)cOidsDefinitionCrossReference_1_2_2_1_0.eContents().get(1);
-		private final RuleCall cCOLORTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cColorParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
 		private final Keyword cColonKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
@@ -916,12 +904,12 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//// Rule for notes
 		//Note:
 		//	"note" ("right" ("of" rid=[Definition] ("," rids+=[Definition])*)? | "left" ("of" lid=[Definition] (","
-		//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" MyID* | (NEWLINE EndID*)*
+		//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) Color* (":" MyID* | (NEWLINE EndID*)*
 		//	"end" "note");
 		@Override public ParserRule getRule() { return rule; }
 
 		//"note" ("right" ("of" rid=[Definition] ("," rids+=[Definition])*)? | "left" ("of" lid=[Definition] (","
-		//lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" MyID* | (NEWLINE EndID*)*
+		//lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) Color* (":" MyID* | (NEWLINE EndID*)*
 		//"end" "note")
 		public Group getGroup() { return cGroup; }
 
@@ -1034,8 +1022,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getOidsDefinitionIDTerminalRuleCall_1_2_2_1_0_1() { return cOidsDefinitionIDTerminalRuleCall_1_2_2_1_0_1; }
 
-		//COLOR*
-		public RuleCall getCOLORTerminalRuleCall_2() { return cCOLORTerminalRuleCall_2; }
+		//Color*
+		public RuleCall getColorParserRuleCall_2() { return cColorParserRuleCall_2; }
 
 		//":" MyID* | (NEWLINE EndID*)* "end" "note"
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
@@ -1274,23 +1262,23 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Activate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cActivateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cCOLORTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cColorParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//// Rules for activation, deactivation and destruction of lifelines
 		//Activate:
-		//	"activate" COLOR? name=ID;
+		//	"activate" Color? name=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"activate" COLOR? name=ID
+		//"activate" Color? name=ID
 		public Group getGroup() { return cGroup; }
 
 		//"activate"
 		public Keyword getActivateKeyword_0() { return cActivateKeyword_0; }
 
-		//COLOR?
-		public RuleCall getCOLORTerminalRuleCall_1() { return cCOLORTerminalRuleCall_1; }
+		//Color?
+		public RuleCall getColorParserRuleCall_1() { return cColorParserRuleCall_1; }
 
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -1364,7 +1352,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cQuotationMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Keyword cQuotationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cCOLORTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final RuleCall cColorParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final RuleCall cNEWLINETerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Assignment cDefinitionsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
@@ -1375,10 +1363,10 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// Rule for box/end box
 		//Box:
-		//	"box" "\"" ID* "\"" COLOR? NEWLINE (definitions+=Definition? NEWLINE)* "end" "box";
+		//	"box" "\"" ID* "\"" Color? NEWLINE (definitions+=Definition? NEWLINE)* "end" "box";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"box" "\"" ID* "\"" COLOR? NEWLINE (definitions+=Definition? NEWLINE)* "end" "box"
+		//"box" "\"" ID* "\"" Color? NEWLINE (definitions+=Definition? NEWLINE)* "end" "box"
 		public Group getGroup() { return cGroup; }
 
 		//"box"
@@ -1393,8 +1381,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		//"\""
 		public Keyword getQuotationMarkKeyword_3() { return cQuotationMarkKeyword_3; }
 
-		//COLOR?
-		public RuleCall getCOLORTerminalRuleCall_4() { return cCOLORTerminalRuleCall_4; }
+		//Color?
+		public RuleCall getColorParserRuleCall_4() { return cColorParserRuleCall_4; }
 
 		//NEWLINE
 		public RuleCall getNEWLINETerminalRuleCall_5() { return cNEWLINETerminalRuleCall_5; }
@@ -1416,6 +1404,660 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"box"
 		public Keyword getBoxKeyword_8() { return cBoxKeyword_8; }
+	}
+
+	public class ColorsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Colors");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final RuleCall cColorParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cHEXCODETerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		
+		//Colors:
+		//	"#" (Color | HEXCODE);
+		@Override public ParserRule getRule() { return rule; }
+
+		//"#" (Color | HEXCODE)
+		public Group getGroup() { return cGroup; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
+
+		//Color | HEXCODE
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//Color
+		public RuleCall getColorParserRuleCall_1_0() { return cColorParserRuleCall_1_0; }
+
+		//HEXCODE
+		public RuleCall getHEXCODETerminalRuleCall_1_1() { return cHEXCODETerminalRuleCall_1_1; }
+	}
+
+	public class ColorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Color");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cAliceBlueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cAntiqueWhiteKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAquaKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cAquamarineKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cAzureKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cBeigeKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cBisqueKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cBlackKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cBlanchedAlmondKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cBlueKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cBlueVioletKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cBrownKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cBurlyWoodKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cCadetBlueKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cChartreuseKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cChocolateKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cCoralKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cCornflowerBlueKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cCornsilkKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cCrimsonKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cCyanKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cDarkBlueKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cDarkCyanKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cDarkGoldenRodKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cDarkGrayKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cDarkGreenKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cDarkGreyKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cDarkKhakiKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cDarkMagentaKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cDarkOliveGreenKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cDarkOrchidKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cDarkRedKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cDarkSalmoKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cDarkSeaGreenKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cDarkSlateBlueKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cDarkSlateGrayKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cDarkSlateGreyKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cDarkTurquoiseKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cDarkVioletKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cDarkorangeKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cDeepPinkKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cDeepSkyBlueKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cDimGrayKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cDimGreyKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cDodgerBlueKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cFireBrickKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cFloralWhiteKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cForestGreenKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cFuchsiaKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cGainsboroKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cGhostWhiteKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cGoldKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cGoldenRodKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cGrayKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
+		private final Keyword cGreenKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
+		private final Keyword cGreenYellowKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
+		private final Keyword cGreyKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
+		private final Keyword cHoneyDewKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
+		private final Keyword cHotPinkKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
+		private final Keyword cIndianRedKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
+		private final Keyword cIndigoKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
+		private final Keyword cIvoryKeyword_61 = (Keyword)cAlternatives.eContents().get(61);
+		private final Keyword cKhakiKeyword_62 = (Keyword)cAlternatives.eContents().get(62);
+		private final Keyword cLavenderKeyword_63 = (Keyword)cAlternatives.eContents().get(63);
+		private final Keyword cLavenderBlushKeyword_64 = (Keyword)cAlternatives.eContents().get(64);
+		private final Keyword cLawnGreenKeyword_65 = (Keyword)cAlternatives.eContents().get(65);
+		private final Keyword cLemonChiffonKeyword_66 = (Keyword)cAlternatives.eContents().get(66);
+		private final Keyword cLightBlueKeyword_67 = (Keyword)cAlternatives.eContents().get(67);
+		private final Keyword cLightCoralKeyword_68 = (Keyword)cAlternatives.eContents().get(68);
+		private final Keyword cLightCyanKeyword_69 = (Keyword)cAlternatives.eContents().get(69);
+		private final Keyword cLightGoldenRodYellowKeyword_70 = (Keyword)cAlternatives.eContents().get(70);
+		private final Keyword cLightGrayKeyword_71 = (Keyword)cAlternatives.eContents().get(71);
+		private final Keyword cLightGreenKeyword_72 = (Keyword)cAlternatives.eContents().get(72);
+		private final Keyword cLightGreyKeyword_73 = (Keyword)cAlternatives.eContents().get(73);
+		private final Keyword cLightPinkKeyword_74 = (Keyword)cAlternatives.eContents().get(74);
+		private final Keyword cLightSalmonKeyword_75 = (Keyword)cAlternatives.eContents().get(75);
+		private final Keyword cLightSeaGreenKeyword_76 = (Keyword)cAlternatives.eContents().get(76);
+		private final Keyword cLightSkyBlueKeyword_77 = (Keyword)cAlternatives.eContents().get(77);
+		private final Keyword cLightSlateGrayKeyword_78 = (Keyword)cAlternatives.eContents().get(78);
+		private final Keyword cLightSlateGreyKeyword_79 = (Keyword)cAlternatives.eContents().get(79);
+		private final Keyword cLightSteelBlueKeyword_80 = (Keyword)cAlternatives.eContents().get(80);
+		private final Keyword cLightYellowKeyword_81 = (Keyword)cAlternatives.eContents().get(81);
+		private final Keyword cLimeKeyword_82 = (Keyword)cAlternatives.eContents().get(82);
+		private final Keyword cLimeGreenKeyword_83 = (Keyword)cAlternatives.eContents().get(83);
+		private final Keyword cLinenKeyword_84 = (Keyword)cAlternatives.eContents().get(84);
+		private final Keyword cMagentaKeyword_85 = (Keyword)cAlternatives.eContents().get(85);
+		private final Keyword cMaroonKeyword_86 = (Keyword)cAlternatives.eContents().get(86);
+		private final Keyword cMediumAquaMarineKeyword_87 = (Keyword)cAlternatives.eContents().get(87);
+		private final Keyword cMediumBlueKeyword_88 = (Keyword)cAlternatives.eContents().get(88);
+		private final Keyword cMediumOrchidKeyword_89 = (Keyword)cAlternatives.eContents().get(89);
+		private final Keyword cMediumPurpleKeyword_90 = (Keyword)cAlternatives.eContents().get(90);
+		private final Keyword cMediumSeaGreenKeyword_91 = (Keyword)cAlternatives.eContents().get(91);
+		private final Keyword cMediumSlateBlueKeyword_92 = (Keyword)cAlternatives.eContents().get(92);
+		private final Keyword cMediumSpringGreenKeyword_93 = (Keyword)cAlternatives.eContents().get(93);
+		private final Keyword cMediumTurquoiseKeyword_94 = (Keyword)cAlternatives.eContents().get(94);
+		private final Keyword cMediumVioletRedKeyword_95 = (Keyword)cAlternatives.eContents().get(95);
+		private final Keyword cMidnightBlueKeyword_96 = (Keyword)cAlternatives.eContents().get(96);
+		private final Keyword cMintCreamKeyword_97 = (Keyword)cAlternatives.eContents().get(97);
+		private final Keyword cMistyRoseKeyword_98 = (Keyword)cAlternatives.eContents().get(98);
+		private final Keyword cMoccasinKeyword_99 = (Keyword)cAlternatives.eContents().get(99);
+		private final Keyword cNavajoWhiteKeyword_100 = (Keyword)cAlternatives.eContents().get(100);
+		private final Keyword cNavyKeyword_101 = (Keyword)cAlternatives.eContents().get(101);
+		private final Keyword cOldLaceKeyword_102 = (Keyword)cAlternatives.eContents().get(102);
+		private final Keyword cOliveKeyword_103 = (Keyword)cAlternatives.eContents().get(103);
+		private final Keyword cOliveDrabKeyword_104 = (Keyword)cAlternatives.eContents().get(104);
+		private final Keyword cOrangeRedKeyword_105 = (Keyword)cAlternatives.eContents().get(105);
+		private final Keyword cOrchidKeyword_106 = (Keyword)cAlternatives.eContents().get(106);
+		private final Keyword cPaleGoldenRodKeyword_107 = (Keyword)cAlternatives.eContents().get(107);
+		private final Keyword cPaleGreenKeyword_108 = (Keyword)cAlternatives.eContents().get(108);
+		private final Keyword cPaleTurquoiseKeyword_109 = (Keyword)cAlternatives.eContents().get(109);
+		private final Keyword cPaleVioletRedKeyword_110 = (Keyword)cAlternatives.eContents().get(110);
+		private final Keyword cPapayaWhipKeyword_111 = (Keyword)cAlternatives.eContents().get(111);
+		private final Keyword cPeachPuffKeyword_112 = (Keyword)cAlternatives.eContents().get(112);
+		private final Keyword cPeruKeyword_113 = (Keyword)cAlternatives.eContents().get(113);
+		private final Keyword cPinkKeyword_114 = (Keyword)cAlternatives.eContents().get(114);
+		private final Keyword cPlumKeyword_115 = (Keyword)cAlternatives.eContents().get(115);
+		private final Keyword cPowderBlueKeyword_116 = (Keyword)cAlternatives.eContents().get(116);
+		private final Keyword cPurpleKeyword_117 = (Keyword)cAlternatives.eContents().get(117);
+		private final Keyword cRedKeyword_118 = (Keyword)cAlternatives.eContents().get(118);
+		private final Keyword cRosyBrownKeyword_119 = (Keyword)cAlternatives.eContents().get(119);
+		private final Keyword cRoyalBlueKeyword_120 = (Keyword)cAlternatives.eContents().get(120);
+		private final Keyword cSaddleBrownKeyword_121 = (Keyword)cAlternatives.eContents().get(121);
+		private final Keyword cSalmonKeyword_122 = (Keyword)cAlternatives.eContents().get(122);
+		private final Keyword cSandyBrownKeyword_123 = (Keyword)cAlternatives.eContents().get(123);
+		private final Keyword cSeaGreenKeyword_124 = (Keyword)cAlternatives.eContents().get(124);
+		private final Keyword cSiennaKeyword_125 = (Keyword)cAlternatives.eContents().get(125);
+		private final Keyword cSilverKeyword_126 = (Keyword)cAlternatives.eContents().get(126);
+		private final Keyword cSkyBlueKeyword_127 = (Keyword)cAlternatives.eContents().get(127);
+		private final Keyword cSlateBlueKeyword_128 = (Keyword)cAlternatives.eContents().get(128);
+		private final Keyword cSlateGrayKeyword_129 = (Keyword)cAlternatives.eContents().get(129);
+		private final Keyword cSlateGreyKeyword_130 = (Keyword)cAlternatives.eContents().get(130);
+		private final Keyword cSnowKeyword_131 = (Keyword)cAlternatives.eContents().get(131);
+		private final Keyword cSpringGreenKeyword_132 = (Keyword)cAlternatives.eContents().get(132);
+		private final Keyword cSteelBlueKeyword_133 = (Keyword)cAlternatives.eContents().get(133);
+		private final Keyword cTanKeyword_134 = (Keyword)cAlternatives.eContents().get(134);
+		private final Keyword cTealKeyword_135 = (Keyword)cAlternatives.eContents().get(135);
+		private final Keyword cThistleKeyword_136 = (Keyword)cAlternatives.eContents().get(136);
+		private final Keyword cTomatoKeyword_137 = (Keyword)cAlternatives.eContents().get(137);
+		private final Keyword cTurquoiseKeyword_138 = (Keyword)cAlternatives.eContents().get(138);
+		private final Keyword cVioletKeyword_139 = (Keyword)cAlternatives.eContents().get(139);
+		private final Keyword cWheatKeyword_140 = (Keyword)cAlternatives.eContents().get(140);
+		private final Keyword cWhiteKeyword_141 = (Keyword)cAlternatives.eContents().get(141);
+		private final Keyword cWhiteSmokeKeyword_142 = (Keyword)cAlternatives.eContents().get(142);
+		private final Keyword cYellowKeyword_143 = (Keyword)cAlternatives.eContents().get(143);
+		private final Keyword cYellowGreenKeyword_144 = (Keyword)cAlternatives.eContents().get(144);
+		
+		//Color:
+		//	"AliceBlue" | "AntiqueWhite" | "Aqua" | "Aquamarine" | "Azure" | "Beige" | "Bisque" | "Black" | "BlanchedAlmond" |
+		//	"Blue" | "BlueViolet" | "Brown" | "BurlyWood" | "CadetBlue" | "Chartreuse" | "Chocolate" | "Coral" | "CornflowerBlue"
+		//	| "Cornsilk" | "Crimson" | "Cyan" | "DarkBlue" | "DarkCyan" | "DarkGoldenRod" | "DarkGray" | "DarkGreen" | "DarkGrey"
+		//	| "DarkKhaki" | "DarkMagenta" | "DarkOliveGreen" | "DarkOrchid" | "DarkRed" | "DarkSalmo" | "DarkSeaGreen" |
+		//	"DarkSlateBlue" | "DarkSlateGray" | "DarkSlateGrey" | "DarkTurquoise" | "DarkViolet" | "Darkorange" | "DeepPink" |
+		//	"DeepSkyBlue" | "DimGray" | "DimGrey" | "DodgerBlue" | "FireBrick" | "FloralWhite" | "ForestGreen" | "Fuchsia" |
+		//	"Gainsboro" | "GhostWhite" | "Gold" | "GoldenRod" | "Gray" | "Green" | "GreenYellow" | "Grey" | "HoneyDew" |
+		//	"HotPink" | "IndianRed" | "Indigo" | "Ivory" | "Khaki" | "Lavender" | "LavenderBlush" | "LawnGreen" | "LemonChiffon"
+		//	| "LightBlue" | "LightCoral" | "LightCyan" | "LightGoldenRodYellow" | "LightGray" | "LightGreen" | "LightGrey" |
+		//	"LightPink" | "LightSalmon" | "LightSeaGreen" | "LightSkyBlue" | "LightSlateGray" | "LightSlateGrey" |
+		//	"LightSteelBlue" | "LightYellow" | "Lime" | "LimeGreen" | "Linen" | "Magenta" | "Maroon" | "MediumAquaMarine" |
+		//	"MediumBlue" | "MediumOrchid" | "MediumPurple" | "MediumSeaGreen" | "MediumSlateBlue" | "MediumSpringGreen" |
+		//	"MediumTurquoise" | "MediumVioletRed" | "MidnightBlue" | "MintCream" | "MistyRose" | "Moccasin" | "NavajoWhite" |
+		//	"Navy" | "OldLace" | "Olive" | "OliveDrab" | "OrangeRed" | "Orchid" | "PaleGoldenRod" | "PaleGreen" | "PaleTurquoise"
+		//	| "PaleVioletRed" | "PapayaWhip" | "PeachPuff" | "Peru" | "Pink" | "Plum" | "PowderBlue" | "Purple" | "Red" |
+		//	"RosyBrown" | "RoyalBlue" | "SaddleBrown" | "Salmon" | "SandyBrown" | "SeaGreen" | "Sienna" | "Silver" | "SkyBlue" |
+		//	"SlateBlue" | "SlateGray" | "SlateGrey" | "Snow" | "SpringGreen" | "SteelBlue" | "Tan" | "Teal" | "Thistle" |
+		//	"Tomato" | "Turquoise" | "Violet" | "Wheat" | "White" | "WhiteSmoke" | "Yellow" | "YellowGreen";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"AliceBlue" | "AntiqueWhite" | "Aqua" | "Aquamarine" | "Azure" | "Beige" | "Bisque" | "Black" | "BlanchedAlmond" |
+		//"Blue" | "BlueViolet" | "Brown" | "BurlyWood" | "CadetBlue" | "Chartreuse" | "Chocolate" | "Coral" | "CornflowerBlue"
+		//| "Cornsilk" | "Crimson" | "Cyan" | "DarkBlue" | "DarkCyan" | "DarkGoldenRod" | "DarkGray" | "DarkGreen" | "DarkGrey"
+		//| "DarkKhaki" | "DarkMagenta" | "DarkOliveGreen" | "DarkOrchid" | "DarkRed" | "DarkSalmo" | "DarkSeaGreen" |
+		//"DarkSlateBlue" | "DarkSlateGray" | "DarkSlateGrey" | "DarkTurquoise" | "DarkViolet" | "Darkorange" | "DeepPink" |
+		//"DeepSkyBlue" | "DimGray" | "DimGrey" | "DodgerBlue" | "FireBrick" | "FloralWhite" | "ForestGreen" | "Fuchsia" |
+		//"Gainsboro" | "GhostWhite" | "Gold" | "GoldenRod" | "Gray" | "Green" | "GreenYellow" | "Grey" | "HoneyDew" | "HotPink"
+		//| "IndianRed" | "Indigo" | "Ivory" | "Khaki" | "Lavender" | "LavenderBlush" | "LawnGreen" | "LemonChiffon" |
+		//"LightBlue" | "LightCoral" | "LightCyan" | "LightGoldenRodYellow" | "LightGray" | "LightGreen" | "LightGrey" |
+		//"LightPink" | "LightSalmon" | "LightSeaGreen" | "LightSkyBlue" | "LightSlateGray" | "LightSlateGrey" |
+		//"LightSteelBlue" | "LightYellow" | "Lime" | "LimeGreen" | "Linen" | "Magenta" | "Maroon" | "MediumAquaMarine" |
+		//"MediumBlue" | "MediumOrchid" | "MediumPurple" | "MediumSeaGreen" | "MediumSlateBlue" | "MediumSpringGreen" |
+		//"MediumTurquoise" | "MediumVioletRed" | "MidnightBlue" | "MintCream" | "MistyRose" | "Moccasin" | "NavajoWhite" |
+		//"Navy" | "OldLace" | "Olive" | "OliveDrab" | "OrangeRed" | "Orchid" | "PaleGoldenRod" | "PaleGreen" | "PaleTurquoise"
+		//| "PaleVioletRed" | "PapayaWhip" | "PeachPuff" | "Peru" | "Pink" | "Plum" | "PowderBlue" | "Purple" | "Red" |
+		//"RosyBrown" | "RoyalBlue" | "SaddleBrown" | "Salmon" | "SandyBrown" | "SeaGreen" | "Sienna" | "Silver" | "SkyBlue" |
+		//"SlateBlue" | "SlateGray" | "SlateGrey" | "Snow" | "SpringGreen" | "SteelBlue" | "Tan" | "Teal" | "Thistle" | "Tomato"
+		//| "Turquoise" | "Violet" | "Wheat" | "White" | "WhiteSmoke" | "Yellow" | "YellowGreen"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"AliceBlue"
+		public Keyword getAliceBlueKeyword_0() { return cAliceBlueKeyword_0; }
+
+		//"AntiqueWhite"
+		public Keyword getAntiqueWhiteKeyword_1() { return cAntiqueWhiteKeyword_1; }
+
+		//"Aqua"
+		public Keyword getAquaKeyword_2() { return cAquaKeyword_2; }
+
+		//"Aquamarine"
+		public Keyword getAquamarineKeyword_3() { return cAquamarineKeyword_3; }
+
+		//"Azure"
+		public Keyword getAzureKeyword_4() { return cAzureKeyword_4; }
+
+		//"Beige"
+		public Keyword getBeigeKeyword_5() { return cBeigeKeyword_5; }
+
+		//"Bisque"
+		public Keyword getBisqueKeyword_6() { return cBisqueKeyword_6; }
+
+		//"Black"
+		public Keyword getBlackKeyword_7() { return cBlackKeyword_7; }
+
+		//"BlanchedAlmond"
+		public Keyword getBlanchedAlmondKeyword_8() { return cBlanchedAlmondKeyword_8; }
+
+		//"Blue"
+		public Keyword getBlueKeyword_9() { return cBlueKeyword_9; }
+
+		//"BlueViolet"
+		public Keyword getBlueVioletKeyword_10() { return cBlueVioletKeyword_10; }
+
+		//"Brown"
+		public Keyword getBrownKeyword_11() { return cBrownKeyword_11; }
+
+		//"BurlyWood"
+		public Keyword getBurlyWoodKeyword_12() { return cBurlyWoodKeyword_12; }
+
+		//"CadetBlue"
+		public Keyword getCadetBlueKeyword_13() { return cCadetBlueKeyword_13; }
+
+		//"Chartreuse"
+		public Keyword getChartreuseKeyword_14() { return cChartreuseKeyword_14; }
+
+		//"Chocolate"
+		public Keyword getChocolateKeyword_15() { return cChocolateKeyword_15; }
+
+		//"Coral"
+		public Keyword getCoralKeyword_16() { return cCoralKeyword_16; }
+
+		//"CornflowerBlue"
+		public Keyword getCornflowerBlueKeyword_17() { return cCornflowerBlueKeyword_17; }
+
+		//"Cornsilk"
+		public Keyword getCornsilkKeyword_18() { return cCornsilkKeyword_18; }
+
+		//"Crimson"
+		public Keyword getCrimsonKeyword_19() { return cCrimsonKeyword_19; }
+
+		//"Cyan"
+		public Keyword getCyanKeyword_20() { return cCyanKeyword_20; }
+
+		//"DarkBlue"
+		public Keyword getDarkBlueKeyword_21() { return cDarkBlueKeyword_21; }
+
+		//"DarkCyan"
+		public Keyword getDarkCyanKeyword_22() { return cDarkCyanKeyword_22; }
+
+		//"DarkGoldenRod"
+		public Keyword getDarkGoldenRodKeyword_23() { return cDarkGoldenRodKeyword_23; }
+
+		//"DarkGray"
+		public Keyword getDarkGrayKeyword_24() { return cDarkGrayKeyword_24; }
+
+		//"DarkGreen"
+		public Keyword getDarkGreenKeyword_25() { return cDarkGreenKeyword_25; }
+
+		//"DarkGrey"
+		public Keyword getDarkGreyKeyword_26() { return cDarkGreyKeyword_26; }
+
+		//"DarkKhaki"
+		public Keyword getDarkKhakiKeyword_27() { return cDarkKhakiKeyword_27; }
+
+		//"DarkMagenta"
+		public Keyword getDarkMagentaKeyword_28() { return cDarkMagentaKeyword_28; }
+
+		//"DarkOliveGreen"
+		public Keyword getDarkOliveGreenKeyword_29() { return cDarkOliveGreenKeyword_29; }
+
+		//"DarkOrchid"
+		public Keyword getDarkOrchidKeyword_30() { return cDarkOrchidKeyword_30; }
+
+		//"DarkRed"
+		public Keyword getDarkRedKeyword_31() { return cDarkRedKeyword_31; }
+
+		//"DarkSalmo"
+		public Keyword getDarkSalmoKeyword_32() { return cDarkSalmoKeyword_32; }
+
+		//"DarkSeaGreen"
+		public Keyword getDarkSeaGreenKeyword_33() { return cDarkSeaGreenKeyword_33; }
+
+		//"DarkSlateBlue"
+		public Keyword getDarkSlateBlueKeyword_34() { return cDarkSlateBlueKeyword_34; }
+
+		//"DarkSlateGray"
+		public Keyword getDarkSlateGrayKeyword_35() { return cDarkSlateGrayKeyword_35; }
+
+		//"DarkSlateGrey"
+		public Keyword getDarkSlateGreyKeyword_36() { return cDarkSlateGreyKeyword_36; }
+
+		//"DarkTurquoise"
+		public Keyword getDarkTurquoiseKeyword_37() { return cDarkTurquoiseKeyword_37; }
+
+		//"DarkViolet"
+		public Keyword getDarkVioletKeyword_38() { return cDarkVioletKeyword_38; }
+
+		//"Darkorange"
+		public Keyword getDarkorangeKeyword_39() { return cDarkorangeKeyword_39; }
+
+		//"DeepPink"
+		public Keyword getDeepPinkKeyword_40() { return cDeepPinkKeyword_40; }
+
+		//"DeepSkyBlue"
+		public Keyword getDeepSkyBlueKeyword_41() { return cDeepSkyBlueKeyword_41; }
+
+		//"DimGray"
+		public Keyword getDimGrayKeyword_42() { return cDimGrayKeyword_42; }
+
+		//"DimGrey"
+		public Keyword getDimGreyKeyword_43() { return cDimGreyKeyword_43; }
+
+		//"DodgerBlue"
+		public Keyword getDodgerBlueKeyword_44() { return cDodgerBlueKeyword_44; }
+
+		//"FireBrick"
+		public Keyword getFireBrickKeyword_45() { return cFireBrickKeyword_45; }
+
+		//"FloralWhite"
+		public Keyword getFloralWhiteKeyword_46() { return cFloralWhiteKeyword_46; }
+
+		//"ForestGreen"
+		public Keyword getForestGreenKeyword_47() { return cForestGreenKeyword_47; }
+
+		//"Fuchsia"
+		public Keyword getFuchsiaKeyword_48() { return cFuchsiaKeyword_48; }
+
+		//"Gainsboro"
+		public Keyword getGainsboroKeyword_49() { return cGainsboroKeyword_49; }
+
+		//"GhostWhite"
+		public Keyword getGhostWhiteKeyword_50() { return cGhostWhiteKeyword_50; }
+
+		//"Gold"
+		public Keyword getGoldKeyword_51() { return cGoldKeyword_51; }
+
+		//"GoldenRod"
+		public Keyword getGoldenRodKeyword_52() { return cGoldenRodKeyword_52; }
+
+		//"Gray"
+		public Keyword getGrayKeyword_53() { return cGrayKeyword_53; }
+
+		//"Green"
+		public Keyword getGreenKeyword_54() { return cGreenKeyword_54; }
+
+		//"GreenYellow"
+		public Keyword getGreenYellowKeyword_55() { return cGreenYellowKeyword_55; }
+
+		//"Grey"
+		public Keyword getGreyKeyword_56() { return cGreyKeyword_56; }
+
+		//"HoneyDew"
+		public Keyword getHoneyDewKeyword_57() { return cHoneyDewKeyword_57; }
+
+		//"HotPink"
+		public Keyword getHotPinkKeyword_58() { return cHotPinkKeyword_58; }
+
+		//"IndianRed"
+		public Keyword getIndianRedKeyword_59() { return cIndianRedKeyword_59; }
+
+		//"Indigo"
+		public Keyword getIndigoKeyword_60() { return cIndigoKeyword_60; }
+
+		//"Ivory"
+		public Keyword getIvoryKeyword_61() { return cIvoryKeyword_61; }
+
+		//"Khaki"
+		public Keyword getKhakiKeyword_62() { return cKhakiKeyword_62; }
+
+		//"Lavender"
+		public Keyword getLavenderKeyword_63() { return cLavenderKeyword_63; }
+
+		//"LavenderBlush"
+		public Keyword getLavenderBlushKeyword_64() { return cLavenderBlushKeyword_64; }
+
+		//"LawnGreen"
+		public Keyword getLawnGreenKeyword_65() { return cLawnGreenKeyword_65; }
+
+		//"LemonChiffon"
+		public Keyword getLemonChiffonKeyword_66() { return cLemonChiffonKeyword_66; }
+
+		//"LightBlue"
+		public Keyword getLightBlueKeyword_67() { return cLightBlueKeyword_67; }
+
+		//"LightCoral"
+		public Keyword getLightCoralKeyword_68() { return cLightCoralKeyword_68; }
+
+		//"LightCyan"
+		public Keyword getLightCyanKeyword_69() { return cLightCyanKeyword_69; }
+
+		//"LightGoldenRodYellow"
+		public Keyword getLightGoldenRodYellowKeyword_70() { return cLightGoldenRodYellowKeyword_70; }
+
+		//"LightGray"
+		public Keyword getLightGrayKeyword_71() { return cLightGrayKeyword_71; }
+
+		//"LightGreen"
+		public Keyword getLightGreenKeyword_72() { return cLightGreenKeyword_72; }
+
+		//"LightGrey"
+		public Keyword getLightGreyKeyword_73() { return cLightGreyKeyword_73; }
+
+		//"LightPink"
+		public Keyword getLightPinkKeyword_74() { return cLightPinkKeyword_74; }
+
+		//"LightSalmon"
+		public Keyword getLightSalmonKeyword_75() { return cLightSalmonKeyword_75; }
+
+		//"LightSeaGreen"
+		public Keyword getLightSeaGreenKeyword_76() { return cLightSeaGreenKeyword_76; }
+
+		//"LightSkyBlue"
+		public Keyword getLightSkyBlueKeyword_77() { return cLightSkyBlueKeyword_77; }
+
+		//"LightSlateGray"
+		public Keyword getLightSlateGrayKeyword_78() { return cLightSlateGrayKeyword_78; }
+
+		//"LightSlateGrey"
+		public Keyword getLightSlateGreyKeyword_79() { return cLightSlateGreyKeyword_79; }
+
+		//"LightSteelBlue"
+		public Keyword getLightSteelBlueKeyword_80() { return cLightSteelBlueKeyword_80; }
+
+		//"LightYellow"
+		public Keyword getLightYellowKeyword_81() { return cLightYellowKeyword_81; }
+
+		//"Lime"
+		public Keyword getLimeKeyword_82() { return cLimeKeyword_82; }
+
+		//"LimeGreen"
+		public Keyword getLimeGreenKeyword_83() { return cLimeGreenKeyword_83; }
+
+		//"Linen"
+		public Keyword getLinenKeyword_84() { return cLinenKeyword_84; }
+
+		//"Magenta"
+		public Keyword getMagentaKeyword_85() { return cMagentaKeyword_85; }
+
+		//"Maroon"
+		public Keyword getMaroonKeyword_86() { return cMaroonKeyword_86; }
+
+		//"MediumAquaMarine"
+		public Keyword getMediumAquaMarineKeyword_87() { return cMediumAquaMarineKeyword_87; }
+
+		//"MediumBlue"
+		public Keyword getMediumBlueKeyword_88() { return cMediumBlueKeyword_88; }
+
+		//"MediumOrchid"
+		public Keyword getMediumOrchidKeyword_89() { return cMediumOrchidKeyword_89; }
+
+		//"MediumPurple"
+		public Keyword getMediumPurpleKeyword_90() { return cMediumPurpleKeyword_90; }
+
+		//"MediumSeaGreen"
+		public Keyword getMediumSeaGreenKeyword_91() { return cMediumSeaGreenKeyword_91; }
+
+		//"MediumSlateBlue"
+		public Keyword getMediumSlateBlueKeyword_92() { return cMediumSlateBlueKeyword_92; }
+
+		//"MediumSpringGreen"
+		public Keyword getMediumSpringGreenKeyword_93() { return cMediumSpringGreenKeyword_93; }
+
+		//"MediumTurquoise"
+		public Keyword getMediumTurquoiseKeyword_94() { return cMediumTurquoiseKeyword_94; }
+
+		//"MediumVioletRed"
+		public Keyword getMediumVioletRedKeyword_95() { return cMediumVioletRedKeyword_95; }
+
+		//"MidnightBlue"
+		public Keyword getMidnightBlueKeyword_96() { return cMidnightBlueKeyword_96; }
+
+		//"MintCream"
+		public Keyword getMintCreamKeyword_97() { return cMintCreamKeyword_97; }
+
+		//"MistyRose"
+		public Keyword getMistyRoseKeyword_98() { return cMistyRoseKeyword_98; }
+
+		//"Moccasin"
+		public Keyword getMoccasinKeyword_99() { return cMoccasinKeyword_99; }
+
+		//"NavajoWhite"
+		public Keyword getNavajoWhiteKeyword_100() { return cNavajoWhiteKeyword_100; }
+
+		//"Navy"
+		public Keyword getNavyKeyword_101() { return cNavyKeyword_101; }
+
+		//"OldLace"
+		public Keyword getOldLaceKeyword_102() { return cOldLaceKeyword_102; }
+
+		//"Olive"
+		public Keyword getOliveKeyword_103() { return cOliveKeyword_103; }
+
+		//"OliveDrab"
+		public Keyword getOliveDrabKeyword_104() { return cOliveDrabKeyword_104; }
+
+		//"OrangeRed"
+		public Keyword getOrangeRedKeyword_105() { return cOrangeRedKeyword_105; }
+
+		//"Orchid"
+		public Keyword getOrchidKeyword_106() { return cOrchidKeyword_106; }
+
+		//"PaleGoldenRod"
+		public Keyword getPaleGoldenRodKeyword_107() { return cPaleGoldenRodKeyword_107; }
+
+		//"PaleGreen"
+		public Keyword getPaleGreenKeyword_108() { return cPaleGreenKeyword_108; }
+
+		//"PaleTurquoise"
+		public Keyword getPaleTurquoiseKeyword_109() { return cPaleTurquoiseKeyword_109; }
+
+		//"PaleVioletRed"
+		public Keyword getPaleVioletRedKeyword_110() { return cPaleVioletRedKeyword_110; }
+
+		//"PapayaWhip"
+		public Keyword getPapayaWhipKeyword_111() { return cPapayaWhipKeyword_111; }
+
+		//"PeachPuff"
+		public Keyword getPeachPuffKeyword_112() { return cPeachPuffKeyword_112; }
+
+		//"Peru"
+		public Keyword getPeruKeyword_113() { return cPeruKeyword_113; }
+
+		//"Pink"
+		public Keyword getPinkKeyword_114() { return cPinkKeyword_114; }
+
+		//"Plum"
+		public Keyword getPlumKeyword_115() { return cPlumKeyword_115; }
+
+		//"PowderBlue"
+		public Keyword getPowderBlueKeyword_116() { return cPowderBlueKeyword_116; }
+
+		//"Purple"
+		public Keyword getPurpleKeyword_117() { return cPurpleKeyword_117; }
+
+		//"Red"
+		public Keyword getRedKeyword_118() { return cRedKeyword_118; }
+
+		//"RosyBrown"
+		public Keyword getRosyBrownKeyword_119() { return cRosyBrownKeyword_119; }
+
+		//"RoyalBlue"
+		public Keyword getRoyalBlueKeyword_120() { return cRoyalBlueKeyword_120; }
+
+		//"SaddleBrown"
+		public Keyword getSaddleBrownKeyword_121() { return cSaddleBrownKeyword_121; }
+
+		//"Salmon"
+		public Keyword getSalmonKeyword_122() { return cSalmonKeyword_122; }
+
+		//"SandyBrown"
+		public Keyword getSandyBrownKeyword_123() { return cSandyBrownKeyword_123; }
+
+		//"SeaGreen"
+		public Keyword getSeaGreenKeyword_124() { return cSeaGreenKeyword_124; }
+
+		//"Sienna"
+		public Keyword getSiennaKeyword_125() { return cSiennaKeyword_125; }
+
+		//"Silver"
+		public Keyword getSilverKeyword_126() { return cSilverKeyword_126; }
+
+		//"SkyBlue"
+		public Keyword getSkyBlueKeyword_127() { return cSkyBlueKeyword_127; }
+
+		//"SlateBlue"
+		public Keyword getSlateBlueKeyword_128() { return cSlateBlueKeyword_128; }
+
+		//"SlateGray"
+		public Keyword getSlateGrayKeyword_129() { return cSlateGrayKeyword_129; }
+
+		//"SlateGrey"
+		public Keyword getSlateGreyKeyword_130() { return cSlateGreyKeyword_130; }
+
+		//"Snow"
+		public Keyword getSnowKeyword_131() { return cSnowKeyword_131; }
+
+		//"SpringGreen"
+		public Keyword getSpringGreenKeyword_132() { return cSpringGreenKeyword_132; }
+
+		//"SteelBlue"
+		public Keyword getSteelBlueKeyword_133() { return cSteelBlueKeyword_133; }
+
+		//"Tan"
+		public Keyword getTanKeyword_134() { return cTanKeyword_134; }
+
+		//"Teal"
+		public Keyword getTealKeyword_135() { return cTealKeyword_135; }
+
+		//"Thistle"
+		public Keyword getThistleKeyword_136() { return cThistleKeyword_136; }
+
+		//"Tomato"
+		public Keyword getTomatoKeyword_137() { return cTomatoKeyword_137; }
+
+		//"Turquoise"
+		public Keyword getTurquoiseKeyword_138() { return cTurquoiseKeyword_138; }
+
+		//"Violet"
+		public Keyword getVioletKeyword_139() { return cVioletKeyword_139; }
+
+		//"Wheat"
+		public Keyword getWheatKeyword_140() { return cWheatKeyword_140; }
+
+		//"White"
+		public Keyword getWhiteKeyword_141() { return cWhiteKeyword_141; }
+
+		//"WhiteSmoke"
+		public Keyword getWhiteSmokeKeyword_142() { return cWhiteSmokeKeyword_142; }
+
+		//"Yellow"
+		public Keyword getYellowKeyword_143() { return cYellowKeyword_143; }
+
+		//"YellowGreen"
+		public Keyword getYellowGreenKeyword_144() { return cYellowGreenKeyword_144; }
 	}
 	
 	
@@ -1444,16 +2086,17 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	private final DeactivateElements pDeactivate;
 	private final ParticipantCreationElements pParticipantCreation;
 	private final BoxElements pBox;
+	private final ColorsElements pColors;
+	private final ColorElements pColor;
 	private final TerminalRule tNEWLINE;
 	private final TerminalRule tSTART;
 	private final TerminalRule tEND;
-	private final TerminalRule tINT;
-	private final TerminalRule tID;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tSEQUENCE;
-	private final TerminalRule tCOLOR;
 	private final TerminalRule tHEXCODE;
+	private final TerminalRule tINT;
+	private final TerminalRule tID;
 	private final TerminalRule tWS;
 	private final TerminalRule tANY_OTHER;
 	
@@ -1487,16 +2130,17 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDeactivate = new DeactivateElements();
 		this.pParticipantCreation = new ParticipantCreationElements();
 		this.pBox = new BoxElements();
+		this.pColors = new ColorsElements();
+		this.pColor = new ColorElements();
 		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NEWLINE");
 		this.tSTART = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "START");
 		this.tEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "END");
-		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
 		this.tSEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEQUENCE");
-		this.tCOLOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "COLOR");
 		this.tHEXCODE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEXCODE");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 	}
@@ -1548,8 +2192,8 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// An instruction can be any of the rules for single- and multiline commands.
 	//Instruction:
-	//	(Arrow | Definition (COLOR | HEXCODE)? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note |
-	//	Divider | Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
+	//	(Arrow | Definition Colors? | AutoNumber | Title | Legend | Newpage | AltElse | GroupingMessages | Note | Divider |
+	//	Reference | Delay | Space | Hidefootbox | Activate | Deactivate | ParticipantCreation | Box)? NEWLINE;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -1573,7 +2217,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// actors, boundaries, controls, entities and databases
 	//Definition:
 	//	"actor" name=MyID | "boundary" name=MyID | "control" name=MyID | "entity" name=MyID | "database" name=MyID |
-	//	"participant" name=MyID ("<<" ("(" EndID "," (COLOR | HEXCODE) ")")? EndID* ">>")?;
+	//	"participant" name=MyID ("<<" ("(" EndID "," "#" HEXCODE ")")? EndID* ">>")?;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
 	}
@@ -1696,7 +2340,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//// Rule for notes
 	//Note:
 	//	"note" ("right" ("of" rid=[Definition] ("," rids+=[Definition])*)? | "left" ("of" lid=[Definition] (","
-	//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) COLOR* (":" MyID* | (NEWLINE EndID*)*
+	//	lids+=[Definition])*)? | "over" oid=[Definition] ("," oids+=[Definition])*) Color* (":" MyID* | (NEWLINE EndID*)*
 	//	"end" "note");
 	public NoteElements getNoteAccess() {
 		return pNote;
@@ -1764,7 +2408,7 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rules for activation, deactivation and destruction of lifelines
 	//Activate:
-	//	"activate" COLOR? name=ID;
+	//	"activate" Color? name=ID;
 	public ActivateElements getActivateAccess() {
 		return pActivate;
 	}
@@ -1797,13 +2441,50 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Rule for box/end box
 	//Box:
-	//	"box" "\"" ID* "\"" COLOR? NEWLINE (definitions+=Definition? NEWLINE)* "end" "box";
+	//	"box" "\"" ID* "\"" Color? NEWLINE (definitions+=Definition? NEWLINE)* "end" "box";
 	public BoxElements getBoxAccess() {
 		return pBox;
 	}
 	
 	public ParserRule getBoxRule() {
 		return getBoxAccess().getRule();
+	}
+
+	//Colors:
+	//	"#" (Color | HEXCODE);
+	public ColorsElements getColorsAccess() {
+		return pColors;
+	}
+	
+	public ParserRule getColorsRule() {
+		return getColorsAccess().getRule();
+	}
+
+	//Color:
+	//	"AliceBlue" | "AntiqueWhite" | "Aqua" | "Aquamarine" | "Azure" | "Beige" | "Bisque" | "Black" | "BlanchedAlmond" |
+	//	"Blue" | "BlueViolet" | "Brown" | "BurlyWood" | "CadetBlue" | "Chartreuse" | "Chocolate" | "Coral" | "CornflowerBlue"
+	//	| "Cornsilk" | "Crimson" | "Cyan" | "DarkBlue" | "DarkCyan" | "DarkGoldenRod" | "DarkGray" | "DarkGreen" | "DarkGrey"
+	//	| "DarkKhaki" | "DarkMagenta" | "DarkOliveGreen" | "DarkOrchid" | "DarkRed" | "DarkSalmo" | "DarkSeaGreen" |
+	//	"DarkSlateBlue" | "DarkSlateGray" | "DarkSlateGrey" | "DarkTurquoise" | "DarkViolet" | "Darkorange" | "DeepPink" |
+	//	"DeepSkyBlue" | "DimGray" | "DimGrey" | "DodgerBlue" | "FireBrick" | "FloralWhite" | "ForestGreen" | "Fuchsia" |
+	//	"Gainsboro" | "GhostWhite" | "Gold" | "GoldenRod" | "Gray" | "Green" | "GreenYellow" | "Grey" | "HoneyDew" |
+	//	"HotPink" | "IndianRed" | "Indigo" | "Ivory" | "Khaki" | "Lavender" | "LavenderBlush" | "LawnGreen" | "LemonChiffon"
+	//	| "LightBlue" | "LightCoral" | "LightCyan" | "LightGoldenRodYellow" | "LightGray" | "LightGreen" | "LightGrey" |
+	//	"LightPink" | "LightSalmon" | "LightSeaGreen" | "LightSkyBlue" | "LightSlateGray" | "LightSlateGrey" |
+	//	"LightSteelBlue" | "LightYellow" | "Lime" | "LimeGreen" | "Linen" | "Magenta" | "Maroon" | "MediumAquaMarine" |
+	//	"MediumBlue" | "MediumOrchid" | "MediumPurple" | "MediumSeaGreen" | "MediumSlateBlue" | "MediumSpringGreen" |
+	//	"MediumTurquoise" | "MediumVioletRed" | "MidnightBlue" | "MintCream" | "MistyRose" | "Moccasin" | "NavajoWhite" |
+	//	"Navy" | "OldLace" | "Olive" | "OliveDrab" | "OrangeRed" | "Orchid" | "PaleGoldenRod" | "PaleGreen" | "PaleTurquoise"
+	//	| "PaleVioletRed" | "PapayaWhip" | "PeachPuff" | "Peru" | "Pink" | "Plum" | "PowderBlue" | "Purple" | "Red" |
+	//	"RosyBrown" | "RoyalBlue" | "SaddleBrown" | "Salmon" | "SandyBrown" | "SeaGreen" | "Sienna" | "Silver" | "SkyBlue" |
+	//	"SlateBlue" | "SlateGray" | "SlateGrey" | "Snow" | "SpringGreen" | "SteelBlue" | "Tan" | "Teal" | "Thistle" |
+	//	"Tomato" | "Turquoise" | "Violet" | "Wheat" | "White" | "WhiteSmoke" | "Yellow" | "YellowGreen";
+	public ColorElements getColorAccess() {
+		return pColor;
+	}
+	
+	public ParserRule getColorRule() {
+		return getColorAccess().getRule();
 	}
 
 	//// Terminals
@@ -1824,21 +2505,6 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 	//	"@" "enduml";
 	public TerminalRule getENDRule() {
 		return tEND;
-	} 
-
-	//// INT is a sequence of numbers 0-9.
-	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
-	public TerminalRule getINTRule() {
-		return tINT;
-	} 
-
-	//// ID can be any following sequence of letters and numbers, without spaces between them.
-	////Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
-	//terminal ID:
-	//	("a".."z" | "A".."Z" | "0".."9" | "å" | "ä" | "ö")*;
-	public TerminalRule getIDRule() {
-		return tID;
 	} 
 
 	//// Multiline comment begins with /', and ends with '/
@@ -1882,34 +2548,25 @@ public class PlantumlGrammarAccess extends AbstractGrammarElementFinder {
 		return tSEQUENCE;
 	} 
 
-	//terminal COLOR:
-	//	"#" ("AliceBlue" | "AntiqueWhite" | "Aqua" | "Aquamarine" | "Azure" | "Beige" | "Bisque" | "Black" | "BlanchedAlmond"
-	//	| "Blue" | "BlueViolet" | "Brown" | "BurlyWood" | "CadetBlue" | "Chartreuse" | "Chocolate" | "Coral" |
-	//	"CornflowerBlue" | "Cornsilk" | "Crimson" | "Cyan" | "DarkBlue" | "DarkCyan" | "DarkGoldenRod" | "DarkGray" |
-	//	"DarkGreen" | "DarkGrey" | "DarkKhaki" | "DarkMagenta" | "DarkOliveGreen" | "DarkOrchid" | "DarkRed" | "DarkSalmo" |
-	//	"DarkSeaGreen" | "DarkSlateBlue" | "DarkSlateGray" | "DarkSlateGrey" | "DarkTurquoise" | "DarkViolet" | "Darkorange"
-	//	| "DeepPink" | "DeepSkyBlue" | "DimGray" | "DimGrey" | "DodgerBlue" | "FireBrick" | "FloralWhite" | "ForestGreen" |
-	//	"Fuchsia" | "Gainsboro" | "GhostWhite" | "Gold" | "GoldenRod" | "Gray" | "Green" | "GreenYellow" | "Grey" |
-	//	"HoneyDew" | "HotPink" | "IndianRed" | "Indigo" | "Ivory" | "Khaki" | "Lavender" | "LavenderBlush" | "LawnGreen" |
-	//	"LemonChiffon" | "LightBlue" | "LightCoral" | "LightCyan" | "LightGoldenRodYellow" | "LightGray" | "LightGreen" |
-	//	"LightGrey" | "LightPink" | "LightSalmon" | "LightSeaGreen" | "LightSkyBlue" | "LightSlateGray" | "LightSlateGrey" |
-	//	"LightSteelBlue" | "LightYellow" | "Lime" | "LimeGreen" | "Linen" | "Magenta" | "Maroon" | "MediumAquaMarine" |
-	//	"MediumBlue" | "MediumOrchid" | "MediumPurple" | "MediumSeaGreen" | "MediumSlateBlue" | "MediumSpringGreen" |
-	//	"MediumTurquoise" | "MediumVioletRed" | "MidnightBlue" | "MintCream" | "MistyRose" | "Moccasin" | "NavajoWhite" |
-	//	"Navy" | "OldLace" | "Olive" | "OliveDrab" | "OrangeRed" | "Orchid" | "PaleGoldenRod" | "PaleGreen" | "PaleTurquoise"
-	//	| "PaleVioletRed" | "PapayaWhip" | "PeachPuff" | "Peru" | "Pink" | "Plum" | "PowderBlue" | "Purple" | "Red" |
-	//	"RosyBrown" | "RoyalBlue" | "SaddleBrown" | "Salmon" | "SandyBrown" | "SeaGreen" | "Sienna" | "Silver" | "SkyBlue" |
-	//	"SlateBlue" | "SlateGray" | "SlateGrey" | "Snow" | "SpringGreen" | "SteelBlue" | "Tan" | "Teal" | "Thistle" |
-	//	"Tomato" | "Turquoise" | "Violet" | "Wheat" | "White" | "WhiteSmoke" | "Yellow" | "YellowGreen");
-	public TerminalRule getCOLORRule() {
-		return tCOLOR;
-	} 
-
 	//terminal HEXCODE:
-	//	"#" ("A".."F" | "0".."9") ("A".."F" | "0".."9") ("A".."F" | "0".."9") ("A".."F" | "0".."9") ("A".."F" | "0".."9")
-	//	("A".."F" | "0".."9");
+	//	("A".."F" | "0".."9" | "a".."f") ("A".."F" | "0".."9" | "a".."f")+;
 	public TerminalRule getHEXCODERule() {
 		return tHEXCODE;
+	} 
+
+	//// INT is a sequence of numbers 0-9.
+	//terminal INT returns ecore::EInt:
+	//	"0".."9"+;
+	public TerminalRule getINTRule() {
+		return tINT;
+	} 
+
+	//// ID can be any following sequence of letters and numbers, without spaces between them.
+	////Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+	//terminal ID:
+	//	("a".."z" | "A".."Z" | "0".."9" | "å" | "ä" | "ö")*;
+	public TerminalRule getIDRule() {
+		return tID;
 	} 
 
 	//terminal WS:

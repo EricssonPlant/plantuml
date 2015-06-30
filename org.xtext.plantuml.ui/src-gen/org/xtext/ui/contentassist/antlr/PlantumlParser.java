@@ -38,9 +38,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getInstructionAccess().getAlternatives_0(), "rule__Instruction__Alternatives_0");
-					put(grammarAccess.getInstructionAccess().getAlternatives_0_1_1(), "rule__Instruction__Alternatives_0_1_1");
 					put(grammarAccess.getDefinitionAccess().getAlternatives(), "rule__Definition__Alternatives");
-					put(grammarAccess.getDefinitionAccess().getAlternatives_5_2_1_3(), "rule__Definition__Alternatives_5_2_1_3");
 					put(grammarAccess.getDeclarationsAccess().getAlternatives(), "rule__Declarations__Alternatives");
 					put(grammarAccess.getEndIDAccess().getAlternatives(), "rule__EndID__Alternatives");
 					put(grammarAccess.getMyIDAccess().getAlternatives(), "rule__MyID__Alternatives");
@@ -51,6 +49,8 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReferenceAccess().getAlternatives_4(), "rule__Reference__Alternatives_4");
 					put(grammarAccess.getSpaceAccess().getAlternatives(), "rule__Space__Alternatives");
 					put(grammarAccess.getDeactivateAccess().getAlternatives_0(), "rule__Deactivate__Alternatives_0");
+					put(grammarAccess.getColorsAccess().getAlternatives_1(), "rule__Colors__Alternatives_1");
+					put(grammarAccess.getColorAccess().getAlternatives(), "rule__Color__Alternatives");
 					put(grammarAccess.getDiagramAccess().getGroup(), "rule__Diagram__Group__0");
 					put(grammarAccess.getInstructionAccess().getGroup(), "rule__Instruction__Group__0");
 					put(grammarAccess.getInstructionAccess().getGroup_0_1(), "rule__Instruction__Group_0_1__0");
@@ -100,6 +100,7 @@ public class PlantumlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParticipantCreationAccess().getGroup(), "rule__ParticipantCreation__Group__0");
 					put(grammarAccess.getBoxAccess().getGroup(), "rule__Box__Group__0");
 					put(grammarAccess.getBoxAccess().getGroup_6(), "rule__Box__Group_6__0");
+					put(grammarAccess.getColorsAccess().getGroup(), "rule__Colors__Group__0");
 					put(grammarAccess.getPlantumlAccess().getDiagramsAssignment(), "rule__Plantuml__DiagramsAssignment");
 					put(grammarAccess.getDiagramAccess().getInstructionsAssignment_2(), "rule__Diagram__InstructionsAssignment_2");
 					put(grammarAccess.getArrowAccess().getNameAssignment_0(), "rule__Arrow__NameAssignment_0");

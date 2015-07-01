@@ -39,7 +39,7 @@ Instruction:
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	name=MyID SEQUENCE names+=MyID (':' (MyID)*)?
+	name=MyID SEQUENCE names+=MyID '!'? (':' (MyID)*)?
 ;
 
 // Rule for defining objects in PlantUML, such as
@@ -63,7 +63,7 @@ EndID:
 	ID | 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
 	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
-	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'
+	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'|'>>'|'<<'
 ;
 
 MyID:
@@ -77,7 +77,7 @@ AutoNumber:
 
 // Rule for the title of the diagram
 Title:
-	'title' ID*
+	'title' EndID*
 ;
 
 // Rule for legends.
@@ -87,7 +87,7 @@ Legend:
 
 // Rule for newpages
 Newpage:
-	'newpage' (ID)*
+	'newpage' (EndID)*
 ;
 
 // Rules for Alt-Else clauses.
@@ -114,23 +114,23 @@ Note:
 
 // Rule for Dividers.
 Divider:
-	'==' ID* '=='
+	'==' EndID* '=='
 ;
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
+	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE MyID*)* 'end' 'ref'))
 ;
 
 // Rule for delays
 Delay:
-	'...' (ID* '...')?
+	'...' (EndID* '...')?
 ;
 
 // Rule for Spaces
 // TODO: Make it possible to "see" the hidden whitespaces.
 Space:
-	('|||'|('||' INT+ '||'))
+	('|||'|('||' INT '||'))
 ;
 
 // Rule for hiding the footbox
@@ -140,7 +140,7 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' Color? name=ID
+	'activate' name=EndID Colors?
 ;
 
 Deactivate:
@@ -155,7 +155,7 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	'box' '\"' ID* '\"' Color? NEWLINE
+	'box' '\"' ID* '\"' Colors? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end' 'box'
 ;
@@ -226,12 +226,13 @@ terminal SEQUENCE:
 	| '\u002E'												// . = u002E	
 ;
 
+// INT is a sequence of numbers 0-9.
+terminal INT returns ecore::EInt: ('0'..'9')+;
+
 terminal HEXCODE:
         ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
 ;
 
-// INT is a sequence of numbers 0-9.
-terminal INT returns ecore::EInt: ('0'..'9')+;
 
 // ID can be any following sequence of letters and numbers, without spaces between them.
 terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*; //Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;

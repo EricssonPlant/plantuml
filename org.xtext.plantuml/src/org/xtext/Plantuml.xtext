@@ -50,7 +50,7 @@ Definition:
 	| 'control' name=MyID
 	| 'entity' name=MyID
 	| 'database' name=MyID
-	| 'participant' (name=MyID|('\"' EndID* '\"' 'as' ID)) ('<<' ('(' EndID ',' '#' (HEXCODE)')')? EndID* '>>')?
+	| 'participant' (name=MyID|('\"' EndID* '\"' 'as' ID)) ('<<' ('(' EndID ','(HEXCODE)')')? EndID* '>>')?
 ;
 
 // Lists what rules can declare variables
@@ -63,7 +63,7 @@ EndID:
 	ID | 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
 	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
-	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'|'>>'|'<<'
+	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'
 ;
 
 MyID:
@@ -109,7 +109,7 @@ Note:
 	'note' (('right' ('of' rid=[Definition] (',' rids+=[Definition])*)?)
 		   		 |('left'  ('of' lid=[Definition] (',' lids+=[Definition])*)?)
 		  		 |('over' oid=[Definition](',' oids+=[Definition])*)) 
-		 		  (Color)* ((':' MyID*)| ((NEWLINE EndID*)* 'end' 'note'))
+		 		  (Colors)? ((':' MyID*)| ((NEWLINE EndID*)* 'end' 'note'))
 ;
 
 // Rule for Dividers.
@@ -160,11 +160,11 @@ Box:
 	'end' 'box'
 ;
 
-Colors: '#' (Color|HEXCODE);
+Colors: (Color|HEXCODE);
 
 
 Color:
-	('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
+	'#'('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
 	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
 	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
 	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
@@ -230,7 +230,7 @@ terminal SEQUENCE:
 terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal HEXCODE:
-        ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
+        '#'('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
 ;
 
 // ID can be any following sequence of letters and numbers, without spaces between them.

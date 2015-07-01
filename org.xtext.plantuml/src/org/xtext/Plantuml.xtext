@@ -87,7 +87,7 @@ Legend:
 
 // Rule for newpages
 Newpage:
-	'newpage' (EndID)*
+	'newpage' (MyID)*
 ;
 
 // Rules for Alt-Else clauses.
@@ -101,7 +101,7 @@ Else:
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	('opt'|'loop'|'par'|'break'|'critical'|'group') ID* NEWLINE (instructions+=Instruction)* 'end'
+	('opt'|'loop'|'par'|'break'|'critical'|'group') MyID* NEWLINE (instructions+=Instruction)* 'end'
 ;
 
 // Rule for notes
@@ -119,12 +119,12 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE MyID*)* 'end' 'ref'))
+	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
 ;
 
 // Rule for delays
 Delay:
-	'...' (EndID* '...')?
+	'...' (MyID* '...')?
 ;
 
 // Rule for Spaces
@@ -140,7 +140,7 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' name=EndID Colors?
+	'activate' Colors? name=EndID
 ;
 
 Deactivate:
@@ -150,12 +150,12 @@ Deactivate:
 // Rule for Participant Creation
 // TODO: Make sure the ID hasn't been created in beforehand.
 ParticipantCreation:
-	'create' ID
+	'create' MyID
 ;
 
 // Rule for box/end box
 Box:
-	'box' '\"' ID* '\"' Colors? NEWLINE
+	'box' '\"' EndID* '\"' Colors? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end' 'box'
 ;
@@ -232,7 +232,6 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 terminal HEXCODE:
         ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
 ;
-
 
 // ID can be any following sequence of letters and numbers, without spaces between them.
 terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*; //Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;

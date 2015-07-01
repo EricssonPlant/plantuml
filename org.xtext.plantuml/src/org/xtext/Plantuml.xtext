@@ -72,7 +72,7 @@ MyID:
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	'autonumber' (INT (INT)?)?
+	'autonumber' (INT (INT)?)? ('"' MyID* '"')?
 ;
 
 // Rule for the title of the diagram

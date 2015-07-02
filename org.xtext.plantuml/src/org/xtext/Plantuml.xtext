@@ -23,7 +23,6 @@ Instruction:
 	| Title
 	| Legend
 	| Newpage
-	//| AltElse
 	| GroupingMessages
 	| Note
 	| Divider
@@ -90,12 +89,6 @@ Legend:
 Newpage:
 	'newpage' (MyID)*
 ;
-
-// Rules for Alt-Else clauses.
-/*AltElse:
-	'alt' MyID* NEWLINE (altInstrs+=Instruction)* (elses+=Else)* 'end'
-;
-*/
 
 Else:
 	'else' MyID* NEWLINE (instructions+=Instruction)*

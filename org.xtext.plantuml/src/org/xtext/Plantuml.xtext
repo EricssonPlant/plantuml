@@ -23,7 +23,7 @@ Instruction:
 	| Title
 	| Legend
 	| Newpage
-	| AltElse
+	//| AltElse
 	| GroupingMessages
 	| Note
 	| Divider
@@ -50,7 +50,7 @@ Definition:
 	| 'control' name=MyID
 	| 'entity' name=MyID
 	| 'database' name=MyID
-	| 'participant' (name=MyID|('\"' EndID* '\"' 'as' ID)) ('<<' ('(' EndID ','(HEXCODE)')')? EndID* '>>')?
+	| 'participant' (name=MyID|('"' MyID* '"' 'as' MyID)) ('<<' ('(' MyID ','(HEXCODE)')')? MyID* '>>')?
 ;
 
 // Lists what rules can declare variables
@@ -60,11 +60,12 @@ declarations returns Declarations:
 
 // Using this instead of ID, so that you can use keywords in regular text.
 EndID:
-	ID | 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
-	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'
-	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
-	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|INT|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'
-;
+	ID |INT| 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
+	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
+	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'|'database'
+	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'|'/'|'\\'
+	   | '&&'| '&'|'in'|'|'|'||'// |'"'
+	   ;
 
 MyID:
 	EndID|'end'
@@ -72,12 +73,12 @@ MyID:
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	'autonumber' (INT (INT)?)? ('"' MyID* '"')?
+	'autonumber' (INT (INT)?)? ('"' EndID* '"')?
 ;
 
 // Rule for the title of the diagram
 Title:
-	'title' EndID*
+	'title' MyID*
 ;
 
 // Rule for legends.
@@ -91,9 +92,10 @@ Newpage:
 ;
 
 // Rules for Alt-Else clauses.
-AltElse:
-	'alt' MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
+/*AltElse:
+	'alt' MyID* NEWLINE (altInstrs+=Instruction)* (elses+=Else)* 'end'
 ;
+*/
 
 Else:
 	'else' MyID* NEWLINE (instructions+=Instruction)*
@@ -101,14 +103,14 @@ Else:
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	('opt'|'loop'|'par'|'break'|'critical'|'group') MyID* NEWLINE (instructions+=Instruction)* 'end'
+	('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)? 'end'
 ;
 
 // Rule for notes
 Note:
-	'note' (('right' ('of' rid=[Definition] (',' rids+=[Definition])*)?)
-		   		 |('left'  ('of' lid=[Definition] (',' lids+=[Definition])*)?)
-		  		 |('over' oid=[Definition](',' oids+=[Definition])*)) 
+	'note' (('right' ('of' rid=[Definition|MyID] (',' rids+=[Definition|MyID])*)?)
+		   		 |('left'  ('of' lid=[Definition|MyID] (',' lids+=[Definition|MyID])*)?)
+		  		 |('over' oid=[Definition|MyID](',' oids+=[Definition|MyID])*)) 
 		 		  (Colors)? ((':' MyID*)| ((NEWLINE EndID*)* 'end' 'note'))
 ;
 
@@ -119,7 +121,7 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Definition]) (',' ids+=[Definition])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
+	'ref' 'over' (id=[Definition|MyID]) (',' ids+=[Definition|MyID])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
 ;
 
 // Rule for delays
@@ -140,11 +142,11 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' Colors? name=EndID
+	'activate' Colors? name=MyID
 ;
 
 Deactivate:
-	('deactivate'|'destroy') id=[Activate]
+	('deactivate'|'destroy') id=[Activate|MyID]
 ;
 
 // Rule for Participant Creation
@@ -155,13 +157,12 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	'box' '\"' EndID* '\"' Colors? NEWLINE
+	'box' '"' EndID* '"' Colors? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end' 'box'
 ;
 
 Colors: (Color|HEXCODE);
-
 
 Color:
 	'#'('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
@@ -186,7 +187,6 @@ Color:
 	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
 	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
 ;
-
 
 // Terminals
 //--------------------------------------------------
@@ -234,7 +234,7 @@ terminal HEXCODE:
 ;
 
 // ID can be any following sequence of letters and numbers, without spaces between them.
-terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*; //Before: '^'?('a'..'z'|'A'..'Z'|'_' | 'å' | 'ä' | 'ö') ('a'..'z'|'A'..'Z'|'_'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 terminal WS			: (' '|'\t')+;
 

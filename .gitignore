@@ -19,6 +19,8 @@ org.xtext.plantuml.ui/xtend-gen
 src-gen/
 xtend-gen/
 
+*.classpath
+
 src-gen
 xtend-gen
 *.jar

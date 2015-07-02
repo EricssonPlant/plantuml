@@ -1,29 +1,23 @@
 package org.xtext.plantuml.tests
 
-import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.runner.RunWith
-import org.xtext.PlantumlInjectorProvider
+import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
-import javax.inject.Inject
+import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
-import org.xtext.PlantumlRuntimeModule
-import org.xtext.plantuml.Plantuml
-import org.junit.Test
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.eclipselabs.xtext.utils.unittesting.XtextTest
-import org.eclipselabs.xtext.utils.unittesting.XtextRunner2
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.xtext.PlantumlInjectorProvider
+import org.xtext.plantuml.Plantuml
 
-@RunWith(typeof(XtextRunner2))
+@RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class PlantumlTest extends XtextTest {
+class Title extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
-	 new(){
-	 	super("platform:/org.xtext.plantuml.tests/resources");
-	 }
-	
-	/* @Test
+	@Test
 	def void testTitle(){
 		'''
 		@startuml
@@ -45,17 +39,36 @@ class PlantumlTest extends XtextTest {
 	def void testTitleML(){
 		'''
 		@startuml
-		title hello my name is \n
+		title hello my name is
 		Anton Anton Anton
 		@enduml
 		'''.parse.assertNoErrors
-	}*/
+	}
 	
 	// 1.1 Basic examples
-	@Test 
+	@Test
 	def void basicExample(){
-		testFile("test1.plantuml");
+		'''
+		@startuml
+			Alice -> Bob: Authentication Request
+			Bob --> Alice: Authentication Response
+		@enduml
+		'''.parse.assertNoErrors
+	}	
+	
+	/*
+	 * // template
+	@Test
+	def void some_name(){
+		'''
+		@startuml
+
+		@enduml
+		'''.parse.assertNoErrors
 	}
+	 */
+	
+
 	
 	
 	

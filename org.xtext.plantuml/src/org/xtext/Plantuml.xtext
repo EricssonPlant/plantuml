@@ -33,12 +33,14 @@ Instruction:
 	| Activate
 	| Deactivate
 	| ParticipantCreation
-	| Box)? NEWLINE
+	| Box
+	| IncOut
+	| Skinparam)? NEWLINE
 ;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	name=MyID SEQUENCE names+=MyID '!'? (':' (MyID)*)?
+	names+=MyID SEQUENCE names+=MyID '!'? (':' (MyID)*)?
 ;
 
 // Rule for defining objects in PlantUML, such as
@@ -49,13 +51,10 @@ Definition:
 	| 'control' name=MyID
 	| 'entity' name=MyID
 	| 'database' name=MyID
-	| 'participant' (name=MyID|('"' MyID* '"' 'as' MyID)) ('<<' ('(' MyID ','(HEXCODE)')')? MyID* '>>')?
+	| 'participant' (name=MyID|('"' MyID* '"' 'as' MyID)) ('<<' ('(' MyID ','('#' HEXCODE)')')? MyID* '>>')?
 ;
 
-// Lists what rules can declare variables
-declarations returns Declarations:
-	Definition | Arrow
-;
+Declaration: Definition|Arrow;
 
 // Using this instead of ID, so that you can use keywords in regular text.
 EndID:
@@ -63,12 +62,10 @@ EndID:
 	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'|'database'
 	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'|'/'|'\\'
-	   | '&&'| '&'|'in'|'|'|'||'// |'"'
+	   | '&&'| '&'|'in'|'|'|'||'|'skinparam'|'sequence'|'{'|'}'// |'"'
 	   ;
 
-MyID:
-	EndID|'end'
-;
+MyID: EndID|'end';
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
@@ -114,7 +111,7 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Definition|MyID]) (',' ids+=[Definition|MyID])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
+	'ref' 'over' (id=[Declaration|MyID]) (',' ids+=[Declaration|MyID])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
 ;
 
 // Rule for delays
@@ -155,10 +152,32 @@ Box:
 	'end' 'box'
 ;
 
-Colors: (Color|HEXCODE);
+// Rule for incoming and outgoing messages
+IncOut:
+	((INCARROW name = MyID)|(name = MyID OUTARROW)) (':' MyID*)?
+;
+
+Skinparam:
+	'skinparam' 'sequence' '{' NEWLINE (SkinparamCommand? NEWLINE)* '}'
+;
+
+SkinparamCommand:
+	'ArrowColor' Colors
+	|'ActorBorderColor' Colors
+	|'LifeLineBorderColor' Colors
+	|'LifeLineBackgroundColor' Colors
+	|'ParticipantBorderColor' Colors
+	|'ParticipantBackgroundColor' Colors
+	|'ParticipantFontName' ID
+	|'ActorBackgroundColor' Colors
+	|'ActorFontColor' Colors
+	|'Actorfontsize' INT
+	|'ActorFontName' ID
+;
+Colors: '#' (Color|HEXCODE);
 
 Color:
-	'#'('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
+	('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
 	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
 	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
 	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
@@ -195,6 +214,9 @@ terminal ML_COMMENT : '/\'' -> '\'/';
 // Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
 
+terminal INCARROW: ('[' '-'+ '>')|('[' '<' '-'+);
+terminal OUTARROW: ('<' '-'+ ']')|('-'+ '>' ']');
+
 // Sequences are arrows connecting two actors. Has to be defined in unicode.
 terminal SEQUENCE:
 	('\u002D')* '\u002D' '\u003E'							// - = u002D  | > = u003E
@@ -222,9 +244,7 @@ terminal SEQUENCE:
 // INT is a sequence of numbers 0-9.
 terminal INT returns ecore::EInt: ('0'..'9')+;
 
-terminal HEXCODE:
-        '#'('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+
-;
+terminal HEXCODE: ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+;
 
 // ID can be any following sequence of letters and numbers, without spaces between them.
 terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;

@@ -1,19 +1,19 @@
 package org.xtext.plantuml.tests
 
+import com.google.inject.Inject
+import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.eclipselabs.xtext.utils.unittesting.XtextTest
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.PlantumlInjectorProvider
-import org.eclipse.xtext.junit4.InjectWith
-import javax.inject.Inject
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.xtext.PlantumlRuntimeModule
 import org.xtext.plantuml.Plantuml
-import org.junit.Test
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class PlantumlTest {
+class Title extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
@@ -26,6 +26,7 @@ class PlantumlTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void testTitleSL(){
 		'''
 		@startuml
@@ -34,6 +35,7 @@ class PlantumlTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void testTitleML(){
 		'''
 		@startuml
@@ -42,4 +44,32 @@ class PlantumlTest {
 		@enduml
 		'''.parse.assertNoErrors
 	}
+	
+	// 1.1 Basic examples
+	@Test
+	def void basicExample(){
+		'''
+		@startuml
+			Alice -> Bob: Authentication Request
+			Bob --> Alice: Authentication Response
+		@enduml
+		'''.parse.assertNoErrors
+	}	
+	
+	/*
+	 * // template
+	@Test
+	def void some_name(){
+		'''
+		@startuml
+
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	 */
+	
+
+	
+	
+	
 }

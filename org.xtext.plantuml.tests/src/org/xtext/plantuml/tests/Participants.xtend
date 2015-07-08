@@ -37,6 +37,7 @@ class Participants extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void declaringParticipantsBoundary(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
@@ -46,6 +47,7 @@ class Participants extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void declaringParticipantsControl(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
@@ -55,6 +57,7 @@ class Participants extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void declaringParticipantsEntity(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
@@ -64,6 +67,7 @@ class Participants extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void declaringParticipantsDatabase(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
@@ -73,6 +77,7 @@ class Participants extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
 	def void declaringParticipantsAll(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''

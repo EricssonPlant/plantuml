@@ -1,7 +1,7 @@
 // Class for generating the grammar for the PlantUML language.
 grammar org.xtext.Plantuml 
 	//with org.eclipse.xtext.common.Terminals
-	hidden (WS, SL_COMMENT, ML_COMMENT)
+	hidden (SL_COMMENT, ML_COMMENT)
 generate plantuml "http://www.xtext.org/Plantuml"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
@@ -18,43 +18,52 @@ Diagram:
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
 	(Arrow
-	|Definition (Colors)?
-	| AutoNumber
-	| Title
-	| Legend
-	| Newpage
-	| GroupingMessages
-	| Note
-	| Divider
-	| Reference
-	| Delay
-	| Space
-	| Hidefootbox
-	| Activate
-	| Deactivate
-	| ParticipantCreation
-	| Box
-	| IncOut
-	| Skinparam)? NEWLINE
+	|Definition (WS Colors)? WS?
+	| AutoNumber WS?
+	| Title WS?
+	| Legend WS?
+	| Newpage WS?
+	| GroupingMessages WS?
+	| Note WS?
+	| Divider WS?
+	| Reference 
+	| Delay WS?
+	| Space WS?
+	| Hidefootbox WS?
+	| Activate WS?
+	| Deactivate WS?
+	| ParticipantCreation WS?
+	| Box WS?
+	| IncOut WS?
+	| Skinparam WS?)? NEWLINE
 ;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	names+=MyID SEQUENCE names+=MyID '!'? (':' (MyID)*)?
+	names+=MyID WS SEQUENCE WS names+=MyID (WS? '!')? (WS? ':' (WS? MyID)*)?
 ;
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	'actor' name=MyID 
-	| 'boundary' name=MyID
-	| 'control' name=MyID
-	| 'entity' name=MyID
-	| 'database' name=MyID
-	| 'participant' (name=MyID|('"' MyID* '"' 'as' MyID)) ('<<' ('(' MyID ','('#' HEXCODE)')')? MyID* '>>')?
+	'actor' WS name=MyID 
+	| 'boundary' WS name=MyID
+	| 'control' WS name=MyID
+	| 'entity' WS name=MyID
+	| 'database' WS name=MyID
+	| 'participant' WS (name=MyID|('"' (WS? MyID)* '"' WS 'as' WS MyID)) ('<<' ('(' MyID ','('#' HEXCODE)')')? MyID* '>>')?
 ;
 
 Declaration: Definition|Arrow;
+
+// ID rule without Endlegend.
+EndLegendID:
+	ID |INT| 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
+	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
+	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'|'database'
+	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'|'/'|'\\'
+	   | '&&'| '&'|'in'|'|'|'||'|'skinparam'|'sequence'|'{'|'}' // |'"'
+	   ;
 
 // Using this instead of ID, so that you can use keywords in regular text.
 EndID:
@@ -62,94 +71,94 @@ EndID:
 	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'|'database'
 	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'|'/'|'\\'
-	   | '&&'| '&'|'in'|'|'|'||'|'skinparam'|'sequence'|'{'|'}'// |'"'
+	   | '&&'| '&'|'in'|'|'|'||'|'skinparam'|'sequence'|'{'|'}' // |'"'
 	   ;
 
 MyID: EndID|'end';
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	'autonumber' (INT (INT)?)? ('"' EndID* '"')?
+	'autonumber' (WS INT (WS INT)?)? (WS '"' EndID* '"')?
 ;
 
 // Rule for the title of the diagram
 Title:
-	'title' MyID*
+	'title' (WS MyID)*
 ;
 
 // Rule for legends.
 Legend:
-	'legend' ('right' | 'left' | 'center')? (NEWLINE ID*)* 'endlegend'
+	'legend' WS (('right' | 'left' | 'center') WS)? (NEWLINE (EndLegendID|WS)*)* 'endlegend'
 ;
 
 // Rule for newpages
 Newpage:
-	'newpage' (MyID)*
+	'newpage' WS ANY_OTHER*
 ;
 
 Else:
-	'else' MyID* NEWLINE (instructions+=Instruction)*
+	'else' WS MyID* NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)? 'end'
+	('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') WS  MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
 // Rule for notes
 Note:
-	'note' (('right' ('of' rid=[Definition|MyID] (',' rids+=[Definition|MyID])*)?)
-		   		 |('left'  ('of' lid=[Definition|MyID] (',' lids+=[Definition|MyID])*)?)
-		  		 |('over' oid=[Definition|MyID](',' oids+=[Definition|MyID])*)) 
-		 		  (Colors)? ((':' MyID*)| ((NEWLINE EndID*)* 'end' 'note'))
+	'note' WS (('right' WS ('of' rid=[Declaration|MyID] (',' rids+=[Declaration|MyID])*)?)
+		   		 |('left' WS ('of' lid=[Declaration|MyID] (',' lids+=[Declaration|MyID])*)?)
+		  		 |('over' WS oid=[Declaration|MyID](',' oids+=[Declaration|MyID])*)) 
+		 		  (Colors)? ((':' (WS? MyID)*)| ((NEWLINE (WS? EndID)*)* 'end note'))
 ;
 
 // Rule for Dividers.
 Divider:
-	'==' EndID* '=='
+	'==' WS? (MyID WS?)* '=='
 ;
 
 // Rule for References
 Reference:
-	'ref' 'over' (id=[Declaration|MyID]) (',' ids+=[Declaration|MyID])* ((':' MyID*)|((NEWLINE EndID*)* 'end' 'ref'))
+	'ref over' WS (id=[Declaration|MyID]) (',' WS ids+=[Declaration|MyID])* ((WS? ':' (WS MyID*)*)|((NEWLINE (WS? EndID)*)* 'end ref'))
 ;
 
 // Rule for delays
+// TODO: Read full strings even when containing dots (....).
 Delay:
-	'...' (MyID* '...')?
+	'...' (WS? (MyID WS?)* '...')?
 ;
 
 // Rule for Spaces
-// TODO: Make it possible to "see" the hidden whitespaces.
 Space:
 	('|||'|('||' INT '||'))
 ;
 
 // Rule for hiding the footbox
 Hidefootbox:
-	'hide' 'footbox'
+	'hide footbox'
 ;
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' Colors? name=MyID
+	'activate' WS? (Colors WS)? name=MyID
 ;
 
 Deactivate:
-	('deactivate'|'destroy') id=[Activate|MyID]
+	('deactivate'|'destroy') WS id=[Activate|MyID]
 ;
 
 // Rule for Participant Creation
 // TODO: Make sure the ID hasn't been created in beforehand.
 ParticipantCreation:
-	'create' MyID
+	'create' WS  MyID
 ;
 
 // Rule for box/end box
 Box:
-	'box' '"' EndID* '"' Colors? NEWLINE
+	'box' WS '"' EndID* '"' (WS Colors)? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
-	'end' 'box'
+	'end box'
 ;
 
 // Rule for incoming and outgoing messages
@@ -158,7 +167,7 @@ IncOut:
 ;
 
 Skinparam:
-	'skinparam' 'sequence' '{' NEWLINE (SkinparamCommand? NEWLINE)* '}'
+	'skinparam' WS 'sequence' '{' NEWLINE (SkinparamCommand? NEWLINE)* '}'
 ;
 
 SkinparamCommand:
@@ -202,6 +211,7 @@ Color:
 
 // Terminals
 //--------------------------------------------------
+
 terminal NEWLINE 	: ('\r'? '\n');
 
 terminal START		: '\u0040' 'startuml';
@@ -209,7 +219,7 @@ terminal START		: '\u0040' 'startuml';
 terminal END		: '\u0040' 'enduml';
 
 // Multiline comment begins with /', and ends with '/
-terminal ML_COMMENT : '/\'' -> '\'/';
+terminal ML_COMMENT : '/\'' -> '\'/'; 
 
 // Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;

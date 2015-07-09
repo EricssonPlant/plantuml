@@ -81,7 +81,8 @@ Keywords:
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
 	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'#'|'='|'-'|'.'|':'|'>'|'<'|'!'|'in'|'|'|'skinparam'|'sequence' // |'"'
+	   |'deactivate'|'destroy'|'box'|'skinparam'|'sequence'
+	   |'#'|'='|'-'|'.'|':'|'>'|'<'|'!'|'in'|'|'|'('|')' // |'"'
 ;
 
 ID: BASIC_ID|Keywords|'end'|'endlegend';
@@ -238,7 +239,7 @@ terminal END		: '\u0040' 'enduml';
 terminal ML_COMMENT : '/\'' -> '\'/'; 
 
 // Singleline comment begins with ', and continues until end of line.
-terminal SL_COMMENT : '\'' !('\n'|'\r')* ('\r'? '\n')?;
+terminal SL_COMMENT : '\'' !('\n'|'\r')*;
 
 terminal INCARROW: ('[' '-'+ '>')|('[' '<' '-'+);
 terminal OUTARROW: ('<' '-'+ ']')|('-'+ '>' ']');

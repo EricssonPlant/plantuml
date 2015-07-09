@@ -126,7 +126,7 @@ Note:
 	'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
 		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*)) 
-		 		  (Colors)? ((':' Full_String)| ((NEWLINE Woend_String)* 'end note'))
+		 		  (Colors)? ((':' Full_String)| ((NEWLINE Woend_String)* ('end note'|'endnote')))
 ;
 
 // Rule for Dividers.

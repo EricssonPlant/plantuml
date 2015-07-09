@@ -1,7 +1,7 @@
 // Class for generating the grammar for the PlantUML language.
 grammar org.xtext.Plantuml 
 	//with org.eclipse.xtext.common.Terminals
-	hidden (SL_COMMENT, ML_COMMENT)
+	hidden (WS, SL_COMMENT, ML_COMMENT)
 generate plantuml "http://www.xtext.org/Plantuml"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
@@ -18,115 +18,130 @@ Diagram:
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
 	(Arrow
-	|Definition (WS Colors)? WS?
-	| AutoNumber WS?
-	| Title WS?
-	| Legend WS?
-	| Newpage WS?
-	| GroupingMessages WS?
-	| Note WS?
-	| Divider WS?
+	|Definition
+	| AutoNumber
+	| Title
+	| Legend
+	| Newpage
+	| GroupingMessages
+	| Note
+	| Divider
 	| Reference 
-	| Delay WS?
-	| Space WS?
-	| Hidefootbox WS?
-	| Activate WS?
-	| Deactivate WS?
-	| ParticipantCreation WS?
-	| Box WS?
-	| IncOut WS?
-	| Skinparam WS?)? NEWLINE
+	| Delay
+	| Space
+	| Hidefootbox
+	| Activate
+	| Deactivate
+	| ParticipantCreation
+	| Box
+	| IncOut
+	| Skinparam)? NEWLINE
 ;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Arrow:
-	names+=MyID WS SEQUENCE WS names+=MyID (WS? '!')? (WS? ':' (WS? MyID)*)?
+	names+=ID SEQUENCE names+=ID ('!')? (':' Full_String)?
 ;
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	'actor' WS name=MyID 
-	| 'boundary' WS name=MyID
-	| 'control' WS name=MyID
-	| 'entity' WS name=MyID
-	| 'database' WS name=MyID
-	| 'participant' WS (name=MyID|('"' (WS? MyID)* '"' WS 'as' WS MyID)) ('<<' ('(' MyID ','('#' HEXCODE)')')? MyID* '>>')?
+	Definition_Type name=ID (Stereotype)? (Color)?
 ;
 
+Definition_Type:
+	('actor' 
+	| 'boundary'
+	| 'control'
+	| 'entity'
+	| 'database'
+	| 'participant')
+;
+
+// 1.24 Stereotype, used in Participant_Declaration
+Stereotype:
+	'<<' ('(' CHAR ',' Color ')')? Full_String '>>'
+;
 Declaration: Definition|Arrow;
 
-// ID rule without Endlegend.
-EndLegendID:
-	ID |INT| 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
+Full_String:
+	Basic_String|'end'|'endlegend'
+;
+
+Woend_String:
+	Basic_String|'endlegend'
+;
+Woendlegend_String:
+	Basic_String|'end'
+;
+
+// |'endlegend'   
+Keywords:
+	'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
-	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'|'database'
-	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'|'/'|'\\'
-	   | '&&'| '&'|'in'|'|'|'||'|'skinparam'|'sequence'|'{'|'}' // |'"'
-	   ;
+	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
+	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
+	   |'deactivate'|'destroy'|'box'|'#'|'='|'-'|'.'|':'|'>'|'<'|'!'|'in'|'|'|'skinparam'|'sequence' // |'"'
+;
 
-// Using this instead of ID, so that you can use keywords in regular text.
-EndID:
-	ID |INT| 'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
-	   |'endlegend'|'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
-	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'|'database'
-	   |'deactivate'|'destroy'|'box'|'#'|','|'('|')'|'='|'-'|'.'|':'|'>'|'<'|'>>'|'<<'|'?'|'!'|'/'|'\\'
-	   | '&&'| '&'|'in'|'|'|'||'|'skinparam'|'sequence'|'{'|'}' // |'"'
-	   ;
+ID: BASIC_ID|Keywords|'end'|'endlegend';
 
-MyID: EndID|'end';
+Basic_String:
+	(BASIC_ID|Keywords|ANY_OTHER)*
+;
+
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	'autonumber' (WS INT (WS INT)?)? (WS '"' EndID* '"')?
+	'autonumber' (INT (INT)?)? ('"' Full_String '"')?
 ;
 
 // Rule for the title of the diagram
 Title:
-	'title' (WS MyID)*
+	'title' Full_String
 ;
 
 // Rule for legends.
 Legend:
-	'legend' WS (('right' | 'left' | 'center') WS)? (NEWLINE (EndLegendID|WS)*)* 'endlegend'
+	'legend' ('right' | 'left' | 'center')? (NEWLINE Woendlegend_String)* 'endlegend'
 ;
 
 // Rule for newpages
 Newpage:
-	'newpage' WS ANY_OTHER*
+	'newpage' Full_String
 ;
 
 Else:
-	'else' WS MyID* NEWLINE (instructions+=Instruction)*
+	'else' Full_String NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') WS  MyID* NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
+	('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') Full_String NEWLINE (instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
 // Rule for notes
 Note:
-	'note' WS (('right' WS ('of' rid=[Declaration|MyID] (',' rids+=[Declaration|MyID])*)?)
-		   		 |('left' WS ('of' lid=[Declaration|MyID] (',' lids+=[Declaration|MyID])*)?)
-		  		 |('over' WS oid=[Declaration|MyID](',' oids+=[Declaration|MyID])*)) 
-		 		  (Colors)? ((':' (WS? MyID)*)| ((NEWLINE (WS? EndID)*)* 'end note'))
+	'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
+		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
+		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*)) 
+		 		  (Colors)? ((':' Full_String)| ((NEWLINE Woend_String)* 'end note'))
 ;
 
 // Rule for Dividers.
 Divider:
-	'==' WS? (MyID WS?)* '=='
+	'==' Full_String '=='
 ;
 
 // Rule for References
 Reference:
-	'ref over' WS (id=[Declaration|MyID]) (',' WS ids+=[Declaration|MyID])* ((WS? ':' (WS MyID*)*)|((NEWLINE (WS? EndID)*)* 'end ref'))
+	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* (( ':' Full_String)|(Woend_String 'end ref'))
 ;
 
 // Rule for delays
 // TODO: Read full strings even when containing dots (....).
 Delay:
-	'...' (WS? (MyID WS?)* '...')?
+	'...' (Full_String '...')?
 ;
 
 // Rule for Spaces
@@ -141,33 +156,33 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' WS? (Colors WS)? name=MyID
+	'activate' (Colors)? name=ID
 ;
 
 Deactivate:
-	('deactivate'|'destroy') WS id=[Activate|MyID]
+	('deactivate'|'destroy') id=[Activate|ID]
 ;
 
 // Rule for Participant Creation
 // TODO: Make sure the ID hasn't been created in beforehand.
 ParticipantCreation:
-	'create' WS  MyID
+	'create' name=ID
 ;
 
 // Rule for box/end box
 Box:
-	'box' WS '"' EndID* '"' (WS Colors)? NEWLINE
+	'box' '"' Full_String '"' (Colors)? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end box'
 ;
 
 // Rule for incoming and outgoing messages
 IncOut:
-	((INCARROW name = MyID)|(name = MyID OUTARROW)) (':' MyID*)?
+	((INCARROW name = ID)|(name = ID OUTARROW)) (':' Full_String)?
 ;
 
 Skinparam:
-	'skinparam' WS 'sequence' '{' NEWLINE (SkinparamCommand? NEWLINE)* '}'
+	'skinparam' 'sequence' '{' NEWLINE (SkinparamCommand? NEWLINE)* '}'
 ;
 
 SkinparamCommand:
@@ -208,6 +223,7 @@ Color:
 	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
 	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
 ;
+
 
 // Terminals
 //--------------------------------------------------
@@ -256,8 +272,10 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal HEXCODE: ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+;
 
+terminal CHAR: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö');
+
 // ID can be any following sequence of letters and numbers, without spaces between them.
-terminal ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal BASIC_ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 terminal WS			: (' '|'\t')+;
 

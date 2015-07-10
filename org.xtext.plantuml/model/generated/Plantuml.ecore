@@ -10,21 +10,14 @@
         eType="#//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Arrow" eSuperTypes="#//Instruction #//Declarations">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Arrow" eSuperTypes="#//Instruction #//Declaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="names" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Instruction #//Declarations">
+  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Instruction #//Declaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Declarations"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AltElse" eSuperTypes="#//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
-        eType="#//Instruction" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elses" upperBound="-1"
-        eType="#//Else" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration"/>
   <eClassifiers xsi:type="ecore:EClass" name="Else">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
         eType="#//Instruction" containment="true"/>
@@ -32,22 +25,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="GroupingMessages" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
         eType="#//Instruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elses" upperBound="-1"
+        eType="#//Else" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="#//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rid" eType="#//Definition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rid" eType="#//Declaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rids" unique="false" upperBound="-1"
-        eType="#//Definition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lid" eType="#//Definition"/>
+        eType="#//Declaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lid" eType="#//Declaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lids" unique="false" upperBound="-1"
-        eType="#//Definition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oid" eType="#//Definition"/>
+        eType="#//Declaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oid" eType="#//Declaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oids" unique="false" upperBound="-1"
-        eType="#//Definition"/>
+        eType="#//Declaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//Definition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//Declaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ids" unique="false" upperBound="-1"
-        eType="#//Definition"/>
+        eType="#//Declaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Activate" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -55,8 +50,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Deactivate" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//Activate"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantCreation" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Box" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
         eType="#//Definition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncOut" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

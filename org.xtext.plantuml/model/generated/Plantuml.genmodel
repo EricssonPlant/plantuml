@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.plantuml.editor/src" modelPluginID="org.xtext.plantuml"
     forceOverwrite="true" modelName="Plantuml" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.plantuml.edit"
-    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.11">
+    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.10">
   <genPackages prefix="Plantuml" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="plantuml" ecorePackage="Plantuml.ecore#/">
     <genClasses ecoreClass="Plantuml.ecore#//Plantuml">
@@ -15,22 +15,18 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Instruction"/>
     <genClasses ecoreClass="Plantuml.ecore#//Arrow">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/names"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
     </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//Declarations"/>
-    <genClasses ecoreClass="Plantuml.ecore#//AltElse">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//AltElse/instructions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//AltElse/elses"/>
-    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Declaration"/>
     <genClasses ecoreClass="Plantuml.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//GroupingMessages">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessages/instructions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessages/elses"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Note">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/rid"/>
@@ -50,8 +46,14 @@
     <genClasses ecoreClass="Plantuml.ecore#//Deactivate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Deactivate/id"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//ParticipantCreation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//ParticipantCreation/name"/>
+    </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Box">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Box/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//IncOut">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//IncOut/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

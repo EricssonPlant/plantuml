@@ -39,8 +39,7 @@ class Title extends XtextTest {
 	def void testTitleML(){
 		'''
 		@startuml
-		title hello my name is
-		Anton Anton Anton
+		title hello my name is\nAnton Anton Anton
 		@enduml
 		'''.parse.assertNoErrors
 	}

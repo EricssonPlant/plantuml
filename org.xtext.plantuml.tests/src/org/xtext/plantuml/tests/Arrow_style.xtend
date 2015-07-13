@@ -17,7 +17,7 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Arrow_to_self extends XtextTest {
+class Arrow_style extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	

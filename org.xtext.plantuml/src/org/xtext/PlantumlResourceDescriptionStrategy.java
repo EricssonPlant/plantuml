@@ -7,7 +7,7 @@ import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy;
 import org.eclipse.xtext.util.IAcceptor;
-import org.xtext.plantuml.Arrow;
+import org.xtext.plantuml.Sequence;
 
 public class PlantumlResourceDescriptionStrategy extends
 		DefaultResourceDescriptionStrategy {
@@ -15,9 +15,9 @@ public class PlantumlResourceDescriptionStrategy extends
 	@Override
 	public boolean createEObjectDescriptions(EObject eObject,
 			IAcceptor<IEObjectDescription> acceptor) {
-		if(eObject instanceof Arrow) {
-			EList<String> l = ((Arrow) eObject).getNames();
-			for (String i : ((Arrow) l).getNames()) {
+		if(eObject instanceof Sequence) {
+			EList<String> l = ((Sequence) eObject).getNames();
+			for (String i : ((Sequence) l).getNames()) {
 				acceptor.accept(EObjectDescription.create(QualifiedName.create(i), eObject));
 			}
 		}

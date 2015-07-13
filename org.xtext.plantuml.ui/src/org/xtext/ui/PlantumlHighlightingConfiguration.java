@@ -14,18 +14,32 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String SEQ_ARR = "Sequence arrow";
 		public static final String COMMENT = "Comment";
 		public static final String DEFINITION = "Definition";
+		public static final String AUTONUMBER = "Keyword";
+		public static final String TITLE = "Title";
+		public static final String LEGEND = "Legend";
+		public static final String NEWPAGE = "Newpage";
+		public static final String GROUPINGMESSAGES = "Grouping message";
+		public static final String NOTE = "Note";
+		public static final String REFERENCE = "Reference";
 		public static final String[] ALL_STRINGS = 
 		{
-			STND, SEQ_ARR, COMMENT, DEFINITION
+			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, GROUPINGMESSAGES, NOTE
 		};
 	
 	// This method must be implemented as it's needed by IHighlightingConfiguration.
 	// It will call addType to create the different styles needed.
 	public void configure(IHighlightingConfigurationAcceptor acceptor){
 		addType( acceptor, STND, 153, 0, 200, NORMAL);
-		addType( acceptor, SEQ_ARR, 200, 0, 0, NORMAL);
+		addType( acceptor, SEQ_ARR, 200, 0, 0, BOLD);
 		addType( acceptor, COMMENT, 0, 102, 0, NORMAL);
 		addType( acceptor, DEFINITION, 0, 0, 200, NORMAL);
+		addType( acceptor, AUTONUMBER, 0, 0, 200, NORMAL);
+		addType( acceptor, TITLE, 0, 0, 200, NORMAL);
+		addType( acceptor, LEGEND, 0, 0, 200, NORMAL);
+		addType( acceptor, NEWPAGE, 0, 0, 200, NORMAL);
+		addType( acceptor, GROUPINGMESSAGES, 0, 0, 200, NORMAL);
+		addType( acceptor, NOTE, 0, 0, 200, NORMAL);
+		addType( acceptor, REFERENCE, 0, 0, 200, NORMAL);
 	}
 	
 	

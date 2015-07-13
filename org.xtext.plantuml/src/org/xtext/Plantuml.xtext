@@ -17,7 +17,7 @@ Diagram:
 
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
-	(Arrow
+	(Sequence
 	|Definition
 	| AutoNumber
 	| Title
@@ -50,29 +50,37 @@ Keywords:
 	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'
 ;
 
+
 SpecialChars:
-	'|'|'||'|'#'|'='|'-'|'.'|':'|'>'|'<'|'!'|')'|'('|','
+	'|'|'||'|'#'| ARROWBODY | ':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','
 ;
 
 ID: BASIC_ID|Keywords|'end'|'endlegend';
 
-Basic_String:
+
+Special_String:
 	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT|Color)*
 ;
 
+
+Basic_String:
+	(BASIC_ID|Keywords|INT|Color)*
+;
+
 Full_String:
-	Basic_String|'end'|'endlegend'
+	Basic_String | Quotes_String |'end'|'endlegend'
 ;
 
 Woend_String:
-	Basic_String|'endlegend'
+	Basic_String | Quotes_String |'endlegend'
 ;
+
 Woendlegend_String:
-	Basic_String|'end'
+	Basic_String | Quotes_String |'end'
 ;
 
 Quotes_String:
-	'"' Full_String '"'
+	'"' Special_String '"'
 ;
 
 
@@ -80,11 +88,16 @@ Quotes_String:
 // Rules for declarations of actors
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
-Declaration: Definition|Arrow;
+Declaration: Definition|Sequence;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
+Sequence:
+	names+=ID Arrow names+=ID ('!')? (':' Full_String)?
+;
+
 Arrow:
-	names+=ID SEQUENCE names+=ID ('!')? (':' Full_String)?
+	(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' Colors ']')? ARROWBODY+ ('[' Colors ']' ARROWBODY+)?
+	 ('[' Colors ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
 
 // Rule for defining objects in PlantUML, such as
@@ -146,7 +159,7 @@ GroupingMessages:
 Note:
 	'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
-		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*)) 
+		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
 		 		  (Colors)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end note'|'endnote'))
 ;
 
@@ -158,7 +171,7 @@ Divider:
 // Rule for References
 Reference:
 	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' Full_String)|((NEWLINE Basic_String)* NEWLINE 'end ref'))
+	(( ':' Full_String)|((NEWLINE (Basic_String | Quotes_String))* NEWLINE 'end ref'))
 ;
 
 // Rule for delays
@@ -199,9 +212,16 @@ Box:
 	'end box'
 ;
 
+IncArrow:
+	('[' ARROWBODY+ RIGHTARROWHEAD)|('[' LEFTARROWHEAD ARROWBODY+)
+;
+OutArrow:
+	(LEFTARROWHEAD ARROWBODY+ ']')|(ARROWBODY+ RIGHTARROWHEAD ']')
+;
+
 // Rule for incoming and outgoing messages
 IncOut:
-	((INCARROW name = ID)|(name = ID OUTARROW)) (':' Full_String)?
+	((IncArrow name = ID)|(name = ID OutArrow)) (':' Full_String)?
 ;
 
 Skinparam:
@@ -264,31 +284,24 @@ terminal ML_COMMENT : '/\'' -> '\'/';
 // Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')*;
 
-terminal INCARROW: ('[' '-'+ '>')|('[' '<' '-'+);
-terminal OUTARROW: ('<' '-'+ ']')|('-'+ '>' ']');
+terminal ARROWBODY:
+	'.' | '=' | '-'
+;
 
-// Sequences are arrows connecting two actors. Has to be defined in unicode.
-terminal SEQUENCE:
-	('\u002D')* '\u002D' '\u003E'							// - = u002D  | > = u003E
-	| '\u003C' '\u002D' ('\u002D')* 						// < = u003C  | - = u002D
-	| '\u002D' '\u003E' 'x'									// - = u002D  | > = u003E
-	| 'x' '\u003C' '\u002D' 								// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u003E' '\u003E'				// - = u002D | > = u003E
-	| '\u003C' '\u003C' '\u002D' ('\u002D')*				// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u005C' '\u005C'				// - = u002D
-	| '\u002F' '\u002D' ('\u002D')*							// / = u002F | - = u002D
-	| '\u002F' '\u002F' '\u002D' ('\u002D')*				// / = u002F | - = u002D
-	| ('\u002D')* '\u002D' '\u003E' 'o'						// - = u002D | > = u003E
-	| 'o' '\u003C' '\u002D' ('\u002D')*						// < = u003C | - = u002D
-	| ('\u002D')* '\u002D' '\u002D' '\u002F' '\u002F' 'o'	// - = u002D | / = u002F
-	| 'o' '\\\\' '\u002D' '\u002D' ('\u002D')* 				// - = u002D
-	| '\u003C' '\u002D' '\u003E' 							// < = u003C | - = u002D | > = u003E
-	| '\u003C' '\u002D' '\u003E' 'o' 						// < = u003C | - = u002D | > = u003E
-	| 'o' '\u003C' '\u002D' '\u003E' 						// < = u003C | - = u002D | > = u003E
-	| '\u003C' '\u007C' '\u002D' '\u002D' 					// < = u003C | | = u007C | - = u002D
-	| '\u002D' '\u002D' '\u007C' '\u003E' 					// - = u002D | | = u007C | > = u003E
-	| '\u002E' '\u002E' 									// . = u002E
-	| '\u002E'												// . = u002E	
+terminal RIGHTARROWHEAD:
+	'>'
+;
+
+terminal LEFTARROWHEAD:
+	'<'
+;
+
+terminal RIGHTARROWHEADEXTENSION:
+	'x' | '>o' | '>x'
+;
+
+terminal LEFTARROWHEADEXTENSION:
+	'x' | 'o<' | 'x<'
 ;
 
 // INT is a sequence of numbers 0-9.

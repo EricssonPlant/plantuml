@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.plantuml.editor/src" modelPluginID="org.xtext.plantuml"
     forceOverwrite="true" modelName="Plantuml" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.plantuml.edit"
-    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.10">
+    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.11">
   <genPackages prefix="Plantuml" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="plantuml" ecorePackage="Plantuml.ecore#/">
     <genClasses ecoreClass="Plantuml.ecore#//Plantuml">
@@ -20,6 +20,10 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Definition/Stereotype"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Stereotype">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Stereotype/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>

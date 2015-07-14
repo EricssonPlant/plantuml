@@ -25,14 +25,14 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 		while( it.hasNext())
 		{
 			INode node = it.next();
-			System.out.println("-------------------------------------");
-			System.out.println(node.getText());
+		//	System.out.println("-------------------------------------");
+		//	System.out.println(node.getText());
 			
 			// Checks if the node is a RuleCall
 			if(node.getGrammarElement() instanceof RuleCall){
 				RuleCall rc = (RuleCall) node.getGrammarElement();
 				AbstractRule r = rc.getRule();
-				System.out.println(r.getName());
+				//System.out.println(r.getName());
 				
 				// For example if the called rule is of the type START or END the specific
 				// node will be coloured according the style STND.
@@ -78,7 +78,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					//This if-construct allows for spaces and tabs to be used in front of legend while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
-						System.out.println(node.getText());
+						//System.out.println(node.getText());
 					}
 					
 					if(node.getText().equalsIgnoreCase("legend")){
@@ -170,23 +170,23 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 						node = it.next();
 						while(!node.getText().equalsIgnoreCase("endnote")){
 							if(node.getText().equalsIgnoreCase("\r\n") || node.getText().equalsIgnoreCase("\n")){
-								System.out.println("11111111111111111111111");
+								//System.out.println("11111111111111111111111");
 								node = it.next();
 								node = it.next();
 								node = it.next();
 								System.out.print("|"+node.getText()+"|");
 								if(node.getText().equalsIgnoreCase("end")){
-									System.out.println("22222222222222222222");
+									//System.out.println("22222222222222222222");
 									node = it.next();
 									node = it.next();
-									System.out.print(node.getText());
+									//System.out.print(node.getText());
 									if(node.getText().equalsIgnoreCase(" note")){
 										textToBeHighlightedLength = 10;
 										break;
 									}
 								}
 							}
-							System.out.print("["+node.getText()+"]");
+							//System.out.print("["+node.getText()+"]");
 							node = it.next();
 							newOffset = node.getOffset();
 						}

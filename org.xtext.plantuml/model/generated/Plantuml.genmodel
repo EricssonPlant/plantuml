@@ -21,6 +21,7 @@
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Definition/Stereotype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Stereotype">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Stereotype/Color"/>

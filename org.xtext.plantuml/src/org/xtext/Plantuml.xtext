@@ -52,19 +52,19 @@ Keywords:
 
 
 SpecialChars:
-	'|'|'||'|'#'| ARROWBODY | ':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','
+	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','
 ;
 
 ID: BASIC_ID|Keywords|'end'|'endlegend';
 
 
 Special_String:
-	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT|Color)*
+	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT)*
 ;
 
 
 Basic_String:
-	(BASIC_ID|Keywords|INT|Color|CHAR)*
+	(BASIC_ID|Keywords|INT|CHAR)*
 ;
 
 Full_String:
@@ -95,14 +95,14 @@ Sequence:
 ;
 
 Arrow:
-	(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' Colors ']')? ARROWBODY+ ('[' Colors ']' ARROWBODY+)?
-	 ('[' Colors ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
+	(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' Color ']')? ARROWBODY+ ('[' Color ']' ARROWBODY+)?
+	 ('[' Color ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	Definition_Type name=ID (Stereotype = Stereotype)? (Color = Colors)?
+	Definition_Type name=ID (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
 
 Definition_Type:
@@ -159,7 +159,7 @@ Note:
 	'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
 		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
-		 		  (Colors)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end note'|'endnote'))
+		 		  (Color)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end note'|'endnote'))
 ;
 
 // Rule for Dividers.
@@ -191,7 +191,7 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' (Colors)? name=ID
+	'activate' (Color)? name=ID
 ;
 
 Deactivate:
@@ -206,7 +206,7 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	'box' Quotes_String (Colors)? NEWLINE
+	'box' Quotes_String (Color)? NEWLINE
 	(definitions+=Definition? NEWLINE)* 
 	'end box'
 ;
@@ -228,44 +228,21 @@ Skinparam:
 ;
 
 SkinparamCommand:
-	'ArrowColor' Colors
-	|'ActorBorderColor' Colors
-	|'LifeLineBorderColor' Colors
-	|'LifeLineBackgroundColor' Colors
-	|'ParticipantBorderColor' Colors
-	|'ParticipantBackgroundColor' Colors
+	'ArrowColor' Color
+	|'ActorBorderColor' Color
+	|'LifeLineBorderColor' Color
+	|'LifeLineBackgroundColor' Color
+	|'ParticipantBorderColor' Color
+	|'ParticipantBackgroundColor' Color
 	|'ParticipantFontName' ID
-	|'ActorBackgroundColor' Colors
-	|'ActorFontColor' Colors
+	|'ActorBackgroundColor' Color
+	|'ActorFontColor' Color
 	|'Actorfontsize' INT
 	|'ActorFontName' ID
 ;
-Colors: '#' (Color|ID);
 
-Color:
-	('AliceBlue'|'AntiqueWhite'|'Aqua'|'Aquamarine'|'Azure'|'Beige'|'Bisque'|'Black'|'BlanchedAlmond'
-	|'Blue'|'BlueViolet'|'Brown'|'BurlyWood'|'CadetBlue'|'Chartreuse'|'Chocolate'|'Coral'
-	|'CornflowerBlue'|'Cornsilk'|'Crimson'|'Cyan'|'DarkBlue'|'DarkCyan'|'DarkGoldenRod'|'DarkGray'
-	|'DarkGreen'|'DarkGrey'|'DarkKhaki'|'DarkMagenta'|'DarkOliveGreen'|'DarkOrchid'|'DarkRed'
-	|'DarkSalmo'|'DarkSeaGreen'|'DarkSlateBlue'|'DarkSlateGray'|'DarkSlateGrey'|'DarkTurquoise'
-	|'DarkViolet'|'Darkorange'|'DeepPink'|'DeepSkyBlue'|'DimGray'|'DimGrey'|'DodgerBlue'
-	|'FireBrick'|'FloralWhite'|'ForestGreen'|'Fuchsia'|'Gainsboro'|'GhostWhite'|'Gold'
-	|'GoldenRod'|'Gray'|'Green'|'GreenYellow'|'Grey'|'HoneyDew'|'HotPink'|'IndianRed'
-	|'Indigo'|'Ivory'|'Khaki'|'Lavender'|'LavenderBlush'|'LawnGreen'|'LemonChiffon'
-	|'LightBlue'|'LightCoral'|'LightCyan'|'LightGoldenRodYellow'|'LightGray'|'LightGreen'
-	|'LightGrey'|'LightPink'|'LightSalmon'|'LightSeaGreen'|'LightSkyBlue'|'LightSlateGray'
-	|'LightSlateGrey'|'LightSteelBlue'|'LightYellow'|'Lime'|'LimeGreen'|'Linen'|'Magenta'
-	|'Maroon'|'MediumAquaMarine'|'MediumBlue'|'MediumOrchid'|'MediumPurple'|'MediumSeaGreen'
-	|'MediumSlateBlue'|'MediumSpringGreen'|'MediumTurquoise'|'MediumVioletRed'
-	|'MidnightBlue'|'MintCream'|'MistyRose'|'Moccasin'|'NavajoWhite'|'Navy'|'OldLace'
-	|'Olive'|'OliveDrab'|'OrangeRed'|'Orchid'|'PaleGoldenRod'|'PaleGreen'
-	|'PaleTurquoise'|'PaleVioletRed'|'PapayaWhip'|'PeachPuff'|'Peru'|'Pink'|'Plum'
-	|'PowderBlue'|'Purple'|'Red'|'RosyBrown'|'RoyalBlue'|'SaddleBrown'
-	|'Salmon'|'SandyBrown'|'SeaGreen'|'Sienna'|'Silver'|'SkyBlue'|'SlateBlue'
-	|'SlateGray'|'SlateGrey'|'Snow'|'SpringGreen'|'SteelBlue'|'Tan'|'Teal'|'Thistle'
-	|'Tomato'|'Turquoise'|'Violet'|'Wheat'|'White'|'WhiteSmoke'|'Yellow'|'YellowGreen')
-;
-
+// ValueConverter checks if the Color is a proper color or a hexcode
+Color: ID;
 
 // Terminals
 // ------------------------------------------------------------------
@@ -307,8 +284,6 @@ terminal LEFTARROWHEADEXTENSION:
 terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal CHAR: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö');
-
-//terminal HEXCODE: ('A' .. 'F'|'0' .. '9'|'a' .. 'f')('A' .. 'F'|'0' .. '9'|'a' .. 'f')+;
 
 terminal BASIC_ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 

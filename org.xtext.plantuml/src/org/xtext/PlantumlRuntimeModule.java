@@ -3,6 +3,7 @@
  */
 package org.xtext;
 
+import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
@@ -18,4 +19,9 @@ public class PlantumlRuntimeModule extends org.xtext.AbstractPlantumlRuntimeModu
 		.annotatedWith(Names.named(AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(
 		PlantumlImportedNamespaceAwareLocalScopeProvider.class);
 		}
+	
+	@Override
+	public Class<? extends IValueConverterService> bindIValueConverterService() {
+        return PlantumlValueConverter.class;
+    }
 }

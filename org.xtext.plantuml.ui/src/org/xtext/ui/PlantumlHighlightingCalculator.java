@@ -99,7 +99,6 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 								searchForAlignment = false;
 							}
 							else if(node.getText().equalsIgnoreCase("endlegend") || node.getText().equalsIgnoreCase("end legend")){
-								System.out.println("Färgläggning");
 								acceptor.addPosition(node.getOffset(), node.getLength(), LEGEND);
 								break;
 							}	
@@ -221,7 +220,6 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					int referenceLength = node.getLength();
 					int referencePartLength = 0;
 					boolean multilineReference = true;
-					System.out.println(referenceLength);
 					node = it.next();
 					//This if-construct allows for spaces and tabs to be used in front of the reference while still keeping highlighting
 					if(node.getText().equals(" ") || node.getText().equals("\t")
@@ -265,7 +263,6 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 						node = it.next();	
 					}
 					int delayPartLength = node.getLength();
-					System.out.println(node.getText());
 					if(node.getText().equals("...")){
 						acceptor.addPosition(node.getOffset(), node.getLength(), DELAY);
 					}
@@ -274,7 +271,6 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 ;					while(delayLength > delayPartLength){
 						node = it.next();
 						delayPartLength += node.getLength();
-						System.out.println(node.getText());
 						if(node.getText().equals("...")){
 							acceptor.addPosition(node.getOffset(), node.getLength(), DELAY);
 						}
@@ -296,12 +292,60 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 						acceptor.addPosition(node.getOffset(), spacePartLength, SPACE);
 						while(spaceLength > spacePartLength){
 							node = it.next();
-							System.out.println(node.getText());
 							if(node.getText().equals("||")){
 								acceptor.addPosition(node.getOffset(), spacePartLength, SPACE);
 								break;
 							}
 						}
+					}
+				}
+				
+				else if(r.getName().equals("Hidefootbox")){
+					node = it.next();
+					if(node.getText().contains(" ") || node.getText().contains("\t")){
+						node = it.next();	
+					}
+					if(node.getText().equalsIgnoreCase("hidefootbox")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), HIDEFOOTBOX);
+					}
+					else if(node.getText().equalsIgnoreCase("hide footbox")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), HIDEFOOTBOX);
+					}
+					/*
+					if(node.getText().contains(" ") || node.getText().contains("\t")){
+						node = it.next();
+						System.out.println(node.getText());
+					}
+					if(node.getText().equalsIgnoreCase("hide")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), HIDEFOOTBOX);
+						while(node.getText().equals("\n") || node.getText().equals("\r\n")){	
+							node = it.next();
+							System.out.println(node.getText());
+							if(node.getText().equalsIgnoreCase("box")){
+								acceptor.addPosition(node.getOffset(), node.getLength(), HIDEFOOTBOX);
+							}
+						}
+					}
+					*/
+				}
+				
+				else if(r.getName().equals("Deactivate")){
+					node = it.next();
+					if(node.getText().contains(" ") || node.getText().contains("\t")){
+						node = it.next();	
+					}
+					if(node.getText().equalsIgnoreCase("deactivate")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), DEACTIVATE);
+					}
+				}
+				
+				else if(r.getName().equals("ParticipantCreation")){
+					node = it.next();
+					if(node.getText().contains(" ") || node.getText().contains("\t")){
+						node = it.next();	
+					}
+					if(node.getText().equalsIgnoreCase("create")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), PARTICIPANTCREATION);
 					}
 				}
 			}

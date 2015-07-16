@@ -209,7 +209,7 @@ ParticipantCreation:
 // Rule for box/end box
 Box:
 	'box' Quotes_String (Color)? NEWLINE
-	(definitions+=Definition? NEWLINE)* 
+	(definitions+=Definition? NEWLINE)*
 	'end box'
 ;
 

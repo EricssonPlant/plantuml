@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.plantuml.editor/src" modelPluginID="org.xtext.plantuml"
     forceOverwrite="true" modelName="Plantuml" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.plantuml.edit"
-    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.10">
+    editorPluginID="org.xtext.plantuml.editor" runtimeVersion="2.11">
   <genPackages prefix="Plantuml" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="plantuml" ecorePackage="Plantuml.ecore#/">
     <genClasses ecoreClass="Plantuml.ecore#//Plantuml">
@@ -17,9 +17,18 @@
     <genClasses ecoreClass="Plantuml.ecore#//Declaration"/>
     <genClasses ecoreClass="Plantuml.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Sequence/names"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Sequence/arrow"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Arrow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Definition/Stereotype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/Color"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Stereotype">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Stereotype/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>
@@ -35,12 +44,14 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/lids"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oid"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oids"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Note/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Reference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/ids"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Activate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/Color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Deactivate">
@@ -54,6 +65,12 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//IncOut">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//IncOut/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Skinparam">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Skinparam/cmd"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//SkinparamCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//SkinparamCommand/Color"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

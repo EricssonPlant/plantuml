@@ -24,14 +24,14 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 		while( it.hasNext())
 		{
 			INode node = it.next();
-			System.out.println("-------------------------------------");
-			System.out.println(node.getText());
+		//	System.out.println("-------------------------------------");
+		//	System.out.println(node.getText());
 			
 			// Checks if the node is a RuleCall
 			if(node.getGrammarElement() instanceof RuleCall){
 				RuleCall rc = (RuleCall) node.getGrammarElement();
 				AbstractRule r = rc.getRule();
-				System.out.println(r.getName());
+				//System.out.println(r.getName());
 				
 				// For example if the called rule is of the type START or END the specific
 				// node will be coloured according the style STND.
@@ -77,6 +77,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					//This if-construct allows for spaces and tabs to be used in front of legend while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
+
 					}
 					
 					if(node.getText().equalsIgnoreCase("legend")){
@@ -176,19 +177,20 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					else{
 						acceptor.addPosition(startOffset, textToBeHighlightedLength, NOTE);
 						textToBeHighlightedLength = 0;
+
 						//A multiline note can only end with 'end note' or 'endnote' after a newline which is why '\n' or '\r\n' 
 						// is required before checking for the end of a note.
 						// For the while-loop to calculate the size of the tokens correctly it needs to skip certain nodes and 
 						// that is handled by the if-statement.
 						while(noteLength >= notePartLength){
 							if(node.getText().contains("\r\n") || node.getText().contains("\n")){
-								
 								node = it.next();
 								if(node.getText().equalsIgnoreCase("end note") || node.getText().equalsIgnoreCase("endnote")){
 									acceptor.addPosition(node.getOffset(), node.getLength(), NOTE);
 									break;
 								}
 								node = it.next();
+
 								if(node.getText().equalsIgnoreCase("end note") || node.getText().equalsIgnoreCase("endnote")){
 									acceptor.addPosition(node.getOffset(), node.getLength(), NOTE);
 									break;

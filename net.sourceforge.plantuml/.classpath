@@ -5,6 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
-	<classpathentry kind="lib" path="C:/Users/eaonlen/Documents/GitHub/plantuml/net.sourceforge.plantuml/lib/Plantuml/plantuml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eaonban/Downloads/plantuml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

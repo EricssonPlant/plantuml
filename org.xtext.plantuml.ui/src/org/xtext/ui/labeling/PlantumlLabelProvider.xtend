@@ -19,9 +19,11 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 
 	// Labels and icons can be computed like this:
 	
+
+	
 //	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
+	//	'A greeting to ' + ele.name
+	//}
 //
 //	def image(Greeting ele) {
 //		'Greeting.gif'

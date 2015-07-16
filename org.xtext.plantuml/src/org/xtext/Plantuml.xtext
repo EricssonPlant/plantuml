@@ -47,7 +47,7 @@ Keywords:
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
 	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'
+	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'
 ;
 
 
@@ -161,7 +161,7 @@ Note:
 	'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
 		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
-		 		  ('#' Color = Color)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end note'|'endnote'))
+		 		  ('#' Color = Color)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end''note'|'endnote'))
 ;
 
 // Rule for Dividers.
@@ -172,7 +172,7 @@ Divider:
 // Rule for References
 Reference:
 	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' Full_String)|((NEWLINE (Basic_String | Quotes_String))* NEWLINE 'end ref'))
+	(( ':' Full_String)|((NEWLINE (Basic_String | Quotes_String))* NEWLINE 'endref'|'end''ref'))
 ;
 
 // Rule for delays
@@ -188,7 +188,7 @@ Space:
 
 // Rule for hiding the footbox
 Hidefootbox:
-	'hide footbox'
+	'hide footbox'|'hide''footbox'|'hidefootbox'
 ;
 
 // Rules for activation, deactivation and destruction of lifelines

@@ -13,7 +13,9 @@
     <genClasses ecoreClass="Plantuml.ecore#//Diagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Diagram/instructions"/>
     </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//Instruction"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Instruction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Instruction/instr"/>
+    </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Declaration"/>
     <genClasses ecoreClass="Plantuml.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Sequence/names"/>
@@ -29,6 +31,18 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Stereotype">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Stereotype/Color"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//AutoNumber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//AutoNumber/numbers"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Title">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Title/title"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Legend">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/pos"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Newpage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Newpage/text"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>
@@ -46,13 +60,22 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oids"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Note/Color"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Divider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Divider/text"/>
+    </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Reference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/ids"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Delay">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Delay/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Space">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Space/number"/>
+    </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Activate">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/Color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Deactivate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Deactivate/id"/>
@@ -61,6 +84,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//ParticipantCreation/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Box">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Box/Color"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Box/definitions"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//IncOut">

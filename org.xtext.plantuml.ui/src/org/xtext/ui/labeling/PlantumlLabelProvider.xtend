@@ -4,6 +4,8 @@
 package org.xtext.ui.labeling
 
 import com.google.inject.Inject
+import org.xtext.plantuml.Arrow
+import org.xtext.plantuml.Instruction
 
 /**
  * Provides labels for EObjects.
@@ -19,11 +21,14 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 
 	// Labels and icons can be computed like this:
 	
-
+	def text(Instruction instr){
+		instr.getInstr()
+	}
 	
-//	def text(Greeting ele) {
-	//	'A greeting to ' + ele.name
-	//}
+	def text(Arrow arrow){
+		"Pooop"
+	}
+	
 //
 //	def image(Greeting ele) {
 //		'Greeting.gif'

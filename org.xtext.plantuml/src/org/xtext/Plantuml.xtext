@@ -47,7 +47,7 @@ Keywords:
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
 	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
 	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefooter'
+	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'
 ;
 
 
@@ -55,7 +55,7 @@ SpecialChars:
 	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='
 ;
 
-ID: BASIC_ID|Keywords|'end'|'endlegend';
+ID: BASIC_ID|Keywords|'end'|'endlegend'|CHAR;
 
 
 Special_String:

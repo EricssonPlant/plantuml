@@ -12,7 +12,7 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	START NEWLINE (instructions+=Instruction)* END NEWLINE*
+	START NEWLINE (instructions+=Instruction)+ END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -52,7 +52,7 @@ Keywords:
 
 
 SpecialChars:
-	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','
+	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='
 ;
 
 ID: BASIC_ID|Keywords|'end'|'endlegend';
@@ -91,7 +91,7 @@ Declaration: Definition|Sequence;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
-	names+=ID arrow=Arrow names+=ID ('!')? (':' Full_String)?
+	names+=ID arrow=Arrow (names+=ID ('!')? (':' Full_String)?)?
 ;
 
 Arrow:

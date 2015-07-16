@@ -2,7 +2,6 @@ package org.xtext.ui;
 
 import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.impl.TerminalRuleImpl;
 import org.eclipse.xtext.nodemodel.BidiTreeIterator;
 import org.eclipse.xtext.nodemodel.INode;
@@ -49,7 +48,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 				
 				else if(r.getName().equals("AutoNumber")){
 					node = it.next();
-					//This if-construct allows for spaces and tabs to be used in front of the definition while still keeping highlighting
+					//This if-construct allows for spaces and tabs to be used in front of the autonumber while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
 						
@@ -59,7 +58,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 				
 				else if(r.getName().equals("Title")){
 					node = it.next();
-					//This if-construct allows for spaces and tabs to be used in front of the definition while still keeping highlighting
+					//This if-construct allows for spaces and tabs to be used in front of the title while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
 						
@@ -78,16 +77,18 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					//This if-construct allows for spaces and tabs to be used in front of legend while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
-						System.out.println(node.getText());
 					}
 					
 					if(node.getText().equalsIgnoreCase("legend")){
 						acceptor.addPosition(node.getOffset(), node.getLength(), LEGEND);
-						//This loop traverses the legend section to find endlegend and a aligmnent if there is one
-						while(legendLength>legendPartLength){
+						//This loop traverses the legend section to find endlegend and an aligmnent if there is one
+						while(legendLength>=legendPartLength){
 							node = it.next();
-							if(node.getText().contains("\n"))
-								newlineBeforeAlignment = true;
+							//This if-statement skips tokens so that the counting towards the legendLength will be correct
+							if(node.getText().equalsIgnoreCase("\r\n") || node.getText().equalsIgnoreCase("\n")){
+								node = it.next();
+								node = it.next();
+							}
 							legendPartLength += node.getLength();
 							//If there has been one alignment already, there shouldn't be highlighting for another occurence of aligmnent.
 							//When the alignment is typed on a different row than 'legend' it shouldn't be highlighted.
@@ -96,8 +97,12 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 								acceptor.addPosition(node.getOffset(), node.getLength(), LEGEND);
 								searchForAlignment = false;
 							}
-							else if(node.getText().equalsIgnoreCase("endlegend"))
+							else if(node.getText().equalsIgnoreCase("endlegend") || node.getText().equalsIgnoreCase("end legend")){
+								System.out.println("Färgläggning");
 								acceptor.addPosition(node.getOffset(), node.getLength(), LEGEND);
+								break;
+							}	
+							
 						}
 					}
 				}
@@ -105,7 +110,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 				else if(r.getName().equals("Newpage")){
 					
 					node = it.next();
-					//This if-construct allows for spaces and tabs to be used in front of the definition while still keeping highlighting
+					//This if-construct allows for spaces and tabs to be used in front of newpage while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
 						
@@ -118,10 +123,8 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					if(node.getText().contains("end")){
 						node = it.next();
 						acceptor.addPosition(node.getOffset(), node.getLength(), GROUPINGMESSAGES);
-						//This if-construct allows for spaces and tabs to be used in front of the definition while still keeping highlighting
-						if(node.getText().contains(" ") || node.getText().contains("\t")){
-							node = it.next();
-						}
+						//This if-construct allows for spaces and tabs to be used in front of grouping messages while still keeping highlighting
+
 						while(true){
 							node = it.next();
 							if(node.getText().equalsIgnoreCase("else")){
@@ -147,61 +150,158 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					}
 				}
 				
-				else if(r.getName().equals("Note")){
+				else if(r.getName().equalsIgnoreCase("Note")){
+					int noteLength = node.getLength();
+					int notePartLength = 0;
 					int textToBeHighlightedLength = 0;
 					int startOffset = node.getOffset();
-					int newOffset = 0;
 					node = it.next();
+					//This if-construct allows for spaces and tabs to be used in front of the note while still keeping highlighting
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
 						node = it.next();
 					}
+					notePartLength += node.getLength();
 					textToBeHighlightedLength += node.getLength();
-					node = it.next();
-					textToBeHighlightedLength += node.getLength();
-					node = it.next();
-					textToBeHighlightedLength += node.getLength();
-					node = it.next();
-					if(node.getText().equals(":")){
-						acceptor.addPosition(startOffset, textToBeHighlightedLength+1, NOTE);
+					
+					//This loop goes through the first three note tokens to reach the newline character or to reach a ':'
+					for(int i=0; i<3; i++){
+						node = it.next();
+						notePartLength += node.getLength();
+						textToBeHighlightedLength += node.getLength();
 					}
+					if(node.getText().equals(":")){
+						acceptor.addPosition(startOffset, textToBeHighlightedLength, NOTE);
+					}
+					//This else-statement handles the case where there is a multiline note
 					else{
 						acceptor.addPosition(startOffset, textToBeHighlightedLength, NOTE);
 						textToBeHighlightedLength = 0;
-						node = it.next();
-						while(!node.getText().equalsIgnoreCase("endnote")){
-							if(node.getText().equalsIgnoreCase("\r\n") || node.getText().equalsIgnoreCase("\n")){
-								System.out.println("11111111111111111111111");
+						//A multiline note can only end with 'end note' or 'endnote' after a newline which is why '\n' or '\r\n' 
+						// is required before checking for the end of a note.
+						// For the while-loop to calculate the size of the tokens correctly it needs to skip certain nodes and 
+						// that is handled by the if-statement.
+						while(noteLength >= notePartLength){
+							if(node.getText().contains("\r\n") || node.getText().contains("\n")){
+								
 								node = it.next();
+								if(node.getText().equalsIgnoreCase("end note") || node.getText().equalsIgnoreCase("endnote")){
+									acceptor.addPosition(node.getOffset(), node.getLength(), NOTE);
+									break;
+								}
 								node = it.next();
-								node = it.next();
-								System.out.print("|"+node.getText()+"|");
-								if(node.getText().equalsIgnoreCase("end")){
-									System.out.println("22222222222222222222");
-									node = it.next();
-									node = it.next();
-									System.out.print(node.getText());
-									if(node.getText().equalsIgnoreCase(" note")){
-										textToBeHighlightedLength = 10;
-										break;
-									}
+								if(node.getText().equalsIgnoreCase("end note") || node.getText().equalsIgnoreCase("endnote")){
+									acceptor.addPosition(node.getOffset(), node.getLength(), NOTE);
+									break;
 								}
 							}
-							System.out.print("["+node.getText()+"]");
 							node = it.next();
-							newOffset = node.getOffset();
+							notePartLength += node.getLength();
 						}
-						acceptor.addPosition(newOffset, textToBeHighlightedLength, NOTE);
 					}
+				}
+				
+				else if(r.getName().equals("Divider")){
+					int dividerLength = node.getLength();
+					int dividerPartLength = 0;
+					node = it.next();
+					dividerPartLength += node.getLength();
+					acceptor.addPosition(node.getOffset(), node.getLength(), DIVIDER);
+					node = it.next();
+					while(!node.getText().equals("==")){
+						node = it.next();
+						dividerPartLength += node.getLength();
+						
+					}
+					acceptor.addPosition(node.getOffset(), node.getLength(), DIVIDER);
 				}
 				
 				else if(r.getName().equals("Reference")){
+					int referenceLength = node.getLength();
+					int referencePartLength = 0;
+					boolean multilineReference = true;
+					System.out.println(referenceLength);
+					node = it.next();
+					//This if-construct allows for spaces and tabs to be used in front of the reference while still keeping highlighting
+					if(node.getText().equals(" ") || node.getText().equals("\t")
+					 || node.getText().contains("  ") || node.getText().contains("\t\t")){
+							node = it.next();
+					}
+					referencePartLength += node.getLength();
+					acceptor.addPosition(node.getOffset(), referencePartLength, REFERENCE);
+					node = it.next();
+					//This while-loop will check the first line of the reference to determine whether it is a singeline or multiline reference
+					while(!node.getText().equals("\n") && !node.getText().equals("\r\n")){
+						node = it.next();
+						referenceLength += referencePartLength;
+						if(node.getText().equals(":")){
+							multilineReference = false;
+						}
+						else if(node.getText().equals(",")){
+							node = it.next();
+						}
+					}
+					//This if-statement will make sure that the rest of the reference if it's multiline reference
+					if(multilineReference){
+						while(referenceLength > referencePartLength){
+							node = it.next();
+							//This if-construct skips certain parent nodes to not skew the counting towards the total length of the reference
+							if(node.getText().equals("\n") || node.getText().equals("\r\n")){
+								node = it.next();
+							}
+							if(node.getText().equalsIgnoreCase("end ref") || node.getText().equalsIgnoreCase("endref")){
+								acceptor.addPosition(node.getOffset(), node.getLength(), REFERENCE);
+								break;
+							}
+							referencePartLength += node.getLength();
+						}
+					}
+				}
+				else if(r.getName().equals("Delay")){
+					int delayLength = node.getLength();
 					node = it.next();
 					if(node.getText().contains(" ") || node.getText().contains("\t")){
-						node = it.next();
+						node = it.next();	
 					}
-					acceptor.addPosition(node.getOffset(), 9, REFERENCE);
+					int delayPartLength = node.getLength();
+					System.out.println(node.getText());
+					if(node.getText().equals("...")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), DELAY);
+					}
+					node = it.next();
+					node = it.next();
+;					while(delayLength > delayPartLength){
+						node = it.next();
+						delayPartLength += node.getLength();
+						System.out.println(node.getText());
+						if(node.getText().equals("...")){
+							acceptor.addPosition(node.getOffset(), node.getLength(), DELAY);
+						}
+					}
 				}
 				
+				else if(r.getName().equals("Space")){
+					int spaceLength = node.getLength();
+					int spacePartLength = 0;
+					node = it.next();
+					if(node.getText().contains(" ") || node.getText().contains("\t")){
+						node = it.next();	
+					}
+					spacePartLength += node.getLength();
+					if(node.getText().equals("|||")){
+						acceptor.addPosition(node.getOffset(), spacePartLength, SPACE);
+					}
+					else if(node.getText().equals("||")){
+						acceptor.addPosition(node.getOffset(), spacePartLength, SPACE);
+						while(spaceLength > spacePartLength){
+							node = it.next();
+							System.out.println(node.getText());
+							if(node.getText().equals("||")){
+								acceptor.addPosition(node.getOffset(), spacePartLength, SPACE);
+								break;
+							}
+						}
+					}
+				}
 			}
 			
 			// If a node is considered a comment the node will be coloured according to the style COMMENT
@@ -215,8 +315,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 				else if(ge.getName().equalsIgnoreCase("ML_COMMENT")){
 					acceptor.addPosition( node.getOffset(), node.getLength(), COMMENT);
 				}
-			}
-			
+			}	
 		}
 	}
 }

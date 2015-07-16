@@ -17,25 +17,25 @@ Diagram:
 
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
-	(Sequence
-	|Definition
-	| AutoNumber
-	| Title
-	| Legend
-	| Newpage
-	| GroupingMessages
-	| Note
-	| Divider
-	| Reference 
-	| Delay
-	| Space
+	{Instruction}(instr=Sequence
+	|instr=Definition
+	|instr=AutoNumber
+	|instr=Title
+	|instr=Legend
+	|instr=Newpage
+	|instr=GroupingMessages
+	|instr= Note
+	|instr= Divider
+	|instr= Reference 
+	|instr= Delay
+	|instr= Space
 	| Hidefootbox
-	| Activate
-	| Deactivate
-	| ParticipantCreation
-	| Box
-	| IncOut
-	| Skinparam)? NEWLINE
+	|instr=Activate
+	|instr=Deactivate
+	|instr= ParticipantCreation
+	|instr=Box
+	|instr=IncOut
+	|instr= Skinparam)? NEWLINE
 ;
 
 
@@ -55,7 +55,7 @@ SpecialChars:
 	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='
 ;
 
-ID: BASIC_ID|Keywords|'end'|'endlegend';
+ID: BASIC_ID|Keywords|'end'|'endlegend'|CHAR;
 
 
 Special_String:
@@ -95,7 +95,7 @@ Sequence:
 ;
 
 Arrow:
-	(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
+	{Arrow}(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
 	ARROWBODY+ ('[' '#'  Color = Color ']' ARROWBODY+)?
 	 ('[' '#' Color = Color ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
@@ -117,7 +117,7 @@ Definition_Type:
 
 // 1.24 Stereotype, used in Participant_Declaration
 Stereotype:
-	'<<' ('(' CHAR ',' Color = Color ')')? Full_String '>>'
+	{Stereotype}'<<' ('(' CHAR ',' '#' Color = Color ')')? Full_String '>>'
 ;
 
 // ------------------------------------------------------------------
@@ -127,38 +127,38 @@ Stereotype:
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	'autonumber' (INT (INT)?)? Quotes_String?
+	{AutoNumber}'autonumber' (numbers+=INT (numbers+=INT)?)? Quotes_String?
 ;
 
 // Rule for the title of the diagram
 Title:
-	'title' Full_String
+	'title' title=Full_String
 ;
 
 // Rule for legends.
 Legend:
-	'legend' ('right' | 'left' | 'center')? 
+	{Legend} 'legend' (pos=('right' | 'left' | 'center'))? 
 	(NEWLINE Woendlegend_String)* NEWLINE ('endlegend'|'end legend')
 ;
 
 // Rule for newpages
 Newpage:
-	'newpage' Full_String
+	'newpage' text=Full_String
 ;
 
 Else:
-	'else' Full_String NEWLINE (instructions+=Instruction)*
+	{Else}'else' Full_String NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	 ('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') Full_String NEWLINE 
+	 {GroupingMessages}('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') Full_String NEWLINE 
 	(instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
 // Rule for notes
 Note:
-	'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
+	{Note}'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
 		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
 		 		  ('#' Color = Color)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end''note'|'endnote'))
@@ -166,7 +166,7 @@ Note:
 
 // Rule for Dividers.
 Divider:
-	'==' Full_String '=='
+	'==' text=Full_String '=='
 ;
 
 // Rule for References
@@ -178,12 +178,12 @@ Reference:
 // Rule for delays
 // TODO: Read full strings even when containing dots (....).
 Delay:
-	'...' (Full_String '...')?
+	{Delay}'...' (text=Full_String '...')?
 ;
 
 // Rule for Spaces
 Space:
-	('|||'|('||' INT '||'))
+	{Space}('|||'|('||' number=INT '||'))
 ;
 
 // Rule for hiding the footbox
@@ -193,7 +193,7 @@ Hidefootbox:
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' (Color = Color)? name=ID
+	'activate' name=ID  ('#'(Color = Color))?
 ;
 
 Deactivate:
@@ -208,8 +208,8 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	'box' Quotes_String (Color)? NEWLINE
-	(definitions+=Definition? NEWLINE)*
+	{Box}'box' Quotes_String ('#' Color = Color)? NEWLINE
+	(definitions+=Definition? NEWLINE)* 
 	'end box'
 ;
 
@@ -226,21 +226,21 @@ IncOut:
 ;
 
 Skinparam:
-	'skinparam' 'sequence' '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
+	{Skinparam}'skinparam' 'sequence' '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
 
 SkinparamCommand:
-	'ArrowColor' Color=Color
-	|'ActorBorderColor' Color=Color
-	|'LifeLineBorderColor' Color=Color
-	|'LifeLineBackgroundColor' Color=Color
-	|'ParticipantBorderColor' Color=Color
-	|'ParticipantBackgroundColor' Color=Color
+	{SkinparamCommand} ('ArrowColor' '#' Color=Color
+	|'ActorBorderColor' '#'Color=Color
+	|'LifeLineBorderColor' '#' Color=Color
+	|'LifeLineBackgroundColor' '#' Color=Color
+	|'ParticipantBorderColor' '#' Color=Color
+	|'ParticipantBackgroundColor' '#' Color=Color
 	|'ParticipantFontName' ID
-	|'ActorBackgroundColor' Color=Color
-	|'ActorFontColor' Color=Color
-	|'Actorfontsize' INT
-	|'ActorFontName' ID
+	|'ActorBackgroundColor' '#' Color=Color
+	|'ActorFontColor' '#' Color=Color
+	|'Actorfontsize' '#' INT
+	|'ActorFontName' '#' ID)
 ;
 
 // ValueConverter checks if the Color is a proper color or a hexcode

@@ -76,7 +76,7 @@ Woend_String:
 ;
 
 Woendlegend_String:
-	Basic_String | Quotes_String |'end'
+	Special_String | Quotes_String |'end'
 ;
 
 Quotes_String:

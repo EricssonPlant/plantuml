@@ -20,10 +20,13 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String NEWPAGE = "Newpage";
 		public static final String GROUPINGMESSAGES = "Grouping message";
 		public static final String NOTE = "Note";
+		public static final String DIVIDER = "Divider";
 		public static final String REFERENCE = "Reference";
+		public static final String DELAY = "Delay";
+		public static final String SPACE = "Space";
 		public static final String[] ALL_STRINGS = 
 		{
-			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, GROUPINGMESSAGES, NOTE
+			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, GROUPINGMESSAGES, NOTE, REFERENCE, DELAY, SPACE
 		};
 	
 	// This method must be implemented as it's needed by IHighlightingConfiguration.
@@ -39,7 +42,10 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		addType( acceptor, NEWPAGE, 0, 0, 200, NORMAL);
 		addType( acceptor, GROUPINGMESSAGES, 0, 0, 200, NORMAL);
 		addType( acceptor, NOTE, 0, 0, 200, NORMAL);
+		addType( acceptor, DIVIDER, 0, 0, 200, NORMAL);
 		addType( acceptor, REFERENCE, 0, 0, 200, NORMAL);
+		addType( acceptor, DELAY, 0, 0, 200, BOLD);
+		addType( acceptor, SPACE, 0, 0, 200, BOLD);
 	}
 	
 	

@@ -24,28 +24,35 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String REFERENCE = "Reference";
 		public static final String DELAY = "Delay";
 		public static final String SPACE = "Space";
+		public static final String HIDEFOOTBOX = "Hidefootbox";
+		public static final String DEACTIVATE = "Deactivate";
+		public static final String PARTICIPANTCREATION = "Participantcreation";
 		public static final String[] ALL_STRINGS = 
 		{
-			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, GROUPINGMESSAGES, NOTE, REFERENCE, DELAY, SPACE
+			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, 
+			GROUPINGMESSAGES, NOTE, REFERENCE, DELAY, SPACE, HIDEFOOTBOX, DEACTIVATE, PARTICIPANTCREATION
 		};
 	
 	// This method must be implemented as it's needed by IHighlightingConfiguration.
 	// It will call addType to create the different styles needed.
 	public void configure(IHighlightingConfigurationAcceptor acceptor){
-		addType( acceptor, STND, 153, 0, 200, NORMAL);
+		addType( acceptor, STND, 153, 0, 200, BOLD);
 		addType( acceptor, SEQ_ARR, 200, 0, 0, BOLD);
-		addType( acceptor, COMMENT, 0, 102, 0, NORMAL);
-		addType( acceptor, DEFINITION, 0, 0, 200, NORMAL);
-		addType( acceptor, AUTONUMBER, 0, 0, 200, NORMAL);
-		addType( acceptor, TITLE, 0, 0, 200, NORMAL);
-		addType( acceptor, LEGEND, 0, 0, 200, NORMAL);
-		addType( acceptor, NEWPAGE, 0, 0, 200, NORMAL);
-		addType( acceptor, GROUPINGMESSAGES, 0, 0, 200, NORMAL);
-		addType( acceptor, NOTE, 0, 0, 200, NORMAL);
-		addType( acceptor, DIVIDER, 0, 0, 200, NORMAL);
-		addType( acceptor, REFERENCE, 0, 0, 200, NORMAL);
+		addType( acceptor, COMMENT, 0, 102, 0, BOLD);
+		addType( acceptor, DEFINITION, 0, 0, 200, BOLD);
+		addType( acceptor, AUTONUMBER, 0, 0, 200, BOLD);
+		addType( acceptor, TITLE, 0, 0, 200, BOLD);
+		addType( acceptor, LEGEND, 0, 0, 200, BOLD);
+		addType( acceptor, NEWPAGE, 0, 0, 200, BOLD);
+		addType( acceptor, GROUPINGMESSAGES, 0, 0, 200, BOLD);
+		addType( acceptor, NOTE, 0, 0, 200, BOLD);
+		addType( acceptor, DIVIDER, 0, 0, 200, BOLD);
+		addType( acceptor, REFERENCE, 0, 0, 200, BOLD);
 		addType( acceptor, DELAY, 0, 0, 200, BOLD);
 		addType( acceptor, SPACE, 0, 0, 200, BOLD);
+		addType( acceptor, HIDEFOOTBOX, 0, 0, 200, BOLD);
+		addType( acceptor, DEACTIVATE, 0, 0, 200, BOLD);
+		addType( acceptor, PARTICIPANTCREATION, 0, 0, 200, BOLD);
 	}
 	
 	

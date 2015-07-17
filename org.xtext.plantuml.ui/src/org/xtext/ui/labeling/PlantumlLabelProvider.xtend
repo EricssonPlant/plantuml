@@ -22,7 +22,7 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	// Labels and icons can be computed like this:
 	
 	def text(Instruction instr){
-		instr.getInstr()
+		instr.getInstr().toString()
 	}
 	
 	def text(Arrow arrow){
@@ -31,6 +31,6 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	
 //
 //	def image(Greeting ele) {
-//		'Greeting.gif'
+//		'Greeting.gif'§
 //	}
 }

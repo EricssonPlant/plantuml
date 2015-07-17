@@ -45,21 +45,21 @@ Instruction:
 Keywords:
 	'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
-	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
+	   |'critical'|'group'|'note'|'over'|'of'|'hide'|'footbox'|'activate'
 	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'
+	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'//|'ref'
 ;
 
 
 SpecialChars:
-	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='
+	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='|'>>'|'<<'
 ;
 
 ID: BASIC_ID|Keywords|'end'|'endlegend'|CHAR;
 
 
 Special_String:
-	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT)*
+	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT|CHAR)*
 ;
 
 
@@ -72,7 +72,7 @@ Full_String:
 ;
 
 Woend_String:
-	Basic_String | Quotes_String |'endlegend'|'end legend'
+	Basic_String | Quotes_String |'endlegend'
 ;
 
 Woendlegend_String:
@@ -172,7 +172,7 @@ Divider:
 // Rule for References
 Reference:
 	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' Full_String)|((NEWLINE (Basic_String | Quotes_String))* NEWLINE 'endref'|'end''ref'))
+	(( ':' Full_String)|((NEWLINE Woend_String)* NEWLINE ('endref'|('end ref'))))
 ;
 
 // Rule for delays
@@ -201,15 +201,14 @@ Deactivate:
 ;
 
 // Rule for Participant Creation
-// TODO: Make sure the ID hasn't been created in beforehand.
 ParticipantCreation:
-	'create' name=ID
+	'create' (name=ID|Definition)
 ;
 
 // Rule for box/end box
 Box:
 	{Box}'box' Quotes_String ('#' Color = Color)? NEWLINE
-	(definitions+=Definition? NEWLINE)* 
+	(boxinstructions+=Instruction)+
 	'end box'
 ;
 

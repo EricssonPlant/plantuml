@@ -84,7 +84,7 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Box">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Box/Color"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Box/definitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Box/boxinstructions"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//IncOut">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//IncOut/name"/>

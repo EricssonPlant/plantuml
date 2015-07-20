@@ -8,7 +8,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 // Model is a number of @startuml's and @enduml's
 Plantuml:
-	(diagrams+=Diagram)*;
+	NEWLINE* (diagrams+=Diagram)*;
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
@@ -35,7 +35,8 @@ Instruction:
 	|instr= ParticipantCreation
 	|instr=Box
 	|instr=IncOut
-	|instr= Skinparam)? NEWLINE
+	|instr= Skinparam
+	|instr= UC_direction)? NEWLINE
 ;
 
 
@@ -45,21 +46,21 @@ Instruction:
 Keywords:
 	'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
-	   |'critical'|'group'|'note'|'over'|'of'|'ref'|'hide'|'footbox'|'activate'
+	   |'critical'|'group'|'note'|'over'|'of'|'hide'|'footbox'|'activate'
 	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'
+	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'//|'ref'
 ;
 
 
 SpecialChars:
-	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='
+	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='|'>>'|'<<'
 ;
 
 ID: BASIC_ID|Keywords|'end'|'endlegend'|CHAR;
 
 
 Special_String:
-	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT)*
+	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT|CHAR)*
 ;
 
 
@@ -72,7 +73,7 @@ Full_String:
 ;
 
 Woend_String:
-	Basic_String | Quotes_String |'endlegend'|'end legend'
+	Basic_String | Quotes_String |'endlegend'
 ;
 
 Woendlegend_String:
@@ -91,8 +92,13 @@ Declaration: Definition|Sequence;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
-	names+=ID arrow=Arrow (names+=ID ('!')? (':' Full_String)?)?
+	arrowIDs+=ArrowID arrow=Arrow arrowIDs+=ArrowID ('!')? (':' Full_String)?
 ;
+
+ArrowID:
+	name=ID | "(" name = ID ")" | ":" name = ID ":"
+;
+
 
 Arrow:
 	{Arrow}(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')?
@@ -103,8 +109,9 @@ Arrow:
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	Definition_Type name=ID (Stereotype = Stereotype)? ('#' Color = Color)?
+	Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
+
 
 Definition_Type:
 	('actor' 
@@ -112,8 +119,12 @@ Definition_Type:
 	| 'control'
 	| 'entity'
 	| 'database'
-	| 'participant')
+	| 'participant'
+	| 'usecase') name=ID 
+	| "(" name=ID ")"
+	| ":" name=ID ":"
 ;
+
 
 // 1.24 Stereotype, used in Participant_Declaration
 Stereotype:
@@ -172,7 +183,7 @@ Divider:
 // Rule for References
 Reference:
 	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' Full_String)|((NEWLINE (Basic_String | Quotes_String))* NEWLINE 'endref'|'end''ref'))
+	(( ':' Full_String)|((NEWLINE Woend_String)* NEWLINE ('endref'|('end ref'))))
 ;
 
 // Rule for delays
@@ -201,15 +212,14 @@ Deactivate:
 ;
 
 // Rule for Participant Creation
-// TODO: Make sure the ID hasn't been created in beforehand.
 ParticipantCreation:
-	'create' (name=ID | Definition)
+	'create' (name=ID|Definition)
 ;
 
 // Rule for box/end box
 Box:
 	{Box}'box' Quotes_String ('#' Color = Color)? NEWLINE
-	(definitions+=Definition? NEWLINE)* 
+	(boxinstructions+=Instruction)+
 	'end box'
 ;
 
@@ -226,11 +236,14 @@ IncOut:
 ;
 
 Skinparam:
-	{Skinparam}'skinparam' 'sequence' '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
+	{Skinparam}'skinparam' cmd+=SkinparamCommand
+	| {Skinparam}'skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
-
 SkinparamCommand:
-	('ArrowColor' '#' Color=Color
+	{SkinparamCommand} key=ID '#'? (val=INT|BASIC_ID)
+;
+/*SkinparamCommand:
+	{SkinparamCommand} ('ArrowColor' '#' Color=Color
 	|'ActorBorderColor' '#'Color=Color
 	|'LifeLineBorderColor' '#' Color=Color
 	|'LifeLineBackgroundColor' '#' Color=Color
@@ -243,7 +256,14 @@ SkinparamCommand:
 	|'ActorFontColor' '#' Color=Color
 	|'Actorfontsize' INT
 	|'ActorFontName' ID)
+;*/
+
+// 2.11 direction usecase diagram is painted in (vertical or horizontal)
+UC_direction:
+	direction=("top to bottom direction"
+	| "left to right direction")	
 ;
+
 
 // ValueConverter checks if the Color is a proper color or a hexcode
 Color: ID|INT;

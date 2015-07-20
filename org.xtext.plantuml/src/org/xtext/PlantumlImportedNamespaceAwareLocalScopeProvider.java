@@ -11,6 +11,7 @@ import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
 import org.eclipse.xtext.scoping.impl.MultimapBasedSelectable;
+import org.xtext.plantuml.ArrowID;
 import org.xtext.plantuml.Sequence;
 
 class PlantumlImportedNamespaceAwareLocalScopeProvider extends ImportedNamespaceAwareLocalScopeProvider {
@@ -26,8 +27,8 @@ class PlantumlImportedNamespaceAwareLocalScopeProvider extends ImportedNamespace
 		List<IEObjectDescription> allDescriptions = new ArrayList<IEObjectDescription>();
 		for (EObject o : allContents) {
 			if (o instanceof Sequence) {
-				for (String s :  ((Sequence)o).getNames()) {
-					allDescriptions.add(EObjectDescription.create(QualifiedName.create(s), o, null));
+				for (ArrowID arrowID :  ((Sequence)o).getArrowIDs()) {
+					allDescriptions.add(EObjectDescription.create(QualifiedName.create(arrowID.getName()), o, null));
 				}
 			} else {
 				QualifiedName name = getQualifiedNameProvider().getFullyQualifiedName(o);

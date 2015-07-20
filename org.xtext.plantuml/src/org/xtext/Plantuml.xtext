@@ -95,7 +95,7 @@ Sequence:
 ;
 
 Arrow:
-	{Arrow}(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
+	{Arrow}(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')?
 	ARROWBODY+ ('[' '#'  Color = Color ']' ARROWBODY+)?
 	 ('[' '#' Color = Color ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
@@ -203,7 +203,7 @@ Deactivate:
 // Rule for Participant Creation
 // TODO: Make sure the ID hasn't been created in beforehand.
 ParticipantCreation:
-	'create' name=ID
+	'create' (name=ID | Definition)
 ;
 
 // Rule for box/end box
@@ -230,17 +230,19 @@ Skinparam:
 ;
 
 SkinparamCommand:
-	{SkinparamCommand} ('ArrowColor' '#' Color=Color
+	('ArrowColor' '#' Color=Color
 	|'ActorBorderColor' '#'Color=Color
 	|'LifeLineBorderColor' '#' Color=Color
 	|'LifeLineBackgroundColor' '#' Color=Color
 	|'ParticipantBorderColor' '#' Color=Color
 	|'ParticipantBackgroundColor' '#' Color=Color
 	|'ParticipantFontName' ID
+	|'ParticipantFontColor' '#' Color=Color
+	|'ParticipantFontSize' INT
 	|'ActorBackgroundColor' '#' Color=Color
 	|'ActorFontColor' '#' Color=Color
-	|'Actorfontsize' '#' INT
-	|'ActorFontName' '#' ID)
+	|'Actorfontsize' INT
+	|'ActorFontName' ID)
 ;
 
 // ValueConverter checks if the Color is a proper color or a hexcode
@@ -287,9 +289,9 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal CHAR: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö');
 
-terminal BASIC_ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal BASIC_ID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
-terminal WS			: (' '|'\t')+;
+terminal WS: (' '|'\t')+;
 
 terminal ANY_OTHER: .;
 

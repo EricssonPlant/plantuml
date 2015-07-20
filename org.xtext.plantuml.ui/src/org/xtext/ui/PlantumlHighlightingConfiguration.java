@@ -27,10 +27,14 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String HIDEFOOTBOX = "Hidefootbox";
 		public static final String DEACTIVATE = "Deactivate";
 		public static final String PARTICIPANTCREATION = "Participantcreation";
+		public static final String ACTIVATE = "Activate";
+		public static final String BOX = "Box";
+		public static final String INCOUT = "Incoming and outgoing arrows";
+		public static final String SKINPARAM = "Skinparam";
 		public static final String[] ALL_STRINGS = 
 		{
 			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, 
-			GROUPINGMESSAGES, NOTE, REFERENCE, DELAY, SPACE, HIDEFOOTBOX, DEACTIVATE, PARTICIPANTCREATION
+			GROUPINGMESSAGES, NOTE, REFERENCE, DELAY, SPACE, HIDEFOOTBOX, DEACTIVATE, PARTICIPANTCREATION, ACTIVATE, BOX, INCOUT, SKINPARAM
 		};
 	
 	// This method must be implemented as it's needed by IHighlightingConfiguration.
@@ -53,6 +57,10 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		addType( acceptor, HIDEFOOTBOX, 0, 0, 200, BOLD);
 		addType( acceptor, DEACTIVATE, 0, 0, 200, BOLD);
 		addType( acceptor, PARTICIPANTCREATION, 0, 0, 200, BOLD);
+		addType( acceptor, ACTIVATE, 0, 0, 200, BOLD);
+		addType( acceptor, BOX, 0, 0, 200, BOLD);
+		addType( acceptor, INCOUT, 0, 0, 200, BOLD);
+		addType( acceptor, SKINPARAM, 50, 50, 50, ITALIC);
 	}
 	
 	

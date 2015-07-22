@@ -8,7 +8,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 // Model is a number of @startuml's and @enduml's
 Plantuml:
-	(diagrams+=Diagram)*;
+	NEWLINE* (diagrams+=Diagram)*;
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
@@ -35,7 +35,8 @@ Instruction:
 	|instr= ParticipantCreation
 	|instr=Box
 	|instr=IncOut
-	|instr= Skinparam)? NEWLINE
+	|instr= Skinparam
+	|instr= UC_direction)? NEWLINE
 ;
 
 
@@ -91,8 +92,13 @@ Declaration: dec=(Definition|Sequence);
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
-	names+=ID arrow=Arrow (names+=ID ('!')? (':' Full_String)?)?
+	arrowIDs+=ArrowID arrow=Arrow arrowIDs+=ArrowID ('!')? (':' Full_String)?
 ;
+
+ArrowID:
+	name=ID | "(" name = ID ")" | ":" name = ID ":"
+;
+
 
 Arrow:
 	{Arrow} left=(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
@@ -103,8 +109,9 @@ Arrow:
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	Definition_Type name=ID (Stereotype = Stereotype)? ('#' Color = Color)?
+	Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
+
 
 Definition_Type:
 	('actor' 
@@ -112,8 +119,12 @@ Definition_Type:
 	| 'control'
 	| 'entity'
 	| 'database'
-	| 'participant')
+	| 'participant'
+	| 'usecase') name=ID 
+	| "(" name=ID ")"
+	| ":" name=ID ":"
 ;
+
 
 // 1.24 Stereotype, used in Participant_Declaration
 Stereotype:
@@ -225,10 +236,13 @@ IncOut:
 ;
 
 Skinparam:
-	{Skinparam}'skinparam' 'sequence' '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
+	{Skinparam}'skinparam' cmd+=SkinparamCommand
+	| {Skinparam}'skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
-
 SkinparamCommand:
+	{SkinparamCommand} key=ID '#'? (val=INT|BASIC_ID)
+;
+/*SkinparamCommand:
 	{SkinparamCommand} ('ArrowColor' '#' Color=Color
 	|'ActorBorderColor' '#'Color=Color
 	|'LifeLineBorderColor' '#' Color=Color
@@ -236,11 +250,20 @@ SkinparamCommand:
 	|'ParticipantBorderColor' '#' Color=Color
 	|'ParticipantBackgroundColor' '#' Color=Color
 	|'ParticipantFontName' ID
+	|'ParticipantFontColor' '#' Color=Color
+	|'ParticipantFontSize' INT
 	|'ActorBackgroundColor' '#' Color=Color
 	|'ActorFontColor' '#' Color=Color
-	|'Actorfontsize' '#' INT
-	|'ActorFontName' '#' ID)
+	|'Actorfontsize' INT
+	|'ActorFontName' ID)
+;*/
+
+// 2.11 direction usecase diagram is painted in (vertical or horizontal)
+UC_direction:
+	direction=("top to bottom direction"
+	| "left to right direction")	
 ;
+
 
 // ValueConverter checks if the Color is a proper color or a hexcode
 Color: ID|INT;
@@ -286,9 +309,9 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal CHAR: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö');
 
-terminal BASIC_ID  		: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal BASIC_ID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
-terminal WS			: (' '|'\t')+;
+terminal WS: (' '|'\t')+;
 
 terminal ANY_OTHER: .;
 

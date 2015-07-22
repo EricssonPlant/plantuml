@@ -29,7 +29,7 @@ Instruction:
 	|instr= Reference 
 	|instr= Delay
 	|instr= Space
-	| Hidefootbox
+	|Hidefootbox
 	|instr=Activate
 	|instr=Deactivate
 	|instr= ParticipantCreation
@@ -47,7 +47,7 @@ Keywords:
 	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
 	   |'critical'|'group'|'note'|'over'|'of'|'hide'|'footbox'|'activate'
 	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'//|'ref'
+	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'|'ref'
 ;
 
 
@@ -87,7 +87,7 @@ Quotes_String:
 // Rules for declarations of actors
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
-Declaration: Definition|Sequence;
+Declaration: dec=(Definition|Sequence);
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
@@ -95,9 +95,9 @@ Sequence:
 ;
 
 Arrow:
-	{Arrow}(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
-	ARROWBODY+ ('[' '#'  Color = Color ']' ARROWBODY+)?
-	 ('[' '#' Color = Color ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
+	{Arrow} left=(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
+	leftmid+=ARROWBODY+ ('[' '#'  Color = Color ']' rightmid+=ARROWBODY+)?
+	 ('[' '#' Color = Color ']')? right=(RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
 
 // Rule for defining objects in PlantUML, such as
@@ -171,8 +171,8 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' Full_String)|((NEWLINE Woend_String)* NEWLINE ('endref'|('end ref'))))
+	'ref over' (ids+=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
+	(( ':' Full_String)|((NEWLINE Full_String)* NEWLINE ('endref'|('end ref'))))
 ;
 
 // Rule for delays

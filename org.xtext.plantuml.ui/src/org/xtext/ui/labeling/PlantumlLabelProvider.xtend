@@ -35,7 +35,7 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Sequence sequence){
-		"Sequence. Names: " + sequence.getNames();
+		"Sequence. Names: " + sequence.getArrowIDs();
 	}
 	
 	def text(Arrow arrow){
@@ -44,6 +44,19 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Reference ref){
-		ref.getIds().forEach[];
+		/*var String ret;
+		for(i:0 ..< ref.getIds().length()){
+			var Declaration dec = ref.getIds().get(i);
+			if(dec instanceof Definition){
+				var Definition def = dec as Definition;
+				ret += "Reference over Defintion ID: " + def.getDeftype().getName() + "\n";
+			}
+			else if(dec instanceof Sequence){
+				var Sequence seq = dec as Sequence;
+				ret += "Reference over Sequence ID: " 
+			}
+		}
+		ret*/
+		"Reference"
 	}
 }

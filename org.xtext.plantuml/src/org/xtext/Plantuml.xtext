@@ -109,7 +109,7 @@ Arrow:
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
+	deftype=Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
 
 
@@ -182,7 +182,7 @@ Divider:
 
 // Rule for References
 Reference:
-	'ref over' (ids+=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
+	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
 	(( ':' Full_String)|((NEWLINE Full_String)* NEWLINE ('endref'|('end ref'))))
 ;
 

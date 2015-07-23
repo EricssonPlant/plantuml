@@ -6,6 +6,11 @@ package org.xtext.ui.labeling
 import com.google.inject.Inject
 import org.xtext.plantuml.Arrow
 import org.xtext.plantuml.Instruction
+import org.xtext.plantuml.Sequence
+import org.xtext.plantuml.Diagram
+import org.xtext.plantuml.Reference
+import org.xtext.plantuml.Declaration
+import org.xtext.plantuml.Definition
 
 /**
  * Provides labels for EObjects.
@@ -21,16 +26,37 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 
 	// Labels and icons can be computed like this:
 	
+	def text(Diagram diagram){
+		"Diagram"
+	}
+	
 	def text(Instruction instr){
-		instr.getInstr().toString()
+		"Instruction"
+	}
+	
+	def text(Sequence sequence){
+		"Sequence. Names: " + sequence.getArrowIDs();
 	}
 	
 	def text(Arrow arrow){
-		"Pooop"
+		"Arrow. Shape: " + arrow.getLeft() + arrow.getLeftmid()
+		+ arrow.getRightmid() + arrow.getRight() + ". Color: " + arrow.getColor();
 	}
 	
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'§
-//	}
+	def text(Reference ref){
+		/*var String ret;
+		for(i:0 ..< ref.getIds().length()){
+			var Declaration dec = ref.getIds().get(i);
+			if(dec instanceof Definition){
+				var Definition def = dec as Definition;
+				ret += "Reference over Defintion ID: " + def.getDeftype().getName() + "\n";
+			}
+			else if(dec instanceof Sequence){
+				var Sequence seq = dec as Sequence;
+				ret += "Reference over Sequence ID: " 
+			}
+		}
+		ret*/
+		"Reference"
+	}
 }

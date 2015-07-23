@@ -13,7 +13,7 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String STND = "Start- and enduml";
 		public static final String SEQ_ARR = "Sequence arrow";
 		public static final String COMMENT = "Comment";
-		public static final String DEFINITION = "Definition";
+		public static final String DEFINITION_TYPE = "Definition";
 		public static final String AUTONUMBER = "Keyword";
 		public static final String TITLE = "Title";
 		public static final String LEGEND = "Legend";
@@ -31,9 +31,10 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String BOX = "Box";
 		public static final String INCOUT = "Incoming and outgoing arrows";
 		public static final String SKINPARAM = "Skinparam";
+		public static final String SKINPARAMCOMMAND = "Skinparam command";
 		public static final String[] ALL_STRINGS = 
 		{
-			STND, SEQ_ARR, COMMENT, DEFINITION, AUTONUMBER, TITLE, LEGEND, NEWPAGE, 
+			STND, SEQ_ARR, COMMENT, DEFINITION_TYPE, AUTONUMBER, TITLE, LEGEND, NEWPAGE, 
 			GROUPINGMESSAGES, NOTE, REFERENCE, DELAY, SPACE, HIDEFOOTBOX, DEACTIVATE, PARTICIPANTCREATION, ACTIVATE, BOX, INCOUT, SKINPARAM
 		};
 	
@@ -43,7 +44,7 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		addType( acceptor, STND, 153, 0, 200, BOLD);
 		addType( acceptor, SEQ_ARR, 200, 0, 0, BOLD);
 		addType( acceptor, COMMENT, 0, 102, 0, BOLD);
-		addType( acceptor, DEFINITION, 0, 0, 200, BOLD);
+		addType( acceptor, DEFINITION_TYPE, 0, 0, 200, BOLD);
 		addType( acceptor, AUTONUMBER, 0, 0, 200, BOLD);
 		addType( acceptor, TITLE, 0, 0, 200, BOLD);
 		addType( acceptor, LEGEND, 0, 0, 200, BOLD);
@@ -60,7 +61,8 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		addType( acceptor, ACTIVATE, 0, 0, 200, BOLD);
 		addType( acceptor, BOX, 0, 0, 200, BOLD);
 		addType( acceptor, INCOUT, 0, 0, 200, BOLD);
-		addType( acceptor, SKINPARAM, 50, 50, 50, ITALIC);
+		addType( acceptor, SKINPARAMCOMMAND, 0, 0, 200, BOLD);
+		addType( acceptor, SKINPARAM, 255, 0, 200, BOLD);
 	}
 	
 	

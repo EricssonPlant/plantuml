@@ -104,8 +104,10 @@ Title:
 
 // Rule for legends.
 Legend:
+
 	{Legend} 'legend' (pos=('right' | 'left' | 'center'))? 
 	(NEWLINE STRING)* NEWLINE ('endlegend'|'end legend')
+
 ;
 
 // Rule for newpages

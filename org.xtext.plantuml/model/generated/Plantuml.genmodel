@@ -18,15 +18,19 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Declaration"/>
     <genClasses ecoreClass="Plantuml.ecore#//Sequence">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Sequence/names"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Sequence/arrowIDs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Sequence/arrow"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//ArrowID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//ArrowID/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Arrow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Arrow/Color"/>
     </genClasses>
-    <genClasses ecoreClass="Plantuml.ecore#//Definition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Definition/Stereotype"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition/Color"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Definition"/>
+    <genClasses ecoreClass="Plantuml.ecore#//Definition_Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Definition_Type/Stereotype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition_Type/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Stereotype">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Stereotype/Color"/>
@@ -38,6 +42,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Title/title"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Legend">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/startKeyWord"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/pos"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Newpage">
@@ -91,9 +96,14 @@
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Skinparam">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Skinparam/cmd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Skinparam/id"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//SkinparamCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//SkinparamCommand/Color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//SkinparamCommand/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//SkinparamCommand/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//UC_direction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//UC_direction/direction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

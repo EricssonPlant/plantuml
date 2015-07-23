@@ -25,7 +25,7 @@ class Arrow_style extends XtextTest {
 	def void simpleRightArrow(){
 		'''
 		@startuml
-			Alice -> Bob: simple right arrow
+			Alice -> Bob: "simple right arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -34,7 +34,7 @@ class Arrow_style extends XtextTest {
 	def void simpleLeftArrow(){
 		'''
 		@startuml
-			Alice <- Bob: simple left arrow
+			Alice <- Bob: "simple left arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -43,7 +43,7 @@ class Arrow_style extends XtextTest {
 	def void dottedRightArrow(){
 		'''
 		@startuml
-			Alice --> Bob: dotted right arrow
+			Alice --> Bob: "dotted right arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -52,7 +52,7 @@ class Arrow_style extends XtextTest {
 	def void dottedLeftArrow(){
 		'''
 		@startuml
-			Alice <-- Bob: dotted left arrow
+			Alice <-- Bob : "dotted left arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -62,10 +62,9 @@ class Arrow_style extends XtextTest {
 	def void multipleDoubleArrows(){
 		'''
 		@startuml
-			Alice <--> Bob: arrow
-			Alice x<-->x Bob: arrow
-			Alice o<-->o Bob: arrow
-			Alice /--\ Bob: arrow
+			Alice <--> Bob: "arrow"
+			Alice x<-->x Bob: "arrow"
+			Alice o<-->o Bob: "arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -74,31 +73,14 @@ class Arrow_style extends XtextTest {
 	def void multipleComplexLeftArrows(){
 		'''
 		@startuml
-			Alice <- Bob: dotted left arrow
-			Alice <-- Bob: dotted left arrow
+			Alice <- Bob: "dotted left arrow"
+			Alice <-- Bob: "dotted left arrow"
 			
-			Alice x<- Bob: dotted left arrow
-			Alice x<-- Bob: dotted left arrow
+			Alice x<- Bob: "dotted left arrow"
+			Alice x<-- Bob: "dotted left arrow"
 			
-			Alice /- Bob: dotted left arrow
-			Alice /-- Bob: dotted left arrow
-			Alice x/- Bob: dotted left arrow
-			Alice o/-- Bob: dotted left arrow
-			
-			Alice //- Bob: dotted left arrow
-			Alice //-- Bob: dotted left arrow
-			Alice x//- Bob: dotted left arrow
-			Alice o//-- Bob: dotted left arrow
-			
-			Alice \- Bob: dotted left arrow
-			Alice \-- Bob: dotted left arrow
-			Alice x\- Bob: dotted left arrow
-			Alice o\-- Bob: dotted left arrow
-			
-			Alice \\- Bob: dotted left arrow
-			Alice \\-- Bob: dotted left arrow
-			Alice x\\- Bob: dotted left arrow
-			Alice o\\-- Bob: dotted left arrow
+			Alice x<- Bob: "dotted left arrow"
+			Alice o<-- Bob: "dotted left arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}

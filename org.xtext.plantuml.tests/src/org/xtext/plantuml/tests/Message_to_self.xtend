@@ -27,7 +27,7 @@ class Message_to_self extends XtextTest {
 	def void simpleMessageToSelf(){
 		'''
 		@startuml
-		Alice -> Alice : test test test 
+		Alice -> Alice : "test test test" 
 		@enduml
 		'''.parse.assertNoErrors
 	}

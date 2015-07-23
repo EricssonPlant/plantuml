@@ -40,51 +40,6 @@ Instruction:
 ;
 
 
-// Rules for handling ID's, Strings, and their respective variations
-// ------------------------------------------------------------------
-// ------------------------------------------------------------------
-Keywords:
-	'create'|'autonumber'|'title'|'legend'|'right'|'left'|'center'
-	   |'alt'|'else'|'newpage'|'opt'|'loop'|'par'|'break'|'as'
-	   |'critical'|'group'|'note'|'over'|'of'|'hide'|'footbox'|'activate'
-	   |'actor'|'boundary'|'control'|'entity'|'database'|'participant'
-	   |'deactivate'|'destroy'|'box'|'in'|'skinparam'|'sequence'|'hidefootbox'//|'ref'
-;
-
-
-SpecialChars:
-	'|'|'||'|'#'|ARROWBODY|':'|RIGHTARROWHEAD|LEFTARROWHEAD|'!'|')'|'('|','|'='|'>>'|'<<'
-;
-
-ID: BASIC_ID|Keywords|'end'|'endlegend'|CHAR;
-
-
-Special_String:
-	(BASIC_ID|Keywords|SpecialChars|ANY_OTHER|INT|CHAR)*
-;
-
-
-Basic_String:
-	(BASIC_ID|Keywords|INT|CHAR)*
-;
-
-Full_String:
-	Basic_String | Quotes_String |'end' 'legend'?
-;
-
-Woend_String:
-	Basic_String | Quotes_String |'endlegend'
-;
-
-Woendlegend_String:
-	Special_String | Quotes_String |'end'
-;
-
-Quotes_String:
-	'"' Special_String '"'
-;
-
-
 // Rules for declarations of actors
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
@@ -92,7 +47,7 @@ Declaration: Definition|Sequence;
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
-	arrowIDs+=ArrowID arrow=Arrow arrowIDs+=ArrowID ('!')? (':' Full_String)?
+	arrowIDs+=ArrowID arrow=Arrow arrowIDs+=ArrowID ('!')? (':' STRING)?
 ;
 
 ArrowID:
@@ -128,7 +83,7 @@ Definition_Type:
 
 // 1.24 Stereotype, used in Participant_Declaration
 Stereotype:
-	{Stereotype}'<<' ('(' CHAR ',' '#' Color = Color ')')? Full_String '>>'
+	{Stereotype}'<<' ('(' CHAR ',' '#' Color = Color ')')? STRING? '>>'
 ;
 
 // ------------------------------------------------------------------
@@ -138,32 +93,32 @@ Stereotype:
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	{AutoNumber}'autonumber' (numbers+=INT (numbers+=INT)?)? Quotes_String?
+	{AutoNumber}'autonumber' (numbers+=INT (numbers+=INT)?)? STRING?
 ;
 
 // Rule for the title of the diagram
 Title:
-	'title' title=Full_String
+	'title' title=STRING
 ;
 
 // Rule for legends.
 Legend:
 	{Legend} 'legend' (pos=('right' | 'left' | 'center'))? 
-	(NEWLINE Woendlegend_String)* NEWLINE ('endlegend'|'end legend')
+	(NEWLINE STRING)* NEWLINE ('endlegend'|'end legend')
 ;
 
 // Rule for newpages
 Newpage:
-	'newpage' text=Full_String
+	'newpage' text=STRING
 ;
 
 Else:
-	{Else}'else' Full_String NEWLINE (instructions+=Instruction)*
+	{Else}'else' STRING NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	 {GroupingMessages}('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') Full_String NEWLINE 
+	 {GroupingMessages}('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') STRING NEWLINE 
 	(instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
@@ -172,24 +127,24 @@ Note:
 	{Note}'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
 		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
-		 		  ('#' Color = Color)? ((':' Full_String)| ((NEWLINE Woend_String)* NEWLINE 'end''note'|'endnote'))
+		 		  ('#' Color = Color)? ((':' STRING)| ((NEWLINE STRING)* NEWLINE 'end''note'|'endnote'))
 ;
 
 // Rule for Dividers.
 Divider:
-	'==' text=Full_String '=='
+	'==' text=STRING '=='
 ;
 
 // Rule for References
 Reference:
 	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' Full_String)|((NEWLINE Woend_String)* NEWLINE ('endref'|('end ref'))))
+	(( ':' STRING)|((NEWLINE STRING)* NEWLINE ('endref'|('end ref'))))
 ;
 
 // Rule for delays
 // TODO: Read full strings even when containing dots (....).
 Delay:
-	{Delay}'...' (text=Full_String '...')?
+	{Delay}'...' (text=STRING '...')?
 ;
 
 // Rule for Spaces
@@ -218,7 +173,7 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	{Box}'box' Quotes_String ('#' Color = Color)? NEWLINE
+	{Box}'box' STRING ('#' Color = Color)? NEWLINE
 	(boxinstructions+=Instruction)+
 	'end box'
 ;
@@ -232,7 +187,7 @@ OutArrow:
 
 // Rule for incoming and outgoing messages
 IncOut:
-	((IncArrow name = ID)|(name = ID OutArrow)) (':' Full_String)?
+	((IncArrow name = ID)|(name = ID OutArrow)) (':' STRING)?
 ;
 
 Skinparam:
@@ -240,7 +195,7 @@ Skinparam:
 	| {Skinparam}'skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
 SkinparamCommand:
-	{SkinparamCommand} key=ID '#'? (val=INT|BASIC_ID)
+	{SkinparamCommand} key=ID '#'? (val=INT|ID)
 ;
 /*SkinparamCommand:
 	{SkinparamCommand} ('ArrowColor' '#' Color=Color
@@ -309,7 +264,9 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal CHAR: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö');
 
-terminal BASIC_ID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal ID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+
+terminal STRING: '"' -> '"';
 
 terminal WS: (' '|'\t')+;
 

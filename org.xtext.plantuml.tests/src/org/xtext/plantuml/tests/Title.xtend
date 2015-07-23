@@ -21,7 +21,7 @@ class Title extends XtextTest {
 	def void testTitle(){
 		'''
 		@startuml
-		title hello
+		title "hello"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -30,7 +30,7 @@ class Title extends XtextTest {
 	def void testTitleSL(){
 		'''
 		@startuml
-		title hello my name is anton
+		title "hello my name is anton"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -39,21 +39,10 @@ class Title extends XtextTest {
 	def void testTitleML(){
 		'''
 		@startuml
-		title hello my name is\nAnton Anton Anton
+		title "hello my name is\nAnton Anton Anton"
 		@enduml
 		'''.parse.assertNoErrors
 	}
-	
-	// 1.1 Basic examples
-	@Test
-	def void basicExample(){
-		'''
-		@startuml
-			Alice -> Bob: Authentication Request
-			Bob --> Alice: Authentication Response
-		@enduml
-		'''.parse.assertNoErrors
-	}	
 	
 	/*
 	 * // template

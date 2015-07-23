@@ -25,7 +25,7 @@ class Arrow_color extends XtextTest {
 	def void simpleRedRightArrow(){
 		'''
 		@startuml
-			Bob -[#red]> Alice : simple red right arrow
+			Bob -[#red]> Alice : "simple red right arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -34,7 +34,7 @@ class Arrow_color extends XtextTest {
 	def void simpleHexRightArrow(){
 		'''
 		@startuml
-			Alice -[#0000FF]-> Bob : simple left arrow
+			Alice -[#0000FF]-> Bob : "simple left arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}

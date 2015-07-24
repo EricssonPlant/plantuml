@@ -84,7 +84,7 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(GroupingMessages mess){
-		"GroupingMessage: " + mess.getOp()
+		"GroupingMessage: " + mess.getStartKeyword();
 	}
 	
 	def text(Note note){

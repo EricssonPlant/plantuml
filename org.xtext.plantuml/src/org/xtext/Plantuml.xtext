@@ -70,13 +70,13 @@ Arrow:
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	(('actor' 
+	((type=('actor' 
 	| 'boundary'
 	| 'control'
 	| 'entity'
 	| 'database'
 	| 'participant'
-	| 'usecase') name=ID 
+	| 'usecase')) name=ID 
 	| "(" name=ID ")"
 	| ":" name=ID ":") (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
@@ -119,15 +119,15 @@ Else:
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	 {GroupingMessages}('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') STRING NEWLINE 
+	 {GroupingMessages} (op=('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt')) STRING NEWLINE 
 	(instructions+=Instruction)* (elses+=Else)* 'end'
 ;
 
 // Rule for notes
 Note:
-	{Note}'note' (('right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
-		   		 |('left' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
-		  		 |('over' isd+=[Declaration|ID](',' ids+=[Declaration|ID])*))
+	{Note}'note' ((dir='right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
+		   		 |(dir='left' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
+		  		 |(dir='over' isd+=[Declaration|ID](',' ids+=[Declaration|ID])*))
 		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE ('end note'|'endnote')))
 ;
 

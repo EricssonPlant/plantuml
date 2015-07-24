@@ -12,41 +12,47 @@ import org.xtext.PlantumlInjectorProvider
 import org.xtext.plantuml.Plantuml
 
 
-// 1.5 tests Message to self
-
-
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Arrow_color extends XtextTest {
+class Refrence extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
-	@Test
-	def void simpleRedRightArrow(){
-		'''
-		@startuml
-			Bob -[#red]> Alice : "simple red right arrow"
-			Bob -[#red]-> Alice : "simple red right arrow"
-			Bob <[#red]- Alice : "simple red left arrow"
-			Bob <-[#red]- Alice : "simple red left arrow"
-		@enduml
-		'''.parse.assertNoErrors
-	}
-	
-	@Test
-	def void simpleHexRightArrow(){
-		'''
-		@startuml
-			Alice -[#0000FF]-> Bob : "simple left arrow"
-			Alice <-[#0000FF]- Bob : "simple left arrow"
-			Alice <-[#0000FF]-> Bob : "simple left arrow"
-		@enduml
-		'''.parse.assertNoErrors
-	}
-	
-	
-	//TODO do alot of right arrows???
 
+	//1.18 refrence 
+	
+	@Test
+	def void SL_refrence(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		participant Alice
+		actor Bob
+		ref over Alice : "ref over alice"
+		Alice -> Bob : hello
+		ref left of Bob : "ref left of bob"
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void ML_refrence(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		participant Alice
+		actor Bob
+		Alice -> Bob : hello
+		ref over Bob
+		"This can be on
+		several lines"
+		end ref
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+
+	
 	
 	/*
 	 * // template
@@ -59,5 +65,9 @@ class Arrow_color extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	 */
+	
+
+	
+	
 	
 }

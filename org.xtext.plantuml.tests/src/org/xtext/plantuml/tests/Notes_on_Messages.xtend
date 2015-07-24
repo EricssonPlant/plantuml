@@ -19,9 +19,8 @@ class Notes_on_Messages extends XtextTest {
 	@Inject extension ValidationTestHelper
 	
 
-	
 	@Test
-	def void Notes_on_Messages(){
+	def void SL_Notes_on_Messages(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
@@ -29,6 +28,17 @@ class Notes_on_Messages extends XtextTest {
 		note left: "this is a first note"
 		Bob->Alice : "ok"
 		note right: "this is another note"
+		Bob->Bob : "I am thinking"
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	
+	@Test
+	def void ML_Notes_on_Messages(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
 		Bob->Bob : "I am thinking"
 		note left
 		"a note
@@ -39,6 +49,31 @@ class Notes_on_Messages extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	
+
+	
+	
+	@Test
+	def void Notes_on_Messages_refrenced(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		participant Alice
+		participant Bob
+		note left of Alice
+		"This is displayed
+		left of Alice."
+		end note
+		note right of Alice: "This is displayed right of Alice."
+		note over Alice: "This is displayed over Alice."
+		note over Alice, Bob : "This is displayed\n over Bob and Alice."
+		note over Bob, Alice
+		"This is yet another
+		example of
+		a long note."
+		end note
+		@enduml
+		'''.parse.assertNoErrors
+	}
 	
 	@Test
 	def void Notes_on_Messages_colored(){
@@ -47,14 +82,14 @@ class Notes_on_Messages extends XtextTest {
 		@startuml
 		participant Alice
 		participant Bob
-		note left of Alice #aqua
+		note left of Alice #323232
 		"This is displayed
 		left of Alice."
 		end note
-		note right of Alice: "This is displayed right of Alice."
+		note right of Alice #aqua : "This is displayed right of Alice."
 		note over Alice: "This is displayed over Alice."
-		note over Alice, Bob #FFAAAA: "This is displayed\n over Bob and Alice."
-		note over Bob, Alice
+		note over Alice, Bob : "This is displayed\n over Bob and Alice."
+		note over Bob, Alice #101010
 		"This is yet another
 		example of
 		a long note."

@@ -25,7 +25,7 @@ class Non_letter_participants extends XtextTest {
 	
 
 	
-	@Test
+	/*@Test
 	def void declaringParticipantsActor(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
@@ -87,7 +87,7 @@ class Non_letter_participants extends XtextTest {
 			database Foo5
 		@enduml
 		'''.parse.assertNoErrors
-	}
+	} */
 	
 	
 	/*def void declaringParticipantsAllsameName(){

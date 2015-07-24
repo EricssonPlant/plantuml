@@ -12,7 +12,7 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	START NEWLINE (instructions+=Instruction)+ END NEWLINE*
+	startKeyword=START NEWLINE (instructions+=Instruction)+ endKeyword=END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -29,7 +29,7 @@ Instruction:
 	|instr= Reference 
 	|instr= Delay
 	|instr= Space
-	|Hidefootbox
+	|instr= Hidefootbox
 	|instr=Activate
 	|instr=Deactivate
 	|instr= ParticipantCreation
@@ -94,79 +94,80 @@ Stereotype:
 
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
-	{AutoNumber}'autonumber' (numbers+=INT (numbers+=INT)?)? STRING?
+	{AutoNumber} startKeyword='autonumber' (numbers+=INT (numbers+=INT)?)? STRING?
 ;
 
 // Rule for the title of the diagram
 Title:
-	'title' title=STRING
+	startKeyword='title' title=STRING
 ;
 
 // Rule for legends.
 Legend:
 
-	{Legend} 'legend' (pos=('right' | 'left' | 'center'))? 
-	(NEWLINE STRING)* NEWLINE ('endlegend'|'end legend')
+	{Legend} startKeyword='legend' (pos=('right' | 'left' | 'center'))?
+	(NEWLINE STRING)* NEWLINE (endKeyword='endlegend'|endKeyword='end legend')
 
 ;
 
 // Rule for newpages
 Newpage:
-	'newpage' text=STRING?
+	startKeyword='newpage' text=STRING?
 ;
 
 Else:
-	{Else}'else' STRING NEWLINE (instructions+=Instruction)*
+	{Else} startKeyword='else' STRING NEWLINE (instructions+=Instruction)*
 ;
 
 // Rule for "grouping-messages"
 GroupingMessages:
-	 {GroupingMessages} (op=('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt')) STRING NEWLINE 
-	(instructions+=Instruction)* (elses+=Else)* 'end'
+	 {GroupingMessages} startKeyword=('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') STRING NEWLINE
+	(instructions+=Instruction)* (elses+=Else)* endKeyword='end'
 ;
 
 // Rule for notes
 Note:
-	{Note}'note' ((dir='right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
+	{Note} startKeyword='note' ((dir='right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
 		   		 |(dir='left' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
 		  		 |(dir='over' isd+=[Declaration|ID](',' ids+=[Declaration|ID])*))
-		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE ('end note'|'endnote')))
+		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE endkeyword=('end note'|'endnote')))
+
 ;
 
 // Rule for Dividers.
 Divider:
-	'==' text=STRING '=='
+	startKeyword='==' text=STRING '=='
 ;
 
 // Rule for References
 Reference:
-	'ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
-	(( ':' STRING)|((NEWLINE STRING)* NEWLINE ('endref'|('end ref'))))
+	startKeyword='ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
+	(( ':' STRING)|((NEWLINE STRING)* NEWLINE endKeyword=('endref'|('end ref'))))
 ;
 
 // Rule for delays
 // TODO: Read full strings even when containing dots (....).
 Delay:
-	{Delay}'...' (text=STRING '...')?
+	{Delay} startKeyword='...' (text=STRING '...')?
 ;
 
 // Rule for Spaces
 Space:
-	{Space}('|||'|('||' number=INT '||'))
+	{Space}(startKeyword='|||'|(startKeyword='||' number=INT '||'))
 ;
 
 // Rule for hiding the footbox
 Hidefootbox:
-	'hide footbox'|'hide''footbox'|'hidefootbox'
+	startKeyword=('hide footbox'|'hidefootbox')
 ;
 
 // Rules for activation, deactivation and destruction of lifelines
 Activate:
-	'activate' name=ID  ('#'(Color = Color))?
+	startKeyword='activate' name=ID  ('#'(Color = Color))?
 ;
 
 Deactivate:
-	('deactivate'|'destroy') id=[Activate|ID]
+	startKeyword=('deactivate'|'destroy') id=[Activate|ID]
 ;
 
 // Rule for Participant Creation
@@ -176,9 +177,9 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	{Box}'box' STRING ('#' Color = Color)? NEWLINE
+	{Box} startKeyword='box' STRING ('#' Color = Color)? NEWLINE
 	(boxinstructions+=Instruction)+
-	'end box'
+	endKeyword='end box'
 ;
 
 IncArrow:
@@ -194,11 +195,11 @@ IncOut:
 ;
 
 Skinparam:
-	{Skinparam}'skinparam' cmd+=SkinparamCommand
+	{Skinparam} startKeyword='skinparam' cmd+=SkinparamCommand
 	| {Skinparam}'skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
 SkinparamCommand:
-	{SkinparamCommand} key=ID '#'? (val=INT|ID)
+	{SkinparamCommand} startKeyword=ID '#'? (val=INT|ID)
 ;
 
 
@@ -214,9 +215,9 @@ Color: ID|INT;
 
 terminal NEWLINE 	: ('\r'? '\n');
 
-terminal START		: '\u0040' 'startuml';
+terminal START		: '@' 'startuml';
 
-terminal END		: '\u0040' 'enduml';
+terminal END		: '@' 'enduml';
 
 // Multiline comment begins with /', and ends with '/
 terminal ML_COMMENT : '/\'' -> '\'/'; 

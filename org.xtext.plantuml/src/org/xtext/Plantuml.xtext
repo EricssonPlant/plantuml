@@ -36,9 +36,14 @@ Instruction:
 	|instr=Box
 	|instr=IncOut
 	|instr= Skinparam
-	|instr= UC_direction)? NEWLINE
+	|Uc_direction)? NEWLINE // |instr= UC_direction
 ;
 
+// 2.11 direction usecase diagram is painted in (vertical or horizontal)
+Uc_direction:
+	(('top' 'to' 'bottom' 'direction')
+	|('left' 'to' 'right' 'direction'))	
+;
 
 
 // Rules for declarations of actors
@@ -65,12 +70,7 @@ Arrow:
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	deftype=Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
-;
-
-
-Definition_Type:
-	('actor' 
+	(('actor' 
 	| 'boundary'
 	| 'control'
 	| 'entity'
@@ -78,7 +78,7 @@ Definition_Type:
 	| 'participant'
 	| 'usecase') name=ID 
 	| "(" name=ID ")"
-	| ":" name=ID ":"
+	| ":" name=ID ":") (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
 
 
@@ -110,7 +110,7 @@ Legend:
 
 // Rule for newpages
 Newpage:
-	'newpage' text=STRING
+	'newpage' text=STRING?
 ;
 
 Else:
@@ -125,10 +125,10 @@ GroupingMessages:
 
 // Rule for notes
 Note:
-	{Note}'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
-		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
-		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
-		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING NEWLINE ('end note'|'endnote')))
+	{Note}'note' (('right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
+		   		 |('left' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
+		  		 |('over' isd+=[Declaration|ID](',' ids+=[Declaration|ID])*))
+		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE ('end note'|'endnote')))
 ;
 
 // Rule for Dividers.
@@ -198,27 +198,9 @@ Skinparam:
 SkinparamCommand:
 	{SkinparamCommand} key=ID '#'? (val=INT|ID)
 ;
-/*SkinparamCommand:
-	{SkinparamCommand} ('ArrowColor' '#' Color=Color
-	|'ActorBorderColor' '#'Color=Color
-	|'LifeLineBorderColor' '#' Color=Color
-	|'LifeLineBackgroundColor' '#' Color=Color
-	|'ParticipantBorderColor' '#' Color=Color
-	|'ParticipantBackgroundColor' '#' Color=Color
-	|'ParticipantFontName' ID
-	|'ParticipantFontColor' '#' Color=Color
-	|'ParticipantFontSize' INT
-	|'ActorBackgroundColor' '#' Color=Color
-	|'ActorFontColor' '#' Color=Color
-	|'Actorfontsize' INT
-	|'ActorFontName' ID)
-;*/
 
-// 2.11 direction usecase diagram is painted in (vertical or horizontal)
-UC_direction:
-	direction=("top to bottom direction"
-	| "left to right direction")	
-;
+
+
 
 
 // ValueConverter checks if the Color is a proper color or a hexcode
@@ -270,6 +252,7 @@ terminal ID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 terminal STRING: '"' -> '"';
 
 terminal WS: (' '|'\t')+;
+
 
 terminal ANY_OTHER: .;
 

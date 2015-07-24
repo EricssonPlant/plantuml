@@ -40,10 +40,11 @@ Instruction:
 ;
 
 
+
 // Rules for declarations of actors
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
-Declaration: Definition|Sequence;
+Declaration: (Definition|Sequence);
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
@@ -56,15 +57,15 @@ ArrowID:
 
 
 Arrow:
-	{Arrow}(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')?
-	ARROWBODY+ ('[' '#'  Color = Color ']' ARROWBODY+)?
-	 ('[' '#' Color = Color ']')? (RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
+	{Arrow} left=(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
+	leftmid+=ARROWBODY+ ('[' '#'  Color = Color ']' rightmid+=ARROWBODY+)?
+	 ('[' '#' Color = Color ']')? right=(RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
 
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
+	deftype=Definition_Type (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
 
 

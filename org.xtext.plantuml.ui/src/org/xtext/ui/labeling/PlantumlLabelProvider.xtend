@@ -10,7 +10,6 @@ import org.xtext.plantuml.Sequence
 import org.xtext.plantuml.Diagram
 import org.xtext.plantuml.Reference
 import org.xtext.plantuml.Definition
-import org.xtext.plantuml.Definition_Type
 import org.xtext.plantuml.AutoNumber
 import org.xtext.plantuml.Title
 import org.xtext.plantuml.Legend
@@ -25,6 +24,7 @@ import org.xtext.plantuml.ParticipantCreation
 import org.xtext.plantuml.Box
 import org.xtext.plantuml.IncOut
 import org.xtext.plantuml.Skinparam
+import org.xtext.plantuml.ArrowID
 
 /**
  * Provides labels for EObjects.
@@ -45,11 +45,20 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Instruction instr){
-		"Instruction"
+		if(instr.getInstr() instanceof Definition){
+			"Definition"
+		}
+		else{
+			"Instruction"
+		}
 	}
 	
 	def text(Sequence sequence){
-		"Sequence. Names: " + sequence.getArrowIDs();
+		"Sequence"
+	}
+	
+	def text(ArrowID arrowId){
+		"Name: " + arrowId.getName();
 	}
 	
 	def text(Arrow arrow){
@@ -57,13 +66,10 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 		+ arrow.getRightmid() + arrow.getRight() + ". Color: " + arrow.getColor();
 	}
 	
-	def text(Definition defi){
-		"Definition"
+	def text(Definition defi){  
+		"Type: " + defi.getType() + ", Name: " + defi.getName();
 	}
 	
-	def text(Definition_Type deftype){
-		"type: " + deftype.getType() + ". Of character: " + deftype.getName()
-	}
 	
 	def text(AutoNumber auto){
 		"Autonumber"
@@ -82,7 +88,7 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Note note){
-		"Note"
+		"Note. Dir: " + note.getDir() + ", relative to: " + note.getIds()
 	}
 	
 	def text(Divider div){

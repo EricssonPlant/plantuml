@@ -44,7 +44,7 @@ Instruction:
 // Rules for declarations of actors
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
-Declaration: dec=(Definition|Sequence);
+Declaration: (Definition|Sequence);
 
 // Rule for creating sequences between actors (Not necessarily previously defined)
 Sequence:
@@ -128,7 +128,7 @@ Note:
 	{Note}'note' (('right' ('of' rid=[Declaration|ID] (',' rids+=[Declaration|ID])*)?)
 		   		 |('left' ('of' lid=[Declaration|ID] (',' lids+=[Declaration|ID])*)?)
 		  		 |('over' oid=[Declaration|ID](',' oids+=[Declaration|ID])*))
-		 		  ('#' Color = Color)? ((':' STRING)| ((NEWLINE STRING)* NEWLINE 'end''note'|'endnote'))
+		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING NEWLINE ('end note'|'endnote')))
 ;
 
 // Rule for Dividers.

@@ -9,8 +9,22 @@ import org.xtext.plantuml.Instruction
 import org.xtext.plantuml.Sequence
 import org.xtext.plantuml.Diagram
 import org.xtext.plantuml.Reference
-import org.xtext.plantuml.Declaration
 import org.xtext.plantuml.Definition
+import org.xtext.plantuml.Definition_Type
+import org.xtext.plantuml.AutoNumber
+import org.xtext.plantuml.Title
+import org.xtext.plantuml.Legend
+import org.xtext.plantuml.GroupingMessages
+import org.xtext.plantuml.Note
+import org.xtext.plantuml.Divider
+import org.xtext.plantuml.Delay
+import org.xtext.plantuml.Space
+import org.xtext.plantuml.Activate
+import org.xtext.plantuml.Deactivate
+import org.xtext.plantuml.ParticipantCreation
+import org.xtext.plantuml.Box
+import org.xtext.plantuml.IncOut
+import org.xtext.plantuml.Skinparam
 
 /**
  * Provides labels for EObjects.
@@ -43,6 +57,38 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 		+ arrow.getRightmid() + arrow.getRight() + ". Color: " + arrow.getColor();
 	}
 	
+	def text(Definition defi){
+		"Definition"
+	}
+	
+	def text(Definition_Type deftype){
+		"type: " + deftype.getType() + ". Of character: " + deftype.getName()
+	}
+	
+	def text(AutoNumber auto){
+		"Autonumber"
+	}
+	
+	def text(Title title){
+		"Title"
+	}
+	
+	def text(Legend legend){
+		"Legend"
+	}
+	
+	def text(GroupingMessages mess){
+		"GroupingMessage: " + mess.getOp()
+	}
+	
+	def text(Note note){
+		"Note"
+	}
+	
+	def text(Divider div){
+		"Divider"
+	}
+	
 	def text(Reference ref){
 		/*var String ret;
 		for(i:0 ..< ref.getIds().length()){
@@ -59,4 +105,39 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 		ret*/
 		"Reference"
 	}
+	
+	def text(Delay delay){
+		"Delay"
+	}
+	
+	def text(Space space){
+		"Space"
+	}
+	
+	def text(Activate ac){
+		"Activate"
+	}
+	
+	def text(Deactivate deac){
+		"Deactivate"
+	}
+	
+	def text(ParticipantCreation create){
+		"Creation of character: " + create.getName();
+	}
+	
+	def text(Box box){
+		"Box"
+	}
+	
+	def text(IncOut incout){
+		"Incoming/Outgoing Message"
+	}
+	
+	def text(Skinparam skinparam){
+		"Skinparam"
+	}
+	
+	
+	
 }

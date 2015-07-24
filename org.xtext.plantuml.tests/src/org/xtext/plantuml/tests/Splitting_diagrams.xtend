@@ -20,16 +20,30 @@ class Splitting_Diagrams extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
-
-	
-	@Test
-	def void SplittingADiagramTwoTimes(){
+		@Test
+	def void SplittingADiagram(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
 			Alice -> Bob : "message 1"
 			Alice -> Bob : "message 2"
 			newpage
+			Alice -> Bob : "message 3"
+			newpage
+			Alice -> Bob : "message 4"
+		@enduml
+		'''.parse.assertNoErrors
+	}
+
+	
+	@Test
+	def void SplittingADiagramWithMessage(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+			Alice -> Bob : "message 1"
+			Alice -> Bob : "message 2"
+			newpage "hehehehehheheehheh"
 			Alice -> Bob : "message 3"
 			Alice -> Bob : "message 4"
 			newpage "A title for the\nlast page"

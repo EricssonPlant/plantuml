@@ -44,6 +44,9 @@ class Arrow_style extends XtextTest {
 		'''
 		@startuml
 			Alice --> Bob: "dotted right arrow"
+			Alice ---> Bob: "dotted right arrow"
+			Alice ----> Bob: "dotted right arrow"
+			Alice -----> Bob: "dotted right arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -53,6 +56,10 @@ class Arrow_style extends XtextTest {
 		'''
 		@startuml
 			Alice <-- Bob : "dotted left arrow"
+			Alice <--- Bob : "dotted left arrow"
+			Alice <---- Bob : "dotted left arrow"
+			Alice <----- Bob : "dotted left arrow"
+			Alice <------ Bob : "dotted left arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -81,6 +88,17 @@ class Arrow_style extends XtextTest {
 			
 			Alice x<- Bob: "dotted left arrow"
 			Alice o<-- Bob: "dotted left arrow"
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void diffrentArrowBodys(){
+		'''
+		@startuml
+			Alice <- Bob: "simple left arrow"
+			Alice <= Bob: "simple left arrow"
+			Alice <. Bob: "simple left arrow"
 		@enduml
 		'''.parse.assertNoErrors
 	}

@@ -51,28 +51,41 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					acceptor.addPosition( node.getOffset(), node.getLength(), COMMENT);
 				}
 			}
+			else if( node instanceof CompositeNodeWithSemanticElement && node.getSemanticElement() instanceof Arrow)
+			{
+				acceptor.addPosition(node.getOffset(), node.getLength(), SEQ_ARR);
+			}
 			else{
 				try {
-					if(node instanceof CompositeNodeWithSemanticElement && node.getSemanticElement().getClass().getMethod("getStartKeyWord") != null){
-						String  startKeyWord = (String) node.getSemanticElement().getClass().getMethod("getStartKeyWord").invoke(node.getSemanticElement());
-						System.out.println("|******************|");
-						System.out.println(node.getText());
-						System.out.println("|__________________|");
-						if(it.hasNext())
-							node = it.next();
-						while(node.hasNextSibling()){
-								node = node.getNextSibling();
-								System.out.println("<------Sibling------->");
-								System.out.println(node.getText());
-								System.out.println("<------Sibling------->");
-								if(node.getText().equalsIgnoreCase("legend")){
-									acceptor.addPosition( node.getOffset(), node.getLength(), LEGEND);
-								}
+					System.out.println("TRY!");
+					if(node instanceof LeafNode && node.getSemanticElement().getClass().getMethod("getStartKeyword") != null){
+						System.out.println("NU HÄNDER DET!");
+						String startKeyword = (String) node.getSemanticElement().getClass().getMethod("getStartKeyword").invoke(node.getSemanticElement());
+						if(node.getText().equalsIgnoreCase(startKeyword)){
+							acceptor.addPosition( node.getOffset(), node.getLength(), startKeyword.toLowerCase());
+						}
+						else if(node instanceof LeafNode && node.getSemanticElement().getClass().getMethod("getEndKeyword") != null){
+							System.out.println("NU HÄNDER DET2!");
+							String endKeyword = (String) node.getSemanticElement().getClass().getMethod("getEndKeyword").invoke(node.getSemanticElement());
+							if(node.getText().equalsIgnoreCase(endKeyword)){
+								acceptor.addPosition( node.getOffset(), node.getLength(), endKeyword.toLowerCase());
+							}
 						}
 					}
 				} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 					// TODO Auto-generated catch block
 					//e.printStackTrace();
+				}
+				if(node.getGrammarElement() instanceof RuleCall){
+					RuleCall rc = (RuleCall) node.getGrammarElement();
+					AbstractRule r = rc.getRule();
+					if(r.getName().equals("IncArrow")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), INCOUT);
+					}
+					
+					else if(r.getName().equals("OutArrow")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), INCOUT);
+					}
 				}
 			}
 		}

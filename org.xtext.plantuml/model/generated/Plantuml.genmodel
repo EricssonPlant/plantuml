@@ -11,7 +11,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Plantuml/diagrams"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Diagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Diagram/startKeyword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Diagram/instructions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Diagram/endKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Instruction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Instruction/instr"/>
@@ -31,31 +33,40 @@
     <genClasses ecoreClass="Plantuml.ecore#//Definition_Type">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Definition_Type/Stereotype"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition_Type/Color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Definition_Type/startKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Stereotype">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Stereotype/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//AutoNumber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//AutoNumber/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//AutoNumber/numbers"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Title">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Title/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Title/title"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Legend">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/startKeyWord"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Legend/endKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Newpage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Newpage/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Newpage/text"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Else">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Else/startKeyword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Else/instructions"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//GroupingMessages">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//GroupingMessages/startKeyword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessages/instructions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//GroupingMessages/elses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//GroupingMessages/endKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Note">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Note/startKeyword"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/rid"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/rids"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/lid"/>
@@ -63,38 +74,52 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oid"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Note/oids"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Note/Color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Note/endKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Divider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Divider/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Divider/text"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Reference/startKeyword"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Reference/ids"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Reference/endKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Delay">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Delay/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Delay/text"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Space">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Space/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Space/number"/>
     </genClasses>
+    <genClasses ecoreClass="Plantuml.ecore#//Hidefootbox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Hidefootbox/startKeyword"/>
+    </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Activate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Activate/Color"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Deactivate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Deactivate/startKeyword"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Deactivate/id"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//ParticipantCreation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//ParticipantCreation/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Box">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Box/startKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Box/Color"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Box/boxinstructions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Box/endKeyword"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//IncOut">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//IncOut/name"/>
     </genClasses>
     <genClasses ecoreClass="Plantuml.ecore#//Skinparam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Skinparam/startKeyword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Plantuml.ecore#//Skinparam/cmd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Plantuml.ecore#//Skinparam/id"/>
     </genClasses>

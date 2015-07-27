@@ -14,12 +14,12 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Refrence extends XtextTest {
+class ReferenceTest extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
 
-	//1.18 refrence 
+	//1.18 reference 
 	
 	@Test
 	def void SL_refrence(){

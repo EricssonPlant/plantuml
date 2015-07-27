@@ -154,6 +154,7 @@ Delay:
 dotdotdot:
 	DOT DOT DOT
 ;
+
 // Rule for Spaces
 Space:
 	{Space}(startKeyword='|||'|(startKeyword='||' number=INT '||'))

@@ -12,60 +12,87 @@ import org.xtext.PlantumlInjectorProvider
 import org.xtext.plantuml.Plantuml
 
 
-// 1.11 Splitting diagrams
-
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Splitting_Diagrams extends XtextTest {
+class LegendTest extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
-		@Test
-	def void SplittingADiagram(){
+
+	//1.17 Divider
+	
+	@Test
+	def void standaloneLegend(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
-			Alice -> Bob : "message 1"
-			Alice -> Bob : "message 2"
-			newpage
-			Alice -> Bob : "message 3"
-			newpage
-			Alice -> Bob : "message 4"
+		Alice -> Bob : "Hello"
+		legend
+		"Short kalse"
+		endlegend
 		@enduml
+
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void leftLegend(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		Alice -> Bob : "Hello"
+		legend left
+		"Short kalse"
+		endlegend
+		@enduml
+
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void rightLegend(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		Alice -> Bob : "Hello"
+		legend right
+		"Short kalse"
+		endlegend
+		@enduml
+
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void multilineLegend(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		Alice -> Bob : "Hello"
+		legend right
+		"Short
+		legend"
+		endlegend
+		@enduml
+
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void singlelineLegend(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		Alice -> Bob : "Hello"
+		legend right
+		"Short"
+		endlegend
+		@enduml
+
 		'''.parse.assertNoErrors
 	}
 
 	
-	@Test
-	def void SplittingADiagramWithMessage(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
-		'''
-		@startuml
-			Alice -> Bob : "message 1"
-			Alice -> Bob : "message 2"
-			newpage "hehehehehheheehheh"
-			Alice -> Bob : "message 3"
-			Alice -> Bob : "message 4"
-			newpage "Some something"
-			Alice -> Bob : "message 5"
-			Alice -> Bob : "message 6"
-		@enduml
-		'''.parse.assertNoErrors
-	}
-	
-	@Test
-	def void SplittingADiagramContainingASpecialCharacter(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
-		'''
-		@startuml
-			Alice -> Bob : "message 3"
-			Alice -> Bob : "message 4"
-			newpage "A title for the\nlast page"
-			Alice -> Bob : "message 5"
-			Alice -> Bob : "message 6"
-		@enduml
-		'''.parse.assertNoErrors
-	}
 	
 	/*
 	 * // template

@@ -14,48 +14,25 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Space extends XtextTest {
+class Create extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
 
-	//1.20 Space
+	//1.22 Participant creation
 	
 	@Test
-	def void Simple_Space(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
+	def void activate(){
 		'''
 		@startuml
-		Bob --> Alice: "ok"
-		|||
-		Alice -> Bob: "message 2"
-		Bob --> Alice: "ok"
-		|||
-		Alice -> Bob: "message 3"
-		Bob --> Alice: "ok"
+		Bob -> Alice : "hello"
+		create Other
+		Alice -> Other : "new"
+		create control String
+		Alice -> String : "lalal"
 		@enduml
 		'''.parse.assertNoErrors
 	}
-	
-	@Test
-	def void Long_Space(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
-		'''
-		@startuml
-		Bob --> Alice: "ok"
-		||25||
-		Alice -> Bob: "message 2"
-		Bob --> Alice: "ok"
-		||45||
-		Alice -> Bob: "message 3"
-		||4||
-		Bob --> Alice: "ok"
-		@enduml
-		'''.parse.assertNoErrors
-	}
-	
-
-	
 	
 	/*
 	 * // template

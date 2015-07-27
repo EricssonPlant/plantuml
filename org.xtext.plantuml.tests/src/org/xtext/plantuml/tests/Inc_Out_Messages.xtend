@@ -14,48 +14,48 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Space extends XtextTest {
+class Inc_Out_Messages extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
 
-	//1.20 Space
+	//1.23 Incoming and outgoing messages
 	
 	@Test
-	def void Simple_Space(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
+	def void Inc_from_left(){
 		'''
 		@startuml
-		Bob --> Alice: "ok"
-		|||
-		Alice -> Bob: "message 2"
-		Bob --> Alice: "ok"
-		|||
-		Alice -> Bob: "message 3"
-		Bob --> Alice: "ok"
+		[-> A: "DoWork"
 		@enduml
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
-	def void Long_Space(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
+	def void out_to_right(){
 		'''
 		@startuml
-		Bob --> Alice: "ok"
-		||25||
-		Alice -> Bob: "message 2"
-		Bob --> Alice: "ok"
-		||45||
-		Alice -> Bob: "message 3"
-		||4||
-		Bob --> Alice: "ok"
+		A ->] : "lalala"
 		@enduml
 		'''.parse.assertNoErrors
 	}
 	
-
+		@Test
+	def void Inc_from_right(){
+		'''
+		@startuml
+		A <-] : "DoWork"
+		@enduml
+		'''.parse.assertNoErrors
+	}
 	
+	@Test
+	def void out_to_left(){
+		'''
+		@startuml
+		[<- A : "lalala"
+		@enduml
+		'''.parse.assertNoErrors
+	}
 	
 	/*
 	 * // template

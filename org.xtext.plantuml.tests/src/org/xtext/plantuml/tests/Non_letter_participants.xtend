@@ -6,11 +6,9 @@ import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.eclipselabs.xtext.utils.unittesting.XtextTest
-import org.junit.Test
 import org.junit.runner.RunWith
 import org.xtext.PlantumlInjectorProvider
 import org.xtext.plantuml.Plantuml
-
 
 // 1.4 tests for non letter participants
 

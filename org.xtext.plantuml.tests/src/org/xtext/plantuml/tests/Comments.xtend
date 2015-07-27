@@ -1,20 +1,17 @@
 package org.xtext.plantuml.tests
 
 //import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.runner.RunWith
-import org.xtext.PlantumlInjectorProvider
+
+import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
-//import javax.inject.Inject
+import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
-import org.xtext.PlantumlRuntimeModule
-import org.xtext.plantuml.Plantuml
-import org.junit.Test
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.eclipselabs.xtext.utils.unittesting.XtextTest
-import org.eclipselabs.xtext.utils.unittesting.XtextRunner2
-import org.eclipse.xtext.junit4.XtextRunner
-import com.google.inject.Inject
-
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.xtext.PlantumlInjectorProvider
+import org.xtext.plantuml.Plantuml
 
 // 1.2 comments 
 

@@ -31,13 +31,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 		while( it.hasNext())
 		{
 			INode node = it.next();
-			System.out.println("-------------------------------------");
-			System.out.println("-------------------------------------");
 			node.getClass();
-			System.out.println(node.getText());
-			System.out.println(node.getSemanticElement());
-			System.out.println(node.getClass());
-			System.out.println("-------------------------------------");
 			
 			
 			// If a node is considered a comment the node will be coloured according to the style COMMENT
@@ -57,15 +51,12 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 			}
 			else{
 				try {
-					System.out.println("TRY!");
 					if(node instanceof LeafNode && node.getSemanticElement().getClass().getMethod("getStartKeyword") != null){
-						System.out.println("NU HÄNDER DET!");
 						String startKeyword = (String) node.getSemanticElement().getClass().getMethod("getStartKeyword").invoke(node.getSemanticElement());
 						if(node.getText().equalsIgnoreCase(startKeyword)){
 							acceptor.addPosition( node.getOffset(), node.getLength(), startKeyword.toLowerCase());
 						}
 						else if(node instanceof LeafNode && node.getSemanticElement().getClass().getMethod("getEndKeyword") != null){
-							System.out.println("NU HÄNDER DET2!");
 							String endKeyword = (String) node.getSemanticElement().getClass().getMethod("getEndKeyword").invoke(node.getSemanticElement());
 							if(node.getText().equalsIgnoreCase(endKeyword)){
 								acceptor.addPosition( node.getOffset(), node.getLength(), endKeyword.toLowerCase());

@@ -67,7 +67,7 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Definition defi){  
-		"Type: " + defi.getType() + ", Name: " + defi.getName();
+		"Type: " + defi.getStartKeyword() + ", Name: " + defi.getName();
 	}
 	
 	

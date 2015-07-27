@@ -18,24 +18,24 @@ Diagram:
 // An instruction can be any of the rules for single- and multiline commands.
 Instruction: 
 	{Instruction}(instr=Sequence
-	|instr=Definition
-	|instr=AutoNumber
-	|instr=Title
-	|instr=Legend
-	|instr=Newpage
-	|instr=GroupingMessages
-	|instr= Note
-	|instr= Divider
-	|instr= Reference 
-	|instr= Delay
-	|instr= Space
-	|instr= Hidefootbox
-	|instr=Activate
-	|instr=Deactivate
-	|instr= ParticipantCreation
-	|instr=Box
-	|instr=IncOut
-	|instr= Skinparam
+	|instr = Definition
+	|instr = AutoNumber
+	|instr = Title
+	|instr = Legend
+	|instr = Newpage
+	|instr = GroupingMessages
+	|instr = Note
+	|instr = Divider
+	|instr = Reference 
+	|instr = Delay
+	|instr = Space
+	|instr = Hidefootbox
+	|instr = Activate
+	|instr = Deactivate
+	|instr = ParticipantCreation
+	|instr = Box
+	|instr = IncOut
+	|instr = Skinparam
 	|Uc_direction)? NEWLINE // |instr= UC_direction
 ;
 
@@ -70,7 +70,7 @@ Arrow:
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
-	((type=('actor' 
+	((startKeyword=('actor' 
 	| 'boundary'
 	| 'control'
 	| 'entity'
@@ -84,7 +84,7 @@ Definition:
 
 // 1.24 Stereotype, used in Participant_Declaration
 Stereotype:
-	{Stereotype}'<<' ('(' CHAR ',' '#' Color = Color ')')? STRING? '>>'
+	{Stereotype}startKeyword='<<' ('(' CHAR ',' '#' Color = Color ')')? STRING? endKeyword='>>'
 ;
 
 // ------------------------------------------------------------------
@@ -130,7 +130,7 @@ Note:
 	{Note} startKeyword='note' ((dir='right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
 		   		 |(dir='left' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
 		  		 |(dir='over' isd+=[Declaration|ID](',' ids+=[Declaration|ID])*))
-		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE endkeyword=('end note'|'endnote')))
+		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE endKeyword=('end note'|'endnote')))
 
 ;
 
@@ -172,7 +172,7 @@ Deactivate:
 
 // Rule for Participant Creation
 ParticipantCreation:
-	'create' (name=ID|Definition)
+	startKeyword='create' (name=ID|def=Definition)
 ;
 
 // Rule for box/end box
@@ -182,6 +182,9 @@ Box:
 	endKeyword='end box'
 ;
 
+ID:
+	CHAR | BASICID
+;
 IncArrow:
 	('[' ARROWBODY+ RIGHTARROWHEAD)|('[' LEFTARROWHEAD ARROWBODY+)
 ;
@@ -196,7 +199,7 @@ IncOut:
 
 Skinparam:
 	{Skinparam} startKeyword='skinparam' cmd+=SkinparamCommand
-	| {Skinparam}'skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
+	| {Skinparam}startKeyword='skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
 SkinparamCommand:
 	{SkinparamCommand} startKeyword=ID '#'? (val=INT|ID)
@@ -250,7 +253,7 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 
 terminal CHAR: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö');
 
-terminal ID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
+terminal BASICID: ('a'..'z'|'A'..'Z'|'0'..'9' | 'å' | 'ä' | 'ö')*;
 
 terminal STRING: '"' -> '"';
 

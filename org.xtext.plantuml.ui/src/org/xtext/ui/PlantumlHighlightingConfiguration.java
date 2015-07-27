@@ -50,18 +50,20 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		public static final String HIDE_FOOTBOX = "hide footbox";
 		public static final String DEACTIVATE = "deactivate";
 		public static final String DESTROY = "destroy";
-		public static final String PARTICIPANTCREATION = "participantcreation";
+		public static final String PARTICIPANTCREATION = "create";
 		public static final String ACTIVATE = "activate";
 		public static final String BOX = "box";
 		public static final String ENDBOX = "end box";
 		public static final String INCOUT = "Incoming and outgoing arrows";
 		public static final String SKINPARAM = "skinparam";
 		public static final String SKINPARAMCOMMAND = "Skinparam command";
+		public static final String STEREOTYPELEFT = "<<";
+		public static final String STEREOTYPERIGHT = ">>";
 		public static final String[] ALL_STRINGS = 
 		{
 			STARTUML, ENDUML, SEQ_ARR, COMMENT, ACTOR, BOUNDARY, CONTROL, ENTITY, DATABASE, PARTICIPANT, USECASE, AUTONUMBER, TITLE, LEGEND, ENDLEGEND, END_LEGEND, NEWPAGE, 
 			ALT, ELSE, OPT, LOOP, PAR, BREAK, CRITICAL, GROUP, END, NOTE, ENDNOTE, END_NOTE, REFERENCE, ENDREF, END_REF, DELAY, SPACESINGLE, SPACESTARTEND, HIDEFOOTBOX, HIDE_FOOTBOX,
-			DEACTIVATE, PARTICIPANTCREATION, ACTIVATE, BOX, ENDBOX, INCOUT, SKINPARAM
+			DEACTIVATE, PARTICIPANTCREATION, ACTIVATE, BOX, ENDBOX, INCOUT, SKINPARAM, STEREOTYPELEFT, STEREOTYPERIGHT
 		};
 	
 	// This method must be implemented as it's needed by IHighlightingConfiguration.
@@ -114,6 +116,8 @@ public class PlantumlHighlightingConfiguration implements IHighlightingConfigura
 		addType( acceptor, INCOUT, 0, 0, 200, BOLD);
 		addType( acceptor, SKINPARAMCOMMAND, 0, 0, 200, BOLD);
 		addType( acceptor, SKINPARAM, 255, 0, 200, BOLD);
+		addType( acceptor, STEREOTYPELEFT, 0, 0, 200, BOLD);
+		addType( acceptor, STEREOTYPERIGHT, 0, 0, 200, BOLD);
 	}
 	
 	

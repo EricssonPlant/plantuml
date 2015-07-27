@@ -63,7 +63,7 @@ ArrowID:
 
 Arrow:
 	{Arrow} left=(LEFTARROWHEAD | LEFTARROWHEADEXTENSION)? ('[' '#' Color = Color ']')? 
-	leftmid+=ARROWBODY+ ('[' '#'  Color = Color ']' rightmid+=ARROWBODY+)?
+	leftmid+=(ARROWBODY | DOT)+ ('[' '#'  Color = Color ']' rightmid+=(ARROWBODY | DOT)+)?
 	 ('[' '#' Color = Color ']')? right=(RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
 
@@ -148,9 +148,12 @@ Reference:
 // Rule for delays
 // TODO: Read full strings even when containing dots (....).
 Delay:
-	{Delay} startKeyword='...' (text=STRING '...')?
+	{Delay} dotdotdot (text=STRING dotdotdot)?
 ;
 
+dotdotdot:
+	DOT DOT DOT
+;
 // Rule for Spaces
 Space:
 	{Space}(startKeyword='|||'|(startKeyword='||' number=INT '||'))
@@ -229,7 +232,11 @@ terminal ML_COMMENT : '/\'' -> '\'/';
 terminal SL_COMMENT : '\'' !('\n'|'\r')*;
 
 terminal ARROWBODY:
-	'.' | '=' | '-'
+	'=' | '-'
+;
+
+terminal DOT:
+	'.'
 ;
 
 terminal RIGHTARROWHEAD:

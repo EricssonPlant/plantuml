@@ -33,7 +33,6 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 			INode node = it.next();
 			node.getClass();
 			
-			
 			// If a node is considered a comment the node will be coloured according to the style COMMENT
 			if(node instanceof HiddenLeafNode && node.getGrammarElement() instanceof TerminalRuleImpl)
 			{
@@ -76,6 +75,9 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					
 					else if(r.getName().equals("OutArrow")){
 						acceptor.addPosition(node.getOffset(), node.getLength(), INCOUT);
+					}
+					else if(r.getName().equals("dotdotdot")){
+						acceptor.addPosition(node.getOffset(), node.getLength(), DELAY);
 					}
 				}
 			}

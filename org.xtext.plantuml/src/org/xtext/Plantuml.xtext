@@ -199,7 +199,7 @@ Skinparam:
 	| {Skinparam}'skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
 SkinparamCommand:
-	{SkinparamCommand} startKeyword=ID '#'? (val=INT|ID)
+	{SkinparamCommand} startKeyword=ID '#'? (int_val=INT|id_val=ID)
 ;
 
 

@@ -141,7 +141,7 @@ Divider:
 
 // Rule for References
 Reference:
-	startKeyword='ref over' (id=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
+	startKeyword='ref over' (ids+=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
 	(( ':' STRING)|((NEWLINE STRING)* NEWLINE endKeyword=('endref'|('end ref'))))
 ;
 

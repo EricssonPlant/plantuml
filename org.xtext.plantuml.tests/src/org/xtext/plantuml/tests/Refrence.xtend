@@ -29,8 +29,8 @@ class Refrence extends XtextTest {
 		participant Alice
 		actor Bob
 		ref over Alice : "ref over alice"
-		Alice -> Bob : hello
-		ref left of Bob : "ref left of bob"
+		Alice -> Bob : "hello"
+		ref over Bob : "ref left of bob"
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -42,7 +42,7 @@ class Refrence extends XtextTest {
 		@startuml
 		participant Alice
 		actor Bob
-		Alice -> Bob : hello
+		Alice -> Bob : "hello"
 		ref over Bob
 		"This can be on
 		several lines"

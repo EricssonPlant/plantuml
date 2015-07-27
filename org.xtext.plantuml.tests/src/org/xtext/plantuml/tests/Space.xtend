@@ -29,7 +29,7 @@ class Space extends XtextTest {
 		Bob --> Alice: "ok"
 		|||
 		Alice -> Bob: "message 2"
-		Bob --> Alice: ok
+		Bob --> Alice: "ok"
 		|||
 		Alice -> Bob: "message 3"
 		Bob --> Alice: "ok"
@@ -45,7 +45,7 @@ class Space extends XtextTest {
 		Bob --> Alice: "ok"
 		||25||
 		Alice -> Bob: "message 2"
-		Bob --> Alice: ok
+		Bob --> Alice: "ok"
 		||45||
 		Alice -> Bob: "message 3"
 		||4||

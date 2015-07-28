@@ -12,7 +12,7 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	startKeyword=START NEWLINE (instructions+=Instruction)+ endKeyword=END NEWLINE*
+	startKeyword=START NEWLINE (instructions+=Instruction | NEWLINE)* endKeyword=END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -36,7 +36,7 @@ Instruction:
 	|instr = Box
 	|instr = IncOut
 	|instr = Skinparam
-	|Uc_direction)? NEWLINE // |instr= UC_direction
+	|Uc_direction) NEWLINE // |instr= UC_direction
 ;
 
 // 2.11 direction usecase diagram is painted in (vertical or horizontal)

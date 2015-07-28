@@ -22,10 +22,27 @@ class Stereotype extends XtextTest {
 	//1.24 Strereotypes and Spots
 	
 	@Test
-	def void activate(){
+	def void lable_stereotype(){
 		'''
 		@startuml
 		participant Bob << "Generated" >>
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+		@Test
+	def void colored_stereotype(){
+		'''
+		@startuml
+		participant Alice << (C,#ADD1B2) >>
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void both_stereotype(){
+		'''
+		@startuml
 		participant Alice << (C,#ADD1B2) "Testable" >>
 		@enduml
 		'''.parse.assertNoErrors

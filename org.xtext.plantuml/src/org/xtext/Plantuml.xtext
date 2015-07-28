@@ -5,6 +5,7 @@ grammar org.xtext.Plantuml
 generate plantuml "http://www.xtext.org/Plantuml"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
+// numbers in comments e.g 1.9... refers to http://plantuml.sourceforge.net/PlantUML_Language_Reference_Guide.pdf
 
 // Model is a number of @startuml's and @enduml's
 Plantuml:
@@ -36,12 +37,12 @@ Instruction:
 	|instr = Box
 	|instr = IncOut
 	|instr = Skinparam
-	|Uc_direction) NEWLINE // |instr= UC_direction
+	|instr = Uc_direction) NEWLINE
 ;
 
 // 2.11 direction usecase diagram is painted in (vertical or horizontal)
 Uc_direction:
-	(('top' 'to' 'bottom' 'direction')
+	{Uc_direction}(('top' 'to' 'bottom' 'direction')
 	|('left' 'to' 'right' 'direction'))	
 ;
 
@@ -67,6 +68,7 @@ Arrow:
 	 ('[' '#' Color = Color ']')? right=(RIGHTARROWHEAD | RIGHTARROWHEADEXTENSION)?
 ;
 
+// 1.3 Declaring Participants
 // Rule for defining objects in PlantUML, such as
 // actors, boundaries, controls, entities and databases
 Definition:
@@ -92,16 +94,19 @@ Stereotype:
 
 
 
+// 1.8 Message sequence numbering
 // Rule for the autonumbering function. Can be followed by one or two numbers, separated by spaces
 AutoNumber:
 	{AutoNumber} startKeyword='autonumber' (numbers+=INT (numbers+=INT)?)? STRING?
 ;
 
+// 1.9 Title
 // Rule for the title of the diagram
 Title:
 	startKeyword='title' title=STRING
 ;
 
+// 1.10 Legend the diagram
 // Rule for legends.
 Legend:
 
@@ -110,21 +115,25 @@ Legend:
 
 ;
 
+// 1.11 Splitting diagrams
 // Rule for newpages
 Newpage:
 	startKeyword='newpage' text=STRING?
 ;
 
-Else:
-	{Else} startKeyword='else' STRING NEWLINE (instructions+=Instruction)*
-;
 
+// 1.12 Grouping messages
 // Rule for "grouping-messages"
 GroupingMessages:
 	 {GroupingMessages} startKeyword=('opt'|'loop'|'par'|'break'|'critical'|'group'|'alt') STRING NEWLINE
 	(instructions+=Instruction)* (elses+=Else)* endKeyword='end'
 ;
 
+Else:
+	{Else} startKeyword='else' STRING NEWLINE (instructions+=Instruction)*
+;
+
+// 1.13 Notes on messages
 // Rule for notes
 Note:
 	{Note} startKeyword='note' ((dir='right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
@@ -139,13 +148,14 @@ Divider:
 	startKeyword='==' text=STRING '=='
 ;
 
+// 1.18 Reference
 // Rule for References
 Reference:
 	startKeyword='ref over' (ids+=[Declaration|ID]) (',' ids+=[Declaration|ID])* 
 	(( ':' STRING)|((NEWLINE STRING)* NEWLINE endKeyword=('endref'|('end ref'))))
 ;
 
-// Rule for delays
+// 1.19 Delay
 // TODO: Read full strings even when containing dots (....).
 Delay:
 	{Delay} dotdotdot (text=STRING dotdotdot)?
@@ -155,7 +165,7 @@ dotdotdot:
 	DOT DOT DOT
 ;
 
-// Rule for Spaces
+// 1.20 Rule for Spaces
 Space:
 	{Space}(startKeyword='|||'|(startKeyword='||' number=INT '||'))
 ;
@@ -165,7 +175,7 @@ Hidefootbox:
 	startKeyword=('hide footbox'|'hidefootbox')
 ;
 
-// Rules for activation, deactivation and destruction of lifelines
+// 1.21 Lifeline activation and destruction
 Activate:
 	startKeyword='activate' name=ID  ('#'(Color = Color))?
 ;
@@ -174,11 +184,13 @@ Deactivate:
 	startKeyword=('deactivate'|'destroy') id=[Activate|ID]
 ;
 
-// Rule for Participant Creation
+// 1.22 Rule for Participant Creation
 ParticipantCreation:
 	startKeyword='create' (name=ID|def=Definition)
 ;
 
+
+// 1.26 Participants encompass
 // Rule for box/end box
 Box:
 	{Box} startKeyword='box' STRING ('#' Color = Color)? NEWLINE
@@ -189,6 +201,8 @@ Box:
 ID:
 	CHAR | BASICID
 ;
+
+// 1.23 Incoming and outgoing messages
 IncArrow:
 	('[' ARROWBODY+ RIGHTARROWHEAD)|('[' LEFTARROWHEAD ARROWBODY+)
 ;
@@ -201,6 +215,8 @@ IncOut:
 	((IncArrow name = ID)|(name = ID OutArrow)) (':' STRING)?
 ;
 
+
+// 1.28 Skinparam
 Skinparam:
 	{Skinparam} startKeyword='skinparam' cmd+=SkinparamCommand
 	| {Skinparam}startKeyword='skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
@@ -208,10 +224,6 @@ Skinparam:
 SkinparamCommand:
 	{SkinparamCommand} startKeyword=ID '#'? (int_val=INT|id_val=ID)
 ;
-
-
-
-
 
 // ValueConverter checks if the Color is a proper color or a hexcode
 Color: ID|INT;
@@ -226,9 +238,9 @@ terminal START		: '@' 'startuml';
 
 terminal END		: '@' 'enduml';
 
+// 1.2 Comments
 // Multiline comment begins with /', and ends with '/
 terminal ML_COMMENT : '/\'' -> '\'/'; 
-
 // Singleline comment begins with ', and continues until end of line.
 terminal SL_COMMENT : '\'' !('\n'|'\r')*;
 

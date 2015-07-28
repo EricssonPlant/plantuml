@@ -26,6 +26,10 @@ import org.xtext.plantuml.IncOut
 import org.xtext.plantuml.Skinparam
 import org.xtext.plantuml.ArrowID
 
+import java.util.ArrayList
+import org.xtext.plantuml.Declaration
+import org.xtext.plantuml.SkinparamCommand
+
 /**
  * Provides labels for EObjects.
  * 
@@ -48,7 +52,8 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 		if(instr.getInstr() instanceof Definition){
 			"Definition"
 		}
-		else{
+		
+		else {
 			"Instruction"
 		}
 	}
@@ -62,8 +67,44 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Arrow arrow){
-		"Arrow. Shape: " + arrow.getLeft() + arrow.getLeftmid()
-		+ arrow.getRightmid() + arrow.getRight() + ". Color: " + arrow.getColor();
+		var String finalarrow = "";
+		var String leftArrow;
+		var String leftmidArrow = "";
+		var String rightmidArrow ="";
+		var String rightArrow;
+		
+		if(arrow.getLeft() != null){
+					leftArrow = arrow.getLeft();
+		}
+		
+		else{
+			leftArrow = "" 
+		}
+		
+		for(String s : arrow.getLeftmid()){
+			if(s != "null")
+				leftmidArrow+=s
+		}
+		
+		for(String s : arrow.getRightmid()){
+			if(s != "null")
+				rightmidArrow+=s
+		}
+		
+		var String right = arrow.getRight()
+		if(arrow.getRight() != null){
+			rightArrow = right;
+		}
+		else{
+			rightArrow = "";
+		}
+	
+		finalarrow = leftArrow + leftmidArrow + rightmidArrow + rightArrow;
+				
+		var String ret = "Arrow shape: " + finalarrow;
+		if(arrow.getColor != null)
+			ret += ", Color: " + arrow.getColor()
+		ret
 	}
 	
 	def text(Definition defi){  
@@ -72,78 +113,228 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	
 	
 	def text(AutoNumber auto){
-		"Autonumber"
+		var String ret = "Autonumber"
+		for(Integer s : auto.getNumbers()){
+			ret += " " + s.toString()
+		}
+		ret
 	}
 	
 	def text(Title title){
-		"Title"
+		"Title: " + title.getTitle()
 	}
 	
 	def text(Legend legend){
-		"Legend"
+		"Legend. Position: " + legend.getPos() + ", Text: " +  legend.getText()
 	}
 	
 	def text(GroupingMessages mess){
-		"GroupingMessage: " + mess.getStartKeyword();
+		"GroupingMessage: " + mess.getStartKeyword()
 	}
 	
-	def text(Note note){
-		"Note. Dir: " + note.getDir() + ", relative to: " + note.getIds()
+	def text(Note note){ 
+		var ArrayList<String> list = new ArrayList<String>();
+		var String ret = "Note. Position: " + note.getDir();
+		var String arrow = "";
+		var String leftArrow;
+		var String leftmidArrow = "";
+		var String rightmidArrow ="";
+		var String rightArrow;
+		
+		for(i:0 ..< note.getIds().length()){
+			if(note.getIds().get(i) instanceof Definition){
+				var Definition def = note.getIds().get(i) as Definition;
+				ret += ", relative to rule: " + def.getStartKeyword + " " + def.getName()
+			}
+			else if(note.getIds().get(i) instanceof Sequence){
+				var Sequence seq = note.getIds().get(i) as Sequence;
+				for(j:0 ..< seq.getArrowIDs.length()){
+					list.add(seq.getArrowIDs.get(j).getName());
+				} 
+						
+				if(seq.getArrow().getLeft() != null){
+					leftArrow = seq.getArrow().getLeft();
+				}
+				
+				else{
+					leftArrow = "" 
+				}
+				
+				for(String s : seq.getArrow().getLeftmid()){
+					if(s != "null")
+						leftmidArrow+=s
+				}
+				
+				for(String s : seq.getArrow().getRightmid()){
+					if(s != "null")
+						rightmidArrow+=s
+				}
+				
+				var String right = seq.getArrow().getRight()
+				if(seq.getArrow().getRight() != null){
+					rightArrow = right;
+				}
+				else{
+					rightArrow = "";
+				}
+			
+				arrow = leftArrow + leftmidArrow + rightmidArrow + rightArrow;
+				ret += ", relative to rule: " + list.get(0).toString() + arrow + list.get(1).toString()
+			}
+		}
+		ret
 	}
-	
+
 	def text(Divider div){
 		"Divider"
 	}
 	
 	def text(Reference ref){
-		/*var String ret;
+		var ArrayList<String> list = new ArrayList<String>();
+		var String ret = "Ref over: "
+		var String arrow = "";
+		var String leftArrow;
+		var String leftmidArrow = "";
+		var String rightmidArrow ="";
+		var String rightArrow;
+		
 		for(i:0 ..< ref.getIds().length()){
-			var Declaration dec = ref.getIds().get(i);
-			if(dec instanceof Definition){
-				var Definition def = dec as Definition;
-				ret += "Reference over Defintion ID: " + def.getDeftype().getName() + "\n";
+			if(ref.getIds().get(i) instanceof Definition){
+				var Definition def = ref.getIds().get(i) as Definition;
+				ret += " " + def.getStartKeyword + " " + def.getName() +", "
 			}
-			else if(dec instanceof Sequence){
-				var Sequence seq = dec as Sequence;
-				ret += "Reference over Sequence ID: " 
+			else if(ref.getIds().get(i) instanceof Sequence){
+				var Sequence seq = ref.getIds().get(i) as Sequence;
+				for(j:0 ..< seq.getArrowIDs.length()){
+					list.add(seq.getArrowIDs.get(j).getName());
+				} 
+						
+				if(seq.getArrow().getLeft() != null){
+					leftArrow = seq.getArrow().getLeft();
+				}
+				
+				else{
+					leftArrow = "" 
+				}
+				
+				for(String s : seq.getArrow().getLeftmid()){
+					if(s != "null")
+						leftmidArrow+=s
+				}
+				
+				for(String s : seq.getArrow().getRightmid()){
+					if(s != "null")
+						rightmidArrow+=s
+				}
+				
+				var String right = seq.getArrow().getRight()
+				if(seq.getArrow().getRight() != null){
+					rightArrow = right;
+				}
+				else{
+					rightArrow = "";
+				}
+			
+				arrow = leftArrow + leftmidArrow + rightmidArrow + rightArrow;
+				ret += " " + list.get(0).toString() + arrow + list.get(1).toString() + ", "
 			}
 		}
-		ret*/
-		"Reference"
+		ret
 	}
 	
 	def text(Delay delay){
-		"Delay"
+		"Delay: " + delay.getText()
 	}
 	
 	def text(Space space){
-		"Space"
+		"Space: " + space.getNumber()
 	}
 	
 	def text(Activate ac){
-		"Activate"
+		var String ret = "Activate: " + ac.getName()
+		if(ac.getColor() != null)
+			ret += ", Color: " + ac.getColor
+		ret
 	}
 	
 	def text(Deactivate deac){
-		"Deactivate"
+		"Deactivate" + deac.getId().getName()
 	}
 	
 	def text(ParticipantCreation create){
-		"Creation of character: " + create.getName();
+		var String ret = "Create: "
+		var String arrow = "";
+		var String leftArrow;
+		var String leftmidArrow = "";
+		var String rightmidArrow ="";
+		var String rightArrow;
+		
+		if(create.getName() != null){
+			ret += create.getName();
+			ret
+		}
+		else{
+			if(create.getDec() instanceof Definition){
+				var Definition def = create.getDec() as Definition;
+				ret += def.getStartKeyword() + " " + def.getName()
+			}
+			else if(create.getDec() instanceof Sequence){
+				var Sequence seq = create.getDec() as Sequence
+				ret += seq.getArrowIDs().get(0)
+				
+				if(seq.getArrow().getLeft() != null){
+					leftArrow = seq.getArrow().getLeft();
+				}
+				
+				else{
+					leftArrow = "" 
+				}
+				
+				for(String s : seq.getArrow().getLeftmid()){
+					if(s != "null")
+						leftmidArrow+=s
+				}
+				
+				for(String s : seq.getArrow().getRightmid()){
+					if(s != "null")
+						rightmidArrow+=s
+				}
+				
+				var String right = seq.getArrow().getRight()
+				if(seq.getArrow().getRight() != null){
+					rightArrow = right;
+				}
+				else{
+					rightArrow = "";
+				}
+			
+				arrow = leftArrow + leftmidArrow + rightmidArrow + rightArrow;
+				ret += seq.getArrowIDs.get(0) + arrow + seq.getArrowIDs.get(1)
+			}
+			ret
+		}
 	}
 	
 	def text(Box box){
-		"Box"
+		"Box. Name: " + box.getText()
 	}
 	
 	def text(IncOut incout){
-		"Incoming/Outgoing Message"
+		"Incoming/Outgoing Message: " + incout.getText();
 	}
 	
 	def text(Skinparam skinparam){
 		"Skinparam"
 	}
 	
-	
-	
+	def text(SkinparamCommand cmd){
+		var String ret = "Command: " + cmd.getStartKeyword()
+		if(cmd.getId_val() == null){
+			ret += ", Int: " + cmd.getInt_val()
+		}
+		else{
+			ret += ", ID: " + cmd.getId_val()
+		}
+		ret
+	}
 }

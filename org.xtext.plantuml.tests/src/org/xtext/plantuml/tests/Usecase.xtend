@@ -14,22 +14,66 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Create extends XtextTest {
+class UC_Actor extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
 
-	//1.22 Participant creation
+	//2 Usecase
 	
-	@Test
-	def void activate(){
+		@Test
+	def void Usecase(){
 		'''
 		@startuml
-		Bob -> Alice : "hello"
-		create Other
-		Alice -> Other : "new"
-		create control String
-		Alice -> String : "lalal"
+		(simple)
+		usecase Men3
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	
+	
+	@Test
+	def void Actor(){
+		'''
+		@startuml
+		:simple:
+		actor Men3
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	// not tested because not implemented yet
+	//@Test
+	def void Extensions(){
+		'''
+		@startuml
+		:User: <|-- :Admin:
+		(Start) <|-- (Use)
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	
+
+	@Test
+	def void Direction_ltr(){
+		'''
+		@startuml
+		left to right direction
+		user1 --> (Usecase 1)
+		user2 --> (Usecase 2)
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void Direction_ttb(){
+		'''
+		@startuml
+		top to bottom direction
+		user1 --> (Usecase 1)
+		user2 --> (Usecase 2)
 		@enduml
 		'''.parse.assertNoErrors
 	}

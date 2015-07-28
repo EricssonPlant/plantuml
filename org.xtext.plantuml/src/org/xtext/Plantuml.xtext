@@ -12,7 +12,7 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	startKeyword=START NEWLINE (instructions+=Instruction)+ endKeyword=END NEWLINE*
+	startKeyword=START NEWLINE (instructions+=Instruction | NEWLINE)+ endKeyword=END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.
@@ -106,7 +106,7 @@ Title:
 Legend:
 
 	{Legend} startKeyword='legend' (pos=('right' | 'left' | 'center'))?
-	(NEWLINE STRING)* NEWLINE (endKeyword='endlegend'|endKeyword='end legend')
+	(NEWLINE text+=STRING)* NEWLINE (endKeyword='endlegend'|endKeyword='end legend')
 
 ;
 
@@ -129,7 +129,7 @@ GroupingMessages:
 Note:
 	{Note} startKeyword='note' ((dir='right' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
 		   		 |(dir='left' ('of' ids+=[Declaration|ID] (',' ids+=[Declaration|ID])*)?)
-		  		 |(dir='over' isd+=[Declaration|ID](',' ids+=[Declaration|ID])*))
+		  		 |(dir='over' ids+=[Declaration|ID](',' ids+=[Declaration|ID])*))
 		 		  ('#' Color = Color)? ((':' STRING)| (NEWLINE STRING? NEWLINE endKeyword=('end note'|'endnote')))
 
 ;
@@ -176,12 +176,13 @@ Deactivate:
 
 // Rule for Participant Creation
 ParticipantCreation:
-	startKeyword='create' (name=ID|def=Definition)
+	startKeyword='create' (name=ID|dec=Declaration)
 ;
 
 // Rule for box/end box
 Box:
-	{Box} startKeyword='box' STRING? ('#' Color = Color)? NEWLINE
+	{Box} startKeyword='box' text=STRING ('#' Color = Color)? NEWLINE
+
 	(boxinstructions+=Instruction)+
 	endKeyword='end box'
 ;
@@ -198,7 +199,7 @@ OutArrow:
 
 // Rule for incoming and outgoing messages
 IncOut:
-	((IncArrow name = ID)|(name = ID OutArrow)) (':' STRING)?
+	((IncArrow name = ID)|(name = ID OutArrow)) (':' text = STRING)?
 ;
 
 Skinparam:
@@ -206,7 +207,7 @@ Skinparam:
 	| {Skinparam}startKeyword='skinparam' id=ID '{' NEWLINE (cmd+=SkinparamCommand? NEWLINE)* '}'
 ;
 SkinparamCommand:
-	{SkinparamCommand} startKeyword=ID '#'? (int_val=INT|id_val=ID)
+	{SkinparamCommand} startKeyword=ID  (int_val=INT|('#' id_val=ID))
 ;
 
 

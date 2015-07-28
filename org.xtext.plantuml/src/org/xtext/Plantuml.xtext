@@ -193,7 +193,7 @@ ParticipantCreation:
 // 1.26 Participants encompass
 // Rule for box/end box
 Box:
-	{Box} startKeyword='box' STRING ('#' Color = Color)? NEWLINE
+	{Box} startKeyword='box' STRING? ('#' Color = Color)? NEWLINE
 	(boxinstructions+=Instruction)+
 	endKeyword='end box'
 ;

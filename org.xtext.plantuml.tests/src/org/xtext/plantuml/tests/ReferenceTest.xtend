@@ -14,25 +14,45 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Create extends XtextTest {
+class ReferenceTest extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
 
-	//1.22 Participant creation
+	//1.18 reference 
 	
 	@Test
-	def void activate(){
+	def void SL_refrence(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
-		Bob -> Alice : "hello"
-		create Other
-		Alice -> Other : "new"
-		create control String
-		Alice -> String : "lalal"
+		participant Alice
+		actor Bob
+		ref over Alice : "ref over alice"
+		Alice -> Bob : "hello"
+		ref over Bob : "ref left of bob"
 		@enduml
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void ML_refrence(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		participant Alice
+		actor Bob
+		Alice -> Bob : "hello"
+		ref over Bob
+		"This can be on
+		several lines"
+		end ref
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+
+	
 	
 	/*
 	 * // template
@@ -45,4 +65,9 @@ class Create extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	 */
+	
+
+	
+	
+	
 }

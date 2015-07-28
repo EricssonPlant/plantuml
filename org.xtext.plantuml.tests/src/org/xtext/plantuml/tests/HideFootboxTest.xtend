@@ -14,25 +14,33 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Create extends XtextTest {
+class HideFootboxTest extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
-
-	//1.22 Participant creation
 	
 	@Test
-	def void activate(){
+	def void HidefootboxContainingSpace(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
-		Bob -> Alice : "hello"
-		create Other
-		Alice -> Other : "new"
-		create control String
-		Alice -> String : "lalal"
+		Alice -> Alice : "test test test"
+		hide footbox
+		Kalle -> Stangen
 		@enduml
 		'''.parse.assertNoErrors
 	}
+	
+	def void HidefootboxWithoutSpace(){
+		'''
+		@startuml
+		Alice -> Alice : "test test test"
+		hidefootbox 
+		Kalle -> Stangen
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
 	
 	/*
 	 * // template
@@ -45,4 +53,9 @@ class Create extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	 */
+	
+
+	
+	
+	
 }

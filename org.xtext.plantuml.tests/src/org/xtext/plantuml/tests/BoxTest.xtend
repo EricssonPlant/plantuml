@@ -12,60 +12,75 @@ import org.xtext.PlantumlInjectorProvider
 import org.xtext.plantuml.Plantuml
 
 
-// 1.11 Splitting diagrams
-
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Splitting_Diagrams extends XtextTest {
+class BoxTest extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
-		@Test
-	def void SplittingADiagram(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
-		'''
-		@startuml
-			Alice -> Bob : "message 1"
-			Alice -> Bob : "message 2"
-			newpage
-			Alice -> Bob : "message 3"
-			newpage
-			Alice -> Bob : "message 4"
-		@enduml
-		'''.parse.assertNoErrors
-	}
-
 	
 	@Test
-	def void SplittingADiagramWithMessage(){
+	def void boxOnly(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
-			Alice -> Bob : "message 1"
-			Alice -> Bob : "message 2"
-			newpage "hehehehehheheehheh"
-			Alice -> Bob : "message 3"
-			Alice -> Bob : "message 4"
-			newpage "Some something"
-			Alice -> Bob : "message 5"
-			Alice -> Bob : "message 6"
+		box
+		participant Bob
+		participant Alice
+		end box
+		participant Other
+		Bob -> Alice : "hello"
+		Alice -> Other : "hello"
 		@enduml
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
-	def void SplittingADiagramContainingASpecialCharacter(){
+	def void boxWithTitle(){
 		//TODO create better test that not only checks if its parses, but if the parse contains participants
 		'''
 		@startuml
-			Alice -> Bob : "message 3"
-			Alice -> Bob : "message 4"
-			newpage "A title for the\nlast page"
-			Alice -> Bob : "message 5"
-			Alice -> Bob : "message 6"
+		box "Internal Service"
+		participant Bob
+		participant Alice
+		end box
+		participant Other
+		Bob -> Alice : "hello"
+		Alice -> Other : "hello"
 		@enduml
 		'''.parse.assertNoErrors
 	}
+	
+	def void boxWithColour(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		box #LightBlue
+		participant Bob
+		participant Alice
+		end box
+		participant Other
+		Bob -> Alice : "hello"
+		Alice -> Other : "hello"
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
+	def void boxWithTitleAndColour(){
+		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		'''
+		@startuml
+		box "Internal Service" #LightBlue
+		participant Bob
+		participant Alice
+		end box
+		participant Other
+		Bob -> Alice : "hello"
+		Alice -> Other : "hello"
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
 	
 	/*
 	 * // template

@@ -14,45 +14,69 @@ import org.xtext.plantuml.Plantuml
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(PlantumlInjectorProvider))
-class Refrence extends XtextTest {
+class UC_Actor extends XtextTest {
 	@Inject extension ParseHelper<Plantuml>
 	@Inject extension ValidationTestHelper
 	
 
-	//1.18 refrence 
+	//2 Usecase
 	
-	@Test
-	def void SL_refrence(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
+		@Test
+	def void Usecase(){
 		'''
 		@startuml
-		participant Alice
-		actor Bob
-		ref over Alice : "ref over alice"
-		Alice -> Bob : "hello"
-		ref over Bob : "ref left of bob"
+		(simple)
+		usecase Men3
 		@enduml
 		'''.parse.assertNoErrors
 	}
 	
+	
+	
 	@Test
-	def void ML_refrence(){
-		//TODO create better test that not only checks if its parses, but if the parse contains participants
+	def void Actor(){
 		'''
 		@startuml
-		participant Alice
-		actor Bob
-		Alice -> Bob : "hello"
-		ref over Bob
-		"This can be on
-		several lines"
-		end ref
+		:simple:
+		actor Men3
 		@enduml
 		'''.parse.assertNoErrors
 	}
+	
+	// not tested because not implemented yet
+	//@Test
+	def void Extensions(){
+		'''
+		@startuml
+		:User: <|-- :Admin:
+		(Start) <|-- (Use)
+		@enduml
+		'''.parse.assertNoErrors
+	}
+	
 	
 
+	@Test
+	def void Direction_ltr(){
+		'''
+		@startuml
+		left to right direction
+		user1 --> (Usecase 1)
+		user2 --> (Usecase 2)
+		@enduml
+		'''.parse.assertNoErrors
+	}
 	
+	@Test
+	def void Direction_ttb(){
+		'''
+		@startuml
+		top to bottom direction
+		user1 --> (Usecase 1)
+		user2 --> (Usecase 2)
+		@enduml
+		'''.parse.assertNoErrors
+	}
 	
 	/*
 	 * // template
@@ -65,9 +89,4 @@ class Refrence extends XtextTest {
 		'''.parse.assertNoErrors
 	}
 	 */
-	
-
-	
-	
-	
 }

@@ -25,7 +25,7 @@ class SkinparamTest extends XtextTest {
 		'''
 		@startuml
 		skinparam backgroundColor #EEEBDC
-		skinparam ArrowColor DeepskyBlue
+		skinparam Sequence #DeepskyBlue
 		Alice -> Alice : "test test test"
 		Kalle -> Stangen
 		@enduml

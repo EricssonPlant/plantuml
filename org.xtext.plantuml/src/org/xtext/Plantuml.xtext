@@ -181,7 +181,7 @@ ParticipantCreation:
 
 // Rule for box/end box
 Box:
-	{Box} startKeyword='box' text=STRING ('#' Color = Color)? NEWLINE
+	{Box} startKeyword='box' text=STRING? ('#' Color = Color)? NEWLINE
 
 	(boxinstructions+=Instruction)+
 	endKeyword='end box'

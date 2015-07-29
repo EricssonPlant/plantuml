@@ -61,8 +61,8 @@ class UC_Actor extends XtextTest {
 		'''
 		@startuml
 		left to right direction
-		user1 --> (Usecase 1)
-		user2 --> (Usecase 2)
+		user1 --> (Usecase1)
+		user2 --> (Usecase2)
 		@enduml
 		'''.parse.assertNoErrors
 	}
@@ -72,8 +72,8 @@ class UC_Actor extends XtextTest {
 		'''
 		@startuml
 		top to bottom direction
-		user1 --> (Usecase 1)
-		user2 --> (Usecase 2)
+		user1 --> (Usecase1)
+		user2 --> (Usecase2)
 		@enduml
 		'''.parse.assertNoErrors
 	}

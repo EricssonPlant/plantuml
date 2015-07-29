@@ -36,13 +36,13 @@ Instruction:
 	|instr = Box
 	|instr = IncOut
 	|instr = Skinparam
-	|Uc_direction) NEWLINE // |instr= UC_direction
+	|instr=Uc_direction) NEWLINE // |instr= UC_direction
 ;
 
 // 2.11 direction usecase diagram is painted in (vertical or horizontal)
 Uc_direction:
-	(('top' 'to' 'bottom' 'direction')
-	|('left' 'to' 'right' 'direction'))	
+	{Uc_direction}((dir='top' 'to' 'bottom' 'direction')
+	|(dir='left' 'to' 'right' 'direction'))	
 ;
 
 
@@ -77,8 +77,8 @@ Definition:
 	| 'database'
 	| 'participant'
 	| 'usecase')) name=ID 
-	| "(" name=ID ")"
-	| ":" name=ID ":") (Stereotype = Stereotype)? ('#' Color = Color)?
+	| type="(" name=ID ")"
+	| type=":" name=ID ":") (Stereotype = Stereotype)? ('#' Color = Color)?
 ;
 
 

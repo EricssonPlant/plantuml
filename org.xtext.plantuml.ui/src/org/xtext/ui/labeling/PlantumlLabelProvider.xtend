@@ -27,8 +27,8 @@ import org.xtext.plantuml.Skinparam
 import org.xtext.plantuml.ArrowID
 
 import java.util.ArrayList
-import org.xtext.plantuml.Declaration
 import org.xtext.plantuml.SkinparamCommand
+import org.xtext.plantuml.Uc_direction
 
 /**
  * Provides labels for EObjects.
@@ -108,7 +108,20 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 	}
 	
 	def text(Definition defi){  
-		"Type: " + defi.getStartKeyword() + ", Name: " + defi.getName();
+		var String ret = ""; 
+		if(defi.getStartKeyword() != null){
+			ret += "Type: " + defi.getStartKeyword()
+		}
+		else{
+			if(defi.getType() == "("){
+				ret += "Type: Use Case"
+			}
+			else{
+				ret += "Type: Actor"
+			}
+		}
+		ret += ", Name: " + defi.getName();
+		ret
 	}
 	
 	
@@ -337,4 +350,16 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 		}
 		ret
 	}
+	
+	def text(Uc_direction dir){
+		var String ret = "Use Case Direction: "
+		if(dir.getDir() == "top"){
+			ret+= "Top to Bottom"
+		}
+		else{
+			ret += "Left to Right"
+		}
+		ret
+	}
+	
 }

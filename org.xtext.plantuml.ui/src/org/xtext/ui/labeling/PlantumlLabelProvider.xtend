@@ -29,6 +29,7 @@ import org.xtext.plantuml.ArrowID
 import java.util.ArrayList
 import org.xtext.plantuml.SkinparamCommand
 import org.xtext.plantuml.Uc_direction
+import org.xtext.plantuml.Plantuml
 
 /**
  * Provides labels for EObjects.
@@ -362,4 +363,27 @@ class PlantumlLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLab
 		ret
 	}
 	
+	// Images for stuff
+	def image(Instruction instr){
+		if(instr.getInstr() instanceof Definition){
+			return "actor.gif"
+		}
+		
+		else {
+			return "instruction.gif"
+		}
+	}
+	
+	def image(Diagram diagram){
+		return "diagram.gif"
+	}
+	
+	def image(Sequence seq){
+		return "arrow.gif"
+	}
+	
+	def image(Plantuml plant){
+		return "p5.gif"
+	}
+
 }

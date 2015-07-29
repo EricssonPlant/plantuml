@@ -10,6 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="plantuml"
+            icon="icons/p5.gif"
             id="org.xtext.Plantuml"
             name="Plantuml Editor">
         </editor>

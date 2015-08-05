@@ -44,12 +44,15 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					acceptor.addPosition( node.getOffset(), node.getLength(), COMMENT);
 				}
 			}
+			//If a node is considered an arrow it'll be coloured according to the style SEQ_ARR
 			else if( node instanceof CompositeNodeWithSemanticElement && node.getSemanticElement() instanceof Arrow)
 			{
 				acceptor.addPosition(node.getOffset(), node.getLength(), SEQ_ARR);
 			}
 			else{
 				try {
+					//If the startKeyword for the current node isn't empty this statement will either fetch the startKeyword or the endKeyword
+					//and highlight that specific word in the editor. 
 					if(node instanceof LeafNode && node.getSemanticElement().getClass().getMethod("getStartKeyword") != null){
 						String startKeyword = (String) node.getSemanticElement().getClass().getMethod("getStartKeyword").invoke(node.getSemanticElement());
 						if(node.getText().equalsIgnoreCase(startKeyword)){
@@ -66,6 +69,7 @@ public class PlantumlHighlightingCalculator implements ISemanticHighlightingCalc
 					// TODO Auto-generated catch block
 					//e.printStackTrace();
 				}
+				//If the node rule matches IncArrow, OutArrow or dotdotdot, it will be coloured accordingly.
 				if(node.getGrammarElement() instanceof RuleCall){
 					RuleCall rc = (RuleCall) node.getGrammarElement();
 					AbstractRule r = rc.getRule();

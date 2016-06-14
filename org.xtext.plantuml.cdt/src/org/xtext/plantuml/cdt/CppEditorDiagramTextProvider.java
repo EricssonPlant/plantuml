@@ -1,10 +1,10 @@
 package org.xtext.plantuml.cdt;
 
-
 import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.dom.ast.ASTVisitor;
 import org.eclipse.cdt.core.dom.ast.IASTDeclSpecifier;
 import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
+import org.eclipse.cdt.core.dom.ast.IASTFunctionDefinition;
 import org.eclipse.cdt.core.dom.ast.IASTNode;
 import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTCompositeTypeSpecifier;
@@ -72,7 +72,9 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			@Override
 			public int visit(IASTDeclaration declaration){
 				
-				//This if-statement makes sure that only the declarations that contain classes will be searched.
+				//This if-statement makes sure that 'declaration' is of the type CPPASTSimpleDeclaration 
+				//so that it's safe to temporarily cast it to that type because not all declarations are of this type.
+				//Declarations are of interest since the name of declared classes are to be fetched.
 				if (declaration instanceof CPPASTSimpleDeclaration) {
 			        IASTDeclSpecifier specifier = ((CPPASTSimpleDeclaration) declaration).getDeclSpecifier();
 			        
@@ -100,7 +102,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		
 	}
 	
-	// This method provides the diagram returns the text that is to be displayed in the Plantuml diagram.
+	// This method provides the diagram text that is to be displayed in the Plantuml diagram.
 	@Override
 	protected String getDiagramText(IEditorPart editorPart, IEditorInput editorInput, ISelection selection) {
 		result.setLength(0);
@@ -132,9 +134,8 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			
 			
 			try {
-				// The AST is created based off of the translation unit. With the parameter value AST_SKIP_ALL_HEADERS we skip the header files
-				// when creating our AST tree.
-				currentContext.iastTranslationUnit = currentContext.translationUnit.getAST(index, ITranslationUnit.AST_SKIP_ALL_HEADERS);
+				// The AST is created based on the translation unit.
+				currentContext.iastTranslationUnit = currentContext.translationUnit.getAST(index, 0);
 				collectAllDeclarators(currentContext.iastTranslationUnit);
 			} catch (CoreException e1) {
 				// TODO Auto-generated catch block
@@ -152,9 +153,9 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		}
 		// If the file being shown in the editor is a '.cpp' file, this message will be displayed in the plantuml diagram 
 		// to alert the user about the lack of support for '.cpp' files.
-		if("cpp".equals(((IFileEditorInput) editorInput).getFile().getFileExtension())){
+		/*if("cpp".equals(((IFileEditorInput) editorInput).getFile().getFileExtension())){
 			return "\nLegend left \nDiagrams will only be displayed for '.h' files. \nendlegend \n@enduml";
-		}
+		}*/
 		return result.toString();
 	}
 }

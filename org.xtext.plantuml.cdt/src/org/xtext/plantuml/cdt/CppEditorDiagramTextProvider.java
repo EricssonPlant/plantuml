@@ -9,13 +9,13 @@ import org.eclipse.cdt.core.dom.ast.IASTNode;
 import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTCompositeTypeSpecifier;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTNamespaceDefinition;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTVisibilityLabel;
 import org.eclipse.cdt.core.index.IIndex;
 import org.eclipse.cdt.core.model.CoreModel;
 import org.eclipse.cdt.core.model.CoreModelUtil;
 import org.eclipse.cdt.core.model.ICProject;
 import org.eclipse.cdt.core.model.ITranslationUnit;
-import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTCompositeTypeSpecifier;
-import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.*;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -27,6 +27,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 
+//import net.sourceforge.plantuml.eclipse.views.ValueHolder;
 import net.sourceforge.plantuml.text.AbstractDiagramTextProvider;
 
 // See JavaEditorDiagramTextProvider for inspiration
@@ -69,31 +70,90 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		ASTVisitor visitor = new ASTVisitor(){
 			{ shouldVisitDeclarations = true;}
 			
+			int count = 0;
+			int visibility_level = 1;
+			
 			@Override
 			public int visit(IASTDeclaration declaration){
-				
 				//This if-statement makes sure that 'declaration' is of the type CPPASTSimpleDeclaration 
 				//so that it's safe to temporarily cast it to that type because not all declarations are of this type.
 				//Declarations are of interest since the name of declared classes are to be fetched.
+
+				count++;
 				if (declaration instanceof CPPASTSimpleDeclaration) {
 			        IASTDeclSpecifier specifier = ((CPPASTSimpleDeclaration) declaration).getDeclSpecifier();
 			        
 			        // If specifier is an instance of CPPASTCompositeTypeSpecifier, the node in the AST might be a class and can have 
 			        // its name printed in the diagram.
 			        if(specifier instanceof CPPASTCompositeTypeSpecifier){
+
 			        	CPPASTCompositeTypeSpecifier compositeSpecifier = (CPPASTCompositeTypeSpecifier)specifier;
-			        	result.append("class " + getNamespacesAndClasses((IASTNode) declaration) + compositeSpecifier.getName().toString() +"{\n}\n");
+			        	result.append("class " + getNamespacesAndClasses((IASTNode) declaration) + compositeSpecifier.getName().toString() +"{\n");
+			        	
+			        	//TODO recursivly search for info to implement in UML class
+			        	IASTNode[] children = ((IASTNode) declaration).getChildren();
+			        	result.append(genFunctions(children,"R",0));
+			        	//-------------------------------------------------------------------
+			        	
+			        	result.append("}\n");
 			        	// The method GetBaseSpecifiers() returns the classes that the class in the current node inherits from.
 			        	ICPPASTCompositeTypeSpecifier.ICPPASTBaseSpecifier[] inheritance = compositeSpecifier.getBaseSpecifiers();
 			        	// This for loop will print the inherited class and the inheritor showing their relationship in the diagram
 			        	for(int i=0; i<inheritance.length; i++){
 			        		result.append(inheritance[i].getNameSpecifier() + " <|.. " + getNamespacesAndClasses((IASTNode) declaration) + compositeSpecifier.getName().toString() + "\n");
-			        		
 			        	}
+			        	System.out.println("count = " + count);
+			        	//Experiment, should reduce the amout of work
+			        	return PROCESS_SKIP; 
 			        }
 			    }
 				// This return value indicates that it's ok to traverse the children nodes.
+				
+				System.out.println("count = " + count);
 				return PROCESS_CONTINUE;
+			}
+			
+			private String genFunctions(IASTNode[] iastNodes,String str,int level) {
+				StringBuilder result = new StringBuilder();
+				int count = 0;
+				for(IASTNode node : iastNodes){
+					count++;
+					result.append(genFunction(node,str+count, level));
+				}
+				return result.toString();
+			}
+			private String genFunction(IASTNode node,String str,int level) {
+				System.out.println("--------------");
+				System.out.println(str + " - " + node.getClass().getSimpleName() +" ["+node.getRawSignature()+"]");
+					
+				IASTNode[] children = node.getChildren();
+					
+				if(node instanceof CPPASTCompositeTypeSpecifier){ // the whole class
+						
+				}else if(node instanceof CPPASTName){ // just classname???
+						
+				}else if(node instanceof CPPASTVisibilityLabel){ // public: + / package private: ~ / protected: # / Private: -
+					visibility_level = ((CPPASTVisibilityLabel)node).getVisibility();
+				}else if(node instanceof CPPASTFunctionDefinition){ // e.g. virtual ~IDemo() {}
+						
+				}else if(node instanceof CPPASTSimpleDeclSpecifier){ // virtual
+					
+				}else if(node instanceof CPPASTFunctionDeclarator){ // ~IDemo()
+					// get the name of the function
+					String func_name = ((CPPASTFunctionDeclarator)node).getName().toString();
+					// chose symbol for visibility level... //TODO implement which to show, e.g && show_private
+					if(visibility_level == ICPPASTVisibilityLabel.v_public){ //TODO add AND show public?????
+						return "+"+func_name+"()\n";
+					}
+					if(visibility_level == ICPPASTVisibilityLabel.v_protected && ValueHolder.INSTANCE.getShowProtected()) {//TODO fix toggler
+						return "#"+func_name+"()\n";
+					}
+					if(visibility_level == ICPPASTVisibilityLabel.v_private && ValueHolder.INSTANCE.getShowPrivate()) { //TODO fix toggler
+						return "-"+func_name+"()\n";
+					}
+					
+				}
+				return genFunctions(children, str, level+1);
 			}
 		};
 		

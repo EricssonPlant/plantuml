@@ -12,7 +12,7 @@ Plantuml:
 	
 // A diagram starts with @Startuml and ends with @enduml, with some number of instructions in between
 Diagram:
-	startKeyword=START NEWLINE (instructions+=Instruction | NEWLINE)+ endKeyword=END NEWLINE*
+	startKeyword=START NEWLINE (instructions+=Instruction | NEWLINE)* endKeyword=END NEWLINE*
 ;
 
 // An instruction can be any of the rules for single- and multiline commands.

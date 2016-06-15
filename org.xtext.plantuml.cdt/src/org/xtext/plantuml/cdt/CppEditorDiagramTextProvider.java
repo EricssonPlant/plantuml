@@ -78,7 +78,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				if (declaration instanceof CPPASTSimpleDeclaration) {
 			        IASTDeclSpecifier specifier = ((CPPASTSimpleDeclaration) declaration).getDeclSpecifier();
 			        
-			        // If specifier is an instance of CPPASTCompositeTypeSpecifier, the node in the AST is a class and can have 
+			        // If specifier is an instance of CPPASTCompositeTypeSpecifier, the node in the AST might be a class and can have 
 			        // its name printed in the diagram.
 			        if(specifier instanceof CPPASTCompositeTypeSpecifier){
 			        	CPPASTCompositeTypeSpecifier compositeSpecifier = (CPPASTCompositeTypeSpecifier)specifier;
@@ -121,25 +121,21 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		currentContext.translationUnit = CoreModelUtil.findTranslationUnit(currentContext.project.getFile(sourceFile.getProjectRelativePath()));
 		
 		try {
-			// Using the indexed AST means we can use the setting AST_SKIP_ALL_HEADERS to not have included files in our created AST
+			// Using the indexed AST means we can use the setting AST_SKIP_ALL_HEADERS to not have included '.h' files in our created AST
 			IIndex index= CCorePlugin.getIndexManager().getIndex(currentContext.iCProject);
 			try {
+				// The AST is created based on the translation unit.
 				// When using an indexed AST it is recommended to acquire the ReadLock before doing something to the tree.
 				// I'm not sure of how relevant it is for our scenario but I did it anyway just to be on the safe side.
 				index.acquireReadLock();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			
-			try {
-				// The AST is created based on the translation unit.
-				currentContext.iastTranslationUnit = currentContext.translationUnit.getAST(index, 0);
+				currentContext.iastTranslationUnit = currentContext.translationUnit.getAST(index, ITranslationUnit.AST_SKIP_ALL_HEADERS);
 				collectAllDeclarators(currentContext.iastTranslationUnit);
 			} catch (CoreException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			} finally {
 				// When done using the AST, the ReadLock should be released
 				index.releaseReadLock();

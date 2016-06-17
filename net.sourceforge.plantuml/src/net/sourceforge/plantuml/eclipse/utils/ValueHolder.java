@@ -1,6 +1,8 @@
-package org.xtext.plantuml.cdt;
+package net.sourceforge.plantuml.eclipse.utils;
 
-public enum ValueHolder {
+
+
+public enum ValueHolder{
 	INSTANCE;
 	
 	// Values to store in value holder
@@ -8,8 +10,9 @@ public enum ValueHolder {
 	private boolean showProtected = false; // show of hide protected functions in uml diagrams
 	
 	public void toggleVisigility(){
-		showPrivate = !showPrivate;
-		showProtected = showPrivate;
+		showPrivate = !showPrivate; // toggle
+		showProtected = showPrivate; // keep them same...
+		System.out.println("IT WOOOORRKS");
 	}
 
 	public boolean getShowPrivate(){

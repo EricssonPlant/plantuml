@@ -5,6 +5,9 @@ import net.sourceforge.plantuml.eclipse.actions.ToggleButtonAction;
 import net.sourceforge.plantuml.eclipse.utils.PlantUmlUtils;
 import net.sourceforge.plantuml.eclipse.utils.PlantumlConstants;
 
+
+import net.sourceforge.plantuml.eclipse.utils.ValueHolder;
+
 //import org.eclipse.core.runtime.IProgressMonitor;
 //import org.eclipse.core.runtime.IStatus;
 //import org.eclipse.core.runtime.jobs.Job;
@@ -45,6 +48,7 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 	private Action fitCanvasAction;
 	private Action showOriginalAction;
 	private Action toggleAction;
+	private Action toggleVisibility;
 
 	/**
 	 * The default constructor.
@@ -117,6 +121,15 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 				.setToolTipText(PlantumlConstants.SHOW_ORIGINAL_BUTTON);
 		showOriginalAction.setImageDescriptor(PlantUmlUtils.getImageDescriptor(
 				display, "/icons/Original16.gif"));
+		
+		toggleVisibility = new Action(){
+			@Override
+			public void run(){
+				//TODO create toggle for visibility level of functions in generated plantuml
+				ValueHolder.INSTANCE.toggleVisigility();
+			}
+		};
+		toggleVisibility.setToolTipText(PlantumlConstants.TOGGLE_VISIBILITY_BUTTON);
 
 		// action to start or stop the generation of the actual diagram
 		toggleAction = new ToggleButtonAction(this, display);
@@ -134,6 +147,7 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 		manager.add(zoomOutAction);
 		manager.add(fitCanvasAction);
 		manager.add(showOriginalAction);
+		manager.add(toggleVisibility);
 	}
 
 	/**

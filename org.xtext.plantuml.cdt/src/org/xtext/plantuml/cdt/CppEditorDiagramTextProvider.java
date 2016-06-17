@@ -27,7 +27,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 
-//import net.sourceforge.plantuml.eclipse.views.ValueHolder;
+import net.sourceforge.plantuml.eclipse.utils.ValueHolder;
 import net.sourceforge.plantuml.text.AbstractDiagramTextProvider;
 
 // See JavaEditorDiagramTextProvider for inspiration
@@ -70,8 +70,10 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		ASTVisitor visitor = new ASTVisitor(){
 			{ shouldVisitDeclarations = true;}
 			
-			int count = 0;
-			int visibility_level = 1;
+			int count = 0; // just used for debugging!
+			
+			// 
+			private int visibility_level = 1; 
 			
 			@Override
 			public int visit(IASTDeclaration declaration){
@@ -145,10 +147,10 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 					if(visibility_level == ICPPASTVisibilityLabel.v_public){ //TODO add AND show public?????
 						return "+"+func_name+"()\n";
 					}
-					if(visibility_level == ICPPASTVisibilityLabel.v_protected && ValueHolder.INSTANCE.getShowProtected()) {//TODO fix toggler
+					if(visibility_level == ICPPASTVisibilityLabel.v_protected && ValueHolder.INSTANCE.getShowProtected()) {
 						return "#"+func_name+"()\n";
 					}
-					if(visibility_level == ICPPASTVisibilityLabel.v_private && ValueHolder.INSTANCE.getShowPrivate()) { //TODO fix toggler
+					if(visibility_level == ICPPASTVisibilityLabel.v_private && ValueHolder.INSTANCE.getShowPrivate()) {
 						return "-"+func_name+"()\n";
 					}
 					

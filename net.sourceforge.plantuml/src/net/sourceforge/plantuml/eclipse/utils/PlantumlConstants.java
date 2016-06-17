@@ -22,6 +22,7 @@ public interface PlantumlConstants {
 	public static final String FIT_CANVAS_BUTTON = "Fit to canvas";
 	public static final String SHOW_ORIGINAL_BUTTON = "Show original";
 	public static final String TOGGLE_GENERATION_BUTTON = "Activate/desactivate generation of diagrams";
+	public static final String TOGGLE_VISIBILITY_BUTTON = "Toggle visibility level of functions";
 
 	/**
 	 * Labels for the Preferences
@@ -33,4 +34,5 @@ public interface PlantumlConstants {
 
 	public static final String AUTHORS_DIAGRAM = "@startuml\nauthor\n@enduml";
 	public static final String TEST_DOT_DIAGRAM = "@startuml\ntestdot\n@enduml";
+	
 }

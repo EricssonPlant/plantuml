@@ -16,6 +16,7 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.ui.IActionBars;
 
 /**
@@ -122,13 +123,17 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 		showOriginalAction.setImageDescriptor(PlantUmlUtils.getImageDescriptor(
 				display, "/icons/Original16.gif"));
 		
+		final PlantUmlView puv = this; // To get accsess to this object in run of action for toggleVisibility
+		
 		toggleVisibility = new Action(){
 			@Override
 			public void run(){
-				//TODO create toggle for visibility level of functions in generated plantuml
-				ValueHolder.INSTANCE.toggleVisigility();
+				ValueHolder.INSTANCE.toggleVisibility();
+				puv.run();// updates the view/ repaints diagram
 			}
 		};
+		toggleVisibility.setImageDescriptor(PlantUmlUtils.getImageDescriptor(display, "/icons/visibility16.gif"));
+		
 		toggleVisibility.setToolTipText(PlantumlConstants.TOGGLE_VISIBILITY_BUTTON);
 
 		// action to start or stop the generation of the actual diagram

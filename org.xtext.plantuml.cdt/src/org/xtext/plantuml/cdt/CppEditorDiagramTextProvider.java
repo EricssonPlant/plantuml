@@ -73,9 +73,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		ASTVisitor visitor = new ASTVisitor(){
 			{ shouldVisitDeclarations = true;}
 			
-			int count = 0; // just used for debugging!
-			
-			// 
+			// Setts base visibility to Public
 			private int visibility_level = 1; 
 			
 			@Override
@@ -84,7 +82,6 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				//so that it's safe to temporarily cast it to that type because not all declarations are of this type.
 				//Declarations are of interest since the name of declared classes are to be fetched.
 	
-				count++;
 				if (declaration instanceof CPPASTSimpleDeclaration) {
 			        IASTDeclSpecifier specifier = ((CPPASTSimpleDeclaration) declaration).getDeclSpecifier();
 			        
@@ -95,9 +92,9 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			        	CPPASTCompositeTypeSpecifier compositeSpecifier = (CPPASTCompositeTypeSpecifier)specifier;
 			        	result.append("class " + getNamespacesAndClasses((IASTNode) declaration) + compositeSpecifier.getName().toString() +"{\n");
 			        	
-			        	//TODO recursivly search for info to implement in UML class
+			        	//recursivly search for info to implement in UML class
 			        	IASTNode[] children = ((IASTNode) declaration).getChildren();
-			        	result.append(genFunctions(children,"R",0));
+			        	result.append(genFunctions(children));
 			        	//-------------------------------------------------------------------
 			        	
 			        	result.append("}\n");
@@ -107,51 +104,49 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			        	for(int i=0; i<inheritance.length; i++){
 			        		result.append(inheritance[i].getNameSpecifier() + " <|.. " + getNamespacesAndClasses((IASTNode) declaration) + compositeSpecifier.getName().toString() + "\n");
 			        	}
-			        	System.out.println("count = " + count);
-			        	//Experiment, should reduce the amout of work
+
+			        	//Stops traversal of child nodes
 			        	return PROCESS_SKIP; 
 			        }
 			    }
 				// This return value indicates that it's ok to traverse the children nodes.
-				
-				System.out.println("count = " + count);
 				return PROCESS_CONTINUE;
 			}
 			
-			private String genFunctions(IASTNode[] iastNodes,String str,int level) {
+			
+			//Part of the recursion 
+			private String genFunctions(IASTNode[] iastNodes) {
 				StringBuilder result = new StringBuilder();
-				int count = 0;
 				for(IASTNode node : iastNodes){
-					count++;
-					result.append(genFunction(node,str+count, level));
+					result.append(genFunction(node));
 				}
 				return result.toString();
 			}
-			private String genFunction(IASTNode node,String str,int level) {
-				System.out.println("--------------");
-				System.out.println(str + " - " + node.getClass().getSimpleName()  +"\n ["+node.getRawSignature()+"]");
-					
+			
+			// Checks for nodes where UML code should be generated
+			private String genFunction(IASTNode node) {
 				IASTNode[] children = node.getChildren();
-					
-				if(node instanceof CPPASTCompositeTypeSpecifier){ // the whole class
+		
+				
+				if(node instanceof CPPASTCompositeTypeSpecifier){ 
 						
-				}else if(node instanceof CPPASTName){ // just classname???
+				}else if(node instanceof CPPASTName){ 
 						
 				}else if(node instanceof CPPASTVisibilityLabel){ // public: + / package private: ~ / protected: # / Private: -
 					visibility_level = ((CPPASTVisibilityLabel)node).getVisibility();
-				}else if(node instanceof CPPASTFunctionDefinition){ // e.g. virtual ~IDemo() {}
-						
+					
 				}else if(node instanceof CPPASTFieldDeclarator){ //
 					
 					//return "";CPPASTSimpleDeclaration
 				}else if(node instanceof CPPASTSimpleDeclSpecifier){ // virtual
 					
 				}else if(node instanceof CPPASTSimpleDeclaration){
+					// generates all PlantUml code for variable declaration
 					IASTDeclSpecifier spec = ((CPPASTSimpleDeclaration) node).getDeclSpecifier(); // Declaration "type" e.g. int/double/char
 					IASTDeclarator[] decs = ((CPPASTSimpleDeclaration) node).getDeclarators(); // variable name / list since many can be declared at once
 					
 					if(node.getRawSignature().contains("()")){
-						//System.out.println("This is a function so lets skip this!!!!!");
+
 					}else{
 						for(IASTDeclarator dec : decs){
 							String name = spec + " " + dec.getName().toString();
@@ -169,13 +164,14 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 					
 				}else if(node instanceof CPPASTFunctionDefinition){
 
-				}else if(node instanceof CPPASTFunctionDeclarator){ // ~IDemo()
-					 // 1. Get return type
+				}else if(node instanceof CPPASTFunctionDeclarator){ 
+					// generates all PlanUML code for function declarations 
+					// 1. Get return type
 					String ret_type = "";
 					IASTNode[] siblings = node.getParent().getChildren();
 					if(siblings[0] instanceof CPPASTSimpleDeclSpecifier){
-						ret_type = siblings[0].getRawSignature().replace("virtual ","") + " ";
-						//ret_type = siblings[0].getRawSignature() + " ";
+						ret_type = siblings[0].getRawSignature().replace("virtual","").trim() + " ";
+						//ret_type = siblings[0].getRawSignature() + " "; // if you want "virtual" included
 					}
 					
 					//2. get the name of the function
@@ -202,7 +198,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 						return "-"+func_string+"\n";
 					}
 				}
-				return genFunctions(children, str, level+1);
+				return genFunctions(children);
 			}
 		};
 		
@@ -211,7 +207,9 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		
 	}
 	
+	
 	// This method provides the diagram text that is to be displayed in the Plantuml diagram.
+	// Called by plugin.
 	@Override
 	protected String getDiagramText(IEditorPart editorPart, IEditorInput editorInput, ISelection selection) {
 		result.setLength(0);

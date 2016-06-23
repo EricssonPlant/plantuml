@@ -4,11 +4,13 @@ import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.dom.ast.ASTVisitor;
 import org.eclipse.cdt.core.dom.ast.IASTDeclSpecifier;
 import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
+import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
 import org.eclipse.cdt.core.dom.ast.IASTFunctionDefinition;
 import org.eclipse.cdt.core.dom.ast.IASTNode;
 import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTCompositeTypeSpecifier;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTNamespaceDefinition;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTParameterDeclaration;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTVisibilityLabel;
 import org.eclipse.cdt.core.index.IIndex;
 import org.eclipse.cdt.core.model.CoreModel;
@@ -64,6 +66,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
     	}
 		return namespaceName.append(ownerClassName);
 	}
+	
 	// This method is called when the method getDiagramText is run. It will make sure that the nodes of the AST that are 
 	// considered declarations are visited.
 	public void collectAllDeclarators(IASTTranslationUnit tu){
@@ -80,7 +83,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				//This if-statement makes sure that 'declaration' is of the type CPPASTSimpleDeclaration 
 				//so that it's safe to temporarily cast it to that type because not all declarations are of this type.
 				//Declarations are of interest since the name of declared classes are to be fetched.
-
+	
 				count++;
 				if (declaration instanceof CPPASTSimpleDeclaration) {
 			        IASTDeclSpecifier specifier = ((CPPASTSimpleDeclaration) declaration).getDeclSpecifier();
@@ -126,7 +129,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			}
 			private String genFunction(IASTNode node,String str,int level) {
 				System.out.println("--------------");
-				System.out.println(str + " - " + node.getClass().getSimpleName() +" ["+node.getRawSignature()+"]");
+				System.out.println(str + " - " + node.getClass().getSimpleName()  +"\n ["+node.getRawSignature()+"]");
 					
 				IASTNode[] children = node.getChildren();
 					
@@ -138,22 +141,66 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 					visibility_level = ((CPPASTVisibilityLabel)node).getVisibility();
 				}else if(node instanceof CPPASTFunctionDefinition){ // e.g. virtual ~IDemo() {}
 						
+				}else if(node instanceof CPPASTFieldDeclarator){ //
+					
+					//return "";CPPASTSimpleDeclaration
 				}else if(node instanceof CPPASTSimpleDeclSpecifier){ // virtual
 					
-				}else if(node instanceof CPPASTFunctionDeclarator){ // ~IDemo()
-					// get the name of the function
-					String func_name = ((CPPASTFunctionDeclarator)node).getName().toString();
-					// chose symbol for visibility level... //TODO implement which to show, e.g && show_private
-					if(visibility_level == ICPPASTVisibilityLabel.v_public){ //TODO add AND show public?????
-						return "+"+func_name+"()\n";
-					}
-					if(visibility_level == ICPPASTVisibilityLabel.v_protected && ValueHolder.INSTANCE.getShowProtected()) {
-						return "#"+func_name+"()\n";
-					}
-					if(visibility_level == ICPPASTVisibilityLabel.v_private && ValueHolder.INSTANCE.getShowPrivate()) {
-						return "-"+func_name+"()\n";
+				}else if(node instanceof CPPASTSimpleDeclaration){
+					IASTDeclSpecifier spec = ((CPPASTSimpleDeclaration) node).getDeclSpecifier(); // Declaration "type" e.g. int/double/char
+					IASTDeclarator[] decs = ((CPPASTSimpleDeclaration) node).getDeclarators(); // variable name / list since many can be declared at once
+					
+					if(node.getRawSignature().contains("()")){
+						//System.out.println("This is a function so lets skip this!!!!!");
+					}else{
+						for(IASTDeclarator dec : decs){
+							String name = spec + " " + dec.getName().toString();
+							if(visibility_level == ICPPASTVisibilityLabel.v_public){ //TODO add AND show public?????
+								return "+"+name+"\n";
+							}
+							if(visibility_level == ICPPASTVisibilityLabel.v_protected && ValueHolder.INSTANCE.getShowProtected()) {
+								return "#"+name+"\n";
+							}
+							if(visibility_level == ICPPASTVisibilityLabel.v_private && ValueHolder.INSTANCE.getShowPrivate()) {
+								return "-"+name+"\n";
+							}
+						}
 					}
 					
+				}else if(node instanceof CPPASTFunctionDefinition){
+
+				}else if(node instanceof CPPASTFunctionDeclarator){ // ~IDemo()
+					 // 1. Get return type
+					String ret_type = "";
+					IASTNode[] siblings = node.getParent().getChildren();
+					if(siblings[0] instanceof CPPASTSimpleDeclSpecifier){
+						ret_type = siblings[0].getRawSignature().replace("virtual ","") + " ";
+						//ret_type = siblings[0].getRawSignature() + " ";
+					}
+					
+					//2. get the name of the function
+					String func_name = ((CPPASTFunctionDeclarator)node).getName().toString();
+					// chose symbol for visibility level... //TODO implement which to show, e.g && show_private
+					
+					// 3. Get function Parameters
+					String parameters = "";
+					for(ICPPASTParameterDeclaration par : ((CPPASTFunctionDeclarator)node).getParameters()){
+						parameters = (parameters == "" ? "" : parameters+", ") + par.getRawSignature();
+					}
+					
+					// 4. create function declaration string
+					String func_string = ret_type+func_name+" ("+parameters+")";
+					
+					// 5. Create and return string based on visibility
+					if(visibility_level == ICPPASTVisibilityLabel.v_public){ //TODO add AND show public?????
+						return "+"+func_string+"\n";
+					}
+					if(visibility_level == ICPPASTVisibilityLabel.v_protected && ValueHolder.INSTANCE.getShowProtected()) {
+						return "#"+func_string+"\n";
+					}
+					if(visibility_level == ICPPASTVisibilityLabel.v_private && ValueHolder.INSTANCE.getShowPrivate()) {
+						return "-"+func_string+"\n";
+					}
 				}
 				return genFunctions(children, str, level+1);
 			}

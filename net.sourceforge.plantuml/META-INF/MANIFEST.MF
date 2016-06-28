@@ -6,12 +6,15 @@ Bundle-Version: 1.1.11.7997
 Bundle-Activator: net.sourceforge.plantuml.Activator
 Bundle-Vendor: PlantUML Team
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.3.1",
- org.eclipse.core.resources;bundle-version="3.3.1"
-Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: lib/plantUml/plantuml.jar,
- .
+ org.eclipse.core.resources;bundle-version="3.3.1",
+ br.ufes.inf.nemo.ontouml.ontoumlprime;bundle-version="1.0.0",
+ org.eclipse.xtext.ui
+Eclipse-LazyStart: true
+Bundle-ClassPath: .,
+ lib/plantUml/plantuml.jar
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Import-Package: org.eclipse.core.commands,
+Import-Package: br.ufes.inf.nemo.ontouml.PrimeOntoUML.refontouml,
+ org.eclipse.core.commands,
  org.eclipse.jface.action,
  org.eclipse.jface.dialogs,
  org.eclipse.jface.preference,
@@ -19,6 +22,7 @@ Import-Package: org.eclipse.core.commands,
  org.eclipse.jface.text,
  org.eclipse.jface.util,
  org.eclipse.jface.viewers,
+ org.eclipse.jface.window,
  org.eclipse.swt,
  org.eclipse.swt.events,
  org.eclipse.swt.graphics,
@@ -30,5 +34,7 @@ Import-Package: org.eclipse.core.commands,
  org.eclipse.ui.handlers,
  org.eclipse.ui.part,
  org.eclipse.ui.plugin,
- org.eclipse.ui.texteditor
-Export-Package: net.sourceforge.plantuml.eclipse.utils
+ org.eclipse.ui.texteditor,
+ org.eclipse.xtext.ui
+Export-Package: net.sourceforge.plantuml.eclipse.utils,
+ net.sourceforge.plantuml.eclipse.views

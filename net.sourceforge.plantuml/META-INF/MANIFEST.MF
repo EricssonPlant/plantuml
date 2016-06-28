@@ -7,13 +7,13 @@ Bundle-Activator: net.sourceforge.plantuml.Activator
 Bundle-Vendor: PlantUML Team
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.3.1",
  org.eclipse.core.resources;bundle-version="3.3.1",
- br.ufes.inf.nemo.ontouml.ontoumlprime;bundle-version="1.0.0",
+ br.ufes.inf.nemo.ontouml.ontoumlprime;bundle-version="1.0.0";resolution:=optional,
  org.eclipse.xtext.ui
 Eclipse-LazyStart: true
 Bundle-ClassPath: .,
  lib/plantUml/plantuml.jar
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Import-Package: br.ufes.inf.nemo.ontouml.PrimeOntoUML.refontouml,
+Import-Package: br.ufes.inf.nemo.ontouml.PrimeOntoUML.refontouml;resolution:=optional,
  org.eclipse.core.commands,
  org.eclipse.jface.action,
  org.eclipse.jface.dialogs,

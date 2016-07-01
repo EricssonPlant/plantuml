@@ -70,9 +70,11 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 	// This method is called when the method getDiagramText is run. It will make sure that the nodes of the AST that are 
 	// considered declarations are visited.
 	public void collectAllDeclarators(IASTTranslationUnit tu){
+		String branch = "R";
 		ASTVisitor visitor = new ASTVisitor(){
 			{ shouldVisitDeclarations = true;}
 			
+			int level = 0;
 			// Setts base visibility to Public
 			private int visibility_level = 1; 
 			
@@ -92,9 +94,12 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			        	CPPASTCompositeTypeSpecifier compositeSpecifier = (CPPASTCompositeTypeSpecifier)specifier;
 			        	result.append("class " + getNamespacesAndClasses((IASTNode) declaration) + compositeSpecifier.getName().toString() +"{\n");
 			        	
+			        	
+			        	// test
+			        	level++;
 			        	//recursivly search for info to implement in UML class
 			        	IASTNode[] children = ((IASTNode) declaration).getChildren();
-			        	result.append(genFunctions(children));
+			        	result.append(genFunctions(children, branch+level, level));
 			        	//-------------------------------------------------------------------
 			        	
 			        	result.append("}\n");
@@ -115,18 +120,24 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			
 			
 			//Part of the recursion 
-			private String genFunctions(IASTNode[] iastNodes) {
+			private String genFunctions(IASTNode[] iastNodes, String branch, int level) {
 				StringBuilder result = new StringBuilder();
+				int count = 0;
 				for(IASTNode node : iastNodes){
-					result.append(genFunction(node));
+					count++;
+					result.append(genFunction(node, branch+count, level));
 				}
 				return result.toString();
 			}
 			
 			// Checks for nodes where UML code should be generated
-			private String genFunction(IASTNode node) {
+			private String genFunction(IASTNode node, String branch, int level) {
 				IASTNode[] children = node.getChildren();
 		
+				System.out.println("==============================");
+				System.out.println(branch + " " + node.getClass().getSimpleName());
+				System.out.println("-------------------");
+				System.out.println(node.getRawSignature());
 				
 				if(node instanceof CPPASTCompositeTypeSpecifier){ 
 						
@@ -198,7 +209,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 						return "-"+func_string+"\n";
 					}
 				}
-				return genFunctions(children);
+				return genFunctions(children,branch,level);
 			}
 		};
 		

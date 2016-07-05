@@ -23,6 +23,8 @@ public interface PlantumlConstants {
 	public static final String SHOW_ORIGINAL_BUTTON = "Show original";
 	public static final String TOGGLE_GENERATION_BUTTON = "Activate/desactivate generation of diagrams";
 	public static final String TOGGLE_VISIBILITY_BUTTON = "Toggle visibility level of functions";
+	public static final String REDUCE_DEPTH_SETTING_FOR_HFILES = "Reduce the displayed class depth for other h-files (The standard is 1 underlying layer of h-files)";
+	public static final String INCREASE_DEPTH_SETTING_FOR_HFILES = "Increase the displayed class depth for other h-files (The standard is 1 underlying layer of h-files)";
 
 	/**
 	 * Labels for the Preferences

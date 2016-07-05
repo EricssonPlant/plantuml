@@ -44,6 +44,8 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 	private Action showOriginalAction;
 	private Action toggleAction;
 	private Action toggleVisibility;
+	private Action reduceDepth;
+	private Action increaseDepth;
 	/**
 	 * The default constructor.
 	 */
@@ -133,6 +135,27 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 		// action to start or stop the generation of the actual diagram
 		toggleAction = new ToggleButtonAction(this, display);
 		
+		reduceDepth = new Action(){
+			@Override
+			public void run() {
+				//Reduces the value of the the depth setting by 1 so that classes of one less layer of included h-files will be shown
+				ValueHolder.INSTANCE.reduceDepthSettingForHFilesClasses();
+				puv.run();
+			}
+		};
+		reduceDepth.setToolTipText(PlantumlConstants.REDUCE_DEPTH_SETTING_FOR_HFILES);
+		reduceDepth.setImageDescriptor(PlantUmlUtils.getImageDescriptor(display, "/icons/c_Minus.gif"));
+		
+		increaseDepth = new Action(){
+			@Override
+			public void run(){
+				ValueHolder.INSTANCE.increaseDepthSettingForHFilesClasses();
+				puv.run();
+			}
+		};
+		increaseDepth.setToolTipText(PlantumlConstants.INCREASE_DEPTH_SETTING_FOR_HFILES);
+		increaseDepth.setImageDescriptor(PlantUmlUtils.getImageDescriptor(display, "/icons/c_Plus.gif"));
+		
 	}
 
 	private void contributeToActionBars() {
@@ -148,6 +171,8 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 		manager.add(fitCanvasAction);
 		manager.add(showOriginalAction);
 		manager.add(toggleVisibility);
+		manager.add(reduceDepth);
+		manager.add(increaseDepth);
 	}
 
 	/**

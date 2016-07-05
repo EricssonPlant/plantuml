@@ -1,5 +1,10 @@
 package org.xtext.plantuml.cdt;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashSet;
+
 import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.dom.ast.ASTVisitor;
 import org.eclipse.cdt.core.dom.ast.IASTCompositeTypeSpecifier;
@@ -8,7 +13,9 @@ import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
 import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
 import org.eclipse.cdt.core.dom.ast.IASTFunctionDefinition;
 import org.eclipse.cdt.core.dom.ast.IASTNode;
+import org.eclipse.cdt.core.dom.ast.IASTPreprocessorIncludeStatement;
 import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
+import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit.IDependencyTree.IASTInclusionNode;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTCompositeTypeSpecifier;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTNamespaceDefinition;
 import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTParameterDeclaration;
@@ -18,6 +25,7 @@ import org.eclipse.cdt.core.model.CoreModel;
 import org.eclipse.cdt.core.model.CoreModelUtil;
 import org.eclipse.cdt.core.model.ICProject;
 import org.eclipse.cdt.core.model.ITranslationUnit;
+import org.eclipse.cdt.internal.core.dom.parser.ASTNode;
 import org.eclipse.cdt.internal.core.dom.parser.cpp.*;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -44,6 +52,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 	}
 	
 	private Context currentContext = null;
+	HashSet<String> fileNamesOfNodesToBeShown = new HashSet<String>();
 	public boolean supportsSelection(ISelection selection) {
 		// TODO Auto-generated method stub
 		return false;
@@ -67,10 +76,47 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		return namespaceName.append(ownerClassName);
 	}
 	
+	private String getFileNameOfNode(IASTNode node){
+		String fullPath = node.getContainingFilename();
+		int index = fullPath.lastIndexOf(File.separator);
+		String fileName = fullPath.substring(index + 1);
+		return fileName;
+	}
+	
+	private boolean isNodeToBeShown(ASTNode node){
+		return fileNamesOfNodesToBeShown.contains(getFileNameOfNode(node));
+	
+	}
+	
+	public void setFilesOfPreprocessorIncludeDirectiveNodesToBeShown(IASTInclusionNode[] inclusionNodes, int depthCount){
+		//The if-statement makes sure that this recursive function will stop within the boundary of the depth setting's value
+		if(ValueHolder.INSTANCE.getDepthSettingForHFileClasses() > depthCount){
+			for (IASTInclusionNode inclusionNode : inclusionNodes){
+				// Every inclusion node contains one include directive
+				IASTPreprocessorIncludeStatement preprocessorIncludeDirective = inclusionNode.getIncludeDirective();
+				// If the inclusion node has an include directive that is a system include, 
+				// it is to be skipped because library includes aren't supposed to show up in the class diagram
+				if(!preprocessorIncludeDirective.isSystemInclude()){
+					Path path = Paths.get(preprocessorIncludeDirective.getPath());
+					String fileName = path.getFileName().toString();
+					// The file name in the include directive is added to the list of file names that is used to determine which nodes are allowed to be shown
+					fileNamesOfNodesToBeShown.add(fileName);
+					depthCount++;
+					// A recursive function call to visit the inclusion nodes of inclusion nodes as far as the depth setting allows
+					setFilesOfPreprocessorIncludeDirectiveNodesToBeShown(inclusionNode.getNestedInclusions(), depthCount);
+					
+				}
+			}
+		}
+	}
+	
 	// This method is called when the method getDiagramText is run. It will make sure that the nodes of the AST that are 
 	// considered declarations are visited.
 	public void collectAllDeclarators(IASTTranslationUnit tu, StringBuilder result){
-		//System.out.print(((IASTNode)tu).getRawSignature()); // prints the whole code for debugging
+		IASTInclusionNode[] inclusionNodes = tu.getDependencyTree().getInclusions();
+		int depthCount=0;
+		setFilesOfPreprocessorIncludeDirectiveNodesToBeShown(inclusionNodes, depthCount);
+		System.out.print(((IASTNode)tu).getRawSignature()); // prints the whole code for debugging
 		ASTVisitor visitor = new ASTVisitor(){
 			{ shouldVisitDeclarations = true;}
 			// Setts base visibility to Public
@@ -78,9 +124,11 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 			
 			@Override
 			public int visit(IASTDeclaration declaration){
-				IASTNode[] children = ((IASTNode) declaration).getChildren();
-			    genCode(children, result);
-			    return PROCESS_SKIP; 
+				if(isNodeToBeShown((ASTNode) declaration)){
+					IASTNode[] children = ((IASTNode) declaration).getChildren();
+				    genCode(children, result);
+				}
+				return PROCESS_SKIP; 
 			}
 			
 			
@@ -276,7 +324,10 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				// When using an indexed AST it is recommended to acquire the ReadLock before doing something to the tree.
 				// I'm not sure of how relevant it is for our scenario but I did it anyway just to be on the safe side.
 				index.acquireReadLock();
-				currentContext.iastTranslationUnit = currentContext.translationUnit.getAST(index, ITranslationUnit.AST_SKIP_ALL_HEADERS);
+				fileNamesOfNodesToBeShown.clear();
+				if(!sourceFile.getFileExtension().equals("cpp"))
+					fileNamesOfNodesToBeShown.add(sourceFile.getName());
+				currentContext.iastTranslationUnit = currentContext.translationUnit.getAST(index, 0);
 				collectAllDeclarators(currentContext.iastTranslationUnit, result);
 			} catch (CoreException e1) {
 				// TODO Auto-generated catch block

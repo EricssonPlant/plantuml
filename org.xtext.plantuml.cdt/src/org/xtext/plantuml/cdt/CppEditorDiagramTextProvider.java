@@ -103,11 +103,12 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 						//This struct or class is nested/local
 						//System.out.println("- nested class or local struct");
 					}else{
-						createClassCode(node, result);
+						createClassCode(node, result, false);
 					}
 						
 				}else if(node instanceof CPPASTEnumerationSpecifier){
-					System.out.println("In a Enumerator 1 = "+ ((CPPASTEnumerationSpecifier)node).getName());
+					//System.out.println("In a Enumerator 1 = "+ ((CPPASTEnumerationSpecifier)node).getName());
+					createEnumCode(node, result);
 					
 				}else if(node instanceof CPPASTVisibilityLabel){ // public: + / package private: ~ / protected: # / Private: -
 					visibility_level = ((CPPASTVisibilityLabel)node).getVisibility();
@@ -135,16 +136,22 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				}
 			}
 			
-			private void createClassCode(IASTNode node, StringBuilder result){
-				//1. is this a class or struct??
-				String type = "class"; //TODO should this beable to be Interface or similar??
+			private void createEnumCode(IASTNode node, StringBuilder result){
+				createClassCode(node, result, true);
+			}
+			
+			private void createClassCode(IASTNode node, StringBuilder result, boolean isEnum){
+				//1. is this a class or struct or enum??
+				String type = "class";
+				if(isEnum){type = "enum";}
 				print(type,result);
 				print(" ",result);
 				
 				//2. get the name
-				String name = ((CPPASTCompositeTypeSpecifier) node).getName().toString();
+				String name = (isEnum ? ((CPPASTEnumerationSpecifier)node).getName().toString() : ((CPPASTCompositeTypeSpecifier) node).getName().toString());
+				if(name.equals("")){name = ".";} // needed for empty names of enumerators
 				print(name,result);
-				if(((CPPASTCompositeTypeSpecifier) node).getKey() == CPPASTCompositeTypeSpecifier.k_struct){
+				if(node instanceof CPPASTCompositeTypeSpecifier && ((CPPASTCompositeTypeSpecifier) node).getKey() == CPPASTCompositeTypeSpecifier.k_struct){
 					print(" <<(S,#FF7700)>>",result);
 				}
 				
@@ -154,14 +161,16 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				print("\n}\n",result);
 				
 				
-				//4. get inheritance
-	        	ICPPASTCompositeTypeSpecifier.ICPPASTBaseSpecifier[] inheritance = ((CPPASTCompositeTypeSpecifier) node).getBaseSpecifiers(); // The method GetBaseSpecifiers() returns the classes that the class in the current node inherits from.
-	        	for(int i=0; i<inheritance.length; i++){ // This for loop will print the inherited class and the inheritor showing their relationship in the diagram
-	        		print(inheritance[i].getNameSpecifier().toString(), result);
-	        		print(" <|.. ", result);
-	        		print(((IASTCompositeTypeSpecifier) node).getName().toString(), result); //TODO add "getNamespacesAndClasses((IASTNode) declaration) +" before
-	        		print("\n",result);
-	        	}
+				if(!isEnum){
+					//4. get inheritance
+		        	ICPPASTCompositeTypeSpecifier.ICPPASTBaseSpecifier[] inheritance = ((CPPASTCompositeTypeSpecifier) node).getBaseSpecifiers(); // The method GetBaseSpecifiers() returns the classes that the class in the current node inherits from.
+		        	for(int i=0; i<inheritance.length; i++){ // This for loop will print the inherited class and the inheritor showing their relationship in the diagram
+		        		print(inheritance[i].getNameSpecifier().toString(), result);
+		        		print(" <|.. ", result);
+		        		print(((IASTCompositeTypeSpecifier) node).getName().toString(), result); //TODO add "getNamespacesAndClasses((IASTNode) declaration) +" before
+		        		print("\n",result);
+		        	}
+				}
 			}
 
 
@@ -173,6 +182,8 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				if(node.getRawSignature().contains("()")){
 					genCode(node.getChildren(),result);
 					// already handled by createFunctionCode(node)
+				}else if(false){ //TODO find a way to skip global variables
+					
 				}else{
 					for(IASTDeclarator dec : decs){
 						String name = spec + " " + dec.getName().toString();

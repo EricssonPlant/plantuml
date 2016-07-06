@@ -53,6 +53,7 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 	
 	private Context currentContext = null;
 	HashSet<String> fileNamesOfNodesToBeShown = new HashSet<String>();
+	
 	public boolean supportsSelection(ISelection selection) {
 		// TODO Auto-generated method stub
 		return false;
@@ -291,6 +292,11 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 	@Override
 	protected String getDiagramText(IEditorPart editorPart, IEditorInput editorInput, ISelection selection) {
 		StringBuilder result = new StringBuilder();
+		int depthSetting = ValueHolder.INSTANCE.getDepthSettingForHFileClasses();
+		if(depthSetting == 1)
+			result.append("title " + depthSetting + " layer of h-file classes are currently being shown \n");
+		else
+			result.append("title " + depthSetting + " layers of h-file classes are currently being shown \n");
 		// Checks if this is a '.h' file.
 		if (! (editorInput instanceof IFileEditorInput && ("h".equals(((IFileEditorInput) editorInput).getFile().getFileExtension()) 
 		|| "cpp".equals(((IFileEditorInput) editorInput).getFile().getFileExtension())))) {

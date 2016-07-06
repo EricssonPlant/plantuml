@@ -1,6 +1,8 @@
 package org.xtext.plantuml.cdt;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
@@ -152,11 +154,13 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 						//This struct or class is nested/local
 						//System.out.println("- nested class or local struct");
 					}else{
-						createClassCode(node, result);
+						createClassCode(node, result, false);
 					}
 						
 				}else if(node instanceof CPPASTEnumerationSpecifier){
-					System.out.println("In a Enumerator 1 = "+ ((CPPASTEnumerationSpecifier)node).getName());
+					//System.out.println("In a Enumerator 1 = "+ ((CPPASTEnumerationSpecifier)node).getName());
+					createEnumCode(node, result);
+					//TODO acc functionality for contetnt of enums!!!!
 					
 				}else if(node instanceof CPPASTVisibilityLabel){ // public: + / package private: ~ / protected: # / Private: -
 					visibility_level = ((CPPASTVisibilityLabel)node).getVisibility();
@@ -178,22 +182,29 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				}else if(node instanceof CPPASTFunctionDeclarator){ 
 					createFunctionCode(node,result);
 				}else if(node instanceof CPPASTDeclarator){
-					System.out.println("Parrent="+node.getParent().getClass().getSimpleName());
-					
-					
+					//TODO what is this????????
 				}
 			}
 			
-			private void createClassCode(IASTNode node, StringBuilder result){
-				//1. is this a class or struct??
-				String type = "class"; //TODO should this beable to be Interface or similar??
+			private void createEnumCode(IASTNode node, StringBuilder result){
+				createClassCode(node, result, true);
+			}
+			
+			private void createClassCode(IASTNode node, StringBuilder result, boolean isEnum){
+				//1. is this a class or struct or enum??
+				String type = "class";
+				if(isEnum){type = "enum";}
 				print(type,result);
 				print(" ",result);
 				
 				//2. get the name
-				String name = ((CPPASTCompositeTypeSpecifier) node).getName().toString();
+				String file = new File(node.getContainingFilename()).getName();
+				String name = (isEnum ? ((CPPASTEnumerationSpecifier)node).getName().toString() : ((CPPASTCompositeTypeSpecifier) node).getName().toString());
+				if(name.equals("")){name = ".";} // needed for empty names of enumerators
+				print(file,result);
+				print(".",result); // normaly for namespace but we use it for separating classes into files
 				print(name,result);
-				if(((CPPASTCompositeTypeSpecifier) node).getKey() == CPPASTCompositeTypeSpecifier.k_struct){
+				if(node instanceof CPPASTCompositeTypeSpecifier && ((CPPASTCompositeTypeSpecifier) node).getKey() == CPPASTCompositeTypeSpecifier.k_struct){
 					print(" <<(S,#FF7700)>>",result);
 				}
 				
@@ -203,14 +214,24 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				print("\n}\n",result);
 				
 				
-				//4. get inheritance
-	        	ICPPASTCompositeTypeSpecifier.ICPPASTBaseSpecifier[] inheritance = ((CPPASTCompositeTypeSpecifier) node).getBaseSpecifiers(); // The method GetBaseSpecifiers() returns the classes that the class in the current node inherits from.
-	        	for(int i=0; i<inheritance.length; i++){ // This for loop will print the inherited class and the inheritor showing their relationship in the diagram
-	        		print(inheritance[i].getNameSpecifier().toString(), result);
-	        		print(" <|.. ", result);
-	        		print(((IASTCompositeTypeSpecifier) node).getName().toString(), result); //TODO add "getNamespacesAndClasses((IASTNode) declaration) +" before
-	        		print("\n",result);
-	        	}
+				if(!isEnum){
+					//4. get inheritance
+		        	ICPPASTCompositeTypeSpecifier.ICPPASTBaseSpecifier[] inheritance = ((CPPASTCompositeTypeSpecifier) node).getBaseSpecifiers(); // The method GetBaseSpecifiers() returns the classes that the class in the current node inherits from.
+		        	for(int i=0; i<inheritance.length; i++){ // This for loop will print the inherited class and the inheritor showing their relationship in the diagram
+		        		String fileTo = new File(inheritance[i].getContainingFilename()).getName();
+		        		//String fileTo2 = new File(inheritance[i].get).getName().split("\\.")[0];
+		        		//TODO this gives the wrong filename
+		        		String nameTo = inheritance[i].getNameSpecifier().toString();
+		        		print(fileTo, result);
+		        		print(".",result);
+		        		print(nameTo, result);
+		        		print(" <|.. ", result);
+		        		print(file, result);
+		        		print(".",result);
+		        		print(name, result); //TODO add "getNamespacesAndClasses((IASTNode) declaration) +" before
+		        		print("\n",result);
+		        	}
+				}
 			}
 
 
@@ -219,9 +240,11 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 				IASTDeclSpecifier spec = ((CPPASTSimpleDeclaration) node).getDeclSpecifier(); // Declaration "type" e.g. int/double/char
 				IASTDeclarator[] decs = ((CPPASTSimpleDeclaration) node).getDeclarators(); // variable name / list since many can be declared at once
 				
-				if(node.getRawSignature().contains("()")){
+				if(node.getRawSignature().contains("(")){
 					genCode(node.getChildren(),result);
 					// already handled by createFunctionCode(node)
+				}else if(false){ //TODO find a way to skip global variables
+					
 				}else{
 					for(IASTDeclarator dec : decs){
 						String name = spec + " " + dec.getName().toString();
@@ -311,6 +334,9 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		currentContext.iCProject = CoreModel.getDefault().create(currentContext.project);
 		currentContext.translationUnit = CoreModelUtil.findTranslationUnit(currentContext.project.getFile(sourceFile.getProjectRelativePath()));
 		
+		
+		// for dividing classes into files!
+		//result.append("set namespaceSeparator :: \n");
 		try {
 			// Using the indexed AST means we can use the setting AST_SKIP_ALL_HEADERS to not have included '.h' files in our created AST
 			IIndex index= CCorePlugin.getIndexManager().getIndex(currentContext.iCProject);

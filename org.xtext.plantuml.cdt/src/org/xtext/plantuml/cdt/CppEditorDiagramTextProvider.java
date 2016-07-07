@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
 
+import javax.xml.transform.Source;
+
 import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.dom.ast.ASTVisitor;
 import org.eclipse.cdt.core.dom.ast.IASTCompositeTypeSpecifier;
@@ -14,6 +16,7 @@ import org.eclipse.cdt.core.dom.ast.IASTDeclSpecifier;
 import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
 import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
 import org.eclipse.cdt.core.dom.ast.IASTFunctionDefinition;
+import org.eclipse.cdt.core.dom.ast.IASTName;
 import org.eclipse.cdt.core.dom.ast.IASTNode;
 import org.eclipse.cdt.core.dom.ast.IASTPreprocessorIncludeStatement;
 import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
@@ -220,7 +223,8 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 		        	for(int i=0; i<inheritance.length; i++){ // This for loop will print the inherited class and the inheritor showing their relationship in the diagram
 		        		String fileTo = new File(inheritance[i].getContainingFilename()).getName();
 		        		//String fileTo2 = new File(inheritance[i].get).getName().split("\\.")[0];
-		        		//TODO this gives the wrong filename
+		        		//TODO this gives the wrongtrans filename
+		        		//System.out.println(inheritance[i].getNameSpecifier().);
 		        		String nameTo = inheritance[i].getNameSpecifier().toString();
 		        		print(fileTo, result);
 		        		print(".",result);
@@ -316,17 +320,17 @@ public class CppEditorDiagramTextProvider extends AbstractDiagramTextProvider {
 	protected String getDiagramText(IEditorPart editorPart, IEditorInput editorInput, ISelection selection) {
 		StringBuilder result = new StringBuilder();
 		int depthSetting = ValueHolder.INSTANCE.getDepthSettingForHFileClasses();
+		IFile sourceFile = ((IFileEditorInput) editorInput).getFile();
 		if(depthSetting == 1)
-			result.append("title " + depthSetting + " layer of h-file classes are currently being shown \n");
+			result.append("title " + sourceFile.getName() + ": Up to " + depthSetting + " layer of h-file classes are currently being shown \n");
 		else
-			result.append("title " + depthSetting + " layers of h-file classes are currently being shown \n");
+			result.append("title " + sourceFile.getName() + ": Up to " + depthSetting + " layers of h-file classes are currently being shown \n");
 		// Checks if this is a '.h' file.
 		if (! (editorInput instanceof IFileEditorInput && ("h".equals(((IFileEditorInput) editorInput).getFile().getFileExtension()) 
 		|| "cpp".equals(((IFileEditorInput) editorInput).getFile().getFileExtension())))) {
 			return null;
 		}
 		// Gets file
-		IFile sourceFile = ((IFileEditorInput) editorInput).getFile();
 		currentContext = new Context();
 		
 		IPath path = ((IFileEditorInput) editorInput).getFile().getFullPath();

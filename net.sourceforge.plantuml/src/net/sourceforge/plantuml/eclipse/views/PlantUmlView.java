@@ -6,11 +6,20 @@ import net.sourceforge.plantuml.eclipse.utils.PlantUmlUtils;
 import net.sourceforge.plantuml.eclipse.utils.PlantumlConstants;
 import net.sourceforge.plantuml.eclipse.utils.ValueHolder;
 
+import java.util.HashSet;
+import java.util.Iterator;
+
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionBars;
 
 /**
@@ -31,7 +40,8 @@ import org.eclipse.ui.IActionBars;
  */
 
 public class PlantUmlView extends AbstractDiagramSourceView {
-
+	
+	private boolean toggleMenuCreated=false;
 	private SWTImageCanvas canvas;
 	/**
 	 * The action which manage the image generation.
@@ -52,7 +62,7 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 	public PlantUmlView() {
 		super();
 	}
-
+	
 	/**
 	 * Method in which we construct the view and it contents
 	 * 
@@ -72,6 +82,8 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 		super.createPartControl(parent);
 	}
 
+	final PlantUmlView puv = this; // To get accsess to this object in run of action for toggleVisibility
+	
 	/**
 	 * Manage the actions.
 	 * 
@@ -119,13 +131,55 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 				display, "/icons/Original16.gif"));
 		
 		
-		final PlantUmlView puv = this; // To get accsess to this object in run of action for toggleVisibility
+		final PlantUmlView puv = this; // To get access to this object in run of action for toggleVisibility
 		
 		toggleVisibility = new Action(){
 			@Override
 			public void run(){
-				ValueHolder.INSTANCE.toggleVisibility();
-				puv.run();// updates the view/ repaints diagram
+				//ValueHolder.INSTANCE.toggleVisibility();
+				
+				Display display = Display.getDefault();
+				
+				
+				if(!toggleMenuCreated){
+					Shell shell = new Shell(display, SWT.CLOSE | SWT.TITLE);
+					toggleMenuCreated = true;
+					FillLayout fillLayout = new FillLayout();
+					fillLayout.type = SWT.VERTICAL;
+					shell.setLayout(fillLayout);
+					
+					//Adds the buttons along with a listener
+					Button showStructButton = new Button(shell, SWT.CHECK);
+					addShowButtonListenerAndText(showStructButton, "Show struct");
+					setCheckedButton(showStructButton, ValueHolder.INSTANCE.getShowStruct()); 
+					//Selects a checkbox immediately when the window is opened 
+					// if the checkbox has been selected in a previously opened window
+					
+					Button showEnumButton = new Button(shell, SWT.CHECK);
+					addShowButtonListenerAndText(showEnumButton, "Show enum");
+					setCheckedButton(showEnumButton, ValueHolder.INSTANCE.getShowEnum());
+					
+					Button showProtectedButton = new Button(shell, SWT.CHECK);
+					addShowButtonListenerAndText(showProtectedButton, "Show protected");
+					setCheckedButton(showProtectedButton, ValueHolder.INSTANCE.getShowProtected());
+					
+					Button showPrivateButton = new Button(shell, SWT.CHECK);
+					addShowButtonListenerAndText(showPrivateButton, "Show private");
+					setCheckedButton(showPrivateButton, ValueHolder.INSTANCE.getShowPrivate());
+					
+					Button okShowButton = new Button(shell, SWT.PUSH);
+					addShowButtonListenerAndText(okShowButton, "Ok");
+			    
+			    
+				    shell.pack();
+				    shell.open();
+					puv.run();// updates the view/ repaints diagram
+					while(!shell.isDisposed()){
+						if (!display.readAndDispatch())
+					        display.sleep();
+					}
+					toggleMenuCreated = false;
+				}	
 			}
 		};
 		toggleVisibility.setImageDescriptor(PlantUmlUtils.getImageDescriptor(display, "/icons/visibility16.gif"));
@@ -140,7 +194,7 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 			public void run() {
 				//Reduces the value of the the depth setting by 1 so that classes of one less layer of included h-files will be shown
 				ValueHolder.INSTANCE.reduceDepthSettingForHFilesClasses();
-				puv.run();
+				puv.run(); // updates the view/ repaints diagram
 			}
 		};
 		reduceDepth.setToolTipText(PlantumlConstants.REDUCE_DEPTH_SETTING_FOR_HFILES);
@@ -150,7 +204,7 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 			@Override
 			public void run(){
 				ValueHolder.INSTANCE.increaseDepthSettingForHFilesClasses();
-				puv.run();
+				puv.run(); // updates the view/ repaints diagram
 			}
 		};
 		increaseDepth.setToolTipText(PlantumlConstants.INCREASE_DEPTH_SETTING_FOR_HFILES);
@@ -174,6 +228,10 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 		manager.add(reduceDepth);
 		manager.add(increaseDepth);
 	}
+	
+	public void setCheckedButton(Button button, Boolean check){
+		button.setSelection(check);
+	}
 
 	/**
 	 * Passing the focus request to the viewer's control.
@@ -191,5 +249,43 @@ public class PlantUmlView extends AbstractDiagramSourceView {
 	
 	public void updateDiagram(final String text) {
 		updateDiagramText(text);
+	}
+	
+	private void addShowButtonListenerAndText(Button button, String buttonName){
+		button.setText(buttonName);
+		button.addSelectionListener(new SelectionAdapter(){
+			
+			@Override
+			public void widgetSelected(SelectionEvent e){
+				Button button = (Button) e.getSource();
+				if(button.getText().equals("Ok")){
+					System.out.println("kal");
+					puv.run(); // updates the view/ repaints diagram
+					
+					// This makes it so that the window will be closed when the ok-button is pressed
+					Display.getDefault().getActiveShell().dispose(); 
+				}
+				else if(button.getSelection() && button.getText().equals("Show struct")){
+					ValueHolder.INSTANCE.toggleShowStruct();
+				}
+				else if(button.getSelection() && button.getText().equals("Show enum"))
+					ValueHolder.INSTANCE.toggleShowEnum();
+				else if(button.getSelection() && button.getText().equals("Show protected")){
+					ValueHolder.INSTANCE.toggleShowProtected();
+				}
+				else if(button.getSelection() && button.getText().equals("Show private")){
+					ValueHolder.INSTANCE.toggleShowPrivate();
+				}
+				else if(button.getText().equals("Show struct")){
+					ValueHolder.INSTANCE.toggleShowStruct();
+				}
+				else if(button.getText().equals("Show enum")){
+					ValueHolder.INSTANCE.toggleShowEnum();
+				}
+				else if(button.getText().equals("Show protected")){
+					ValueHolder.INSTANCE.toggleShowPrivate();
+				}
+			}
+		});
 	}
 }

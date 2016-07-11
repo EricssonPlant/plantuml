@@ -6,17 +6,13 @@ public enum ValueHolder{
 	INSTANCE;
 	
 	// Values to store in value holder
-	private boolean showPrivate = false; // show of hide private functions in uml diagrams
-	private boolean showProtected = false; // show of hide protected functions in uml diagrams
+	private boolean showPrivate = false; // Controls whether private functions should be shown in plantuml diagrams
+	private boolean showProtected = false; // Controls whether protected function should be shown in plantuml diagrams
+	private boolean showStruct = false; // Controls whether protected structs should be shown in plantuml diagrams 
+	private boolean showEnum = false; // Controls whether enumerators should be shown in plantuml diagrams
 	
 	// The default setting for how many layers of h-file classes that will be included in the class diagram is set to 1 layer
 	private int depthSettingForHFileClasses = 1;
-	
-	public void toggleVisibility(){
-		showPrivate = !showPrivate; // toggle
-		showProtected = showPrivate; // keep them same...
-
-	}
 
 	public boolean getShowPrivate(){
 		return showPrivate;
@@ -24,6 +20,31 @@ public enum ValueHolder{
 	public boolean getShowProtected(){
 		return showProtected;
 	}
+	
+	public boolean getShowStruct(){
+		return showStruct;
+	}
+
+	public boolean getShowEnum(){
+		return showEnum;
+	}
+	
+	public void toggleShowStruct(){
+		showStruct = !showStruct;
+	}
+	
+	public void toggleShowEnum(){
+		showEnum = !showEnum;
+	}
+	
+	public void toggleShowPrivate(){
+		showPrivate = !showPrivate;
+	}
+	
+	public void toggleShowProtected(){
+		showProtected = !showProtected;
+	}
+	
 	
 	public int getDepthSettingForHFileClasses(){
 		return depthSettingForHFileClasses;
